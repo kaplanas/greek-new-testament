@@ -1,15 +1,14 @@
 import re
 import pandas as pd
 import numpy as np
-from text_and_vocab import load_text
-
-TEXT_DATA_DIR = '../text_data/'
+from file_locations import TEXT_DATA_DIR
+from text_and_vocab import load_text_df
 
 
 def pull_unique_lemmas(pos):
     """Get unique lemmas from the NT text."""
     # Load the text.
-    nt_df = load_text('nt')
+    nt_df = load_text_df('nt')
     vocab_df = nt_df[['lemma', 'pos', 'gender']].copy()
     # Filter to the specified part of speech.
     vocab_df = vocab_df[vocab_df.pos == pos]
@@ -25,9 +24,9 @@ def pull_unique_lemmas(pos):
 def get_noun_forms(lemmas_df, pos):
     """Add the genitive singular form to each noun."""
     # Get unique noun wordforms from the NT and LXX.
-    nt_df = load_text('nt')
+    nt_df = load_text_df('nt')
     nt_df = nt_df[(nt_df.pos == pos)]
-    lxx_df = load_text('lxx')
+    lxx_df = load_text_df('lxx')
     lxx_df = lxx_df[(lxx_df.pos == pos) &
                     (lxx_df.case == 'genitive') &
                     (lxx_df.number == 'singular')]
@@ -91,9 +90,9 @@ def get_noun_forms(lemmas_df, pos):
 def get_adjective_forms(lemmas_df, pos):
     """Add the genitive singular form to each noun."""
     # Get unique adjective wordforms from the NT and LXX.
-    nt_df = load_text('nt')
+    nt_df = load_text_df('nt')
     nt_df = nt_df[(nt_df.pos == pos)]
-    lxx_df = load_text('lxx')
+    lxx_df = load_text_df('lxx')
     lxx_df = lxx_df[(lxx_df.pos == pos) &
                     (lxx_df.case == 'nominative') &
                     (lxx_df.number == 'singular')]
@@ -152,9 +151,9 @@ def get_adjective_forms(lemmas_df, pos):
 def get_verb_forms(lemmas_df):
     """Add the genitive singular form to each noun."""
     # Get unique verb wordforms from the NT and LXX.
-    nt_df = load_text('nt')
+    nt_df = load_text_df('nt')
     nt_df = nt_df[(nt_df.pos == 'verb')]
-    lxx_df = load_text('lxx')
+    lxx_df = load_text_df('lxx')
     lxx_df = lxx_df[(lxx_df.pos == 'verb') &
                     (lxx_df.person == 1) &
                     (lxx_df.number == 'singular') &
