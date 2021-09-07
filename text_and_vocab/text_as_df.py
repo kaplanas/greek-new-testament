@@ -1,8 +1,7 @@
 import re
 import pandas as pd
-from file_locations import TEXT_DATA_DIR, TAGGED_CORPUS_DIR, BOOK_MAPPING
-from file_locations import PERSON_CODES, TENSE_CODES, VOICE_CODES, MOOD_CODES
-from file_locations import CASE_CODES, NUMBER_CODES, GENDER_CODES
+from utils import TEXT_DATA_DIR, TAGGED_CORPUS_DIR, BOOK_MAPPING
+from utils import get_morph_codes
 
 
 # Load the text as a pandas dataframe.
@@ -14,21 +13,8 @@ def load_text_df(text):
         return pd.read_csv(TEXT_DATA_DIR + 'lxx_text.csv')
 
 
-# Get parsing codes for a wordform.
-def get_morph_codes(df_row):
-    """Add morphological parsing codes to a wordform."""
-    morph_codes = PERSON_CODES.get(df_row['person'], '-') +\
-                  TENSE_CODES.get(df_row['tense'], '-') +\
-                  VOICE_CODES.get(df_row['voice'], '-') +\
-                  MOOD_CODES.get(df_row['mood'], '-') +\
-                  CASE_CODES.get(df_row['case'], '-') +\
-                  NUMBER_CODES.get(df_row['number'], '-') +\
-                  GENDER_CODES.get(df_row['gender'], '-')
-    return morph_codes
-
-
 # Write the NT text in a format to be read by the NTTaggedCorpusReader.
-def write_text_plain():
+def write_text_tagged():
     """Save the text in a tagged corpus format."""
     # Load the text as a dataframe.
     nt_df = load_text_df('nt')
@@ -53,7 +39,8 @@ def write_text_plain():
                                                        '_' +
                                                        get_morph_codes(r)]
                 if re.match('.*[.;·]', r['wordform']) and \
-                        r['standardized_wordform'] != 'le/gwn':
+                        r['lemma'] not in ['le/gw', 'fhmi/', 'gra/fw', 'kai/',
+                                           'h)/']:
                     file.write(str(chapter) + ':' + str(current_verses[0]))
                     if len(current_verses) > 1:
                         file.write('-' + str(current_verses[-1]))
@@ -67,4 +54,4 @@ if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     nt_df = load_text_df('nt')
     lxx_df = load_text_df('lxx')
-    # write_text_plain()
+    write_text_tagged()

@@ -1,5 +1,5 @@
 import re
-from file_locations import TEXT_DATA_DIR, TAGGED_CORPUS_DIR, BOOK_MAPPING
+from utils import TEXT_DATA_DIR, TAGGED_CORPUS_DIR, BOOK_MAPPING
 from os.path import basename
 from nltk.tag import str2tuple
 from nltk.corpus.reader.tagged import TaggedCorpusReader

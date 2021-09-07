@@ -1,27 +1,63 @@
 import re
 import pandas as pd
 import numpy as np
-from file_locations import TEXT_DATA_DIR
+from utils import TEXT_DATA_DIR
 from text_and_vocab import load_text_df
+from utils import POS_CODES, get_morph_codes
+from parsing import GRAMMAR_DIR, LEXICON_FILE
 
 
-def pull_unique_lemmas(pos):
-    """Get unique lemmas from the NT text."""
-    # Load the text.
+HAND_DATA_DIR = 'hand_coded_data/'
+POS_PROCESSING = {
+    'noun': {'id_cols': ['gender'],
+             'form_cols': ['gs'],
+             'class_cols': ['declension']},
+    'relative pronoun': {'id_cols': [],
+                         'form_cols': ['fem', 'neut'],
+                         'class_cols': ['declension']},
+    'verb': {'id_cols': [],
+             'form_cols': ['pp' + str(i + 2) for i in range(5)],
+             'class_cols': ['verb_type']},
+    'personal pronoun': {'id_cols': [],
+                         'form_cols': ['gs']},
+    'definite article': {'id_cols': [],
+                         'form_cols': ['fem', 'neut'],
+                         'class_cols': ['declension']},
+    'preposition': {'id_cols': []},
+    'conjunction': {'id_cols': []},
+    'adjective': {'id_cols': [],
+                  'form_cols': ['fem', 'neut'],
+                  'class_cols': ['declension']},
+    'adverb': {'id_cols': []},
+    'interjection': {'id_cols': [],
+                     'feature_cols': ['standalone']},
+    'particle': {'id_cols': [],
+                 'feature_cols': ['standalone']},
+    'demonstrative pronoun': {'id_cols': [],
+                              'form_cols': ['fem', 'neut'],
+                              'class_cols': ['declension']},
+    'interrogative/indefinite pronoun': {'id_cols': [],
+                                         'form_cols': ['gs']}
+}
+
+
+def get_unique_forms(pos, lemma_or_wordform='lemma'):
+    """Get unique lemmas or wordforms from the NT text."""
+    # Load the text and filter to the specified part of speech.
     nt_df = load_text_df('nt')
-    vocab_df = nt_df[['lemma', 'pos', 'gender']].copy()
-    # Filter to the specified part of speech.
-    vocab_df = vocab_df[vocab_df.pos == pos]
-    if pos != 'noun':
-        vocab_df.drop('gender', axis=1, inplace=True)
-    vocab_df.drop('pos', axis=1, inplace=True)
-    # Get unique lemmas.
+    nt_df = nt_df[nt_df.pos == pos]
+    # Which columns do we need to uniquely identify the lemma/wordform?
+    id_cols = ['lemma'] + POS_PROCESSING[pos]['id_cols']
+    if lemma_or_wordform == 'wordform':
+        id_cols = id_cols + ['standardized_wordform']
+    vocab_df = nt_df[id_cols].copy()
+    # Get unique lemmas/wordforms.
     vocab_df.drop_duplicates(inplace=True)
     # Return the dataframe.
     return vocab_df
 
 
-def get_noun_forms(lemmas_df, pos):
+def get_genitive_forms(lemmas_df, pos):
     """Add the genitive singular form to each noun."""
     # Get unique noun wordforms from the NT and LXX.
     nt_df = load_text_df('nt')
@@ -65,30 +101,12 @@ def get_noun_forms(lemmas_df, pos):
             else:
                 declension = 3
             nouns_df.loc[i, 'declension'] = declension
-    # Get hand-coded data.
-    key_cols = ['lemma']
-    if pos == 'noun':
-        key_cols = key_cols + ['gender']
-    df_cols = key_cols
-    hand_df = pd.read_csv(TEXT_DATA_DIR + 'hand_coded_data/' +
-                          pos.replace(' ', '_').replace('/', '_') +
-                          '_supp_data.csv')
-    nouns_df = nouns_df.merge(hand_df, how='left', on=key_cols, indicator=True)
-    nouns_df['gs'] = np.select([(~nouns_df.gs_y.isnull().to_numpy()),
-                                ((nouns_df._merge == 'both') &
-                                 (nouns_df.gs_x == 'NEEDED'))],
-                               [nouns_df.gs_y,
-                                nouns_df.gs_y],
-                               default=nouns_df.gs_x)
-    if pos == 'noun':
-        nouns_df['declension'] = nouns_df.declension_y.combine_first(nouns_df.declension_x)
-        df_cols = df_cols + ['declension']
     # All done; return the dataframe.
-    return nouns_df[df_cols + ['gs', 'gs_other']]
+    return nouns_df
 
 
-def get_adjective_forms(lemmas_df, pos):
-    """Add the genitive singular form to each noun."""
+def get_gender_forms(lemmas_df, pos):
+    """Add the feminine and neuter forms for each adjective."""
     # Get unique adjective wordforms from the NT and LXX.
     nt_df = load_text_df('nt')
     nt_df = nt_df[(nt_df.pos == pos)]
@@ -127,29 +145,12 @@ def get_adjective_forms(lemmas_df, pos):
         else:
             declension = '3'
         adjectives_df.loc[i, 'declension'] = declension
-    # Get hand-coded data.
-    key_cols = ['lemma']
-    hand_df = pd.read_csv(TEXT_DATA_DIR + 'hand_coded_data/' +
-                          pos.replace(' ', '_') + '_supp_data.csv')
-    adjectives_df = adjectives_df.merge(hand_df, how='left', on=key_cols,
-                                        indicator=True)
-    adjectives_df['declension'] = adjectives_df.declension_y.combine_first(adjectives_df.declension_x)
-    for g in ['fem', 'neut']:
-        adjectives_df[g] = np.select([(~adjectives_df[g + '_y'].isnull().to_numpy()),
-                                      ((adjectives_df._merge == 'both') &
-                                       (adjectives_df[g + '_x'] == 'NEEDED'))],
-                                     [adjectives_df[g + '_y'],
-                                      adjectives_df[g + '_y']],
-                                     default=adjectives_df[g + '_x'])
     # All done; return the dataframe.
-    df_cols = key_cols + ['declension']
-    return adjectives_df[df_cols + [g + suffix
-                                    for g in ['fem', 'neut']
-                                    for suffix in ['', '_other']]]
+    return adjectives_df
 
 
-def get_verb_forms(lemmas_df):
-    """Add the genitive singular form to each noun."""
+def get_principal_parts(lemmas_df):
+    """Add the principal parts for each verb."""
     # Get unique verb wordforms from the NT and LXX.
     nt_df = load_text_df('nt')
     nt_df = nt_df[(nt_df.pos == 'verb')]
@@ -237,74 +238,111 @@ def get_verb_forms(lemmas_df):
         else:
             verb_type = 'other'
         verbs_df.loc[i, 'verb_type'] = verb_type
-    # Get hand-coded data.
-    key_cols = ['lemma']
-    hand_df = pd.read_csv(TEXT_DATA_DIR + 'hand_coded_data/verb_supp_data.csv')
-    verbs_df = verbs_df.merge(hand_df, how='left', on=key_cols, indicator=True)
-    verbs_df['verb_type'] = verbs_df.verb_type_y.combine_first(verbs_df.verb_type_x)
-    for pp in ['pp' + str(p + 2) for p in range(5)]:
-        verbs_df[pp] = np.select([(~verbs_df[pp + '_y'].isnull().to_numpy()),
-                                  ((verbs_df._merge == 'both') &
-                                   (verbs_df[pp + '_x'] == 'NEEDED'))],
-                                 [verbs_df[pp + '_y'],
-                                  verbs_df[pp + '_y']],
-                                 default=verbs_df[pp + '_x'])
     # All done; return the dataframe.
-    df_cols = key_cols + ['verb_type']
-    return verbs_df[df_cols + [pp + suffix
-                               for pp in ['pp' + str(p + 2) for p in range(5)]
-                               for suffix in ['', '_other']]]
+    return verbs_df
 
 
 def process_vocab(pos):
     """Process vocab, combining data sources as needed."""
     # Get the unique lemmas for this POS.
-    lemmas_df = pull_unique_lemmas(pos)
-    # Get additional data for certain POSs.
-    if pos in ['noun', 'personal pronoun', 'interrogative/indefinite pronoun']:
-        lemmas_df = get_noun_forms(lemmas_df, pos)
-    elif pos in ['relative pronoun', 'definite article', 'adjective',
-                 'demonstrative pronoun']:
-        lemmas_df = get_adjective_forms(lemmas_df, pos)
-    elif pos == 'verb':
-        lemmas_df = get_verb_forms(lemmas_df)
+    lemmas_df = get_unique_forms(pos, 'lemma')
+    # Get additional forms for these lemmas, depending on the POS.
+    if 'form_cols' in POS_PROCESSING[pos].keys():
+        if POS_PROCESSING[pos]['form_cols'] == ['gs']:
+            lemmas_df = get_genitive_forms(lemmas_df, pos)
+        elif POS_PROCESSING[pos]['form_cols'] == ['fem', 'neut']:
+            lemmas_df = get_gender_forms(lemmas_df, pos)
+        elif POS_PROCESSING[pos]['form_cols'] == ['pp' + str(i + 2) for i in range(5)]:
+            lemmas_df = get_principal_parts(lemmas_df)
+        # Get additional hand-coded forms, depending on the POS.
+        if POS_PROCESSING[pos]['form_cols']:
+            id_cols = ['lemma'] + POS_PROCESSING[pos]['id_cols']
+            supp_forms_df = pd.read_csv(TEXT_DATA_DIR + HAND_DATA_DIR +
+                                        pos.lower().replace(' ', '_').replace('/', '_') +
+                                        '_supp_forms.csv')
+            lemmas_df = lemmas_df.merge(supp_forms_df, how='left', on=id_cols,
+                                        indicator=True)
+            if 'class_cols' in POS_PROCESSING[pos].keys():
+                for class_col in POS_PROCESSING[pos]['class_cols']:
+                    lemmas_df[class_col] = lemmas_df[class_col + '_y']\
+                                           .combine_first(lemmas_df[class_col + '_x'])
+            for form_col in POS_PROCESSING[pos]['form_cols']:
+                lemmas_df[form_col] = np.select([(~lemmas_df[form_col + '_y'].isnull().to_numpy()),
+                                                 ((lemmas_df._merge == 'both') &
+                                                  (lemmas_df[form_col + '_x'] == 'NEEDED'))],
+                                                [lemmas_df[form_col + '_y'],
+                                                 lemmas_df[form_col + '_y']],
+                                                default=lemmas_df[form_col + '_x'])
     # All done; return the dataframe.
-    return lemmas_df
+    cols = ['lemma'] + POS_PROCESSING[pos]['id_cols']
+    if 'class_cols' in POS_PROCESSING[pos].keys():
+        cols = cols + POS_PROCESSING[pos]['class_cols']
+    if 'form_cols' in POS_PROCESSING[pos].keys():
+        cols = cols + [f + ending
+                       for f in POS_PROCESSING[pos]['form_cols']
+                       for ending in ['', '_other']]
+    return lemmas_df[cols]
+
+
+def write_lemmas_df(pos):
+    """Write a csv of the lemmas for this POS."""
+    lemmas_df = process_vocab(pos)
+    lemmas_df.to_csv(TEXT_DATA_DIR +
+                     pos.lower().replace(' ', '_').replace('/', '_') +
+                     '_data.csv', index=False)
+
+
+def write_lexicon():
+    """Write the lexicon for the feature grammar."""
+    # Load the NT text.
+    nt_df = load_text_df('nt')
+    lexicon_feature_cols = ['person', 'mood', 'case', 'number', 'gender']
+    standard_feature_cols = lexicon_feature_cols + ['tense', 'voice']
+    lexicon_file = open(GRAMMAR_DIR + LEXICON_FILE, 'w')
+    # Iterate over parts of speech.
+    for pos in POS_PROCESSING.keys():
+        # Get unique wordforms.
+        wordforms_df = nt_df[nt_df.pos == pos][['lemma',
+                                                'standardized_wordform',
+                                                'pos'] +
+                                               standard_feature_cols].copy()
+        wordforms_df.drop_duplicates(inplace=True)
+        # Get supplementary hand-coded features, depending on the POS.
+        if 'feature_cols' in POS_PROCESSING[pos].keys():
+            id_cols = ['lemma'] + POS_PROCESSING[pos]['id_cols']
+            supp_features_df = pd.read_csv(TEXT_DATA_DIR + HAND_DATA_DIR +
+                                           pos.lower().replace(' ', '_').replace('/', '_') +
+                                           '_supp_features.csv')
+            wordforms_df = wordforms_df.merge(supp_features_df,
+                                              how='left', on=id_cols)
+        # Write the lexicon file.
+        for (i, r) in wordforms_df.iterrows():
+            entry_feats = {}
+            for feature in lexicon_feature_cols:
+                if not pd.isnull(r[feature]):
+                    if isinstance(r[feature], float):
+                        entry_feats[feature.upper()] = str(int(r[feature]))
+                    else:
+                        entry_feats[feature.upper()] = str(r[feature])
+                    if feature == 'mood':
+                        if r[feature] in ['indicative', 'imperative',
+                                          'subjunctive', 'optative']:
+                            entry_feats['FINITE'] = 'y'
+                        else:
+                            entry_feats['FINITE'] = 'n'
+            if 'feature_cols' in POS_PROCESSING[pos].keys():
+                for feature in POS_PROCESSING[pos]['feature_cols']:
+                    entry_feats[feature.upper()] = r[feature]
+            lexicon_file.write(POS_CODES[pos] + '[' +
+                               ', '.join([k + '=' + v
+                                          for (k, v) in entry_feats.items()]) +
+                               ']' + ' -> ' + "'" + r['standardized_wordform'] +
+                               '_' + get_morph_codes(r) + "'" + '\n')
+    lexicon_file.close()
 
 
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
-    nouns_df = process_vocab('noun')
-    nouns_df.to_csv(TEXT_DATA_DIR + 'noun_data.csv', index=False)
-    relative_pronouns_df = process_vocab('relative pronoun')
-    relative_pronouns_df.to_csv(TEXT_DATA_DIR + 'relative_pronoun_data.csv',
-                                index=False)
-    verbs_df = process_vocab('verb')
-    verbs_df.to_csv(TEXT_DATA_DIR + 'verb_data.csv', index=False)
-    personal_pronouns_df = process_vocab('personal pronoun')
-    personal_pronouns_df.to_csv(TEXT_DATA_DIR + 'personal_pronoun_data.csv',
-                                index=False)
-    definite_articles_df = process_vocab('definite article')
-    definite_articles_df.to_csv(TEXT_DATA_DIR + 'definite_article_data.csv',
-                                index=False)
-    prepositions_df = process_vocab('preposition')
-    prepositions_df.to_csv(TEXT_DATA_DIR + 'preposition_data.csv', index=False)
-    conjunctions_df = process_vocab('conjunction')
-    conjunctions_df.to_csv(TEXT_DATA_DIR + 'conjunction_data.csv', index=False)
-    adjectives_df = process_vocab('adjective')
-    adjectives_df.to_csv(TEXT_DATA_DIR + 'adjective_data.csv', index=False)
-    adverbs_df = process_vocab('adverb')
-    adverbs_df.to_csv(TEXT_DATA_DIR + 'adverb_data.csv', index=False)
-    particles_df = process_vocab('particle')
-    particles_df.to_csv(TEXT_DATA_DIR + 'particle_data.csv', index=False)
-    demonstrative_pronouns_df = process_vocab('demonstrative pronoun')
-    demonstrative_pronouns_df.to_csv(TEXT_DATA_DIR +
-                                     'demonstrative_pronoun_data.csv',
-                                     index=False)
-    interrogative_indefinite_pronouns_df = process_vocab('interrogative/indefinite pronoun')
-    interrogative_indefinite_pronouns_df.to_csv(TEXT_DATA_DIR +
-                                                'interrogative_indefinite_pronoun_data.csv',
-                                                index=False)
-    interjections_df = process_vocab('interjection')
-    interjections_df.to_csv(TEXT_DATA_DIR + 'interjection_data.csv',
-                            index=False)
+    # for pos in POS_PROCESSING.keys():
+    #     write_lemmas_df(pos)
+    write_lexicon()

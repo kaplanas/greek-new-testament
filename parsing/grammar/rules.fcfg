@@ -1,7 +1,18 @@
 # Top-level constructions
 
-S -> VP
+S -> J[STANDALONE=y]
+S -> L[STANDALONE=y]
+S -> NP
+S -> VP[FINITE=y]
+
+# Noun phrases
+
+NP -> N
+NP -> E
+NP -> M
+NP -> I
 
 # Verb phrases
 
-VP -> V
+VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n] -> V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n]
+

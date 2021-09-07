@@ -1,1 +1,1 @@
-from file_locs import GRAMMAR_DIR
+from file_locs import GRAMMAR_DIR, LEXICON_FILE

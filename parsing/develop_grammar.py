@@ -31,12 +31,14 @@ def parse_sents():
         trees = None
         if ap is not None:
             trees = [tree for tree in ap]
-            if len(trees) == 1:
-                unambiguous_parses.append((sent[0], sent[1], trees))
-            else:
-                ambiguous_parses.append((sent[0], sent[1], trees))
-        else:
+            if len(trees) == 0:
+                trees = None
+        if trees is None:
             no_parses.append((sent[0], sent[1], trees))
+        elif len(trees) == 1:
+            unambiguous_parses.append((sent[0], sent[1], trees[0]))
+        else:
+            ambiguous_parses.append((sent[0], sent[1], trees))
     return {'parsed': unambiguous_parses,
             'ambiguous': ambiguous_parses,
             'unparsed': no_parses}
