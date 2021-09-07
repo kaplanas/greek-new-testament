@@ -17,9 +17,11 @@ POS_PROCESSING = {
                          'class_cols': ['declension']},
     'verb': {'id_cols': [],
              'form_cols': ['pp' + str(i + 2) for i in range(5)],
-             'class_cols': ['verb_type']},
+             'class_cols': ['verb_type'],
+             'feature_cols': ['copula']},
     'personal pronoun': {'id_cols': [],
-                         'form_cols': ['gs']},
+                         'form_cols': ['gs'],
+                         'feature_cols': ['person']},
     'definite article': {'id_cols': [],
                          'form_cols': ['fem', 'neut'],
                          'class_cols': ['declension']},
@@ -39,7 +41,8 @@ POS_PROCESSING = {
                               'form_cols': ['fem', 'neut'],
                               'class_cols': ['declension']},
     'interrogative/indefinite pronoun': {'id_cols': [],
-                                         'form_cols': ['gs']}
+                                         'form_cols': ['gs'],
+                                         'feature_cols': ['wh']}
 }
 
 
@@ -304,10 +307,10 @@ def write_lexicon():
     # Iterate over parts of speech.
     for pos in POS_PROCESSING.keys():
         # Get unique wordforms.
-        wordforms_df = nt_df[nt_df.pos == pos][['lemma',
-                                                'standardized_wordform',
-                                                'pos'] +
-                                               standard_feature_cols].copy()
+        cols_to_pull = ['lemma', 'standardized_wordform', 'pos'] + standard_feature_cols
+        if pos == 'personal pronoun':
+            cols_to_pull.remove('person')
+        wordforms_df = nt_df[nt_df.pos == pos][cols_to_pull].copy()
         wordforms_df.drop_duplicates(inplace=True)
         # Get supplementary hand-coded features, depending on the POS.
         if 'feature_cols' in POS_PROCESSING[pos].keys():
@@ -334,7 +337,7 @@ def write_lexicon():
                             entry_feats['FINITE'] = 'n'
             if 'feature_cols' in POS_PROCESSING[pos].keys():
                 for feature in POS_PROCESSING[pos]['feature_cols']:
-                    entry_feats[feature.upper()] = r[feature]
+                    entry_feats[feature.upper()] = str(r[feature])
             lexicon_file.write(POS_CODES[pos] + '[' +
                                ', '.join([k + '=' + v
                                           for (k, v) in entry_feats.items()]) +
