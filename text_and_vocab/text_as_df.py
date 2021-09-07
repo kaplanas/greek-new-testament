@@ -27,9 +27,9 @@ def get_morph_codes(df_row):
     return morph_codes
 
 
-# Write the NT text in a format to be read by the NTPlaintextCorpusReader.
+# Write the NT text in a format to be read by the NTTaggedCorpusReader.
 def write_text_plain():
-    """Save the text in a plain-text corpus format."""
+    """Save the text in a tagged corpus format."""
     # Load the text as a dataframe.
     nt_df = load_text_df('nt')
     # Iterate over books.

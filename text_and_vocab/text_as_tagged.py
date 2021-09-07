@@ -36,6 +36,7 @@ class NTTaggedCorpusView(TaggedCorpusView):
             for sent_str in self._sent_tokenizer.tokenize(para_str):
                 ref = BOOK_MAPPING.inv[basename(stream.name).replace('.txt',
                                                                      '')] + \
+                      ' ' + \
                       self._word_tokenizer.tokenize(sent_str, references=True)
                 sent = [str2tuple(s, self._sep)
                         for s in self._word_tokenizer.tokenize(sent_str)]
