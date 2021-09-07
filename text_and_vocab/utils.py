@@ -64,4 +64,6 @@ def get_morph_codes(df_row):
                   CASE_CODES.get(df_row['case'], '-') +\
                   NUMBER_CODES.get(df_row['number'], '-') +\
                   GENDER_CODES.get(df_row['gender'], '-')
+    if df_row['pos'] == 'personal pronoun':
+        morph_codes = morph_codes[0] + '-' + morph_codes[2:]
     return morph_codes
