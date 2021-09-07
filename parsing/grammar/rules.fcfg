@@ -4,15 +4,34 @@ S -> J[STANDALONE=y]
 S -> L[STANDALONE=y]
 S -> NP
 S -> VP[FINITE=y]
+S -> AdjP
+
+S -> NP[PERSON=?p, NUMBER=?n] VP[FINITE=y, PERSON=?p, NUMBER=?n]
+
+S -> C[SECOND_POSITION=n] S
 
 # Noun phrases
 
-NP -> N
-NP -> E
-NP -> M
-NP -> I
+NP -> N_like
+
+N_like[PERSON=3, NUMBER=?n] -> N[NUMBER=?n]
+N_like[PERSON=?p, NUMBER=?n] -> E[PERSON=?p, NUMBER=?n]
+N_like[PERSON=3, NUMBER=?n] -> M[NUMBER=?n]
+N_like[PERSON=3, NUMBER=?n] -> I[NUMBER=?n]
+N_like[PERSON=3, NUMBER=?n] -> A[NUMBER=?n]
 
 # Verb phrases
 
+V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n] -> Neg V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n]
+
 VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n] -> V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n]
+
+# Adjunct phrases
+
+AdjP -> B
+
+# Negative particles
+
+Neg -> B[NEGATIVE=y]
+Neg -> L[NEGATIVE=y]
 

@@ -40,7 +40,7 @@ def write_text_tagged():
                                                        get_morph_codes(r)]
                 if re.match('.*[.;·]', r['wordform']) and \
                         r['lemma'] not in ['le/gw', 'fhmi/', 'gra/fw', 'kai/',
-                                           'h)/']:
+                                           'h)/', 'ga/r', 'menou=nge']:
                     file.write(str(chapter) + ':' + str(current_verses[0]))
                     if len(current_verses) > 1:
                         file.write('-' + str(current_verses[-1]))
