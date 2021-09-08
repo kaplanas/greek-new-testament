@@ -2,14 +2,7 @@ import pickle
 from text_and_vocab import load_text_tagged
 from file_locs import PARSER
 
-SAVED_PARSES_FILE = 'saved_parses.pickle'
-
-
-def get_shortest_sents():
-    """Get the shortest sentences, by word count."""
-    nt = load_text_tagged()
-    ts = nt.tagged_sents(refs=True)
-    return sorted(ts, key=lambda s: len(s[1]))
+SAVED_PARSES_FILE = '../parsing/saved_parses/saved_parses'
 
 
 def attempt_to_parse(s):
@@ -20,68 +13,127 @@ def attempt_to_parse(s):
         return None
 
 
-def parse_sents():
+def parse_sents(sent_length=1):
     """Parse as many sentences as possible."""
-    unambiguous_parses = []
-    ambiguous_parses = []
-    no_parses = []
-    for sent in get_shortest_sents():
+    # Load the text.
+    nt = load_text_tagged()
+    ts = nt.tagged_sents(refs=True)
+    # Filter to sentences of the specified length.
+    ts = [sent for sent in ts if len(sent[1]) == sent_length]
+    parses = []
+    for sent in ts:
         ap = attempt_to_parse([w + '_' + m
                                for (w, m) in sent[1]])
-        trees = None
+        trees = []
         if ap is not None:
             trees = [tree for tree in ap]
             if len(trees) == 0:
-                trees = None
-        if trees is None:
-            no_parses.append((sent[0], sent[1], trees))
-        elif len(trees) == 1:
-            unambiguous_parses.append((sent[0], sent[1], trees[0]))
-        else:
-            ambiguous_parses.append((sent[0], sent[1], trees))
-    return {'parsed': unambiguous_parses,
-            'ambiguous': ambiguous_parses,
-            'unparsed': no_parses}
+                trees = []
+        parses.append((sent[0],
+                       ' '.join(w for w, _ in sent[1]),
+                       [w + '_' + m for w, m in sent[1]],
+                       trees))
+    return parses
 
 
-def sentence_ids(parses):
+def get_unambiguous_sents(parses):
+    """Get sentences with exactly one parse."""
+    if len(parses) == 0:
+        return []
+    else:
+        return [p for p in parses if len(p[3]) == 1]
+
+
+def get_ambiguous_sents(parses):
+    """Get sentences with more than one parse."""
+    if len(parses) == 0:
+        return []
+    else:
+        return [p for p in parses if len(p[3]) > 1]
+
+
+def get_parsed_sents(parses):
+    """Get sentences with at least one parse."""
+    if len(parses) == 0:
+        return []
+    else:
+        return [p for p in parses if len(p[3]) > 0]
+
+
+def get_unparsed_sents(parses):
+    """Get sentences with no parse."""
+    if len(parses) == 0:
+        return []
+    else:
+        return [p for p in parses if len(p[3]) == 0]
+
+
+def get_sent_ids(parses):
     """Get a list of just references and wordforms, to uniquely identify a sentence."""
-    return [(p[0], ' '.join([w for w, _ in p[1]]))
-            for p in parses]
+    if len(parses) == 0:
+        return []
+    else:
+        return [(p[0], p[1]) for p in parses]
 
 
-def save_parses(parses, filename=SAVED_PARSES_FILE):
+def get_parses_filename(filename=SAVED_PARSES_FILE, sent_length=None):
+    """Get the filename for saved parses of a given length."""
+    parses_filename = filename
+    if sent_length is not None:
+        parses_filename = parses_filename + '_' + str(sent_length)
+    parses_filename = parses_filename + '.pickle'
+    return parses_filename
+
+
+def save_parses(parses, filename=SAVED_PARSES_FILE, include_count=True):
     """Save parses as a pickle file."""
-    with open(filename, 'wb') as file:
-        pickle.dump(parses, file)
+    for k, v in parses.items():
+        sent_length = None
+        if include_count:
+            sent_length = len(parses[k][0][2])
+        with open(get_parses_filename(filename, sent_length), 'wb') as file:
+            pickle.dump(parses[k], file)
 
 
-def load_parses(filename=SAVED_PARSES_FILE):
+def load_parses(filename=SAVED_PARSES_FILE, sent_length=None):
     """Load the saved parses from a pickle file."""
-    with open(filename, 'rb') as file:
-        parses = pickle.load(file)
+    try:
+        with open(get_parses_filename(filename, sent_length), 'rb') as file:
+            parses = pickle.load(file)
+    except:
+        parses = []
     return parses
 
 
 if __name__ == '__main__':
-    old_parses = load_parses()
-    parses = parse_sents()
-    new_parses = [s
-                  for s in sentence_ids(parses['parsed'])
-                  if s not in sentence_ids(old_parses['parsed'])]
-    new_ambiguous_previously_parsed = [s
-                                       for s in sentence_ids(parses['ambiguous'])
-                                       if s in sentence_ids(old_parses['parsed'])]
-    new_ambiguous_previously_unparsed = [s
-                                         for s in sentence_ids(parses['ambiguous'])
-                                         if s in sentence_ids(old_parses['unparsed'])]
-    new_unparsed = [s
-                    for s in sentence_ids(parses['unparsed'])
-                    if s not in sentence_ids(old_parses['unparsed'])]
-    print('PARSED: ' + str(len(parses['parsed'])) +
-          ' (' + str(len(new_parses)) + ' new)')
-    print('AMBIGUOUS: ' + str(len(parses['ambiguous'])) +
-          ' (' + str(len(new_ambiguous_previously_parsed)) + ' previously parsed, ' +
-          str(len(new_ambiguous_previously_unparsed)) + ' previously unparsed)')
-    print('UNPARSED: ' + str(len(parses['unparsed'])) +
-          ' (' + str(len(new_unparsed)) + ' previously parsed)')
+    sent_lengths = [1, 2]
+    old_parses = {}
+    parses = {}
+    new_unamb = {}
+    new_amb_p = {}
+    new_amb_up = {}
+    new_unparsed = {}
+    for sl in [str(sent_length) for sent_length in sent_lengths]:
+        old_parses[sl] = load_parses(sent_length=int(sl))
+        parses[sl] = parse_sents(sent_length=int(sl))
+        new_unamb[sl] = [s
+                         for s in get_sent_ids(get_unambiguous_sents(parses[sl]))
+                         if s in get_sent_ids(get_unparsed_sents(old_parses[sl]))]
+        new_amb_p[sl] = [s
+                         for s in get_sent_ids(get_ambiguous_sents(parses[sl]))
+                         if s in get_sent_ids(get_parsed_sents(old_parses[sl]))]
+        new_amb_up[sl] = [s
+                          for s in get_sent_ids(get_ambiguous_sents(parses[sl]))
+                          if s in get_sent_ids(get_unparsed_sents(old_parses[sl]))]
+        new_unparsed[sl] = [s
+                            for s in get_sent_ids(get_unparsed_sents(parses[sl]))
+                            if s in get_sent_ids(get_parsed_sents(old_parses[sl]))]
+        print('*** Sentences of length ' + str(sl)  + ' ***')
+        print('PARSED: ' + str(len(get_unambiguous_sents(parses[sl]))) +
+              ' (' + str(len(new_unamb[sl])) + ' new)')
+        print('AMBIGUOUS: ' + str(len(get_ambiguous_sents(parses[sl]))) +
+              ' (' + str(len(new_amb_p[sl])) + ' previously parsed, ' +
+              str(len(new_amb_up[sl])) + ' previously unparsed)')
+        print('UNPARSED: ' + str(len(get_unparsed_sents(parses[sl]))) +
+              ' (' + str(len(new_unparsed[sl])) + ' previously parsed)')
+        print('')

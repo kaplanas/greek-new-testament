@@ -13,27 +13,31 @@ S -> IP
 
 # Subject + predicate
 
-IP -> VP[FINITE=y]
+IP[MOOD=?m, TENSE=?t] -> VP[FINITE=y, MOOD=?m, TENSE=?t]
 
-IP -> NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n, GENDER=?g] VP[FINITE=y, PERSON=?p, NUMBER=?n, GENDER=?g]
-IP -> NP[WH=n, CASE=nominative, PERSON=3, NUMBER=plural, GENDER=neuter] VP[FINITE=y, PERSON=3, NUMBER=singular, GENDER=neuter]
-IP -> VP[FINITE=y, PERSON=?p, NUMBER=?n, GENDER=?g] NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n, GENDER=?g]
-IP -> VP[FINITE=y, PERSON=3, NUMBER=singular, GENDER=neuter] NP[WH=n, CASE=nominative, PERSON=3, NUMBER=plural, GENDER=neuter]
+IP[MOOD=?m, TENSE=?t] -> NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n, GENDER=?g] VP[FINITE=y, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, GENDER=?g]
+IP[MOOD=?m, TENSE=?t] -> NP[WH=n, CASE=nominative, PERSON=3, NUMBER=plural, GENDER=neuter] VP[FINITE=y, MOOD=?m, TENSE=?t, PERSON=3, NUMBER=singular, GENDER=neuter]
+IP[MOOD=?m, TENSE=?t] -> VP[FINITE=y, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, GENDER=?g] NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n, GENDER=?g]
+IP[MOOD=?m, TENSE=?t] -> VP[FINITE=y, MOOD=?m, TENSE=?t, PERSON=3, NUMBER=singular, GENDER=neuter] NP[WH=n, CASE=nominative, PERSON=3, NUMBER=plural, GENDER=neuter]
 
-IP/?x -> VP[FINITE=y, PERSON=?p, NUMBER=?n, GENDER=?g]/?x
-IP/?x -> NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n, GENDER=?g] VP[FINITE=y, PERSON=?p, NUMBER=?n, GENDER=?g]/?x
+IP[MOOD=?m, TENSE=?t]/?x -> VP[FINITE=y, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, GENDER=?g]/?x
+IP[MOOD=?m, TENSE=?t]/?x -> NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n, GENDER=?g] VP[FINITE=y, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, GENDER=?g]/?x
 
 # Wh constructions
 
-IP -> NP[WH=y, CASE=nominative, PERSON=3, NUMBER=?n, GENDER=?g] VP[FINITE=y, PERSON=3, NUMBER=?n, GENDER=?g]
-IP -> NP[WH=y, CASE=?c] IP/NP[CASE=?c]
-IP -> AdvP[WH=y] IP
+IP[MOOD=?m, TENSE=?t] -> NP[WH=y, CASE=nominative, PERSON=3, NUMBER=?n, GENDER=?g] VP[FINITE=y, MOOD=?m, TENSE=?t, PERSON=3, NUMBER=?n, GENDER=?g]
+IP[MOOD=?m, TENSE=?t] -> NP[WH=y, CASE=?c] IP[MOOD=?m, TENSE=?t]/NP[CASE=?c]
+IP[MOOD=?m, TENSE=?t] -> AdvP[WH=y] IP[MOOD=?m, TENSE=?t]
 
 # Things that can get tacked onto sentences
 
 S -> C[SECOND_POSITION=n] S
 S -> AdjP S
 S -> S AdjP
+
+# Conjunction
+
+IP[MOOD=?m, TENSE=?t] -> IP[MOOD=?m, TENSE=?t] IP[MOOD=?m, TENSE=?t]
 
 ######################
 #### Noun phrases ####
@@ -63,38 +67,38 @@ N_like[WH=n, CASE=?c, PERSON=3, NUMBER=?n, GENDER=?g] -> A[STANDALONE=y, CASE=?c
 
 # Ordinary verbs
 
-VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n] -> V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n]
+VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n] -> V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n]
 
-VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n] -> V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, ACC_ARG=y] NP[WH=n, CASE=accusative]
-VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n] -> NP[WH=n, CASE=accusative] V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, ACC_ARG=y]
-VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n]/?x -> V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, ACC_ARG=y] NP[CASE=accusative]/?x
+VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n] -> V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, ACC_ARG=y] NP[WH=n, CASE=accusative]
+VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n] -> NP[WH=n, CASE=accusative] V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, ACC_ARG=y]
+VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n]/?x -> V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, ACC_ARG=y] NP[CASE=accusative]/?x
 
-VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n] -> NP[WH=n, CASE=dative] V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, DAT_ARG=y]
-VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n] -> V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, DAT_ARG=y] NP[WH=n, CASE=dative]
-VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n]/?x -> V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, DAT_ARG=y] NP[CASE=dative]/?x
+VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n] -> NP[WH=n, CASE=dative] V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, DAT_ARG=y]
+VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n] -> V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, DAT_ARG=y] NP[WH=n, CASE=dative]
+VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n]/?x -> V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, DAT_ARG=y] NP[CASE=dative]/?x
 
-VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n] -> NP[WH=n, CASE=genitive] V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, GEN_ARG=y]
-VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n] -> V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, GEN_ARG=y] NP[WH=n, CASE=genitive]
-VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n]/?x -> V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, GEN_ARG=y] NP[CASE=genitive]/?x
+VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n] -> NP[WH=n, CASE=genitive] V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, GEN_ARG=y]
+VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n] -> V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, GEN_ARG=y] NP[WH=n, CASE=genitive]
+VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n]/?x -> V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, GEN_ARG=y] NP[CASE=genitive]/?x
 
-VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n]/?x -> V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, ACC_ARG=y, DAT_ARG=y] NP[WH=n, CASE=dative] NP[WH=n, CASE=accusative]/?x
+VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n]/?x -> V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, ACC_ARG=y, DAT_ARG=y] NP[WH=n, CASE=dative] NP[WH=n, CASE=accusative]/?x
 
 # Copula verbs
 
 PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n, GENDER=?g] -> NP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n, GENDER=?g]
 PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n, GENDER=?g] -> A[CASE=nominative, NUMBER=?n, GENDER=?g]
 
-VP[FINITE=y, MOOD=indicative, NUMBER=?n, GENDER=?g] -> PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n, GENDER=?g]
-VP[FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n, GENDER=?g] -> V[COPULA=y, FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n] PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n, GENDER=?g]
-VP[FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n, GENDER=?g] -> PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n, GENDER=?g] V[COPULA=y, FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n]
+VP[FINITE=y, MOOD=indicative, TENSE=indicative, NUMBER=?n, GENDER=?g] -> PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n, GENDER=?g]
+VP[FINITE=y, MOOD=?m, PERSON=?p, TENSE=?t, NUMBER=?n, GENDER=?g] -> V[COPULA=y, FINITE=y, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n] PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n, GENDER=?g]
+VP[FINITE=y, MOOD=?m, PERSON=?p, TENSE=?t, NUMBER=?n, GENDER=?g] -> PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n, GENDER=?g] V[COPULA=y, FINITE=y, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n]
 
 # Negated verbs
 
-V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, GENDER=?g, ACC_ARG=?x, DAT_ARG=?y, GEN_ARG=?z] -> Neg V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, GENDER=?g, ACC_ARG=?x, DAT_ARG=?y, GEN_ARG=?z]
+V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, GENDER=?g, ACC_ARG=?x, DAT_ARG=?y, GEN_ARG=?z] -> Neg V[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, GENDER=?g, ACC_ARG=?x, DAT_ARG=?y, GEN_ARG=?z]
 
 # Adjuncts
 
-VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, GENDER=?g] -> AdvP[WH=n] VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, GENDER=?g]
+VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, GENDER=?g] -> AdvP[WH=n] VP[FINITE=?f, MOOD=?m, TENSE=?t, PERSON=?p, NUMBER=?n, GENDER=?g]
 
 #########################
 #### Adjunct phrases ####
@@ -102,7 +106,7 @@ VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, GENDER=?g] -> AdvP[WH=n] VP[FINITE=
 
 # Adverbs and adverby things
 
-AdvP[WH=?w] -> B[WH=?w]
+AdvP[WH=?w] -> B[WH=?w, NEGATIVE=n]
 AdvP[WH=?w] -> I[WH=?w, CASE=accusative, GENDER=neuter]
 AdvP[WH=n] -> A[CASE=accusative, GENDER=neuter]
 
@@ -114,7 +118,7 @@ AdjP[WH=n] -> N[CASE=vocative]
 #### Miscellaneous ####
 #######################
 
-# Negative particles
+# Negation particles
 
 Neg -> B[NEGATIVE=y]
 Neg -> L[NEGATIVE=y]
