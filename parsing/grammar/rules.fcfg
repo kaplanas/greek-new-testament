@@ -8,6 +8,7 @@ S -> J[STANDALONE=y]
 S -> L[STANDALONE=y]
 S -> NP[NULLABLE=n]
 S -> NP[NULLABLE=n, CASE=nominative] NP[NULLABLE=n, CASE=dative]
+S -> D[CASE=nominative] C[SECOND_POSITION=y]
 S -> A
 S -> AdvP
 S -> IP
