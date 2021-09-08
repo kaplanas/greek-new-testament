@@ -18,7 +18,7 @@ POS_PROCESSING = {
     'verb': {'id_cols': [],
              'form_cols': ['pp' + str(i + 2) for i in range(5)],
              'class_cols': ['verb_type'],
-             'feature_cols': ['copula']},
+             'feature_cols': ['copula', 'acc_arg', 'dat_arg', 'gen_arg']},
     'personal pronoun': {'id_cols': [],
                          'form_cols': ['gs'],
                          'feature_cols': ['person']},
