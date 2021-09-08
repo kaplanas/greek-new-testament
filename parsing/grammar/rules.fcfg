@@ -7,13 +7,20 @@
 S -> J[STANDALONE=y]
 S -> L[STANDALONE=y]
 S -> NP
-S -> VP[FINITE=y]
+S -> A
 S -> AdjP
+S -> IP
 
 # Subject + predicate
 
-S -> NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n] VP[FINITE=y, PERSON=?p, NUMBER=?n]
-S -> VP[FINITE=y, PERSON=?p, NUMBER=?n] NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n]
+IP -> VP[FINITE=y]
+IP -> NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n] VP[FINITE=y, PERSON=?p, NUMBER=?n]
+IP -> VP[FINITE=y, PERSON=?p, NUMBER=?n] NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n]
+
+# Wh constructions
+
+IP -> NP[WH=y, CASE=nominative, PERSON=3, NUMBER=?n] VP[FINITE=y, PERSON=3, NUMBER=?n]
+IP -> AdjP[WH=y] IP
 
 # Initial conjunction always allowed
 
@@ -27,6 +34,7 @@ S -> C[SECOND_POSITION=n] S
 
 NP[WH=?w, CASE=?c, PERSON=?p, NUMBER=?n] -> N_like[WH=?w, CASE=?c, PERSON=?p, NUMBER=?n]
 NP[WH=n, CASE=?c, PERSON=3, NUMBER=?n] -> D[CASE=?c, NUMBER=?n] N_like[WH=n, CASE=?c, PERSON=3, NUMBER=?n]
+NP[WH=n, CASE=?c, PERSON=3, NUMBER=?n] -> D[CASE=?c, NUMBER=?n] A[CASE=?c, NUMBER=?n]
 
 # Noun-like vocabulary items
 
@@ -34,7 +42,7 @@ N_like[WH=n, CASE=?c, PERSON=3, NUMBER=?n] -> N[CASE=?c, NUMBER=?n]
 N_like[WH=n, CASE=?c, PERSON=?p, NUMBER=?n] -> E[CASE=?c, PERSON=?p, NUMBER=?n]
 N_like[WH=n, CASE=?c, PERSON=3, NUMBER=?n] -> M[CASE=?c, NUMBER=?n]
 N_like[WH=?w, CASE=?c, PERSON=3, NUMBER=?n] -> I[CASE=?c, WH=?w, NUMBER=?n]
-N_like[WH=n, CASE=?c, PERSON=3, NUMBER=?n] -> A[CASE=?c, NUMBER=?n]
+N_like[WH=n, CASE=?c, PERSON=3, NUMBER=?n] -> A[STANDALONE=y, CASE=?c, NUMBER=?n]
 
 ######################
 #### Verb phrases ####
@@ -46,8 +54,12 @@ VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n] -> V[FINITE=?f, MOOD=?m, PERSON=?p,
 
 # Copula verbs
 
-VP[FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n] -> V[COPULA=y, FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n] NP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n]
-VP[FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n] -> NP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n] V[COPULA=y, FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n]
+PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n] -> NP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n]
+PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n] -> A[CASE=nominative, NUMBER=?n]
+
+VP[FINITE=y, MOOD=indicative, PERSON=3, NUMBER=?n] -> PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n]
+VP[FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n] -> V[COPULA=y, FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n] PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n]
+VP[FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n] -> PredP[WH=n, CASE=nominative, PERSON=3, NUMBER=?n] V[COPULA=y, FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n]
 
 # Negated verbs
 
@@ -59,7 +71,7 @@ V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n] -> Neg V[FINITE=?f, MOOD=?m, PERSON=
 
 # Adverbs as adjuncts
 
-AdjP -> B
+AdjP[WH=?w] -> B[WH=?w]
 
 #######################
 #### Miscellaneous ####
