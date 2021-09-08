@@ -100,6 +100,16 @@ VP[FINITE=?f, VERBLESS=?vl, MOOD=?m, AGR=?a] -> AdvP[WH=n] VP[FINITE=?f, VERBLES
 #### Adjunct phrases ####
 #########################
 
+# Prepositional phrases
+
+PP[WH=?w] -> P[ACC_ARG=y, POSTPOS=n] NP[WH=?w, CASE=accusative]
+PP[WH=?w] -> P[DAT_ARG=y, POSTPOS=n] NP[WH=?w, CASE=dative]
+PP[WH=?w] -> P[GEN_ARG=y, POSTPOS=n] NP[WH=?w, CASE=genitive]
+
+PP[WH=?w] -> NP[WH=?w, CASE=genitive] P[GEN_ARG=y, POSTPOS=y]
+
+AdvP[WH=?n] -> PP[WH=?w]
+
 # Adverbs and adverby things
 
 AdvP[WH=?w] -> B[WH=?w, NEGATIVE=n]
