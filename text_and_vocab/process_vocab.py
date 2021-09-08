@@ -45,6 +45,9 @@ POS_PROCESSING = {
                                          'form_cols': ['gs'],
                                          'feature_cols': ['wh']}
 }
+SUB_FEAT_STRUCTS = {
+    'AGR': ['PERSON', 'NUMBER', 'GENDER']
+}
 
 
 def get_unique_forms(pos, lemma_or_wordform='lemma'):
@@ -336,13 +339,28 @@ def write_lexicon():
                             entry_feats['FINITE'] = 'y'
                         else:
                             entry_feats['FINITE'] = 'n'
+                elif feature == 'person' and pos in ['noun',
+                                                     'demonstrative pronoun',
+                                                     'interrogative/indefinite pronoun',
+                                                     'adjective']:
+                    entry_feats[feature.upper()] = '3'
             if 'feature_cols' in POS_PROCESSING[pos].keys():
                 for feature in POS_PROCESSING[pos]['feature_cols']:
                     entry_feats[feature.upper()] = str(r[feature])
-            lexicon_file.write(POS_CODES[pos] + '[' +
-                               ', '.join([k + '=' + v
-                                          for (k, v) in entry_feats.items()]) +
-                               ']' + ' -> ' + "'" + r['standardized_wordform'] +
+            feat_struct = ', '.join(k + '=' + v
+                                    for k, v in entry_feats.items()
+                                    if k not in [f
+                                                 for _, sfs_feats in SUB_FEAT_STRUCTS.items()
+                                                 for f in sfs_feats])
+            for sfs_name, sfs_feats in SUB_FEAT_STRUCTS.items():
+                if len(set(entry_feats.keys()).intersection(set(sfs_feats))) > 0:
+                    sub_feat_struct = sfs_name + '=[' +\
+                                      ', '.join(k + '=' + v
+                                                for k, v in entry_feats.items()
+                                                if k in sfs_feats) + ']'
+                    feat_struct = ', '.join([feat_struct, sub_feat_struct])
+            lexicon_file.write(POS_CODES[pos] + '[' + feat_struct + ']' +
+                               ' -> ' + "'" + r['standardized_wordform'] +
                                '_' + get_morph_codes(r) + "'" + '\n')
     lexicon_file.close()
 

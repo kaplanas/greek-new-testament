@@ -109,19 +109,23 @@ if __name__ == '__main__':
     sent_lengths = [1, 2]
     old_parses = {}
     parses = {}
-    new_unamb = {}
-    new_amb_p = {}
+    new_unamb_amb = {}
+    new_unamb_up = {}
+    new_amb_unamb = {}
     new_amb_up = {}
     new_unparsed = {}
     for sl in [str(sent_length) for sent_length in sent_lengths]:
         old_parses[sl] = load_parses(sent_length=int(sl))
         parses[sl] = parse_sents(sent_length=int(sl))
-        new_unamb[sl] = [s
-                         for s in get_sent_ids(get_unambiguous_sents(parses[sl]))
-                         if s in get_sent_ids(get_unparsed_sents(old_parses[sl]))]
-        new_amb_p[sl] = [s
-                         for s in get_sent_ids(get_ambiguous_sents(parses[sl]))
-                         if s in get_sent_ids(get_parsed_sents(old_parses[sl]))]
+        new_unamb_amb[sl] = [s
+                             for s in get_sent_ids(get_unambiguous_sents(parses[sl]))
+                             if s in get_sent_ids(get_ambiguous_sents(old_parses[sl]))]
+        new_unamb_up[sl] = [s
+                            for s in get_sent_ids(get_unambiguous_sents(parses[sl]))
+                            if s in get_sent_ids(get_unparsed_sents(old_parses[sl]))]
+        new_amb_unamb[sl] = [s
+                             for s in get_sent_ids(get_ambiguous_sents(parses[sl]))
+                             if s in get_sent_ids(get_unambiguous_sents(old_parses[sl]))]
         new_amb_up[sl] = [s
                           for s in get_sent_ids(get_ambiguous_sents(parses[sl]))
                           if s in get_sent_ids(get_unparsed_sents(old_parses[sl]))]
@@ -130,9 +134,10 @@ if __name__ == '__main__':
                             if s in get_sent_ids(get_parsed_sents(old_parses[sl]))]
         print('*** Sentences of length ' + str(sl)  + ' ***')
         print('PARSED: ' + str(len(get_unambiguous_sents(parses[sl]))) +
-              ' (' + str(len(new_unamb[sl])) + ' new)')
+              ' (' + str(len(new_unamb_amb[sl])) + ' previously ambiguous, ' +
+              str(len(new_unamb_up[sl])) + ' previously unparsed)')
         print('AMBIGUOUS: ' + str(len(get_ambiguous_sents(parses[sl]))) +
-              ' (' + str(len(new_amb_p[sl])) + ' previously parsed, ' +
+              ' (' + str(len(new_amb_unamb[sl])) + ' previously unambiguous, ' +
               str(len(new_amb_up[sl])) + ' previously unparsed)')
         print('UNPARSED: ' + str(len(get_unparsed_sents(parses[sl]))) +
               ' (' + str(len(new_unparsed[sl])) + ' previously parsed)')
