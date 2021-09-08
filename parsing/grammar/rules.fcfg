@@ -8,26 +8,32 @@ S -> J[STANDALONE=y]
 S -> L[STANDALONE=y]
 S -> NP
 S -> A
-S -> AdjP
+S -> AdvP
 S -> IP
 
 # Subject + predicate
 
 IP -> VP[FINITE=y]
+
 IP -> NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n, GENDER=?g] VP[FINITE=y, PERSON=?p, NUMBER=?n, GENDER=?g]
+IP -> NP[WH=n, CASE=nominative, PERSON=3, NUMBER=plural, GENDER=neuter] VP[FINITE=y, PERSON=3, NUMBER=singular, GENDER=neuter]
+IP -> VP[FINITE=y, PERSON=?p, NUMBER=?n, GENDER=?g] NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n, GENDER=?g]
+IP -> VP[FINITE=y, PERSON=3, NUMBER=singular, GENDER=neuter] NP[WH=n, CASE=nominative, PERSON=3, NUMBER=plural, GENDER=neuter]
+
 IP/?x -> VP[FINITE=y, PERSON=?p, NUMBER=?n, GENDER=?g]/?x
 IP/?x -> NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n, GENDER=?g] VP[FINITE=y, PERSON=?p, NUMBER=?n, GENDER=?g]/?x
-IP -> VP[FINITE=y, PERSON=?p, NUMBER=?n, GENDER=?g] NP[WH=n, CASE=nominative, PERSON=?p, NUMBER=?n, GENDER=?g]
 
 # Wh constructions
 
 IP -> NP[WH=y, CASE=nominative, PERSON=3, NUMBER=?n, GENDER=?g] VP[FINITE=y, PERSON=3, NUMBER=?n, GENDER=?g]
 IP -> NP[WH=y, CASE=?c] IP/NP[CASE=?c]
-IP -> AdjP[WH=y] IP
+IP -> AdvP[WH=y] IP
 
-# Initial conjunction always allowed
+# Things that can get tacked onto sentences
 
 S -> C[SECOND_POSITION=n] S
+S -> AdjP S
+S -> S AdjP
 
 ######################
 #### Noun phrases ####
@@ -86,18 +92,23 @@ VP[FINITE=y, MOOD=?m, PERSON=?p, NUMBER=?n, GENDER=?g] -> PredP[WH=n, CASE=nomin
 
 V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, GENDER=?g, ACC_ARG=?x, DAT_ARG=?y, GEN_ARG=?z] -> Neg V[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, GENDER=?g, ACC_ARG=?x, DAT_ARG=?y, GEN_ARG=?z]
 
+# Adjuncts
+
+VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, GENDER=?g] -> AdvP[WH=n] VP[FINITE=?f, MOOD=?m, PERSON=?p, NUMBER=?n, GENDER=?g]
+
 #########################
 #### Adjunct phrases ####
 #########################
 
-# Adverbs as adjuncts
+# Adverbs and adverby things
 
-AdjP[WH=?w] -> B[WH=?w]
+AdvP[WH=?w] -> B[WH=?w]
+AdvP[WH=?w] -> I[WH=?w, CASE=accusative, GENDER=neuter]
+AdvP[WH=n] -> A[CASE=accusative, GENDER=neuter]
 
-# Neuter accusative nouny things as adjuncts
+# Vocatives as adjuncts
 
-AdjP[WH=?w] -> I[WH=?w, CASE=accusative, GENDER=neuter]
-AdjP[WH=n] -> A[CASE=accusative, GENDER=neuter]
+AdjP[WH=n] -> N[CASE=vocative]
 
 #######################
 #### Miscellaneous ####

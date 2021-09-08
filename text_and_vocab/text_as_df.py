@@ -54,4 +54,4 @@ if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     nt_df = load_text_df('nt')
     lxx_df = load_text_df('lxx')
-    write_text_tagged()
+    # write_text_tagged()
