@@ -100,6 +100,7 @@ V[FINITE=?f, MOOD=?m, AGR=?a, ACC_ARG=?aa, DAT_ARG=?da, GEN_ARG=?ga, INF_ARG=?ia
 # Adjuncts
 
 VP[FINITE=?f, VERBLESS=?vl, MOOD=?m, AGR=?a] -> AdvP[WH=n] VP[FINITE=?f, VERBLESS=?vl, NULLABLE=n, MOOD=?m, AGR=?a]
+VP[FINITE=?f, VERBLESS=?vl, MOOD=?m, AGR=?a] -> VP[FINITE=?f, VERBLESS=?vl, NULLABLE=n, MOOD=?m, AGR=?a] AdvP[WH=n]
 
 #########################
 #### Adjunct phrases ####
