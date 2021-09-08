@@ -44,6 +44,7 @@ IP[VERBLESS=n, MOOD=?m] -> IP[VERBLESS=n, MOOD=?m] IP[VERBLESS=n, MOOD=?m]
 
 NP[WH=?w, CASE=?c, AGR=?a] -> N_like[WH=?w, CASE=?c, AGR=?a]
 NP[WH=n, CASE=?c, AGR=?a] -> D[CASE=?c, AGR=?a] N_like[WH=n, CASE=?c, AGR=?a[PERSON=3]]
+NP[WH=?w, CASE=?c, AGR=?a] -> A[CASE=?c, AGR=?a] N_like[WH=?w, CASE=?c, AGR=?a]
 NP[WH=n, CASE=?c, AGR=?a[PERSON=3]] -> D[CASE=?c, AGR=?a] A[CASE=?c, AGR=?a]
 
 # Traces and other empty things
