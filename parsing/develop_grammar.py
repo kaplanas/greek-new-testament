@@ -105,6 +105,14 @@ def load_parses(filename=SAVED_PARSES_FILE, sent_length=None):
     return parses
 
 
+def show_parses(parses, ref):
+    """Show the parse trees of a sentence, IDed by its scripture reference."""
+    for parse in parses:
+        if parse[0] == ref:
+            for tree in parse[3]:
+                print(tree)
+
+
 if __name__ == '__main__':
     sent_lengths = [1, 2]
     old_parses = {}

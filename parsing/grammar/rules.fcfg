@@ -13,14 +13,14 @@ S -> IP
 
 # Subject + predicate
 
-IP[VERBLESS=?vl, MOOD=?m] -> NP[NULLABLE=y, WH=n, CASE=nominative, AGR=?a] VP[FINITE=y, VERBLESS=?vl, MOOD=?m, AGR=?a]
-IP[VERBLESS=?vl, MOOD=?m] -> NP[NULLABLE=n, WH=n, CASE=nominative, AGR=[PERSON=3, NUMBER=plural, GENDER=neuter]] VP[FINITE=y, VERBLESS=?vl, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]
-IP[VERBLESS=?vl, MOOD=?m] -> VP[FINITE=y, VERBLESS=?vl, MOOD=?m, AGR=?a] NP[NULLABLE=n, WH=n, CASE=nominative, AGR=?a]
-IP[VERBLESS=?vl, MOOD=?m] -> VP[FINITE=y, VERBLESS=?vl, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]] NP[NULLABLE=n, WH=n, CASE=nominative, AGR=[PERSON=3, NUMBER=plural, GENDER=neuter]]
+IP[VERBLESS=?vl, MOOD=?m] -> NP[NULLABLE=y, WH=n, CASE=nominative, AGR=?a] VP[FINITE=y, VERBLESS=?vl, NULLABLE=n, MOOD=?m, AGR=?a]
+IP[VERBLESS=?vl, MOOD=?m] -> NP[NULLABLE=n, WH=n, CASE=nominative, AGR=[PERSON=3, NUMBER=plural, GENDER=neuter]] VP[FINITE=y, VERBLESS=?vl, NULLABLE=n, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]
+IP[VERBLESS=?vl, MOOD=?m] -> VP[FINITE=y, VERBLESS=?vl, NULLABLE=n, MOOD=?m, AGR=?a] NP[NULLABLE=n, WH=n, CASE=nominative, AGR=?a]
+IP[VERBLESS=?vl, MOOD=?m] -> VP[FINITE=y, VERBLESS=?vl, NULLABLE=n, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]] NP[NULLABLE=n, WH=n, CASE=nominative, AGR=[PERSON=3, NUMBER=plural, GENDER=neuter]]
 
 # Wh constructions
 
-IP[VERBLESS=?vl, MOOD=?m] -> NP[WH=y, CASE=nominative, AGR=?a] VP[FINITE=y, VERBLESS=?vl, MOOD=?m, AGR=?a]
+IP[VERBLESS=?vl, MOOD=?m] -> NP[WH=y, CASE=nominative, AGR=?a] VP[FINITE=y, VERBLESS=?vl, NULLABLE=n, MOOD=?m, AGR=?a]
 IP[VERBLESS=?vl, MOOD=?m] -> NP[WH=y, CASE=?c] IP[VERBLESS=?vl, MOOD=?m]/NP[CASE=?c]
 IP[VERBLESS=?vl, MOOD=?m] -> AdvP[WH=y] IP[VERBLESS=?vl, MOOD=?m]
 
@@ -48,6 +48,7 @@ NP[WH=n, CASE=?c, AGR=[PERSON=3, NUMBER=?n, GENDER=?g]] -> D[CASE=?c, NUMBER=?n,
 
 NP[CASE=?c]/NP[CASE=?c] ->
 NP[NULLABLE=y, WH=n] ->
+VP[NULLABLE=y] ->
 
 # Noun-like vocabulary items
 
@@ -63,7 +64,7 @@ N_like[WH=n, CASE=?c, AGR=?a] -> A[STANDALONE=y, CASE=?c, AGR=?a]
 
 # Ordinary verbs
 
-VP[FINITE=?f, VERBLESS=n, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?a, ACC_ARG=n, DAT_ARG=n, GEN_ARG=n]
+VP[FINITE=?f, VERBLESS=n, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?a, ACC_ARG=n, DAT_ARG=n, GEN_ARG=n, INF_ARG=n]
 
 VP[FINITE=?f, VERBLESS=n, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?a, ACC_ARG=y] NP[NULLABLE=y, WH=n, CASE=accusative]
 VP[FINITE=?f, VERBLESS=n, MOOD=?m, AGR=?a] -> NP[NULLABLE=n, WH=n, CASE=accusative] V[FINITE=?f, MOOD=?m, AGR=?a, ACC_ARG=y]
@@ -76,6 +77,9 @@ VP[FINITE=?f, VERBLESS=n, MOOD=?m, AGR=?a]/?x -> V[FINITE=?f, MOOD=?m, AGR=?a, D
 VP[FINITE=?f, VERBLESS=n, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?a, GEN_ARG=y] NP[NULLABLE=y, WH=n, CASE=genitive]
 VP[FINITE=?f, VERBLESS=n, MOOD=?m, AGR=?a] -> NP[NULLABLE=n, WH=n, CASE=genitive] V[FINITE=?f, MOOD=?m, AGR=?a, GEN_ARG=y]
 VP[FINITE=?f, VERBLESS=n, MOOD=?m, AGR=?a]/?x -> V[FINITE=?f, MOOD=?m, AGR=?a, GEN_ARG=y] NP[CASE=genitive]/?x
+
+VP[FINITE=?f, VERBLESS=n, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?a, INF_ARG=y] VP[NULLABLE=y, VERBLESS=n, MOOD=infinitive]
+VP[FINITE=?f, VERBLESS=n, MOOD=?m, AGR=?a] -> VP[NULLABLE=n, VERBLESS=n, MOOD=infinitive] V[FINITE=?f, MOOD=?m, AGR=?a, INF_ARG=y]
 
 VP[FINITE=?f, VERBLESS=n, MOOD=?m, AGR=?a]/?x -> V[FINITE=?f, MOOD=?m, AGR=?a, ACC_ARG=y, DAT_ARG=y] NP[NULLABLE=y, WH=n, CASE=dative] NP[CASE=accusative]/?x
 
@@ -90,11 +94,11 @@ VP[FINITE=y, VERBLESS=n, MOOD=?m, AGR=?a] -> PredP[WH=n, CASE=nominative, AGR=?a
 
 # Negated verbs
 
-V[FINITE=?f, MOOD=?m, AGR=?a, ACC_ARG=?x, DAT_ARG=?y, GEN_ARG=?z] -> Neg V[FINITE=?f, MOOD=?m, AGR=?a, ACC_ARG=?x, DAT_ARG=?y, GEN_ARG=?z]
+V[FINITE=?f, MOOD=?m, AGR=?a, ACC_ARG=?aa, DAT_ARG=?da, GEN_ARG=?ga, INF_ARG=?ia] -> Neg V[FINITE=?f, MOOD=?m, AGR=?a, ACC_ARG=?aa, DAT_ARG=?da, GEN_ARG=?ga, INF_ARG=?ia]
 
 # Adjuncts
 
-VP[FINITE=?f, VERBLESS=?vl, MOOD=?m, AGR=?a] -> AdvP[WH=n] VP[FINITE=?f, VERBLESS=?vl, MOOD=?m, AGR=?a]
+VP[FINITE=?f, VERBLESS=?vl, MOOD=?m, AGR=?a] -> AdvP[WH=n] VP[FINITE=?f, VERBLESS=?vl, NULLABLE=n, MOOD=?m, AGR=?a]
 
 #########################
 #### Adjunct phrases ####
