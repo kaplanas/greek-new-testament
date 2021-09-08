@@ -42,8 +42,8 @@ IP[VERBLESS=n, MOOD=?m] -> IP[VERBLESS=n, MOOD=?m] IP[VERBLESS=n, MOOD=?m]
 # Noun phrases
 
 NP[WH=?w, CASE=?c, AGR=?a] -> N_like[WH=?w, CASE=?c, AGR=?a]
-NP[WH=n, CASE=?c, AGR=[PERSON=3, NUMBER=?n, GENDER=?g]] -> D[CASE=?c, NUMBER=?n, GENDER=?g] N_like[WH=n, CASE=?c, AGR=[PERSON=3, NUMBER=?n, GENDER=?g]]
-NP[WH=n, CASE=?c, AGR=[PERSON=3, NUMBER=?n, GENDER=?g]] -> D[CASE=?c, NUMBER=?n, GENDER=?g] A[CASE=?c, AGR=[NUMBER=?n, GENDER=?g]]
+NP[WH=n, CASE=?c, AGR=?a] -> D[CASE=?c, AGR=?a] N_like[WH=n, CASE=?c, AGR=?a[PERSON=3]]
+NP[WH=n, CASE=?c, AGR=?a[PERSON=3]] -> D[CASE=?c, AGR=?a] A[CASE=?c, AGR=?a]
 
 # Traces and other empty things
 
@@ -86,8 +86,8 @@ VP[FINITE=?f, VERBLESS=n, MOOD=?m, AGR=?a]/?x -> V[FINITE=?f, MOOD=?m, AGR=?a, A
 
 # Copula verbs
 
-PredP[WH=n, CASE=nominative, AGR=[NUMBER=?n, GENDER=?g]] -> NP[NULLABLE=n, WH=n, CASE=nominative, AGR=[PERSON=3, NUMBER=?n, GENDER=?g]]
-PredP[WH=n, CASE=nominative, AGR=[NUMBER=?n, GENDER=?g]] -> A[CASE=nominative, AGR=[PERSON=3, NUMBER=?n, GENDER=?g]]
+PredP[WH=n, CASE=nominative, AGR=?a] -> NP[NULLABLE=n, WH=n, CASE=nominative, AGR=?a[PERSON=3]]
+PredP[WH=n, CASE=nominative, AGR=?a] -> A[CASE=nominative, AGR=?a[PERSON=3]]
 
 VP[FINITE=y, VERBLESS=y, MOOD=indicative, AGR=?a] -> PredP[WH=n, CASE=nominative, AGR=?a]
 VP[FINITE=y, VERBLESS=n, MOOD=?m, AGR=?a] -> V[COPULA=y, FINITE=y, MOOD=?m, AGR=?a] PredP[WH=n, CASE=nominative, AGR=?a]
