@@ -114,7 +114,7 @@ def show_parses(parses, ref):
 
 
 if __name__ == '__main__':
-    sent_lengths = [1, 2]
+    sent_lengths = [1, 2, 3]
     old_parses = {}
     parses = {}
     new_unamb_amb = {}

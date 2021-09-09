@@ -6,7 +6,11 @@
 
 S -> J[STANDALONE=y]
 S -> L[STANDALONE=y]
-S -> NP[NULLED=n]
+S -> NP[WH=y, NULLED=n, CASE=nominative]
+S -> NP[NULLED=n, CASE=genitive]
+S -> NP[NULLED=n, CASE=dative]
+S -> NP[NULLED=n, CASE=accusative]
+S -> NP[NULLED=n, CASE=vocative]
 S -> NP[NULLED=n, CASE=nominative] NP[NULLED=n, DE=n, CASE=dative]
 S -> Neg C[SECOND_POSITION=y] NP[NULLED=n]
 S -> D[CASE=nominative] C[SECOND_POSITION=y]
@@ -51,7 +55,7 @@ IP[VERBLESS=?vl, DE=?d, MOOD=?m, AGR=?a] -> IP[VERBLESS=?vl, DE=?d, MOOD=?m, AGR
 
 # Conjunction
 
-IP[VERBLESS=n, DE=?d] -> V[FINITE=y, NULLED=n] C[SECOND_POSITION=y, DE=?d] V[FINITE=y, NULLED=n]
+IP[VERBLESS=n, DE=?d] -> V[FINITE=y, NULLED=n, NEGATIVE=n] C[SECOND_POSITION=y, DE=?d] V[FINITE=y, NULLED=n, NEGATIVE=n]
 
 ######################
 #### Noun phrases ####
@@ -127,7 +131,7 @@ VP[FINITE=y, VERBLESS=n, DE=n, MOOD=?m, AGR=?a]/?x -> V[COPULA=y, FINITE=y, MOOD
 
 # Negated verbs
 
-V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=?args] -> Neg V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=?args]
+V[FINITE=?f, NEGATIVE=y, MOOD=?m, AGR=?a, ARGS=?args] -> Neg V[FINITE=?f, NEGATIVE=n, MOOD=?m, AGR=?a, ARGS=?args]
 
 # Adjuncts
 
@@ -148,7 +152,7 @@ PP[WH=?w, DE=?d] -> NP[WH=?w, DE=?d, NULLED=n, CASE=genitive] P[GEN_ARG=y, POSTP
 
 PP[WH=n, DE=n] -> 'e(/ws_P-------' 'e(pta/kis_B-------'
 
-AdvP[WH=?n, DE=?d] -> PP[WH=?w, DE=?d]
+AdvP[WH=?w, DE=?d] -> PP[WH=?w, DE=?d]
 
 # Adverbs and adverby things
 
