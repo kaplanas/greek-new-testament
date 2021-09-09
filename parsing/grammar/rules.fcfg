@@ -2,16 +2,19 @@
 #### Top-level constructions ####
 #################################
 
-# Single-constituent sentences
+# Basic sentence types
 
 S -> J[STANDALONE=y]
 S -> L[STANDALONE=y]
 S -> NP[NULLED=n]
 S -> NP[NULLED=n, CASE=nominative] NP[NULLED=n, DE=n, CASE=dative]
+S -> Neg C[SECOND_POSITION=y] NP[NULLED=n]
 S -> D[CASE=nominative] C[SECOND_POSITION=y]
 S -> A
 S -> AdvP
 S -> IP
+S -> VP[VERBLESS=n, NULLED=n, FINITE=n]
+S -> 'o(/ra_V2PAM-S-' 'mh/_B-------'
 
 # Subject + predicate
 
@@ -48,7 +51,7 @@ IP[VERBLESS=?vl, DE=?d, MOOD=?m, AGR=?a] -> IP[VERBLESS=?vl, DE=?d, MOOD=?m, AGR
 
 # Conjunction
 
-IP[VERBLESS=n, DE=?d, MOOD=?m] -> IP[VERBLESS=n, DE=?d, MOOD=?m] IP[VERBLESS=n, DE=n, MOOD=?m]
+IP[VERBLESS=n, DE=?d] -> V[FINITE=y, NULLED=n] C[SECOND_POSITION=y, DE=?d] V[FINITE=y, NULLED=n]
 
 ######################
 #### Noun phrases ####
@@ -143,6 +146,8 @@ PP[WH=?w, DE=?d] -> P[GEN_ARG=y, POSTPOS=n] C[SECOND_POSITION=y, DE=?d] NP[WH=?w
 
 PP[WH=?w, DE=?d] -> NP[WH=?w, DE=?d, NULLED=n, CASE=genitive] P[GEN_ARG=y, POSTPOS=y]
 
+PP[WH=n, DE=n] -> 'e(/ws_P-------' 'e(pta/kis_B-------'
+
 AdvP[WH=?n, DE=?d] -> PP[WH=?w, DE=?d]
 
 # Adverbs and adverby things
@@ -154,6 +159,10 @@ AdvP[WH=n, DE=?d] -> A[CASE=accusative, AGR=[GENDER=neuter]] C[SECOND_POSITION=y
 # Vocatives as adjuncts
 
 AdjP[WH=n, DE=?d] -> N[CASE=vocative] C[SECOND_POSITION=y, DE=?d]
+
+# Particles
+
+AdjP[WH=n, DE=?d] -> L[NEGATIVE=n] C[SECOND_POSITION=y, DE=?d]
 
 #######################
 #### Miscellaneous ####
