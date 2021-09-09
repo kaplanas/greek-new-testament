@@ -1,6 +1,6 @@
 import pickle
 from text_and_vocab import load_text_tagged
-from file_locs import PARSER
+from file_locs import PARSER, VERBOSE_PARSER
 
 SAVED_PARSES_FILE = '../parsing/saved_parses/saved_parses'
 
