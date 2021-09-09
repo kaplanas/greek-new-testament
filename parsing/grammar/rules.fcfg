@@ -108,10 +108,14 @@ VP[FINITE=?f, VERBLESS=n, DE=n, MOOD=?m, AGR=?a]/?x -> V[FINITE=?f, MOOD=?m, AGR
 VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=inf] C[SECOND_POSITION=y, DE=?d] VP[VERBLESS=n, DE=n, MOOD=infinitive]
 VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> VP[NULLED=n, VERBLESS=n, DE=?d, MOOD=infinitive] V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=inf]
 
-VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=acc_dat] C[SECOND_POSITION=y, DE=?d] NP[WH=n, DE=n, CASE=accusative] NP[WH=n, DE=n, CASE=dative]
+VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=acc_dat] C[SECOND_POSITION=y, DE=?d] NP[WH=n, DE=n, CASE=dative] NP[WH=n, DE=n, CASE=accusative]
+VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> NP[NULLED=n, WH=n, DE=?d, CASE=dative] NP[WH=n, DE=n, CASE=accusative] V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=acc_dat]
+VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> NP[NULLED=n, WH=n, DE=?d, CASE=accusative] NP[WH=n, DE=n, CASE=dative] V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=acc_dat]
 VP[FINITE=?f, VERBLESS=n, DE=n, MOOD=?m, AGR=?a]/?x -> V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=acc_dat] NP[WH=n, DE=n, CASE=dative] NP[CASE=accusative]/?x
 
-VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=acc_gen] C[SECOND_POSITION=y, DE=?d] NP[WH=n, DE=n, CASE=accusative] NP[WH=n, DE=n, CASE=genitive]
+VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=acc_gen] C[SECOND_POSITION=y, DE=?d] NP[WH=n, DE=n, CASE=genitive] NP[WH=n, DE=n, CASE=accusative]
+VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> NP[NULLED=n, WH=n, DE=?d, CASE=genitive] V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=acc_gen]
+VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> NP[NULLED=n, WH=n, DE=?d, CASE=accusative] V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=acc_gen]
 
 VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=acc_inf] C[SECOND_POSITION=y, DE=?d] NP[WH=n, DE=n, CASE=accusative] VP[VERBLESS=n, DE=n, MOOD=infinitive]
 VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a]/?x -> V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=acc_inf] NP[CASE=accusative]/?x VP[VERBLESS=n, DE=n, MOOD=infinitive]
@@ -125,9 +129,9 @@ PredP[WH=?w, DE=?d, CASE=nominative, AGR=[NUMBER=?n, GENDER=?g]] -> NP[WH=?w, NU
 PredP[WH=n, DE=?d, CASE=nominative, AGR=[NUMBER=?n, GENDER=?g]] -> A[CASE=nominative, AGR=[NUMBER=?n, GENDER=?g]] C[SECOND_POSITION=y, DE=?d]
 
 VP[FINITE=y, VERBLESS=y, DE=?d, MOOD=indicative, AGR=?a] -> PredP[WH=n, DE=?d, CASE=nominative, AGR=?a]
-VP[FINITE=y, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> V[COPULA=y, FINITE=y, MOOD=?m, AGR=?a] C[SECOND_POSITION=y, DE=?d] PredP[WH=n, DE=n, CASE=nominative, AGR=?a]
-VP[FINITE=y, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> PredP[WH=n, DE=?d, CASE=nominative, AGR=?a] V[COPULA=y, FINITE=y, MOOD=?m, AGR=?a]
-VP[FINITE=y, VERBLESS=n, DE=n, MOOD=?m, AGR=?a]/?x -> V[COPULA=y, FINITE=y, MOOD=?m, AGR=?a] PredP[AGR=?a]/?x
+VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> V[COPULA=y, FINITE=?f, MOOD=?m, AGR=?a] C[SECOND_POSITION=y, DE=?d] PredP[WH=n, DE=n, CASE=nominative, AGR=?a]
+VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> PredP[WH=n, DE=?d, CASE=nominative, AGR=?a] V[COPULA=y, FINITE=?f, MOOD=?m, AGR=?a]
+VP[FINITE=?f, VERBLESS=n, DE=n, MOOD=?m, AGR=?a]/?x -> V[COPULA=y, FINITE=?f, MOOD=?m, AGR=?a] PredP[AGR=?a]/?x
 
 # Negated verbs
 
