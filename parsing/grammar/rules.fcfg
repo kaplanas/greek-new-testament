@@ -16,15 +16,25 @@ S -> IP
 # Subject + predicate
 
 IP[VERBLESS=?vl, DE=?d, MOOD=?m] -> VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=?d, MOOD=?m, AGR=?a]
+IP[VERBLESS=?vl, DE=?d, MOOD=?m]/?x -> VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=?d, MOOD=?m, AGR=?a]/?x
+
 IP[VERBLESS=?vl, DE=?d, MOOD=?m] -> NP[NULLED=n, WH=n, DE=?d, CASE=nominative, AGR=?a] VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=n, MOOD=?m, AGR=?a]
+IP[VERBLESS=?vl, DE=?d, MOOD=?m]/?x -> NP[NULLED=n, WH=n, DE=?d, CASE=nominative, AGR=?a] VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=n, MOOD=?m, AGR=?a]/?x
+
 IP[VERBLESS=?vl, DE=?d, MOOD=?m] -> NP[NULLED=n, WH=n, DE=?d, CASE=nominative, AGR=[PERSON=3, NUMBER=plural, GENDER=neuter]] VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=n, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]
+IP[VERBLESS=?vl, DE=?d, MOOD=?m]/?x -> NP[NULLED=n, WH=n, DE=?d, CASE=nominative, AGR=[PERSON=3, NUMBER=plural, GENDER=neuter]] VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=n, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]/?x
+
 IP[VERBLESS=?vl, DE=?d, MOOD=?m] -> VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=?d, MOOD=?m, AGR=?a] NP[NULLED=n, WH=n, DE=n, CASE=nominative, AGR=?a]
+IP[VERBLESS=?vl, DE=?d, MOOD=?m]/?x -> VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=?d, MOOD=?m, AGR=?a]/?x NP[NULLED=n, WH=n, DE=n, CASE=nominative, AGR=?a]
+
 IP[VERBLESS=?vl, DE=?d, MOOD=?m] -> VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=?d, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]] NP[NULLED=n, WH=n, DE=n, CASE=nominative, AGR=[PERSON=3, NUMBER=plural, GENDER=neuter]]
+IP[VERBLESS=?vl, DE=?d, MOOD=?m]/?x -> VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=?d, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]/?x NP[NULLED=n, WH=n, DE=n, CASE=nominative, AGR=[PERSON=3, NUMBER=plural, GENDER=neuter]]
 
 # Wh constructions
 
 IP[VERBLESS=?vl, DE=?d, MOOD=?m] -> NP[WH=y, DE=?d, CASE=nominative, AGR=?a] VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=n, MOOD=?m, AGR=?a]
 IP[VERBLESS=?vl, DE=?d, MOOD=?m] -> NP[WH=y, DE=?d, CASE=?c] IP[VERBLESS=?vl, DE=n, MOOD=?m]/NP[CASE=?c]
+IP[VERBLESS=?vl, DE=?d, MOOD=?m] -> PredP[WH=y, DE=?d] IP[VERBLESS=?vl, DE=n, MOOD=?m]/PredP
 IP[VERBLESS=?vl, DE=?d, MOOD=?m] -> AdvP[WH=y, DE=?d] IP[VERBLESS=?vl, DE=n, MOOD=?m]
 
 # Things that can get tacked onto sentences
@@ -53,6 +63,7 @@ NP[WH=n, DE=?d, CASE=?c, AGR=?a[PERSON=3]] -> D[CASE=?c, AGR=?a] DE[SECOND_POSIT
 NP[CASE=?c]/NP[CASE=?c] ->
 NP[NULLED=y, WH=n] ->
 VP[NULLED=y] ->
+PredP/PredP ->
 
 C[SECOND_POSITION=y, DE=n] ->
 
@@ -97,12 +108,13 @@ VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> VP[NULLED=n, VERBLESS=n, DE
 
 # Copula verbs
 
-PredP[WH=n, DE=?d, CASE=nominative, AGR=?a] -> NP[NULLED=n, WH=n, DE=?d, CASE=nominative, AGR=?a[PERSON=3]]
-PredP[WH=n, DE=?d, CASE=nominative, AGR=?a] -> A[CASE=nominative, AGR=?a[PERSON=3]] C[SECOND_POSITION=y, DE=?d]
+PredP[WH=?w, DE=?d, CASE=nominative, AGR=[NUMBER=?n, GENDER=?g]] -> NP[WH=?w, NULLED=n, DE=?d, CASE=nominative, AGR=[NUMBER=?n, GENDER=?g]]
+PredP[WH=n, DE=?d, CASE=nominative, AGR=[NUMBER=?n, GENDER=?g]] -> A[CASE=nominative, AGR=[NUMBER=?n, GENDER=?g]] C[SECOND_POSITION=y, DE=?d]
 
 VP[FINITE=y, VERBLESS=y, DE=?d, MOOD=indicative, AGR=?a] -> PredP[WH=n, DE=?d, CASE=nominative, AGR=?a]
 VP[FINITE=y, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> V[COPULA=y, FINITE=y, MOOD=?m, AGR=?a] C[SECOND_POSITION=y, DE=?d] PredP[WH=n, DE=n, CASE=nominative, AGR=?a]
 VP[FINITE=y, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> PredP[WH=n, DE=?d, CASE=nominative, AGR=?a] V[COPULA=y, FINITE=y, MOOD=?m, AGR=?a]
+VP[FINITE=y, VERBLESS=n, DE=n, MOOD=?m, AGR=?a]/?x -> V[COPULA=y, FINITE=y, MOOD=?m, AGR=?a] PredP[AGR=?a]/?x
 
 # Negated verbs
 
