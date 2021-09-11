@@ -71,6 +71,8 @@ NP[STANDALONE_ADJ=?sa, WH=?w, DE=?d, CASE=?c, AGR=?a] -> N_like[STANDALONE_ADJ=?
 NP[STANDALONE_ADJ=?sa, WH=n, DE=?d, CASE=?c, AGR=?a] -> D[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d] N_like[STANDALONE_ADJ=?sa, WH=n, CASE=?c, AGR=?a[PERSON=3]]
 NP[STANDALONE_ADJ=?sa, WH=?w, DE=?d, CASE=?c, AGR=?a] -> A[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d] N_like[STANDALONE_ADJ=?sa, WH=?w, CASE=?c, AGR=?a]
 NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a[PERSON=3]] -> D[CASE=?c, AGR=?a] DE[SECOND_POSITION=y, DE=?d] A[CASE=?c, AGR=?a]
+NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a] -> E[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d]
+NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a] -> R[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d]
 
 # Traces and other empty things
 
@@ -84,7 +86,6 @@ C[SECOND_POSITION=y, DE=n] ->
 # Noun-like vocabulary items
 
 N_like[WH=n, CASE=?c, AGR=?a] -> N[CASE=?c, AGR=?a]
-N_like[WH=n, CASE=?c, AGR=?a] -> E[CASE=?c, AGR=?a]
 N_like[WH=n, CASE=?c, AGR=?a] -> M[CASE=?c, AGR=?a]
 N_like[WH=?w, CASE=?c, AGR=?a] -> I[CASE=?c, WH=?w, AGR=?a]
 N_like[STANDALONE_ADJ=y, WH=n, CASE=?c, AGR=?a] -> A[STANDALONE=y, CASE=?c, AGR=?a]
