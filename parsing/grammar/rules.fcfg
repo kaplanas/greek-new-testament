@@ -129,7 +129,7 @@ VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?
 
 # Copula verbs
 
-PredP[WH=?w, DE=?d, CASE=?c, AGR=[NUMBER=?n]] -> NP[STANDALONE_ADJ=n, WH=?w, NULLED=n, DE=?d, CASE=?c, AGR=[NUMBER=?n]]
+PredP[WH=?w, DE=?d, CASE=?c] -> NP[STANDALONE_ADJ=n, WH=?w, NULLED=n, DE=?d, CASE=?c]
 PredP[WH=n, DE=?d, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]] -> A[STANDALONE=n, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]] C[SECOND_POSITION=y, DE=?d]
 
 VP[FINITE=y, VERBLESS=y, DE=?d, MOOD=indicative, AGR=?a] -> PredP[WH=n, DE=?d, CASE=nominative, AGR=?a]
