@@ -8,6 +8,11 @@ from parsing import GRAMMAR_DIR, LEXICON_FILE
 
 
 HAND_DATA_DIR = 'hand_coded_data/'
+SUB_FEAT_STRUCTS = {
+    'AGR': ['PERSON', 'NUMBER', 'GENDER'],
+    'ARGS': ['ARG_NONE', 'ARG_ACC', 'ARG_DAT', 'ARG_GEN', 'ARG_INF',
+             'ARG_ACC_ACC', 'ARG_ACC_DAT', 'ARG_DAT_GEN', 'ARG_DAT_INF']
+}
 POS_PROCESSING = {
     'noun': {'id_cols': ['gender'],
              'form_cols': ['gs'],
@@ -18,7 +23,7 @@ POS_PROCESSING = {
     'verb': {'id_cols': [],
              'form_cols': ['pp' + str(i + 2) for i in range(5)],
              'class_cols': ['verb_type'],
-             'feature_cols': ['copula', 'args']},
+             'feature_cols': ['copula'] + [a.lower() for a in SUB_FEAT_STRUCTS['ARGS']]},
     'personal pronoun': {'id_cols': [],
                          'form_cols': ['gs'],
                          'feature_cols': ['person']},
@@ -46,9 +51,6 @@ POS_PROCESSING = {
     'interrogative/indefinite pronoun': {'id_cols': [],
                                          'form_cols': ['gs'],
                                          'feature_cols': ['wh']}
-}
-SUB_FEAT_STRUCTS = {
-    'AGR': ['PERSON', 'NUMBER', 'GENDER']
 }
 
 
