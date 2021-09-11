@@ -67,10 +67,10 @@ IP[VERBLESS=n, DE=?d] -> V[FINITE=y, NULLED=n, NEGATIVE=n] C[SECOND_POSITION=y, 
 
 # Noun phrases
 
-NP[WH=?w, DE=?d, CASE=?c, AGR=?a] -> N_like[WH=?w, CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d]
-NP[WH=n, DE=?d, CASE=?c, AGR=?a] -> D[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d] N_like[WH=n, CASE=?c, AGR=?a[PERSON=3]]
-NP[WH=?w, DE=?d, CASE=?c, AGR=?a] -> A[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d] N_like[WH=?w, CASE=?c, AGR=?a]
-NP[WH=n, DE=?d, CASE=?c, AGR=?a[PERSON=3]] -> D[CASE=?c, AGR=?a] DE[SECOND_POSITION=y, DE=?d] A[CASE=?c, AGR=?a]
+NP[STANDALONE_ADJ=?sa, WH=?w, DE=?d, CASE=?c, AGR=?a] -> N_like[STANDALONE_ADJ=?sa, WH=?w, CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d]
+NP[STANDALONE_ADJ=?sa, WH=n, DE=?d, CASE=?c, AGR=?a] -> D[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d] N_like[STANDALONE_ADJ=?sa, WH=n, CASE=?c, AGR=?a[PERSON=3]]
+NP[STANDALONE_ADJ=?sa, WH=?w, DE=?d, CASE=?c, AGR=?a] -> A[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d] N_like[STANDALONE_ADJ=?sa, WH=?w, CASE=?c, AGR=?a]
+NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a[PERSON=3]] -> D[CASE=?c, AGR=?a] DE[SECOND_POSITION=y, DE=?d] A[CASE=?c, AGR=?a]
 
 # Traces and other empty things
 
@@ -87,7 +87,7 @@ N_like[WH=n, CASE=?c, AGR=?a] -> N[CASE=?c, AGR=?a]
 N_like[WH=n, CASE=?c, AGR=?a] -> E[CASE=?c, AGR=?a]
 N_like[WH=n, CASE=?c, AGR=?a] -> M[CASE=?c, AGR=?a]
 N_like[WH=?w, CASE=?c, AGR=?a] -> I[CASE=?c, WH=?w, AGR=?a]
-N_like[WH=n, CASE=?c, AGR=?a] -> A[STANDALONE=y, CASE=?c, AGR=?a]
+N_like[STANDALONE_ADJ=y, WH=n, CASE=?c, AGR=?a] -> A[STANDALONE=y, CASE=?c, AGR=?a]
 
 ######################
 #### Verb phrases ####
@@ -126,8 +126,8 @@ VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> V[FINITE=?f, MOOD=?m, AGR=?
 
 # Copula verbs
 
-PredP[WH=?w, DE=?d, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]] -> NP[WH=?w, NULLED=n, DE=?d, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]]
-PredP[WH=n, DE=?d, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]] -> A[CASE=?c, AGR=[NUMBER=?n, GENDER=?g]] C[SECOND_POSITION=y, DE=?d]
+PredP[WH=?w, DE=?d, CASE=?c, AGR=[NUMBER=?n]] -> NP[STANDALONE_ADJ=n, WH=?w, NULLED=n, DE=?d, CASE=?c, AGR=[NUMBER=?n]]
+PredP[WH=n, DE=?d, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]] -> A[STANDALONE=n, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]] C[SECOND_POSITION=y, DE=?d]
 
 VP[FINITE=y, VERBLESS=y, DE=?d, MOOD=indicative, AGR=?a] -> PredP[WH=n, DE=?d, CASE=nominative, AGR=?a]
 VP[FINITE=?f, VERBLESS=n, DE=?d, MOOD=?m, AGR=?a] -> V[COPULA=y, FINITE=?f, MOOD=?m, AGR=?a] C[SECOND_POSITION=y, DE=?d] PredP[WH=n, DE=n, CASE=nominative, AGR=?a]
