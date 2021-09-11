@@ -74,6 +74,8 @@ NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a[PERSON=3]] -> D[CASE=?c, AGR=?
 NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a] -> E[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d]
 NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a] -> R[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d]
 
+NP[STANDALONE_ADJ=?sa, NULLED=n, WH=n, DE=?d, CASE=?c, AGR=?a] -> NP[STANDALONE_ADJ=?sa, NULLED=n, WH=n, DE=?d, CASE=?c, AGR=?a] NP[NULLED=n, CASE=genitive]
+
 # Traces and other empty things
 
 NP[CASE=?c]/NP[CASE=?c] ->
