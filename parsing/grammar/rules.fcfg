@@ -92,6 +92,7 @@ N_like[WH=n, CASE=?c, AGR=?a] -> N[CASE=?c, AGR=?a]
 N_like[WH=n, CASE=?c, AGR=?a] -> M[CASE=?c, AGR=?a]
 N_like[WH=?w, CASE=?c, AGR=?a] -> I[CASE=?c, WH=?w, AGR=?a]
 N_like[STANDALONE_ADJ=y, WH=n, CASE=?c, AGR=?a] -> A[STANDALONE=y, CASE=?c, AGR=?a]
+N_like[WH=n, CASE=?c, AGR=?a] -> V[FINITE=n, NULLED=n, KAI=n, MOOD=participle, CASE=?c, AGR=?a]
 
 ######################
 #### Verb phrases ####
@@ -134,6 +135,7 @@ VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[FINITE=?f, KAI=?k
 
 PredP[WH=?w, DE=?d, CASE=?c] -> NP[STANDALONE_ADJ=n, WH=?w, NULLED=n, DE=?d, CASE=?c]
 PredP[WH=n, DE=?d, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]] -> A[STANDALONE=n, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]] C[SECOND_POSITION=y, DE=?d]
+PredP[WH=n, DE=?d, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]] -> VP[FINITE=N, VERBLESS=n, NULLED=n, DE=?d, KAI=n, MOOD=participle, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]]
 
 VP[FINITE=y, VERBLESS=y, DE=?d, KAI=n, MOOD=indicative, AGR=?a] -> PredP[WH=n, DE=?d, CASE=nominative, AGR=?a]
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[COPULA=y, FINITE=?f, KAI=?k, MOOD=?m, AGR=?a] C[SECOND_POSITION=y, DE=?d] PredP[WH=n, DE=n, CASE=nominative, AGR=?a]
