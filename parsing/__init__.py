@@ -1,1 +1,1 @@
-from file_locs import GRAMMAR_DIR, LEXICON_FILE
+from parsing.utils import GRAMMAR_DIR, LEXICON_FILE

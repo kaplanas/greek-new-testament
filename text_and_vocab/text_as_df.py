@@ -1,7 +1,7 @@
 import re
 import pandas as pd
-from utils import TEXT_DATA_DIR, TAGGED_CORPUS_DIR, BOOK_MAPPING
-from utils import get_morph_codes
+from text_and_vocab.utils import TEXT_DATA_DIR, TAGGED_CORPUS_DIR, BOOK_MAPPING
+from text_and_vocab.utils import get_morph_codes
 
 
 # Load the text as a pandas dataframe.
