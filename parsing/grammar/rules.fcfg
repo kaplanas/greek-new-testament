@@ -81,6 +81,7 @@ NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N] -> E[CASE=?c, AGR=?a] 
 NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N] -> R[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d]
 
 NP[STANDALONE_ADJ=?sa, NULLED=n, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N] -> NP[STANDALONE_ADJ=?sa, NULLED=n, WH=n, DE=?d, CASE=?c, AGR=?a] NP[NULLED=n, CASE=genitive]
+NP[STANDALONE_ADJ=n, WH=n, DE=n, CASE=?c, AGR=?a, POS=N] -> N[CASE=?c, AGR=?a, PROPER=y] NP[WH=n, DE=n, NULLED=n, CASE=?c, AGR=?a]
 
 # Traces and other empty things
 

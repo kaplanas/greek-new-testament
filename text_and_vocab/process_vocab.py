@@ -352,6 +352,11 @@ def write_lexicon():
             if 'feature_cols' in POS_PROCESSING[pos].keys():
                 for feature in POS_PROCESSING[pos]['feature_cols']:
                     entry_feats[feature.upper()] = str(r[feature])
+            if pos == 'noun':
+                if r['lemma'][0] == '*':
+                    entry_feats['PROPER'] = 'y'
+                else:
+                    entry_feats['PROPER'] = 'n'
             feat_struct = ', '.join(k + '=' + v
                                     for k, v in entry_feats.items()
                                     if k not in [f
