@@ -48,6 +48,8 @@ IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s] -> NP[WH=y, DE=?d, 
 IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s] -> PredP[WH=y, DE=?d] IP[VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s]/PredP
 IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s] -> AdvP[WH=y, DE=?d] IP[VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s]
 
+IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y] -> NP[WH=n, NULLED=n, DE=?d, CASE=?c] IP[VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/NP[CASE=?c]
+
 IP[VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y] -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=?arg] C[SECOND_POSITION=y, DE=?d] IP[VERBLESS=n, DE=n, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/?V[FINITE=?f, MOOD=?m, AGR=?a, ARGS=?arg]
 
 # Things that can get tacked onto sentences
