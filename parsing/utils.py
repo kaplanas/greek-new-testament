@@ -8,4 +8,4 @@ GRAMMAR = FeatureGrammar.fromstring('\n'.join([open(GRAMMAR_DIR + f,
                                                     'r').read()
                                                for f in listdir(GRAMMAR_DIR)]))
 PARSER = FeatureChartParser(GRAMMAR)
-VERBOSE_PARSER = FeatureChartParser(GRAMMAR, trace=2)
+VERBOSE_PARSER = FeatureChartParser(GRAMMAR, trace=1)
