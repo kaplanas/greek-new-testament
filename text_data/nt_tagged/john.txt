@@ -803,7 +803,7 @@
 11:41-42 o(_D----NSM de/_C------- *)ihsou=s_N----NSM h)=re(n)_V3AAI-S- tou/s_D----APM o)fqalmou/s_N----APM a)/nw_B------- kai/_C------- ei)=pe(n)_V3AAI-S- pa/ter_N----VSM eu)xaristw=_V1PAI-S- soi_E----DS- o(/ti_C------- h)/kousas_V2AAI-S- mou_E----GS- e)gw/_E----NS- de/_C------- h)/|dein_V1LAI-S- o(/ti_C------- pa/ntote_B------- mou_E----GS- a)kou/eis_V2PAI-S-
 11:42 a)lla/_C------- dia/_P------- to/n_D----ASM o)/xlon_N----ASM to/n_D----ASM periestw=ta_V-RAPASM ei)=pon_V1AAI-S- i(/na_C------- pisteu/swsi(n)_V3AAS-P- o(/ti_C------- su/_E----NS- me_E----AS- a)pe/steilas_V2AAI-S-
 11:43 kai/_C------- tau=ta_M----APN ei)pw/n_V-AAPNSM fwnh=|_N----DSF mega/lh|_A----DSF e)krau/gase(n)_V3AAI-S-
-11:43 *la/zare_N----VSM deu=ro_B------- e)/cw_B-------
+11:43 *la/zare_N----VSM deu=ro_V2--M--- e)/cw_B-------
 11:44 e)ch=lqe(n)_V3AAI-S- o(_D----NSM teqnhkw/s_V-RAPNSM dedeme/nos_V-RPPNSM tou/s_D----APM po/das_N----APM kai/_C------- ta/s_D----APF xei=ras_N----APF keiri/ais_N----DPF kai/_C------- h(_D----NSF o)/yis_N----NSF au)tou=_E----GSM soudari/w|_N----DSN periede/deto_V3LPI-S-
 11:44 le/gei_V3PAI-S- au)toi=s_E----DPM o(_D----NSM *)ihsou=s_N----NSM
 11:44 lu/sate_V2AAM-P- au)to/n_E----ASM kai/_C------- a)/fete_V2AAM-P- au)to/n_E----ASM u(pa/gein_V-PAN---
