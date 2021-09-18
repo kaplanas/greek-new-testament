@@ -21,6 +21,7 @@ S -> IP
 S -> C[SECOND_POSITION=n] IP[KAI=n]
 S -> VP[VERBLESS=n, FINITE=n]
 S -> 'o(/ra_V2PAM-S-' 'mh/_B-------'
+S -> 'ou)ai/_J-------' NP[DE=n, CASE=dative]
 
 # Subject + predicate
 
