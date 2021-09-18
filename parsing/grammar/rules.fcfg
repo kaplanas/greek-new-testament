@@ -46,6 +46,7 @@ IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y] -> NP[WH=y, DE=?d, C
 IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s] -> NP[WH=y, DE=?d, CASE=?c] IP[VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s]/NP[CASE=?c]
 IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s] -> PredP[WH=y, DE=?d] IP[VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s]/PredP
 IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s] -> AdvP[WH=y, DE=?d] IP[VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s]
+IP[VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s] -> A[WH=y, CASE=?c] IP[VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=?s]/A[CASE=?c]
 
 IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y] -> NP[WH=n, DE=?d, CASE=?c] IP[VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/NP[CASE=?c]
 
@@ -76,7 +77,8 @@ IP[VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a] -> IP[VERBLESS=?vl, DE=?d, KAI=n
 
 NP[STANDALONE_ADJ=?sa, WH=?w, DE=?d, CASE=?c, AGR=?a, POS=N] -> N_like[STANDALONE_ADJ=?sa, WH=?w, CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d]
 NP[STANDALONE_ADJ=?sa, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N] -> D[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d] N_like[STANDALONE_ADJ=?sa, WH=n, CASE=?c, AGR=?a[PERSON=3]]
-NP[STANDALONE_ADJ=?sa, WH=?w, DE=?d, CASE=?c, AGR=?a, POS=N] -> A[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d] N_like[STANDALONE_ADJ=?sa, WH=?w, CASE=?c, AGR=?a]
+NP[STANDALONE_ADJ=?sa, WH=?w, DE=?d, CASE=?c, AGR=?a, POS=N] -> A[WH=n, CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d] N_like[STANDALONE_ADJ=?sa, WH=?w, CASE=?c, AGR=?a]
+NP[STANDALONE_ADJ=?sa, WH=?w, DE=?d, CASE=?c, AGR=?a, POS=N] -> A[WH=?w, CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d] N_like[STANDALONE_ADJ=?sa, WH=n, CASE=?c, AGR=?a]
 NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a[PERSON=3], POS=N] -> D[CASE=?c, AGR=?a] DE[SECOND_POSITION=y, DE=?d] A[CASE=?c, AGR=?a]
 NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N] -> E[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d]
 NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N] -> R[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d]
@@ -87,11 +89,14 @@ NP[STANDALONE_ADJ=n, WH=n, DE=n, CASE=?c, AGR=?a, POS=N] -> N[CASE=?c, AGR=?a, P
 
 NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N, FUSED_REL=y] -> NP[WH=y, DE=?d, CASE=?c, AGR=?a] IP[DE=n]/NP[CASE=?c, AGR=?a]
 
+NP[STANDALONE_ADJ=?sa, WH=y, DE=?d, CASE=?c, AGR=?a, POS=N]/?x -> A[WH=y, CASE=?c, AGR=?a]/?x C[SECOND_POSITION=y, DE=?d] N_like[STANDALONE_ADJ=?sa, WH=n, CASE=?c, AGR=?a]
+
 # Traces and other empty things
 
 NP[CASE=?c, POS=N]/NP[CASE=?c] ->
 PredP/PredP ->
 V[POS=V]/V ->
+A/A ->
 
 C[SECOND_POSITION=y, DE=n] ->
 

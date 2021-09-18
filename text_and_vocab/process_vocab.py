@@ -40,7 +40,7 @@ POS_PROCESSING = {
     'adjective': {'id_cols': [],
                   'form_cols': ['fem', 'neut'],
                   'class_cols': ['declension'],
-                  'feature_cols': ['standalone']},
+                  'feature_cols': ['standalone', 'wh']},
     'adverb': {'id_cols': [],
                'feature_cols': ['negative', 'wh']},
     'interjection': {'id_cols': [],
