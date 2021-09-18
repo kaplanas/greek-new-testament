@@ -116,6 +116,8 @@ N_like[WH=n, CASE=?c, AGR=?a, ARGS=none] -> V[FINITE=n, KAI=n, MOOD=participle, 
 
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_NONE=y]] C[SECOND_POSITION=y, DE=?d]
 
+VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_NOM=y]] C[SECOND_POSITION=y, DE=?d] NP[WH=n, DE=n, CASE=nominative]
+
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_ACC=y]] C[SECOND_POSITION=y, DE=?d] NP[WH=n, DE=n, CASE=accusative]
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> NP[WH=n, DE=?d, CASE=accusative] V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_ACC=y]]
 VP[FINITE=?f, VERBLESS=n, DE=n, KAI=?k, MOOD=?m, AGR=?a]/?x -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_ACC=y]] NP[CASE=accusative]/?x
