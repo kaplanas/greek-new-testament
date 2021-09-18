@@ -39,6 +39,8 @@ IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/?x -> VP[FINITE=y, V
 IP[VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a, SUBJECT=y] -> VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=?d, KAI=n, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]] NP[NULLED=n, WH=n, DE=n, CASE=nominative, AGR=?a[PERSON=3, NUMBER=plural, GENDER=neuter]]
 IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/?x -> VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=?d, KAI=?k, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]/?x NP[NULLED=n, WH=n, DE=n, CASE=nominative, AGR=?a[PERSON=3, NUMBER=plural, GENDER=neuter]]
 
+IP[VERBLESS=n, DE=y, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y] -> D[CASE=nominative, AGR=?a] 'de/_C-------' VP[FINITE=y, VERBLESS=n, NULLED=n, DE=n, KAI=?k, MOOD=?m, AGR=?a]
+
 # Wh constructions and other movement
 
 IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y] -> NP[WH=y, DE=?d, CASE=nominative, AGR=?a] VP[FINITE=y, VERBLESS=?vl, NULLED=n, DE=n, KAI=?k, MOOD=?m, AGR=?a]
