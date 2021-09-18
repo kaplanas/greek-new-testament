@@ -181,7 +181,7 @@ AdvP[WH=n, DE=?d] -> A[CASE=accusative, AGR=[GENDER=neuter]] C[SECOND_POSITION=y
 
 # Vocatives as adjuncts
 
-AdjP[WH=n, DE=?d] -> N[CASE=vocative] C[SECOND_POSITION=y, DE=?d]
+AdjP[WH=n, DE=?d] -> NP[NULLED=n, DE=?d, CASE=vocative]
 
 # Particles
 

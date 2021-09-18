@@ -15664,6 +15664,7 @@ E[CASE=nominative, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]] -> 'au)to/_E-
 E[CASE=dative, AGR=[PERSON=1, NUMBER=singular, GENDER=masculine]] -> 'e)mautw=|_E----DSM'
 E[CASE=genitive, AGR=[PERSON=1, NUMBER=singular, GENDER=masculine]] -> 'e)mautou=_E----GSM'
 E[CASE=accusative, AGR=[PERSON=1, NUMBER=singular]] -> 'ka)me/_E----AS-'
+E[CASE=vocative, AGR=[PERSON=2, NUMBER=singular]] -> 'su/_E----VS-'
 E[CASE=genitive, AGR=[PERSON=3, NUMBER=singular, GENDER=masculine]] -> 'seautou=_E----GSM'
 E[CASE=nominative, AGR=[PERSON=3, NUMBER=plural, GENDER=neuter]] -> 'au)ta/_E----NPN'
 E[CASE=dative, AGR=[PERSON=3, NUMBER=singular, GENDER=masculine]] -> 'au(tw=|_E----DSM'
