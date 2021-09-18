@@ -126,6 +126,8 @@ VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> VP[NULLED=n, VERBLE
 
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_OTI=y]] C[SECOND_POSITION=y, DE=?d] 'o(/ti_C-------' VP[NULLED=n, VERBLESS=n, DE=n, FINITE=y]
 
+VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_IP=y]] C[SECOND_POSITION=y, DE=?d] IP[VERBLESS=n, DE=n, FINITE=y]
+
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> NP[NULLED=n, WH=n, DE=?d, CASE=accusative] PredP[WH=n, DE=n, CASE=accusative] V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_ACC_ACC=y]]
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> NP[NULLED=n, WH=n, DE=?d, CASE=accusative] NP[WH=n, DE=n, CASE=accusative] V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_ACC_ACC=y]]
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> PredP[NULLED=n, WH=n, DE=?d, CASE=accusative] V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_ACC_ACC=y]] NP[NULLED=n, WH=n, DE=n, CASE=accusative]

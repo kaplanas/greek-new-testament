@@ -11,7 +11,8 @@ HAND_DATA_DIR = 'hand_coded_data/'
 SUB_FEAT_STRUCTS = {
     'AGR': ['PERSON', 'NUMBER', 'GENDER'],
     'ARGS': ['ARG_NONE', 'ARG_ACC', 'ARG_DAT', 'ARG_GEN', 'ARG_INF', 'ARG_OTI',
-             'ARG_ACC_ACC', 'ARG_ACC_DAT', 'ARG_DAT_GEN', 'ARG_DAT_INF']
+             'ARG_IP', 'ARG_ACC_ACC', 'ARG_ACC_DAT', 'ARG_DAT_GEN',
+             'ARG_DAT_INF']
 }
 POS_PROCESSING = {
     'noun': {'id_cols': ['gender'],
