@@ -8,10 +8,8 @@ S -> J[STANDALONE=y]
 S -> L[STANDALONE=y]
 S -> NP[WH=y, CASE=nominative, FUSED_REL=n]
 S -> NP[CASE=genitive, FUSED_REL=n]
-S -> NP[CASE=dative, FUSED_REL=n]
 S -> NP[CASE=accusative, FUSED_REL=n]
 S -> NP[CASE=vocative, FUSED_REL=n]
-S -> NP[CASE=nominative, FUSED_REL=n] NP[DE=n, CASE=dative, FUSED_REL=n]
 S -> Neg C[SECOND_POSITION=y] NP[FUSED_REL=n]
 S -> D[CASE=nominative] C[SECOND_POSITION=y]
 S -> A
@@ -28,17 +26,17 @@ S -> 'ou)ai/_J-------' NP[DE=n, CASE=dative, FUSED_REL=n]
 IP[VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a, SUBJECT=n] -> VP[FINITE=y, VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a]
 IP[VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a, SUBJECT=n]/?x[POS=N] -> VP[FINITE=y, VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a]/?x[POS=n]
 
-IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y] -> NP[WH=n, DE=?d, CASE=nominative, AGR=?a] VP[FINITE=y, VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a]
-IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/?x -> NP[WH=n, DE=?d, CASE=nominative, AGR=?a] VP[FINITE=y, VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a]/?x
+IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y] -> NP[WH=n, FUSED_REL=n, DE=?d, CASE=nominative, AGR=?a] VP[FINITE=y, VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a]
+IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/?x -> NP[WH=n, FUSED_REL=n, DE=?d, CASE=nominative, AGR=?a] VP[FINITE=y, VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=?a]/?x
 
-IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y] -> NP[WH=n, DE=?d, CASE=nominative, AGR=?a[PERSON=3, NUMBER=plural, GENDER=neuter]] VP[FINITE=y, VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]
-IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/?x -> NP[WH=n, DE=?d, CASE=nominative, AGR=?a[PERSON=3, NUMBER=plural, GENDER=neuter]] VP[FINITE=y, VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]/?x
+IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y] -> NP[WH=n, FUSED_REL=n, DE=?d, CASE=nominative, AGR=?a[PERSON=3, NUMBER=plural, GENDER=neuter]] VP[FINITE=y, VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]
+IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/?x -> NP[WH=n, FUSED_REL=n, DE=?d, CASE=nominative, AGR=?a[PERSON=3, NUMBER=plural, GENDER=neuter]] VP[FINITE=y, VERBLESS=?vl, DE=n, KAI=?k, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]/?x
 
-IP[VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a, SUBJECT=y] -> VP[FINITE=y, VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a] NP[WH=n, DE=n, CASE=nominative, AGR=?a]
-IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/?x[POS=N] -> VP[FINITE=y, VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a]/?x[POS=N] NP[WH=n, DE=n, CASE=nominative, AGR=?a]
+IP[VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a, SUBJECT=y] -> VP[FINITE=y, VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a] NP[WH=n, FUSED_REL=n, DE=n, CASE=nominative, AGR=?a]
+IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/?x[POS=N] -> VP[FINITE=y, VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a]/?x[POS=N] NP[WH=n, FUSED_REL=n, DE=n, CASE=nominative, AGR=?a]
 
-IP[VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a, SUBJECT=y] -> VP[FINITE=y, VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]] NP[WH=n, DE=n, CASE=nominative, AGR=?a[PERSON=3, NUMBER=plural, GENDER=neuter]]
-IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/?x[POS=N] -> VP[FINITE=y, VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]/?x[POS=N] NP[WH=n, DE=n, CASE=nominative, AGR=?a[PERSON=3, NUMBER=plural, GENDER=neuter]]
+IP[VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a, SUBJECT=y] -> VP[FINITE=y, VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]] NP[WH=n, FUSED_REL=n, DE=n, CASE=nominative, AGR=?a[PERSON=3, NUMBER=plural, GENDER=neuter]]
+IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y]/?x[POS=N] -> VP[FINITE=y, VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]/?x[POS=N] NP[WH=n, FUSED_REL=n, DE=n, CASE=nominative, AGR=?a[PERSON=3, NUMBER=plural, GENDER=neuter]]
 
 IP[VERBLESS=n, DE=y, KAI=?k, MOOD=?m, AGR=?a, SUBJECT=y] -> D[CASE=nominative, AGR=?a] 'de/_C-------' VP[FINITE=y, VERBLESS=n, DE=n, KAI=?k, MOOD=?m, AGR=?a]
 
@@ -84,6 +82,7 @@ NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N] -> E[CASE=?c, AGR=?a] 
 NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N] -> R[CASE=?c, AGR=?a] C[SECOND_POSITION=y, DE=?d]
 
 NP[STANDALONE_ADJ=?sa, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N] -> NP[STANDALONE_ADJ=?sa, WH=n, DE=?d, CASE=?c, AGR=?a] NP[CASE=genitive]
+NP[STANDALONE_ADJ=?sa, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N] -> N_like[STANDALONE_ADJ=?sa, WH=n, DE=?d, CASE=?c, AGR=?a, ARGS=[ARG_DAT=y]] NP[CASE=dative]
 NP[STANDALONE_ADJ=n, WH=n, DE=n, CASE=?c, AGR=?a, POS=N] -> N[CASE=?c, AGR=?a, PROPER=y] NP[WH=n, DE=n, CASE=?c, AGR=?a]
 
 NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N, FUSED_REL=y] -> NP[WH=y, DE=?d, CASE=?c, AGR=?a] IP[DE=n]/NP[CASE=?c, AGR=?a]
@@ -98,11 +97,11 @@ C[SECOND_POSITION=y, DE=n] ->
 
 # Noun-like vocabulary items
 
-N_like[WH=n, CASE=?c, AGR=?a] -> N[CASE=?c, AGR=?a]
-N_like[WH=n, CASE=?c, AGR=?a] -> M[CASE=?c, AGR=?a]
-N_like[WH=?w, CASE=?c, AGR=?a] -> I[CASE=?c, WH=?w, AGR=?a]
-N_like[STANDALONE_ADJ=y, WH=n, CASE=?c, AGR=?a] -> A[STANDALONE=y, CASE=?c, AGR=?a]
-N_like[WH=n, CASE=?c, AGR=?a] -> V[FINITE=n, KAI=n, MOOD=participle, CASE=?c, AGR=?a]
+N_like[WH=n, CASE=?c, AGR=?a, ARGS=?arg] -> N[CASE=?c, AGR=?a, ARGS=?arg]
+N_like[WH=n, CASE=?c, AGR=?a, ARGS=none] -> M[CASE=?c, AGR=?a]
+N_like[WH=?w, CASE=?c, AGR=?a, ARGS=none] -> I[CASE=?c, WH=?w, AGR=?a]
+N_like[STANDALONE_ADJ=y, WH=n, CASE=?c, AGR=?a, ARGS=none] -> A[STANDALONE=y, CASE=?c, AGR=?a]
+N_like[WH=n, CASE=?c, AGR=?a, ARGS=none] -> V[FINITE=n, KAI=n, MOOD=participle, CASE=?c, AGR=?a]
 
 ######################
 #### Verb phrases ####
@@ -152,6 +151,7 @@ PredP[WH=n, DE=?d, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]] -> A[STANDALONE=n, CASE=
 PredP[WH=n, DE=?d, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]] -> VP[FINITE=N, VERBLESS=n, DE=?d, KAI=n, MOOD=participle, CASE=?c, AGR=[NUMBER=?n, GENDER=?g]]
 
 VP[FINITE=y, VERBLESS=y, DE=?d, KAI=n, MOOD=indicative, AGR=?a] -> PredP[WH=n, DE=?d, CASE=nominative, AGR=?a]
+VP[FINITE=y, VERBLESS=y, DE=?d, KAI=n, MOOD=indicative] -> PredP[WH=n, DE=?d, CASE=dative]
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[COPULA=y, FINITE=?f, KAI=?k, MOOD=?m, AGR=?a] C[SECOND_POSITION=y, DE=?d] PredP[WH=n, DE=n, CASE=nominative, AGR=?a]
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> PredP[WH=n, DE=?d, CASE=nominative, AGR=?a] V[COPULA=y, FINITE=?f, KAI=?k, MOOD=?m, AGR=?a]
 VP[FINITE=?f, VERBLESS=n, DE=n, KAI=?k, MOOD=?m, AGR=?a]/?x -> V[COPULA=y, FINITE=?f, KAI=?k, MOOD=?m, AGR=?a] PredP[CASE=nominative, AGR=?a]/?x

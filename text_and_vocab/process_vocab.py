@@ -17,7 +17,8 @@ SUB_FEAT_STRUCTS = {
 POS_PROCESSING = {
     'noun': {'id_cols': ['gender'],
              'form_cols': ['gs'],
-             'class_cols': ['declension']},
+             'class_cols': ['declension'],
+             'feature_cols': ['arg_dat']},
     'relative pronoun': {'id_cols': [],
                          'form_cols': ['fem', 'neut'],
                          'class_cols': ['declension']},
