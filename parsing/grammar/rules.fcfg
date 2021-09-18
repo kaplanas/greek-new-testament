@@ -168,6 +168,10 @@ VP[FINITE=?f, VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> VP[FINITE=?f, VER
 #### Adjunct phrases ####
 #########################
 
+# Relative clauses
+
+RelP[DE=?d] -> NP[WH=y, DE=?d, CASE=?c] IP[DE=n]/NP[CASE=?c]
+
 # Prepositional phrases
 
 PP[WH=?w, DE=?d] -> P[ACC_ARG=y, POSTPOS=n] C[SECOND_POSITION=y, DE=?d] NP[WH=?w, DE=n, CASE=accusative]
