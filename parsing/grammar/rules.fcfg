@@ -6,13 +6,13 @@
 
 S -> J[STANDALONE=y]
 S -> L[STANDALONE=y]
-S -> NP[WH=y, CASE=nominative]
-S -> NP[CASE=genitive]
-S -> NP[CASE=dative]
-S -> NP[CASE=accusative]
-S -> NP[CASE=vocative]
-S -> NP[CASE=nominative] NP[DE=n, CASE=dative]
-S -> Neg C[SECOND_POSITION=y] NP
+S -> NP[WH=y, CASE=nominative, FUSED_REL=n]
+S -> NP[CASE=genitive, FUSED_REL=n]
+S -> NP[CASE=dative, FUSED_REL=n]
+S -> NP[CASE=accusative, FUSED_REL=n]
+S -> NP[CASE=vocative, FUSED_REL=n]
+S -> NP[CASE=nominative, FUSED_REL=n] NP[DE=n, CASE=dative, FUSED_REL=n]
+S -> Neg C[SECOND_POSITION=y] NP[FUSED_REL=n]
 S -> D[CASE=nominative] C[SECOND_POSITION=y]
 S -> A
 S -> AdvP
@@ -21,7 +21,7 @@ S -> IP
 S -> C[SECOND_POSITION=n] IP[KAI=n]
 S -> VP[VERBLESS=n, FINITE=n]
 S -> 'o(/ra_V2PAM-S-' 'mh/_B-------'
-S -> 'ou)ai/_J-------' NP[DE=n, CASE=dative]
+S -> 'ou)ai/_J-------' NP[DE=n, CASE=dative, FUSED_REL=n]
 
 # Subject + predicate
 
@@ -85,6 +85,8 @@ NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N] -> R[CASE=?c, AGR=?a] 
 
 NP[STANDALONE_ADJ=?sa, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N] -> NP[STANDALONE_ADJ=?sa, WH=n, DE=?d, CASE=?c, AGR=?a] NP[CASE=genitive]
 NP[STANDALONE_ADJ=n, WH=n, DE=n, CASE=?c, AGR=?a, POS=N] -> N[CASE=?c, AGR=?a, PROPER=y] NP[WH=n, DE=n, CASE=?c, AGR=?a]
+
+NP[STANDALONE_ADJ=n, WH=n, DE=?d, CASE=?c, AGR=?a, POS=N, FUSED_REL=y] -> NP[WH=y, DE=?d, CASE=?c, AGR=?a] IP[DE=n]/NP[CASE=?c, AGR=?a]
 
 # Traces and other empty things
 
@@ -167,10 +169,6 @@ VP[FINITE=?f, VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> VP[FINITE=?f, VER
 #########################
 #### Adjunct phrases ####
 #########################
-
-# Relative clauses
-
-RelP[DE=?d] -> NP[WH=y, DE=?d, CASE=?c] IP[DE=n]/NP[CASE=?c]
 
 # Prepositional phrases
 
