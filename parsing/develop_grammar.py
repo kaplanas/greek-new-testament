@@ -1,5 +1,6 @@
 import pickle
-from text_and_vocab import load_text_tagged
+import pandas as pd
+from text_and_vocab import load_text_df, load_text_tagged
 from parsing.utils import PARSER, VERBOSE_PARSER
 
 SAVED_PARSES_FILE = '../parsing/saved_parses/saved_parses'
@@ -114,6 +115,7 @@ def show_parses(parses, ref):
 
 
 if __name__ == '__main__':
+    pd.set_option('display.max_columns', None)
     sent_lengths = [1, 2, 3]
     old_parses = {}
     parses = {}

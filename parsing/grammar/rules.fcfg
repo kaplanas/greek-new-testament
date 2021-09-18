@@ -64,7 +64,7 @@ IP[VERBLESS=?vl, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> 'mh/_B-------' C[SECOND_POSI
 
 # Conjunction
 
-IP[VERBLESS=n, DE=?d, KAI=n] -> V[FINITE=y, NULLED=n, NEGATIVE=n, KAI=n] C[SECOND_POSITION=y, DE=?d] V[FINITE=y, NULLED=n, NEGATIVE=n, KAI=n]
+IP[VERBLESS=n, DE=?d, KAI=n] -> VP[FINITE=y, DE=?d, NULLED=n, VERBLESS=n, NEGATIVE=n, KAI=n, MOOD=imperative] VP[FINITE=y, DE=n, NULLED=n, VERBLESS=n, NEGATIVE=n, KAI=n]
 IP[VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a] -> IP[VERBLESS=?vl, DE=?d, KAI=n, MOOD=?m, AGR=?a] C[SECOND_POSITION=n] IP[VERBLESS=?vl, DE=n, KAI=n]
 
 ######################
