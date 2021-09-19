@@ -159,6 +159,10 @@ VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a]/?NP[CASE=?c] -> NP[CAS
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_ACC_DAT=y]] C[SECOND_POSITION=y, DE=?d] NP[WH=n, DE=n, CASE=dative] NP[WH=n, DE=n, CASE=accusative]
 VP[FINITE=?f, VERBLESS=n, DE=n, KAI=?k, MOOD=?m, AGR=?a]/?NP[CASE=?c] -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_ACC_DAT=y]] NP[WH=n, DE=n, CASE=dative] NP[CASE=accusative]/?NP[CASE=?c]
 
+VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_ACC_GEN=y]] NP[WH=n, DE=?d, CASE=accusative] NP[WH=n, DE=n, CASE=genitive]
+
+VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_ACC_INF=y]] C[SECOND_POSITION=y, DE=?d] NP[WH=n, CASE=accusative] VP[VERBLESS=n, DE=n, MOOD=infinitive]
+
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_DAT_GEN=y]] C[SECOND_POSITION=y, DE=?d] NP[WH=n, DE=n, CASE=genitive] NP[WH=n, DE=n, CASE=dative]
 
 VP[FINITE=?f, VERBLESS=n, DE=?d, KAI=?k, MOOD=?m, AGR=?a] -> V[FINITE=?f, KAI=?k, MOOD=?m, AGR=?a, ARGS=[ARG_DAT_INF=y]] C[SECOND_POSITION=y, DE=?d] NP[WH=n, CASE=dative] VP[VERBLESS=n, DE=n, MOOD=infinitive]
