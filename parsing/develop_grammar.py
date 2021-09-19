@@ -1,5 +1,6 @@
 import pickle
 import pandas as pd
+from texttable import Texttable
 from text_and_vocab import load_text_df, load_text_tagged
 from parsing.utils import PARSER, VERBOSE_PARSER
 
@@ -119,36 +120,34 @@ if __name__ == '__main__':
     sent_lengths = [1, 2, 3, 4]
     old_parses = {}
     parses = {}
-    new_unamb_amb = {}
-    new_unamb_up = {}
-    new_amb_unamb = {}
-    new_amb_up = {}
-    new_unparsed = {}
-    for sl in [str(sent_length) for sent_length in sent_lengths]:
-        old_parses[sl] = load_parses(sent_length=int(sl))
-        parses[sl] = parse_sents(sent_length=int(sl))
-        new_unamb_amb[sl] = [s
-                             for s in get_sent_ids(get_unambiguous_sents(parses[sl]))
-                             if s in get_sent_ids(get_ambiguous_sents(old_parses[sl]))]
-        new_unamb_up[sl] = [s
-                            for s in get_sent_ids(get_unambiguous_sents(parses[sl]))
-                            if s in get_sent_ids(get_unparsed_sents(old_parses[sl]))]
-        new_amb_unamb[sl] = [s
-                             for s in get_sent_ids(get_ambiguous_sents(parses[sl]))
-                             if s in get_sent_ids(get_unambiguous_sents(old_parses[sl]))]
-        new_amb_up[sl] = [s
-                          for s in get_sent_ids(get_ambiguous_sents(parses[sl]))
-                          if s in get_sent_ids(get_unparsed_sents(old_parses[sl]))]
-        new_unparsed[sl] = [s
-                            for s in get_sent_ids(get_unparsed_sents(parses[sl]))
-                            if s in get_sent_ids(get_parsed_sents(old_parses[sl]))]
-        print('*** Sentences of length ' + str(sl)  + ' ***')
-        print('PARSED: ' + str(len(get_unambiguous_sents(parses[sl]))) +
-              ' (' + str(len(new_unamb_amb[sl])) + ' previously ambiguous, ' +
-              str(len(new_unamb_up[sl])) + ' previously unparsed)')
-        print('AMBIGUOUS: ' + str(len(get_ambiguous_sents(parses[sl]))) +
-              ' (' + str(len(new_amb_unamb[sl])) + ' previously unambiguous, ' +
-              str(len(new_amb_up[sl])) + ' previously unparsed)')
-        print('UNPARSED: ' + str(len(get_unparsed_sents(parses[sl]))) +
-              ' (' + str(len(new_unparsed[sl])) + ' previously parsed)')
+    changes = {}
+    for sl in sent_lengths:
+        old_parses[sl] = load_parses(sent_length=sl)
+        old_sis = get_sent_ids(old_parses[sl])
+        parses[sl] = parse_sents(sent_length=sl)
+        sis = get_sent_ids(parses[sl])
+        changes[sl] = {}
+        for i, p in enumerate(parses[sl]):
+            num_parses = len(p[3])
+            if not num_parses in changes[sl].keys():
+                changes[sl][num_parses] = {'fewer': [], 'same': [], 'more': []}
+            num_old_parses = len(old_parses[sl][old_sis.index(sis[i])][3])
+            if num_parses < num_old_parses:
+                changes[sl][num_parses]['fewer'].append(p)
+            elif num_parses == num_old_parses:
+                changes[sl][num_parses]['same'].append(p)
+            else:
+                changes[sl][num_parses]['more'].append(p)
+        print('*** Sentences of length ' + str(sl) + ' ***')
+        t = Texttable()
+        t.header(['Change'] + sorted(str(k) + ' parse' + '' if k == 1
+                                     else str(k) + ' parses'
+                                     for k in changes[sl].keys()))
+        t.add_rows([[diff] +
+                    [str(len(changes[sl][np][diff]))
+                     for np in sorted(changes[sl].keys())]
+                    for diff in ['fewer', 'same', 'more']], header=False)
+        t.set_cols_align(['l'] + ['r' for i in range(len(changes[sl].keys()))])
+        t.set_deco(Texttable.HEADER)
+        print(t.draw())
         print('')
