@@ -116,7 +116,7 @@ def show_parses(parses, ref):
 
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
-    sent_lengths = [1, 2, 3]
+    sent_lengths = [1, 2, 3, 4]
     old_parses = {}
     parses = {}
     new_unamb_amb = {}
