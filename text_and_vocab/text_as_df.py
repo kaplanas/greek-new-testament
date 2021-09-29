@@ -38,15 +38,20 @@ def write_text_tagged():
                 current_sentence = current_sentence + [r['standardized_wordform'] +
                                                        '_' +
                                                        get_morph_codes(r)]
-                if re.match('.*[.;·]', r['wordform']) and \
-                        r['lemma'] not in ['le/gw', 'fhmi/', 'gra/fw', 'kai/',
-                                           'h)/', 'ga/r', 'menou=nge']:
-                    file.write(str(chapter) + ':' + str(current_verses[0]))
-                    if len(current_verses) > 1:
-                        file.write('-' + str(current_verses[-1]))
-                    file.write(' ' + ' '.join(current_sentence) + '\n')
-                    current_verses = []
-                    current_sentence = []
+                if re.match('.*,', r['wordform']):
+                    current_sentence = current_sentence + [',_,']
+                elif re.match('.*[.;·]', r['wordform']):
+                    if r['lemma'] in ['le/gw', 'fhmi/', 'gra/fw', 'kai/',
+                                      'h)/', 'ga/r', 'menou=nge'] \
+                            and re.match('.*·', r['wordform']):
+                        current_sentence = current_sentence + [',_,']
+                    else:
+                        file.write(str(chapter) + ':' + str(current_verses[0]))
+                        if len(current_verses) > 1:
+                            file.write('-' + str(current_verses[-1]))
+                        file.write(' ' + ' '.join(current_sentence) + '\n')
+                        current_verses = []
+                        current_sentence = []
         file.close()
 
 

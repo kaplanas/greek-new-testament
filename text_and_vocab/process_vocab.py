@@ -11,8 +11,9 @@ HAND_DATA_DIR = 'hand_coded_data/'
 SUB_FEAT_STRUCTS = {
     'AGR': ['PERSON', 'NUMBER', 'GENDER'],
     'ARGS': ['ARG_NONE', 'ARG_NOM', 'ARG_ACC', 'ARG_DAT', 'ARG_GEN', 'ARG_INF',
-             'ARG_IMP', 'ARG_OTI', 'ARG_IP', 'ARG_ACC_ACC', 'ARG_ACC_DAT',
-             'ARG_ACC_GEN', 'ARG_ACC_INF', 'ARG_DAT_GEN', 'ARG_DAT_INF']
+             'ARG_IMP', 'ARG_OTI', 'ARG_S', 'ARG_SUBJ', 'ARG_ACC_ACC',
+             'ARG_ACC_DAT', 'ARG_ACC_GEN', 'ARG_ACC_INF', 'ARG_DAT_GEN',
+             'ARG_DAT_INF']
 }
 POS_PROCESSING = {
     'noun': {'id_cols': ['gender'],
@@ -25,28 +26,31 @@ POS_PROCESSING = {
     'verb': {'id_cols': [],
              'form_cols': ['pp' + str(i + 2) for i in range(5)],
              'class_cols': ['verb_type'],
-             'feature_cols': ['copula'] + [a.lower() for a in SUB_FEAT_STRUCTS['ARGS']]},
+             'feature_cols': ['copula'] + [a.lower()
+                                           for a in SUB_FEAT_STRUCTS['ARGS']
+                                           if a != 'ARG_NOM']},
     'personal pronoun': {'id_cols': [],
                          'form_cols': ['gs'],
-                         'feature_cols': ['person']},
+                         'feature_cols': ['person', 'autos']},
     'definite article': {'id_cols': [],
                          'form_cols': ['fem', 'neut'],
                          'class_cols': ['declension']},
     'preposition': {'id_cols': [],
-                    'feature_cols': ['arg_none', 'arg_acc', 'arg_dat',
-                                     'arg_gen', 'postpos']},
+                    'feature_cols': ['arg_none', 'arg_nom', 'arg_acc',
+                                     'arg_dat', 'arg_gen', 'postpos']},
     'conjunction': {'id_cols': [],
-                    'feature_cols': ['second_position']},
+                    'feature_cols': ['second_position', 'subordinating']},
     'adjective': {'id_cols': [],
                   'form_cols': ['fem', 'neut'],
                   'class_cols': ['declension'],
-                  'feature_cols': ['standalone', 'wh']},
+                  'feature_cols': ['standalone', 'wh', 'adverb', 'attributive',
+                                   'predicate', 'pas', 'arg_dat', 'arg_gen']},
     'adverb': {'id_cols': [],
-               'feature_cols': ['negative', 'wh']},
+               'feature_cols': ['negative', 'wh', 'predicate', 'adjunct']},
     'interjection': {'id_cols': [],
                      'feature_cols': ['standalone']},
     'particle': {'id_cols': [],
-                 'feature_cols': ['standalone', 'negative']},
+                 'feature_cols': ['standalone', 'negative', 'adjunct']},
     'demonstrative pronoun': {'id_cols': [],
                               'form_cols': ['fem', 'neut'],
                               'class_cols': ['declension']},
@@ -312,12 +316,14 @@ def write_lexicon():
     # Load the NT text.
     nt_df = load_text_df('nt')
     lexicon_feature_cols = ['person', 'mood', 'case', 'number', 'gender']
-    standard_feature_cols = lexicon_feature_cols + ['tense', 'voice']
     lexicon_file = open(GRAMMAR_DIR + LEXICON_FILE, 'w')
     # Iterate over parts of speech.
     for pos in POS_PROCESSING.keys():
         # Get unique wordforms.
-        cols_to_pull = ['lemma', 'standardized_wordform', 'pos'] + standard_feature_cols
+        if pos == 'adjective':
+            lexicon_feature_cols = lexicon_feature_cols + ['degree']
+        cols_to_pull = ['lemma', 'standardized_wordform', 'pos'] + \
+                       lexicon_feature_cols + ['tense', 'voice']
         if pos == 'personal pronoun':
             cols_to_pull.remove('person')
         wordforms_df = nt_df[nt_df.pos == pos][cols_to_pull].copy()
@@ -347,8 +353,7 @@ def write_lexicon():
                             entry_feats['FINITE'] = 'n'
                 elif feature == 'person' and pos in ['noun',
                                                      'demonstrative pronoun',
-                                                     'interrogative/indefinite pronoun',
-                                                     'adjective']:
+                                                     'interrogative/indefinite pronoun']:
                     entry_feats[feature.upper()] = '3'
             if 'feature_cols' in POS_PROCESSING[pos].keys():
                 for feature in POS_PROCESSING[pos]['feature_cols']:
