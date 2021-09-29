@@ -120,7 +120,7 @@ def print_parse(tree, features=False, margin=70, indent=0, nodesep="",
     else:
         label_to_print = repr(tree._label)
     if not features:
-        label_to_print = re.sub('\[.*', '', label_to_print)
+        label_to_print = re.sub('\[[^/]*\]', '', label_to_print)
     s = f"{parens[0]}{label_to_print}{nodesep}"
     if features:
         new_indent = indent + 2
