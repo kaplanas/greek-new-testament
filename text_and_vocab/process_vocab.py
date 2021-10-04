@@ -363,6 +363,8 @@ def write_lexicon():
                     entry_feats['PROPER'] = 'y'
                 else:
                     entry_feats['PROPER'] = 'n'
+            elif pos == 'verb':
+                entry_feats['POS'] = 'V'
             feat_struct = ', '.join(k + '=' + v
                                     for k, v in entry_feats.items()
                                     if k not in [f
