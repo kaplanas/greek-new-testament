@@ -408,6 +408,7 @@ AdvP[DE=?d, POS=AdvP, PREDICATE=n, WH=n] -> A[ADVERB=y, AGR=[GENDER=neuter], CAS
 AdvP[DE=?d, POS=AdvP, PREDICATE=n, WH=n] -> D[AGR=?a, CASE=accusative] C[DE=?d, SECOND_POSITION=y] A[ADVERB=y, AGR=?a[GENDER=neuter], CASE=accusative]
 AdvP[DE=?d, POS=AdvP, PREDICATE=y, WH=?w] -> PP[DE=?d, WH=?w]
 AdvP[DE=?d, POS=AdvP, PREDICATE=n, WH=n] -> VP[CASE=nominative, DE=?d, MOOD=participle, VERBLESS=n]
+AdvP[DE=?d, POS=AdvP, PREDICATE=n, WH=n] -> VP[AGR=?agr, CASE=genitive, DE=?d, MOOD=participle, VERBLESS=n]
 AdvP[DE=?d, POS=AdvP, PREDICATE=n, WH=n] -> VP[AGR=?agr, CASE=genitive, DE=?d, MOOD=participle, VERBLESS=n] NP[AGR=?agr, CASE=genitive]
 AdvP[DE=?d, POS=AdvP, PREDICATE=?p, WH=?w] -> 'kai/_B-------' AdvP[DE=?d, PREDICATE=?p, WH=?w]
 AdvP[DE=?d, POS=AdvP, PREDICATE=n, WH=n] -> 'eu)qu/s_A----NSM' C[DE=?d, SECOND_POSITION=y]
