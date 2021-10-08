@@ -359,6 +359,7 @@ def write_lexicon():
                 for feature in POS_PROCESSING[pos]['feature_cols']:
                     entry_feats[feature.upper()] = str(r[feature])
             if pos == 'noun':
+                entry_feats['POS'] = 'N'
                 if r['lemma'][0] == '*':
                     entry_feats['PROPER'] = 'y'
                 else:
