@@ -287,6 +287,7 @@ VP[AGR=?a, CASE=?c, DE=n, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n]/?x[ARGS
 VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> VP[DE=?d, MOOD=infinitive, VERBLESS=n] V[AGR=?a, ARGS=[ARG_INF=y], CASE=?c, FINITE=?f, MOOD=?m]
 VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> V[AGR=?a, ARGS=[ARG_INF=y], CASE=?c, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] VP[DE=n, MOOD=infinitive, VERBLESS=n]
 VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n]/?x[CASE=?c, POS=NP] -> V[AGR=?a, ARGS=[ARG_INF=y], CASE=?c, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] VP[DE=n, MOOD=infinitive, VERBLESS=n]/?x[CASE=?c, POS=NP]
+VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> NP[CASE=?c, DE=?d, POS=NP, WH=n] V[AGR=?a, ARGS=[ARG_INF=y], CASE=?c, FINITE=?f, MOOD=?m] VP[DE=n, MOOD=infinitive, VERBLESS=n]/NP[CASE=?c, POS=NP, WH=n]
 
 # Imperative argument
 
@@ -305,6 +306,7 @@ VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> V[A
 
 VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> V[AGR=?a, ARGS=[ARG_SUBJ=y], CASE=?c, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] VP[DE=n, MOOD=subjunctive, VERBLESS=n]
 VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n]/?x[CASE=?c, POS=NP] -> V[AGR=?a, ARGS=[ARG_SUBJ=y], CASE=?c, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] VP[DE=n, MOOD=subjunctive, VERBLESS=n]/?x[CASE=?c, POS=NP]
+VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> NP[CASE=?c, DE=?d, POS=NP, WH=n] V[AGR=?a, ARGS=[ARG_SUBJ=y], CASE=?c, FINITE=?f, MOOD=?m] VP[DE=n, MOOD=subjunctive, VERBLESS=n]/NP[CASE=?c, POS=NP, WH=n]
 
 # Two accusative arguments
 
