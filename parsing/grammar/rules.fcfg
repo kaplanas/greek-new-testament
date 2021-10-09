@@ -113,6 +113,7 @@ IP[AGR=?a, DE=?d, MOOD=?m, REL=?r, SUBJECT=y, VERBLESS=?v, WH=y] -> NP[AGR=?a[GE
 
 IP[AGR=?a, DE=?d, MOOD=?m, REL=?r, SUBJECT=?s, VERBLESS=?v, WH=y] -> NP[AGR=?agr, DE=?d, CASE=?c, PREDICATE=?pred, PROPER=?p, REL=?r, STANDALONE=?sa, WH=y] IP[AGR=?a, DE=n, MOOD=?m, SUBJECT=?s, VERBLESS=?v]/NP[AGR=?agr, CASE=?c, POS=NP, PREDICATE=?pred, PROPER=?p, REL=?r, STANDALONE=?sa, WH=y]
 IP[AGR=?a, DE=?d, MOOD=?m, REL=?r, SUBJECT=?s, WH=y] -> AdvP[DE=?d, PREDICATE=?p, REL=?r, WH=y] IP[AGR=?a, DE=n, MOOD=?m, SUBJECT=?s, VERBLESS=n]
+IP[AGR=?a, DE=?d, MOOD=?m, REL=?r, SUBJECT=?s, WH=y] -> AdvP[DE=?d, PREDICATE=?p, REL=?r, WH=y] 'o(/ti_C-------' IP[AGR=?a, DE=n, MOOD=?m, SUBJECT=?s, VERBLESS=n]
 IP[AGR=?a, DE=?d, MOOD=?m, REL=?r, SUBJECT=?s, WH=y] -> PredP[DE=?d, REL=?r, WH=y] IP[AGR=?a, DE=n, MOOD=?m, SUBJECT=?s, VERBLESS=?v]/PredP[POS=PredP, REL=?r, WH=y]
 
 # Other things moved out of an IP
