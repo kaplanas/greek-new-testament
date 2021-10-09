@@ -126,6 +126,9 @@ IP[AGR=?a, DE=?d, MOOD=?m, REL=n, SUBJECT=y] -> V[AGR=?a, ARGS=?arg, CASE=?c, FI
 IP[AGR=?a, DE=?d, MOOD=?m, REL=n, SUBJECT=y, WH=n] -> PredP[AGR=?agr, CASE=?c, DE=?d, WH=n] IP[AGR=?a, DE=n, MOOD=?m, SUBJECT=y, VERBLESS=n]/?x[AGR=?agr, CASE=?c, POS=PredP, WH=n]
 #IP[AGR=?a, DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERBLESS=?v] -> ?x[CASE=?c, DE=?d, POS=NP, WH=n] IP[AGR=?a, DE=n, MOOD=?m, SUBJECT=y, VERBLESS=?v]/?x[]
 
+# Adverbs in front of a wh element
+IP[AGR=?a, DE=?d, MOOD=?m, REL=?r, SUBJECT=?s, VERBLESS=?v, WH=y] -> AdvP[DE=?d, WH=n] IP[AGR=?a, DE=n, MOOD=?m, REL=?r, SUBJECT=?s, VERBLESS=?v, WH=y]
+
 #### Other things that can happen to IPs ####
 
 # Negation
