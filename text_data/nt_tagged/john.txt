@@ -1322,7 +1322,7 @@
 20:16 le/gei_V3PAI-S- au)th=|_E----DSF *)ihsou=s_N----NSM
 20:16 *maria/m_N----VSF
 20:16 strafei=sa_V-APPNSF e)kei/nh_M----NSF le/gei_V3PAI-S- au)tw=|_E----DSM *(ebrai+sti/_B-------
-20:16 rabbouni_N----VSM o(/_R----NSN le/getai_V3PPI-S- dida/skale_N----VSM
+20:16 rabbouni_N----VSM o(/_R----NSN le/getai_V3PPI-S- ,_, dida/skale_N----VSM
 20:17 le/gei_V3PAI-S- au)th=|_E----DSF *)ihsou=s_N----NSM
 20:17 mh/_B------- mou_E----GS- a(/ptou_V2PMM-S- ,_, ou)/pw_B------- ga/r_C------- a)nabe/bhka_V1RAI-S- pro/s_P------- to/n_D----ASM pate/ra_N----ASM
 20:17 poreu/ou_V2PMM-S- de/_C------- pro/s_P------- tou/s_D----APM a)delfou/s_N----APM mou_E----GS- kai/_C------- ei)pe/_V2AAM-S- au)toi=s_E----DPM
