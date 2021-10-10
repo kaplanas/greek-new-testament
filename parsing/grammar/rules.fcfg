@@ -98,9 +98,10 @@ IP[AGR=[GENDER=?g, NUMBER=plural, PERSON=1], DE=?d, MOOD=?m, REL=n, SUBJECT=y, W
 #IP[VERBLESS=?v, DE=?d, MOOD=?m, AGR=?a, REL=n, SUBJECT=y] -> VP[FINITE=y, VERBLESS=?v, DE=?d, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]] NP[WH=n, FUSED_REL=n, DE=n, CASE=nominative, AGR=?a[PERSON=3, NUMBER=plural, GENDER=neuter]]
 #IP[VERBLESS=?v, DE=?d, MOOD=?m, AGR=?a, REL=n, SUBJECT=y]/?x[] -> VP[FINITE=y, VERBLESS=?v, DE=?d, MOOD=?m, AGR=[PERSON=3, NUMBER=singular, GENDER=neuter]]/?x[] NP[WH=n, FUSED_REL=n, DE=n, CASE=nominative, AGR=?a[PERSON=3, NUMBER=plural, GENDER=neuter]]
 
-# Definite article + de as subject
+# Minor types
 
 IP[AGR=?a, DE=?d, MOOD=?m, REL=n, SUBJECT=n, WH=n] -> D[AGR=?a, CASE=nominative] 'de/_C-------' VP[AGR=?a, DE=n, FINITE=y, MOOD=?m, VERBLESS=n]
+IP[AGR=?a, DE=?d, MOOD=imperative, REL=n, SUBJECT=y, WH=n] -> V[AGR=?a, ARGS=[ARG_DAT_INF=y], MOOD=imperative] C[DE=?d, SECOND_POSITION=y] NP[CASE=dative, DE=n, WH=n] NP[AGR=?a, CASE=nominative, DE=n, WH=n] VP[DE=n, MOOD=infinitive]
 
 #### IPs with movement ####
 
