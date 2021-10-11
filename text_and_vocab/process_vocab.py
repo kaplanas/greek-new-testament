@@ -13,7 +13,7 @@ SUB_FEAT_STRUCTS = {
     'ARGS': ['ARG_NONE', 'ARG_NOM', 'ARG_ACC', 'ARG_DAT', 'ARG_GEN', 'ARG_INF',
              'ARG_IMP', 'ARG_OTI', 'ARG_S', 'ARG_SUBJ', 'ARG_ACC_ACC',
              'ARG_ACC_DAT', 'ARG_ACC_GEN', 'ARG_ACC_INF', 'ARG_DAT_GEN',
-             'ARG_DAT_INF']
+             'ARG_DAT_INF', 'ARG_DAT_OTI']
 }
 POS_PROCESSING = {
     'noun': {'id_cols': ['gender'],

@@ -21,7 +21,8 @@ S -> VP[VERBLESS=n, FINITE=n, MOOD=infinitive]
 # Minor constructions
 
 S -> D[CASE=nominative] C[DE=y, SECOND_POSITION=y]
-S -> D[CASE=nominative] C[DE=y, SECOND_POSITION=y] PP
+S -> D[CASE=nominative] C[DE=y, SECOND_POSITION=y] 'pro/s_P-------' NP[CASE=accusative, DE=n]
+S -> NP[CASE=nominative, DE=y] 'pro/s_P-------' NP[CASE=accusative, DE=n]
 S -> VP[FINITE=y, MOOD=imperative, NEGATIVE=n, VERBLESS=n] Comma[OPTIONAL=y] IP[DE=n, NEGATIVE=n, VERBLESS=n, WH=n]
 S -> E[AGR=?a] IP[AGR=?a, SUBJECT=n, WH=y]
 S -> NP[CASE=accusative] VP[CASE=accusative, MOOD=participle]
@@ -165,6 +166,7 @@ NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=n, ST
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=?r, STANDALONE=?s, WH=?w] -> AP[AGR=?a, ATTRIBUTIVE=y, CASE=?c, DE=?d, PAS=n, WH=n] N_like[AGR=?a, CASE=?c, DE=n, PAS=n, PROPER=?p, REL=?r, STANDALONE=?s, WH=?w]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=?r, STANDALONE=?s, WH=?w] -> N_like[AGR=?a, CASE=?c, DE=n, PAS=n, PROPER=?p, REL=?r, STANDALONE=?s, WH=?w] C[DE=?d, SECOND_POSITION=y] AP[AGR=?a, ATTRIBUTIVE=y, CASE=?c, DE=n, WH=n]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=n, STANDALONE=?s, WH=n] -> D[AGR=?a, CASE=?c] C[DE=?d, SECOND_POSITION=y] VP[AGR=?a, CASE=?c, FINITE=n, MOOD=participle]
+NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=n, STANDALONE=?s, WH=n] -> D[AGR=?a, CASE=?c] C[DE=?d, SECOND_POSITION=y] N_like[AGR=?a, CASE=?c, DE=n, PROPER=?p, REL=n, STANDALONE=?s, WH=n] VP[AGR=?a, CASE=?c, FINITE=n, MOOD=participle]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=?r, STANDALONE=?s, WH=y] -> AP[AGR=?a, ATTRIBUTIVE=y, CASE=?c, DE=?d, PAS=n, WH=y] N_like[AGR=?a, CASE=?c, DE=n, PAS=n, PROPER=?p, REL=?r, STANDALONE=?s, WH=n]
 NP[AGR=?a[PERSON=3], CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=?pred, PROPER=?p, REL=n, STANDALONE=n, WH=n] -> D[CASE=?c, AGR=?a] DE[SECOND_POSITION=y, DE=?d] AP[AGR=?a, CASE=?c, DE=n, PAS=n, PREDICATE=?pred, PROPER=?p]
 
@@ -285,7 +287,7 @@ VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> NP[
 
 # Complement with oti
 
-VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> V[AGR=?a, ARGS=[ARG_OTI=y], CASE=?c, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] 'o(/ti_C-------' VP[DE=n, FINITE=y, VERBLESS=n]
+VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> V[AGR=?a, ARGS=[ARG_OTI=y], CASE=?c, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] 'o(/ti_C-------' IP[DE=n, FINITE=y, VERBLESS=n]
 VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> V[AGR=?a, ARGS=[ARG_OTI=y], CASE=?c, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] NP[CASE=oti, DE=n, FUSED_REL=y]
 
 # Full sentential argument
@@ -335,6 +337,10 @@ VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> NP[
 # Dative and infinitive arguments
 
 VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> V[AGR=?a, ARGS=[ARG_DAT_INF=y], CASE=?c, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] NP[CASE=dative, WH=n] VP[DE=n, MOOD=infinitive, VERBLESS=n]
+
+# Dative and oti arguments
+
+VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, WH=n] -> V[AGR=?a, ARGS=[ARG_OTI=y], CASE=?c, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] NP[CASE=dative, WH=n] 'o(/ti_C-------' IP[DE=n, FINITE=y, VERBLESS=n]
 
 #### Copula verbs ####
 
