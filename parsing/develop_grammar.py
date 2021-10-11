@@ -169,7 +169,7 @@ def print_parses(parses, features=False):
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
-    sent_lengths = [1, 2, 3, 4]
+    sent_lengths = [1, 2, 3, 4, 5]
     old_parses = {}
     parses = {}
     changes = {}
@@ -199,9 +199,9 @@ if __name__ == '__main__':
                            else str(len(changes[sl][np][diff]))
                            for np in sorted(changes[sl].keys())]
                           for diff in ['fewer', 'same', 'more']],
-                         header=['Change'] + sorted(str(k) + ' parse' + '' if k == 1
-                                                    else str(k) + ' parses'
-                                                    for k in changes[sl].keys()),
+                         header=['Change'] + [str(k) + ' parse' + '' if k == 1
+                                              else str(k) + ' parses'
+                                              for k in sorted(changes[sl].keys())],
                          style=termtables.styles.markdown,
                          padding=(0, 1),
                          alignment='l' + ('r' * len(changes[sl])))
