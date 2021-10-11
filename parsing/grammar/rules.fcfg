@@ -190,6 +190,7 @@ NP[AGR=?a, CASE=?c, DE=n, FUSED_REL=n, POS=NP, PROPER=?p, REL=?r, STANDALONE=?s,
 # Conjunction
 
 NP[AGR=[NUMBER=plural], CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=?p, REL=?r, STANDALONE=?s, WH=n] -> NP[CASE=?c, DE=?d, PREDICATE=?p, REL=?r, STANDALONE=?s, WH=n] C[SECOND_POSITION=n] NP[CASE=?c, DE=n, PREDICATE=?p, REL=?r, STANDALONE=?s, WH=n]
+NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=n, STANDALONE=?s, WH=n] -> D[AGR=?a, CASE=?c] C[DE=?d, SECOND_POSITION=y] VP[AGR=?a, CASE=?c, FINITE=n, MOOD=participle]
 
 #### Adding things to NPs ####
 
@@ -434,6 +435,7 @@ PP[DE=?d, POS=PP, REL=y, WH=y] -> P[ARGS=[ARG_DAT=y], POSTPOS=n] C[DE=?d, SECOND
 AdvP[DE=?d, POS=AdvP, PREDICATE=?p, REL=n, WH=?w] -> B[ADJUNCT=y, NEGATIVE=n, PREDICATE=?p, WH=?w] C[DE=?d, SECOND_POSITION=y]
 AdvP[DE=?d, POS=AdvP, PREDICATE=n, REL=n, WH=y] -> I[AGR=[GENDER=neuter], CASE=accusative, WH=y] C[DE=?d, SECOND_POSITION=y]
 AdvP[DE=?d, POS=AdvP, PREDICATE=n, REL=n, WH=n] -> A[ADVERB=y, AGR=[GENDER=neuter], CASE=accusative] C[DE=?d, SECOND_POSITION=y]
+AdvP[DE=?d, POS=AdvP, PREDICATE=n, REL=n, WH=n] -> A[ADVERB=y, AGR=?a, CASE=accusative] C[DE=?d, SECOND_POSITION=y] N_like[AGR=?a, CASE=accusative]
 AdvP[DE=?d, POS=AdvP, PREDICATE=n, REL=n, WH=n] -> D[AGR=?a, CASE=accusative] C[DE=?d, SECOND_POSITION=y] A[ADVERB=y, AGR=?a[GENDER=neuter], CASE=accusative]
 AdvP[DE=?d, POS=AdvP, PREDICATE=y, REL=?r, WH=?w] -> PP[DE=?d, REL=?r, WH=?w]
 AdvP[DE=?d, POS=AdvP, PREDICATE=n, REL=n, WH=n] -> VP[CASE=nominative, DE=?d, MOOD=participle, VERBLESS=n]
