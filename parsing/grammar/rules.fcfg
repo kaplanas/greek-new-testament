@@ -80,7 +80,7 @@ IP[AGR=?a, DE=n, MOOD=?m, REL=n, SUBJECT=y, WH=n]/?x[ARGS=?arg, COPULA=?cop, POS
 
 # Subject + predicate, idiosyncractic agreement
 
-IP[AGR=[GENDER=neuter, NUMBER=plural, PERSON=3], DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERBLESS=?v, WH=n] -> NP[AGR=[GENDER=neuter, NUMBER=plural, PERSON=3], CASE=nominative, DE=?d, FUSED_REL=n, WH=n] VP[AGR=[GENDER=neuter, NUMBER=singular, PERSON=3], DE=n, FINITE=y, MOOD=?m, VERBLESS=?v]
+IP[AGR=[GENDER=neuter, NUMBER=plural, PERSON=3], DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERBLESS=n, WH=n] -> NP[AGR=[GENDER=neuter, NUMBER=plural, PERSON=3], CASE=nominative, DE=?d, FUSED_REL=n, WH=n] VP[AGR=[GENDER=neuter, NUMBER=singular, PERSON=3], DE=n, FINITE=y, MOOD=?m, VERBLESS=n]
 IP[AGR=[GENDER=?g, NUMBER=plural, PERSON=2], DE=?d, MOOD=?m, REL=n, SUBJECT=y, WH=n] -> I[AGR=[GENDER=?g, NUMBER=plural, PERSON=3], CASE=nominative, DE=n, FUSED_REL=n, WH=n] VP[AGR=[GENDER=?g, NUMBER=plural, PERSON=2], DE=?d, FINITE=y, MOOD=?m, VERBLESS=n]
 IP[AGR=?a, DE=?d, MOOD=?m, REL=n, SUBJECT=y, WH=n]/?x[POS=PredP, WH=n] -> I[AGR=[GENDER=?g, NUMBER=plural, PERSON=3], CASE=nominative, DE=n, FUSED_REL=n, WH=n] VP[AGR=[GENDER=?g, NUMBER=plural, PERSON=2], DE=?d, FINITE=y, MOOD=?m, VERBLESS=n]/?x[POS=PredP, WH=n]
 
@@ -238,7 +238,7 @@ NP[AGR=?a, CASE=?c, DE=n, FUSED_REL=n, POS=NP, PROPER=y, REL=?r, STANDALONE=n, S
 NP[AGR=?a, CASE=?c, DE=n, FUSED_REL=n, POS=NP, PROPER=y, REL=?r, STANDALONE=n, SUB_NP=n, WH=n] -> NP[AGR=?a, CASE=?c, DE=n, PROPER=n, REL=?r, WH=n] N[AGR=?a, CASE=?c, PROPER=y]
 NP[AGR=?a, CASE=?c, DE=n, FUSED_REL=n, POS=NP, PROPER=n, REL=n, STANDALONE=n, SUB_NP=n, WH=n] -> I[AGR=?a, CASE=?c, WH=n] AP[AGR=?a, CASE=?c, DE=n, KAI=n, STANDALONE=n, WH=n]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=n, PROPER=n, REL=n, STANDALONE=n, SUB_NP=n, WH=n] -> M[AGR=?a, CASE=?c] C[DE=?d, SECOND_POSITION=y] A[AGR=?a, CASE=?c, PAS=y]
-NP[AGR=?a, CASE=?c, DE=n, FUSED_REL=n, POS=NP, PREDICATE=?p, PROPER=n, REL=?r, STANDALONE=?s, SUB_NP=n, WH=n] -> A[AGR=?a, CASE=?c, PAS=y] NP[AGR=?a, CASE=?c, DE=n, PREDICATE=?p, PROPER=n, REL=?r, STANDALONE=?s, WH=n]
+NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=?p, PROPER=n, REL=?r, STANDALONE=?s, SUB_NP=n, WH=n] -> A[AGR=?a, CASE=?c, PAS=y] C[DE=?d, SECOND_POSITION=y] NP[AGR=?a, CASE=?c, DE=n, PREDICATE=?p, PROPER=n, REL=?r, STANDALONE=?s, WH=n]
 NP[CASE=accusative, DE=?d, FUSED_REL=n, POS=NP, PROPER=n, REL=n, STANDALONE=n, SUB_NP=n, WH=n] -> 'tinw=n_I----GPM'
 
 #### Adjective phrases ####
