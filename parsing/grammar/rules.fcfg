@@ -108,6 +108,7 @@ IP[AGR=?a, DE=?d, MOOD=imperative, REL=n, SUBJECT=y, WH=n] -> V[AGR=?a, ARGS=[AR
 # Wh subject
 
 IP[AGR=?a, DE=?d, MOOD=?m, REL=?r, SUBJECT=y, VERBLESS=?v, WH=y] -> NP[AGR=?a, CASE=nominative, DE=?d, REL=?r, WH=y] VP[AGR=?a, DE=n, FINITE=y, MOOD=?m, PREDICATE=n, VERBLESS=?v]
+IP[AGR=?a, DE=?d, MOOD=?m, REL=?r, SUBJECT=y, VERBLESS=n, WH=y] -> NP[AGR=?a, CASE=nominative, DE=?d, REL=?r, WH=y] VP[AGR=?a, DE=n, FINITE=y, MOOD=?m, PREDICATE=y, VERBLESS=n]
 IP[AGR=?a, DE=?d, MOOD=?m, REL=?r, SUBJECT=y, VERBLESS=?v, WH=y] -> NP[AGR=?a[GENDER=neuter, NUMBER=plural, PERSON=3], CASE=nominative, DE=?d, REL=?r, WH=y] VP[AGR=[GENDER=neuter, NUMBER=singular, PERSON=3], DE=n, FINITE=y, MOOD=?m, VERBLESS=?v]
 
 # Wh elements extracted out of an IP
