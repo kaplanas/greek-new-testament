@@ -87,6 +87,7 @@ IP[AGR=?a, DE=?d, MOOD=?m, REL=n, SUBJECT=y, WH=n]/?x[POS=PredP, WH=n] -> I[AGR=
 # Predicate + subject
 
 IP[AGR=?a, DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERBLESS=?v, WH=n] -> VP[AGR=?a, DE=?d, FINITE=y, MOOD=?m, VERBLESS=?v, WH=n] NP[AGR=?a, CASE=nominative, DE=n, FUSED_REL=n, WH=n]
+IP[AGR=[GENDER=?g, NUMBER=?n, PERSON=2], DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERBLESS=?v, WH=n] -> VP[AGR=[GENDER=?g, NUMBER=?n, PERSON=2], DE=?d, FINITE=y, MOOD=?m, VERBLESS=?v, WH=n] NP[AGR=[GENDER=?g, NUMBER=?n], CASE=nominative, DE=n, FUSED_REL=n, STANDALONE=y, WH=n]
 IP[AGR=?a, DE=n, MOOD=?m, REL=n, SUBJECT=y, WH=y]/?x[CASE=?c, POS=NP, PREDICATE=?p, SUB_NP=n, WH=y] -> VP[AGR=?a, DE=n, FINITE=y, MOOD=?m, VERBLESS=n, WH=n]/?x[CASE=?c, POS=NP, PREDICATE=?p, SUB_NP=n, WH=y] NP[AGR=?a, CASE=nominative, DE=n, WH=n]
 IP[AGR=?a, DE=n, MOOD=?m, REL=n, SUBJECT=y, WH=n]/?x[CASE=nominative, POS=NP, PREDICATE=?p, SUB_NP=n, WH=n] -> VP[AGR=?a, DE=n, FINITE=y, MOOD=?m, VERBLESS=y, WH=n] NP[AGR=?a, CASE=nominative, DE=n, SUB_NP=y, WH=n]/?x[CASE=nominative, POS=NP, PREDICATE=?p, SUB_NP=n, WH=n]
 IP[AGR=?a, DE=n, MOOD=?m, REL=n, SUBJECT=y, WH=y]/?x[POS=PredP, WH=y] -> VP[AGR=?a, DE=n, FINITE=y, MOOD=?m, VERBLESS=n]/?x[POS=PredP, WH=y] NP[AGR=?a, CASE=nominative, DE=n, WH=n]
@@ -153,7 +154,7 @@ IP[AGR=?a, DE=?d, MOOD=?m, REL=n, SUBJECT=?s, VERBLESS=?v, WH=n] -> C[DE=y, SUBO
 
 # Noun-like vocabulary items
 
-N_like[AGR=?a, ARGS=?arg, CASE=?c, DE=?d, DEGREE=absolute, POS=N_like, PROPER=?p, REL=n, WH=n] -> N[AGR=?a, ARGS=?arg, CASE=?c, PROPER=?p] C[DE=?d, SECOND_POSITION=y]
+N_like[AGR=?a, ARGS=?arg, CASE=?c, DE=?d, DEGREE=absolute, POS=N_like, PROPER=?p, REL=n, STANDALONE=n, WH=n] -> N[AGR=?a, ARGS=?arg, CASE=?c, PROPER=?p] C[DE=?d, SECOND_POSITION=y]
 N_like[AGR=?a, ARGS=none, CASE=?c, DE=?d, DEGREE=?deg, POS=N_like, PAS=?pas, PROPER=?p, REL=n, STANDALONE=y, WH=?w] -> AP[AGR=?a, CASE=?c, DE=?d, DEGREE=?deg, KAI=n, PAS=?pas, PROPER=?p, STANDALONE=y, WH=?w]
 
 # Single-constituent NPs
@@ -171,7 +172,7 @@ NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=?r, 
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=n, STANDALONE=n, SUB_NP=n, WH=n] -> D[AGR=?a, CASE=?c] C[DE=?d, SECOND_POSITION=y] M[AGR=?a, CASE=?c, WH=n]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=?r, STANDALONE=?s, SUB_NP=n, WH=?w] -> AP[AGR=?a, ATTRIBUTIVE=y, CASE=?c, DE=?d, PAS=n, WH=n] N_like[AGR=?a, CASE=?c, DE=n, PAS=n, PROPER=?p, REL=?r, STANDALONE=?s, WH=?w]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=?r, STANDALONE=?s, SUB_NP=n, WH=?w] -> N_like[AGR=?a, CASE=?c, DE=n, PAS=n, PROPER=?p, REL=?r, STANDALONE=?s, WH=?w] C[DE=?d, SECOND_POSITION=y] AP[AGR=?a, ATTRIBUTIVE=y, CASE=?c, DE=n, WH=n]
-NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=n, STANDALONE=?s, SUB_NP=n, WH=n] -> D[AGR=?a, CASE=?c] C[DE=?d, SECOND_POSITION=y] VP[AGR=?a, CASE=?c, FINITE=n, MOOD=participle]
+NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=n, STANDALONE=n, SUB_NP=n, WH=n] -> D[AGR=?a, CASE=?c] C[DE=?d, SECOND_POSITION=y] VP[AGR=?a, CASE=?c, FINITE=n, MOOD=participle]
 NP[AGR=[GENDER=?g, NUMBER=?n, PERSON=?p], CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=n, STANDALONE=?s, SUB_NP=n, WH=n] -> N_like[AGR=[GENDER=?g, NUMBER=?n, PERSON=?p], CASE=?c, DE=n, PAS=n, PROPER=n, REL=?r, STANDALONE=?s, WH=?w] C[DE=?d, SECOND_POSITION=y] VP[AGR=[GENDER=?g, NUMBER=?n], CASE=?c, FINITE=n, MOOD=participle]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=n, STANDALONE=?s, SUB_NP=n, WH=n] -> D[AGR=?a, CASE=?c] C[DE=?d, SECOND_POSITION=y] N_like[AGR=?a, CASE=?c, DE=n, PROPER=?p, REL=n, STANDALONE=?s, WH=n] VP[AGR=?a, CASE=?c, FINITE=n, MOOD=participle]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=?r, STANDALONE=?s, SUB_NP=n, WH=y] -> AP[AGR=?a, ATTRIBUTIVE=y, CASE=?c, DE=?d, PAS=n, WH=y] N_like[AGR=?a, CASE=?c, DE=n, PAS=n, PROPER=?p, REL=?r, STANDALONE=?s, WH=n]
@@ -209,7 +210,7 @@ NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=?r, 
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=n, STANDALONE=?s, SUB_NP=n, WH=n] -> NP[CASE=genitive, DE=?d, REL=n, WH=n] D[AGR=?a, CASE=?c] N_like[AGR=?a[PERSON=3], CASE=?c, DE=n, DEGREE=absolute, PROPER=?p, REL=n, STANDALONE=?s, WH=n]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=y, STANDALONE=?s, SUB_NP=n, WH=n] -> NP[CASE=genitive, DE=?d, REL=y] D[AGR=?a, CASE=?c] N_like[AGR=?a[PERSON=3], CASE=?c, DE=n, DEGREE=absolute, PROPER=?p, REL=n, STANDALONE=?s, WH=n]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=y, STANDALONE=?s, SUB_NP=n, WH=n] -> NP[CASE=genitive, DE=?d, REL=n, WH=n] D[AGR=?a, CASE=?c] N_like[AGR=?a[PERSON=3], CASE=?c, DE=n, DEGREE=absolute, PROPER=?p, REL=y, STANDALONE=?s]
-NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=?r, STANDALONE=?s, SUB_NP=n, WH=n] -> NP[CASE=genitive, DE=?d, WH=n] N_like[AGR=?a[PERSON=3], CASE=?c, DE=n, DEGREE=absolute, PROPER=?p, REL=?r, STANDALONE=?s, WH=n]
+NP[AGR=[GENDER=?g, NUMBER=?n, PERSON=3], CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=?r, STANDALONE=?s, SUB_NP=n, WH=n] -> NP[CASE=genitive, DE=?d, WH=n] N_like[AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, DEGREE=absolute, PROPER=?p, REL=?r, STANDALONE=?s, WH=n]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=?r, STANDALONE=?s, SUB_NP=n, WH=n] -> D[AGR=?a, CASE=?c] C[DE=?d, SECOND_POSITION=y] N_like[AGR=?a[PERSON=3], CASE=?c, DE=n, DEGREE=absolute, PROPER=?p, REL=?r, STANDALONE=?s, WH=n] NP[CASE=genitive, WH=n]
 
 # Relative clause adjuncts to NPs
