@@ -260,6 +260,7 @@ AP[AGR=?agr, ADVERB=?a, ATTRIBUTIVE=?att, CASE=?c, DE=?d, DEGREE=comparative, KA
 # Pre-AP particles
 
 AP[AGR=?agr, ADVERB=?a, ATTRIBUTIVE=?att, CASE=?c, DE=?d, DEGREE=?deg, KAI=y, PAS=?pas, POS=AP, PREDICATE=?p, STANDALONE=?s, WH=n] -> 'kai/_B-------' AP[AGR=?agr, ADVERB=?a, ATTRIBUTIVE=?att, CASE=?c, DE=?d, DEGREE=?deg, KAI=n, PAS=?pas, PREDICATE=?p, STANDALONE=?s, WH=n]
+AP[AGR=?agr, ADVERB=?a, ATTRIBUTIVE=?att, CASE=?c, DE=?d, DEGREE=?deg, KAI=y, PAS=?pas, POS=AP, PREDICATE=?p, STANDALONE=?s, WH=n] -> 'ou)_B-------' AP[AGR=?agr, ADVERB=?a, ATTRIBUTIVE=?att, CASE=?c, DE=?d, DEGREE=?deg, KAI=n, PAS=?pas, PREDICATE=?p, STANDALONE=?s, WH=n]
 
 ######################
 #### Verb phrases ####
