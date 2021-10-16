@@ -343,7 +343,7 @@ VP[AGR=?a, CASE=?c, DE=n, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, VERBLESS=n, W
 
 # Accusative and infinitive arguments
 
-VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, VERBLESS=n, WH=n] -> V[AGR=?a, ARGS=[ARG_ACC_INF=y], CASE=?c, FINITE=?f, MOOD=?m] C[SECOND_POSITION=y, DE=?d] NP[CASE=accusative, WH=n] VP[DE=n, MOOD=infinitive, VERBLESS=n]
+VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, VERBLESS=n, WH=n] -> V[AGR=?a, ARGS=[ARG_ACC_INF=y], CASE=?c, FINITE=?f, MOOD=?m] C[SECOND_POSITION=y, DE=?d] NP[CASE=accusative, WH=n] VP[CASE=accusative, DE=n, MOOD=infinitive, VERBLESS=n]
 VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, VERBLESS=n, WH=n] -> NP[CASE=accusative, DE=?d, WH=n] V[AGR=?a, ARGS=[ARG_ACC_INF=y], CASE=?c, FINITE=?f, MOOD=?m] VP[DE=n, MOOD=infinitive, VERBLESS=n]
 
 # Dative and genitive arguments
@@ -382,12 +382,12 @@ PredP[CASE=?c, DE=?d, POS=PredP, WH=?w]/?x[AGR=?a, CASE=?c, POS=AP, WH=?w] -> NP
 
 # Copula-predicate constructions
 
-VP[AGR=?a, DE=?d, FINITE=y, MOOD=indicative, POS=VP, PREDICATE=y, VERBLESS=y, WH=n] -> PredP[AGR=?a, CASE=nominative, DE=?d, WH=n]
-VP[DE=?d, FINITE=y, MOOD=indicative, POS=VP, PREDICATE=y, VERBLESS=y, WH=n] -> PredP[CASE=genitive, DE=?d, WH=n]
-VP[DE=?d, FINITE=y, MOOD=indicative, POS=VP, PREDICATE=y, VERBLESS=y, WH=n] -> PredP[CASE=dative, DE=?d, WH=n]
+VP[AGR=?a, CASE=nominative, DE=?d, FINITE=y, MOOD=indicative, POS=VP, PREDICATE=y, VERBLESS=y, WH=n] -> PredP[AGR=?a, CASE=nominative, DE=?d, WH=n]
+VP[CASE=genitive, DE=?d, FINITE=y, MOOD=indicative, POS=VP, PREDICATE=y, VERBLESS=y, WH=n] -> PredP[CASE=genitive, DE=?d, WH=n]
+VP[CASE=dative, DE=?d, FINITE=y, MOOD=indicative, POS=VP, PREDICATE=y, VERBLESS=y, WH=n] -> PredP[CASE=dative, DE=?d, WH=n]
 VP[DE=?d, FINITE=y, MOOD=indicative, POS=VP, PREDICATE=y, VERBLESS=y, WH=?w] -> PredP[CASE=none, DE=?d, WH=?w]
 VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=y, VERBLESS=n, WH=n] -> V[AGR=?a, CASE=?c, COPULA=y, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] PredP[AGR=?a, CASE=nominative, DE=n, WH=n]
-VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=y, VERBLESS=n, WH=n] -> PredP[AGR=?a, CASE=nominative, DE=?d, WH=n] C[DE=?d, SECOND_POSITION=y] V[AGR=?a, CASE=?c, COPULA=y, FINITE=?f, MOOD=?m]
+VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=y, VERBLESS=n, WH=n] -> PredP[AGR=?a, CASE=?c, DE=?d, WH=n] C[DE=?d, SECOND_POSITION=y] V[AGR=?a, CASE=?c, COPULA=y, FINITE=?f, MOOD=?m]
 
 # Moving things out of copula-predicate constructions
 
