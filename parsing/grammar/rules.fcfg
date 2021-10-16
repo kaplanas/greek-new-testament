@@ -459,6 +459,7 @@ AdvP[DE=?d, POS=AdvP, PREDICATE=n, REL=n, WH=n] -> VP[AGR=?agr, CASE=genitive, D
 AdvP[DE=?d, POS=AdvP, PREDICATE=n, REL=n, WH=n] -> VP[AGR=?agr, CASE=genitive, DE=?d, MOOD=participle, VERBLESS=n] NP[AGR=?agr, CASE=genitive]
 AdvP[DE=?d, POS=AdvP, PREDICATE=?p, REL=n, WH=?w] -> 'kai/_B-------' AdvP[DE=?d, PREDICATE=?p, WH=?w]
 AdvP[DE=?d, POS=AdvP, PREDICATE=n, REL=n, WH=n] -> 'eu)qu/s_A----NSM' C[DE=?d, SECOND_POSITION=y]
+AdvP[DE=n, POS=AdvP, PREDICATE=?p, REL=?r, WH=n] -> 'ou)xi/_B-------' AdvP[DE=n, POS=AdvP, PREDICATE=?p, REL=?r, WH=n]
 
 # Vocatives as adjuncts
 
