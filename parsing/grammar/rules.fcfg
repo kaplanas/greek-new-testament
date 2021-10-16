@@ -51,6 +51,7 @@ AdvP[DE=?d, POS=AdvP, PREDICATE=?p, WH=?w]/AdvP[DE=?d, POS=AdvP, PREDICATE=?p, W
 PredP[AGR=?a, CASE=?c, WH=?w]/PredP[AGR=?a, CASE=?c, WH=?w] ->
 V[AGR=?a, ARGS=?arg, CASE=?c, COPULA=?cop, FINITE=?f, MOOD=?m]/V[AGR=?a, ARGS=?arg, CASE=?c, COPULA=?cop, FINITE=?f, MOOD=?m] ->
 N[AGR=?a, CASE=?c, DE=n, POS=N, PROPER=?p, STANDALONE=?s, WH=?w]/N[AGR=?a, CASE=?c, DE=n, POS=N, PROPER=?p, STANDALONE=?s, WH=?w] ->
+N_like[AGR=?a, CASE=?c, DE=n, POS=N_like, PROPER=?p, STANDALONE=?s, WH=?w]/N_like[AGR=?a, CASE=?c, DE=n, POS=N_like, PROPER=?p, STANDALONE=?s, WH=?w] ->
 C[DE=n, SECOND_POSITION=y] ->
 
 Comma -> ',_,'
@@ -209,6 +210,7 @@ NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=n, ST
 
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=?p, REL=?r, STANDALONE=?s, SUB_NP=n, WH=?w] -> N_like[AGR=?a, CASE=?c, DE=?d, DEGREE=absolute, PROPER=?p, REL=?r, STANDALONE=?s, WH=?w] NP[CASE=genitive, WH=n]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=?r, STANDALONE=?s, SUB_NP=y, WH=?w]/?x[CASE=genitive, POS=NP, SUB_NP=n] -> N_like[AGR=?a, CASE=?c, DE=?d, DEGREE=absolute, PROPER=n, REL=?r, STANDALONE=?s, WH=?w] NP[CASE=genitive, SUB_NP=y, WH=n]/?x[CASE=genitive, POS=NP, SUB_NP=n]
+NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=?r, STANDALONE=?s, SUB_NP=y, WH=?w]/?x[CASE=?c, POS=N_like] -> N_like[AGR=?a, CASE=?c, DE=?d, DEGREE=absolute, PROPER=n, REL=?r, STANDALONE=?s, WH=?w]/?x[CASE=?c, POS=N_like] NP[CASE=genitive, WH=n]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=n, STANDALONE=?s, SUB_NP=n, WH=n] -> NP[CASE=genitive, DE=?d, REL=n, WH=n] D[AGR=?a, CASE=?c] N_like[AGR=?a[PERSON=3], CASE=?c, DE=n, DEGREE=absolute, PROPER=n, REL=n, STANDALONE=?s, WH=n]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=y, STANDALONE=?s, SUB_NP=n, WH=n] -> NP[CASE=genitive, DE=?d, REL=y] D[AGR=?a, CASE=?c] N_like[AGR=?a[PERSON=3], CASE=?c, DE=n, DEGREE=absolute, PROPER=n, REL=n, STANDALONE=?s, WH=n]
 NP[AGR=?a, CASE=?c, DE=?d, FUSED_REL=n, POS=NP, PREDICATE=y, PROPER=n, REL=y, STANDALONE=?s, SUB_NP=n, WH=n] -> NP[CASE=genitive, DE=?d, REL=n, WH=n] D[AGR=?a, CASE=?c] N_like[AGR=?a[PERSON=3], CASE=?c, DE=n, DEGREE=absolute, PROPER=n, REL=y, STANDALONE=?s]
@@ -280,6 +282,7 @@ VP[AGR=?a, CASE=?c, DE=?d, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, VERBLESS=n, 
 VP[AGR=?a, CASE=?c, DE=n, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, VERBLESS=n, WH=n]/?x[CASE=accusative, POS=NP] -> V[AGR=?a, ARGS=[ARG_ACC=y], CASE=?c, FINITE=?f, MOOD=?m] NP[CASE=accusative]/?x[CASE=accusative, POS=NP]
 VP[AGR=?a, CASE=?c, DE=n, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, VERBLESS=n, WH=?w]/?x[AGR=?agr, ATTRIBUTIVE=?attr, CASE=?c, DE=?d, POS=AP, WH=?w] -> V[AGR=?a, ARGS=[ARG_ACC=y], CASE=?c, FINITE=?f, MOOD=?m] NP[CASE=accusative]/?x[AGR=?agr, ATTRIBUTIVE=?attr, CASE=?c, DE=?d, POS=AP, WH=?w]
 VP[AGR=?a, CASE=?c, DE=n, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, VERBLESS=n, WH=n]/?x[ARGS=?arg, POS=V] -> V[AGR=?a, ARGS=[ARG_ACC=y], CASE=?c, FINITE=?f, MOOD=?m]/?x[ARGS=?arg, POS=V] NP[CASE=accusative, DE=n, WH=n]
+VP[AGR=?a, CASE=?c, DE=n, FINITE=?f, MOOD=?m, POS=VP, PREDICATE=n, VERBLESS=n, WH=n] -> N_like[CASE=accusative] V[AGR=?a, ARGS=[ARG_ACC=y], CASE=?c, FINITE=?f, MOOD=?m] NP[CASE=accusative]/N_like[CASE=accusative, POS=N_like]
 
 # Dative argument
 
