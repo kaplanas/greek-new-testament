@@ -48,7 +48,7 @@ zesto/s,n,n,n,y,y,n,n,n
 xliaro/s,n,n,n,y,y,n,n,n
 talai/pwros,n,n,n,y,y,n,n,n
 e)leeino/s,n,n,n,y,y,n,n,n
-ptwxo/s,n,n,n,y,y,n,n,n
+ptwxo/s,y,n,n,y,y,n,n,n
 tuflo/s,y,n,n,y,y,n,n,n
 gumno/s,n,n,n,y,y,n,n,n
 smara/gdinos,n,n,n,y,y,n,n,n
@@ -70,7 +70,7 @@ e(/ktos,n,n,n,y,y,n,n,n
 tri/xinos,n,n,n,y,y,n,n,n
 e)leu/qeros,n,n,n,y,y,n,n,n
 e(kato/n,n,n,n,y,y,n,n,n
-tessera/konta,n,n,n,y,y,n,n,n
+tessera/konta,n,n,y,y,y,n,n,n
 dw/deka,y,n,n,y,y,n,n,n
 e(/bdomos,n,n,n,y,y,n,n,n
 pe/nte,n,n,n,y,y,n,n,n
@@ -104,7 +104,7 @@ a)/mwmos,n,n,n,y,y,n,n,n
 ai)w/nios,n,n,n,y,y,n,n,n
 a)/kratos,n,n,n,y,y,n,n,n
 qaumasto/s,n,n,n,y,y,n,n,n
-di/kaios,n,n,n,y,y,n,n,n
+di/kaios,y,n,n,y,y,n,n,n
 mo/nos,n,n,n,y,y,n,n,n
 o(/sios,n,n,n,y,y,n,n,n
 kaqaro/s,y,n,n,y,y,n,y,n
@@ -117,7 +117,7 @@ porfurou=s,n,n,n,y,y,n,n,n
 ti/mios,n,n,n,y,y,n,n,n
 o)/gdoos,n,n,n,y,y,n,n,n
 klhto/s,n,n,n,y,y,n,n,n
-e)klekto/s,y,n,n,y,y,n,n,y
+e)klekto/s,y,n,n,y,y,n,n,n
 diplou=s,n,n,n,y,y,n,n,n
 bu/ssinos,n,n,n,y,y,n,n,n
 siriko/s,n,n,n,y,y,n,n,n
@@ -617,7 +617,7 @@ oi)kei=os,n,n,n,y,y,n,n,n
 a)/qeos,n,n,n,y,y,n,n,n
 a)krogwniai=os,n,n,n,y,y,n,n,n
 su/sswmos,n,n,n,y,y,n,n,n
-summe/toxos,n,n,n,y,y,n,n,y
+summe/toxos,y,n,n,y,y,n,n,n
 polupoi/kilos,n,n,n,y,y,n,n,n
 katw/teros,n,n,n,y,y,n,n,n
 eu)/splagxnos,n,n,n,y,y,n,n,n

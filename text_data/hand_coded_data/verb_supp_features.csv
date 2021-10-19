@@ -23,7 +23,7 @@ kale/w,y,y,y,n,n,n,n,n,n,n,n,y,n,n,n,n,n
 ble/pw,n,y,y,n,n,n,n,y,n,n,n,n,n,n,n,n,n
 pe/mpw,n,y,y,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 e)pistre/fw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
-lale/w,n,y,y,y,n,n,n,n,n,n,n,y,n,n,n,n,n
+lale/w,n,y,y,y,n,n,n,n,y,n,n,y,n,n,n,n,n
 e)ndu/w,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 perizw/nnumi,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 puro/omai,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
@@ -77,7 +77,7 @@ molu/nw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 periba/llw,n,n,y,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 e)calei/fw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 o(mologe/w,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
-a)noi/gw,n,y,n,y,n,n,n,n,n,n,n,n,n,n,n,n,n
+a)noi/gw,n,y,y,y,n,n,n,n,n,n,n,n,n,n,n,n,n
 klei/w,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 yeu/domai,n,y,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 proskune/w,n,n,n,y,n,n,n,n,n,n,n,n,n,n,n,n,n
@@ -250,7 +250,7 @@ qumia/w,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 proseu/xomai,n,y,n,n,n,y,n,n,n,n,n,n,n,n,n,n,n
 tara/ssw,n,y,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 ei)sakou/w,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
-genna/w,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
+genna/w,n,y,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 pi/mplhmi,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 proe/rxomai,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 kataskeua/zw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
@@ -371,7 +371,7 @@ qrau/w,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 ptu/ssw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 a)teni/zw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 kaqari/zw,n,y,y,n,n,n,n,n,n,n,n,n,n,n,n,n,n
-oi)kodome/w,n,y,y,y,n,n,n,n,n,n,n,n,n,n,n,n,n
+oi)kodome/w,n,y,y,y,n,n,n,n,n,n,n,y,n,n,n,n,n
 katakrhmni/zw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 kate/rxomai,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 a)nakra/zw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
@@ -645,7 +645,7 @@ e)mba/llw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 e)pilanqa/nomai,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 diafe/rw,n,n,n,n,y,n,n,n,n,n,n,n,n,n,y,n,n
 a)parne/omai,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
-a)pologe/omai,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
+a)pologe/omai,n,n,n,y,n,n,n,n,n,n,n,n,n,n,n,n,n
 meri/zw,n,y,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 kaqi/sthmi,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 eu)fore/w,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
@@ -1353,7 +1353,7 @@ a)noikodome/w,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 parenoxle/w,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 e)piste/llw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 a)naskeua/zw,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
-diaste/llomai,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
+diaste/llomai,n,y,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 r(w/nnumai,n,y,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 e)kple/w,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
 eu)qudrome/w,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n
