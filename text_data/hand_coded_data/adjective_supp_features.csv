@@ -8,7 +8,7 @@ pa=s,y,n,n,y,n,y,n,n
 kuriako/s,n,n,n,y,y,n,n,n
 me/gas,y,n,n,y,y,n,n,n
 xrusou=s,n,n,n,y,y,n,n,n
-me/sos,y,n,n,y,y,n,n,n
+me/sos,y,n,y,y,y,n,n,n
 o(/moios,n,n,n,n,y,n,y,n
 podh/rhs,n,n,n,y,y,n,n,n
 leuko/s,n,n,n,y,y,n,n,n
@@ -66,7 +66,7 @@ me/las,n,n,n,y,y,n,n,n
 trei=s,n,n,n,y,y,n,n,n
 xlwro/s,n,n,n,y,y,n,n,n
 pe/mptos,n,n,n,y,y,n,n,n
-e(/ktos,n,n,n,y,y,n,n,n
+e(/ktos,y,n,n,y,y,n,n,n
 tri/xinos,n,n,n,y,y,n,n,n
 e)leu/qeros,n,n,n,y,y,n,n,n
 e(kato/n,n,n,n,y,y,n,n,n
@@ -75,7 +75,7 @@ dw/deka,y,n,n,y,y,n,n,n
 e(/bdomos,n,n,n,y,y,n,n,n
 pe/nte,n,n,n,y,y,n,n,n
 *(ellhniko/s,n,n,n,y,y,n,n,n
-du/o,y,n,y,y,y,n,n,n
+du/o,y,n,n,y,y,n,n,n
 i(ppiko/s,n,n,n,y,y,n,n,n
 pu/rinos,n,n,n,y,y,n,n,n
 u(aki/nqinos,n,n,n,y,y,n,n,n
@@ -92,7 +92,7 @@ e(ch/konta,n,n,n,y,y,n,n,n
 e)xqro/s,n,n,n,y,y,n,n,n
 platu/s,n,n,n,y,y,n,n,n
 h(/misus,n,n,n,y,y,n,n,n
-de/katos,n,n,n,y,y,n,n,n
+de/katos,y,n,n,y,y,n,n,n
 e)/mfobos,n,n,n,y,y,n,n,n
 a)/rshn,n,n,n,y,y,n,n,n
 e)/rhmos,n,n,n,y,y,n,n,n
@@ -167,7 +167,7 @@ pentekaide/katos,n,n,n,y,y,n,n,n
 *)itourai=os,n,n,n,y,y,n,n,n
 *traxwni=tis,n,n,n,y,y,n,n,n
 peri/xwros,n,n,n,y,y,n,n,n
-eu)qu/s,n,n,n,y,y,n,n,n
+eu)qu/s,n,n,y,y,y,n,n,n
 skolio/s,n,n,n,y,y,n,n,n
 traxu/s,n,n,n,y,y,n,n,n
 lei=os,n,n,n,y,y,n,n,n
@@ -556,7 +556,7 @@ i(ero/sulos,n,n,n,y,y,n,n,n
 *derbai=os,n,n,n,y,y,n,n,n
 baru/s,n,n,n,y,y,n,n,n
 e)nto/pios,n,n,n,y,y,n,n,n
-tetrakisxi/lioi,n,n,n,y,y,n,n,n
+tetrakisxi/lioi,y,n,n,y,y,n,n,n
 a)/shmos,n,n,n,y,y,n,n,n
 *(ebrai/+s,n,n,n,y,y,n,n,n
 patrw=|os,n,n,n,y,y,n,n,n
@@ -764,7 +764,7 @@ nwqro/s,n,n,n,y,y,n,n,n
 a)/peiros,n,n,n,y,y,n,n,n
 a)meta/qetos,n,n,n,y,y,n,n,n
 pro/dromos,n,n,n,y,y,n,n,n
-dekato/s,n,n,n,y,y,n,n,n
+dekato/s,y,n,n,y,y,n,n,n
 a)pa/twr,n,n,n,y,y,n,n,n
 a)mh/twr,n,n,n,y,y,n,n,n
 a)genealo/ghtos,n,n,n,y,y,n,n,n
@@ -802,5 +802,5 @@ do/lios,n,n,n,y,y,n,n,n
 *damaskhno/s,n,n,n,y,y,n,n,n
 a)/rrhtos,n,n,n,y,y,n,n,n
 panou=rgos,n,n,n,y,y,n,n,n
-poi=os,y,y,n,y,n,n,n,n
+poi=os,n,y,n,y,y,n,n,n
 po/sos,y,y,n,y,n,n,n,n

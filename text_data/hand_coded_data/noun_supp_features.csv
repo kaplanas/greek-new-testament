@@ -1,4 +1,4 @@
-lemma,gender,arg_dat
+lemma,gender,arg_inf
 a)poka/luyis,feminine,n
 *)ihsou=s,masculine,n
 *xristo/s,masculine,n
@@ -82,7 +82,7 @@ musth/rion,neuter,n
 e)/rgon,neuter,n
 ko/pos,masculine,n
 a)po/stolos,masculine,n
-o)/noma,neuter,y
+o)/noma,neuter,n
 a)ga/ph,feminine,n
 to/pos,masculine,n
 *nikolai/+ths,masculine,n
@@ -136,7 +136,7 @@ po/lis,feminine,n
 ou)rano/s,masculine,n
 a)rxh/,feminine,n
 kti/sis,feminine,n
-xrei/a,feminine,n
+xrei/a,feminine,y
 xrusi/on,neuter,n
 ai)sxu/nh,feminine,n
 gumno/ths,feminine,n
