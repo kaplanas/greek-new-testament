@@ -158,8 +158,8 @@ def print_parse(tree, features=False, margin=70, indent=0, nodesep="",
 
 def print_parses(parses, features=False):
     """Show the parse trees of a set of parses."""
-    for parse in parses:
-        print('*** ' + parse[0] + ' - ' + parse[1] + ' ***')
+    for i, parse in enumerate(parses):
+        print('*** [' + str(i) + '] ' + parse[0] + ' - ' + parse[1] + ' ***')
         print('')
         for tree in parse[3]:
             print_parse(tree, features)
@@ -169,7 +169,8 @@ def print_parses(parses, features=False):
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
-    sent_lengths = [1, 2, 3, 4]
+    sent_lengths = [1, 2, 3, 4, 5]
+    # sent_lengths = [4, 5]
     old_parses = {}
     parses = {}
     changes = {}

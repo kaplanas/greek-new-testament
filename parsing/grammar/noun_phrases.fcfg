@@ -26,7 +26,7 @@ N_like[ADVERB=?adv, AGR=[GENDER=?g, NUMBER=?n, PERSON=3], ARGS=none, CASE=?c, DE
 
 # Adjectives.
 A_like[ADVERB=?adv, AGR=?agr, CASE=?c, DE=?d, DET_REQUIRED=n, PAS=?pas, WH=?w] -> AP[ADVERB=?adv, AGR=?agr, ATTRIBUTIVE=y, CASE=?c, DE=?d, PAS=?pas, WH=?w]
-A_like[ADVERB=?adv, AGR=?agr, CASE=?c, DE=n, DET_REQUIRED=n, PAS=?pas, WH=?w]/AP[ADVERB=?adv, AGR=?apagr, ATTRIBUTIVE=y, CASE=?apc, DE=?d, DEGREE=?deg, KAI=?k, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?w] -> AP/AP[ADVERB=?adv, AGR=?apagr, ATTRIBUTIVE=y, CASE=?apc, DE=?d, DEGREE=?deg, KAI=?k, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?w]
+A_like[ADVERB=?adv, AGR=?agr, CASE=?c, DE=n, DET_REQUIRED=n, PAS=?pas, WH=?w]/AP[ADVERB=?adv, AGR=?agr, ATTRIBUTIVE=y, CASE=?apc, DE=?d, DEGREE=?deg, KAI=?k, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?w] -> AP/AP[ADVERB=?adv, AGR=?agr, ATTRIBUTIVE=y, CASE=?apc, DE=?d, DEGREE=?deg, KAI=?k, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?w]
 
 # Genitive NPs.
 A_like[ADVERB=n, DE=?d, DET_REQUIRED=n, PAS=n, WH=?w] -> NP[CASE=genitive, DE=?d, FUSED_REL=n, REL=n, WH=?w]
@@ -68,7 +68,7 @@ NP[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n], CASE=?c, DE=?d, FUSED_REL=n, PAS
 NP[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n], CASE=?c, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=y, PROPER=n, REL=?r, STANDALONE=n, SUB_NP=n, WH=?w] -> N_like[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n], CASE=?c, DE=?d, PAS=n, PROPER=n, REL=?r, WH=?w] A_like[AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, WH=n]
 
 # Two adjectives.
-NP[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, FUSED_REL=n, PAS=n, PREDICATE=y, PROPER=n, REL=?r, STANDALONE=n, SUB_NP=n, WH=?w]/AP[AGR=[GENDER=?g, NUMBER=?n], ADVERB=?apadv, ATTRIBUTIVE=?att, CASE=?apc, DE=?d, DEGREE=?deg, KAI=?k, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?apw] -> A_like/AP[AGR=[GENDER=?g, NUMBER=?n], ADVERB=?apadv, ATTRIBUTIVE=?att, CASE=?apc, DE=?d, DEGREE=?deg, KAI=?k, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?apw] N_like[ADVERB=?adv, AGR=?agr, CASE=?c, DE=n, PAS=n, PROPER=n, REL=?r, WH=?w] A_like[AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, WH=n]
+NP[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n, PERSON=?p], CASE=?c, DE=n, FUSED_REL=n, PAS=n, PREDICATE=y, PROPER=n, REL=?r, STANDALONE=n, SUB_NP=n, WH=?w]/AP[AGR=[GENDER=?g, NUMBER=?n], ADVERB=?apadv, ATTRIBUTIVE=?att, CASE=?apc, DE=?d, DEGREE=?deg, KAI=?k, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?apw] -> A_like[AGR=[GENDER=?g, NUMBER=?n], CASE=?c]/AP[AGR=[GENDER=?g, NUMBER=?n], ADVERB=?apadv, ATTRIBUTIVE=?att, CASE=?apc, DE=?d, DEGREE=?deg, KAI=?k, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?apw] N_like[ADVERB=?adv, AGR=[GENDER=?g, NUMBER=?n, PERSON=?p], CASE=?c, DE=n, PAS=n, PROPER=n, REL=?r, WH=?w] A_like[AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, WH=n]
 
 # Determiner + adjective + noun, in some order.
 NP[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n], CASE=?c, DE=?d, FUSED_REL=n, PAS=?pas, PREDICATE=y, PROPER=?prop, REL=?r, STANDALONE=n, SUB_NP=n, WH=n] -> D[AGR=[GENDER=?g, NUMBER=?n], CASE=?c] C[DE=?d, SECOND_POSITION=y] A_like[AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, WH=n] N_like[ADVERB=?adv, AGR=?agr, CASE=?c, DE=n, PAS=?pas, PROPER=?prop, REL=?r, WH=n]
@@ -128,7 +128,7 @@ NP[AGR=[NUMBER=plural], CASE=?c, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=y, PROPER=
 #### Miscellaneous ####
 
 # autos.
-NP[ADVERB=?adv, AGR=[GENDER=?g, NUMBER=?n, PERSON=?p], CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?pred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w] -> NP[ADVERB=?adv, AGR=[GENDER=?g, NUMBER=?n, PERSON=?p], CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?pred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w] E[AGR=[GENDER=?g, NUMBER=?n], AUTOS=y, CASE=?c]
+NP[ADVERB=n, AGR=[GENDER=?g, NUMBER=?n, PERSON=?p], CASE=?c, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=n, PROPER=n, REL=n, STANDALONE=n, SUB_NP=n, WH=n] -> E[AGR=[GENDER=?g, NUMBER=?n, PERSON=?p], AUTOS=n, CASE=?c] C[DE=?d, SECOND_POSITION=y] E[AGR=[GENDER=?g, NUMBER=?n], AUTOS=y, CASE=?c]
 
 # kai.
 NP[ADVERB=?adv, AGR=?agr, CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?pred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w] -> 'kai/_B-------' NP[ADVERB=?adv, AGR=?agr, CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?pred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w]

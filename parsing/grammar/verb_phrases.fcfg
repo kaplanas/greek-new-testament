@@ -122,8 +122,9 @@ VP[AGR=?agr, CASE=?c, DE=?d, DIRECTION=?dir, FINITE=?f, MOOD=?m, VERB_INITIAL=y,
 
 #### Full sentential argument ####
 
-# Verb + non-wh S.  Comma required.
+# Verb + non-wh S, in either order.  Comma required.
 VP[AGR=?agr, CASE=?c, DE=?d, DIRECTION=?dir, FINITE=?f, MOOD=?m, VERB_INITIAL=y, VERBLESS=n, WH=n] -> V[AGR=?agr, ARGS=[ARG_S=y, ARG_DIR=?dir], CASE=?c, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] Comma[OPTIONAL=n] S
+VP[AGR=?agr, CASE=?c, DE=n, DIRECTION=?dir, FINITE=?f, MOOD=?m, VERB_INITIAL=y, VERBLESS=n, WH=n] -> S Comma[OPTIONAL=n] V[AGR=?agr, ARGS=[ARG_S=y, ARG_DIR=?dir], CASE=?c, FINITE=?f, MOOD=?m, NEGATIVE=n]
 
 # Verb + wh IP.  No comma.
 VP[AGR=?agr, CASE=?c, DE=?d, DIRECTION=?dir, FINITE=?f, MOOD=?m, VERB_INITIAL=y, VERBLESS=n, WH=y] -> V[AGR=?agr, ARGS=[ARG_S=y, ARG_DIR=?dir], CASE=?c, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] IP[WH=y]
@@ -242,6 +243,11 @@ VP[AGR=?agr, CASE=?c, DE=n, DIRECTION=?dir, FINITE=?f, MOOD=?m, SUB_VP=y, VERB_I
 
 # Fronted verb and dative.
 VP[AGR=?agr, CASE=?c, DE=n, DIRECTION=?dir, FINITE=?f, MOOD=?m, VERB_INITIAL=n, VERBLESS=n]/NP[AGR=?npagr, CASE=dative, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?pred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w]/V[AGR=?agr, ARGS=?arg, CASE=?c, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v] -> V/V[AGR=?agr, ARGS=?arg[ARG_DAT_INF=y, ARG_DIR=?dir], CASE=?c, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v] NP/NP[AGR=?npagr, CASE=dative, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?pred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w] VP[DE=n, FINITE=n, MOOD=infinitive, WH=n]
+
+#### Dative argument and complement with oti ####
+
+# Verb + dative + oti.
+VP[AGR=?agr, CASE=?c, DE=?d, DIRECTION=?dir, FINITE=?f, MOOD=?m, VERB_INITIAL=y, VERBLESS=n] -> V[AGR=?agr, ARGS=[ARG_OTI=y, ARG_DIR=?dir], CASE=?c, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] NP[CASE=dative, DE=n, WH=n] 'o(/ti_C-------' IP[DE=n, FINITE=y, VERBLESS=n]
 
 ################################################
 #### Things that get added to verbs and VPs ####
