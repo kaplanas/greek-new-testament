@@ -78,6 +78,16 @@ NP[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n], CASE=?c, DE=?d, FUSED_REL=n, PAS
 NP[ADVERB=?adv, AGR=[GENDER=?g, NUMBER=?n, PERSON=3], CASE=?c, DE=?d, FUSED_REL=n, PAS=?pas, PREDICATE=y, PROPER=?prop, REL=?r, STANDALONE=n, SUB_NP=n, WH=n] -> E[CASE=genitive, DE=?d] D[AGR=?agr, CASE=?c] N_like[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n, PERSON=3], CASE=?c, DE=n, PAS=?pas, PROPER=?prop, REL=?r, WH=n]
 NP[ADVERB=?adv, AGR=[GENDER=?g, NUMBER=?n, PERSON=3], CASE=?c, DE=?d, FUSED_REL=n, PAS=?pas, PREDICATE=y, PROPER=?prop, REL=y, STANDALONE=n, SUB_NP=n, WH=n] -> R[CASE=genitive, DE=?d] D[AGR=?agr, CASE=?c] N_like[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n, PERSON=3], CASE=?c, DE=n, PAS=?pas, PROPER=?prop, REL=n, WH=n]
 
+# Determiner + noun + determiner + adjective.
+NP[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n], CASE=?c, DE=?d, FUSED_REL=n, PAS=?pas, PREDICATE=y, PROPER=?prop, REL=?r, STANDALONE=n, SUB_NP=n, WH=n] -> D[AGR=[GENDER=?g, NUMBER=?n], CASE=?c] C[DE=?d, SECOND_POSITION=y] N_like[ADVERB=?adv, AGR=?agr, CASE=?c, DE=n, PAS=?pas, PROPER=?prop, REL=?r, WH=n] D[AGR=[GENDER=?g, NUMBER=?n], CASE=?c] A_like[AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, WH=n]
+
+# Determiner + noun + demonstrative, in some order.
+NP[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n], CASE=?c, DE=?d, FUSED_REL=n, PAS=?pas, PREDICATE=y, PROPER=?prop, REL=?r, STANDALONE=n, SUB_NP=n, WH=n] -> D[AGR=[GENDER=?g, NUMBER=?n], CASE=?c] C[DE=?d, SECOND_POSITION=y] N_like[ADVERB=?adv, AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, PAS=?pas, PROPER=?prop, REL=?r, WH=n] M[AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, WH=n]
+NP[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n], CASE=?c, DE=?d, FUSED_REL=n, PAS=?pas, PREDICATE=y, PROPER=?prop, REL=?r, STANDALONE=n, SUB_NP=n, WH=n] -> M[AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, WH=n] C[DE=?d, SECOND_POSITION=y] D[AGR=[GENDER=?g, NUMBER=?n], CASE=?c] N_like[ADVERB=?adv, AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, PAS=?pas, PROPER=?prop, REL=?r, WH=n]
+
+# Determiner + noun + demonstrative + adjective.
+NP[ADVERB=?adv, AGR=?agr[GENDER=?g, NUMBER=?n], CASE=?c, DE=?d, FUSED_REL=n, PAS=?pas, PREDICATE=y, PROPER=?prop, REL=?r, STANDALONE=n, SUB_NP=n, WH=n] -> M[AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, WH=n] C[DE=?d, SECOND_POSITION=y] D[AGR=[GENDER=?g, NUMBER=?n], CASE=?c] A_like[AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, WH=n] N_like[ADVERB=?adv, AGR=[GENDER=?g, NUMBER=?n], CASE=?c, DE=n, PAS=?pas, PROPER=?prop, REL=?r, WH=n]
+
 #### Fused relatives ####
 
 # NP fronted out of IP as its own special case, regardless of the case of the fronted NP.  This means we have to
