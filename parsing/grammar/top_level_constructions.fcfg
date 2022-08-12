@@ -18,6 +18,7 @@ S -> C[SECOND_POSITION=n] C Comma IP[DE=n]
 
 # Non-finite VPs.
 S -> VP[VERBLESS=n, MOOD=infinitive]
+S -> C[SECOND_POSITION=n, SUBORDINATING=n] NP[CASE=nominative] VP[DE=n, MOOD=infinitive, VERBLESS=n]
 
 # NPs and APs as utterances.
 S -> NP[ADVERB=n, FUSED_REL=n]
@@ -88,7 +89,7 @@ PredP[AGR=?agr, CASE=?c, DE=?d, WH=?w]/PredP[AGR=?agr, CASE=?c, DE=?d, WH=?w] ->
 AdvP[DE=?d, DIRECTION=?dir, PREDICATE=?pred, REL=?r, WH=?w]/AdvP[DE=?d, DIRECTION=?dir, PREDICATE=?pred, REL=?r, WH=?w] ->
 VP[AGR=?agr, CASE=?c, DE=?d, DIRECTION=?dir, EIMI=?e, FINITE=?f, MOD_LEFT=?modl, MOD_RIGHT=?modr, MOOD=?m, NEGATIVE=?neg, SUB_VP=?svp, VERB_INITIAL=?vi, VERB_ONLY=?vo, VERBLESS=?vl]/VP[AGR=?agr, CASE=?c, DE=?d, DIRECTION=?dir, EIMI=?e, FINITE=?f, MOD_LEFT=?modl, MOD_RIGHT=?modr, MOOD=?m, NEGATIVE=?neg, SUB_VP=?svp, VERB_INITIAL=?vi, VERB_ONLY=?vo, VERBLESS=?vl] ->
 N_like[ADVERB=?adv, AGR=?agr, ARGS=?arg, CASE=?c, DE=?d, DEGREE=?deg, PAS=?pas, PROPER=?prop, REL=?r, STANDALONE=?sa, WH=?w]/N_like[ADVERB=?adv, AGR=?agr, ARGS=?arg, CASE=?c, DE=?d, DEGREE=?deg, PAS=?pas, PROPER=?prop, REL=?r, STANDALONE=?sa, WH=?w] ->
-V[AGR=?agr, ARGS=?arg, CASE=?c, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v]/V[AGR=?agr, ARGS=?arg, CASE=?c, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v] ->
+V[AGR=?agr, ARGS=?arg, CASE=?c, DEPONENT=?dep, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v]/V[AGR=?agr, ARGS=?arg, CASE=?c, DEPONENT=?dep, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v] ->
 N[AGR=?agr, ARGS=?arg, CASE=?c, PROPER=?p]/N[AGR=?agr, ARGS=?arg, CASE=?c, PROPER=?p] ->
 
 ##############################
@@ -103,6 +104,7 @@ IP[AGR=?agr, DE=?d, MOOD=?m, REL=n, SUBJECT=n, VERB_INITIAL=?vi, VERBLESS=n, WH=
 
 # VP with wh NP extracted.
 IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=n, VERB_INITIAL=?vi, VERBLESS=n, WH=y]/NP[ADVERB=?adv, AGR=?npagr, CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=y] -> VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERB_INITIAL=?vi, VERBLESS=n]/NP[ADVERB=?adv, AGR=?npagr, CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=y]
+IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=n, VERB_INITIAL=n, VERBLESS=n, WH=n]/NP[ADVERB=?adv, AGR=?npagr, CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=n] -> VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERB_INITIAL=n, VERBLESS=n]/NP[ADVERB=?adv, AGR=?npagr, CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=n]
 IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=n, VERB_INITIAL=?vi, VERBLESS=y, WH=y]/NP[ADVERB=?adv, AGR=?npagr, CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=n, WH=y] -> VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERB_INITIAL=?vi, VERBLESS=y]/NP[ADVERB=?adv, AGR=?npagr, CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=n, WH=y]
 
 # VP with AP extracted.
@@ -120,9 +122,6 @@ IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=n, VERB_INITIAL=?vi, VERBLESS=?vl, WH
 IP[AGR=?agr, DE=?d, MOOD=?m, REL=?r, SUBJECT=y, VERB_INITIAL=n, VERBLESS=?vl, WH=n] -> NP[AGR=?agr, DE=?d, CASE=nominative, FUSED_REL=n, REL=?r, WH=n] VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERBLESS=?vl]
 IP[AGR=?agr, DE=?d, MOOD=?m, REL=?r, SUBJECT=y, VERB_INITIAL=n, VERBLESS=n, WH=n] -> NP[AGR=?agr, DE=?d, CASE=nominative, FUSED_REL=y, REL=?r, WH=n] VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERBLESS=n]
 
-# Negation after the subject.
-IP[AGR=?agr, DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=n, VERBLESS=?vl, WH=n] -> NP[AGR=?agr, DE=?d, CASE=nominative, FUSED_REL=n, WH=n] 'mh/_B-------' VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERBLESS=?vl]
-
 # Subject + VP with PredP extracted.  Has to be a wh PredP or have an initial verb; otherwise, it's covered by VP +
 # subject.
 IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=?vi, VERBLESS=?vl, WH=y]/PredP[AGR=?ppagr, CASE=?c, DE=?d, WH=y] -> NP[AGR=?agr, CASE=nominative, DE=n, FUSED_REL=n, WH=n] VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERB_INITIAL=?vi, VERBLESS=?vl]/PredP[AGR=?ppagr, CASE=?c, DE=?d, WH=y]
@@ -138,11 +137,17 @@ IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=?vi, VERBLESS=?vl, WH
 IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=?vi, VERBLESS=?vl, WH=?w]/AdvP[DE=?d, DIRECTION=?dir, PREDICATE=?pred, PROS=?pros, REL=?r, WH=?advpw] -> NP[AGR=?agr, CASE=nominative, DE=n, FUSED_REL=n, WH=n] VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERB_INITIAL=?vi, VERBLESS=?vl, WH=?w]/AdvP[DE=?d, DIRECTION=?dir, PREDICATE=?pred, PROS=?pros, REL=?r, WH=?advpw]
 
 # Fronting the verb.  Don't do this if the verb was the only thing there; that leads to useless ambiguity.
-IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=n, VERBLESS=n, WH=n]/V[AGR=?agr, ARGS=?arg, CASE=?c, EIMI=?e, FINITE=?f, MOOD=?m] -> NP[AGR=?agr, CASE=nominative, DE=n, WH=n] VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERB_ONLY=n, VERBLESS=?vl]/V[AGR=?agr, ARGS=?arg, CASE=?c, EIMI=?e, FINITE=?f, MOOD=?m]
-IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=n, VERBLESS=n, WH=n]/V[AGR=?agr, ARGS=?arg, CASE=?c, EIMI=?e, FINITE=?f, MOOD=?m] -> NP[AGR=?agr, CASE=nominative, DE=n, WH=n] VP[AGR=?agr, DE=n, FINITE=y, MOD_LEFT=y, MOOD=?m, VERB_ONLY=y, VERBLESS=?vl]/V[AGR=?agr, ARGS=?arg, CASE=?c, EIMI=?e, FINITE=?f, MOOD=?m]
+IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=n, VERBLESS=n, WH=n]/V[AGR=?agr, ARGS=?arg, CASE=?c, DEPONENT=?dep, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v] -> NP[AGR=?agr, CASE=nominative, DE=n, WH=n] VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERB_ONLY=n, VERBLESS=?vl]/V[AGR=?agr, ARGS=?arg, CASE=?c, DEPONENT=?dep, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v]
+IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=n, VERBLESS=n, WH=n]/V[AGR=?agr, ARGS=?arg, CASE=?c, DEPONENT=?dep, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v] -> NP[AGR=?agr, CASE=nominative, DE=n, WH=n] VP[AGR=?agr, DE=n, FINITE=y, MOD_LEFT=y, MOOD=?m, VERB_ONLY=y, VERBLESS=?vl]/V[AGR=?agr, ARGS=?arg, CASE=?c, DEPONENT=?dep, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v]
 
 # VP with both NP and verb extracted.
-IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=n, VERBLESS=n, WH=n]/NP[ADVERB=?adv, AGR=?npagr, CASE=?npc, DE=n, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w]/V[AGR=?vagr, ARGS=?arg, CASE=?vc, FINITE=?f, MOOD=?m] -> NP[AGR=?agr, CASE=nominative, DE=n, WH=n] VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERBLESS=?vl]/NP[ADVERB=?adv, AGR=?npagr, CASE=?npc, DE=n, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w]/V[AGR=?vagr, ARGS=?arg, CASE=?vc, FINITE=?f, MOOD=?m]
+IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=n, VERBLESS=n, WH=n]/NP[ADVERB=?adv, AGR=?npagr, CASE=?npc, DE=n, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w]/V[AGR=?vagr, ARGS=?arg, CASE=?vc, DEPONENT=?dep, FINITE=?f, MOOD=?m, VOICE=?v] -> NP[AGR=?agr, CASE=nominative, DE=n, WH=n] VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERBLESS=?vl]/NP[ADVERB=?adv, AGR=?npagr, CASE=?npc, DE=n, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w]/V[AGR=?vagr, ARGS=?arg, CASE=?vc, DEPONENT=?dep, FINITE=?f, MOOD=?m, VOICE=?v]
+
+# VP with two verbs extracted.
+IP[AGR=?agr, DE=?d, MOOD=?m, REL=?r, SUBJECT=y, VERB_INITIAL=n, VERBLESS=n, WH=n] -> V[AGR=?vBagr, ARGS=?vBarg, CASE=?vBc, DEPONENT=?vBdep, EIMI=?vBe, FINITE=?vBf, MOOD=?vBm, VOICE=?vBv] V[AGR=?vAagr, ARGS=?vAarg, CASE=?vAc, DEPONENT=?vAdep, EIMI=?vAe, FINITE=?vAf, MOOD=?vAm, VOICE=?vAv] NP[AGR=?agr, DE=?d, CASE=nominative, REL=?r, WH=n] VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERBLESS=n]/V[AGR=?vAagr, ARGS=?vAarg, CASE=?vAc, DEPONENT=?vAdep, EIMI=?vAe, FINITE=?vAf, MOOD=?vAm, VOICE=?vAv]/V[AGR=?vBagr, ARGS=?vBarg, CASE=?vBc, DEPONENT=?vBdep, EIMI=?vBe, FINITE=?vBf, MOOD=?vBm, VOICE=?vBv]
+
+# VP with verb and AdvP extracted.
+IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=n, VERBLESS=n, WH=n]/AdvP[DE=?d, DIRECTION=?dir, PREDICATE=?pred, PROS=?pros, REL=?r, WH=?advpw]/V[AGR=?agr, ARGS=?arg, CASE=?c, DEPONENT=?dep, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v] -> NP[AGR=?agr, CASE=nominative, DE=n, WH=n] VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERB_ONLY=n, VERBLESS=?vl]/AdvP[DE=?d, DIRECTION=?dir, PREDICATE=?pred, PROS=?pros, REL=?r, WH=?advpw]/V[AGR=?agr, ARGS=?arg, CASE=?c, DEPONENT=?dep, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v]
 
 #### Subject + VP, idiosyncractic agreement ####
 
@@ -168,7 +173,7 @@ IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=y, VERBLESS=n, WH=?w]
 IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=?vi, VERBLESS=?vl, WH=n]/VP[AGR=?vpagr, CASE=?c, DE=n, DIRECTION=?dir, EIMI=?e, FINITE=?f, MOD_LEFT=?modl, MOD_RIGHT=?modr, MOOD=?vpm, NEGATIVE=?neg, SUB_VP=n, VERB_INITIAL=?vpvi, VERB_ONLY=?vo, VERBLESS=?vpvl] -> VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, SUB_VP=y, VERB_INITIAL=?vi, VERBLESS=?vl]/VP[AGR=?vpagr, CASE=?c, DE=n, DIRECTION=?dir, EIMI=?e, FINITE=?f, MOD_LEFT=?modl, MOD_RIGHT=?modr, MOOD=?vpm, NEGATIVE=?neg, SUB_VP=n, VERB_INITIAL=?vpvi, VERB_ONLY=?vo, VERBLESS=?vpvl] NP[AGR=?agr, CASE=nominative, DE=n, FUSED_REL=n, WH=n]
 
 # VP + subject with wh NP and verb extracted.
-IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=?vi, VERBLESS=?vl, WH=y]/NP[ADVERB=?adv, AGR=?npagr, CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=y]/V[AGR=?vagr, ARGS=?arg, CASE=?vc, FINITE=?f, MOOD=?m, VOICE=?v] -> VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERB_INITIAL=?vi, VERBLESS=?vl]/NP[ADVERB=?adv, AGR=?npagr, CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=y]/V[AGR=?vagr, ARGS=?arg, CASE=?vc, FINITE=?f, MOOD=?m, VOICE=?v] NP[AGR=?agr, CASE=nominative, DE=n, FUSED_REL=n, WH=n]
+IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=?vi, VERBLESS=?vl, WH=y]/NP[ADVERB=?adv, AGR=?npagr, CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=y]/V[AGR=?vagr, ARGS=?arg, CASE=?vc, DEPONENT=?dep, FINITE=?f, MOOD=?m, VOICE=?v] -> VP[AGR=?agr, DE=n, FINITE=y, MOOD=?m, VERB_INITIAL=?vi, VERBLESS=?vl]/NP[ADVERB=?adv, AGR=?npagr, CASE=?c, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=y]/V[AGR=?vagr, ARGS=?arg, CASE=?vc, DEPONENT=?dep, FINITE=?f, MOOD=?m, VOICE=?v] NP[AGR=?agr, CASE=nominative, DE=n, FUSED_REL=n, WH=n]
 
 # VP + subject with N extracted from subject.
 IP[AGR=?agr, DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=?vi, VERBLESS=?vl, WH=n] -> N[AGR=?agr[GENDER=?g, NUMBER=?n], CASE=?c, PROPER=n] VP[AGR=?agr, DE=?d, FINITE=y, MOOD=?m, VERB_INITIAL=?vi, VERBLESS=?vl, WH=n] NP[AGR=?agr, CASE=nominative, DE=n, FUSED_REL=n, WH=n]/N[AGR=?agr[GENDER=?g, NUMBER=?n], CASE=?c, PROPER=n]
@@ -207,10 +212,13 @@ IP[AGR=?agr, DE=?d, MOOD=?m, REL=n, SUBJECT=n, VERB_INITIAL=?vi, VERBLESS=n, WH=
 IP[AGR=?agr, DE=?d, MOOD=?m, REL=?r, SUBJECT=?s, VERB_INITIAL=n, VERBLESS=n, WH=?w] -> AdvP[DE=?d, DIRECTION=?dir, PREDICATE=?pred, PROS=?pros, REL=?r, WH=?w] IP[AGR=?agr, DE=n, MOOD=?m, SUBJECT=?s, VERBLESS=n, WH=n]/AdvP[DE=?d, DIRECTION=?dir, PREDICATE=?pred, PROS=?pros, REL=?r, WH=?w]
 
 # Fronting the verb.
-IP[AGR=?agr, DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=y, VERBLESS=n, WH=n] -> V[AGR=?agr, ARGS=?arg, CASE=?c, EIMI=?e, FINITE=?f, MOOD=?m] C[DE=?d, SECOND_POSITION=y] IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERBLESS=n, WH=n]/V[AGR=?agr, ARGS=?arg, CASE=?c, EIMI=?e, FINITE=?f, MOOD=?m]
+IP[AGR=?agr, DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=y, VERBLESS=n, WH=n] -> V[AGR=?agr, ARGS=?arg, CASE=?c, DEPONENT=?dep, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v] C[DE=?d, SECOND_POSITION=y] IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERBLESS=n, WH=n]/V[AGR=?agr, ARGS=?arg, CASE=?c, DEPONENT=?dep, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v]
 
 # Fronting an NP and a verb.
-IP[AGR=?agr, DE=?d, MOOD=?m, REL=?r, SUBJECT=?s, VERB_INITIAL=n, VERBLESS=?vl, WH=?w] -> V[AGR=?vagr, ARGS=?arg, CASE=?vc, FINITE=?f, MOOD=?m, VOICE=?v] NP[ADVERB=?adv, AGR=?npagr, CASE=?npc, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w] IP[AGR=?agr, DE=n, MOOD=?m, SUBJECT=?s, VERBLESS=?vl]/NP[ADVERB=?adv, AGR=?npagr, CASE=?npc, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w]/V[AGR=?vagr, ARGS=?arg, CASE=?vc, FINITE=?f, MOOD=?m, VOICE=?v]
+IP[AGR=?agr, DE=?d, MOOD=?m, REL=?r, SUBJECT=?s, VERB_INITIAL=n, VERBLESS=?vl, WH=?w] -> V[AGR=?vagr, ARGS=?arg, CASE=?vc, DEPONENT=?dep, FINITE=?f, MOOD=?m, VOICE=?v] NP[ADVERB=?adv, AGR=?npagr, CASE=?npc, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w] IP[AGR=?agr, DE=n, MOOD=?m, SUBJECT=?s, VERBLESS=?vl]/NP[ADVERB=?adv, AGR=?npagr, CASE=?npc, DE=?d, FUSED_REL=?fr, PAS=?pas, PREDICATE=?nppred, PROPER=?prop, REL=?r, STANDALONE=?sa, SUB_NP=?snp, WH=?w]/V[AGR=?vagr, ARGS=?arg, CASE=?vc, DEPONENT=?dep, FINITE=?f, MOOD=?m, VOICE=?v]
+
+# Fronting an AdvP and a verb.
+IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=n, VERBLESS=n, WH=n] -> AdvP[DE=?d, DIRECTION=?dir, PREDICATE=?pred, PROS=?pros, REL=?r, WH=?advpw] V[AGR=?agr, ARGS=?arg, CASE=?c, DEPONENT=?dep, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v] IP[AGR=?agr, DE=n, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=n, VERBLESS=n, WH=n]/AdvP[DE=?d, DIRECTION=?dir, PREDICATE=?pred, PROS=?pros, REL=?r, WH=?advpw]/V[AGR=?agr, ARGS=?arg, CASE=?c, DEPONENT=?dep, EIMI=?e, FINITE=?f, MOOD=?m, VOICE=?v]
 
 #############################################
 #### Other things that can happen to IPs ####
@@ -219,7 +227,7 @@ IP[AGR=?agr, DE=?d, MOOD=?m, REL=?r, SUBJECT=?s, VERB_INITIAL=n, VERBLESS=?vl, W
 #### Negation ####
 
 # Particles that can negate an entire IP.
-IP[AGR=?agr, DE=?d, MOOD=?m, REL=n, SUBJECT=?s, VERB_INITIAL=n, VERBLESS=?vl, WH=n] -> 'mh/_B-------' C[DE=?d, SECOND_POSITION=y] IP[AGR=?agr, CONJOINED=n, DE=n, MOOD=?m, SUBJECT=?s, VERBLESS=?vl, WH=n]
+IP[AGR=?agr, DE=?d, MOOD=?m, REL=n, SUBJECT=?s, VERB_INITIAL=n, VERBLESS=?vl, WH=n] -> 'mh/_B-------' C[DE=?d, SECOND_POSITION=y] IP[AGR=?agr, CONJOINED=n, DE=n, MOOD=?m, SUBJECT=?s, VERB_INITIAL=n, VERBLESS=?vl, WH=n]
 IP[AGR=?agr, DE=?d, MOOD=?m, REL=n, SUBJECT=?s, VERB_INITIAL=n, VERBLESS=?vl, WH=n] -> 'mh/ti_L-------' C[DE=?d, SECOND_POSITION=y] IP[AGR=?agr, CONJOINED=n, DE=n, MOOD=?m, SUBJECT=?s, VERBLESS=?vl, WH=n]
 IP[AGR=?agr, DE=?d, MOOD=?m, REL=n, SUBJECT=?s, VERB_INITIAL=n, VERBLESS=?vl, WH=n] -> 'ou)xi/_L-------' C[DE=?d, SECOND_POSITION=y] IP[AGR=?agr, CONJOINED=n, DE=n, MOOD=?m, SUBJECT=?s, VERBLESS=?vl, WH=n]
 
@@ -228,10 +236,19 @@ IP[AGR=?agr, DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=n, VERBLESS=n, WH=n]
 
 #### Conjunction ####
 
-# Conjunction of two sentences.  Neither can be verbless; otherwise, we get massive ambiguity.  Always branch to the
-# right.
-IP[AGR=?a, CONJOINED=y, DE=?d, MOOD=?m, REL=n, SUBJECT=?s, VERB_INITIAL=?vi, VERBLESS=n, WH=n] -> IP[AGR=?a, CONJOINED=n, DE=?d, MOOD=?m, SUBJECT=?s, VERB_INITIAL=?vi, VERBLESS=n, WH=n] Comma C[SECOND_POSITION=n] IP[DE=?d, VERBLESS=n, WH=n]
-IP[AGR=?a, CONJOINED=y, DE=?d, MOOD=?m, REL=n, SUBJECT=?s, VERB_INITIAL=?vi, VERBLESS=n, WH=y] -> IP[AGR=?a, CONJOINED=n, DE=?d, MOOD=?m, SUBJECT=?s, VERB_INITIAL=?vi, VERBLESS=n, WH=y] Comma C[SECOND_POSITION=n] IP[DE=?d, VERBLESS=n, WH=n]
+# Coordinating conjunction of two sentences.  Neither can be verbless; otherwise, we get massive ambiguity.  Similarly,
+# at least one IP must have a subject; otherwise, we just want conjoined VPs.  Always branch to the right.
+IP[AGR=?a, CONJOINED=y, DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=?vi, VERBLESS=n, WH=?w] -> IP[AGR=?a, CONJOINED=n, DE=?d, MOOD=?m, SUBJECT=y, VERB_INITIAL=?vi, VERBLESS=n, WH=?w] Comma C[SECOND_POSITION=n, SUBORDINATING=n] IP[DE=?d, SUBJECT=y, VERBLESS=n, WH=?w]
+IP[AGR=?a, CONJOINED=y, DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=?vi, VERBLESS=n, WH=?w] -> IP[AGR=?a, CONJOINED=n, DE=?d, MOOD=?m, SUBJECT=y, VERB_INITIAL=?vi, VERBLESS=n, WH=?w] Comma C[SECOND_POSITION=n, SUBORDINATING=n] IP[DE=?d, SUBJECT=n, VERBLESS=n, WH=?w]
+IP[AGR=?a, CONJOINED=y, DE=?d, MOOD=?m, REL=n, SUBJECT=y, VERB_INITIAL=?vi, VERBLESS=n, WH=?w] -> IP[AGR=?a, CONJOINED=n, DE=?d, MOOD=?m, SUBJECT=n, VERB_INITIAL=?vi, VERBLESS=n, WH=?w] Comma C[SECOND_POSITION=n, SUBORDINATING=n] IP[DE=?d, SUBJECT=y, VERBLESS=n, WH=?w]
+
+# But we can conjoin subjectless VPs under specific circumstances - usually, when the VPs disagree on some important
+# feature.  Since we can't express "not", I've just listed the specific cases that come up.
+IP[CONJOINED=y, DE=?d, MOOD=?m, REL=n, SUBJECT=n, VERB_INITIAL=?vi, VERBLESS=n, WH=n] -> IP[CONJOINED=n, DE=?d, MOOD=imperative, SUBJECT=n, VERB_INITIAL=?vi, VERBLESS=n, WH=n] Comma C[SECOND_POSITION=n, SUBORDINATING=n] IP[DE=?d, MOOD=indicative, SUBJECT=n, VERBLESS=n, WH=n]
+IP[AGR=[PERSON=1], CONJOINED=y, DE=?d, MOOD=?m, REL=n, SUBJECT=n, VERB_INITIAL=?vi, VERBLESS=n, WH=n] -> IP[AGR=[PERSON=1], CONJOINED=n, DE=?d, MOOD=?m, SUBJECT=n, VERB_INITIAL=?vi, VERBLESS=n, WH=n] Comma C[SECOND_POSITION=n, SUBORDINATING=n] IP[AGR=[PERSON=2], DE=?d, SUBJECT=n, VERBLESS=n, WH=n]
+
+# Subordinating conjunction of two sentences.
+IP[AGR=?a, CONJOINED=y, DE=?d, MOOD=?m, REL=n, SUBJECT=?s, VERB_INITIAL=?vi, VERBLESS=n, WH=n] -> IP[AGR=?a, CONJOINED=n, DE=?d, MOOD=?m, SUBJECT=?s, VERB_INITIAL=?vi, VERBLESS=n, WH=n] Comma C[SECOND_POSITION=n, SUBORDINATING=y] IP[DE=?d, VERBLESS=n, WH=n]
 IP[AGR=?a, CONJOINED=y, DE=n, MOOD=?m, REL=n, SUBJECT=?s, VERB_INITIAL=?vi, VERBLESS=n, WH=n] -> C[SECOND_POSITION=n, SUBORDINATING=y] IP[DE=n, VERBLESS=n, WH=n] Comma IP[AGR=?a, DE=n, MOOD=?m, SUBJECT=?s, VERB_INITIAL=?vi, VERBLESS=n, WH=n]
 
 #### Adjuncts ####

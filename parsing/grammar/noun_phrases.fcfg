@@ -124,7 +124,7 @@ NP[ADVERB=?adv, AGR=?agr, CASE=?c, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=y, PROPE
 NP[ADVERB=?adv, AGR=?agr, CASE=?c, DE=n, FUSED_REL=n, PAS=n, PREDICATE=y, PROPER=n, REL=?r, STANDALONE=n, SUB_NP=n, WH=n]/AP[ADVERB=?apadv, AGR=?apagr, ATTRIBUTIVE=?att, CASE=?apc, DE=?d, DEGREE=?deg, KAI=?k, PAS=n, PREDICATE=?pred, STANDALONE=?sa, WH=?w] -> N_like[ADVERB=?adv, AGR=?agr, CASE=?c, DE=n, PAS=n, PROPER=n, REL=?r, WH=n] AP/AP[ADVERB=?apadv, AGR=?apagr, ATTRIBUTIVE=?att, CASE=?apc, DE=?d, DEGREE=?deg, KAI=?k, PAS=n, PREDICATE=?pred, STANDALONE=?sa, WH=?w]
 
 # Genitive NPs moved out of NPs.
-NP[ADVERB=?adv, AGR=?agr, CASE=?c, DE=n, FUSED_REL=n, PAS=n, PREDICATE=y, PROPER=n, REL=?r, STANDALONE=n, SUB_NP=y, WH=n]/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=y] -> N_like[ADVERB=?adv, AGR=?agr, CASE=?c, DE=n, PAS=n, PROPER=n, REL=?r, WH=n] NP/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=y]
+NP[ADVERB=?adv, AGR=?agr, CASE=?c, DE=n, FUSED_REL=n, PAS=n, PREDICATE=y, PROPER=n, REL=?r, STANDALONE=n, SUB_NP=y, WH=n]/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=?w] -> N_like[ADVERB=?adv, AGR=?agr, CASE=?c, DE=n, PAS=n, PROPER=n, REL=?r, WH=n] NP/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=?w]
 
 #### Conjunction ####
 
@@ -177,6 +177,9 @@ AP[ADVERB=?adv, AGR=?agr, ATTRIBUTIVE=?att, CASE=?c, DE=?d, DEGREE=?deg, KAI=n, 
 # Genitive after a comparative.
 AP[ADVERB=?adv, AGR=?agr, ATTRIBUTIVE=?att, CASE=?c, DE=?d, DEGREE=comparative, KAI=n, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?w] -> A[ADVERB=?adv, AGR=?agr, ATTRIBUTIVE=?att, CASE=?c, DEGREE=comparative, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?w] NP[CASE=genitive, DE=?d]
 
+# Dative and infinitive arguments.
+AP[ADVERB=?adv, AGR=?agr, ATTRIBUTIVE=?att, CASE=?c, DE=?d, DEGREE=?deg, KAI=n, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?w] -> A[ADVERB=?adv, AGR=?agr, ARGS=[ARG_DAT_INF=y], ATTRIBUTIVE=?att, CASE=?c, DEGREE=?deg, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?w] C[DE=?d, SECOND_POSITION=y] NP[CASE=dative, DE=n] VP[DE=n, FINITE=n, MOOD=infinitive]
+
 #### Pre-AP particles ####
 
 # kai.
@@ -216,5 +219,8 @@ PredP[CASE=nominative, DE=?d, WH=?w] -> NP[CASE=dative, DE=?d, FUSED_REL=n, PRED
 # Adjectives.
 PredP[CASE=?c, DE=?d, WH=?w]/AP[AGR=?agr, ADVERB=?adv, ATTRIBUTIVE=?att, CASE=?apc, DE=?d, DEGREE=?deg, KAI=?k, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?apw] -> NP[CASE=?c, DE=?d, FUSED_REL=n, PREDICATE=y, STANDALONE=n, WH=?w]/AP[AGR=?agr, ADVERB=?adv, ATTRIBUTIVE=?att, CASE=?apc, DE=?d, DEGREE=?deg, KAI=?k, PAS=?pas, PREDICATE=?pred, STANDALONE=?sa, WH=?apw]
 
-# Genitive NPs.
-PredP[CASE=?c, DE=?d, WH=n]/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=y] -> NP[CASE=?c, DE=?d, FUSED_REL=n, PREDICATE=y, STANDALONE=n, SUB_NP=y, WH=n]/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=y]
+# Genitive NPs.  The whole PredP is +wh if either constituent is.
+PredP[CASE=?c, DE=?d, WH=y]/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=y] -> NP[CASE=?c, DE=?d, FUSED_REL=n, PREDICATE=y, STANDALONE=n, SUB_NP=y, WH=y]/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=y]
+PredP[CASE=?c, DE=?d, WH=y]/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=y] -> NP[CASE=?c, DE=?d, FUSED_REL=n, PREDICATE=y, STANDALONE=n, SUB_NP=y, WH=n]/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=y]
+PredP[CASE=?c, DE=?d, WH=y]/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=n] -> NP[CASE=?c, DE=?d, FUSED_REL=n, PREDICATE=y, STANDALONE=n, SUB_NP=y, WH=y]/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=n]
+PredP[CASE=?c, DE=?d, WH=n]/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=n] -> NP[CASE=?c, DE=?d, FUSED_REL=n, PREDICATE=y, STANDALONE=n, SUB_NP=y, WH=n]/NP[ADVERB=?npadv, AGR=?npagr, CASE=genitive, DE=?d, FUSED_REL=n, PAS=n, PREDICATE=?pred, PROPER=?prop, REL=n, STANDALONE=n, SUB_NP=n, WH=n]

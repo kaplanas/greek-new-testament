@@ -1192,7 +1192,7 @@
 20:10 oi(_D----NPM de/_C------- gewrgoi/_N----NPM e)cape/steilan_V3AAI-P- au)to/n_E----ASM dei/rantes_V-AAPNPM keno/n_A----ASM
 20:11 kai/_C------- prose/qeto_V3AMI-S- e(/teron_A----ASM pe/myai_V-AAN--- dou=lon_N----ASM
 20:11 oi(_D----NPM de/_C------- ka)kei=non_M----ASM dei/rantes_V-AAPNPM kai/_C------- a)tima/santes_V-AAPNPM e)cape/steilan_V3AAI-P- keno/n_A----ASM
-20:12 kai/_C------- prose/qeto_V3AMI-S- tri/ton_B------- pe/myai_V-AAN---
+20:12 kai/_C------- prose/qeto_V3AMI-S- tri/ton_A----ASM pe/myai_V-AAN---
 20:12 oi(_D----NPM de/_C------- kai/_B------- tou=ton_M----ASM traumati/santes_V-AAPNPM e)ce/balon_V3AAI-P-
 20:13 ei)=pe(n)_V3AAI-S- de/_C------- o(_D----NSM ku/rios_N----NSM tou=_D----GSM a)mpelw=nos_N----GSM
 20:13 ti/_I----ASN poih/sw_V1AAS-S-
