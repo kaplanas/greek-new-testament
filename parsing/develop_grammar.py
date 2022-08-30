@@ -1,21 +1,13 @@
 import re
-import pickle
+import dill
 import pandas as pd
 import termtables
 from yachalk import chalk
-from nltk.tree import Tree
 from text_and_vocab import load_text_df, load_text_tagged
-from parsing.utils import PARSER, VERBOSE_PARSER
+from parsing.utils import PARSER, load_grammar
+from typed_dependencies import SavedParse
 
-SAVED_PARSES_FILE = '../parsing/saved_parses/saved_parses'
-
-
-def attempt_to_parse(s):
-    """Attempt to parse a sentence."""
-    try:
-        return PARSER.parse(s)
-    except:
-        return None
+SAVED_PARSES_DIR = '../parsing/saved_parses/saved_parses'
 
 
 def parse_sents(sent_length=1):
@@ -27,50 +19,17 @@ def parse_sents(sent_length=1):
     ts = [sent for sent in ts if len(sent[1]) == sent_length]
     parses = []
     for sent in ts:
-        ap = attempt_to_parse([w + '_' + m
-                               for (w, m) in sent[1]])
-        trees = []
-        if ap is not None:
+        ap = PARSER.parse([w + '_' + m for (w, m) in sent[1]])
+        try:
             trees = [tree for tree in ap]
-            if len(trees) == 0:
-                trees = []
-        parses.append((sent[0],
-                       ' '.join(w for w, _ in sent[1]),
-                       [w + '_' + m for w, m in sent[1]],
-                       trees))
+        except UnboundLocalError:
+            trees = []
+        sp = SavedParse(sent[0],
+                        ' '.join(w for w, _ in sent[1]),
+                        [w + '_' + m for w, m in sent[1]],
+                        trees)
+        parses.append(sp)
     return parses
-
-
-def get_unambiguous_sents(parses):
-    """Get sentences with exactly one parse."""
-    if len(parses) == 0:
-        return []
-    else:
-        return [p for p in parses if len(p[3]) == 1]
-
-
-def get_ambiguous_sents(parses):
-    """Get sentences with more than one parse."""
-    if len(parses) == 0:
-        return []
-    else:
-        return [p for p in parses if len(p[3]) > 1]
-
-
-def get_parsed_sents(parses):
-    """Get sentences with at least one parse."""
-    if len(parses) == 0:
-        return []
-    else:
-        return [p for p in parses if len(p[3]) > 0]
-
-
-def get_unparsed_sents(parses):
-    """Get sentences with no parse."""
-    if len(parses) == 0:
-        return []
-    else:
-        return [p for p in parses if len(p[3]) == 0]
 
 
 def get_sent_ids(parses):
@@ -78,91 +37,76 @@ def get_sent_ids(parses):
     if len(parses) == 0:
         return []
     else:
-        return [(p[0], p[1]) for p in parses]
+        return [(p.reference, p.sent_str) for p in parses]
 
 
-def get_parses_filename(filename=SAVED_PARSES_FILE, sent_length=None):
+def get_parses_filename(pathname=SAVED_PARSES_DIR, sent_length=None):
     """Get the filename for saved parses of a given length."""
-    parses_filename = filename
+    parses_pathname = pathname
     if sent_length is not None:
-        parses_filename = parses_filename + '_' + str(sent_length)
-    parses_filename = parses_filename + '.pickle'
+        parses_filename = parses_pathname + '_' + str(sent_length)
+    parses_filename = parses_filename + '.dill'
     return parses_filename
 
 
-def save_parses(parses, filename=SAVED_PARSES_FILE, include_count=True):
-    """Save parses as a pickle file."""
+def save_parses(parses, pathname=SAVED_PARSES_DIR):
+    """Save parses as a dill file."""
     for k, v in parses.items():
-        sent_length = None
-        if include_count:
-            sent_length = len(parses[k][0][2])
-        with open(get_parses_filename(filename, sent_length), 'wb') as file:
-            pickle.dump(parses[k], file)
+        with open(get_parses_filename(pathname, k), 'wb') as file:
+            dill.dump(parses[k], file)
 
 
-def load_parses(filename=SAVED_PARSES_FILE, sent_length=None):
-    """Load the saved parses from a pickle file."""
+def load_parses(pathname=SAVED_PARSES_DIR, sent_length=None):
+    """Load the saved parses from a dill file."""
     try:
-        with open(get_parses_filename(filename, sent_length), 'rb') as file:
-            parses = pickle.load(file)
+        with open(get_parses_filename(pathname, sent_length), 'rb') as file:
+            parses = dill.load(file)
     except:
         parses = []
     return parses
 
 
-def print_parse(tree, features=False, margin=70, indent=0, nodesep="",
-                parens="[]", quotes=False, top_level=True):
-    """Pretty-print parse trees WITHOUT feature info."""
+def print_parse(tree, node_id, features=False, margin=70, indent=0,
+                top_level=True):
+    """Pretty-print parse trees."""
+    nodesep = ""
+    parens = "[]"
+    parsed_atom = tree.nodes[node_id]['word']
+    wordform = re.sub('_.*', '', parsed_atom)
+    morph = re.sub('.*_', '', parsed_atom)
+    label_to_print = chalk.blue(wordform)
+    new_indent = indent + len(wordform) + 2
     if features:
-        parens = "()"
-    if isinstance(tree._label, str):
-        label_to_print = tree._label
-    else:
-        label_to_print = repr(tree._label)
-    if not features:
-        label_to_print = re.sub('\[[^/]*\]', '', label_to_print)
+        label_to_print = label_to_print + '_' + chalk.green(morph)
+        new_indent = new_indent + len(morph) + 1
+    if node_id != tree.root['address']:
+        label_to_print = label_to_print + ' ' + tree.nodes[node_id]['rel']
     s = f"{parens[0]}{label_to_print}{nodesep}"
-    if features:
-        new_indent = indent + 2
-    else:
-        new_indent = indent + len(label_to_print) + 2
-    for child_i, child in enumerate(tree):
-        if features:
-            child_sep = "\n" + " " * (indent + 2)
-        elif child_i == 0:
+    for child_i in tree.nodes[node_id]['deps']['']:
+        if child_i == 0:
             child_sep = " "
         else:
             child_sep = "\n" + " " * new_indent
-        if isinstance(child, Tree):
-            s += (
-                child_sep
-                + print_parse(child, features, margin, new_indent, nodesep,
-                              parens, quotes, top_level=False)
-            )
-        elif isinstance(child, tuple):
-            s += child_sep + "/".join(child)
-        elif isinstance(child, str) and not quotes:
-            s += child_sep
-            s += "%s" % chalk.blue(repr(child))
-        else:
-            if features:
-                s += child_sep
-            else:
-                s += " "
-            s += chalk.blue(repr(child))
+        s += (
+            child_sep + print_parse(tree, child_i, features, margin,
+                                    new_indent, top_level=False)
+        )
     if top_level:
         print(s + parens[1])
     else:
         return s + parens[1]
 
 
-def print_parses(parses, features=False):
+def print_parses(parses, first_index=0, features=False):
     """Show the parse trees of a set of parses."""
     for i, parse in enumerate(parses):
-        print('*** [' + str(i) + '] ' + parse[0] + ' - ' + parse[1] + ' ***')
+        print('*** [' + str(i + first_index) + '] ' + parse.reference + ' - ' + parse.sent_str + ' ***')
         print('')
-        for tree in parse[3]:
-            print_parse(tree, features)
+        trees = parse.other_parses
+        if parse.parse is not None:
+            trees = [parse.parse] + trees
+        for tree in trees:
+            print_parse(tree, tree.root['address'], features=features)
             print('')
 
 
@@ -170,7 +114,6 @@ if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
     sent_lengths = [1, 2, 3, 4, 5]
-    # sent_lengths = [4, 5]
     old_parses = {}
     parses = {}
     changes = {}
@@ -179,31 +122,51 @@ if __name__ == '__main__':
         old_sis = get_sent_ids(old_parses[sl])
         parses[sl] = parse_sents(sent_length=sl)
         sis = get_sent_ids(parses[sl])
-        changes[sl] = {}
+        changes[sl] = {'parsed': [],
+                       'new': [],
+                       'same': [],
+                       'none': [],
+                       'unparsed': []}
         for i, p in enumerate(parses[sl]):
-            num_parses = len(p[3])
-            if not num_parses in changes[sl].keys():
-                changes[sl][num_parses] = {'fewer': [], 'same': [], 'more': []}
-            num_old_parses = 0
             if sis[i] in old_sis:
-                num_old_parses = len(old_parses[sl][old_sis.index(sis[i])][3])
-            if num_parses < num_old_parses:
-                changes[sl][num_parses]['fewer'].append(p)
-            elif num_parses == num_old_parses:
-                changes[sl][num_parses]['same'].append(p)
+                old_parse = old_parses[sl][old_sis.index(sis[i])]
+                old_best_parse = old_parse.parse
+                if old_best_parse is not None:
+                    if old_best_parse.to_dot() in [op.to_dot()
+                                                   for op in p.other_parses]:
+                        p.set_best_parse([op.to_dot()
+                                          for op in p.other_parses].index(old_best_parse.to_dot()))
+                        changes[sl]['parsed'].append(p)
+                    else:
+                        changes[sl]['unparsed'].append(p)
+                else:
+                    if len(set(op.to_dot() for op in p.other_parses) -
+                           set(op.to_dot() for op in old_parse.other_parses)) > 0:
+                        changes[sl]['new'].append(p)
+                    elif len(p.other_parses) == 0:
+                        changes[sl]['none'].append(p)
+                    else:
+                        changes[sl]['same'].append(p)
             else:
-                changes[sl][num_parses]['more'].append(p)
-        print('*** Sentences of length ' + str(sl) + ' ***')
-        termtables.print([[diff] +
-                          [str(chalk.red(str(len(changes[sl][np][diff]))))
-                           if diff in ['fewer', 'more'] and len(changes[sl][np][diff]) > 0
-                           else str(len(changes[sl][np][diff]))
-                           for np in sorted(changes[sl].keys())]
-                          for diff in ['fewer', 'same', 'more']],
-                         header=['Change'] + [str(k) + ' parse' + '' if k == 1
-                                              else str(k) + ' parses'
-                                              for k in sorted(changes[sl].keys())],
-                         style=termtables.styles.markdown,
-                         padding=(0, 1),
-                         alignment='l' + ('r' * len(changes[sl])))
-        print('')
+                if len(p.other_parses) == 0:
+                    changes[sl]['none'].append(p)
+                else:
+                    changes[sl]['new'].append(p)
+    print('')
+    termtables.print([[sl] +
+                      [str(chalk.red(str(len(changes[sl][diff]))))
+                       if diff == 'unparsed' and len(changes[sl][diff]) > 0
+                       else str(chalk.blue(str(len(changes[sl][diff]))))
+                       if diff == 'new' and len(changes[sl][diff]) > 0
+                       else str(chalk.green(str(len(changes[sl][diff]))))
+                       if diff == 'parsed' and len(changes[sl][diff]) > 0
+                       else str(len(changes[sl][diff]))
+                       for diff in changes[sl].keys()]
+                      for sl in changes.keys()],
+                     header=['Length', 'Parsed', 'New candidates',
+                             'Same candidates', 'No candidates',
+                             'Newly unparsed'],
+                     style=termtables.styles.markdown,
+                     padding=(0, 1),
+                     alignment='l' + ('r' * 5))
+    print('')

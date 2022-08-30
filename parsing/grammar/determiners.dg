@@ -1,0 +1,284 @@
+#### preposition ####
+
+# e)k
+determiner 'e)k_P-------' -> 'tou/s_D----APM'
+
+# kata/
+determiner 'kata/_P-------' -> 'ta/_D----APN'
+
+#### verb ####
+
+# bdelu/ssomai
+determiner 'bdelusso/menos_V-PMPNSM' -> 'o(_D----NSM'
+
+# du/namai
+determiner 'duna/menos_V-PMPNSM' -> 'o(_D----NSM'
+
+# e)/xw
+determiner 'e)/xwn_V-PAPNSM' -> 'o(_D----NSM'
+
+# khru/ssw
+determiner 'khru/sswn_V-PAPNSM' -> 'o(_D----NSM'
+
+# le/gw
+determiner 'le/gwn_V-PAPNSM' -> 'o(_D----NSM'
+determiner 'le/gesqai_V-PPN---' -> 'tw=|_D----DSN'
+
+# dikaio/w
+determiner 'dikaiw=n_V-PAPNSM' -> 'o(_D----NSM'
+
+# katakri/nw
+determiner 'katakrinw=n_V-PAPNSM' -> 'o(_D----NSM'
+
+# a)kou/w
+determiner 'a)kou/santes_V-AAPNPM' -> 'oi(_D----NPM'
+
+# a)na/keimai
+determiner 'a)nakei/menos_V-PMPNSM' -> 'o(_D----NSM'
+
+# kale/w
+determiner 'keklhme/nois_V-RPPDPM' -> 'toi=s_D----DPM'
+
+# pa/reimi
+determiner 'parou=si(n)_V-PAPDPN' -> 'toi=s_D----DPM'
+
+# spei/rw
+determiner 'spei/rwn_V-PAPNSM' -> 'o(_D----NSM'
+
+#### noun ####
+
+# a)na/stasis
+determiner 'a)na/stasis_N----NSF' -> 'h(_D----NSF'
+
+# a)/nqrwpos
+determiner 'a)/nqrwpos_N----NSM' -> 'o(_D----NSM'
+
+# a)delfo/s
+determiner 'a)delfoi/_N----NPM' -> 'oi(_D----NPM'
+
+# a)diki/a
+determiner 'a)diki/an_N----ASF' -> 'th/n_D----ASF'
+
+# ai)w/n
+determiner 'ai)w=nos_N----GSM' -> 'tou=_D----GSM'
+
+# brw=ma
+determiner 'brw/mata_N----APN' -> 'ta/_D----APN'
+
+# gunh/
+determiner 'gunaiko/s_N----GSF' -> 'th=s_D----GSF'
+
+# desmo/s
+determiner 'desmw=n_N----GPM' -> 'tw=n_D----GPM'
+
+# eu)agge/lion
+determiner 'eu)aggeli/ou_N----GSN' -> 'tou=_D----GSN'
+
+# qeo/s
+determiner 'qew=|_N----DSM' -> 'tw=|_D----DSM'
+determiner 'qeo/s_N----NSM' -> 'o(_D----NSM'
+
+# *)ihsou=s
+determiner '*)ihsou=n_N----ASM' -> 'to/n_D----ASM'
+determiner '*)ihsou=s_N----NSM' -> 'o(_D----NSM'
+
+# i)/xnos
+determiner 'i)/xnesi(n)_N----DPN' -> 'toi=s_D----DPN'
+
+# kardi/a
+determiner 'kardi/an_N----ASF' -> 'th/n_D----ASF'
+
+# kau/xhma
+determiner 'kau/xhma_N----NSN' -> 'to/_D----NSN'
+
+# ke/ntron
+determiner 'ke/ntron_N----NSN' -> 'to/_D----NSN'
+
+# kri/ma
+determiner 'kri/ma_N----NSN' -> 'to/_D----NSN'
+
+# maqhth/s
+determiner 'maqhtai/_N----NPM' -> 'oi(_D----NPM'
+
+# makarismo/s
+determiner 'makarismo/s_N----NSM' -> 'o(_D----NSM'
+
+# ni=kos
+determiner 'ni=kos_N----NSN' -> 'to/_D----NSN'
+
+# no/hma
+determiner 'noh/mata_N----NPN' -> 'ta/_D----NPN'
+
+# o)/noma
+determiner 'o)/noma_N----ASN' -> 'to/_D----ASN'
+
+# o)fqalmo/s
+determiner 'o)fqalmoi/_N----NPM' -> 'oi(_D----NPM'
+determiner 'o)fqalmou/s_N----APM' -> 'tou/s_D----APM'
+
+# parabolh/
+determiner 'parabolh/n_N----ASF' -> 'th/n_D----ASF'
+
+# pneu=ma
+determiner 'pneu/mati_N----DSN' -> 'tw=|_D----DSN'
+
+# *si/mwn
+determiner '*si/mwn_N----NSM' -> 'o(_D----NSM'
+
+# te/los
+determiner 'te/los_N----NSN' -> 'to/_D----NSN'
+
+# ui(o/s
+determiner 'ui(o/n_N----ASM' -> 'to/n_D----ASM'
+
+# xh/ra
+determiner 'xh/ras_N----APF' -> 'ta/s_D----APF'
+
+# w(/ra
+determiner 'w(/ra_N----NSF' -> 'h(_D----NSF'
+
+# *pe/tros
+determiner '*pe/tros_N----NSM' -> 'o(_D----NSM'
+
+# a)ga/ph
+determiner 'a)ga/ph_N----NSF' -> 'h(_D----NSF'
+
+# a(/|dhs
+determiner 'a(/|dou_N----GSM' -> 'tou=_D----GSM'
+
+# a(/las
+determiner 'a(/las_N----NSN' -> 'to/_D----NSN'
+
+# *)aristo/boulos
+determiner '*)aristobou/lou_N----GSM' -> 'tw=n_D----GPM'
+
+# a)rxiereu/s
+determiner 'a)rxierei=s_N----NPM' -> 'oi(_D----NPM'
+
+# *)/ayinqos
+determiner '*)/ayinqos_N----NSM' -> 'o(_D----NSM'
+
+# *barabba=s
+determiner '*barabba=n_N----ASM' -> 'to/n_D----ASM'
+determiner '*barabba=s_N----NSM' -> 'o(_D----NSM'
+
+# blasfhmi/a
+determiner 'blasfhmi/as_N----GSF' -> 'th=s_D----GSF'
+
+# grafh/
+determiner 'grafh/_N----NSF' -> 'h(_D----NSF'
+
+# *daui/d
+determiner '*daui/d_N----GSM' -> 'tou=_D----GSM'
+
+# dida/skalos
+determiner 'dida/skalos_N----NSM' -> 'o(_D----NSM'
+
+# e)/qnos
+determiner 'e)/qnesi(n)_N----DPN' -> 'toi=s_D----DPN'
+
+# ei)/dwlon
+determiner 'ei)/dwla_N----APN' -> 'ta/_D----APN'
+
+# e)ntolh/
+determiner 'e)ntola/s_N----APF' -> 'ta/s_D----APF'
+
+# e)/rgon
+determiner 'e)/rgwn_N----GPN' -> 'tw=n_D----GPN'
+
+# *)ierixw/
+determiner '*)ierixw/_N----ASF' -> 'th/n_D----ASF'
+
+# kairo/s
+determiner 'kairo/s_N----NSM' -> 'o(_D----NSM'
+
+# kau/xhsis
+determiner 'kau/xhsis_N----NSF' -> 'h(_D----NSF'
+
+# ku/rios
+determiner 'ku/rion_N----ASM' -> 'to/n_D----ASM'
+determiner 'ku/rios_N----NSM' -> 'o(_D----NSM'
+
+# lao/s
+determiner 'lao/s_N----NSM' -> 'o(_D----NSM'
+
+# li/qos
+determiner 'li/qon_N----ASM' -> 'to/n_D----ASM'
+
+# lo/gos
+determiner 'lo/gon_N----ASM' -> 'to/n_D----ASM'
+determiner 'lo/gos_N----NSM' -> 'o(_D----NSM'
+
+# *nazwrai=os
+determiner '*nazwrai=on_N----ASM' -> 'to/n_D----ASM'
+
+# no/mos
+determiner 'no/mos_N----NSM' -> 'o(_D----NSM'
+
+# o)/xlos
+determiner 'o)/xlos_N----NSM' -> 'o(_D----NSM'
+
+# pai=s
+determiner 'pai=s_N----NSF' -> 'h(_D----NSF'
+
+# path/r
+determiner 'path/r_N----NSM' -> 'o(_D----NSM'
+
+# *pau=los
+determiner '*pau=los_N----NSM' -> 'o(_D----NSM'
+
+# *pila=tos
+determiner '*pila=tos_N----NSM' -> 'o(_D----NSM'
+
+# profh/ths
+determiner 'profh/tais_N----DPM' -> 'toi=s_D----DPM'
+determiner 'profh/ths_N----NSM' -> 'o(_D----NSM'
+
+# tro/pos
+determiner 'tro/pos_N----NSM' -> 'o(_D----NSM'
+
+# u(phre/ths
+determiner 'u(phre/tai_N----NPM' -> 'oi(_D----NPM'
+
+# filadelfi/a
+determiner 'filadelfi/a_N----NSF' -> 'h(_D----NSF'
+
+# xa/ris
+determiner 'xa/ris_N----NSF' -> 'h(_D----NSF'
+
+# xei/r
+determiner 'xei=ra_N----ASF' -> 'th/n_D----ASF'
+
+# *xristo/s
+determiner '*xristo/s_N----NSM' -> 'o(_D----NSM'
+
+#### adjective ####
+
+# a(/gios
+determiner 'a(/gioi_A----NPM' -> 'oi(_D----NPM'
+
+# suggenh/s
+determiner 'suggenh=_A----ASM' -> 'to/n_D----ASM'
+
+# di/kaios
+determiner 'di/kaion_A----ASM' -> 'to/n_D----ASM'
+
+# e)nne/a
+determiner 'e)nne/a_A----NPM' -> 'oi(_D----NPM'
+
+# prw=tos
+determiner 'prw=ta_A----NPN' -> 'ta/_D----NPN'
+determiner 'prw=tos_A----NSM' -> 'o(_D----NSM'
+
+# ptwxo/s
+determiner 'ptwxo/n_A----ASM' -> 'to/n_D----ASM'
+
+# fi/los
+determiner 'fi/loi_A----NPM' -> 'oi(_D----NPM'
+determiner 'fi/lous_A----APM' -> 'tou/s_D----APM'
+
+#### demonstrative pronoun ####
+
+# toiou=tos
+determiner 'toiou/tous_M----APM' -> 'tou/s_D----APM'
+

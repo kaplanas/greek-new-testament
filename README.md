@@ -2,7 +2,9 @@
 
 These scripts do some basic syntactic parsing of the Greek New Testament in order to extract segments (ideally, constituents) that are accessible to early learners, using only the constructions they've been exposed to so far.
 
-The parsing is _not_ intended to be theoretically sound.  My goal is to have a decent representation of the constituent structure (not necessarily the right labels or the right organization of functional heads) for each sentence, with a minimum of ambiguity.  I particularly want to avoid ambiguity with no associated semantic distinction.  This results in some questionable representations (e.g., PPs are usually adjuncts rather than arguments; some word order alternatives are represented with duplicated rules rather than movement).  Also, because `nltk` feature grammars don't allow "not" or "or" logic within feature structures, there's a massive amount of duplication in the syntactic rules.  Finally, there's a certain amount of laziness here; for example, I don't even attempt to represent the instrumental dative as an adjunct.
+I originally wanted to use a feature grammar, but the parsing simply wasn't fast enough at the scale I needed (especially with all the non-local dependencies that were required).  Instead, I'm using a dependency grammar, with labels for relations.
+
+The parsing is _not_ intended to be theoretically sophisticated.  My goal is to have a decent representation of the constituent structure for each sentence, for the purpose of automatically extracting meaningful phrases.  The labels are somewhat idiosyncractic.
 
 The morphological parsing of [James Tauber](https://github.com/morphgnt/sblgnt) is used as a base.
 

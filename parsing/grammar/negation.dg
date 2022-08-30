@@ -1,0 +1,165 @@
+#### verb ####
+
+# a)gapa/w
+negation 'a)gapw=_V1PAI-S-' -> 'ou)_B-------'
+
+# a)ntita/ssomai
+negation 'a)ntita/ssetai_V3PMI-S-' -> 'ou)_B-------'
+
+# a)pokri/nomai
+negation 'a)pokri/nh|_V2PMI-S-' -> 'ou)_B-------'
+
+# gi/nomai
+negation 'gi/nesqe_V2PMM-P-' -> 'mh/_B-------'
+negation 'ge/noito_V3AMO-S-' -> 'mh/_B-------'
+
+# ei)/dw
+negation 'oi)=da_V1RAI-S-' -> 'ou)_B-------'
+negation 'oi)/damen_V1RAI-P-' -> 'ou)_B-------'
+
+# ei)mi/
+negation 'ei)mi/_V1PAI-S-' -> 'ou)_B-------'
+negation 'e)sme/n_V1PAI-P-' -> 'mh/_B-------'
+negation 'e)ste/_V2PAI-P-' -> 'mh/ti_L-------'
+negation 'e)sti/(n)_V3PAI-S-' -> 'ou)_B-------'
+
+# e)mpi/ptw
+negation 'e)mpesou=ntai_V3FMI-P-' -> 'ou)xi/_L-------'
+
+# e)/xw
+negation 'e)/xete_V2PAI-P-' -> 'ou)/pw_B-------'
+negation 'e)/xousi(n)_V3PAI-P-' -> 'mh/_B-------' | 'ou)_B-------'
+negation 'e)/xw_V1PAI-S-' -> 'ou)_B-------'
+
+# zhte/w
+negation 'zh/tei_V2PAM-S-' -> 'mh/_B-------'
+
+# qe/lw
+negation 'qe/lw_V1PAI-S-' -> 'ou)_B-------'
+
+# i)sxu/w
+negation 'i)/sxusas_V2AAI-S-' -> 'ou)_B-------'
+
+# lale/w
+negation 'lalei=s_V2PAI-S-' -> 'ou)_B-------'
+negation 'lalou=si(n)_V3PAI-P-' -> 'mh/_B-------'
+
+# le/gw
+negation 'le/gei_V3PAI-S-' -> 'ou)_B-------'
+
+# me/lei
+negation 'mele/tw_V3PAM-S-' -> 'mh/_B-------'
+
+# pwle/w
+negation 'pwlei=tai_V3PPI-S-' -> 'ou)xi/_L-------'
+
+# sugxra/omai
+negation 'sugxrw=ntai_V3PMI-P-' -> 'ou)_B-------'
+
+# fobe/omai
+negation 'fobou=_V2PMM-S-' -> 'mh/_B-------'
+negation 'fobei=sqe_V2PMM-P-' -> 'mh/_B-------'
+
+# diermhneu/w
+negation 'diermhneu/ousi(n)_V3PAI-P-' -> 'mh/_B-------'
+
+# a)pe/rxomai
+negation 'a)ph=lqe(n)_V3AAI-S-' -> 'ou)_B-------'
+
+# a)postere/w
+negation 'a)posterei=sqe_V2PPI-P-' -> 'ou)xi/_B-------'
+
+# e)paine/w
+negation 'e)painw=_V1PAI-S-' -> 'ou)_B-------'
+
+# peripate/w
+negation 'periepath/samen_V1AAI-P-' -> 'ou)_B-------'
+
+# a)kou/w
+negation 'h)/kousan_V3AAI-P-' -> 'mh/_B-------' | 'ou)_B-------'
+
+# a(marta/nw
+negation 'a(marta/nei_V3PAI-S-' -> 'ou)_B-------'
+
+# a)na/keimai
+negation 'a)nakei/menos_V-PMPNSM' -> 'ou)xi/_L-------'
+
+# a)sqene/w
+negation 'a)sqenw=_V1PAI-S-' -> 'ou)_B-------'
+
+# gra/fw
+negation 'gra/fe_V2PAM-S-' -> 'mh/_B-------'
+
+# di/dwmi
+negation 'dw=men_V1AAS-P-' -> 'mh/_B-------'
+
+# e)kqambe/omai
+negation 'e)kqambei=sqe_V2PPM-P-' -> 'mh/_B-------'
+
+# e)piqume/w
+negation 'e)piqumh/seis_V2FAI-S-' -> 'ou)_B-------'
+
+# e)pispa/omai
+negation 'e)pispa/sqw_V3PMM-S-' -> 'mh/_B-------'
+
+# qroe/omai
+negation 'qroei=sqe_V2PPM-P-' -> 'mh/_B-------'
+
+# klai/w
+negation 'klai=e_V2PAM-S-' -> 'mh/_B-------'
+
+# kle/ptw
+negation 'kle/ptein_V-PAN---' -> 'mh/_B-------'
+
+# moixeu/w
+negation 'moixeu/ein_V-PAN---' -> 'mh/_B-------'
+negation 'moixeu/seis_V2FAI-S-' -> 'ou)_B-------'
+
+# perite/mnw
+negation 'peritemne/sqw_V3PPM-S-' -> 'mh/_B-------'
+
+# pisteu/w
+negation 'pisteu/shte_V2AAS-P-' -> 'mh/_B-------'
+
+# plana/w
+negation 'plana=sqe_V2PPM-P-' -> 'mh/_B-------'
+
+# suni/hmi
+negation 'suni/ete_V2PAI-P-' -> 'ou)/pw_B-------'
+
+# foneu/w
+negation 'foneu/seis_V2FAI-S-' -> 'ou)_B-------'
+
+#### adjective ####
+
+# kalo/s
+negation 'kalo/n_A----NSN' -> 'ou)_B-------'
+
+#### noun ####
+
+# a)po/stolos
+negation 'a)po/stoloi_N----NPM' -> 'mh/_B-------'
+
+# dida/skalos
+negation 'dida/skaloi_N----NPM' -> 'mh/_B-------'
+
+# du/namis
+negation 'duna/meis_N----NPF' -> 'mh/_B-------'
+
+# profh/ths
+negation 'profh=tai_N----NPM' -> 'mh/_B-------'
+
+# a)diki/a
+negation 'a)diki/a_N----NSF' -> 'mh/_B-------'
+
+# e)/qnos
+negation 'e)qnw=n_N----GPN' -> 'ou)xi/_L-------'
+
+# i)/xnos
+negation 'i)/xnesi(n)_N----DPN' -> 'ou)_B-------'
+
+#### personal pronoun ####
+
+# e)gw/
+negation 'e)gw/_E----NS-' -> 'mh/ti_L-------'
+

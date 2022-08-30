@@ -3,65 +3,38 @@ import pandas as pd
 import numpy as np
 from utils import TEXT_DATA_DIR
 from text_and_vocab import load_text_df
-from utils import POS_CODES, get_morph_codes
-from parsing import GRAMMAR_DIR, LEXICON_FILE
 
 
 HAND_DATA_DIR = 'hand_coded_data/'
-SUB_FEAT_STRUCTS = {
-    'AGR': ['PERSON', 'NUMBER', 'GENDER'],
-    'ARGS': ['ARG_NONE', 'ARG_NOM', 'ARG_PRED', 'ARG_ACC', 'ARG_DAT',
-             'ARG_GEN', 'ARG_DIR', 'ARG_INF', 'ARG_IMP', 'ARG_OTI', 'ARG_S',
-             'ARG_SUBJ', 'ARG_FUSED_REL', 'ARG_ACC_PRED', 'ARG_ACC_ACC',
-             'ARG_ACC_DAT', 'ARG_ACC_GEN', 'ARG_ACC_DIR', 'ARG_ACC_INF',
-             'ARG_DAT_GEN', 'ARG_DAT_INF', 'ARG_DAT_OTI']
-}
+PROCESSED_DATA_DIR = 'processed_data/'
 POS_PROCESSING = {
     'noun': {'id_cols': ['gender'],
              'form_cols': ['gs'],
-             'class_cols': ['declension'],
-             'feature_cols': ['arg_inf']},
+             'class_cols': ['declension']},
     'relative pronoun': {'id_cols': [],
                          'form_cols': ['fem', 'neut'],
                          'class_cols': ['declension']},
     'verb': {'id_cols': [],
              'form_cols': ['pp' + str(i + 2) for i in range(5)],
-             'class_cols': ['verb_type'],
-             'feature_cols': ['deponent'] + \
-                             [a.lower()
-                              for a in SUB_FEAT_STRUCTS['ARGS']
-                              if a != 'ARG_NOM']},
+             'class_cols': ['verb_type']},
     'personal pronoun': {'id_cols': [],
-                         'form_cols': ['gs'],
-                         'feature_cols': ['person', 'autos']},
+                         'form_cols': ['gs']},
     'definite article': {'id_cols': [],
                          'form_cols': ['fem', 'neut'],
                          'class_cols': ['declension']},
-    'preposition': {'id_cols': [],
-                    'feature_cols': ['arg_none', 'arg_nom', 'arg_acc',
-                                     'arg_dat', 'arg_gen', 'arg_fused_rel',
-                                     'postpos', 'direction', 'pros']},
-    'conjunction': {'id_cols': [],
-                    'feature_cols': ['second_position', 'subordinating']},
+    'preposition': {'id_cols': []},
+    'conjunction': {'id_cols': []},
     'adjective': {'id_cols': [],
                   'form_cols': ['fem', 'neut'],
-                  'class_cols': ['declension'],
-                  'feature_cols': ['standalone', 'wh', 'adverb', 'attributive',
-                                   'predicate', 'pas', 'arg_dat', 'arg_gen',
-                                   'arg_dat_inf']},
-    'adverb': {'id_cols': [],
-               'feature_cols': ['negative', 'wh', 'predicate', 'adjunct',
-                                'direction']},
-    'interjection': {'id_cols': [],
-                     'feature_cols': ['standalone']},
-    'particle': {'id_cols': [],
-                 'feature_cols': ['standalone', 'negative', 'adjunct']},
+                  'class_cols': ['declension']},
+    'adverb': {'id_cols': []},
+    'interjection': {'id_cols': []},
+    'particle': {'id_cols': []},
     'demonstrative pronoun': {'id_cols': [],
                               'form_cols': ['fem', 'neut'],
                               'class_cols': ['declension']},
     'interrogative/indefinite pronoun': {'id_cols': [],
-                                         'form_cols': ['gs'],
-                                         'feature_cols': ['wh']}
+                                         'form_cols': ['gs']}
 }
 
 
@@ -311,94 +284,12 @@ def process_vocab(pos):
 def write_lemmas_df(pos):
     """Write a csv of the lemmas for this POS."""
     lemmas_df = process_vocab(pos)
-    lemmas_df.to_csv(TEXT_DATA_DIR +
+    lemmas_df.to_csv(TEXT_DATA_DIR + PROCESSED_DATA_DIR +
                      pos.lower().replace(' ', '_').replace('/', '_') +
                      '_data.csv', index=False)
 
 
-def write_lexicon():
-    """Write the lexicon for the feature grammar."""
-    # Load the NT text.
-    nt_df = load_text_df('nt')
-    lexicon_feature_cols = ['person', 'mood', 'voice', 'case', 'number', 'gender']
-    lexicon_file = open(GRAMMAR_DIR + LEXICON_FILE, 'w')
-    # Iterate over parts of speech.
-    for pos in POS_PROCESSING.keys():
-        # Get unique wordforms.
-        if pos == 'adjective':
-            lexicon_feature_cols = lexicon_feature_cols + ['degree']
-        cols_to_pull = ['lemma', 'standardized_wordform', 'pos'] + \
-                       lexicon_feature_cols + ['tense']
-        if pos == 'personal pronoun':
-            cols_to_pull.remove('person')
-        wordforms_df = nt_df[nt_df.pos == pos][cols_to_pull].copy()
-        wordforms_df.drop_duplicates(inplace=True)
-        # Get supplementary hand-coded features, depending on the POS.
-        if 'feature_cols' in POS_PROCESSING[pos].keys():
-            id_cols = ['lemma'] + POS_PROCESSING[pos]['id_cols']
-            supp_features_df = pd.read_csv(TEXT_DATA_DIR + HAND_DATA_DIR +
-                                           pos.lower().replace(' ', '_').replace('/', '_') +
-                                           '_supp_features.csv')
-            wordforms_df = wordforms_df.merge(supp_features_df,
-                                              how='left', on=id_cols)
-        # Write the lexicon file.
-        for (i, r) in wordforms_df.iterrows():
-            entry_feats = {}
-            if r['lemma'] not in ['mara/na', 'qa/', 'abba', 'e)lwi/+', 'lema/',
-                                  'sabaxqa/ni']:
-                for feature in lexicon_feature_cols:
-                    if not pd.isnull(r[feature]):
-                        if isinstance(r[feature], float):
-                            entry_feats[feature.upper()] = str(int(r[feature]))
-                        elif r[feature] == 'active' or r[feature] == 'middle':
-                            entry_feats[feature.upper()] = 'actmid'
-                        else:
-                            entry_feats[feature.upper()] = str(r[feature])
-                        if feature == 'mood':
-                            if r[feature] in ['indicative', 'imperative',
-                                              'subjunctive', 'optative']:
-                                entry_feats['FINITE'] = 'y'
-                            else:
-                                entry_feats['FINITE'] = 'n'
-                    elif feature == 'person' and pos in ['noun',
-                                                         'demonstrative pronoun',
-                                                         'interrogative/indefinite pronoun']:
-                        entry_feats[feature.upper()] = '3'
-                if 'feature_cols' in POS_PROCESSING[pos].keys():
-                    for feature in POS_PROCESSING[pos]['feature_cols']:
-                        entry_feats[feature.upper()] = str(r[feature])
-                if pos == 'noun':
-                    entry_feats['POS'] = 'N'
-                    if r['lemma'][0] == '*':
-                        entry_feats['PROPER'] = 'y'
-                    else:
-                        entry_feats['PROPER'] = 'n'
-                elif pos == 'verb':
-                    entry_feats['POS'] = 'V'
-                    if r['lemma'] == 'ei)mi/':
-                        entry_feats['EIMI'] = 'y'
-                    else:
-                        entry_feats['EIMI'] = 'n'
-                feat_struct = ', '.join(k + '=' + v
-                                        for k, v in entry_feats.items()
-                                        if k not in [f
-                                                     for _, sfs_feats in SUB_FEAT_STRUCTS.items()
-                                                     for f in sfs_feats])
-                for sfs_name, sfs_feats in SUB_FEAT_STRUCTS.items():
-                    if len(set(entry_feats.keys()).intersection(set(sfs_feats))) > 0:
-                        sub_feat_struct = sfs_name + '=[' +\
-                                          ', '.join(k + '=' + v
-                                                    for k, v in entry_feats.items()
-                                                    if k in sfs_feats) + ']'
-                        feat_struct = ', '.join([feat_struct, sub_feat_struct])
-                lexicon_file.write(POS_CODES[pos] + '[' + feat_struct + ']' +
-                                   ' -> ' + "'" + r['standardized_wordform'] +
-                                   '_' + get_morph_codes(r) + "'" + '\n')
-    lexicon_file.close()
-
-
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
-    # for pos in POS_PROCESSING.keys():
-    #     write_lemmas_df(pos)
-    write_lexicon()
+    for pos in POS_PROCESSING.keys():
+        write_lemmas_df(pos)

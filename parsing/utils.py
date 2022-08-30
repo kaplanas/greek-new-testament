@@ -1,13 +1,14 @@
 import re
 from os import listdir
-from nltk.grammar import FeatureGrammar
-from nltk.parse.featurechart import FeatureChartParser
+from typed_dependencies import TypedDependencyGrammar, TypedNonprojectiveDependencyParser
 
 GRAMMAR_DIR = '../parsing/grammar/'
-LEXICON_FILE = 'lexicon.fcfg'
-GRAMMAR = FeatureGrammar.fromstring('\n'.join([open(GRAMMAR_DIR + f,
-                                                    'r').read()
-                                               for f in listdir(GRAMMAR_DIR)
-                                               if re.match('.*\.fcfg', f)]))
-PARSER = FeatureChartParser(GRAMMAR)
-VERBOSE_PARSER = FeatureChartParser(GRAMMAR, trace=1)
+
+def load_grammar():
+    g = TypedDependencyGrammar.fromstring('\n'.join([open(GRAMMAR_DIR + f, 'r').read()
+                                                     for f in listdir(GRAMMAR_DIR)
+                                                     if re.match('.*\.dg', f)]))
+    p = TypedNonprojectiveDependencyParser(g)
+    return g, p
+
+GRAMMAR, PARSER = load_grammar()
