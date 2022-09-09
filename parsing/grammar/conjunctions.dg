@@ -1,92 +1,50 @@
-#### verb ####
+# In general, we're going to model conjoined phrases as both dependents of the
+# conjunction, which in turn is the dependent of whatever role the conjoined
+# phrase plays in the larger context (e.g., argument of a verb).  To prevent
+# conjunctions from being allowed to appear everywhere (with a concomitant
+# explosion in the number of possible parses), I've lexically specified verbs,
+# prepositions, etc. that happen to take conjoined dependents in the corpus,
+# as well as the nouns, verbs, etc. that happen to be conjoined.
 
-# qe/lw
-conjunction 'qe/lw_V1PAI-S-' -> 'kaqari/sqhti_V2APM-S-'
+#########################
+#### Conjoined verbs ####
+#########################
 
-# stauro/w
-conjunction 'stau/rwson_V2AAM-S-' -> 'stau/rwson_V2AAM-S-'
+# Sometimes we see two main clauses one immediately after the other - usually
+# of the same or similar moods, and usually very short.
+V[MOOD=imperative, CONJOINED=y, REL_TYPE=conjunction, POSITION=after] -> V[MOOD=imperative, CONJOINED=y]
+V[MOOD=subjunctive, CONJOINED=y, REL_TYPE=conjunction, POSITION=after] -> V[MOOD=imperative, CONJOINED=y]
+V[MOOD=indicative, CONJOINED=y, REL_TYPE=conjunction, POSITION=after] -> V[MOOD=indicative, CONJOINED=y]
 
-# sw/|zw
-conjunction 'sw=son_V2AAM-S-' -> 'a)pollu/meqa_V1PMI-P-'
+# Finite conjoined verbs.
+V[MOOD=indicative, CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
+V[MOOD=imperative, CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
+V[MOOD=subjunctive, CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
+V[MOOD=optative, CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
 
-# deu=te
-conjunction 'deu=te_V2-AM---' -> 'a)risth/sate_V2AAM-P-'
+# Non-finite conjoined verbs.
+V[MOOD=infinitive, CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
 
-# e)gei/rw
-conjunction 'e)gei/resqe_V2PPM-P-' -> 'a)/gwmen_V1PAS-P-'
+################################
+#### Conjoined nouny things ####
+################################
 
-# qarse/w
-conjunction 'qarsei=te_V2PAM-P-' -> 'ei)mi/_V1PAI-S-'
+# Conjoined nouny things.
+E[CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n, SENTENTIAL=n]
+A[CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n, SENTENTIAL=n]
 
-# katadika/zw
-conjunction 'katedika/sate_V2AAI-P-' -> 'e)foneu/sate_V2AAI-P-'
+################################
+#### Other conjoined things ####
+################################
 
-# nh/fw
-conjunction 'nh/yate_V2AAM-P-' -> 'grhgorh/sate_V2AAM-P-'
+# Other conjoined things.
+P[CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
+B[CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
 
-# siwpa/w
-conjunction 'siw/pa_V2PAM-S-' -> 'pefi/mwso_V2RPM-S-'
+#########################
+#### Complementizers ####
+#########################
 
-# u(pa/gw
-conjunction 'u(pa/gete_V2PAM-P-' -> 'i)/dete_V2AAM-P-'
-
-#### conjunction ####
-
-# a)lla/
-conjunction 'a)lla/_C-------' -> 'ge/noito_V3AMO-S-' | 'dia/_P-------' | 'ei)/pwmen_V1AAS-P-' | 'e)ch/lqate_V2AAI-P-' | 'e)pwrw/qh_V3API-S-' | 'e)rei=_V3FAI-S-' | 'e)sti/(n)_V3PAI-S-' | 'h)ge/rqh_V3API-S-' | 'i(sta/nomen_V1PAI-P-' | 'kaqw/s_C-------' | 'le/gei_V3PAI-S-' | 'le/gw_V1PAI-S-' | 'ou)xi/_B-------'
-
-# dio/
-conjunction 'dio/_C-------' -> 'e)logi/sqh_V3API-S-' | 'eu)qumei=te_V2PAM-P-' | 'le/gei_V3PAI-S-'
-
-# e)a/n
-conjunction 'e)a/n_C-------' -> 'ei)/pwmen_V1AAS-P-'
-
-# ei)
-conjunction 'ei)_C-------' -> 'a)kousa/tw_V3AAM-S-' | 'ei)kh=|_B-------' | 'e)ste/_V2PAI-P-' | 'e)/xei_V3PAI-S-'
-
-# ei)/te
-conjunction 'ei)/te_C-------' -> 'glw=ssai_N----NPF' | 'gnw=sis_N----NSF' | 'katarghqh/setai_V3FPI-S-' | 'pau/sontai_V3FMI-P-' | 'swfronou=men_V1PAI-P-' | 'u(mi=n_E----DP-'
-
-# h)/
-conjunction 'h)/_C-------' -> 'dw=men_V1AAS-P-' | 'e)ge/neto_V3AMI-S-' | 'e)k_P-------' | 'zesto/s_A----NSM' | 'zhtw=_V1PAI-S-' | '*)ioudai/wn_A----GPM' | 'lalei=s_V2PAI-S-' | 'parazhlou=men_V1PAI-P-' | 'peribalw/meqa_V1AMS-P-' | 'pi/wmen_V1AAS-P-' | 'yuxro/s_A----NSM'
-
-# i(/na
-conjunction 'i(/na_C-------' -> 'a)nable/yw_V1AAS-S-' | 'i)/dw_V1AAS-S-' | 'katala/bhte_V2AAS-P-' | 'kathgorh/swsi(n)_V3AAS-P-' | 'tre/xete_V2PAM-P-' | 'fe/rete_V2PAM-P-'
-
-# kaqw/s
-conjunction 'kaqw/s_C-------' -> 'ge/graptai_V3RPI-S-'
-
-# kai/
-conjunction 'kai/_C-------' -> 'a)kou/ete_V2PAM-P-' | 'a)ne/sth_V3AAI-S-' | 'a)pekri/qh_V3API-S-' | 'a)pe/luse(n)_V3AAI-S-' | 'a)pe/steile(n)_V3AAI-S-' | 'a)ph=lqe(n)_V3AAI-S-' | 'a)ph=lqon_V3AAI-P-' | 'a)polu/ete_V2PAM-P-' | 'a)poluqh/sesqe_V2FPI-P-' | 'a)potre/pou_V2PMM-S-' | 'a)=ron_V2AAM-S-' | 'a)sqenei=_V3PAI-S-' | 'a)sqenw=_V1PAI-S-' | 'a)fh=kan_V3AAI-P-' | 'gi/nesqe_V2PMM-P-' | 'di/daske_V2PAM-S-' | 'dih/rxeto_V3IMI-S-' | 'e)bo/hse(n)_V3AAI-S-' | 'e)/geire_V2PAM-S-' | 'e)ge/neto_V3AMI-S-' | 'e)zh/tei_V3IAI-S-' | 'e)qau/masan_V3AAI-P-' | 'ei)=pan_V3AAI-P-' | 'ei)/pate_V2AAM-P-' | 'ei)=pe(n)_V3AAI-S-' | 'ei)/rhka_V1RAI-S-' | 'ei)/rhkan_V3RAI-P-' | 'ei)/rhke(n)_V3RAI-S-' | 'ei)sporeu/ontai_V3PMI-P-' | 'ei(sth/kei_V3LAI-S-' | 'e)kh/russe(n)_V3IAI-S-' | 'e)/klause(n)_V3AAI-S-' | 'e)/lege(n)_V3IAI-S-' | 'e)luph/qhsan_V3API-P-' | 'e)nebrimw=nto_V3IMI-P-' | 'e)ce/balon_V3AAI-P-' | 'e)ceqau/mazon_V3IAI-P-' | 'e)ce/sthsan_V3AAI-P-' | 'e)pe/treye(n)_V3AAI-S-' | 'e)phrw/thse(n)_V3AAI-S-' | 'e)poreu/qhsan_V3API-P-' | 'e)rou=si(n)_V3FAI-P-' | 'e)/rxesqe_V2PMM-P-' | 'e)/rxontai_V3PMI-P-' | 'e)/rxou_V2PMM-S-' | 'e)skandali/zonto_V3IPI-P-' | 'e)sta/qhsan_V3API-P-' | 'e)/sth_V3AAI-S-' | 'eu(rh/sete_V2FAI-P-' | 'e)/fugon_V3AAI-P-' | 'zhtei=te_V2PAM-P-' | 'h)kolou/qhse(n)_V3AAI-S-' | 'h)/kouon_V3IAI-P-' | 'h)=lqon_V3AAI-P-' | 'h(ma=s_E----AP-' | 'h)=n_V3IAI-S-' | 'h)/negkan_V3AAI-P-' | 'h)new/|xqhsan_V3API-P-' | 'h)/rcanto_V3AMI-P-' | 'h)rw/ta_V3IAI-S-' | 'h)rw/thsan_V3AAI-P-' | 'i)/de_V2AAM-S-' | 'i(kano/s_A----NSM' | 'katege/lwn_V3IAI-P-' | 'katefi/lhse(n)_V3AAI-S-' | 'le/gei_V3PAI-S-' | 'le/gousi(n)_V3PAI-P-' | 'le/gw_V1PAS-S-' | 'ma/xesqe_V2PMI-P-' | 'me/lleis_V2PAI-S-' | 'merimna=te_V2PAI-P-' | 'metoikiw=_V1FAI-S-' | 'o)/yesqe_V2FMI-P-' | 'pa/lin_B-------' | 'para/ggelle_V2PAM-S-' | 'paraka/lei_V2PAM-S-' | 'parebia/sato_V3AMI-S-' | 'peripa/tei_V2PAM-S-' | 'polemei=te_V2PAI-P-' | 'proseku/nhse(n)_V3AAI-S-' | 'prwi/+_B-------' | 'seauto/n_E----ASM' | 'suni/ete_V2PAM-P-' | 'fhsi/(n)_V3PAI-S-' | 'w)/mose(n)_V3AAI-S-'
-
-# o(/tan
-conjunction 'o(/tan_C-------' -> 'le/gete_V2PAM-P-' | 'le/gwsi(n)_V3PAS-P-' | 'proseu/xhsqe_V2PMS-P-'
-
-# o(/ti
-conjunction 'o(/ti_C-------' -> 'a)gapw=_V1PAI-S-' | 'a)pologou/meqa_V1PMI-P-' | 'ei)mi/_V1PAI-S-' | 'e)/legon_V3IAI-P-' | 'e)lh/luqas_V2RAI-S-' | 'e)rre/qh_V3API-S-' | 'e)sti/(n)_V3PAI-S-' | 'pisteu/eis_V2PAI-S-'
-
-# ou)de/
-conjunction 'ou)de/_C-------' -> 'e)pi/steusan_V3AAI-P-' | 'noei=te_V2PAI-P-' | 'suni/ete_V2PAI-P-'
-
-# ou)/te
-conjunction 'ou)/te_C-------' -> 'poih=sai_V-AAN---'
-
-# w(/sper
-conjunction 'w(/sper_C-------' -> 'ge/graptai_V3RPI-S-'
-
-#### adverb ####
-
-# i(nati/
-conjunction 'i(nati/_B-------' -> 'a)dikei=te_V2PAI-P-'
-
-#### noun ####
-
-# abba
-conjunction 'abba_N----VSM' -> 'path/r_N----NSM'
-
-# e)pista/ths
-conjunction 'e)pista/ta_N----VSM' -> 'e)pista/ta_N----VSM'
-
-# ku/rios
-conjunction 'ku/rie_N----VSM' -> 'ku/rie_N----VSM'
-
+# Treat complementizers (basically, oti) as a special case, more like utterance
+# arguments of verbs.
+V[MOOD=indicative, S_ARG=y, REL_TYPE=conjunction, POSITION=after] -> C[COMPLEMENTIZER=y]

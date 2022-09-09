@@ -105,7 +105,8 @@ def print_parses(parses, first_index=0, features=False):
         trees = parse.other_parses
         if parse.parse is not None:
             trees = [parse.parse] + trees
-        for tree in trees:
+        for j, tree in enumerate(trees):
+            print('[' + str(j) + ']')
             print_parse(tree, tree.root['address'], features=features)
             print('')
 
@@ -114,10 +115,12 @@ if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
     sent_lengths = [1, 2, 3, 4, 5]
+    # sent_lengths = [1]
     old_parses = {}
     parses = {}
     changes = {}
     for sl in sent_lengths:
+        print('parsing sentences of length ' + str(sl) + '...')
         old_parses[sl] = load_parses(sent_length=sl)
         old_sis = get_sent_ids(old_parses[sl])
         parses[sl] = parse_sents(sent_length=sl)
@@ -156,6 +159,8 @@ if __name__ == '__main__':
     termtables.print([[sl] +
                       [str(chalk.red(str(len(changes[sl][diff]))))
                        if diff == 'unparsed' and len(changes[sl][diff]) > 0
+                       else str(chalk.yellow(str(len(changes[sl][diff]))))
+                       if diff == 'same' and len(changes[sl][diff]) > 0
                        else str(chalk.blue(str(len(changes[sl][diff]))))
                        if diff == 'new' and len(changes[sl][diff]) > 0
                        else str(chalk.green(str(len(changes[sl][diff]))))

@@ -45,7 +45,8 @@ def write_dependency_rules():
                 rule_file.write('# ' + lemma + '\n')
                 for head_atom in lemmas_df.parsing_atom_head.unique():
                     dependents_df = lemmas_df[lemmas_df.parsing_atom_head == head_atom]
-                    rule_file.write(dp[0] + " '" + head_atom + "' -> " +
+                    # rule_file.write(dp[0] + " '" + head_atom + "' -> " +
+                    rule_file.write("'" + head_atom + "' -> " +
                                     ' | '.join(["'" + dependent_atom + "'"
                                                 for dependent_atom
                                                 in dependents_df.parsing_atom_dependent.unique()]) +

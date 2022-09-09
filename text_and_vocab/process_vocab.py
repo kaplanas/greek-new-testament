@@ -1,8 +1,9 @@
 import re
 import pandas as pd
 import numpy as np
-from utils import TEXT_DATA_DIR
+from utils import TEXT_DATA_DIR, POS_CODES, get_morph_codes
 from text_and_vocab import load_text_df
+from parsing import GRAMMAR_DIR, LEXICON_FILE
 
 
 HAND_DATA_DIR = 'hand_coded_data/'
@@ -10,31 +11,49 @@ PROCESSED_DATA_DIR = 'processed_data/'
 POS_PROCESSING = {
     'noun': {'id_cols': ['gender'],
              'form_cols': ['gs'],
-             'class_cols': ['declension']},
+             'class_cols': ['declension'],
+             'feature_cols': ['proper_mod', 's_arg', 'adverb']},
     'relative pronoun': {'id_cols': [],
                          'form_cols': ['fem', 'neut'],
                          'class_cols': ['declension']},
     'verb': {'id_cols': [],
              'form_cols': ['pp' + str(i + 2) for i in range(5)],
-             'class_cols': ['verb_type']},
+             'class_cols': ['verb_type'],
+             'feature_cols': ['deponent', 'arg_nom', 'arg_gen', 'arg_acc',
+                              'arg_dat', 'arg_inf', 'arg_oti', 'arg_s',
+                              'arg_conj', 'arg_rel', 's_arg', 'rel_arg',
+                              'conjoined']},
     'personal pronoun': {'id_cols': [],
-                         'form_cols': ['gs']},
+                         'form_cols': ['gs'],
+                         'feature_cols': ['person', 'conjoined', 'adverb']},
     'definite article': {'id_cols': [],
                          'form_cols': ['fem', 'neut'],
                          'class_cols': ['declension']},
-    'preposition': {'id_cols': []},
-    'conjunction': {'id_cols': []},
+    'preposition': {'id_cols': [],
+                    'feature_cols': ['arg_nom', 'arg_gen', 'arg_acc',
+                                     'arg_dat', 'arg_adv', 'postposition',
+                                     's_arg', 'determiner', 'conjoined']},
+    'conjunction': {'id_cols': [],
+                    'feature_cols': ['second_position', 'sentential',
+                                     'complementizer']},
     'adjective': {'id_cols': [],
                   'form_cols': ['fem', 'neut'],
-                  'class_cols': ['declension']},
-    'adverb': {'id_cols': []},
+                  'class_cols': ['declension'],
+                  'feature_cols': ['standalone', 's_arg', 'adverb',
+                                   'conjoined']},
+    'adverb': {'id_cols': [],
+               'feature_cols': ['negation', 'kai', 'conjoined']},
     'interjection': {'id_cols': []},
-    'particle': {'id_cols': []},
+    'particle': {'id_cols': [],
+                 'feature_cols': ['negation', 'interjection', 'arg_s',
+                                  's_arg']},
     'demonstrative pronoun': {'id_cols': [],
                               'form_cols': ['fem', 'neut'],
-                              'class_cols': ['declension']},
+                              'class_cols': ['declension'],
+                              'feature_cols': ['s_arg']},
     'interrogative/indefinite pronoun': {'id_cols': [],
-                                         'form_cols': ['gs']}
+                                         'form_cols': ['gs'],
+                                         'feature_cols': ['adverb', 's_arg']}
 }
 
 
@@ -289,7 +308,63 @@ def write_lemmas_df(pos):
                      '_data.csv', index=False)
 
 
+def write_lexicon():
+    """Write the lexicon for the dependency grammar."""
+    # Load the NT text.
+    nt_df = load_text_df('nt')
+    lexicon_feature_cols = ['person', 'mood', 'voice', 'case', 'number', 'gender']
+    lexicon_file = open(GRAMMAR_DIR + LEXICON_FILE, 'w')
+    # Iterate over parts of speech.
+    for pos in POS_PROCESSING.keys():
+        # Get unique wordforms.
+        if pos == 'adjective':
+            lexicon_feature_cols = lexicon_feature_cols + ['degree']
+        cols_to_pull = ['lemma', 'standardized_wordform', 'pos'] + \
+                       lexicon_feature_cols + ['tense']
+        if pos == 'personal pronoun':
+            cols_to_pull.remove('person')
+        wordforms_df = nt_df[nt_df.pos == pos][cols_to_pull].copy()
+        wordforms_df.drop_duplicates(inplace=True)
+        # Get supplementary hand-coded features, depending on the POS.
+        if 'feature_cols' in POS_PROCESSING[pos].keys():
+            id_cols = ['lemma'] + POS_PROCESSING[pos]['id_cols']
+            supp_features_df = pd.read_csv(TEXT_DATA_DIR + HAND_DATA_DIR +
+                                           pos.lower().replace(' ', '_').replace('/', '_') +
+                                           '_supp_features.csv')
+            wordforms_df = wordforms_df.merge(supp_features_df,
+                                              how='left', on=id_cols)
+        # Write the lexicon file.
+        for (i, r) in wordforms_df.iterrows():
+            entry_feats = {}
+            for feature in lexicon_feature_cols:
+                if not pd.isnull(r[feature]):
+                    if isinstance(r[feature], float):
+                        entry_feats[feature.upper()] = str(int(r[feature]))
+                    else:
+                        entry_feats[feature.upper()] = str(r[feature])
+                elif feature == 'person' and pos in ['noun',
+                                                     'demonstrative pronoun',
+                                                     'interrogative/indefinite pronoun']:
+                    entry_feats[feature.upper()] = '3'
+            if 'feature_cols' in POS_PROCESSING[pos].keys():
+                for feature in POS_PROCESSING[pos]['feature_cols']:
+                    entry_feats[feature.upper()] = str(r[feature])
+            if pos == 'noun':
+                if r['lemma'][0] == '*':
+                    entry_feats['PROPER'] = 'y'
+                else:
+                    entry_feats['PROPER'] = 'n'
+            feat_struct = ', '.join(k + '=' + v
+                                    for k, v in entry_feats.items())
+            lexicon_file.write(POS_CODES[pos] + '[' + feat_struct + ']' +
+                               ' -> ' + "'" + r['standardized_wordform'] +
+                               '_' + get_morph_codes(r) + "'" + '\n')
+    lexicon_file.close()
+
+
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
-    for pos in POS_PROCESSING.keys():
-        write_lemmas_df(pos)
+    # for pos in POS_PROCESSING.keys():
+    #     print(pos)
+    #     write_lemmas_df(pos)
+    write_lexicon()

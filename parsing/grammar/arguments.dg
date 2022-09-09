@@ -1,629 +1,143 @@
-#### adjective ####
-
-# e)/noxos
-argument 'e)/noxos_A----NSM' -> 'qana/tou_N----GSM'
-
-#### particle ####
-
-# i)/de
-argument 'i)/de_L-------' -> 'ge/gonas_V2RAI-S-' | 'kathgorou=si(n)_V3PAI-P-' | 'fwnei=_V3PAI-S-'
-
-# i)dou/
-argument 'i)dou/_L-------' -> 'a)/nqrwpos_N----NSM' | 'e)gw/_E----NS-' | 'ei)=pon_V1AAI-S-' | 'e)kei=_B-------' | 'e)ch=lqe(n)_V3AAI-S-' | 'proei/rhka_V1RAI-S-' | 'w(=de_B-------'
-
-#### interjection ####
-
-# ou)ai/
-argument 'ou)ai/_J-------' -> 'soi_E----DS-'
-
-#### preposition ####
-
-# a)po/
-argument 'a)po/_P-------' -> 'gunaiko/s_N----GSF'
-
-# dia/
-argument 'dia/_P-------' -> 'no/mou_N----GSM' | 'ti/_I----ASN' | 'tou=to_M----ASN'
-
-# ei)s
-argument 'ei)s_P-------' -> 'a)e/ra_N----ASM' | '*bhqsai+da/n_N----ASF' | 'bo/qunon_N----ASM' | 'dikaiosu/nhn_N----ASF' | 'ei)rh/nhn_N----ASF' | 'h(ma=s_E----AP-' | '*)ierixw/_N----ASF' | '*(ieroso/luma_N----APN' | '*kafarnaou/m_N----ASF' | 'kw/mhn_N----ASF' | 'paidei/an_N----ASF'
-
-# e)k
-argument 'e)k_P-------' -> 'a)nqrw/pwn_N----GPM' | '*)aristobou/lou_N----GSM' | 'ou)ranou=_N----GSM' | 'paidio/qen_B-------'
-
-# e)n
-argument 'e)n_P-------' -> 'a)ga/ph|_N----DSF' | 'au)toi=s_E----DPM' | 'au)tw=|_E----DSM' | 'e(autoi=s_E----DPM' | 'i(mati/ois_N----DPN' | 'le/gesqai_V-PPN---' | 'malakoi=s_A----DPN' | 'ta/xei_N----DSN' | 'tou/tw|_M----DSN' | 'u(mi=n_E----DP-' | 'filh/mati_N----DSN' | '*xristw=|_N----DSM'
-
-# e)pe/keina
-argument 'e)pe/keina_P-------' -> '*babulw=nos_N----GSF'
-
-# e)pi/
-argument 'e)pi/_P-------' -> 'au)tw=|_E----DSM'
-
-# e(/ws
-argument 'e(/ws_P-------' -> 'a(/|dou_N----GSM' | 'e(pta/kis_B-------' | 'po/te_B-------' | 'tou/tou_M----GSN'
-
-# kata/
-argument 'kata/_P-------' -> 'a)/nqrwpon_N----ASM' | 'e)klektw=n_A----GPM' | 'o)/noma_N----ASN' | 'pro/swpon_N----ASN' | 'tro/pon_N----ASM'
-
-# kate/nanti
-argument 'kate/nanti_P-------' -> 'qeou=_N----GSM'
-
-# meta/
-argument 'meta/_P-------' -> 'au)th=s_E----GSF' | 'au)tou=_E----GSM' | 'u(mw=n_E----GP-'
-
-# para/
-argument 'para/_P-------' -> 'e(autoi=s_E----DPM' | 'qew=|_N----DSM'
-
-# peri/
-argument 'peri/_P-------' -> 'e)ndu/matos_N----GSN' | 'h(mw=n_E----GP-'
-
-# pro/
-argument 'pro/_P-------' -> 'xeimw=nos_N----GSM'
-
-# pro/s
-argument 'pro/s_P-------' -> 'au)to/n_E----ASM' | 'e)ntroph/n_N----ASF' | 'h(ma=s_E----AP-' | '*)ihsou=n_N----ASM' | 'ke/ntra_N----APN' | 'me_E----AS-' | '*si/mwna_N----ASM' | 'tau=ta_M----APN'
-
-# u(po/
-argument 'u(po/_P-------' -> 'a)ne/mou_N----GSM'
-
-# xwri/s
-argument 'xwri/s_P-------' -> 'khru/ssontos_V-PAPGSM'
-
-# w(s
-argument 'w(s_P-------' -> 'tetrakisxi/lioi_A----NPM'
-
-#### verb ####
-
-# a)gapa/w
-argument 'a)gapw=_V1PAI-S-' -> 'u(ma=s_E----AP-'
-
-# a)gora/zw
-argument 'h)gora/sqhte_V2API-P-' -> 'timh=s_N----GSF'
-
-# a)/gw
-argument 'a)ga/gete_V2AAM-P-' -> 'moi_E----DS-'
-argument 'a)/gwmen_V1PAS-P-' -> 'e)nteu=qen_B-------'
-argument 'h)/gage(n)_V3AAI-S-' -> 'au)to/n_E----ASM' | 'pro/s_P-------'
-
-# a)dike/w
-argument 'a)dikei=te_V2PAI-P-' -> 'a)llh/lous_E----APM'
-argument 'h)dikh/sate_V2AAI-P-' -> 'me_E----AS-'
-
-# ai)te/w
-argument 'ai)th/swmai_V1AMS-S-' -> 'ti/_I----ASN'
-
-# ai)/rw
-argument 'ai)=re_V2PAM-S-' -> 'au)to/n_E----ASM'
-argument 'a)/rate_V2AAM-P-' -> 'li/qon_N----ASM'
-argument 'h)=ran_V3AAI-P-' -> 'li/qon_N----ASM'
-
-# a)kolouqe/w
-argument 'a)kolou/qei_V2PAM-S-' -> 'moi_E----DS-'
-argument 'a)kolouqh/sw_V1FAI-S-' -> 'soi_E----DS-'
-argument 'h)kolou/qhse(n)_V3AAI-S-' -> 'au)tw=|_E----DSM'
-
-# a)kou/w
-argument 'a)kou/ete_V2PAM-P-' -> 'au)tou=_E----GSM'
-argument 'a)kou/sate_V2AAM-P-' -> 'parabolh/n_N----ASF'
-argument 'a)kou/sh|_V2FMI-S-' -> 'au)tou=_E----GSM'
-argument 'a)kou/sontai_V3FMI-P-' -> 'o(/ti_C-------'
-argument 'a)kousa/twsan_V3AAM-P-' -> 'au)tw=n_E----GPM'
-argument 'h)kou/sate_V2AAI-P-' -> 'blasfhmi/as_N----GSF' | 'o(/ti_C-------'
-
-# a)nagka/zw
-argument 'h)nagka/sate_V2AAI-P-' -> 'me_E----AS-'
-
-# a)ne/xomai
-argument 'a)ne/comai_V1FMI-S-' -> 'u(mw=n_E----GP-'
-
-# a)noi/gw
-argument 'a)/noicon_V2AAM-S-' -> 'h(mi=n_E----DP-'
-argument 'h)/noice(n)_V3AAI-S-' -> 'o)fqalmou/s_N----APM'
-
-# a)ntita/ssomai
-argument 'a)ntita/ssetai_V3PMI-S-' -> 'u(mi=n_E----DP-'
-
-# a)pagge/llw
-argument 'a)phgge/lh_V3API-S-' -> 'au)tw=|_E----DSM'
-
-# a)pokefali/zw
-argument 'a)pekefa/lisa_V1AAI-S-' -> '*)iwa/nnhn_N----ASM'
-
-# a)pokri/nomai
-argument 'a)pekri/qh_V3API-S-' -> 'au)toi=s_E----DPM' | 'au)tw=|_E----DSM' | 'pisteu/ete_V2PAI-P-' | 'ou)/_L-------'
-argument 'a)pekri/qhsan_V3API-P-' -> 'au)tw=|_E----DSM' | '*)ihsou=n_N----ASM' | 'ou)/_L-------'
-argument 'a)pokri/qhte_V2APM-P-' -> 'moi_E----DS-'
-argument 'a)pokri/nh|_V2PMI-S-' -> 'moi_E----DS-' | 'ou)de/n_A----ASN'
-
-# a)poktei/nw
-argument 'a)poktei=nai_V-AAN---' -> 'me_E----AS-'
-
-# a)pologe/omai
-argument 'a)pologou/meqa_V1PMI-P-' -> 'u(mi=n_E----DP-'
-
-# a)polu/w
-argument 'a)pe/luse(n)_V3AAI-S-' -> 'au)tou/s_E----APM'
-
-# a)po/llumi
-argument 'a)pole/sai_V-AAN---' -> 'h(ma=s_E----AP-'
-
-# a)poste/llw
-argument 'a)pe/steile(n)_V3AAI-S-' -> 'a)pe/steile(n)_V3AAI-S-'
-
-# a)potre/pomai
-argument 'a)potre/pou_V2PMM-S-' -> 'tou/tous_M----APM'
-
-# a(/ptw
-argument 'h(/yato_V3AMI-S-' -> 'mou_E----GS-'
-
-# a)re/skw
-argument 'a)re/skein_V-PAN---' -> 'a)nqrw/pois_N----DPM'
-
-# a)rke/w
-argument 'a)rkou/menoi_V-PPPNPM' -> 'parou=si(n)_V-PAPDPN'
-
-# a)/rxw
-argument 'a)/rcesqe_V2FMI-P-' -> 'le/gein_V-PAN---'
-argument 'a)rxo/meqa_V1PMI-P-' -> 'sunista/nein_V-PAN---'
-argument 'h)/rcanto_V3AMI-P-' -> 'eu)frai/nesqai_V-PPN---'
-
-# a)spa/zomai
-argument 'a)spa/zou_V2PMM-S-' -> 'fi/lous_A----APM'
-argument 'a)spa/sasqe_V2AMM-P-' -> 'a)llh/lous_E----APM' | 'e)k_P-------' | '*(hrw|di/wna_N----ASM'
-argument 'a)spa/zontai_V3PMI-P-' -> 'se_E----AS-' | 'u(ma=s_E----AP-'
-
-# a)tima/zw
-argument 'h)tima/sate_V2AAI-P-' -> 'ptwxo/n_A----ASM'
-
-# a)fi/hmi
-argument 'a)fe/ntes_V-AAPNPM' -> 'au)to/n_E----ASM'
-argument 'a)/fete_V2AAM-P-' -> 'au)th/n_E----ASF' | 'au)tou/s_E----APM'
-argument 'a)fh=kan_V3AAI-P-' -> 'au)tou/s_E----APM'
-argument 'a)fi/hsi(n)_V3PAI-S-' -> 'au)to/n_E----ASM'
-
-# ba/llw
-argument 'ba/llousi(n)_V3PAI-P-' -> 'au)to/_E----ASN'
-
-# bdelu/ssomai
-argument 'bdelusso/menos_V-PMPNSM' -> 'ei)/dwla_N----APN'
-
-# ble/pw
-argument 'ble/pete_V2PAI-P-' -> 'kata/_P-------'
-argument 'ble/pete_V2PAM-P-' -> 'planhqh=te_V2APS-P-'
-
-# bohqe/w
-argument 'boh/qei_V2PAM-S-' -> 'moi_E----DS-'
-
-# gi/nomai
-argument 'ge/gona_V1RAI-S-' -> 'a)/frwn_A----NSM'
-argument 'ge/gonas_V2RAI-S-' -> 'u(gih/s_A----NSM'
-argument 'gene/sqai_V-AMN---' -> 'u(gih/s_A----NSM'
-argument 'genome/nhs_V-AMPGSF' -> 'o)yi/as_A----GSF'
-argument 'gi/nesqe_V2PMM-P-' -> 'eu)xa/ristoi_A----NPM' | 'fro/nimoi_A----NPM'
-argument 'gine/sqw_V3PMM-S-' -> 'e)n_P-------'
-argument 'e)ge/neto_V3AMI-S-' -> 'ai(=ma_N----NSN' | 'su/mboulos_N----NSM'
-
-# ginw/skw
-argument 'ginw/skeis_V2PAI-S-' -> '*(ellhnisti/_B-------' | 'me_E----AS-'
-argument 'e)/gnw_V3AAI-S-' -> 'nou=n_N----ASM'
-
-# dei/knumi
-argument 'dei/cate_V2AAM-P-' -> 'dhna/rion_N----ASN' | 'moi_E----DS-'
-
-# de/w
-argument 'de/desai_V2RPI-S-' -> 'gunaiki/_N----DSF'
-argument 'dei=_V3PAI-S-' -> 'kauxa=sqai_V-PMN---'
-
-# diakri/nw
-argument 'diakri/nei_V3PAI-S-' -> 'se_E----AS-'
-
-# diafe/rw
-argument 'diafe/rei_V3PAI-S-' -> 'proba/tou_N----GSN'
-argument 'diafe/rete_V2PAI-P-' -> 'strouqi/wn_N----GPN'
-
-# dida/skw
-argument 'di/daske_V2PAM-S-' -> 'tau=ta_M----APN'
-
-# di/dwmi
-argument 'do/s_V2AAM-S-' -> 'moi_E----DS-' | 'pei=n_V-AAN---'
-
-# die/rxomai
-argument 'dih/rxeto_V3IMI-S-' -> '*)ierixw/_N----ASF'
-
-# dii+sxuri/zomai
-argument 'dii+sxuri/zeto_V3IMI-S-' -> 'e)/xein_V-PAN---'
-
-# doke/w
-argument 'dokei=_V3PAI-S-' -> 'u(mi=n_E----DP-'
-argument 'dokei=te_V2PAI-P-' -> 'o(/ti_C-------'
-
-# doca/zw
-argument 'do/cason_V2AAM-S-' -> 'o)/noma_N----ASN'
-
-# du/namai
-argument 'duna/menos_V-PMPNSM' -> 'xwrei=n_V-PAN---'
-
-# ei)/dw
-argument 'ei)do/tes_V-RAPNPM' -> 'o(/ti_C-------'
-argument 'oi)=da_V1RAI-S-' -> 'o(/ti_C-------'
-argument 'oi)/damen_V1RAI-P-' -> 'lalei=_V3PAI-S-'
-argument 'oi)=das_V2RAI-S-' -> 'e)ntola/s_N----APF'
-
-# ei)mi/
-argument 'ei)=_V2PAI-S-' -> '*)hli/as_N----NSM' | 'po/qen_B-------' | 'profh/ths_N----NSM' | 'ti/s_I----NSM'
-argument 'ei)mi/_V1PAI-S-' -> 'a)po/stolos_N----NSM' | 'e)leu/qeros_A----NSM'
-argument 'ei)=nai_V-PAN---' -> 'a)meri/mnous_A----APM'
-argument 'ei)si/(n)_V3PAI-P-' -> 'a)/mwmoi_A----NPM' | 'a)/cioi_A----NPM' | 'dia/konoi_N----NPM' | '*(ebrai=oi_N----NPM' | '*)israhli=tai_N----NPM' | 'spe/rma_N----NSN'
-argument 'e)/sesqe_V2FMI-P-' -> 'lalou=ntes_V-PAPNPM'
-argument 'e)sme/n_V1PAI-P-' -> 'i)sxuro/teroi_A----NPM'
-argument 'e)ste/_V2PAI-P-' -> 'a)delfoi/_N----NPM' | 'a)do/kimoi_A----NPM' | 'a)no/htoi_A----NPM' | 'deiloi/_A----NPM' | 'qeoi/_N----NPM'
-argument 'e)sti/(n)_V3PAI-S-' -> 'a)llhgorou/mena_V-PPPNPN' | 'e)/ndikon_A----NSN' | 'e)/noxos_A----NSM' | 'e)/rhmos_A----NSF' | 'i(kano/n_A----NSN' | 'ku/rios_N----NSM' | 'ti/_I----NSN' | 'ti/s_I----NSM' | 'ui(o/s_N----NSM' | 'w(=de_B-------'
-argument 'h)=n_V3IAI-S-' -> 'lh|sth/s_N----NSM' | 'nu/c_N----NSF' | 'sxi/sma_N----NSN'
-argument 'h)=s_V2IAI-S-' -> 'h)/_C-------'
-argument 'h)=san_V3IAI-P-' -> 'a)/ndres_N----NPM' | 'w(s_P-------'
-
-# ei)sde/xomai
-argument 'ei)sde/comai_V1FMI-S-' -> 'u(ma=s_E----AP-'
-
-# ei)skale/omai
-argument 'ei)skalesa/menos_V-AMPNSM' -> 'au)tou/s_E----APM'
-
-# ei)sporeu/omai
-argument 'ei)sporeu/ontai_V3PMI-P-' -> 'ei)s_P-------'
-
-# e)kba/llw
-argument 'e)ce/balon_V3AAI-P-' -> 'au)to/n_E----ASM' | 'e)/cw_B-------'
-
-# e)kko/ptw
-argument 'e)/kkoyon_V2AAM-S-' -> 'au)th/n_E----ASF'
-
-# e)ktei/nw
-argument 'e)/kteinon_V2AAM-S-' -> 'xei=ra_N----ASF'
-
-# e)mbrima/omai
-argument 'e)nebrimw=nto_V3IMI-P-' -> 'au)th=|_E----DSF'
-
-# e)mpi/ptw
-argument 'e)mpesou=ntai_V3FMI-P-' -> 'ei)s_P-------'
-
-# e)ntre/pw
-argument 'e)ntraph/sontai_V3FPI-P-' -> 'tou=ton_M----ASM'
-
-# e)capata/w
-argument 'e)capata/tw_V3PAM-S-' -> 'e(auto/n_E----ASM'
-
-# e)ce/rxomai
-argument 'e)celqw/n_V-AAPNSM' -> 'e)/cw_B-------'
-argument 'e)ch/lqate_V2AAI-P-' -> 'i)dei=n_V-AAN---'
-argument 'e)ch=lqe(n)_V3AAI-S-' -> 'spei=rai_V-AAN---'
-
-# e)/cesti(n)
-argument 'e)/cesti(n)_V3PAI-S-' -> 'moi_E----DS-'
-
-# e)paine/w
-argument 'e)paine/sw_V1AAS-S-' -> 'u(ma=s_E----AP-'
-
-# e)perwta/w
-argument 'e)phrw/ta_V3IAI-S-' -> 'au)to/n_E----ASM'
-argument 'e)phrw/thse(n)_V3AAI-S-' -> 'au)tou/s_E----APM'
-
-# e)piginw/skw
-argument 'e)piginw/skete_V2PAM-P-' -> 'toiou/tous_M----APM'
-
-# e)pikale/w
-argument 'e)pikalou=mai_V1PMI-S-' -> '*kai/sara_N----ASM'
-
-# e)pime/nw
-argument 'e)pi/mene_V2PAM-S-' -> 'au)toi=s_E----DPN'
-
-# e)pitima/w
-argument 'e)peti/mhse(n)_V3AAI-S-' -> 'au)toi=s_E----DPM'
-argument 'e)pitimh/sai_V3AAO-S-' -> 'soi_E----DS-'
-
-# e)pitre/pw
-argument 'e)pe/treye(n)_V3AAI-S-' -> 'au)toi=s_E----DPN'
-
-# e)rga/zomai
-argument 'e)rga/zh|_V2PMI-S-' -> 'ti/_I----ASN'
-
-# e)/rxomai
-argument 'e)/rxetai_V3PMI-S-' -> 'pro/s_P-------'
-argument 'e)/rxontai_V3PMI-P-' -> 'ei)s_P-------'
-argument 'h)=lqes_V2AAI-S-' -> 'a)pole/sai_V-AAN---'
-argument 'h)=lqon_V3AAI-P-' -> 'ei)s_P-------'
-
-# e)rwta/w
-argument 'h)rw/ta_V3IAI-S-' -> 'au)tou/s_E----APM'
-argument 'h)rw/thsan_V3AAI-P-' -> 'au)to/n_E----ASM' | 'ti/_I----NSN'
-argument 'e)rwta=|s_V2PAI-S-' -> 'me_E----AS-'
-
-# e)sqi/w
-argument 'fa/gwmen_V1AAS-P-' -> 'ti/_I----ASN'
-
-# e)/xw
-argument 'ei)=xe(n)_V3IAI-S-' -> 'te/kna_N----APN'
-argument 'e)/sxon_V3AAI-P-' -> 'au)th/n_E----ASF'
-argument 'e)/xei_V3PAI-S-' -> 'daimo/nion_N----ASN' | 'ziza/nia_N----APN' | 'ou)=s_N----ASN' | 'pneu=ma_N----ASN'
-argument 'e)/xeis_V2PAI-S-' -> 'daimo/nion_N----ASN'
-argument 'e)/xete_V2PAI-P-' -> 'a)/rtous_N----APM' | 'kardi/an_N----ASF' | 'koustwdi/an_N----ASF' | 'pepwrwme/nhn_V-RPPASF' | 'pi/stin_N----ASF'
-argument 'e)/xete_V2PAM-P-' -> 'pi/stin_N----ASF'
-argument 'e)/xomen_V1PAI-P-' -> 'nou=n_N----ASM'
-argument 'e)/xousi(n)_V3PAI-P-' -> 'oi)=non_N----ASM' | 'xari/smata_N----APN'
-argument 'e)/xw_V1PAI-S-' -> 'a)/ndra_N----ASM'
-argument 'e)/xwn_V-PAPNSM' -> 'w)=ta_N----APN'
-
-# zhte/w
-argument 'e)zh/tei_V3IAI-S-' -> 'i)dei=n_V-AAN---'
-argument 'zh/tei_V2PAM-S-' -> 'gunai=ka_N----ASF' | 'lu/sin_N----ASF'
-argument 'zhtei=s_V2PAI-S-' -> 'ti/_I----ASN' | 'ti/na_I----ASM'
-argument 'zhtei=te_V2PAI-P-' -> 'a)poktei=nai_V-AAN---' | 'ti/_I----ASN' | 'ti/na_I----ASM'
-argument 'zhtw=_V1PAI-S-' -> 'a)re/skein_V-PAN---'
-
-# qe/lw
-argument 'qe/leis_V2PAI-S-' -> 'gene/sqai_V-AMN---' | 'e(toima/swmen_V1AAS-P-' | 'ti/_I----ASN'
-argument 'qe/lete_V2PAI-P-' -> 'ti/_I----ASN'
-argument 'qe/lw_V1PAI-S-' -> 'ei)=nai_V-PAN---'
-
-# qerapeu/w
-argument 'qera/peuson_V2AAM-S-' -> 'seauto/n_E----ASM'
-
-# i(/sthmi
-argument 'e)sta/qhsan_V3API-P-' -> 'skuqrwpoi/_A----NPM'
-argument 'i(sta/nomen_V1PAI-P-' -> 'no/mon_N----ASM'
-
-# i)sxu/w
-argument 'i)/sxusas_V2AAI-S-' -> 'grhgorh=sai_V-AAN---'
-
-# kaqari/zw
-argument 'kaqari/zwn_V-PAPNSM' -> 'brw/mata_N----APN'
-
-# kale/w
-argument 'e)klh/qh_V3API-S-' -> 'peritetmhme/nos_V-RPPNSM'
-argument 'e)klh/qhs_V2API-S-' -> 'dou=los_N----NSM'
-
-# kalu/ptw
-argument 'kalu/yate_V2AAM-P-' -> 'h(ma=s_E----AP-'
-
-# katabiba/zw
-argument 'katabibasqh/sh|_V2FPI-S-' -> 'e(/ws_P-------'
-
-# katagela/w
-argument 'katege/lwn_V3IAI-P-' -> 'au)tou=_E----GSM'
-
-# kathgore/w
-argument 'kathgorh/swsi(n)_V3AAS-P-' -> 'au)tou=_E----GSM'
-argument 'kathgorou=si(n)_V3PAI-P-' -> 'po/sa_A----APN' | 'sou_E----GS-'
-
-# katakauxa/omai
-argument 'katakauxa=tai_V3PMI-S-' -> 'kri/sews_N----GSF'
-
-# katalei/pw
-argument 'katalipw/n_V-AAPNSM' -> 'au)tou/s_E----APM'
-
-# katamarture/w
-argument 'katamarturou=si(n)_V3PAI-P-' -> 'sou_E----GS-' | 'ti/_I----ASN'
-
-# katafile/w
-argument 'katefi/lhse(n)_V3AAI-S-' -> 'au)to/n_E----ASM'
-
-# keleu/w
-argument 'e)ke/leuse(n)_V3AAI-S-' -> 'a)podoqh=nai_V-APN---'
-
-# khru/ssw
-argument 'khru/sswn_V-PAPNSM' -> 'kle/ptein_V-PAN---'
-
-# krate/w
-argument 'krath/sate_V2AAM-P-' -> 'au)to/n_E----ASM'
-
-# lamba/nw
-argument 'la/bete_V2AAM-P-' -> 'pneu=ma_N----ASN'
-
-# lale/w
-argument 'lalei=_V3PAI-S-' -> 'ti/_I----ASN'
-argument 'lalei=s_V2PAI-S-' -> 'e)moi/_E----DS-'
-argument 'lela/lhke(n)_V3RAI-S-' -> 'au)tw=|_E----DSM'
-
-# le/gw
-argument 'ei)=pan_V3AAI-P-' -> 'au)tw=|_E----DSM' | '*barabba=n_N----ASM' | 'ge/noito_V3AMO-S-' | 'duna/meqa_V1PMI-P-' | 'ei)=_V2PAI-S-' | 'e(pta/_A----APM' | '*kai/saros_N----GSM' | 'ou)qeno/s_A----GSN'
-argument 'ei)/pate_V2AAM-P-' -> '*)arxi/ppw|_N----DSM' | 'keklhme/nois_V-RPPDPM'
-argument 'ei)=pe(n)_V3AAI-S-' -> 'au)th=|_E----DSF' | 'au)toi=s_E----DPM' | 'au)tw=|_E----DSM' | 'ge/gonan_V3RAI-P-' | 'ei)=_V2PAI-S-' | 'e)kei/nois_M----DPM' | 'e(te/rw|_A----DSM' | 'moi_E----DS-' | 'poi=a_A----APN' | 'tosou/tou_M----GSN' | 'u(pa/gete_V2PAM-P-'
-argument 'ei)=pon_V1AAI-S-' -> 'au)tw=|_E----DSM' | 'poih/sw_V1AAS-S-' | 'u(mi=n_E----DP-'
-argument 'ei)/pw_V1AAS-S-' -> 'ti/_I----ASN' | 'u(mi=n_E----DP-'
-argument 'ei)/pwmen_V1AAS-P-' -> 'e)k_P-------' | 'ti/_I----ASN'
-argument 'ei)pw/n_V-AAPNSM' -> 'tou=to_M----ASN'
-argument 'ei)/rhka_V1RAI-S-' -> 'au)tw=|_E----DSM'
-argument 'ei)/rhkas_V2RAI-S-' -> 'tou=to_M----ASN'
-argument 'ei)/rhke(n)_V3RAI-S-' -> 'moi_E----DS-'
-argument 'e)/lege(n)_V3IAI-S-' -> 'au)th=|_E----DSF' | 'au)tw=|_E----DSM' | 'au)toi=s_E----DPM' | 'o(/ti_C-------' | 'parabolh/n_N----ASF' | 'suni/ete_V2PAI-P-'
-argument 'e)/legon_V3IAI-P-' -> 'e)/xei_V3PAI-S-' | 'u(mi=n_E----DP-'
-argument 'e)rei=s_V2FAI-S-' -> 'moi_E----DS-'
-argument 'e)rou=men_V1FAI-P-' -> 'ti/_I----ASN'
-argument 'e)rou=si(n)_V3FAI-P-' -> 'u(mi=n_E----DP-'
-argument 'e)rw=_V1FAI-S-' -> 'xai/rete_V2PAM-P-'
-argument 'le/gei_V3PAI-S-' -> 'au)th=|_E----DSF' | 'au)toi=s_E----DPM' | 'au)tw=|_E----DSM' | 'ei)mi/_V1PAI-S-' | 'ei)=pas_V2AAI-S-' | 'kai/_C-------' | '*maria/m_N----VSF' | 'moi_E----DS-' | 'nai/_L-------' | 'oi)=da_V1RAI-S-' | 'poi/as_A----APF' | 'ti/_I----ASN'
-argument 'le/gousi(n)_V3PAI-P-' -> 'au)tw=|_E----DSM' | '*daui/d_N----GSM' | 'duna/meqa_V1PMI-P-' | 'dw/deka_A----APM' | 'e(pta/_A----APF' | '*kai/saros_N----GSM' | 'moi_E----DS-' | 'nai/_L-------' | 'prw=tos_A----NSM' | 'staurwqh/tw_V3APM-S-'
-argument 'le/gw_V1PAI-S-' -> 'h)/kousan_V3AAI-P-' | 'tou=to_M----ASN' | 'u(mi=n_E----DP-'
-argument 'le/gw_V1PAS-S-' -> 'ti/_I----ASN'
-argument 'le/gwn_V-PAPNSM' -> 'moixeu/ein_V-PAN---' | 'tau=ta_M----APN'
-
-# logi/zomai
-argument 'e)logi/sqh_V3API-S-' -> 'au)tw=|_E----DSM'
-
-# me/llw
-argument 'me/lleis_V2PAI-S-' -> 'pa/sxein_V-PAN---' | 'poiei=n_V-PAN---' | 'ti/_I----ASN'
-
-# me/lei
-argument 'mele/tw_V3PAM-S-' -> 'soi_E----DS-'
-
-# metoiki/zw
-argument 'metoikiw=_V1FAI-S-' -> 'e)pe/keina_P-------' | 'u(ma=s_E----AP-'
-
-# mnhmoneu/w
-argument 'mnhmoneu/ete_V2PAM-P-' -> 'gunaiko/s_N----GSF' | 'desmw=n_N----GPM'
-
-# oi)kodome/w
-argument 'oi)kodo/mhse(n)_V3AAI-S-' -> 'oi)=kon_N----ASM'
-
-# o)mnu/w
-argument 'w)/mose(n)_V3AAI-S-' -> 'au)th=|_E----DSF'
-
-# o(ra/w
-argument 'e(wra/kamen_V1RAI-P-' -> 'ku/rion_N----ASM'
-argument 'i)dei=n_V-AAN---' -> 'au)to/n_E----ASM' | 'profh/thn_N----ASM' | 'ti/_I----ASN'
-argument 'o(/ra_V2PAM-S-' -> 'mh/_B-------'
-argument 'o(ra=te_V2PAM-P-' -> 'ginwske/tw_V3PAM-S-' | 'qroei=sqe_V2PPM-P-'
-argument 'o)/yh|_V2FMI-S-' -> 'mei/zw_A----APN'
-
-# parabia/zomai
-argument 'parebia/sato_V3AMI-S-' -> 'h(ma=s_E----AP-'
-
-# paragge/llw
-argument 'para/ggelle_V2PAM-S-' -> 'tau=ta_M----APN'
-
-# parazhlo/w
-argument 'parazhlou=men_V1PAI-P-' -> 'ku/rion_N----ASM'
-
-# pa/sxw
-argument 'e)pa/qete_V2AAI-P-' -> 'tosau=ta_M----APN'
-argument 'pa/sxein_V-PAN---' -> 'a(/_R----APN'
-
-# peira/zw
-argument 'peira/zete_V2PAI-P-' -> 'me_E----AS-'
-
-# periba/llw
-argument 'peribalw/meqa_V1AMS-P-' -> 'ti/_I----ASN'
-
-# perifrone/w
-argument 'perifronei/tw_V3PAM-S-' -> 'sou_E----GS-'
-
-# pi/nw
-argument 'pi/wmen_V1AAS-P-' -> 'ti/_I----ASN'
-
-# pisteu/w
-argument 'e)pi/steusan_V3AAI-P-' -> 'e)kei/nois_M----DPM'
-argument 'pisteu/eis_V2PAI-S-' -> 'profh/tais_N----DPM' | 'tou=to_M----ASN'
-
-# poie/w
-argument 'e)poi/hsas_V2AAI-S-' -> 'ti/_I----ASN'
-argument 'e)poi/hse(n)_V3AAI-S-' -> 'soi_E----DS-' | 'ti/_I----ASN'
-argument 'poiei=n_V-PAN---' -> 'ti/_I----ASN'
-argument 'poiei=te_V2PAI-P-' -> 'tou=to_M----ASN'
-argument 'poih=sai_V-AAN---' -> 'u(/dwr_N----ASN'
-argument 'poih/sousi(n)_V3FAI-P-' -> 'a)posunagw/gous_A----APM' | 'u(ma=s_E----AP-'
-argument 'poih/sw_V1AAS-S-' -> 'ti/_I----ASN'
-argument 'poih/sw_V1FAI-S-' -> 'tou=to_M----ASN'
-argument 'poih/swmen_V1AAS-P-' -> 'ti/_I----ASN'
-
-# poreu/omai
-argument 'e)poreu/qhsan_V3API-P-' -> 'ei)s_P-------'
-
-# prole/gw
-argument 'proei/rhka_V1RAI-S-' -> 'pa/nta_A----APN' | 'u(mi=n_E----DP-'
-
-# prosa/gw
-argument 'prosa/gage_V2AAM-S-' -> 'ui(o/n_N----ASM' | 'w(=de_B-------'
-
-# prose/xw
-argument 'prose/xete_V2PAM-P-' -> 'e(autoi=s_E----DPM'
-
-# proskune/w
-argument 'proseku/nhse(n)_V3AAI-S-' -> 'au)tw=|_E----DSM'
-argument 'prosku/nhson_V2AAM-S-' -> 'qew=|_N----DSM'
-
-# prosoxqi/zw
-argument 'prosw/xqise(n)_V3AAI-S-' -> 'ti/si(n)_I----DPM'
-
-# prosti/qhmi
-argument 'pro/sqes_V2AAM-S-' -> 'h(mi=n_E----DP-' | 'pi/stin_N----ASF'
-
-# prosfe/rw
-argument 'prosh/negkan_V3AAI-P-' -> 'au)tw=|_E----DSM' | 'dhna/rion_N----ASN'
-
-# pwle/w
-argument 'pwlei=tai_V3PPI-S-' -> 'a)ssari/ou_N----GSN'
-
-# skandali/zw
-argument 'skandali/zei_V3PAI-S-' -> 'u(ma=s_E----AP-'
-
-# spei/rw
-argument 'spei/rei_V3PAI-S-' -> 'lo/gon_N----ASM'
-
-# spouda/zw
-argument 'spou/dason_V2AAM-S-' -> 'e)lqei=n_V-AAN---'
-
-# stauro/w
-argument 'stau/rou_V2PAM-S-' -> 'au)to/n_E----ASM'
-argument 'stau/rwson_V2AAM-S-' -> 'au)to/n_E----ASM'
-
-# sugxra/omai
-argument 'sugxrw=ntai_V3PMI-P-' -> '*samari/tais_N----DPM'
-
-# suni/hmi
-argument 'sunh/kate_V2AAI-P-' -> 'tau=ta_M----APN'
-
-# suni/sthmi
-argument 'sunista/nein_V-PAN---' -> 'e(autou/s_E----APM'
-
-# sustauro/omai
-argument 'sunestau/rwmai_V1RPI-S-' -> '*xristw=|_N----DSM'
-
-# sw/|zw
-argument 'sw=son_V2AAM-S-' -> 'kai/_C-------' | 'me_E----AS-'
-
-# thre/w
-argument 'th/rei_V2PAM-S-' -> 'a(gno/n_A----ASM' | 'seauto/n_E----ASM'
-
-# ti/qhmi
-argument 'teqei/kate_V2RAI-P-' -> 'au)to/n_E----ASM'
-
-# tima/w
-argument 'ti/ma_V2PAM-S-' -> 'xh/ras_N----APF'
-
-# u(pa/gw
-argument 'u(pa/geis_V2PAI-S-' -> 'pou=_B-------'
-argument 'u(pa/gw_V1PAI-S-' -> 'a(lieu/ein_V-PAN---'
-
-# u(pota/ssw
-argument 'u(pota/ghte_V2APM-P-' -> 'presbute/rois_A----DPM'
-
-# u(stere/w
-argument 'u(sterei=_V3PAI-S-' -> 'se_E----AS-'
-argument 'u(sterw=_V1PAI-S-' -> 'ti/_I----ASN'
-
-# fai/nw
-argument 'fai/netai_V3PPI-S-' -> 'u(mi=n_E----DP-'
-
-# fe/rw
-argument 'h)/negkan_V3AAI-P-' -> 'au)to/n_E----ASM' | 'pro/s_P-------'
-argument 'fe/rete_V2PAM-P-' -> 'au)to/n_E----ASM' | 'dhna/rion_N----ASN' | 'moi_E----DS-' | 'pro/s_P-------' | 'w(=de_B-------'
-
-# feu/gw
-argument 'feu/gete_V2PAM-P-' -> 'pornei/an_N----ASF'
-
-# fhmi/
-argument 'e)/fh_V3IAI-S-' -> 'ginw/skeis_V2PAI-S-' | 'nai/_L-------'
-argument 'fhmi/_V1PAI-S-' -> 'ti/_I----ASN'
-argument 'fhsi/(n)_V3PAI-S-' -> 'a)kou/sh|_V2FMI-S-' | 'ei)pe/_V2AAM-S-'
-
-# file/w
-argument 'filei=s_V2PAI-S-' -> 'me_E----AS-'
-
-# fobe/omai
-argument 'fobou=_V2PMM-S-' -> 'me/lleis_V2PAI-S-'
-
-# foneu/w
-argument 'e)foneu/sate_V2AAI-P-' -> 'di/kaion_A----ASM'
-
-# fula/ssw
-argument 'e)fu/laca_V1AAI-S-' -> 'tau=ta_M----APN'
-
-# fwne/w
-argument 'fwnei=_V3PAI-S-' -> '*)hli/an_N----ASM'
-argument 'fwnh/sate_V2AAM-P-' -> 'au)to/n_E----ASM'
-
-# xari/zomai
-argument 'xari/sasqe_V2AMM-P-' -> 'a)diki/an_N----ASF' | 'moi_E----DS-'
-
-# xwre/w
-argument 'xwrh/sate_V2AAM-P-' -> 'h(ma=s_E----AP-'
-
+###################################
+#### Arguments of prepositions ####
+###################################
+
+# Nominative arguments.
+A[CASE=nominative, STANDALONE=y, REL_TYPE=argument, POSITION=after] -> P[ARG_NOM=y, POSTPOSITION=n]
+
+# Genitive arguments.
+N[CASE=genitive, REL_TYPE=argument, POSITION=after] -> P[ARG_GEN=y, POSTPOSITION=n]
+A[CASE=genitive, STANDALONE=y, REL_TYPE=argument, POSITION=after] -> P[ARG_GEN=y, POSTPOSITION=n]
+E[CASE=genitive, REL_TYPE=argument, POSITION=after] -> P[ARG_GEN=y, POSTPOSITION=n]
+V[CASE=genitive, MOOD=participle, REL_TYPE=argument, POSITION=after] -> P[ARG_GEN=y, POSTPOSITION=n]
+
+# Accusative arguments.
+N[CASE=accusative, REL_TYPE=argument, POSITION=after] -> P[ARG_ACC=y, POSTPOSITION=n]
+E[CASE=accusative, REL_TYPE=argument, POSITION=after] -> P[ARG_ACC=y, POSTPOSITION=n]
+I[CASE=accusative, REL_TYPE=argument, POSITION=after] -> P[ARG_ACC=y, POSTPOSITION=n]
+M[CASE=accusative, REL_TYPE=argument, POSITION=after] -> P[ARG_ACC=y, POSTPOSITION=n]
+
+# Dative arguments.
+N[CASE=dative, REL_TYPE=argument, POSITION=after] -> P[ARG_DAT=y, POSTPOSITION=n]
+E[CASE=dative, REL_TYPE=argument, POSITION=after] -> P[ARG_DAT=y, POSTPOSITION=n]
+M[CASE=dative, REL_TYPE=argument, POSITION=after] -> P[ARG_DAT=y, POSTPOSITION=n]
+A[CASE=dative, STANDALONE=y, REL_TYPE=argument, POSITION=after] -> P[ARG_DAT=y, POSTPOSITION=n]
+
+# Other arguments.
+B[REL_TYPE=argument, POSITION=after] -> P[ARG_ADV=y, POSTPOSITION=n]
+
+#######################################
+#### Nominative arguments of verbs ####
+#######################################
+
+# Usually, we expect the number of the nominative argument to match the number of the verb.
+N[CASE=nominative, NUMBER=?n, REL_TYPE=argument] -> V[NUMBER=?n, ARG_NOM=y]
+A[NUMBER=?n, CASE=nominative, REL_TYPE=argument] -> V[NUMBER=?n, ARG_NOM=y]
+V[CASE=nominative, NUMBER=?n, MOOD=participle, REL_TYPE=argument] -> V[NUMBER=?n, ARG_NOM=y]
+
+# But not always!
+N[CASE=nominative, NUMBER=singular, REL_TYPE=argument] -> V[NUMBER=plural, ARG_NOM=y]
+A[CASE=accusative, REL_TYPE=argument] -> V[MOOD=infinitive, ARG_NOM=y]
+I[CASE=nominative, REL_TYPE=argument] -> V[ARG_NOM=y]
+
+#####################################
+#### Genitive arguments of verbs ####
+#####################################
+
+# Regular nouny arguments.
+N[CASE=genitive, REL_TYPE=argument] -> V[ARG_GEN=y]
+E[CASE=genitive, REL_TYPE=argument] -> V[ARG_GEN=y]
+
+#######################################
+#### Accusative arguments of verbs ####
+#######################################
+
+# Regular nouny arguments.
+N[CASE=accusative, REL_TYPE=argument] -> V[ARG_ACC=y]
+E[CASE=accusative, REL_TYPE=argument] -> V[ARG_ACC=y]
+I[CASE=accusative, REL_TYPE=argument] -> V[ARG_ACC=y]
+M[CASE=accusative, REL_TYPE=argument] -> V[ARG_ACC=y]
+A[CASE=accusative, STANDALONE=y, REL_TYPE=argument] -> V[ARG_ACC=y]
+V[CASE=accusative, MOOD=participle, REL_TYPE=argument] -> V[ARG_ACC=y]
+
+# Relative arguments are always fronted.
+R[CASE=accusative, REL_TYPE=argument, POSITION=before] -> V[ARG_ACC=y]
+
+###################################
+#### Dative arguments of verbs ####
+###################################
+
+# Regular nouny arguments.
+N[CASE=dative, REL_TYPE=argument] -> V[ARG_DAT=y]
+E[CASE=dative, REL_TYPE=argument] -> V[ARG_DAT=y]
+I[CASE=dative, REL_TYPE=argument] -> V[ARG_DAT=y]
+A[CASE=dative, STANDALONE=y, REL_TYPE=argument] -> V[ARG_DAT=y]
+
+#######################################
+#### Infinitive arguments of verbs ####
+#######################################
+
+# Infinitive arguments.
+V[MOOD=infinitive, REL_TYPE=argument] -> V[ARG_INF=y]
+
+###########################################
+#### Complementized arguments of verbs ####
+###########################################
+
+# Make the complementizer itself the argument.  Always after the verb.
+C[COMPLEMENTIZER=y, SECOND_POSITION=n, REL_TYPE=argument, POSITION=after] -> V[ARG_OTI=y]
+
+######################################
+#### Utterance arguments of verbs ####
+######################################
+
+# All things that happen serve as the head of the utterance argument of the
+# verb in this corpus are lexically specified; otherwise, the number of
+# possible parses becomes enormous.
+
+# Nouny things as utterances.
+N[CASE=genitive, S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+N[CASE=accusative, S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+N[CASE=vocative, S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+I[CASE=nominative, S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+M[CASE=genitive, S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+A[CASE=nominative, S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+A[CASE=genitive, S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+A[CASE=accusative, S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+
+# Verbs as utterances (usually the main verb of a whole sentence).
+V[MOOD=indicative, S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+V[MOOD=imperative, S_ARG=y, REL_TYPE=argument] -> V[ARG_S=y]
+V[MOOD=subjunctive, S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+V[MOOD=optative, S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+
+# Other things as utterances.
+L[S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+P[S_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_S=y]
+
+#####################################
+#### Relative arguments of verbs ####
+#####################################
+
+# If a verb takes a fused relative as an argument, make the main verb of the
+# relative clause the dependent of the verb that takes the argument.  Lexically
+# specify the verbs that happen to do this in the corpus (on both sides), or
+# else the number of possible parses becomes enormous.
+V[MOOD=indicative, REL_ARG=y, REL_TYPE=argument, POSITION=after] -> V[ARG_REL=y]
+
+######################################
+#### Conjoined arguments of verbs ####
+######################################
+
+# Make the conjunction the argument of the verb.  Lexically specify the verbs
+# that happen to do this in the corpus, or else the number of possible parses
+# becomes enormous.
+C[COMPLEMENTIZER=n, SECOND_POSITION=n, REL_TYPE=argument] -> V[ARG_CONJ=y]
+
+###################
+#### idou, etc ####
+###################
+
+# It seems reasonable to model the utterances after "idou" and similar words in
+# the same way as utterance arguments of verbs.
+V[MOOD=indicative, S_ARG=y, REL_TYPE=argument, POSITION=after] -> L[ARG_S=y]
