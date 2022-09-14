@@ -1,20 +1,85 @@
-################################
-#### Interjection particles ####
-################################
+#### particle ####
 
-# An interjection can attach to basically anything.
-J[REL_TYPE=interjection] -> L
-J[REL_TYPE=interjection] -> V
-L[INTERJECTION=y, REL_TYPE=interjection] -> M
+# i)dou/
+'interjection' 'after' 'i)dou/_L-------' -> 'ku/rie_N----VSM'
 
-###################
-#### Vocatives ####
-###################
+# nai/
+'interjection' 'after' 'nai/_L-------' -> 'a)mh/n_J-------' | 'ku/rie_N----VSM'
 
-# Vocatives with verbs.
-N[CASE=vocative, REL_TYPE=interjection] -> V
-A[CASE=vocative, STANDALONE=y, REL_TYPE=interjection] -> V
+#### verb ####
 
-# Vocatives with other types of things.
-N[CASE=vocative, REL_TYPE=interjection] -> L
-N[CASE=vocative, REL_TYPE=interjection] -> B
+# a)kou/w
+'interjection' 'after' 'a)kou/sate_V2AAM-P-' -> 'a)delfoi/_N----VPM'
+
+# ei)mi/
+'interjection' 'after' 'ei)=_V2PAI-S-' -> 'ku/rie_N----VSM'
+'interjection' 'after' 'e)sti/(n)_V3PAI-S-' -> 'a)delfoi/_N----VPM'
+
+# pisteu/w
+'interjection' 'after' 'pisteu/eis_V2PAI-S-' -> '*)agri/ppa_N----VSM'
+
+# poie/w
+'interjection' 'after' 'poih/sw_V1AAS-S-' -> 'ku/rie_N----VSM'
+
+# plana/w
+'interjection' 'after' 'plana=sqe_V2PPM-P-' -> 'a)delfoi/_N----VPM'
+
+# ei)/dw
+'interjection' 'after' 'i)/ste_V2RAM-P-' -> 'a)delfoi/_N----VPM'
+
+# e)/rxomai
+'interjection' 'after' 'e)/rxou_V2PMM-S-' -> '*)ihsou=_N----VSM'
+
+#### adverb ####
+
+# pou=
+'interjection' 'after' 'pou=_B-------' -> 'qa/nate_N----VSM' | 'ku/rie_N----VSM'
+
+#### verb ####
+
+# a)kou/w
+'interjection' 'before' 'a)kou/sate_V2AAM-P-' -> 'a)/ndres_N----VPM'
+
+# doca/zw
+'interjection' 'before' 'do/cason_V2AAM-S-' -> 'pa/ter_N----VSM'
+
+# ei)mi/
+'interjection' 'before' 'ei)=_V2PAI-S-' -> 'su/_E----VS-'
+
+# le/gw
+'interjection' 'before' 'ei)pe/_V2AAM-S-' -> 'dida/skale_N----VSM'
+
+# u(pota/ssw
+'interjection' 'before' 'u(pota/ghte_V2APM-P-' -> 'new/teroi_A----VPM'
+
+# fula/ssw
+'interjection' 'before' 'fula/cate_V2AAM-P-' -> 'tekni/a_N----VPN'
+
+# e)gkake/w
+'interjection' 'before' 'e)gkakh/shte_V2AAS-P-' -> 'a)delfoi/_N----VPM'
+
+# klai/w
+'interjection' 'before' 'klai/eis_V2PAI-S-' -> 'gu/nai_N----VSF'
+
+# proseu/xomai
+'interjection' 'before' 'proseu/xesqe_V2PMM-P-' -> 'a)delfoi/_N----VPM'
+
+# e)/rxomai
+'interjection' 'before' 'e)/rxou_V2PMM-S-' -> 'a)mh/n_J-------'
+
+# qa/
+'interjection' 'before' 'qa/_V2AAM-S-' -> 'mara/na_N----VSM'
+
+#### conjunction ####
+
+# kai/
+'interjection' 'before' 'kai/_C-------' -> 'ku/rie_N----VSM'
+
+# i(/na
+'interjection' 'before' 'i(/na_C-------' -> 'ku/rie_N----VSM'
+
+#### demonstrative pronoun ####
+
+# tosou=tos
+'interjection' 'before' 'tosou/tou_M----GSN' -> 'nai/_L-------'
+

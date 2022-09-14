@@ -1,10 +1,184 @@
-# Negation of verbs.
-B[NEGATION=y, REL_TYPE=negation, POSITION=before] -> V
-L[NEGATION=y, REL_TYPE=negation, POSITION=before] -> V
+#### verb ####
 
-# Negation of nouns.
-B[NEGATION=y, REL_TYPE=negation, POSITION=before] -> N
-L[NEGATION=y, REL_TYPE=negation, POSITION=before] -> N
+# a)gapa/w
+'negation' 'before' 'a)gapw=_V1PAI-S-' -> 'ou)_B-------'
 
-# Negation of adjectives.
-B[NEGATION=y, REL_TYPE=negation, POSITION=before] -> A
+# a)kou/w
+'negation' 'before' 'h)/kousan_V3AAI-P-' -> 'mh/_B-------' | 'ou)_B-------'
+
+# a)ntita/ssomai
+'negation' 'before' 'a)ntita/ssetai_V3PMI-S-' -> 'ou)_B-------'
+
+# a)pokri/nomai
+'negation' 'before' 'a)pekri/qh_V3API-S-' -> 'ou)_B-------'
+
+# gi/nomai
+'negation' 'before' 'gi/nesqe_V2PMM-P-' -> 'mh/_B-------'
+'negation' 'before' 'ge/noito_V3AMO-S-' -> 'mh/_B-------'
+
+# ginw/skw
+'negation' 'before' 'e)/gnw_V3AAI-S-' -> 'mh/_B-------' | 'ou)_B-------'
+
+# di/dwmi
+'negation' 'before' 'de/dwke(n)_V3RAI-S-' -> 'ou)_B-------'
+'negation' 'before' 'dw=men_V1AAS-P-' -> 'mh/_B-------'
+
+# du/namai
+'negation' 'before' 'du/nasqe_V2PMI-P-' -> 'ou)_B-------'
+'negation' 'before' 'du/natai_V3PMI-S-' -> 'mh/_B-------'
+
+# ei)/dw
+'negation' 'before' 'oi)=da_V1RAI-S-' -> 'ou)_B-------'
+'negation' 'before' 'oi)/damen_V1RAI-P-' -> 'ou)_B-------'
+
+# ei)mi/
+'negation' 'before' 'ei)mi/_V1PAI-S-' -> 'ou)_B-------'
+'negation' 'before' 'e)sme/n_V1PAI-P-' -> 'mh/_B-------'
+'negation' 'before' 'e)ste/_V2PAI-P-' -> 'mh/ti_L-------'
+'negation' 'before' 'e)sti/(n)_V3PAI-S-' -> 'ou)_B-------'
+'negation' 'before' 'e)/stai_V3FMI-S-' -> 'ou)_B-------'
+
+# e)mpi/ptw
+'negation' 'before' 'e)mpesou=ntai_V3FMI-P-' -> 'ou)xi/_L-------'
+
+# e)/xw
+'negation' 'before' 'e)/xete_V2PAI-P-' -> 'ou)/pw_B-------'
+'negation' 'before' 'e)xo/ntwn_V-PAPGPM' -> 'mh/_B-------'
+'negation' 'before' 'e)/xousi(n)_V3PAI-P-' -> 'mh/_B-------'
+
+# zhte/w
+'negation' 'before' 'zh/tei_V2PAM-S-' -> 'mh/_B-------'
+
+# qe/lw
+'negation' 'before' 'h)/qele(n)_V3IAI-S-' -> 'ou)_B-------'
+
+# i)sxu/w
+'negation' 'before' 'i)/sxusan_V3AAI-P-' -> 'ou)_B-------'
+'negation' 'before' 'i)/sxusas_V2AAI-S-' -> 'ou)_B-------'
+
+# katarge/w
+'negation' 'before' 'katargou=men_V1PAI-P-' -> 'ou)_B-------'
+
+# lamba/nw
+'negation' 'before' 'e)/labes_V2AAI-S-' -> 'ou)_B-------'
+
+# metabai/nw
+'negation' 'before' 'metabai/nete_V2PAM-P-' -> 'mh/_B-------'
+
+# o(ra/w
+'negation' 'before' 'e(o/raka_V1RAI-S-' -> 'ou)xi/_L-------'
+'negation' 'before' 'i)do/ntes_V-AAPNPM' -> 'mh/_B-------'
+
+# pwle/w
+'negation' 'before' 'pwlei=tai_V3PPI-S-' -> 'ou)xi/_L-------'
+'negation' 'before' 'pwlou=ntai_V3PPI-P-' -> 'ou)xi/_L-------'
+
+# sugxra/omai
+'negation' 'before' 'sugxrw=ntai_V3PMI-P-' -> 'ou)_B-------'
+
+# fobe/omai
+'negation' 'before' 'fobei=sqai_V-PMN---' -> 'mh/_B-------'
+
+# xra/omai
+'negation' 'before' 'ke/xrhmai_V1RMI-S-' -> 'ou)_B-------'
+
+# a)poqnh/|skw
+'negation' 'before' 'a)pe/qane(n)_V3AAI-S-' -> 'ou)_B-------'
+
+# blasfhme/w
+'negation' 'before' 'blasfhmei/sqw_V3PPM-S-' -> 'mh/_B-------'
+
+# diermhneu/w
+'negation' 'before' 'diermhneu/ousi(n)_V3PAI-P-' -> 'mh/_B-------'
+
+# e)gkake/w
+'negation' 'before' 'e)gkakh/shte_V2AAS-P-' -> 'mh/_B-------'
+
+# lale/w
+'negation' 'before' 'lalou=si(n)_V3PAI-P-' -> 'mh/_B-------'
+
+# oi)kodome/w
+'negation' 'before' 'oi)kodomei=_V3PAI-S-' -> 'ou)_B-------'
+
+# puro/omai
+'negation' 'before' 'purou=mai_V1PPI-S-' -> 'ou)_B-------'
+
+# sumfe/rw
+'negation' 'before' 'sumfe/rei_V3PAI-S-' -> 'ou)_B-------'
+
+# a)postere/w
+'negation' 'before' 'a)posterei=sqe_V2PPI-P-' -> 'ou)xi/_B-------'
+
+# e)paine/w
+'negation' 'before' 'e)painw=_V1PAI-S-' -> 'ou)_B-------'
+
+# merimna/w
+'negation' 'before' 'merimnh/shte_V2AAS-P-' -> 'mh/_B-------'
+
+# peripate/w
+'negation' 'before' 'periepath/samen_V1AAI-P-' -> 'ou)_B-------'
+
+# a)na/keimai
+'negation' 'before' 'a)nakei/menos_V-PMPNSM' -> 'ou)xi/_L-------'
+
+# a)poste/llw
+'negation' 'before' 'a)postalw=si(n)_V3APS-P-' -> 'mh/_B-------'
+
+# a)sqene/w
+'negation' 'before' 'a)sqenw=_V1PAI-S-' -> 'ou)_B-------'
+
+# e)pispa/omai
+'negation' 'before' 'e)pispa/sqw_V3PMM-S-' -> 'mh/_B-------'
+
+# kle/ptw
+'negation' 'before' 'kle/ptein_V-PAN---' -> 'mh/_B-------'
+
+# moixeu/w
+'negation' 'before' 'moixeu/ein_V-PAN---' -> 'mh/_B-------'
+'negation' 'before' 'moixeu/seis_V2FAI-S-' -> 'ou)_B-------'
+
+# perite/mnw
+'negation' 'before' 'peritemne/sqw_V3PPM-S-' -> 'mh/_B-------'
+
+# plana/w
+'negation' 'before' 'plana=sqe_V2PPM-P-' -> 'mh/_B-------'
+
+# skandali/zw
+'negation' 'before' 'skandalisqh=te_V2APS-P-' -> 'mh/_B-------'
+
+#### adjective ####
+
+# kalo/s
+'negation' 'before' 'kalo/n_A----NSN' -> 'ou)_B-------'
+
+#### noun ####
+
+# a)po/stolos
+'negation' 'before' 'a)po/stoloi_N----NPM' -> 'mh/_B-------'
+
+# dida/skalos
+'negation' 'before' 'dida/skaloi_N----NPM' -> 'mh/_B-------'
+
+# du/namis
+'negation' 'before' 'duna/meis_N----NPF' -> 'mh/_B-------'
+
+# profh/ths
+'negation' 'before' 'profh=tai_N----NPM' -> 'mh/_B-------'
+
+# a)diki/a
+'negation' 'before' 'a)diki/a_N----NSF' -> 'mh/_B-------'
+
+# a)/nqrwpos
+'negation' 'before' 'a)nqrw/pois_N----DPM' -> 'ou)_B-------'
+
+# e)/qnos
+'negation' 'before' 'e)qnw=n_N----GPN' -> 'ou)xi/_L-------'
+
+# i)/xnos
+'negation' 'before' 'i)/xnesi(n)_N----DPN' -> 'ou)_B-------'
+
+#### conjunction ####
+
+# i(/na
+'negation' 'before' 'i(/na_C-------' -> 'mh/_B-------'
+

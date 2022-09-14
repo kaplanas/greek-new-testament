@@ -114,10 +114,11 @@ def print_parses(parses, first_index=0, features=False):
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
-    sent_lengths = [1, 2, 3, 4, 5]
-    # sent_lengths = [1]
+    sent_lengths = [1, 2, 3, 4, 5, 6]
     old_parses = {}
+    old_parse_counts = {}
     parses = {}
+    parse_counts = {}
     changes = {}
     for sl in sent_lengths:
         print('parsing sentences of length ' + str(sl) + '...')
@@ -125,16 +126,25 @@ if __name__ == '__main__':
         old_sis = get_sent_ids(old_parses[sl])
         parses[sl] = parse_sents(sent_length=sl)
         sis = get_sent_ids(parses[sl])
+        old_parse_counts[sl] = {}
+        parse_counts[sl] = {}
         changes[sl] = {'parsed': [],
                        'new': [],
                        'same': [],
                        'none': [],
                        'unparsed': []}
         for i, p in enumerate(parses[sl]):
+            n_parses = len(p.other_parses)
+            if n_parses in parse_counts[sl].keys():
+                parse_counts[sl][n_parses] += 1
+            else:
+                parse_counts[sl][n_parses] = 1
             if sis[i] in old_sis:
                 old_parse = old_parses[sl][old_sis.index(sis[i])]
+                n_old_parses = len(old_parse.other_parses)
                 old_best_parse = old_parse.parse
                 if old_best_parse is not None:
+                    n_old_parses += 1
                     if old_best_parse.to_dot() in [op.to_dot()
                                                    for op in p.other_parses]:
                         p.set_best_parse([op.to_dot()
@@ -150,13 +160,61 @@ if __name__ == '__main__':
                         changes[sl]['none'].append(p)
                     else:
                         changes[sl]['same'].append(p)
+                if n_old_parses in old_parse_counts[sl].keys():
+                    old_parse_counts[sl][n_old_parses] += 1
+                else:
+                    old_parse_counts[sl][n_old_parses] = 1
             else:
                 if len(p.other_parses) == 0:
                     changes[sl]['none'].append(p)
                 else:
                     changes[sl]['new'].append(p)
     print('')
+    all_parse_lengths = sorted(set([n_old_parses
+                                    for sl in old_parse_counts.keys()
+                                    for n_old_parses in old_parse_counts[sl].keys()] +
+                                   [n_parses
+                                    for sl in parse_counts.keys()
+                                    for n_parses in parse_counts[sl].keys()]))
     termtables.print([[sl] +
+                      [old_parse_counts[sl][n_old_parses]
+                       if n_old_parses in old_parse_counts[sl].keys()
+                       else 0
+                       for n_old_parses in all_parse_lengths]
+                      for sl in old_parse_counts.keys()],
+                     header=['Length'] + [str(n_parses)
+                                          for n_parses in all_parse_lengths],
+                     style=termtables.styles.markdown,
+                     padding=(0, 1),
+                     alignment='l' + ('r' * len(all_parse_lengths)))
+    print('')
+    termtables.print([[str(sl)] +
+                      [str(chalk.blue(str(parse_counts[sl][n_parses])))
+                       if n_parses in parse_counts[sl].keys() and \
+                          n_parses in old_parse_counts[sl].keys() and \
+                          parse_counts[sl][n_parses] > old_parse_counts[sl][n_parses]
+                       else str(chalk.yellow(str(parse_counts[sl][n_parses])))
+                       if n_parses in parse_counts[sl].keys() and \
+                          n_parses in old_parse_counts[sl].keys() and \
+                          parse_counts[sl][n_parses] < old_parse_counts[sl][n_parses]
+                       else str(chalk.blue(str(parse_counts[sl][n_parses])))
+                       if n_parses in parse_counts[sl].keys() and \
+                          n_parses not in old_parse_counts[sl].keys()
+                       else str(chalk.yellow('0'))
+                       if n_parses not in parse_counts[sl].keys() and \
+                          n_parses in old_parse_counts[sl].keys()
+                       else str(parse_counts[sl][n_parses])
+                       if n_parses in parse_counts[sl].keys()
+                       else '0'
+                       for n_parses in all_parse_lengths]
+                      for sl in parse_counts.keys()],
+                     header=['Length'] + [str(n_parses)
+                                          for n_parses in all_parse_lengths],
+                     style=termtables.styles.markdown,
+                     padding=(0, 1),
+                     alignment='l' + ('r' * len(all_parse_lengths)))
+    print('')
+    termtables.print([[str(sl)] +
                       [str(chalk.red(str(len(changes[sl][diff]))))
                        if diff == 'unparsed' and len(changes[sl][diff]) > 0
                        else str(chalk.yellow(str(len(changes[sl][diff]))))

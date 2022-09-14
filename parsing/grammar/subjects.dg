@@ -1,84 +1,459 @@
-##################################
-#### Subjects of finite verbs ####
-##################################
+#### preposition ####
 
-# Nouny things with ordinary agreement.
-N[CASE=nominative, PERSON=?p, NUMBER=?n, REL_TYPE=subject] -> V[MOOD=indicative, PERSON=?p, NUMBER=?n]
-N[CASE=nominative, PERSON=?p, NUMBER=?n, REL_TYPE=subject] -> V[MOOD=imperative, PERSON=?p, NUMBER=?n]
-E[CASE=nominative, PERSON=?p, NUMBER=?n, REL_TYPE=subject] -> V[MOOD=indicative, PERSON=?p, NUMBER=?n]
-E[CASE=nominative, PERSON=?p, NUMBER=?n, REL_TYPE=subject] -> V[MOOD=imperative, PERSON=?p, NUMBER=?n]
-I[CASE=nominative, PERSON=?p, NUMBER=?n, REL_TYPE=subject] -> V[MOOD=indicative, PERSON=?p, NUMBER=?n]
-M[CASE=nominative, PERSON=?p, NUMBER=?n, REL_TYPE=subject] -> V[MOOD=indicative, PERSON=?p, NUMBER=?n]
-A[CASE=nominative, PERSON=?p, NUMBER=?n, STANDALONE=y, REL_TYPE=subject] -> V[MOOD=indicative, PERSON=?p, NUMBER=?n]
+# ei)s
+'subject' 'before' 'ei)s_P-------' -> 'oi)=non_N----ASM'
 
-# Idiosyncratic agreement.
-N[CASE=nominative, NUMBER=plural, GENDER=neuter, REL_TYPE=subject] -> V[MOOD=indicative, PERSON=3, NUMBER=singular]
-A[CASE=nominative, NUMBER=plural, GENDER=neuter, STANDALONE=y, REL_TYPE=subject] -> V[MOOD=imperative, PERSON=3, NUMBER=singular]
+# meta/
+'subject' 'before' 'meta/_P-------' -> 'ku/rios_N----NSM' | 'xa/ris_N----NSF'
 
-# Determiners as subjects.
-D[CASE=nominative, NUMBER=?n, GENDER=masculine, REL_TYPE=subject, POSITION=before] -> V[MOOD=indicative, PERSON=3, NUMBER=?n]
-D[CASE=nominative, NUMBER=?n, GENDER=feminine, REL_TYPE=subject, POSITION=before] -> V[MOOD=indicative, PERSON=3, NUMBER=?n]
+#### verb ####
 
-# Participles as subjects.
-V[CASE=nominative, NUMBER=?n, MOOD=participle, REL_TYPE=subject] -> V[MOOD=indicative, NUMBER=?n]
-V[CASE=nominative, NUMBER=?n, MOOD=participle, REL_TYPE=subject] -> V[MOOD=imperative, NUMBER=?n]
+# a)gapa/w
+'subject' 'before' 'a)gaph/sei_V3FAI-S-' -> 'ti/s_I----NSM'
 
-#################################
-#### Subjects of infinitives ####
-#################################
+# a)kolouqe/w
+'subject' 'before' 'a)kolou/qei_V2PAM-S-' -> 'su/_E----NS-'
+'subject' 'before' 'h)kolou/qhsan_V3AAI-P-' -> 'o)/xloi_N----NPM'
 
-# Accusative subjects.
-E[CASE=accusative, REL_TYPE=subject] -> V[MOOD=infinitive]
+# a)naxwre/w
+'subject' 'before' 'a)nexw/rhse(n)_V3AAI-S-' -> '*)ihsou=s_N----NSM'
 
-# Nominative subjects.
-A[CASE=nominative, STANDALONE=y, REL_TYPE=subject] -> V[MOOD=infinitive]
+# a)nqi/sthmi
+'subject' 'before' 'a)nqe/sthke(n)_V3RAI-S-' -> 'ti/s_I----NSM'
 
-#################################
-#### Subjects of participles ####
-#################################
+# a)pokalu/ptw
+'subject' 'before' 'a)pekalu/fqh_V3API-S-' -> 'braxi/wn_N----NSM'
 
-# Subjects agree in case with the participle.
-E[CASE=?c, NUMBER=?n, GENDER=?g, REL_TYPE=subject] -> V[MOOD=participle, CASE=?c, GENDER=?g, NUMBER=?n]
+# a)pokri/nomai
+'subject' 'before' 'a)pekri/qh_V3API-S-' -> 'o(_D----NSM'
+'subject' 'before' 'a)pekri/qhn_V1API-S-' -> 'e)gw/_E----NS-'
 
-##################################
-#### Subjects of nouny things ####
-##################################
+# a)tima/zw
+'subject' 'before' 'h)tima/sate_V2AAI-P-' -> 'u(mei=s_E----NP-'
 
-# Basically, these are predicates with no explicit copula.
+# gi/nomai
+'subject' 'before' 'gine/sqw_V3PMM-S-' -> 'pa/nta_A----NPN'
+'subject' 'before' 'e)ge/neto_V3AMI-S-' -> 'a)gaqo/n_A----NSN' | 'ti/s_I----NSM'
 
-# Nouns.
-N[CASE=nominative, NUMBER=?n, REL_TYPE=subject] -> N[CASE=nominative, NUMBER=?n]
-A[CASE=nominative, NUMBER=?n, STANDALONE=y, REL_TYPE=subject] -> N[CASE=nominative, NUMBER=?n]
-M[CASE=nominative, GENDER=?g, NUMBER=?n, REL_TYPE=subject] -> N[CASE=nominative, GENDER=?g, NUMBER=?n]
+# ginw/skw
+'subject' 'before' 'gnwsqh/tw_V3APM-S-' -> 'e)pieike/s_A----NSN'
+'subject' 'before' 'e)/gnw_V3AAI-S-' -> '*)israh/l_N----NSM' | 'ti/s_I----NSM'
 
-# Pronouns.
-N[CASE=nominative, REL_TYPE=subject] -> E[CASE=dative]
-M[CASE=nominative, REL_TYPE=subject] -> M[CASE=dative]
+# diakri/nw
+'subject' 'before' 'diakri/nei_V3PAI-S-' -> 'ti/s_I----NSM'
 
-# Adjectives.
-N[CASE=nominative, GENDER=?g, NUMBER=?n, REL_TYPE=subject] -> A[CASE=nominative, GENDER=?g, NUMBER=?n]
-I[CASE=nominative, NUMBER=?n, REL_TYPE=subject] -> A[CASE=nominative, NUMBER=?n]
-N[CASE=nominative, REL_TYPE=subject] -> A[CASE=genitive, STANDALONE=y]
-V[MOOD=infinitive, REL_TYPE=subject] -> A
+# di/dwmi
+'subject' 'before' 'de/dwke(n)_V3RAI-S-' -> '*mwu+sh=s_N----NSM'
+'subject' 'before' 'de/dotai_V3RPI-S-' -> 'ko/mh_N----NSF'
 
-##################################
-#### Subjects of prepositions ####
-##################################
+# dii+sxuri/zomai
+'subject' 'before' 'dii+sxuri/zeto_V3IMI-S-' -> 'h(_D----NSF'
 
-# Also predicates.
-N[CASE=nominative, REL_TYPE=subject] -> P
+# doke/w
+'subject' 'before' 'dokei=_V3PAI-S-' -> 'ti/_I----NSN'
 
-##################################
-#### Subjects of other things ####
-##################################
+# ei)mi/
+'subject' 'before' 'ei)mi/_V1PAI-S-' -> 'e)gw/_E----NS-'
+'subject' 'before' 'ei)=nai_V-PAN---' -> 'u(ma=s_E----AP-'
+'subject' 'before' 'e)sme/n_V1PAI-P-' -> 'kai/_C-------'
+'subject' 'before' 'e)/sontai_V3FMI-P-' -> 'au)toi/_E----NPM'
+'subject' 'before' 'e)ste/_V2PAI-P-' -> 'u(mei=s_E----NP-'
+'subject' 'before' 'e)sti/(n)_V3PAI-S-' -> 'a)/nqrwpos_N----NSM' | 'ei(=s_A----NSM' | 'e)rxo/menos_V-PMPNSM' | 'kri/ma_N----NSN' | 'tou=to_M----NSN'
+'subject' 'before' 'h)=n_V3IAI-S-' -> 'sxi/sma_N----NSN'
+'subject' 'before' 'e)/stai_V3FMI-S-' -> 'kata/qema_N----NSN'
 
-# More predicates.
-N[CASE=nominative, REL_TYPE=subject] -> B[NEGATION=n]
-A[CASE=nominative, STANDALONE=y, REL_TYPE=subject] -> B[NEGATION=n]
+# e)lpi/zw
+'subject' 'before' 'e)lpiou=si(n)_V3FAI-P-' -> 'e)/qnh_N----NPN'
 
-#################################
-#### Utterance-like subjects ####
-#################################
+# e)mpi/ptw
+'subject' 'before' 'e)mpesou=ntai_V3FMI-P-' -> 'a)mfo/teroi_A----NPM'
 
-# Passives of verbs that take utterance-like arguments.
-V[S_ARG=y, REL_TYPE=subject, POSITION=after] -> V[VOICE=passive, DEPONENT=n, ARG_S=y]
+# e)/cesti(n)
+'subject' 'before' 'e)/cesti(n)_V3PAI-S-' -> 'pa/nta_A----NPN'
+
+# e)/xw
+'subject' 'before' 'ei)=xe(n)_V3IAI-S-' -> 'a)/nqrwpos_N----NSM'
+'subject' 'before' 'e)/sxon_V3AAI-P-' -> 'e(pta/_A----NPM' | 'pa/ntes_A----NPM'
+'subject' 'before' 'e)/xei_V3PAI-S-' -> 'ti\s_I----NSM'
+'subject' 'before' 'e)/xomen_V1PAI-P-' -> 'h(mei=s_E----NP-'
+'subject' 'before' 'e)/xousi(n)_V3PAI-P-' -> 'pa/ntes_A----NPM'
+
+# zumo/w
+'subject' 'before' 'zumoi=_V3PAI-S-' -> 'zu/mh_N----NSF'
+
+# i(/sthmi
+'subject' 'before' 'e)/sthsan_V3AAI-P-' -> 'oi(_D----NPM'
+
+# kale/w
+'subject' 'before' 'e)klh/qh_V3API-S-' -> 'ti\s_I----NSM'
+
+# katamarture/w
+'subject' 'before' 'katamarturou=si(n)_V3PAI-P-' -> 'ou(=toi_M----NPM'
+
+# keleu/w
+'subject' 'before' 'e)ke/leuse(n)_V3AAI-S-' -> '*pila=tos_N----NSM'
+
+# kra/zw
+'subject' 'before' 'e)/kracan_V3AAI-P-' -> 'oi(_D----NPM'
+'subject' 'before' 'e)/krazon_V3IAI-P-' -> 'oi(_D----NPM'
+
+# le/gw
+'subject' 'before' 'ei)=pa_V1AAI-S-' -> 'e)gw/_E----NS-'
+'subject' 'before' 'ei)=pan_V3AAI-P-' -> 'maqhtai/_N----NPM' | 'oi(_D----NPM'
+'subject' 'before' 'ei)=pe(n)_V3AAI-S-' -> 'h(_D----NSF' | 'o(_D----NSM'
+'subject' 'before' 'e)/lege(n)_V3IAI-S-' -> 'e)kei=nos_M----NSM'
+'subject' 'before' 'e)/legon_V3IAI-P-' -> 'zw=|a_N----NPN' | 'pa/ntes_A----NPM'
+'subject' 'before' 'ei)=pas_V2AAI-S-' -> 'su/_E----NS-'
+'subject' 'before' 'le/geis_V2PAI-S-' -> 'su/_E----NS-'
+
+# misqo/omai
+'subject' 'before' 'e)misqw/sato_V3AMI-S-' -> 'ou)dei/s_A----NSM'
+
+# oi)kodome/w
+'subject' 'before' 'oi)kodo/mhse(n)_V3AAI-S-' -> '*solomw=n_N----NSM'
+'subject' 'before' 'oi)kodomei=_V3PAI-S-' -> 'pa/nta_A----NPN'
+
+# o(ra/w
+'subject' 'before' 'o)/yh|_V2FMI-S-' -> 'su/_E----NS-'
+
+# pisteu/w
+'subject' 'before' 'e)pi/steusan_V3AAI-P-' -> 'polloi/_A----NPM'
+
+# poie/w
+'subject' 'before' 'e)poi/hsan_V3AAI-P-' -> 'stratiw=tai_N----NPM'
+'subject' 'before' 'pepoih/kate_V2RAI-P-' -> 'u(mei=s_E----NP-'
+'subject' 'before' 'poih=sai_V-AAN---' -> 'a(luko/n_A----NSN'
+'subject' 'before' 'poiou=si(n)_V3PAI-P-' -> 'a(martwloi/_A----NPM'
+
+# prosfe/rw
+'subject' 'before' 'prosh/negkan_V3AAI-P-' -> 'oi(_D----NPM'
+
+# pwle/w
+'subject' 'before' 'pwlei=tai_V3PPI-S-' -> 'strouqi/a_N----NPN'
+'subject' 'before' 'pwlou=ntai_V3PPI-P-' -> 'strouqi/a_N----NPN'
+
+# spei/rw
+'subject' 'before' 'spei/rei_V3PAI-S-' -> 'spei/rwn_V-PAPNSM'
+
+# tolma/w
+'subject' 'before' 'e)to/lma_V3IAI-S-' -> 'ou)dei/s_A----NSM'
+
+# fai/nw
+'subject' 'before' 'fai/netai_V3PPI-S-' -> 'ti/_I----NSN'
+
+# fe/rw
+'subject' 'before' 'h)/negkan_V3AAI-P-' -> 'oi(_D----NPM'
+
+# fhmi/
+'subject' 'before' 'e)/fh_V3IAI-S-' -> '*)ihsou=s_N----NSM' | 'o(_D----NSM'
+'subject' 'before' 'fhsi/(n)_V3PAI-S-' -> 'o(_D----NSM'
+
+# xra/omai
+'subject' 'before' 'ke/xrhmai_V1RMI-S-' -> 'e)gw/_E----NS-'
+
+# a)kou/w
+'subject' 'before' 'a)koue/tw_V3PAM-S-' -> 'e)/xwn_V-PAPNSM'
+
+# a(li/zw
+'subject' 'before' 'a(lisqh/setai_V3FPI-S-' -> 'pa=s_A----NSM'
+
+# a)pe/rxomai
+'subject' 'before' 'a)ph=lqan_V3AAI-P-' -> 'prw=ta_A----NPN'
+
+# a)poqnh/|skw
+'subject' 'before' 'a)pe/qane(n)_V3AAI-S-' -> 'paidi/on_N----NSN'
+
+# a)rne/omai
+'subject' 'before' 'h)rnei=to_V3IMI-S-' -> 'o(_D----NSM'
+
+# a)sqene/w
+'subject' 'before' 'a)sqenei=_V3PAI-S-' -> 'ti/s_I----NSM'
+
+# au)ca/nw
+'subject' 'before' 'au)ca/nein_V-PAN---' -> 'e)kei=non_M----ASM'
+
+# diermhneu/w
+'subject' 'before' 'diermhneu/ousi(n)_V3PAI-P-' -> 'pa/ntes_A----NPM'
+
+# dikaio/w
+'subject' 'before' 'dikaiw=n_V-PAPNSM' -> 'qeo/s_N----NSM'
+
+# e)ggi/zw
+'subject' 'before' 'h)/ggike(n)_V3RAI-S-' -> 'te/los_N----NSN'
+
+# e)gkake/w
+'subject' 'before' 'e)gkakh/shte_V2AAS-P-' -> 'u(mei=s_E----NP-'
+
+# e)gkale/w
+'subject' 'before' 'e)gkale/sei_V3FAI-S-' -> 'ti/s_I----NSM'
+
+# ei)/dw
+'subject' 'before' 'oi)=de(n)_V3RAI-S-' -> 'qeo/s_N----NSM'
+
+# e)latto/w
+'subject' 'before' 'e)lattou=sqai_V-PMN---' -> 'e)me/_E----AS-'
+
+# e)lea/w
+'subject' 'before' 'e)lehqh/sontai_V3FPI-P-' -> 'au)toi/_E----NPM'
+
+# h(suxa/zw
+'subject' 'before' 'h(su/xasan_V3AAI-P-' -> 'oi(_D----NPM'
+
+# i(erosule/w
+'subject' 'before' 'i(erosulei=s_V2PAI-S-' -> 'bdelusso/menos_V-PMPNSM'
+
+# katakri/nw
+'subject' 'before' 'katakrinw=n_V-PAPNSM' -> 'ti/s_I----NSM'
+
+# kinduneu/w
+'subject' 'before' 'kinduneu/omen_V1PAI-P-' -> 'h(mei=s_E----NP-'
+
+# kle/ptw
+'subject' 'before' 'kle/pteis_V2PAI-S-' -> 'khru/sswn_V-PAPNSM'
+
+# lale/w
+'subject' 'before' 'lalou=si(n)_V3PAI-P-' -> 'pa/ntes_A----NPM'
+
+# me/nw
+'subject' 'before' 'mene/tw_V3PAM-S-' -> 'filadelfi/a_N----NSF'
+
+# moixeu/w
+'subject' 'before' 'moixeu/eis_V2PAI-S-' -> 'le/gwn_V-PAPNSM'
+
+# parakale/w
+'subject' 'before' 'paraklhqh/sontai_V3FPI-P-' -> 'au)toi/_E----NPM'
+
+# parapikrai/nw
+'subject' 'before' 'parepi/kranan_V3AAI-P-' -> 'ti/nes_I----NPM'
+
+# pi/ptw
+'subject' 'before' 'pi/ptei_V3PAI-S-' -> 'a)ga/ph_N----NSF'
+
+# poreu/omai
+'subject' 'before' 'e)poreu/eto_V3IMI-S-' -> '*)ihsou=s_N----NSM'
+
+# puro/omai
+'subject' 'before' 'purou=mai_V1PPI-S-' -> 'e)gw/_E----NS-'
+
+# siwpa/w
+'subject' 'before' 'e)siw/pa_V3IAI-S-' -> '*)ihsou=s_N----NSM'
+'subject' 'before' 'e)siw/pwn_V3IAI-P-' -> 'oi(_D----NPM'
+
+# skandali/zw
+'subject' 'before' 'skandali/zetai_V3PPI-S-' -> 'ti/s_I----NSM'
+
+# strateu/omai
+'subject' 'before' 'strateu/etai_V3PMI-S-' -> 'ti/s_I----NSM'
+
+# sumfe/rw
+'subject' 'before' 'sumfe/rei_V3PAI-S-' -> 'pa/nta_A----NPN'
+
+# fimo/w
+'subject' 'before' 'e)fimw/qh_V3API-S-' -> 'o(_D----NSM'
+
+# xwre/w
+'subject' 'before' 'xwrei/tw_V3PAM-S-' -> 'duna/menos_V-PMPNSM'
+
+#### adjective ####
+
+# a)nupo/kritos
+'subject' 'before' 'a)nupo/kritos_A----NSF' -> 'a)ga/ph_N----NSF'
+
+# i(kano/s
+'subject' 'before' 'i(kano/s_A----NSM' -> 'ti/s_I----NSM'
+
+#### adverb ####
+
+# pou=
+'subject' 'before' 'pou=_B-------' -> 'e)nne/a_A----NPM'
+
+#### conjunction ####
+
+# kai/
+'subject' 'before' 'kai/_C-------' -> 'presbu/teroi_A----NPM' | 'ti/s_I----NSM'
+
+#### noun ####
+
+# a)koh/
+'subject' 'before' 'a)koh/_N----NSF' -> 'o(/lon_A----NSN'
+
+# a(marti/a
+'subject' 'before' 'a(marti/a_N----NSF' -> 'no/mos_N----NSM'
+
+# a)na/stasis
+'subject' 'before' 'a)na/stasis_N----NSF' -> 'au(/th_M----NSF'
+
+# a)po/stolos
+'subject' 'before' 'a)po/stoloi_N----NPM' -> 'pa/ntes_A----NPM'
+
+# dida/skalos
+'subject' 'before' 'dida/skaloi_N----NPM' -> 'pa/ntes_A----NPM'
+
+# du/namis
+'subject' 'before' 'duna/meis_N----NPF' -> 'pa/ntes_A----NPM'
+
+# profh/ths
+'subject' 'before' 'profh=tai_N----NPM' -> 'pa/ntes_A----NPM'
+
+# *xristo/s
+'subject' 'before' '*xristou=_N----GSM' -> 'ka)gw/_E----NS-'
+
+#### personal pronoun ####
+
+# su/
+'subject' 'before' 'soi_E----DS-' -> 'ei)rh/nh_N----NSF'
+'subject' 'before' 'u(mi=n_E----DP-' -> 'ei)rh/nh_N----NSF'
+
+#### verb ####
+
+# a)pe/rxomai
+'subject' 'after' 'a)ph=lqe(n)_V3AAI-S-' -> 'a)/ggelos_N----NSM'
+
+# a)pokri/nomai
+'subject' 'after' 'a)pekri/qh_V3API-S-' -> '*)ihsou=s_N----NSM' | '*pila=tos_N----NSM'
+
+# a)/rxw
+'subject' 'after' 'h)/rcanto_V3AMI-P-' -> 'pa/ntes_A----NPM'
+
+# a)spa/zomai
+'subject' 'after' 'a)spa/zontai_V3PMI-P-' -> 'a(/gioi_A----NPM' | 'a)delfoi/_N----NPM' | 'a)po/_P-------' | 'e)kklhsi/ai_N----NPF' | 'meta/_P-------' | 'fi/loi_A----NPM'
+
+# diafe/rw
+'subject' 'after' 'diafe/rei_V3PAI-S-' -> 'a)/nqrwpos_N----NSM'
+
+# du/namai
+'subject' 'after' 'du/natai_V3PMI-S-' -> 'pi/stis_N----NSF'
+
+# ei)mi/
+'subject' 'after' 'e)sti/(n)_V3PAI-S-' -> '*)apollw=s_N----NSM' | 'e)kei=nos_M----NSM' | 'misqo/s_N----NSM' | '*pau=los_N----NSM'
+'subject' 'after' 'h)=n_V3IAI-S-' -> '*barabba=s_N----NSM' | 'o)/noma_N----NSN'
+
+# e)ce/rxomai
+'subject' 'after' 'e)ch=lqe(n)_V3AAI-S-' -> 'spei/rwn_V-PAPNSM'
+
+# e)/xw
+'subject' 'after' 'e)xo/ntwn_V-PAPGPM' -> 'au)tw=n_E----GPM'
+
+# kale/w
+'subject' 'after' 'ke/klhtai_V3RPI-S-' -> 'ti\s_I----NSM'
+
+# kathgore/w
+'subject' 'after' 'kathgo/roun_V3IAI-P-' -> 'a)rxierei=s_N----NPM'
+
+# le/gw
+'subject' 'after' 'le/gei_V3PAI-S-' -> 'grafh/_N----NSF' | 'e)kei=nos_M----NSM' | '*naqanah/l_N----NSM' | 'xrhmatismo/s_N----NSM'
+'subject' 'after' 'le/gousi(n)_V3PAI-P-' -> 'pa/ntes_A----NPM'
+'subject' 'after' 'e)rre/qh_V3API-S-' -> 'moixeu/seis_V2FAI-S-'
+
+# poie/w
+'subject' 'after' 'poih/sei_V3FAI-S-' -> 'ku/rios_N----NSM'
+
+# prosti/qhmi
+'subject' 'after' 'prosete/qh_V3API-S-' -> 'o)/xlos_N----NSM'
+
+# sugxra/omai
+'subject' 'after' 'sugxrw=ntai_V3PMI-P-' -> '*)ioudai=oi_A----NPM'
+
+# a)kou/w
+'subject' 'after' 'h)/kouon_V3IAI-P-' -> 'maqhtai/_N----NPM'
+
+# a)noi/gw
+'subject' 'after' 'h)new/|xqhsan_V3API-P-' -> 'o)fqalmoi/_N----NPM'
+
+# a)poko/ptw
+'subject' 'after' 'a)poko/yontai_V3FMI-P-' -> 'a)nastatou=ntes_V-PAPNPM'
+
+# a)rne/omai
+'subject' 'after' 'h)rnh/sato_V3AMI-S-' -> 'e)kei=nos_M----NSM'
+
+# a)sqene/w
+'subject' 'after' 'a)sqenei=_V3PAI-S-' -> 'ti\s_I----NSM'
+
+# a)fi/hmi
+'subject' 'after' 'a)fi/etai_V3PPI-S-' -> 'oi)=kos_N----NSM'
+
+# blasfhme/w
+'subject' 'after' 'blasfhmei/sqw_V3PPM-S-' -> 'a)gaqo/n_A----NSN'
+
+# dakru/w
+'subject' 'after' 'e)da/kruse(n)_V3AAI-S-' -> '*)ihsou=s_N----NSM'
+
+# eu)qume/w
+'subject' 'after' 'eu)qumei=_V3PAI-S-' -> 'ti\s_I----NSM'
+
+# h(/kw
+'subject' 'after' 'h(/kei_V3PAI-S-' -> 'w(/ra_N----NSF'
+
+# qauma/zw
+'subject' 'after' 'e)qau/masan_V3AAI-P-' -> 'pa/ntes_A----NPM'
+
+# i(/sthmi
+'subject' 'after' 'ei(sth/kei_V3LAI-S-' -> 'lao/s_N----NSM'
+
+# i)sxu/w
+'subject' 'after' 'i)sxu/ei_V3PAI-S-' -> 'de/hsis_N----NSF'
+
+# kakopaqe/w
+'subject' 'after' 'kakopaqei=_V3PAI-S-' -> 'ti\s_I----NSM'
+
+# katarge/w
+'subject' 'after' 'kath/rghtai_V3RPI-S-' -> 'ska/ndalon_N----NSN'
+
+# klai/w
+'subject' 'after' 'e)/klaion_V3IAI-P-' -> 'pa/ntes_A----NPM'
+
+# meri/zw
+'subject' 'after' 'meme/ristai_V3RPI-S-' -> '*xristo/s_N----NSM'
+
+# ple/w
+'subject' 'after' 'pleo/ntwn_V-PAPGPM' -> 'au)tw=n_E----GPM'
+
+# pwro/w
+'subject' 'after' 'e)pwrw/qh_V3API-S-' -> 'noh/mata_N----NPN'
+
+# feu/gw
+'subject' 'after' 'e)/fugon_V3AAI-P-' -> 'pa/ntes_A----NPM'
+
+#### adjective ####
+
+# *)ioudai=os
+'subject' 'after' '*)ioudai/wn_A----GPM' -> 'qeo/s_N----NSM'
+
+# kalo/s
+'subject' 'after' 'kalo/n_A----NSN' -> 'kau/xhma_N----NSN'
+
+# maka/rios
+'subject' 'after' 'maka/rioi_A----NPM' -> 'e)leh/mones_A----NPM' | 'kai/_C-------' | 'klai/ontes_V-PAPNPM' | 'peinw=ntes_V-PAPNPM' | 'penqou=ntes_V-PAPNPM'
+
+# sklhro/s
+'subject' 'after' 'sklhro/n_A----NSN' -> 'lakti/zein_V-PAN---'
+
+#### adverb ####
+
+# ou(/tw(s)
+'subject' 'after' 'ou(/tw(s)_B-------' -> 'a)na/stasis_N----NSF'
+
+# pou=
+'subject' 'after' 'pou=_B-------' -> 'grammateu/s_N----NSM' | 'kau/xhsis_N----NSF' | 'ke/ntron_N----NSN' | 'makarismo/s_N----NSM' | 'ni=kos_N----NSN' | 'o)/sfrhsis_N----NSF' | 'sofo/s_A----NSM' | 'suzhthth/s_N----NSM'
+
+# w(=de
+'subject' 'after' 'w(=de_B-------' -> 'nou=s_N----NSM'
+
+#### interrogative/indefinite pronoun ####
+
+# ti/s
+'subject' 'after' 'ti/_I----NSN' -> 'kri/nein_V-PAN---' | 'o)/noma_N----NSN'
+
+#### demonstrative pronoun ####
+
+# ou(=tos
+'subject' 'after' 'tou/tw|_M----DSM' -> 'tau=ta_M----NPN'
+
+#### verb ####
+
+# ei)mi/
+'subject' 'any' 'ei)=_V2PAI-S-' -> 'su/_E----NS-'
+
+# le/gw
+'subject' 'any' 'le/gei_V3PAI-S-' -> '*)ihsou=s_N----NSM'
+

@@ -1,50 +1,98 @@
-# In general, we're going to model conjoined phrases as both dependents of the
-# conjunction, which in turn is the dependent of whatever role the conjoined
-# phrase plays in the larger context (e.g., argument of a verb).  To prevent
-# conjunctions from being allowed to appear everywhere (with a concomitant
-# explosion in the number of possible parses), I've lexically specified verbs,
-# prepositions, etc. that happen to take conjoined dependents in the corpus,
-# as well as the nouns, verbs, etc. that happen to be conjoined.
+#### conjunction ####
 
-#########################
-#### Conjoined verbs ####
-#########################
+# kai/
+'conjunction' 'after' 'kai/_C-------' -> 'a)pekalu/fqh_V3API-S-' | 'a)pekri/qh_V3API-S-' | 'a)pe/luse(n)_V3AAI-S-' | 'a)ph/lase(n)_V3AAI-S-' | 'a)ph=lqe(n)_V3AAI-S-' | 'a)ph=lqon_V3AAI-P-' | 'a)sqenw=_V1PAI-S-' | 'diarpa/sei_V3FAI-S-' | 'dih/rxeto_V3IMI-S-' | 'e)zh/tei_V3IAI-S-' | 'e)qau/masan_V3AAI-P-' | 'ei)=pan_V3AAI-P-' | 'ei)=pe(n)_V3AAI-S-' | 'ei)sh=lqe(n)_V3AAI-S-' | 'ei)sporeu/ontai_V3PMI-P-' | 'ei(sth/kei_V3LAI-S-' | 'e)/klause(n)_V3AAI-S-' | 'e)ko/ptonto_V3IMI-P-' | 'e)/lege(n)_V3IAI-S-' | 'e)/legon_V3IAI-P-' | 'e)lpiou=si(n)_V3FAI-P-' | 'e)luph/qhsan_V3API-P-' | 'e)ce/balon_V3AAI-P-' | 'e)ceqau/mazon_V3IAI-P-' | 'e)ce/sthsan_V3AAI-P-' | 'e)pe/treye(n)_V3AAI-S-' | 'e)phrw/ta_V3IAI-S-' | 'e)pi/steusan_V3AAI-P-' | 'e)pisth/mwn_A----NSM' | 'e)poreu/qh_V3API-S-' | 'e)poreu/qhsan_V3API-P-' | 'e)/rxontai_V3PMI-P-' | 'e)skandali/zonto_V3IPI-P-' | 'e)sta/qhsan_V3API-P-' | 'e)/stai_V3FMI-S-' | 'e)sti/(n)_V3PAI-S-' | 'e)to/lma_V3IAI-S-' | 'e)/fugon_V3AAI-P-' | 'h)/qele(n)_V3IAI-S-' | 'h)kolou/qei_V3IAI-S-' | 'h)kolou/qhse(n)_V3AAI-S-' | 'h)/kouon_V3IAI-P-' | 'h)=lqon_V3AAI-P-' | 'h(ma=s_E----AP-' | 'h)=n_V3IAI-S-' | 'h)/negkan_V3AAI-P-' | 'h)new/|xqhsan_V3API-P-' | 'h)/rcanto_V3AMI-P-' | 'h)rw/ta_V3IAI-S-' | 'h)rw/thsan_V3AAI-P-' | 'h)=san_V3IAI-P-' | 'i)/de_V2AAM-S-' | 'i(kano/s_A----NSM' | 'i(/na_C-------' | 'i)/sxusan_V3AAI-P-' | 'kai/_C-------' | 'katege/lwn_V3IAI-P-' | 'kate/klinan_V3AAI-P-' | 'kathgo/roun_V3IAI-P-' | 'le/gei_V3PAI-S-' | 'le/gousi(n)_V3PAI-P-' | 'le/gw_V1PAS-S-' | 'mamwna=|_N----DSM' | 'me/lleis_V2PAI-S-' | 'merimna=te_V2PAI-P-' | 'metoikiw=_V1FAI-S-' | 'o(/ti_C-------' | 'o)/yesqe_V2FMI-P-' | 'paraka/lei_V2PAM-S-' | 'path/r_N----NSM' | 'perieble/peto_V3IMI-S-' | 'perih=ge(n)_V3IAI-S-' | 'perisso/teron_A----ASM' | 'pisteu/santes_V-AAPNPM' | 'proseku/nhsan_V3AAI-P-' | 'prosete/qh_V3API-S-' | 'purou=mai_V1PPI-S-'
 
-# Sometimes we see two main clauses one immediately after the other - usually
-# of the same or similar moods, and usually very short.
-V[MOOD=imperative, CONJOINED=y, REL_TYPE=conjunction, POSITION=after] -> V[MOOD=imperative, CONJOINED=y]
-V[MOOD=subjunctive, CONJOINED=y, REL_TYPE=conjunction, POSITION=after] -> V[MOOD=imperative, CONJOINED=y]
-V[MOOD=indicative, CONJOINED=y, REL_TYPE=conjunction, POSITION=after] -> V[MOOD=indicative, CONJOINED=y]
+# a)lla/
+'conjunction' 'after' 'a)lla/_C-------' -> 'dia/_P-------' | 'ei)/pwmen_V1AAS-P-' | 'ei)s_P-------' | 'e)ch/lqate_V2AAI-P-' | 'e)pwrw/qh_V3API-S-' | 'h)/_C-------' | 'h)ge/rqh_V3API-S-' | 'qew=|_N----DSM' | 'i(sta/nomen_V1PAI-P-' | 'kaqeu/dei_V3PAI-S-' | 'le/gei_V3PAI-S-' | 'le/gw_V1PAI-S-' | 'oi)kodomei=_V3PAI-S-' | 'sumfe/rei_V3PAI-S-'
 
-# Finite conjoined verbs.
-V[MOOD=indicative, CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
-V[MOOD=imperative, CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
-V[MOOD=subjunctive, CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
-V[MOOD=optative, CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
+# a)/ra
+'conjunction' 'after' 'a)/ra_C-------' -> 'kath/rghtai_V3RPI-S-'
 
-# Non-finite conjoined verbs.
-V[MOOD=infinitive, CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
+# dio/
+'conjunction' 'after' 'dio/_C-------' -> 'e)logi/sqh_V3API-S-'
 
-################################
-#### Conjoined nouny things ####
-################################
+# e)a/n
+'conjunction' 'after' 'e)a/n_C-------' -> 'a)postalw=si(n)_V3APS-P-'
 
-# Conjoined nouny things.
-E[CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n, SENTENTIAL=n]
-A[CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n, SENTENTIAL=n]
+# ei)
+'conjunction' 'after' 'ei)_C-------' -> 'a)gapw=mai_V1PPI-S-' | 'a)gapw=n_V-PAPNSM' | 'a)koh/_N----NSF' | 'a)koue/tw_V3PAM-S-' | 'a)kousa/tw_V3AAM-S-' | 'ei)kh=|_B-------' | 'e)ste/_V2PAI-P-' | 'e)/xei_V3PAI-S-' | 'zw=men_V1PAI-P-' | 'pou=_B-------' | 'stoixw=men_V1PAS-P-'
 
-################################
-#### Other conjoined things ####
-################################
+# h)/
+'conjunction' 'after' 'h)/_C-------' -> 'diamerismo/n_N----ASM' | 'e)ge/neto_V3AMI-S-' | 'zesto/s_A----NSM' | 'zhtw=_V1PAI-S-' | '*)ioudai/wn_A----GPM' | 'lalei=s_V2PAI-S-' | 'parazhlou=men_V1PAI-P-' | 'peribalw/meqa_V1AMS-P-' | 'pi/wmen_V1AAS-P-'
 
-# Other conjoined things.
-P[CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
-B[CONJOINED=y, REL_TYPE=conjunction] -> C[SECOND_POSITION=n, COMPLEMENTIZER=n]
+# i(/na
+'conjunction' 'after' 'i(/na_C-------' -> 'a)gapa=te_V2PAS-P-' | 'a)nable/yw_V1AAS-S-' | 'i)/dw_V1AAS-S-' | 'katala/bhte_V2AAS-P-' | 'kathgorh/swsi(n)_V3AAS-P-' | 'pe/swsi(n)_V3AAS-P-' | 'skandalisqh=te_V2APS-P-' | 'staurw/swsi(n)_V3AAS-P-' | 'sunantila/bhtai_V3AMS-S-'
 
-#########################
-#### Complementizers ####
-#########################
+# kaqw/s
+'conjunction' 'after' 'kaqw/s_C-------' -> '*xristou=_N----GSM'
 
-# Treat complementizers (basically, oti) as a special case, more like utterance
-# arguments of verbs.
-V[MOOD=indicative, S_ARG=y, REL_TYPE=conjunction, POSITION=after] -> C[COMPLEMENTIZER=y]
+# o(/ti
+'conjunction' 'after' 'o(/ti_C-------' -> 'a)gapw=_V1PAI-S-' | 'a)pe/qane(n)_V3AAI-S-' | 'a)pologou/meqa_V1PMI-P-' | 'gela/sete_V2FAI-P-' | 'de/dotai_V3RPI-S-' | 'ei)mi/_V1PAI-S-' | 'e)/legon_V3IAI-P-' | 'e)lehqh/sontai_V3FPI-P-' | 'e)lh/luqas_V2RAI-S-' | 'e)misqw/sato_V3AMI-S-' | 'e)rre/qh_V3API-S-' | 'e)sti/(n)_V3PAI-S-' | 'paraklhqh/sontai_V3FPI-P-' | 'pisteu/eis_V2PAI-S-' | 'u(pa/gw_V1PAI-S-' | 'xortasqh/sesqe_V2FPI-P-'
+
+# ou)de/
+'conjunction' 'after' 'ou)de/_C-------' -> 'suni/ete_V2PAI-P-'
+
+# ou)/te
+'conjunction' 'after' 'ou)/te_C-------' -> 'poih=sai_V-AAN---'
+
+# w(/ste
+'conjunction' 'after' 'w(/ste_C-------' -> 'e)/cesti(n)_V3PAI-S-' | 'ge/gona_V1RAI-S-'
+
+#### verb ####
+
+# au)ca/nw
+'conjunction' 'after' 'au)ca/nein_V-PAN---' -> 'e)lattou=sqai_V-PMN---'
+
+# xai/rw
+'conjunction' 'after' 'xai/rein_V-PAN---' -> 'klai/ein_V-PAN---'
+
+# deu=te
+'conjunction' 'after' 'deu=te_V2-AM---' -> 'a)risth/sate_V2AAM-P-'
+
+# e)gei/rw
+'conjunction' 'after' 'e)gei/resqe_V2PPM-P-' -> 'a)/gwmen_V1PAS-P-'
+
+# katadika/zw
+'conjunction' 'after' 'katedika/sate_V2AAI-P-' -> 'e)foneu/sate_V2AAI-P-'
+
+# nh/fw
+'conjunction' 'after' 'nh/yate_V2AAM-P-' -> 'grhgorh/sate_V2AAM-P-'
+
+# u(pa/gw
+'conjunction' 'after' 'u(pa/gete_V2PAM-P-' -> 'i)/dete_V2AAM-P-'
+
+#### conjunction ####
+
+# kai/
+'conjunction' 'before' 'kai/_C-------' -> 'a)sqenei=_V3PAI-S-' | 'e)gw/_E----NS-' | 'e)/klaion_V3IAI-P-' | 'e)/pesan_V3AAI-P-' | 'e)poi/hsan_V3AAI-P-' | 'e)/rxesqe_V2PMM-P-' | 'e)/rxou_V2PMM-S-' | 'h)rnh/sato_V3AMI-S-' | 'qew=|_N----DSM' | 'i)a/sato_V3AMI-S-' | 'nai/_L-------' | 'i)do/ntes_V-AAPNPM' | 'para/ggelle_V2PAM-S-' | 'seauto/n_E----ASM' | 'skandali/zetai_V3PPI-S-' | 'sofo/s_A----NSM' | 'w)rgi/sqh_V3API-S-'
+
+# a)lla/
+'conjunction' 'before' 'a)lla/_C-------' -> 'a)nqrw/pois_N----DPM' | 'a)pe/qane(n)_V3AAI-S-' | 'ge/noito_V3AMO-S-' | 'e)/cesti(n)_V3PAI-S-' | 'e)sti/(n)_V3PAI-S-' | 'ou)xi/_B-------'
+
+# e)a/n
+'conjunction' 'before' 'e)a/n_C-------' -> 'khru/cwsi(n)_V3AAS-P-'
+
+# h)/
+'conjunction' 'before' 'h)/_C-------' -> 'yuxro/s_A----NSM'
+
+# i(/na
+'conjunction' 'before' 'i(/na_C-------' -> 'e)nte/llomai_V1PMI-S-' | 'e)ca/gousi(n)_V3PAI-P-' | 'e)/ptaisan_V3AAI-P-' | 'lela/lhka_V1RAI-S-' | 'tre/xete_V2PAM-P-' | 'fe/rete_V2PAM-P-'
+
+# kaqw/s
+'conjunction' 'before' 'kaqw/s_C-------' -> 'gi/nesqe_V2PMM-P-'
+
+# o(/ti
+'conjunction' 'before' 'o(/ti_C-------' -> 'maka/rioi_A----NPM'
+
+# ou)de/
+'conjunction' 'before' 'ou)de/_C-------' -> 'noei=te_V2PAI-P-'
+
+#### conjunction ####
+
+# kai/
+'conjunction' 'any' 'kai/_C-------' -> 'di/daske_V2PAM-S-'
+
+# h)/
+'conjunction' 'any' 'h)/_C-------' -> 'dw=men_V1AAS-P-' | 'e)k_P-------' | 'e)n_P-------' | 'peri/_P-------'
+

@@ -1,22 +1,157 @@
-# Adjectives.
-C[SECOND_POSITION=y, REL_TYPE=second_position_clitic, POSITION=immediately_after] -> A
+#### verb ####
 
-# Adverbs.
-C[SECOND_POSITION=y, REL_TYPE=second_position_clitic, POSITION=immediately_after] -> B
+# ai)/rw
+'second_position_clitic' 'immediately_after' 'h)=ran_V3AAI-P-' -> 'ou)=n_C-------'
 
-# Conjunctions.
-C[SECOND_POSITION=y, REL_TYPE=second_position_clitic, POSITION=immediately_after] -> C
+# ei)mi/
+'second_position_clitic' 'immediately_after' 'e)/sesqe_V2FMI-P-' -> 'ga/r_C-------'
+'second_position_clitic' 'immediately_after' 'h)=n_V3IAI-S-' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'h)=san_V3IAI-P-' -> 'ga/r_C-------' | 'de/_C-------'
 
-# Determiners.
-C[SECOND_POSITION=y, REL_TYPE=second_position_clitic, POSITION=immediately_after] -> D
+# ei)skale/omai
+'second_position_clitic' 'immediately_after' 'ei)skalesa/menos_V-AMPNSM' -> 'ou)=n_C-------'
 
-# Nouns.
-C[SECOND_POSITION=y, REL_TYPE=second_position_clitic, POSITION=immediately_after] -> N
+# e)piginw/skw
+'second_position_clitic' 'immediately_after' 'e)piginw/skete_V2PAM-P-' -> 'ou)=n_C-------'
 
-# Pronouns.
-C[SECOND_POSITION=y, REL_TYPE=second_position_clitic, POSITION=immediately_after] -> E
-C[SECOND_POSITION=y, REL_TYPE=second_position_clitic, POSITION=immediately_after] -> I
-C[SECOND_POSITION=y, REL_TYPE=second_position_clitic, POSITION=immediately_after] -> M
+# e)/rxomai
+'second_position_clitic' 'immediately_after' 'e)/rxetai_V3PMI-S-' -> 'ou)=n_C-------'
 
-# Verbs.
-C[SECOND_POSITION=y, REL_TYPE=second_position_clitic, POSITION=immediately_after] -> V
+# zhlo/w
+'second_position_clitic' 'immediately_after' 'zhlou=te_V2PAM-P-' -> 'de/_C-------'
+
+# qe/lw
+'second_position_clitic' 'immediately_after' 'qe/leis_V2PAI-S-' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'qe/lw_V1PAI-S-' -> 'de/_C-------'
+
+# le/gw
+'second_position_clitic' 'immediately_after' 'ei)=pan_V3AAI-P-' -> 'ou)=n_C-------'
+'second_position_clitic' 'immediately_after' 'ei)pe/_V2AAM-S-' -> 'ou)=n_C-------'
+'second_position_clitic' 'immediately_after' 'ei)=pe(n)_V3AAI-S-' -> 'de/_C-------' | 'te/_C-------'
+'second_position_clitic' 'immediately_after' 'ei)=pon_V3AAI-P-' -> 'ou)=n_C-------'
+'second_position_clitic' 'immediately_after' 'ei)=pon_V1AAI-S-' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'e)/lege(n)_V3IAI-S-' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'e)/legon_V3IAI-P-' -> 'ou)=n_C-------'
+'second_position_clitic' 'immediately_after' 'le/gw_V1PAI-S-' -> 'ou)=n_C-------'
+
+# parakale/w
+'second_position_clitic' 'immediately_after' 'parakalw=_V1PAI-S-' -> 'ou)=n_C-------'
+
+# prope/mpw
+'second_position_clitic' 'immediately_after' 'proe/pempon_V3IAI-P-' -> 'de/_C-------'
+
+# blasfhme/w
+'second_position_clitic' 'immediately_after' 'blasfhmei/sqw_V3PPM-S-' -> 'ou)=n_C-------'
+
+# klai/w
+'second_position_clitic' 'immediately_after' 'e)/klaion_V3IAI-P-' -> 'de/_C-------'
+
+# ple/w
+'second_position_clitic' 'immediately_after' 'pleo/ntwn_V-PAPGPM' -> 'de/_C-------'
+
+# a)kou/w
+'second_position_clitic' 'immediately_after' 'a)kou/santes_V-AAPNPM' -> 'de/_C-------'
+
+# a)pokri/nomai
+'second_position_clitic' 'immediately_after' 'a)pokriqe/ntes_V-APPNPM' -> 'de/_C-------'
+
+# stre/fw
+'second_position_clitic' 'immediately_after' 'strafei/s_V-APPNSM' -> 'de/_C-------'
+
+# o)rgi/zomai
+'second_position_clitic' 'immediately_after' 'w)rgi/sqh_V3API-S-' -> 'de/_C-------'
+
+#### adverb ####
+
+# pou=
+'second_position_clitic' 'immediately_after' 'pou=_B-------' -> 'ou)=n_C-------'
+
+# mh/
+'second_position_clitic' 'immediately_after' 'mh/_B-------' -> 'ou)=n_C-------'
+
+# ou)
+'second_position_clitic' 'immediately_after' 'ou)_B-------' -> 'ga/r_C-------'
+
+# pa/lin
+'second_position_clitic' 'immediately_after' 'pa/lin_B-------' -> 'ou)=n_C-------'
+
+# po/qen
+'second_position_clitic' 'immediately_after' 'po/qen_B-------' -> 'ou)=n_C-------'
+
+# pw=s
+'second_position_clitic' 'immediately_after' 'pw=s_B-------' -> 'de/_C-------' | 'ou)=n_C-------'
+
+# w(sau/tws
+'second_position_clitic' 'immediately_after' 'w(sau/tws_B-------' -> 'de/_C-------'
+
+#### personal pronoun ####
+
+# su/
+'second_position_clitic' 'immediately_after' 'u(mi=n_E----DP-' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'u(mei=s_E----NP-' -> 'de/_C-------'
+
+# e)gw/
+'second_position_clitic' 'immediately_after' 'h(mei=s_E----NP-' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'e)gw/_E----NS-' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'e)me/_E----AS-' -> 'de/_C-------'
+
+#### interrogative/indefinite pronoun ####
+
+# ti/s
+'second_position_clitic' 'immediately_after' 'ti/_I----NSN' -> 'de/_C-------' | 'ou)=n_C-------'
+'second_position_clitic' 'immediately_after' 'ti/_I----ASN' -> 'de/_C-------' | 'ou)=n_C-------'
+'second_position_clitic' 'immediately_after' 'ti/s_I----NSM' -> 'ga/r_C-------' | 'ou)=n_C-------'
+'second_position_clitic' 'immediately_after' 'ti/nes_I----NPM' -> 'ga/r_C-------'
+'second_position_clitic' 'immediately_after' 'ti/ni_I----DSN' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'ti/si(n)_I----DPM' -> 'de/_C-------'
+
+#### adjective ####
+
+# pa=s
+'second_position_clitic' 'immediately_after' 'pa/ntes_A----NPM' -> 'ga/r_C-------'
+'second_position_clitic' 'immediately_after' 'pa/ntwn_A----GPN' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'pa=s_A----NSM' -> 'ga/r_C-------'
+
+# o)/yios
+'second_position_clitic' 'immediately_after' 'o)yi/as_A----GSF' -> 'de/_C-------'
+
+# po/sos
+'second_position_clitic' 'immediately_after' 'po/sw|_A----DSN' -> 'ou)=n_C-------'
+
+#### conjunction ####
+
+# ei)
+'second_position_clitic' 'immediately_after' 'ei)_C-------' -> 'ge/_C-------'
+
+#### definite article ####
+
+# o(
+'second_position_clitic' 'immediately_after' 'h(_D----NSF' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'o(_D----NSM' -> 'ga/r_C-------' | 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'oi(_D----NPM' -> 'ga/r_C-------' | 'de/_C-------' | 'me/n_C-------'
+'second_position_clitic' 'immediately_after' 'to/_D----NSN' -> 'ou)=n_C-------'
+'second_position_clitic' 'immediately_after' 'tw=|_D----DSN' -> 'ga/r_C-------'
+
+#### noun ####
+
+# no/mos
+'second_position_clitic' 'immediately_after' 'no/mon_N----ASM' -> 'ou)=n_C-------'
+
+# *solomw=n
+'second_position_clitic' 'immediately_after' '*solomw=n_N----NSM' -> 'de/_C-------'
+
+#### demonstrative pronoun ####
+
+# ou(=tos
+'second_position_clitic' 'immediately_after' 'tou=to_M----ASN' -> 'de/_C-------'
+
+#### interrogative/indefinite pronoun ####
+
+# ti/s
+'second_position_clitic' 'after' 'ti/_I----NSN' -> 'ga/r_C-------'
+
+#### definite article ####
+
+# o(
+'second_position_clitic' 'after' 'oi(_D----NPM' -> 'ou)=n_C-------'
+

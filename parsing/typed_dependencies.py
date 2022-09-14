@@ -1,7 +1,5 @@
 import re
 from copy import deepcopy
-from nltk.sem.logic import Variable
-from nltk.featstruct import FeatStructReader
 from nltk.parse import NonprojectiveDependencyParser
 from nltk.parse.dependencygraph import DependencyGraph
 from nltk.grammar import DependencyProduction, DependencyGrammar, read_grammar
@@ -29,27 +27,29 @@ class TypedDependencyProduction(DependencyProduction):
     Adds relation types to nltk's DependencyProduction.
     """
 
-    def __init__(self, lhs, rhs, rel):
+    def __init__(self, lhs, rhs, rel, position):
         """
         Construct a new ``TypedDependencyProduction``.
         """
         DependencyProduction.__init__(self, lhs, rhs)
         self._rel = rel
+        self._position = position
 
     def __str__(self):
         """
         Return a verbose string representation of the
          ``TypedDependencyProduction``.
         """
-        return super().__str__() + ' (' + self._rel + ')'
+        return super().__str__() + ' (' + self._rel + ', ' + self._position + ')'
 
 
 # The following is mostly copied from nltk's grammar module, with minimal
-# tweaks that allow dependency rules to specify a relation type.
+# tweaks that allow dependency rules to specify a relation type and a position.
 
 _READ_TDG_RE = re.compile(
     r"""^\s*                # leading whitespace
-                              ([A-Za-z_]+)\s*     # relation type (no quotes); letters and underscore only
+                              ('[A-Za-z_]+')\s*     # relation type (no quotes); letters and underscore only
+                              ('[A-Za-z_]+')\s*     # position (no quotes); letters and underscore only
                               ('[^']+')\s*        # single-quoted lhs
                               (?:[-=]+>)\s*        # arrow
                               (?:(                 # rhs:
@@ -61,23 +61,25 @@ _READ_TDG_RE = re.compile(
                                  *$""",  # zero or more copies
     re.VERBOSE,
 )
-_SPLIT_TDG_RE = re.compile(r"""('^[A-Za-z_]+|'[^']'|[-=]+>|"[^"]+"|'[^']+'|\|)""")
+_SPLIT_TDG_RE = re.compile(r"""('[^']'|[-=]+>|"[^"]+"|'[^']+'|\|)""")
 
 
 def _read_typed_dependency_production(s):
     if not _READ_TDG_RE.match(s):
         raise ValueError("Bad production string")
     pieces = _SPLIT_TDG_RE.split(s)
-    pieces = [p for i, p in enumerate(pieces) if i == 0 or i % 2 == 1]
+    pieces = [p for i, p in enumerate(pieces) if i % 2 == 1]
     rel = pieces[0].strip("'\" ")
-    lhside = pieces[1].strip("'\"")
+    position = pieces[1].strip("'\" ")
+    lhside = pieces[2].strip("'\"")
     rhsides = [[]]
-    for piece in pieces[3:]:
+    for piece in pieces[4:]:
         if piece == "|":
             rhsides.append([])
         else:
             rhsides[-1].append(piece.strip("'\""))
-    return [TypedDependencyProduction(lhside, rhside, rel) for rhside in rhsides]
+    return [TypedDependencyProduction(lhside, rhside, rel, position)
+            for rhside in rhsides]
 
 
 class TypedDependencyGrammar(DependencyGrammar):
@@ -87,59 +89,58 @@ class TypedDependencyGrammar(DependencyGrammar):
 
     @classmethod
     def fromstring(cls, input):
-        fsr = FeatStructReader()
-        start, productions = read_grammar(input, fsr.read_partial)
+        productions = []
+        for linenum, line in enumerate(input.split("\n")):
+            line = line.strip()
+            if line.startswith("#") or line == "":
+                continue
+            try:
+                productions += _read_typed_dependency_production(line)
+            except ValueError as e:
+                raise ValueError(f"Unable to parse line {linenum}: {line}") from e
+        if len(productions) == 0:
+            raise ValueError("No productions found!")
         return cls(productions)
-
-    def load_lexicon(self, lexicon_input):
-        """
-        Read a lexicon file and store it as a dict.
-        """
-        fsr = FeatStructReader()
-        start, lexicon = read_grammar(lexicon_input, fsr.read_partial)
-        self._lexicon = {p._rhs[0]: p._lhs
-                         for p in lexicon}
 
     def contains(self, head, dep):
         """
         Return whether the grammar contains the specified dependency.
         """
-        return len(self.type_of(head, dep)) > 0
+        for production in self._productions:
+            if production._lhs == head[0]:
+                for rhs in production._rhs:
+                    if rhs == dep[0] and \
+                            ((production._position == 'any') or \
+                             (production._position == 'before' and dep[1] < head[1]) or \
+                             (production._position == 'after' and dep[1] > head[1]) or \
+                             (production._position == 'immediately_before' and dep[1] == head[1] - 1) or \
+                             (production._position == 'immediately_after' and dep[1] == head[1] + 1)):
+                        return True
+        return False
 
     def type_of(self, head, dep):
         """
         Return the type of the production from the head to the mod (if any).
         """
-        rels = []
-        for p in self._productions:
-            fs_left = p._lhs.unify(self._lexicon[dep[0]])
-            if fs_left is not None:
-                bindings_left = {item[1].name: fs_left[item[0]]
-                                 for item in p._lhs.items()
-                                 if isinstance(item[1], Variable)}
-                fs_right = p._rhs[0].unify(self._lexicon[head[0]])
-                if fs_right is not None:
-                    wrong_position = False
-                    if 'POSITION' in p._lhs:
-                        if p._lhs['POSITION'] == 'before' and dep[1] > head[1]:
-                            wrong_position = True
-                        elif p._lhs['POSITION'] == 'immediately_before' and dep[1] != head[1] - 1:
-                            wrong_position = True
-                        elif p._lhs['POSITION'] == 'after' and dep[1] < head[1]:
-                            wrong_position = True
-                        elif p._lhs['POSITION'] == 'immediately_after' and dep[1] != head[1] + 1:
-                            wrong_position = True
-                    found_mismatch = False
-                    for item in p._rhs[0].items():
-                        if isinstance(item[1], Variable) and \
-                                item[1].name not in ['REL_TYPE', 'POSITION'] and \
-                                item[1].name in bindings_left.keys() and \
-                                not isinstance(bindings_left[item[1].name], Variable) and \
-                                bindings_left[item[1].name] != fs_right[item[0]]:
-                            found_mismatch = True
-                    if not wrong_position and not found_mismatch:
-                        rels.append(fs_left['REL_TYPE'])
-        return rels
+        rels = [production._rel
+                for production in self._productions
+                for possible_dep in production._rhs
+                if production._lhs == head[0] and possible_dep == dep[0]]
+        if len(rels) > 0:
+            return rels
+        return None
+
+    def position_of(self, head, dep):
+        """
+        Return the type of the production from the head to the mod (if any).
+        """
+        positions = [production._pos
+                     for production in self._productions
+                     for possible_dep in production._rhs
+                     if production._lhs == head and possible_dep == dep]
+        if len(positions) > 0:
+            return positions
+        return None
 
 
 class TypedNonprojectiveDependencyParser(NonprojectiveDependencyParser):
@@ -147,14 +148,12 @@ class TypedNonprojectiveDependencyParser(NonprojectiveDependencyParser):
     Adds typed relations to nltk's NonprojectiveDependencyParser.
     """
 
-    def parse(self, tokens):
+    def get_possible_heads_deps(self, tokens):
         """
-        Use the algorithm described by Gabow & Myers (1978) to find all
-        spanning trees of the graph of dependencies.
+        Get all possible heads and dependents of each token.
         """
 
         # Collect the nodes and edges of the dependency graph.
-        n_tokens = len(tokens)
         possible_heads = []
         possible_deps = [[] for i in enumerate(tokens)]
         for i, word in enumerate(tokens):
@@ -166,8 +165,17 @@ class TypedNonprojectiveDependencyParser(NonprojectiveDependencyParser):
             possible_heads.append(heads)
         for j in range(len(possible_deps)):
             possible_deps[j].sort(reverse=True)
+        return((possible_heads, possible_deps))
+
+    def parse(self, tokens):
+        """
+        Use the algorithm described by Gabow & Myers (1978) to find all
+        spanning trees of the graph of dependencies.
+        """
 
         # For each node, find all analyses with that node as root.
+        possible_heads, possible_deps = self.get_possible_heads_deps(tokens)
+        n_tokens = len(tokens)
         analyses = []
         for r in range(n_tokens):
             temp_possible_heads = deepcopy(possible_heads)

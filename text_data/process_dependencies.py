@@ -32,26 +32,29 @@ def write_dependency_rules():
     dependencies_df = dependencies_df.merge(atoms_lemmas_df,
                                             left_on='parsing_atom_head',
                                             right_on='parsing_atom')
+    dependencies_df.fillna(value={'position': 'any'}, inplace=True)
     # Write each dependency type to its own file.
     for dp in DEPENDENCY_TYPES:
         rule_file = open(GRAMMAR_DIR + dp[1] + '.dg', 'w')
         dp_df = dependencies_df[dependencies_df.type == dp[0]]
-        for pos in dp_df.pos.unique():
-            pos_df = dp_df[dp_df.pos == pos]
-            rule_file.write('#### ' + pos + ' ####\n')
-            rule_file.write('\n')
-            for lemma in pos_df.lemma.unique():
-                lemmas_df = pos_df[pos_df.lemma == lemma]
-                rule_file.write('# ' + lemma + '\n')
-                for head_atom in lemmas_df.parsing_atom_head.unique():
-                    dependents_df = lemmas_df[lemmas_df.parsing_atom_head == head_atom]
-                    # rule_file.write(dp[0] + " '" + head_atom + "' -> " +
-                    rule_file.write("'" + head_atom + "' -> " +
-                                    ' | '.join(["'" + dependent_atom + "'"
-                                                for dependent_atom
-                                                in dependents_df.parsing_atom_dependent.unique()]) +
-                                    '\n')
+        for position in dp_df.position.unique():
+            position_df = dp_df[dp_df.position == position]
+            for pos in position_df.pos.unique():
+                pos_df = position_df[position_df.pos == pos]
+                rule_file.write('#### ' + pos + ' ####\n')
                 rule_file.write('\n')
+                for lemma in pos_df.lemma.unique():
+                    lemmas_df = pos_df[pos_df.lemma == lemma]
+                    rule_file.write('# ' + lemma + '\n')
+                    for head_atom in lemmas_df.parsing_atom_head.unique():
+                        dependents_df = lemmas_df[lemmas_df.parsing_atom_head == head_atom]
+                        rule_file.write("'" + dp[0] + "' '" + position + "' '" +
+                                        head_atom + "' -> " +
+                                        ' | '.join(["'" + dependent_atom + "'"
+                                                    for dependent_atom
+                                                    in dependents_df.parsing_atom_dependent.unique()]) +
+                                        '\n')
+                    rule_file.write('\n')
         rule_file.close()
 
 
