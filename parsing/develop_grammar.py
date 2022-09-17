@@ -114,7 +114,7 @@ def print_parses(parses, first_index=0, features=False):
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
-    sent_lengths = [1, 2, 3, 4, 5, 6]
+    sent_lengths = [1, 2, 3, 4, 5, 6, 7]
     old_parses = {}
     old_parse_counts = {}
     parses = {}

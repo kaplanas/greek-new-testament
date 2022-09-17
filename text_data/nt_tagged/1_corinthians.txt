@@ -32,7 +32,7 @@
 3:1 ka)gw/_E----NS- a)delfoi/_N----VPM ou)_B------- h)dunh/qhn_V1API-S- lalh=sai_V-AAN--- u(mi=n_E----DP- w(s_C------- pneumatikoi=s_A----DPM a)lla/_C------- w(s_C------- sarki/nois_A----DPM w(s_C------- nhpi/ois_A----DPM e)n_P------- *xristw=|_N----DSM
 3:2 ga/la_N----ASN u(ma=s_E----AP- e)po/tisa_V1AAI-S- ou)_B------- brw=ma_N----ASN ou)/pw_B------- ga/r_C------- e)du/nasqe_V2IMI-P-
 3:2-3 a)lla/_C------- ou)de/_B------- e)/ti_B------- nu=n_B------- du/nasqe_V2PMI-P- e)/ti_B------- ga/r_C------- sarkikoi/_A----NPM e)ste/_V2PAI-P-
-3:3 o(/pou_C------- ga/r_C------- e)n_P------- u(mi=n_E----DP- zh=los_N----NSM kai/_C------- e)/ris_N----NSF ou)xi/_L------- sarkikoi/_A----NPM e)ste/_V2PAI-P- kai/_C------- kata/_P------- a)/nqrwpon_N----ASM peripatei=te_V2PAI-P-
+3:3 o(/pou_B------- ga/r_C------- e)n_P------- u(mi=n_E----DP- zh=los_N----NSM kai/_C------- e)/ris_N----NSF ou)xi/_L------- sarkikoi/_A----NPM e)ste/_V2PAI-P- kai/_C------- kata/_P------- a)/nqrwpon_N----ASM peripatei=te_V2PAI-P-
 3:4 o(/tan_C------- ga/r_C------- le/gh|_V3PAS-S- ti\s_I----NSM e)gw/_E----NS- me/n_C------- ei)mi/_V1PAI-S- *pau/lou_N----GSM e(/teros_A----NSM de/_C------- e)gw/_E----NS- *)apollw=_N----GSM ou)_B------- a)/nqrwpoi_N----NPM e)ste/_V2PAI-P-
 3:5 ti/_I----NSN ou)=n_C------- e)sti/(n)_V3PAI-S- *)apollw=s_N----NSM
 3:5 ti/_I----NSN de/_C------- e)sti/(n)_V3PAI-S- *pau=los_N----NSM
@@ -198,7 +198,8 @@
 10:11 tau=ta_M----NPN de/_C------- tupikw=s_B------- sune/baine(n)_V3IAI-S- e)kei/nois_M----DPM e)gra/fh_V3API-S- de/_C------- pro/s_P------- nouqesi/an_N----ASF h(mw=n_E----GP- ei)s_P------- ou(/s_R----APM ta/_D----NPN te/lh_N----NPN tw=n_D----GPM ai)w/nwn_N----GPM kath/nthke(n)_V3RAI-S-
 10:12-13 w(/ste_C------- o(_D----NSM dokw=n_V-PAPNSM e(sta/nai_V-RAN--- blepe/tw_V3PAM-S- mh/_B------- pe/sh|_V3AAS-S- peirasmo/s_N----NSM u(ma=s_E----AP- ou)_B------- ei)/lhfe(n)_V3RAI-S- ei)_C------- mh/_B------- a)nqrw/pinos_A----NSM pisto/s_A----NSM de/_C------- o(_D----NSM qeo/s_N----NSM o(/s_R----NSM ou)_B------- e)a/sei_V3FAI-S- u(ma=s_E----AP- peirasqh=nai_V-APN--- u(pe/r_P------- o(/_R----ASN du/nasqe_V2PMI-P- a)lla/_C------- poih/sei_V3FAI-S- su/n_P------- tw=|_D----DSM peirasmw=|_N----DSM kai/_B------- th/n_D----ASF e)/kbasin_N----ASF tou=_D----GSN du/nasqai_V-PMN--- u(penegkei=n_V-AAN---
 10:14 dio/per_C------- a)gaphtoi/_A----VPM mou_E----GS- feu/gete_V2PAM-P- a)po/_P------- th=s_D----GSF ei)dwlolatri/as_N----GSF
-10:15 w(s_C------- froni/mois_A----DPM le/gw_V1PAI-S- kri/nate_V2AAM-P- u(mei=s_E----NP- o(/_R----ASN fhmi/_V1PAI-S-
+10:15 w(s_B------- froni/mois_A----DPM le/gw_V1PAI-S-
+10:15 kri/nate_V2AAM-P- u(mei=s_E----NP- o(/_R----ASN fhmi/_V1PAI-S-
 10:16 to/_D----NSN poth/rion_N----NSN th=s_D----GSF eu)logi/as_N----GSF o(/_R----ASN eu)logou=men_V1PAI-P- ou)xi/_L------- koinwni/a_N----NSF e)sti/(n)_V3PAI-S- tou=_D----GSN ai(/matos_N----GSN tou=_D----GSM *xristou=_N----GSM
 10:16 to/n_D----ASM a)/rton_N----ASM o(/n_R----ASM klw=men_V1PAI-P- ou)xi/_L------- koinwni/a_N----NSF tou=_D----GSN sw/matos_N----GSN tou=_D----GSM *xristou=_N----GSM e)sti/(n)_V3PAI-S-
 10:17 o(/ti_C------- ei(=s_A----NSM a)/rtos_N----NSM e(/n_A----NSN sw=ma_N----NSN oi(_D----NPM polloi/_A----NPM e)sme/n_V1PAI-P- oi(_D----NPM ga/r_C------- pa/ntes_A----NPM e)k_P------- tou=_D----GSM e(no/s_A----GSM a)/rtou_N----GSM mete/xomen_V1PAI-P-
@@ -340,7 +341,8 @@
 15:31 kata/_P------- h(me/ran_N----ASF a)poqnh/|skw_V1PAI-S- nh/_L------- th/n_D----ASF u(mete/ran_A----ASF kau/xhsin_N----ASF h(/n_R----ASF e)/xw_V1PAI-S- e)n_P------- *xristw=|_N----DSM *)ihsou=_N----DSM tw=|_D----DSM kuri/w|_N----DSM h(mw=n_E----GP-
 15:32 ei)_C------- kata/_P------- a)/nqrwpon_N----ASM e)qhrioma/xhsa_V1AAI-S- e)n_P------- *)efe/sw|_N----DSF ti/_I----NSN moi_E----DS- to/_D----NSN o)/felos_N----NSN
 15:32 ei)_C------- nekroi/_A----NPM ou)_B------- e)gei/rontai_V3PPI-P- fa/gwmen_V1AAS-P- kai/_C------- pi/wmen_V1AAS-P- au)/rion_B------- ga/r_C------- a)poqnh/|skomen_V1PAI-P-
-15:33 mh/_B------- plana=sqe_V2PPM-P- fqei/rousi(n)_V3PAI-P- h)/qh_N----APN xrhsta/_A----APN o(mili/ai_N----NPF kakai/_A----NPF
+15:33 mh/_B------- plana=sqe_V2PPM-P-
+15:33 fqei/rousi(n)_V3PAI-P- h)/qh_N----APN xrhsta/_A----APN o(mili/ai_N----NPF kakai/_A----NPF
 15:34 e)knh/yate_V2AAM-P- dikai/ws_B------- kai/_C------- mh/_B------- a(marta/nete_V2PAM-P- a)gnwsi/an_N----ASF ga/r_C------- qeou=_N----GSM tine/s_I----NPM e)/xousi(n)_V3PAI-P- pro/s_P------- e)ntroph/n_N----ASF u(mi=n_E----DP- lalw=_V1PAI-S-
 15:35 a)lla/_C------- e)rei=_V3FAI-S- ti\s_I----NSM pw=s_B------- e)gei/rontai_V3PPI-P- oi(_D----NPM nekroi/_A----NPM poi/w|_A----DSN de/_C------- sw/mati_N----DSN e)/rxontai_V3PMI-P-
 15:36-38 a)/frwn_A----VSM su/_E----NS- o(/_R----ASN spei/reis_V2PAI-S- ou)_B------- zw|opoiei=tai_V3PPI-S- e)a/n_C------- mh/_B------- a)poqa/nh|_V3AAS-S- kai/_C------- o(/_R----ASN spei/reis_V2PAI-S- ou)_B------- to/_D----ASN sw=ma_N----ASN to/_D----ASN genhso/menon_V-FMPASN spei/reis_V2PAI-S- a)lla/_C------- gumno/n_A----ASM ko/kkon_N----ASM ei)_C------- tu/xoi_V3AAO-S- si/tou_N----GSM h)/_C------- tino/s_I----GSN tw=n_D----GPN loipw=n_A----GPN o(_D----NSM de/_C------- qeo/s_N----NSM di/dwsi(n)_V3PAI-S- au)tw=|_E----DSM sw=ma_N----ASN kaqw/s_C------- h)qe/lhse(n)_V3AAI-S- kai/_C------- e(ka/stw|_A----DSM tw=n_D----GPN sperma/twn_N----GPN i)/dion_A----ASN sw=ma_N----ASN
