@@ -171,6 +171,7 @@ class TypedNonprojectiveDependencyParser(NonprojectiveDependencyParser):
         """
         Use the algorithm described by Gabow & Myers (1978) to find all
         spanning trees of the graph of dependencies.
+        https://publications.mpi-cbg.de/Gabow_1978_5452.pdf
         """
 
         # For each node, find all analyses with that node as root.
@@ -227,7 +228,9 @@ class TypedNonprojectiveDependencyParser(NonprojectiveDependencyParser):
                     if v in temp_possible_deps[e[0]]:
                         temp_possible_deps[e[0]].remove(v)
                     FF_stack[-1].append(e)
-                    if len(current_analyses) > 0:
+                    if len(T) == 0 and len(temp_possible_deps[r]) > 0:
+                        done_growing = False
+                    elif len(current_analyses) > 0:
                         done_growing = True
                         for head in temp_possible_heads[v]:
                             current_node = head

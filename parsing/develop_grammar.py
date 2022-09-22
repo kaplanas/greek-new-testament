@@ -114,7 +114,7 @@ def print_parses(parses, first_index=0, features=False):
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
-    sent_lengths = [1, 2, 3, 4, 5, 6, 7]
+    sent_lengths = [1, 2, 3, 4, 5, 6, 7, 8]
     old_parses = {}
     old_parse_counts = {}
     parses = {}
@@ -176,36 +176,37 @@ if __name__ == '__main__':
                                    [n_parses
                                     for sl in parse_counts.keys()
                                     for n_parses in parse_counts[sl].keys()]))
-    termtables.print([[sl] +
-                      [old_parse_counts[sl][n_old_parses]
-                       if n_old_parses in old_parse_counts[sl].keys()
-                       else 0
-                       for n_old_parses in all_parse_lengths]
-                      for sl in old_parse_counts.keys()],
-                     header=['Length'] + [str(n_parses)
-                                          for n_parses in all_parse_lengths],
-                     style=termtables.styles.markdown,
-                     padding=(0, 1),
-                     alignment='l' + ('r' * len(all_parse_lengths)))
-    print('')
+    parse_counts['Total'] = {n_parses: sum(parse_counts[sl][n_parses]
+                                           for sl in parse_counts.keys()
+                                           if n_parses in parse_counts[sl].keys())
+                             for n_parses in all_parse_lengths}
+    old_parse_counts['Total'] = {n_parses: sum(old_parse_counts[sl][n_parses]
+                                               for sl in old_parse_counts.keys()
+                                               if n_parses in old_parse_counts[sl].keys())
+                                 for n_parses in all_parse_lengths}
+    changes['Total'] = {diff: [c for sl in changes.keys() for c in changes[sl][diff]]
+                        for diff in ['parsed', 'new', 'same', 'none', 'unparsed']}
     termtables.print([[str(sl)] +
-                      [str(chalk.blue(str(parse_counts[sl][n_parses])))
+                      [str(chalk.blue(str(old_parse_counts[sl][n_parses]) + '+' +
+                                      str(parse_counts[sl][n_parses] - old_parse_counts[sl][n_parses])))
                        if n_parses in parse_counts[sl].keys() and \
                           n_parses in old_parse_counts[sl].keys() and \
                           parse_counts[sl][n_parses] > old_parse_counts[sl][n_parses]
-                       else str(chalk.yellow(str(parse_counts[sl][n_parses])))
+                       else str(chalk.yellow(str(old_parse_counts[sl][n_parses]) + '-' +
+                                             str(old_parse_counts[sl][n_parses] - parse_counts[sl][n_parses])))
                        if n_parses in parse_counts[sl].keys() and \
                           n_parses in old_parse_counts[sl].keys() and \
                           parse_counts[sl][n_parses] < old_parse_counts[sl][n_parses]
-                       else str(chalk.blue(str(parse_counts[sl][n_parses])))
+                       else str(chalk.blue('0+' + str(parse_counts[sl][n_parses])))
                        if n_parses in parse_counts[sl].keys() and \
                           n_parses not in old_parse_counts[sl].keys()
-                       else str(chalk.yellow('0'))
+                       else str(chalk.yellow(str(old_parse_counts[sl][n_parses]) + '-' +
+                                             str(old_parse_counts[sl][n_parses])))
                        if n_parses not in parse_counts[sl].keys() and \
                           n_parses in old_parse_counts[sl].keys()
                        else str(parse_counts[sl][n_parses])
                        if n_parses in parse_counts[sl].keys()
-                       else '0'
+                       else ' '
                        for n_parses in all_parse_lengths]
                       for sl in parse_counts.keys()],
                      header=['Length'] + [str(n_parses)
@@ -223,6 +224,8 @@ if __name__ == '__main__':
                        if diff == 'new' and len(changes[sl][diff]) > 0
                        else str(chalk.green(str(len(changes[sl][diff]))))
                        if diff == 'parsed' and len(changes[sl][diff]) > 0
+                       else ' '
+                       if len(changes[sl][diff]) == 0
                        else str(len(changes[sl][diff]))
                        for diff in changes[sl].keys()]
                       for sl in changes.keys()],
