@@ -78,7 +78,8 @@
 5:4 kathrgh/qhte_V2API-P- a)po/_P------- *xristou=_N----GSM oi(/tines_R----NPM e)n_P------- no/mw|_N----DSM dikaiou=sqe_V2PPI-P- th=s_D----GSF xa/ritos_N----GSF e)cepe/sate_V2AAI-P-
 5:5 h(mei=s_E----NP- ga/r_C------- pneu/mati_N----DSN e)k_P------- pi/stews_N----GSF e)lpi/da_N----ASF dikaiosu/nhs_N----GSF a)pekdexo/meqa_V1PMI-P-
 5:6 e)n_P------- ga/r_C------- *xristw=|_N----DSM *)ihsou=_N----DSM ou)/te_C------- peritomh/_N----NSF ti\_I----ASN i)sxu/ei_V3PAI-S- ou)/te_C------- a)krobusti/a_N----NSF a)lla/_C------- pi/stis_N----NSF dia/_P------- a)ga/phs_N----GSF e)nergoume/nh_V-PMPNSF
-5:7 e)tre/xete_V2IAI-P- kalw=s_B------- ti/s_I----NSM u(ma=s_E----AP- e)ne/koye(n)_V3AAI-S- th=|_D----DSF a)lhqei/a|_N----DSF mh/_B------- pei/qesqai_V-PPN---
+5:7 e)tre/xete_V2IAI-P- kalw=s_B-------
+5:7 ti/s_I----NSM u(ma=s_E----AP- e)ne/koye(n)_V3AAI-S- th=|_D----DSF a)lhqei/a|_N----DSF mh/_B------- pei/qesqai_V-PPN---
 5:8 h(_D----NSF peismonh/_N----NSF ou)_B------- e)k_P------- tou=_D----GSM kalou=ntos_V-PAPGSM u(ma=s_E----AP-
 5:9 mikra/_A----NSF zu/mh_N----NSF o(/lon_A----ASN to/_D----ASN fu/rama_N----ASN zumoi=_V3PAI-S-
 5:10 e)gw/_E----NS- pe/poiqa_V1RAI-S- ei)s_P------- u(ma=s_E----AP- e)n_P------- kuri/w|_N----DSM o(/ti_C------- ou)de/n_A----ASN a)/llo_A----ASN fronh/sete_V2FAI-P- o(_D----NSM de/_C------- tara/sswn_V-PAPNSM u(ma=s_E----AP- basta/sei_V3FAI-S- to/_D----ASN kri/ma_N----ASN o(/stis_R----NSM e)a/n_L------- h)=|_V3PAS-S-

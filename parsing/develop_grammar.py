@@ -66,9 +66,11 @@ def load_parses(pathname=SAVED_PARSES_DIR, sent_length=None):
     return parses
 
 
-def print_parse(tree, node_id, features=False, margin=70, indent=0,
+def print_parse(tree, node_id=None, features=False, margin=70, indent=0,
                 top_level=True):
     """Pretty-print parse trees."""
+    if node_id is None:
+        node_id = tree.root['address']
     nodesep = ""
     parens = "[]"
     parsed_atom = tree.nodes[node_id]['word']
@@ -107,14 +109,14 @@ def print_parses(parses, first_index=0, features=False):
             trees = [parse.parse] + trees
         for j, tree in enumerate(trees):
             print('[' + str(j) + ']')
-            print_parse(tree, tree.root['address'], features=features)
+            print_parse(tree, features=features)
             print('')
 
 
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
-    sent_lengths = [1, 2, 3, 4, 5, 6, 7, 8]
+    sent_lengths = [i + 1 for i in range(9)]
     old_parses = {}
     old_parse_counts = {}
     parses = {}
