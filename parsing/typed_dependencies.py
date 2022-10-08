@@ -228,10 +228,12 @@ class TypedNonprojectiveDependencyParser(NonprojectiveDependencyParser):
                     if v in temp_possible_deps[e[0]]:
                         temp_possible_deps[e[0]].remove(v)
                     FF_stack[-1].append(e)
-                    if len(T) == 0 and len(temp_possible_deps[r]) > 0:
+                    done_growing = True
+                    if len([edge for edge in F if edge[0] == e[0] and edge[1] > v]) > 0:
                         done_growing = False
-                    elif len(current_analyses) > 0:
+                    elif len(F) == 0:
                         done_growing = True
+                    elif len(current_analyses) > 0:
                         for head in temp_possible_heads[v]:
                             current_node = head
                             v_is_ancestor = False
