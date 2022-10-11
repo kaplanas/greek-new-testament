@@ -8,6 +8,12 @@ from parsing.utils import PARSER, load_grammar
 from typed_dependencies import SavedParse
 
 SAVED_PARSES_DIR = '../parsing/saved_parses/saved_parses'
+BOOKS_OF_THE_NT = ['Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans',
+                   '1 Corinthians', '2 Corinthians', 'Galatians', 'Ephesians',
+                   'Philippians', 'Colossians', '1 Thessalonians',
+                   '2 Thessalonians', '1 Timothy', '2 Timothy', 'Titus',
+                   'Philemon', 'Hebrews', 'James', '1 Peter', '2 Peter',
+                   '1 John', '2 John', '3 John', 'Jude', 'Revelation']
 
 
 def parse_sents(sent_length=1):
@@ -116,13 +122,19 @@ def print_parses(parses, first_index=0, features=False):
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
-    # sent_lengths = [i + 1 for i in range(11)]
-    sent_lengths = [11]
+    sent_lengths = [i + 1 for i in range(11)]
+    # sent_lengths = [11]
     old_parses = {}
     old_parse_counts = {}
     parses = {}
     parse_counts = {}
     changes = {}
+    nt = load_text_tagged()
+    ts = nt.tagged_sents(refs=True)
+    book_completion = {book: [0, 0] for book in BOOKS_OF_THE_NT}
+    for sent in ts:
+        book = re.sub(r' [0-9]+:[0-9]+(-[0-9]+)?', '', sent[0])
+        book_completion[book][1] += len(sent[1])
     for sl in sent_lengths:
         print('parsing sentences of length ' + str(sl) + '...')
         old_parses[sl] = load_parses(sent_length=sl)
@@ -137,6 +149,9 @@ if __name__ == '__main__':
                        'none': [],
                        'unparsed': []}
         for i, p in enumerate(parses[sl]):
+            if len(p.other_parses) > 0:
+                book = re.sub(r' [0-9]+:[0-9]+(-[0-9]+)?', '', p.reference)
+                book_completion[book][0] += len(p.tokens)
             n_parses = len(p.other_parses)
             if n_parses in parse_counts[sl].keys():
                 parse_counts[sl][n_parses] += 1
@@ -172,6 +187,18 @@ if __name__ == '__main__':
                     changes[sl]['none'].append(p)
                 else:
                     changes[sl]['new'].append(p)
+    print('')
+    termtables.print([[book,
+                       str(chalk.red('0 %'))
+                       if completion[0] == 0
+                       else str(chalk.green('100 %'))
+                       if completion[0] == completion[1]
+                       else str(round((completion[0] / completion[1]) * 100, 1)) + ' %']
+                      for book, completion in book_completion.items()],
+                     header=['Book', '% Complete'],
+                     style=termtables.styles.markdown,
+                     padding=(0, 1),
+                     alignment='lr')
     print('')
     all_parse_lengths = sorted(set([n_old_parses
                                     for sl in old_parse_counts.keys()

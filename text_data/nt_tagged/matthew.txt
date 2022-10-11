@@ -131,7 +131,9 @@
 7:4 h)/_C------- pw=s_B------- e)rei=s_V2FAI-S- tw=|_D----DSM a)delfw=|_N----DSM sou_E----GS- a)/fes_V2AAM-S- e)kba/lw_V1AAS-S- to/_D----ASN ka/rfos_N----ASN e)k_P------- tou=_D----GSM o)fqalmou=_N----GSM sou_E----GS- kai/_C------- i)dou/_L------- h(_D----NSF doko/s_N----NSF e)n_P------- tw=|_D----DSM o)fqalmw=|_N----DSM sou=_E----GS-
 7:5 u(pokrita/_N----VSM e)/kbale_V2AAM-S- prw=ton_A----ASN e)k_P------- tou=_D----GSM o)fqalmou=_N----GSM sou=_E----GS- th/n_D----ASF doko/n_N----ASF kai/_C------- to/te_B------- diable/yeis_V2FAI-S- e)kbalei=n_V-AAN--- to/_D----ASN ka/rfos_N----ASN e)k_P------- tou=_D----GSM o)fqalmou=_N----GSM tou=_D----GSM a)delfou=_N----GSM sou_E----GS-
 7:6 mh/_B------- dw=te_V2AAS-P- to/_D----ASN a(/gion_A----ASN toi=s_D----DPM kusi/(n)_N----DPM mhde/_C------- ba/lhte_V2AAS-P- tou/s_D----APM margari/tas_N----APM u(mw=n_E----GP- e)/mprosqen_P------- tw=n_D----GPM xoi/rwn_N----GPM mh/pote_C------- katapath/sousi(n)_V3FAI-P- au)tou/s_E----APM e)n_P------- toi=s_D----DPM posi/(n)_N----DPM au)tw=n_E----GPM kai/_C------- strafe/ntes_V-APPNPM r(h/cwsi(n)_V3AAS-P- u(ma=s_E----AP-
-7:7 ai)tei=te_V2PAM-P- kai/_C------- doqh/setai_V3FPI-S- u(mi=n_E----DP- zhtei=te_V2PAM-P- kai/_C------- eu(rh/sete_V2FAI-P- krou/ete_V2PAM-P- kai/_C------- a)noigh/setai_V3FPI-S- u(mi=n_E----DP-
+7:7 ai)tei=te_V2PAM-P- kai/_C------- doqh/setai_V3FPI-S- u(mi=n_E----DP-
+7:7 zhtei=te_V2PAM-P- kai/_C------- eu(rh/sete_V2FAI-P-
+7:7 krou/ete_V2PAM-P- kai/_C------- a)noigh/setai_V3FPI-S- u(mi=n_E----DP-
 7:8 pa=s_A----NSM ga/r_C------- o(_D----NSM ai)tw=n_V-PAPNSM lamba/nei_V3PAI-S- kai/_C------- o(_D----NSM zhtw=n_V-PAPNSM eu(ri/skei_V3PAI-S- kai/_C------- tw=|_D----DSM krou/onti_V-PAPDSM a)noigh/setai_V3FPI-S-
 7:9 h)/_C------- ti/s_I----NSM e)sti/(n)_V3PAI-S- e)k_P------- u(mw=n_E----GP- a)/nqrwpos_N----NSM o(/n_R----ASM ai)th/sei_V3FAI-S- o(_D----NSM ui(o/s_N----NSM au)tou=_E----GSM a)/rton_N----ASM mh/_B------- li/qon_N----ASM e)pidw/sei_V3FAI-S- au)tw=|_E----DSM
 7:10 h)/_C------- kai/_B------- i)xqu/n_N----ASM ai)th/sei_V3FAI-S- mh/_B------- o)/fin_N----ASM e)pidw/sei_V3FAI-S- au)tw=|_E----DSM
