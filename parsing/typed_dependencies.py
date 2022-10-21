@@ -1,5 +1,7 @@
 import re
 from copy import deepcopy
+from nltk.sem.logic import Variable
+from nltk.featstruct import FeatStructReader
 from nltk.parse import NonprojectiveDependencyParser
 from nltk.parse.dependencygraph import DependencyGraph
 from nltk.grammar import DependencyProduction, DependencyGrammar, read_grammar

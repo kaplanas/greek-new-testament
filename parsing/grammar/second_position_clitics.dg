@@ -1,30 +1,12 @@
-#### conjunction ####
+#### conjunction V ####
 
 # kai/
-'second_position_clitic' 'immediately_after' 'kai/_C-------' -> 'ga/r_C-------'
-
-# a)/ra
-'second_position_clitic' 'immediately_after' 'a)/ra_C-------' -> 'ge/_C-------' | 'ou)=n_C-------'
-
-# e)a/n
-'second_position_clitic' 'immediately_after' 'e)a/n_C-------' -> 'ga/r_C-------' | 'de/_C-------' | 'te/_C-------'
-
-# ei)
-'second_position_clitic' 'immediately_after' 'ei)_C-------' -> 'ge/_C-------' | 'de/_C-------' | 'ou)=n_C-------'
-
-# ei)/te
-'second_position_clitic' 'immediately_after' 'ei)/te_C-------' -> 'ga/r_C-------' | 'de/_C-------' | 'ou)=n_C-------'
-
-# o(/te
-'second_position_clitic' 'immediately_after' 'o(/te_C-------' -> 'ga/r_C-------'
-
-# ou)/te
-'second_position_clitic' 'immediately_after' 'ou)/te_C-------' -> 'ga/r_C-------'
-
-# w(s
-'second_position_clitic' 'immediately_after' 'w(s_C-------' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'kai/_v-------' -> 'ga/r_C-------'
 
 #### preposition ####
+
+# a)po/
+'second_position_clitic' 'immediately_after' 'a)po/_P-------' -> 'de/_C-------'
 
 # e)k
 'second_position_clitic' 'immediately_after' 'e)k_P-------' -> 'ga/r_C-------'
@@ -71,6 +53,9 @@
 'second_position_clitic' 'immediately_after' 'a)ph=lqon_V3AAI-P-' -> 'ou)=n_C-------'
 'second_position_clitic' 'immediately_after' 'a)pelqo/ntes_V-AAPNPM' -> 'de/_C-------'
 
+# a)poba/llw
+'second_position_clitic' 'immediately_after' 'a)pobalw/meqa_V1AMS-P-' -> 'ou)=n_C-------'
+
 # a)pokri/nomai
 'second_position_clitic' 'immediately_after' 'a)pekri/qh_V3API-S-' -> 'de/_C-------'
 'second_position_clitic' 'immediately_after' 'a)pekri/qhsan_V3API-P-' -> 'ou)=n_C-------'
@@ -90,8 +75,8 @@
 
 # ginw/skw
 'second_position_clitic' 'immediately_after' 'ginw/skete_V2PAM-P-' -> 'a)/ra_C-------'
-'second_position_clitic' 'immediately_after' 'e)gi/nwske(n)_V3IAI-S-' -> 'ga/r_C-------'
 'second_position_clitic' 'immediately_after' 'gnou/s_V-AAPNSM' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'e)gi/nwske(n)_V3IAI-S-' -> 'ga/r_C-------'
 
 # de/w
 'second_position_clitic' 'immediately_after' 'e)/dei_V3IAI-S-' -> 'de/_C-------'
@@ -111,7 +96,7 @@
 'second_position_clitic' 'immediately_after' 'oi)/date_V2RAI-P-' -> 'ga/r_C-------'
 
 # ei)mi/
-'second_position_clitic' 'immediately_after' 'e)/sesqe_V2FMI-P-' -> 'ga/r_C-------'
+'second_position_clitic' 'immediately_after' 'e)/sesqe_V2FMI-P-' -> 'ga/r_C-------' | 'ou)=n_C-------'
 'second_position_clitic' 'immediately_after' 'e)/sontai_V3FMI-P-' -> 'ga/r_C-------'
 'second_position_clitic' 'immediately_after' 'h)/meqa_V1IMI-P-' -> 'de/_C-------'
 'second_position_clitic' 'immediately_after' 'h)=men_V1IAI-P-' -> 'de/_C-------'
@@ -127,6 +112,9 @@
 # e)lpi/zw
 'second_position_clitic' 'immediately_after' 'e)lpi/zw_V1PAI-S-' -> 'de/_C-------'
 
+# e)ndu/w
+'second_position_clitic' 'immediately_after' 'e)ndusw/meqa_V1AMS-P-' -> 'de/_C-------'
+
 # e)nneu/w
 'second_position_clitic' 'immediately_after' 'e)ne/neuon_V3IAI-P-' -> 'de/_C-------'
 
@@ -137,6 +125,9 @@
 
 # e)comologe/w
 'second_position_clitic' 'immediately_after' 'e)comologei=sqe_V2PMM-P-' -> 'ou)=n_C-------'
+
+# e)pai/rw
+'second_position_clitic' 'immediately_after' 'e)pa/rantes_V-AAPNPM' -> 'de/_C-------'
 
 # e)perwta/w
 'second_position_clitic' 'immediately_after' 'e)phrw/ta_V3IAI-S-' -> 'de/_C-------'
@@ -149,6 +140,7 @@
 # e)/rxomai
 'second_position_clitic' 'immediately_after' 'e)/rxetai_V3PMI-S-' -> 'ou)=n_C-------'
 'second_position_clitic' 'immediately_after' 'h)=lqe(n)_V3AAI-S-' -> 'ou)=n_C-------'
+'second_position_clitic' 'immediately_after' 'e)leu/sontai_V3FMI-P-' -> 'de/_C-------'
 
 # e)/xw
 'second_position_clitic' 'immediately_after' 'ei)=xe(n)_V3IAI-S-' -> 'me/n_C-------'
@@ -198,6 +190,7 @@
 'second_position_clitic' 'immediately_after' 'logizo/meqa_V1PMI-P-' -> 'ga/r_C-------'
 
 # o(ra/w
+'second_position_clitic' 'immediately_after' 'ei)/domen_V1AAI-P-' -> 'ga/r_C-------'
 'second_position_clitic' 'immediately_after' 'i)do/ntes_V-AAPNPM' -> 'de/_C-------'
 'second_position_clitic' 'immediately_after' 'w)/fqh_V3API-S-' -> 'de/_C-------'
 
@@ -317,6 +310,9 @@
 # e(/kastos
 'second_position_clitic' 'immediately_after' 'e(ka/stw|_A----DSM' -> 'de/_C-------'
 
+# me/sos
+'second_position_clitic' 'immediately_after' 'me/shs_A----GSF' -> 'de/_C-------'
+
 # ou)dei/s
 'second_position_clitic' 'immediately_after' 'ou)dei/s_A----NSM' -> 'de/_C-------' | 'me/ntoi_C-------'
 
@@ -361,6 +357,9 @@
 # po/sos
 'second_position_clitic' 'immediately_after' 'po/sw|_A----DSN' -> 'ou)=n_C-------'
 
+# te/tartos
+'second_position_clitic' 'immediately_after' 'teta/rth|_A----DSF' -> 'de/_C-------'
+
 # u(/steros
 'second_position_clitic' 'immediately_after' 'u(/steron_A----ASN' -> 'de/_C-------'
 
@@ -374,6 +373,9 @@
 
 # pou=
 'second_position_clitic' 'immediately_after' 'pou=_B-------' -> 'ou)=n_C-------'
+
+# ma/lista
+'second_position_clitic' 'immediately_after' 'ma/lista_B-------' -> 'de/_C-------'
 
 # a)/rti
 'second_position_clitic' 'immediately_after' 'a)/rti_B-------' -> 'ga/r_C-------'
@@ -389,6 +391,9 @@
 
 # e)/ti
 'second_position_clitic' 'immediately_after' 'e)/ti_B-------' -> 'ga/r_C-------'
+
+# eu)qu/s
+'second_position_clitic' 'immediately_after' 'eu)qu/s_B-------' -> 'de/_C-------'
 
 # kai/
 'second_position_clitic' 'immediately_after' 'kai/_B-------' -> 'ga/r_C-------'
@@ -426,11 +431,76 @@
 # pw=s
 'second_position_clitic' 'immediately_after' 'pw=s_B-------' -> 'de/_C-------' | 'ou)=n_C-------'
 
+# spoudai/ws
+'second_position_clitic' 'immediately_after' 'spoudaiote/rws_B-------' -> 'ou)=n_C-------'
+
 # to/te
 'second_position_clitic' 'immediately_after' 'to/te_B-------' -> 'ou)=n_C-------'
 
 # w(sau/tws
 'second_position_clitic' 'immediately_after' 'w(sau/tws_B-------' -> 'de/_C-------'
+
+#### noun ####
+
+# plh/rwma
+'second_position_clitic' 'immediately_after' 'plh/rwma_N----NSN' -> 'ou)=n_C-------'
+
+# ba/ptisma
+'second_position_clitic' 'immediately_after' 'ba/ptisma_N----ASN' -> 'de/_C-------'
+
+# gunh/
+'second_position_clitic' 'immediately_after' 'gunh/_N----NSF' -> 'ou)=n_C-------'
+
+# *daui/d
+'second_position_clitic' 'immediately_after' '*daui/d_N----NSM' -> 'ou)=n_C-------'
+
+# qli=yis
+'second_position_clitic' 'immediately_after' 'qli=yin_N----ASF' -> 'de/_C-------'
+
+# *)ihsou=s
+'second_position_clitic' 'immediately_after' '*)ihsou=s_N----NSM' -> 'de/_C-------'
+
+# ku/rios
+'second_position_clitic' 'immediately_after' 'ku/rios_N----NSM' -> 'ga/r_C-------'
+
+# makarismo/s
+'second_position_clitic' 'immediately_after' 'makarismo/s_N----NSM' -> 'ou)=n_C-------'
+
+# nh=sos
+'second_position_clitic' 'immediately_after' 'nh=son_N----ASF' -> 'de/_C-------'
+
+# no/mos
+'second_position_clitic' 'immediately_after' 'no/mon_N----ASM' -> 'ou)=n_C-------'
+
+# pepoi/qhsis
+'second_position_clitic' 'immediately_after' 'pepoi/qhsin_N----ASF' -> 'de/_C-------'
+
+# pneu=ma
+'second_position_clitic' 'immediately_after' 'pneu/mati_N----DSN' -> 'te/_C-------'
+
+# *)agri/ppas
+'second_position_clitic' 'immediately_after' '*)agri/ppas_N----NSM' -> 'de/_C-------'
+
+# a)na/stasis
+'second_position_clitic' 'immediately_after' 'a)nasta/sei_N----DSF' -> 'ou)=n_C-------'
+
+# *mari/a
+'second_position_clitic' 'immediately_after' '*mari/a_N----NSF' -> 'de/_C-------'
+
+# *pe/tros
+'second_position_clitic' 'immediately_after' '*pe/tros_N----NSM' -> 'de/_C-------'
+
+# *sau=los
+'second_position_clitic' 'immediately_after' '*sau=los_N----NSM' -> 'de/_C-------'
+
+# *solomw=n
+'second_position_clitic' 'immediately_after' '*solomw=n_N----NSM' -> 'de/_C-------'
+
+# sxi/sma
+'second_position_clitic' 'immediately_after' 'sxi/sma_N----NSN' -> 'ou)=n_C-------'
+
+# *tro/fimos
+'second_position_clitic' 'immediately_after' '*tro/fimon_N----ASM' -> 'de/_C-------'
 
 #### demonstrative pronoun ####
 
@@ -482,61 +552,31 @@
 # tis
 'second_position_clitic' 'immediately_after' 'tine/s_I----NPM' -> 'de/_C-------'
 
-#### noun ####
+#### conjunction ####
 
-# ba/ptisma
-'second_position_clitic' 'immediately_after' 'ba/ptisma_N----ASN' -> 'de/_C-------'
+# ei)
+'second_position_clitic' 'immediately_after' 'ei)_C-------' -> 'ga/r_C-------' | 'ge/_C-------' | 'de/_C-------' | 'ou)=n_C-------'
 
-# gunh/
-'second_position_clitic' 'immediately_after' 'gunh/_N----NSF' -> 'ou)=n_C-------'
+# w(s
+'second_position_clitic' 'immediately_after' 'w(s_C-------' -> 'de/_C-------'
 
-# *daui/d
-'second_position_clitic' 'immediately_after' '*daui/d_N----NSM' -> 'ou)=n_C-------'
+# a)/ra
+'second_position_clitic' 'immediately_after' 'a)/ra_C-------' -> 'ge/_C-------' | 'ou)=n_C-------'
 
-# qli=yis
-'second_position_clitic' 'immediately_after' 'qli=yin_N----ASF' -> 'de/_C-------'
+# e)a/n
+'second_position_clitic' 'immediately_after' 'e)a/n_C-------' -> 'ga/r_C-------' | 'de/_C-------' | 'te/_C-------'
 
-# *)ihsou=s
-'second_position_clitic' 'immediately_after' '*)ihsou=s_N----NSM' -> 'de/_C-------'
+# ei)/te
+'second_position_clitic' 'immediately_after' 'ei)/te_C-------' -> 'ga/r_C-------' | 'de/_C-------' | 'ou)=n_C-------'
 
-# ku/rios
-'second_position_clitic' 'immediately_after' 'ku/rios_N----NSM' -> 'ga/r_C-------'
+# o(/tan
+'second_position_clitic' 'immediately_after' 'o(/tan_C-------' -> 'ou)=n_C-------'
 
-# nh=sos
-'second_position_clitic' 'immediately_after' 'nh=son_N----ASF' -> 'de/_C-------'
+# o(/te
+'second_position_clitic' 'immediately_after' 'o(/te_C-------' -> 'ga/r_C-------'
 
-# no/mos
-'second_position_clitic' 'immediately_after' 'no/mon_N----ASM' -> 'ou)=n_C-------'
-
-# pepoi/qhsis
-'second_position_clitic' 'immediately_after' 'pepoi/qhsin_N----ASF' -> 'de/_C-------'
-
-# pneu=ma
-'second_position_clitic' 'immediately_after' 'pneu/mati_N----DSN' -> 'te/_C-------'
-
-# *)agri/ppas
-'second_position_clitic' 'immediately_after' '*)agri/ppas_N----NSM' -> 'de/_C-------'
-
-# a)na/stasis
-'second_position_clitic' 'immediately_after' 'a)nasta/sei_N----DSF' -> 'ou)=n_C-------'
-
-# *mari/a
-'second_position_clitic' 'immediately_after' '*mari/a_N----NSF' -> 'de/_C-------'
-
-# *pe/tros
-'second_position_clitic' 'immediately_after' '*pe/tros_N----NSM' -> 'de/_C-------'
-
-# *sau=los
-'second_position_clitic' 'immediately_after' '*sau=los_N----NSM' -> 'de/_C-------'
-
-# *solomw=n
-'second_position_clitic' 'immediately_after' '*solomw=n_N----NSM' -> 'de/_C-------'
-
-# sxi/sma
-'second_position_clitic' 'immediately_after' 'sxi/sma_N----NSN' -> 'ou)=n_C-------'
-
-# *tro/fimos
-'second_position_clitic' 'immediately_after' '*tro/fimon_N----ASM' -> 'de/_C-------'
+# ou)/te
+'second_position_clitic' 'immediately_after' 'ou)/te_C-------' -> 'ga/r_C-------'
 
 #### relative pronoun ####
 
@@ -555,17 +595,22 @@
 # o(/stis
 'second_position_clitic' 'immediately_after' 'o(/stis_R----NSM' -> 'de/_C-------'
 
+#### conjunction C ####
+
+# kai/
+'second_position_clitic' 'immediately_after' 'kai/_c-------' -> 'ga/r_C-------'
+
 #### definite article ####
 
 # o(
-'second_position_clitic' 'immediately_after' 'o(_D----NSM' -> 'ou)=n_C-------' | 'ga/r_C-------' | 'de/_C-------'
 'second_position_clitic' 'immediately_after' 'h(_D----NSF' -> 'ga/r_C-------' | 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'o(_D----NSM' -> 'ga/r_C-------' | 'de/_C-------' | 'ou)=n_C-------'
 'second_position_clitic' 'immediately_after' 'oi(_D----NPM' -> 'ga/r_C-------' | 'de/_C-------' | 'me/n_C-------' | 'me/n_L-------'
 'second_position_clitic' 'immediately_after' 'ta/_D----APN' -> 'de/_C-------'
 'second_position_clitic' 'immediately_after' 'th=|_D----DSF' -> 'de/_C-------'
 'second_position_clitic' 'immediately_after' 'th/n_D----ASF' -> 'de/_C-------'
+'second_position_clitic' 'immediately_after' 'to/_D----ASN' -> 'de/_C-------' | 'te/_C-------'
 'second_position_clitic' 'immediately_after' 'to/_D----NSN' -> 'ou)=n_C-------'
-'second_position_clitic' 'immediately_after' 'to/_D----ASN' -> 'te/_C-------'
 'second_position_clitic' 'immediately_after' 'to/n_D----ASM' -> 'de/_C-------'
 'second_position_clitic' 'immediately_after' 'tou=_D----GSM' -> 'de/_C-------'
 'second_position_clitic' 'immediately_after' 'tou/s_D----APM' -> 'de/_C-------'

@@ -1,24 +1,18 @@
-#### conjunction ####
+#### conjunction V ####
 
 # kai/
-'interjection' 'before' 'kai/_C-------' -> 'a)gaphtoi/_A----VPM' | 'a)/ndres_N----NPM' | 'ku/rie_N----VSM' | '*pe/tre_N----VSM'
-
-# i(/na
-'interjection' 'before' 'i(/na_C-------' -> 'ku/rie_N----VSM' | 'pate/res_N----NPM' | 'rabbouni_N----VSM' | 'tekni/a_N----VPN'
-
-# ei)
-'interjection' 'before' 'ei)_C-------' -> 'a)delfoi/_N----VPM' | 'ku/rie_N----VSM'
-
-# o(/tan
-'interjection' 'before' 'o(/tan_C-------' -> '*)ihsou=_N----VSM'
+'interjection' 'before' 'kai/_v-------' -> 'a)gaphtoi/_A----VPM' | 'a)/ndres_N----NPM' | 'ku/rie_N----VSM' | '*pe/tre_N----VSM'
 
 #### verb ####
 
 # a)gapa/w
 'interjection' 'before' 'a)gapa=|s_V2PAI-S-' -> '*si/mwn_N----VSM'
 
+# a)kolouqe/w
+'interjection' 'before' 'a)kolouqh/sw_V1FAI-S-' -> 'dida/skale_N----VSM'
+
 # a)kou/w
-'interjection' 'before' 'a)kou/sate_V2AAM-P-' -> 'a)/ndres_N----VPM' | 'kai/_C-------'
+'interjection' 'before' 'a)kou/sate_V2AAM-P-' -> 'a)/ndres_N----VPM' | 'kai/_n-------'
 
 # a)pe/rxomai
 'interjection' 'before' 'a)peleuso/meqa_V1FMI-P-' -> 'ku/rie_N----VSM'
@@ -86,7 +80,8 @@
 'interjection' 'before' 'paradi/dws_V2PAI-S-' -> '*)iou/da_N----VSM'
 
 # poie/w
-'interjection' 'before' 'e)poi/hse(n)_V3AAI-S-' -> 'a)/frones_A----VPM'
+'interjection' 'before' 'e)poi/hse(n)_V3AAI-S-' -> 'a)/frones_A----VPM' | 'ku/rie_N----VSM'
+'interjection' 'before' 'poih/swmen_V1AAS-P-' -> 'ku/rie_N----VSM'
 
 # proseu/xomai
 'interjection' 'before' 'proseu/xesqe_V2PMM-P-' -> 'a)delfoi/_N----VPM'
@@ -131,8 +126,17 @@
 # xai/rw
 'interjection' 'before' 'xai/rete_V2PAM-P-' -> 'a)delfoi/_N----VPM'
 
+# a)fi/hmi
+'interjection' 'before' 'a)/fes_V2AAM-S-' -> 'pa/ter_N----VSM'
+
 # e)gei/rw
 'interjection' 'before' 'e)/geire_V2PAM-S-' -> 'pai=s_N----NSF'
+
+# gi/nomai
+'interjection' 'before' 'ge/gonas_V2RAI-S-' -> 'r(abbi/_N----VSM'
+
+# e)pitre/pw
+'interjection' 'before' 'e)pi/treyon_V2AAM-S-' -> 'ku/rie_N----VSM'
 
 # e)sqi/w
 'interjection' 'before' 'fa/ge_V2AAM-S-' -> 'r(abbi/_N----VSM'
@@ -140,18 +144,38 @@
 # qa/
 'interjection' 'before' 'qa/_V2AAM-S-' -> 'mara/na_N----VSM'
 
+# kaqeu/dw
+'interjection' 'before' 'kaqeu/deis_V2PAI-S-' -> '*si/mwn_N----VSM'
+
+# proserga/zomai
+'interjection' 'before' 'proshrga/sato_V3AMI-S-' -> 'ku/rie_N----VSM'
+
+#### conjunction ####
+
+# ei)
+'interjection' 'before' 'ei)_C-------' -> 'a)gaphtoi/_A----VPM' | 'a)delfoi/_N----VPM' | 'ku/rie_N----VSM'
+
+# i(/na
+'interjection' 'before' 'i(/na_C-------' -> 'ku/rie_N----VSM' | 'pate/res_N----NPM' | 'rabbouni_N----VSM' | 'tekni/a_N----VPN'
+
+# o(/tan
+'interjection' 'before' 'o(/tan_C-------' -> '*)ihsou=_N----VSM'
+
+# pri/n
+'interjection' 'before' 'pri/n_C-------' -> 'ku/rie_N----VSM'
+
 #### demonstrative pronoun ####
+
+# ou(=tos
+'interjection' 'before' 'ou(=tos_M----NSM' -> 'ku/rie_N----VSM'
 
 # tosou=tos
 'interjection' 'before' 'tosou/tou_M----GSN' -> 'nai/_L-------'
 
-#### conjunction ####
+#### particle ####
 
-# kai/
-'interjection' 'after' 'kai/_C-------' -> 'gu/nai_N----VSF' | 'ui(e/_N----VSM'
-
-# dio/
-'interjection' 'after' 'dio/_C-------' -> 'a)delfoi/_N----VPM'
+# i)dou/
+'interjection' 'any' 'i)dou/_L-------' -> 'ku/rie_N----VSM'
 
 #### preposition ####
 
@@ -175,12 +199,15 @@
 
 # ei)mi/
 'interjection' 'after' 'ei)=_V2PAI-S-' -> 'ku/rie_N----VSM'
-'interjection' 'after' 'ei)mi/_V1PAI-S-' -> 'r(abbi/_N----VSM'
+'interjection' 'after' 'ei)mi/_V1PAI-S-' -> 'ku/rie_N----VSM' | 'r(abbi/_N----VSM'
 'interjection' 'after' 'e)ste/_V2PAI-P-' -> 'o)ligo/pistoi_A----VPM'
 'interjection' 'after' 'e)sti/(n)_V3PAI-S-' -> 'a)delfoi/_N----VPM' | 'ku/rie_N----VSM'
 
 # kaqari/zw
 'interjection' 'after' 'kaqari/sate_V2AAM-P-' -> 'a(martwloi/_A----VPM'
+
+# peira/zw
+'interjection' 'after' 'peira/zete_V2PAI-P-' -> 'u(pokritai/_N----VPM'
 
 # pisteu/w
 'interjection' 'after' 'pisteu/eis_V2PAI-S-' -> '*)agri/ppa_N----VSM'
@@ -215,6 +242,11 @@
 # pou=
 'interjection' 'after' 'pou=_B-------' -> 'qa/nate_N----VSM' | 'ku/rie_N----VSM'
 
+#### conjunction E ####
+
+# kai/
+'interjection' 'after' 'kai/_e-------' -> 'gu/nai_N----VSF' | 'ui(e/_N----VSM'
+
 #### personal pronoun ####
 
 # au)to/s
@@ -225,13 +257,18 @@
 # ku/rios
 'interjection' 'after' 'ku/rie_N----VSM' -> 'ku/rie_N----VSM'
 
+#### conjunction ####
+
+# dio/
+'interjection' 'after' 'dio/_C-------' -> 'a)delfoi/_N----VPM'
+
+#### interjection ####
+
+# a)mh/n
+'interjection' 'after' 'a)mh/n_J-------' -> 'a)mh/n_J-------'
+
 #### particle ####
 
 # nai/
 'interjection' 'after' 'nai/_L-------' -> 'a)mh/n_J-------' | 'ku/rie_N----VSM'
-
-#### particle ####
-
-# i)dou/
-'interjection' 'any' 'i)dou/_L-------' -> 'ku/rie_N----VSM'
 

@@ -1,10 +1,12 @@
-#### conjunction ####
+#### conjunction N ####
 
 # kai/
-'determiner' 'before' 'kai/_C-------' -> 'o(_D----NSM' | 'oi(_D----NPM' | 'to/_D----ASN' | 'tw=n_D----GPM'
+'determiner' 'before' 'kai/_n-------' -> 'o(_D----NSM' | 'oi(_D----NPM' | 'tw=n_D----GPM'
 
-# a)/n
-'determiner' 'before' 'a)/n_C-------' -> 'to/_D----NSN' | 'to/_D----ASN'
+#### conjunction V ####
+
+# kai/
+'determiner' 'before' 'kai/_v-------' -> 'to/_D----ASN'
 
 #### preposition ####
 
@@ -15,13 +17,16 @@
 'determiner' 'before' 'e)k_P-------' -> 'oi(_D----NPM' | 'tou/s_D----APM'
 
 # e)n
-'determiner' 'before' 'e)n_P-------' -> 'ta/_D----APN' | 'to/_D----NSN' | 'toi=s_D----DPM'
+'determiner' 'before' 'e)n_P-------' -> 'ta/_D----APN' | 'oi(_D----NPM' | 'to/_D----NSN' | 'toi=s_D----DPM'
 
 # kata/
 'determiner' 'before' 'kata/_P-------' -> 'ta/_D----APN'
 
 # meta/
 'determiner' 'before' 'meta/_P-------' -> 'oi(_D----NPM'
+
+# para/
+'determiner' 'before' 'para/_P-------' -> 'oi(_D----NPM'
 
 # peri/
 'determiner' 'before' 'peri/_P-------' -> 'oi(_D----NPM' | 'toi=s_D----DPM'
@@ -33,13 +38,19 @@
 
 # a)gaqopoie/w
 'determiner' 'before' 'a)gaqopoiou=ntas_V-PAPAPM' -> 'tou/s_D----APM'
+'determiner' 'before' 'a)gaqopoiw=n_V-PAPNSM' -> 'o(_D----NSM'
 
 # a)gapa/w
 'determiner' 'before' 'a)gaph/santos_V-AAPGSM' -> 'tou=_D----GSM'
+'determiner' 'before' 'a)gapw=n_V-PAPNSM' -> 'o(_D----NSM'
 'determiner' 'before' 'a)gapw=ntas_V-PAPAPM' -> 'tou/s_D----APM'
+
+# ai)te/w
+'determiner' 'before' 'ai)tou=nti_V-PAPDSM' -> 'tw=|_D----DSM'
 
 # a)kou/w
 'determiner' 'before' 'a)kou/santes_V-AAPNPM' -> 'oi(_D----NPM'
+'determiner' 'before' 'a)khkoo/tas_V-RAPAPM' -> 'tou/s_D----APM'
 'determiner' 'before' 'a)kousqei=si(n)_V-APPDPN' -> 'toi=s_D----DPN'
 
 # a)nakri/nw
@@ -72,8 +83,15 @@
 # diu+li/zw
 'determiner' 'before' 'diu+li/zontes_V-PAPNPM' -> 'oi(_D----NPM'
 
+# doke/w
+'determiner' 'before' 'dokei=_V3PAI-S-' -> 'to/_D----NSN'
+
 # du/namai
 'determiner' 'before' 'duna/menos_V-PMPNSM' -> 'o(_D----NSM'
+
+# ei)mi/
+'determiner' 'before' 'ei)/h_V3PAO-S-' -> 'to/_D----NSN'
+'determiner' 'before' 'o)/ntas_V-PAPAPM' -> 'tou/s_D----APM'
 
 # e)mpi/ptw
 'determiner' 'before' 'e)mpesei=n_V-AAN---' -> 'to/_D----NSN'
@@ -89,6 +107,7 @@
 
 # e)/rxomai
 'determiner' 'before' 'e)rxo/menos_V-PMPNSM' -> 'o(_D----NSM'
+'determiner' 'before' 'e)rxo/menoi_V-PMPNPM' -> 'oi(_D----NPM'
 
 # e)sqi/w
 'determiner' 'before' 'fagei=n_V-AAN---' -> 'to/_D----ASN'
@@ -105,7 +124,10 @@
 'determiner' 'before' 'e)/xontas_V-PAPAPM' -> 'tou/s_D----APM'
 
 # qe/lw
+'determiner' 'before' 'qe/loi_V3PAO-S-' -> 'to/_D----ASN'
+'determiner' 'before' 'qe/lonta_V-PAPASM' -> 'to/n_D----ASM'
 'determiner' 'before' 'qe/lontes_V-PAPNPM' -> 'oi(_D----NPM'
+'determiner' 'before' 'qe/lontos_V-PAPGSM' -> 'tou=_D----GSM'
 
 # qu/w
 'determiner' 'before' 'qu/ein_V-PAN---' -> 'tou=_D----GSN'
@@ -116,6 +138,7 @@
 # kale/w
 'determiner' 'before' 'kalou=ntos_V-PAPGSM' -> 'tou=_D----GSM'
 'determiner' 'before' 'kalw=n_V-PAPNSM' -> 'o(_D----NSM'
+'determiner' 'before' 'kalou/menon_V-PPPASM' -> 'to/n_D----ASM'
 
 # kathxe/w
 'determiner' 'before' 'kathxou/menos_V-PPPNSM' -> 'o(_D----NSM'
@@ -132,6 +155,7 @@
 
 # lale/w
 'determiner' 'before' 'lalw=n_V-PAPNSM' -> 'o(_D----NSM'
+'determiner' 'before' 'lelalhme/nois_V-RPPDPN' -> 'toi=s_D----DPN'
 
 # lamba/nw
 'determiner' 'before' 'labw/n_V-AAPNSM' -> 'o(_D----NSM'
@@ -161,6 +185,7 @@
 # pe/mpw
 'determiner' 'before' 'pe/myasi(n)_V-AAPDPM' -> 'toi=s_D----DPM'
 'determiner' 'before' 'pemfqe/ntes_V-APPNPM' -> 'oi(_D----NPM'
+'determiner' 'before' 'pe/myanta_V-AAPASM' -> 'to/n_D----ASM'
 
 # plana/w
 'determiner' 'before' 'planw/ntwn_V-PAPGPM' -> 'tw=n_D----GPM'
@@ -188,11 +213,15 @@
 # e)gei/rw
 'determiner' 'before' 'e)gerqh=nai_V-APN---' -> 'to/_D----ASN'
 
+# kathgore/w
+'determiner' 'before' 'kathgorei=sqai_V-PPN---' -> 'tw=|_D----DSN'
+
 # katakri/nw
 'determiner' 'before' 'katakrinw=n_V-PAPNSM' -> 'o(_D----NSM'
 
 # u(pa/gw
 'determiner' 'before' 'u(pa/gein_V-PAN---' -> 'tw=|_D----DSN'
+'determiner' 'before' 'u(pa/gontes_V-PAPNPM' -> 'oi(_D----NPM'
 
 # a(marta/nw
 'determiner' 'before' 'a(marth/sasi(n)_V-AAPDPM' -> 'toi=s_D----DPM'
@@ -213,8 +242,9 @@
 # gela/w
 'determiner' 'before' 'gelw=ntes_V-PAPNPM' -> 'oi(_D----NPM'
 
-# ei)mi/
-'determiner' 'before' 'o)/ntas_V-PAPAPM' -> 'tou/s_D----APM'
+# diw/kw
+'determiner' 'before' 'dediwgme/noi_V-RPPNPM' -> 'oi(_D----NPM'
+'determiner' 'before' 'diw/kontas_V-PAPAPM' -> 'tou/s_D----APM'
 
 # e)mpi/mplhmi
 'determiner' 'before' 'e)mpeplhsme/noi_V-RPPNPM' -> 'oi(_D----NPM'
@@ -233,6 +263,7 @@
 
 # ka/qhmai
 'determiner' 'before' 'kaqh/menos_V-PMPNSM' -> 'o(_D----NSM'
+'determiner' 'before' 'kaqhme/nou_V-PMPGSM' -> 'tou=_D----GSM'
 
 # klai/w
 'determiner' 'before' 'klai/ontes_V-PAPNPM' -> 'oi(_D----NPM'
@@ -252,6 +283,7 @@
 
 # sustauro/omai
 'determiner' 'before' 'sunestaurwme/noi_V-RPPNPM' -> 'oi(_D----NPM'
+'determiner' 'before' 'sustaurwqe/ntes_V-APPNPM' -> 'oi(_D----NPM'
 
 # u(pome/nw
 'determiner' 'before' 'u(pomei/nas_V-AAPNSM' -> 'o(_D----NSM'
@@ -259,11 +291,20 @@
 # a)na/keimai
 'determiner' 'before' 'a)nakei/menos_V-PMPNSM' -> 'o(_D----NSM'
 
+# tima/w
+'determiner' 'before' 'timw=n_V-PAPNSM' -> 'o(_D----NSM'
+
+# ai)/rw
+'determiner' 'before' 'ai)/rontos_V-PAPGSM' -> 'tou=_D----GSM'
+
 # a)piste/w
 'determiner' 'before' 'a)pisth/sas_V-AAPNSM' -> 'o(_D----NSM'
 
 # a)poqnh/|skw
 'determiner' 'before' 'a)poqanei=n_V-AAN---' -> 'to/_D----NSN'
+
+# ba/llw
+'determiner' 'before' 'ba/llontas_V-PAPAPM' -> 'tou/s_D----APM'
 
 # daimoni/zomai
 'determiner' 'before' 'daimonisqei/s_V-APPNSM' -> 'o(_D----NSM'
@@ -276,21 +317,32 @@
 
 # diata/ssw
 'determiner' 'before' 'diataxqe/nta_V-APPAPN' -> 'ta/_D----APN'
+'determiner' 'before' 'diatetagme/non_V-RPPASN' -> 'to/_D----ASN'
 
-# diw/kw
-'determiner' 'before' 'diw/kontas_V-PAPAPM' -> 'tou/s_D----APM'
+# diya/w
+'determiner' 'before' 'diyw=nti_V-PAPDSM' -> 'tw=|_D----DSM'
 
 # e)/neimi
 'determiner' 'before' 'e)no/nta_V-PAPAPN' -> 'ta/_D----APN'
 
+# e)pe/rxomai
+'determiner' 'before' 'e)perxome/nais_V-PMPDPF' -> 'tai=s_D----DPF'
+
 # za/w
 'determiner' 'before' 'zh=n_V-PAN---' -> 'to/_D----NSN'
+
+# kakopoie/w
+'determiner' 'before' 'kakopoiw=n_V-PAPNSM' -> 'o(_D----NSM'
+
+# latreu/w
+'determiner' 'before' 'latreu/ontes_V-PAPNPM' -> 'oi(_D----NPM'
 
 # nika/w
 'determiner' 'before' 'nikw=n_V-PAPNSM' -> 'o(_D----NSM'
 
 # pari/sthmi
 'determiner' 'before' 'paresthko/twn_V-RAPGPM' -> 'tw=n_D----GPM'
+'determiner' 'before' 'parestw=si(n)_V-RAPDPM' -> 'toi=s_D----DPM'
 'determiner' 'before' 'parestw=tes_V-RAPNPM' -> 'oi(_D----NPM'
 
 # penqe/w
@@ -298,6 +350,8 @@
 
 # pisteu/w
 'determiner' 'before' 'pepisteuko/twn_V-RAPGPM' -> 'tw=n_D----GPM'
+'determiner' 'before' 'pisteu/onti_V-PAPDSM' -> 'tw=|_D----DSM'
+'determiner' 'before' 'pisteu/sasa_V-AAPNSF' -> 'h(_D----NSF'
 'determiner' 'before' 'pisteu/wn_V-PAPNSM' -> 'o(_D----NSM'
 
 # pla/ssw
@@ -306,9 +360,15 @@
 # profhteu/w
 'determiner' 'before' 'profhteu/wn_V-PAPNSM' -> 'o(_D----NSM'
 
+# siga/w
+'determiner' 'before' 'sigh=sai_V-AAN---' -> 'to/_D----ASN'
+
 # spei/rw
 'determiner' 'before' 'spei/rantos_V-AAPGSM' -> 'tou=_D----GSM'
 'determiner' 'before' 'spei/rwn_V-PAPNSM' -> 'o(_D----NSM'
+
+# strateu/omai
+'determiner' 'before' 'strateuome/nwn_V-PMPGPF' -> 'tw=n_D----GPF'
 
 # sumfe/rw
 'determiner' 'before' 'sumfe/ron_V-PAPASN' -> 'to/_D----ASN'
@@ -316,6 +376,15 @@
 # sw/|zw
 'determiner' 'before' 'sw|zo/menoi_V-PPPNPM' -> 'oi(_D----NPM'
 'determiner' 'before' 'sw|zome/nous_V-PPPAPM' -> 'tou/s_D----APM'
+
+# ti/ktw
+'determiner' 'before' 'tekei=n_V-AAN---' -> 'tou=_D----GSN'
+
+# thre/w
+'determiner' 'before' 'throu=ntes_V-PAPNPM' -> 'oi(_D----NPM'
+
+# tre/xw
+'determiner' 'before' 'tre/xontos_V-PAPGSM' -> 'tou=_D----GSM'
 
 #### adjective ####
 
@@ -326,6 +395,7 @@
 'determiner' 'before' '*)ioudai/wn_A----GPM' -> 'tw=n_D----GPM'
 'determiner' 'before' '*)ioudai=oi_A----NPM' -> 'oi(_D----NPM'
 'determiner' 'before' '*)ioudai/ois_A----DPM' -> 'toi=s_D----DPM'
+'determiner' 'before' '*)ioudai/ou_A----GSM' -> 'tou=_D----GSM'
 
 # prw=tos
 'determiner' 'before' 'prw=toi_A----NPM' -> 'oi(_D----NPM'
@@ -346,6 +416,7 @@
 'determiner' 'before' 'a)gaqa/_A----APN' -> 'ta/_D----APN'
 'determiner' 'before' 'a)gaqo/n_A----ASN' -> 'to/_D----ASN'
 'determiner' 'before' 'a)gaqou=_A----GSN' -> 'tou=_D----GSN'
+'determiner' 'before' 'a)gaqw=|_A----DSN' -> 'tw=|_D----DSN'
 
 # a)gaphto/s
 'determiner' 'before' 'a)gaphto/n_A----ASM' -> 'to/n_D----ASM'
@@ -363,6 +434,9 @@
 # a(martwlo/s
 'determiner' 'before' 'a(martwloi/_A----NPM' -> 'oi(_D----NPM'
 
+# decio/s
+'determiner' 'before' 'decia=s_A----GSF' -> 'th=s_D----GSF'
+
 # do/kimos
 'determiner' 'before' 'do/kimon_A----ASM' -> 'to/n_D----ASM'
 
@@ -370,6 +444,7 @@
 'determiner' 'before' 'e)qnikoi/_A----NPM' -> 'oi(_D----NPM'
 
 # e)klekto/s
+'determiner' 'before' 'e)klekto/n_A----ASM' -> 'to/n_D----ASM'
 'determiner' 'before' 'e)klektou/s_A----APM' -> 'tou/s_D----APM'
 'determiner' 'before' 'e)klekth=s_A----GSF' -> 'th=s_D----GSF'
 
@@ -379,21 +454,33 @@
 # e(/teros
 'determiner' 'before' 'e(te/rou_A----GSM' -> 'to/_D----ASN' | 'tou=_D----GSM'
 
+# e)xqro/s
+'determiner' 'before' 'e)xqro/n_A----ASM' -> 'to/n_D----ASM'
+
 # kaqaro/s
 'determiner' 'before' 'kaqaroi/_A----NPM' -> 'oi(_D----NPM'
 
 # kako/s
 'determiner' 'before' 'kako/n_A----ASN' -> 'to/_D----ASN'
+'determiner' 'before' 'kakou=_A----GSN' -> 'tou=_D----GSN'
+'determiner' 'before' 'kakw=|_A----DSN' -> 'tw=|_D----DSN'
 
 # loipo/s
 'determiner' 'before' 'loipoi/_A----NPM' -> 'oi(_D----NPM'
 'determiner' 'before' 'loipa/_A----APN' -> 'ta/_D----APN'
 'determiner' 'before' 'loipo/n_A----ASN' -> 'to/_D----ASN'
+'determiner' 'before' 'loipou=_A----GSN' -> 'tou=_D----GSN'
 'determiner' 'before' 'loipw=n_A----GPN' -> 'tw=n_D----GPN'
 
 # pa=s
 'determiner' 'before' 'pa/nta_A----NPN' -> 'ta/_D----NPN'
 'determiner' 'before' 'pa/ntes_A----NPM' -> 'oi(_D----NPM'
+
+# perisso/s
+'determiner' 'before' 'perisso/n_A----NSN' -> 'to/_D----NSN'
+
+# peri/xwros
+'determiner' 'before' 'perixw/rou_A----GSF' -> 'th=s_D----GSF'
 
 # pneumatiko/s
 'determiner' 'before' 'pneumatiko/n_A----NSN' -> 'to/_D----NSN'
@@ -406,8 +493,12 @@
 # suneklekto/s
 'determiner' 'before' 'suneklekth/_A----NSF' -> 'h(_D----NSF'
 
+# sunergo/s
+'determiner' 'before' 'sunergo/n_A----ASM' -> 'to/n_D----ASM'
+
 # tri/tos
 'determiner' 'before' 'tri/ton_A----ASN' -> 'to/_D----ASN'
+'determiner' 'before' 'tri/th_A----NSF' -> 'h(_D----NSF'
 
 # tuflo/s
 'determiner' 'before' 'tuflo/n_A----ASM' -> 'to/n_D----ASM'
@@ -420,8 +511,16 @@
 # ce/nos
 'determiner' 'before' 'ce/nos_A----NSM' -> 'o(_D----NSM'
 
-# peri/xwros
-'determiner' 'before' 'perixw/rou_A----GSF' -> 'th=s_D----GSF'
+# deu/teros
+'determiner' 'before' 'deute/ra_A----NSF' -> 'h(_D----NSF'
+'determiner' 'before' 'deu/teros_A----NSM' -> 'o(_D----NSM'
+'determiner' 'before' 'deute/rou_A----GSM' -> 'tou=_D----GSM'
+
+# a)llogenh/s
+'determiner' 'before' 'a)llogenh/s_A----NSM' -> 'o(_D----NSM'
+
+# a)du/natos
+'determiner' 'before' 'a)du/nata_A----NPN' -> 'ta/_D----NPN'
 
 # a)/zumos
 'determiner' 'before' 'a)/zuma_A----NPN' -> 'ta/_D----NPN'
@@ -436,20 +535,33 @@
 # a)llo/trios
 'determiner' 'before' 'a)llotri/wn_A----GPM' -> 'tw=n_D----GPM'
 
+# a)sebh/s
+'determiner' 'before' 'a)sebh/s_A----NSM' -> 'o(_D----NSM'
+
+# a)sqenh/s
+'determiner' 'before' 'a)sqene/si(n)_A----DPM' -> 'toi=s_D----DPM'
+
+# basi/leios
+'determiner' 'before' 'basilei/ois_A----DPN' -> 'toi=s_D----DPN'
+
+# basiliko/s
+'determiner' 'before' 'basiliko/s_A----NSM' -> 'o(_D----NSM'
+
+# *gerashno/s
+'determiner' 'before' '*gerashnw=n_A----GPM' -> 'tw=n_D----GPM'
+
 # de/ka
 'determiner' 'before' 'de/ka_A----NPM' -> 'oi(_D----NPM'
-
-# deu/teros
-'determiner' 'before' 'deu/teros_A----NSM' -> 'o(_D----NSM'
-'determiner' 'before' 'deute/rou_A----GSM' -> 'tou=_D----GSM'
 
 # dia/bolos
 'determiner' 'before' 'dia/bolos_A----NSM' -> 'o(_D----NSM'
 'determiner' 'before' 'diabo/lou_A----GSM' -> 'tou=_D----GSM'
 
 # di/kaios
+'determiner' 'before' 'di/kaioi_A----NPM' -> 'oi(_D----NPM'
 'determiner' 'before' 'di/kaion_A----ASN' -> 'to/_D----ASN'
 'determiner' 'before' 'di/kaion_A----ASM' -> 'to/n_D----ASM'
+'determiner' 'before' 'di/kaios_A----NSM' -> 'o(_D----NSM'
 
 # du/o
 'determiner' 'before' 'du/o_A----NPM' -> 'oi(_D----NPM'
@@ -466,8 +578,12 @@
 # ei)rhnopoio/s
 'determiner' 'before' 'ei)rhnopoioi/_A----NPM' -> 'oi(_D----NPM'
 
+# e)leh/mwn
+'determiner' 'before' 'e)leh/mones_A----NPM' -> 'oi(_D----NPM'
+
 # ei(=s
 'determiner' 'before' 'e(/na_A----ASM' -> 'to/n_D----ASM'
+'determiner' 'before' 'mi/a_A----NSF' -> 'h(_D----NSF'
 
 # e)la/sswn
 'determiner' 'before' 'e)/latton_A----NSN' -> 'to/_D----NSN'
@@ -486,6 +602,7 @@
 
 # e(pta/
 'determiner' 'before' 'e(pta/_A----NPM' -> 'oi(_D----NPM'
+'determiner' 'before' 'e(pta/_A----APM' -> 'tou/s_D----APM'
 'determiner' 'before' 'e(pta/_A----GPM' -> 'tw=n_D----GPM'
 
 # e)/rhmos
@@ -494,6 +611,7 @@
 
 # i)/dios
 'determiner' 'before' 'i)/dia_A----APN' -> 'ta/_D----APN'
+'determiner' 'before' 'i)di/a|_A----DSF' -> 'th=|_D----DSF'
 'determiner' 'before' 'i)/dioi_A----NPM' -> 'oi(_D----NPM'
 
 # i(ero/s
@@ -504,8 +622,14 @@
 # i)/sos
 'determiner' 'before' 'i)/sa_A----APN' -> 'ta/_D----APN'
 
+# kalo/s
+'determiner' 'before' 'kalo/n_A----ASN' -> 'to/_D----ASN'
+
 # krei/ttwn
 'determiner' 'before' 'krei/ttonos_A----GSM' -> 'tou=_D----GSM'
+
+# lepto/s
+'determiner' 'before' 'lepto/n_A----ASN' -> 'to/_D----ASN'
 
 # malako/s
 'determiner' 'before' 'malaka/_A----APN' -> 'ta/_D----APN'
@@ -522,6 +646,12 @@
 
 # nomiko/s
 'determiner' 'before' 'nomiko/n_A----ASM' -> 'to/n_D----ASM'
+
+# ou)ra/nios
+'determiner' 'before' 'ou)ra/nios_A----NSM' -> 'o(_D----NSM'
+
+# palaio/s
+'determiner' 'before' 'palaio/s_A----NSM' -> 'o(_D----NSM'
 
 # polu/s
 'determiner' 'before' 'plei=on_A----ASN' -> 'to/_D----ASN'
@@ -540,21 +670,25 @@
 # presbu/teros
 'determiner' 'before' 'presbu/teroi_A----NPM' -> 'oi(_D----NPM'
 'determiner' 'before' 'presbu/teros_A----NSM' -> 'o(_D----NSM'
+'determiner' 'before' 'presbute/rous_A----APM' -> 'tou/s_D----APM'
+
+# pro/teros
+'determiner' 'before' 'pro/teron_A----ASN' -> 'to/_D----ASN'
 
 # ptwxo/s
 'determiner' 'before' 'ptwxo/n_A----ASM' -> 'to/n_D----ASM'
 
 # so/s
+'determiner' 'before' 'sa/_A----APN' -> 'ta/_D----APN'
+'determiner' 'before' 'so/n_A----NSN' -> 'to/_D----NSN'
 'determiner' 'before' 'so/s_A----NSM' -> 'o(_D----NSM'
 
 # tetrakisxi/lioi
+'determiner' 'before' 'tetrakisxili/ous_A----APM' -> 'tou/s_D----APM'
 'determiner' 'before' 'tetrakisxili/wn_A----GPM' -> 'tw=n_D----GPM'
 
 # yuxiko/s
 'determiner' 'before' 'yuxiko/n_A----NSN' -> 'to/_D----NSN'
-
-# e)leh/mwn
-'determiner' 'before' 'e)leh/mones_A----NPM' -> 'oi(_D----NPM'
 
 #### noun ####
 
@@ -565,13 +699,31 @@
 'determiner' 'before' 'a)delfo/n_N----ASM' -> 'to/n_D----ASM'
 'determiner' 'before' 'a)delfo/s_N----NSM' -> 'o(_D----NSM'
 'determiner' 'before' 'a)delfw=n_N----GPM' -> 'tw=n_D----GPM'
+'determiner' 'before' 'a)delfou=_N----GSM' -> 'ta/_D----NPN' | 'tou=_D----GSM'
 
 # a)koh/
 'determiner' 'before' 'a)koh/_N----NSF' -> 'h(_D----NSF'
 
+# a(marti/a
+'determiner' 'before' 'a(marti/a_N----NSF' -> 'h(_D----NSF'
+'determiner' 'before' 'a(marti/ai_N----NPF' -> 'ai(_D----NPF'
+'determiner' 'before' 'a(marti/as_N----APF' -> 'ta/s_D----APF'
+'determiner' 'before' 'a(marti/a|_N----DSF' -> 'th=|_D----DSF'
+'determiner' 'before' 'a(marti/as_N----GSF' -> 'th=s_D----GSF'
+
 # a)na/stasis
 'determiner' 'before' 'a)na/stasis_N----NSF' -> 'h(_D----NSF'
 'determiner' 'before' 'a)nasta/sei_N----DSF' -> 'th=|_D----DSF'
+
+# a)/nqrwpos
+'determiner' 'before' 'a)/nqrwpos_N----NSM' -> 'o(_D----NSM'
+'determiner' 'before' 'a)nqrw/pois_N----DPM' -> 'toi=s_D----DPM'
+'determiner' 'before' 'a)nqrw/pw|_N----DSM' -> 'tw=|_D----DSM'
+'determiner' 'before' 'a)/nqrwpe_N----VSM' -> 'w)=_D----VSM'
+'determiner' 'before' 'a)/nqrwpoi_N----NPM' -> 'oi(_D----NPM'
+'determiner' 'before' 'a)nqrw/pou_N----GSM' -> 'tou=_D----GSM'
+'determiner' 'before' 'a)nqrw/pous_N----APM' -> 'tou/s_D----APM'
+'determiner' 'before' 'a)nqrw/pwn_N----GPM' -> 'tw=n_D----GPM'
 
 # a)po/stolos
 'determiner' 'before' 'a)po/stoloi_N----NPM' -> 'oi(_D----NPM'
@@ -582,14 +734,21 @@
 'determiner' 'before' 'basilei=s_N----NPM' -> 'oi(_D----NPM'
 'determiner' 'before' 'basile/wn_N----GPM' -> 'tw=n_D----GPM'
 
+# diaqh/kh
+'determiner' 'before' 'diaqh/kh_N----NSF' -> 'h(_D----NSF'
+
 # qeo/s
 'determiner' 'before' 'qew=|_N----DSM' -> 'tw=|_D----DSM'
+'determiner' 'before' 'qeo/n_N----ASM' -> 'to/n_D----ASM'
 'determiner' 'before' 'qeo/s_N----NSM' -> 'o(_D----NSM'
 'determiner' 'before' 'qeou=_N----GSM' -> 'tou=_D----GSM'
-'determiner' 'before' 'qeo/n_N----ASM' -> 'to/n_D----ASM'
+'determiner' 'before' 'qeo/n_N----ASF' -> 'th/n_D----ASF'
 
 # klh=ma
 'determiner' 'before' 'klh/mata_N----NPN' -> 'ta/_D----NPN'
+
+# pla/tos
+'determiner' 'before' 'pla/tos_N----NSN' -> 'to/_D----NSN'
 
 # profh/ths
 'determiner' 'before' 'profh=tai_N----NPM' -> 'oi(_D----NPM'
@@ -605,14 +764,16 @@
 
 # *)abraa/m
 'determiner' 'before' '*)abraa/m_N----DSM' -> 'tw=|_D----DSM'
+'determiner' 'before' '*)abraa/m_N----GSM' -> 'tou=_D----GSM'
 
 # a)ga/ph
 'determiner' 'before' 'a)ga/ph_N----NSF' -> 'h(_D----NSF'
 'determiner' 'before' 'a)ga/phn_N----ASF' -> 'th/n_D----ASF'
+'determiner' 'before' 'a)ga/ph|_N----DSF' -> 'th=|_D----DSF'
 
 # a)/ggelos
-'determiner' 'before' 'a)/ggelos_N----NSM' -> 'o(_D----NSM'
 'determiner' 'before' 'a)/ggelon_N----ASM' -> 'to/n_D----ASM'
+'determiner' 'before' 'a)/ggelos_N----NSM' -> 'o(_D----NSM'
 
 # a)gro/s
 'determiner' 'before' 'a)gro/s_N----NSM' -> 'o(_D----NSM'
@@ -628,18 +789,13 @@
 # ai)w/n
 'determiner' 'before' 'ai)w=nas_N----APM' -> 'tou/s_D----APM'
 'determiner' 'before' 'ai)w=nos_N----GSM' -> 'tou=_D----GSM'
+'determiner' 'before' 'ai)w=na_N----ASM' -> 'to/n_D----ASM'
 'determiner' 'before' 'ai)w/nwn_N----GPM' -> 'tw=n_D----GPM'
 
 # a)lh/qeia
 'determiner' 'before' 'a)lh/qeian_N----ASF' -> 'th/n_D----ASF'
 'determiner' 'before' 'a)lhqei/a|_N----DSF' -> 'th=|_D----DSF'
 'determiner' 'before' 'a)lhqei/as_N----GSF' -> 'th=s_D----GSF'
-
-# a(marti/a
-'determiner' 'before' 'a(marti/ai_N----NPF' -> 'ai(_D----NPF'
-'determiner' 'before' 'a(marti/as_N----APF' -> 'ta/s_D----APF'
-'determiner' 'before' 'a(marti/a|_N----DSF' -> 'th=|_D----DSF'
-'determiner' 'before' 'a(marti/as_N----GSF' -> 'th=s_D----GSF'
 
 # a)nai/resis
 'determiner' 'before' 'a)naire/sei_N----DSF' -> 'th=|_D----DSF'
@@ -652,19 +808,12 @@
 
 # a)nh/r
 'determiner' 'before' 'a)/ndra_N----ASM' -> 'to/n_D----ASM'
+'determiner' 'before' 'a)/ndras_N----APM' -> 'tou/s_D----APM'
 'determiner' 'before' 'a)/ndres_N----NPM' -> 'oi(_D----NPM'
 'determiner' 'before' 'a)ndra/si(n)_N----DPM' -> 'toi=s_D----DPM'
 
-# a)/nqrwpos
-'determiner' 'before' 'a)nqrw/pois_N----DPM' -> 'toi=s_D----DPM'
-'determiner' 'before' 'a)/nqrwpos_N----NSM' -> 'o(_D----NSM'
-'determiner' 'before' 'a)nqrw/pw|_N----DSM' -> 'tw=|_D----DSM'
-'determiner' 'before' 'a)/nqrwpe_N----VSM' -> 'w)=_D----VSM'
-'determiner' 'before' 'a)/nqrwpoi_N----NPM' -> 'oi(_D----NPM'
-'determiner' 'before' 'a)nqrw/pou_N----GSM' -> 'tou=_D----GSM'
-'determiner' 'before' 'a)nqrw/pous_N----APM' -> 'tou/s_D----APM'
-
 # a)pisti/a
+'determiner' 'before' 'a)pisti/a_N----NSF' -> 'h(_D----NSF'
 'determiner' 'before' 'a)pisti/an_N----ASF' -> 'th/n_D----ASF'
 'determiner' 'before' 'a)pisti/a|_N----DSF' -> 'th=|_D----DSF'
 
@@ -695,11 +844,20 @@
 'determiner' 'before' 'a)rxierei=s_N----NPM' -> 'oi(_D----NPM'
 'determiner' 'before' 'a)rxiereu/s_N----NSM' -> 'o(_D----NSM'
 
+# a)/rxwn
+'determiner' 'before' 'a)/rxonti_N----DSM' -> 'tw=|_D----DSM'
+'determiner' 'before' 'a)rxo/ntwn_N----GPM' -> 'tw=n_D----GPM'
+'determiner' 'before' 'a)/rxontes_N----NPM' -> 'oi(_D----NPM'
+
 # a)sqe/neia
 'determiner' 'before' 'a)sqenei/as_N----GSF' -> 'ta/_D----APN' | 'th=s_D----GSF'
 
 # a)spasmo/s
 'determiner' 'before' 'a)spasmo/s_N----NSM' -> 'o(_D----NSM'
+
+# a)sth/r
+'determiner' 'before' 'a)ste/ra_N----ASM' -> 'to/n_D----ASM'
+'determiner' 'before' 'a)ste/ros_N----GSM' -> 'tou=_D----GSM'
 
 # ba/ptisma
 'determiner' 'before' 'ba/ptisma_N----ASN' -> 'to/_D----ASN'
@@ -731,11 +889,14 @@
 # genea/
 'determiner' 'before' 'genea=|_N----DSF' -> 'th=|_D----DSF'
 'determiner' 'before' 'genea/n_N----ASF' -> 'th/n_D----ASF'
+'determiner' 'before' 'genea/_N----NSF' -> 'h(_D----NSF'
+'determiner' 'before' 'genea=s_N----GSF' -> 'th=s_D----GSF'
 
 # ge/nesis
 'determiner' 'before' 'ge/nesis_N----NSF' -> 'h(_D----NSF'
 
 # gewrgo/s
+'determiner' 'before' 'gewrgoi=s_N----DPM' -> 'toi=s_D----DPM'
 'determiner' 'before' 'gewrgou/s_N----APM' -> 'tou/s_D----APM'
 
 # gh=
@@ -748,6 +909,9 @@
 
 # goneu/s
 'determiner' 'before' 'gonei=s_N----NPM' -> 'oi(_D----NPM'
+
+# gra/mma
+'determiner' 'before' 'gra/mmasi(n)_N----DPN' -> 'toi=s_D----DPN'
 
 # grafh/
 'determiner' 'before' 'grafai/_N----NPF' -> 'ai(_D----NPF'
@@ -764,6 +928,7 @@
 # daimo/nion
 'determiner' 'before' 'daimo/nia_N----NPN' -> 'ta/_D----NPN'
 'determiner' 'before' 'daimo/nia_N----APN' -> 'ta/_D----APN'
+'determiner' 'before' 'daimoni/wn_N----GPN' -> 'tw=n_D----GPN'
 
 # desmo/s
 'determiner' 'before' 'desmw=n_N----GPM' -> 'tw=n_D----GPM'
@@ -783,6 +948,7 @@
 
 # do/ca
 'determiner' 'before' 'do/ca_N----NSF' -> 'h(_D----NSF'
+'determiner' 'before' 'do/can_N----ASF' -> 'th/n_D----ASF'
 
 # dou=los
 'determiner' 'before' 'dou=loi_N----NPM' -> 'oi(_D----NPM'
@@ -796,6 +962,7 @@
 # e)/qnos
 'determiner' 'before' 'e)/qnh_N----APN' -> 'ta/_D----APN'
 'determiner' 'before' 'e)/qnesi(n)_N----DPN' -> 'toi=s_D----DPN'
+'determiner' 'before' 'e)/qnos_N----NSN' -> 'to/_D----NSN'
 
 # ei)kw/n
 'determiner' 'before' 'ei)kw/n_N----NSF' -> 'h(_D----NSF'
@@ -811,16 +978,20 @@
 'determiner' 'before' 'e)kklhsi/an_N----ASF' -> 'th/n_D----ASF'
 
 # e)ntolh/
+'determiner' 'before' 'e)ntolai=s_N----DPF' -> 'tai=s_D----DPF'
 'determiner' 'before' 'e)ntolh/_N----NSF' -> 'h(_D----NSF'
+'determiner' 'before' 'e)ntola/s_N----APF' -> 'ta/s_D----APF'
 
 # e)cousi/a
 'determiner' 'before' 'e)cousi/a|_N----DSF' -> 'th=|_D----DSF'
 'determiner' 'before' 'e)cousi/an_N----ASF' -> 'th/n_D----ASF'
 'determiner' 'before' 'e)cousi/as_N----GSF' -> 'th=s_D----GSF'
+'determiner' 'before' 'e)cousi/a_N----NSF' -> 'h(_D----NSF'
 
 # e(orth/
 'determiner' 'before' 'e(orth/_N----NSF' -> 'h(_D----NSF'
 'determiner' 'before' 'e(orth/n_N----ASF' -> 'th/n_D----ASF'
+'determiner' 'before' 'e(orth=s_N----GSF' -> 'th=s_D----GSF'
 
 # e)paggeli/a
 'determiner' 'before' 'e)paggeliw=n_N----GPF' -> 'tw=n_D----GPF'
@@ -835,7 +1006,9 @@
 'determiner' 'before' 'e)/rga_N----APN' -> 'ta/_D----APN'
 'determiner' 'before' 'e)/rgon_N----NSN' -> 'to/_D----NSN'
 'determiner' 'before' 'e)/rgon_N----ASN' -> 'to/_D----ASN'
+'determiner' 'before' 'e)/rgw|_N----DSN' -> 'tw=|_D----DSN'
 'determiner' 'before' 'e)/rgwn_N----GPN' -> 'tw=n_D----GPN'
+'determiner' 'before' 'e)/rga_N----NPN' -> 'ta/_D----NPN'
 
 # e)/tos
 'determiner' 'before' 'e)/th_N----NPN' -> 'ta/_D----NPN'
@@ -861,6 +1034,7 @@
 'determiner' 'before' 'h(me/ran_N----ASF' -> 'th/n_D----ASF'
 'determiner' 'before' 'h(me/ras_N----APF' -> 'ta/s_D----APF'
 'determiner' 'before' 'h(me/ras_N----GSF' -> 'th=s_D----GSF'
+'determiner' 'before' 'h(me/rais_N----DPF' -> 'tai=s_D----DPF'
 
 # qa/natos
 'determiner' 'before' 'qa/natos_N----NSM' -> 'o(_D----NSM'
@@ -884,6 +1058,7 @@
 
 # *)ihsou=s
 'determiner' 'before' '*)ihsou=_N----GSM' -> 'tou=_D----GSM'
+'determiner' 'before' '*)ihsou=n_N----ASM' -> 'to/n_D----ASM'
 'determiner' 'before' '*)ihsou=s_N----NSM' -> 'o(_D----NSM'
 
 # i(ma/tion
@@ -914,6 +1089,7 @@
 'determiner' 'before' 'ke/ntron_N----NSN' -> 'to/_D----NSN'
 
 # kefalh/
+'determiner' 'before' 'kefalai/_N----NPF' -> 'ai(_D----NPF'
 'determiner' 'before' 'kefalh/n_N----ASF' -> 'th/n_D----ASF'
 'determiner' 'before' 'kefalh=s_N----GSF' -> 'th=s_D----GSF'
 
@@ -949,6 +1125,7 @@
 
 # kw/mh
 'determiner' 'before' 'kw/mas_N----APF' -> 'ta/s_D----APF'
+'determiner' 'before' 'kw/mhn_N----ASF' -> 'th/n_D----ASF'
 
 # lalia/
 'determiner' 'before' 'lalia/n_N----ASF' -> 'th/n_D----ASF'
@@ -961,8 +1138,12 @@
 'determiner' 'before' 'lao/s_N----NSM' -> 'o(_D----NSM'
 'determiner' 'before' 'laou=_N----GSM' -> 'tou=_D----GSM'
 
+# lh|sth/s
+'determiner' 'before' 'lh|stai/_N----NPM' -> 'oi(_D----NPM'
+
 # li/qos
 'determiner' 'before' 'li/qos_N----NSM' -> 'o(_D----NSM'
+'determiner' 'before' 'li/qoi_N----NPM' -> 'oi(_D----NPM'
 'determiner' 'before' 'li/qon_N----ASM' -> 'to/n_D----ASM'
 
 # li/mnh
@@ -978,6 +1159,8 @@
 'determiner' 'before' 'lo/gon_N----ASM' -> 'to/n_D----ASM'
 'determiner' 'before' 'lo/gos_N----NSM' -> 'o(_D----NSM'
 'determiner' 'before' 'lo/gous_N----APM' -> 'tou/s_D----APM'
+'determiner' 'before' 'lo/gou_N----GSM' -> 'tou=_D----GSM'
+'determiner' 'before' 'lo/gw|_N----DSM' -> 'tw=|_D----DSM'
 
 # lu/xnos
 'determiner' 'before' 'lu/xnos_N----NSM' -> 'o(_D----NSM'
@@ -985,7 +1168,9 @@
 # maqhth/s
 'determiner' 'before' 'maqhtai/_N----NPM' -> 'oi(_D----NPM'
 'determiner' 'before' 'maqhtai=s_N----DPM' -> 'toi=s_D----DPM'
+'determiner' 'before' 'maqhth/s_N----NSM' -> 'o(_D----NSM'
 'determiner' 'before' 'maqhtw=n_N----GPM' -> 'tw=n_D----GPM'
+'determiner' 'before' 'maqhta/s_N----APM' -> 'tou/s_D----APM'
 
 # makarismo/s
 'determiner' 'before' 'makarismo/s_N----NSM' -> 'o(_D----NSM'
@@ -998,13 +1183,22 @@
 
 # me/los
 'determiner' 'before' 'me/lh_N----APN' -> 'ta/_D----APN'
+'determiner' 'before' 'me/lesi(n)_N----DPN' -> 'toi=s_D----DPN'
+
+# me/ros
+'determiner' 'before' 'me/rh_N----APN' -> 'ta/_D----APN'
 
 # me/tron
 'determiner' 'before' 'me/tron_N----ASN' -> 'to/_D----ASN'
 
+# mh=kos
+'determiner' 'before' 'mh=kos_N----NSN' -> 'to/_D----NSN'
+
 # mh/thr
+'determiner' 'before' 'mhte/ra_N----ASF' -> 'th/n_D----ASF'
 'determiner' 'before' 'mh/thr_N----NSF' -> 'h(_D----NSF'
 'determiner' 'before' 'mhtri/_N----DSF' -> 'th=|_D----DSF'
+'determiner' 'before' 'mhtro/s_N----GSF' -> 'th=s_D----GSF'
 
 # misqo/s
 'determiner' 'before' 'misqo/s_N----NSM' -> 'o(_D----NSM'
@@ -1025,6 +1219,7 @@
 # no/mos
 'determiner' 'before' 'no/mon_N----ASM' -> 'to/n_D----ASM'
 'determiner' 'before' 'no/mos_N----NSM' -> 'o(_D----NSM'
+'determiner' 'before' 'no/mou_N----GSM' -> 'tou=_D----GSM'
 'determiner' 'before' 'no/mw|_N----DSM' -> 'tw=|_D----DSM'
 
 # nou=s
@@ -1032,6 +1227,7 @@
 
 # o(do/s
 'determiner' 'before' 'o(do/n_N----ASF' -> 'th/n_D----ASF'
+'determiner' 'before' 'o(dou=_N----GSF' -> 'th=s_D----GSF'
 'determiner' 'before' 'o(dw=|_N----DSF' -> 'th=|_D----DSF'
 
 # oi)kiako/s
@@ -1039,6 +1235,8 @@
 
 # oi)ki/a
 'determiner' 'before' 'oi)ki/an_N----ASF' -> 'th/n_D----ASF'
+'determiner' 'before' 'oi)ki/as_N----GSF' -> 'th=s_D----GSF'
+'determiner' 'before' 'oi)ki/a|_N----DSF' -> 'th=|_D----DSF'
 
 # oi)kodomh/
 'determiner' 'before' 'oi)kodoma/s_N----APF' -> 'ta/s_D----APF'
@@ -1054,6 +1252,7 @@
 'determiner' 'before' 'oi)/kois_N----DPM' -> 'toi=s_D----DPM'
 'determiner' 'before' 'oi)=kon_N----ASM' -> 'to/n_D----ASM'
 'determiner' 'before' 'oi)=kos_N----NSM' -> 'o(_D----NSM'
+'determiner' 'before' 'oi)/kw|_N----DSM' -> 'tw=|_D----DSM'
 
 # o)neidismo/s
 'determiner' 'before' 'o)neidismo/n_N----ASM' -> 'to/n_D----ASM'
@@ -1063,6 +1262,9 @@
 'determiner' 'before' 'o)/noma_N----ASN' -> 'to/_D----ASN'
 'determiner' 'before' 'o)no/mati_N----DSN' -> 'tw=|_D----DSN'
 
+# o(/plon
+'determiner' 'before' 'o(/pla_N----APN' -> 'ta/_D----APN'
+
 # o(/rion
 'determiner' 'before' 'o(/ria_N----APN' -> 'ta/_D----APN'
 'determiner' 'before' 'o(ri/wn_N----GPN' -> 'tw=n_D----GPN'
@@ -1070,6 +1272,9 @@
 # o)/ros
 'determiner' 'before' 'o)/ros_N----ASN' -> 'to/_D----ASN'
 'determiner' 'before' 'o)/rous_N----GSN' -> 'tou=_D----GSN'
+
+# ou)ai/
+'determiner' 'before' 'ou)ai/_N-------' -> 'h(_D----NSF'
 
 # o)fqalmo/s
 'determiner' 'before' 'o)fqalmoi/_N----NPM' -> 'oi(_D----NPM'
@@ -1080,11 +1285,18 @@
 # o)/xlos
 'determiner' 'before' 'o)/xloi_N----NPM' -> 'oi(_D----NPM'
 'determiner' 'before' 'o)/xlos_N----NSM' -> 'o(_D----NSM'
+'determiner' 'before' 'o)/xlon_N----ASM' -> 'to/n_D----ASM'
 'determiner' 'before' 'o)/xlous_N----APM' -> 'tou/s_D----APM'
 'determiner' 'before' 'o)/xlw|_N----DSM' -> 'tw=|_D----DSM'
 
 # o)ya/rion
 'determiner' 'before' 'o)yari/wn_N----GPN' -> 'tw=n_D----GPN'
+
+# o)yw/nion
+'determiner' 'before' 'o)ywni/ois_N----DPN' -> 'toi=s_D----DPN'
+
+# para/basis
+'determiner' 'before' 'paraba/sews_N----GSF' -> 'th=s_D----GSF'
 
 # parabolh/
 'determiner' 'before' 'parabola/s_N----APF' -> 'ta/s_D----APF'
@@ -1118,13 +1330,18 @@
 # peri/sseuma
 'determiner' 'before' 'perisseu/matos_N----GSN' -> 'tou=_D----GSN'
 
+# phgh/
+'determiner' 'before' 'phgh=s_N----GSF' -> 'th=s_D----GSF'
+
 # pi/stis
 'determiner' 'before' 'pi/stews_N----GSF' -> 'th=s_D----GSF'
+'determiner' 'before' 'pi/stin_N----ASF' -> 'th/n_D----ASF'
 'determiner' 'before' 'pi/stis_N----NSF' -> 'h(_D----NSF'
 'determiner' 'before' 'pi/stei_N----DSF' -> 'th=|_D----DSF'
 
 # plh=qos
 'determiner' 'before' 'plh=qos_N----NSN' -> 'to/_D----NSN'
+'determiner' 'before' 'plh/qous_N----GSN' -> 'tou=_D----GSN'
 
 # pneu=ma
 'determiner' 'before' 'pneu=ma_N----NSN' -> 'to/_D----NSN'
@@ -1136,9 +1353,13 @@
 'determiner' 'before' 'po/lei_N----DSF' -> 'th=|_D----DSF'
 'determiner' 'before' 'po/lin_N----ASF' -> 'th/n_D----ASF'
 'determiner' 'before' 'po/lews_N----GSF' -> 'th=s_D----GSF'
+'determiner' 'before' 'po/lis_N----NSF' -> 'h(_D----NSF'
 
 # politei/a
 'determiner' 'before' 'politei/an_N----ASF' -> 'th/n_D----ASF'
+
+# ponhri/a
+'determiner' 'before' 'ponhri/an_N----ASF' -> 'th/n_D----ASF'
 
 # pou/s
 'determiner' 'before' 'po/das_N----APM' -> 'tou/s_D----APM'
@@ -1163,6 +1384,8 @@
 # r(h=ma
 'determiner' 'before' 'r(h=ma_N----ASN' -> 'to/_D----ASN'
 'determiner' 'before' 'r(h=ma_N----NSN' -> 'to/_D----NSN'
+'determiner' 'before' 'r(h/masi(n)_N----DPN' -> 'toi=s_D----DPN'
+'determiner' 'before' 'r(h/mata_N----NPN' -> 'ta/_D----NPN'
 
 # sa/rc
 'determiner' 'before' 'sa/rka_N----ASF' -> 'th/n_D----ASF'
@@ -1181,6 +1404,7 @@
 # sto/ma
 'determiner' 'before' 'sto/matos_N----GSN' -> 'tou=_D----GSN'
 'determiner' 'before' 'sto/ma_N----NSN' -> 'to/_D----NSN'
+'determiner' 'before' 'sto/ma_N----ASN' -> 'to/_D----ASN'
 
 # sunagwgh/
 'determiner' 'before' 'sunagwgai=s_N----DPF' -> 'tai=s_D----DPF'
@@ -1209,6 +1433,14 @@
 # telw/nhs
 'determiner' 'before' 'telw=nai_N----NPM' -> 'oi(_D----NPM'
 
+# to/pos
+'determiner' 'before' 'to/pon_N----ASM' -> 'to/n_D----ASM'
+'determiner' 'before' 'to/pou_N----GSM' -> 'tou=_D----GSM'
+'determiner' 'before' 'to/pw|_N----DSM' -> 'tw=|_D----DSM'
+
+# u(/dwr
+'determiner' 'before' 'u(/datos_N----GSN' -> 'tou=_D----GSN'
+
 # ui(o/s
 'determiner' 'before' 'ui(o/n_N----ASM' -> 'to/n_D----ASM'
 'determiner' 'before' 'ui(o/s_N----NSM' -> 'o(_D----NSM'
@@ -1226,6 +1458,7 @@
 
 # *farisai=os
 'determiner' 'before' '*farisai=oi_N----NPM' -> 'oi(_D----NPM'
+'determiner' 'before' '*farisai=os_N----NSM' -> 'o(_D----NSM'
 'determiner' 'before' '*farisai/ous_N----APM' -> 'tou/s_D----APM'
 'determiner' 'before' '*farisai/wn_N----GPM' -> 'tw=n_D----GPM'
 
@@ -1234,6 +1467,7 @@
 
 # fo/bos
 'determiner' 'before' 'fo/bon_N----ASM' -> 'to/n_D----ASM'
+'determiner' 'before' 'fo/bou_N----GSM' -> 'tou=_D----GSM'
 
 # fu/rama
 'determiner' 'before' 'fu/rama_N----ASN' -> 'to/_D----ASN'
@@ -1244,6 +1478,7 @@
 
 # fw=s
 'determiner' 'before' 'fw=s_N----NSN' -> 'to/_D----NSN'
+'determiner' 'before' 'fw=s_N----ASN' -> 'to/_D----ASN'
 'determiner' 'before' 'fwto/s_N----GSN' -> 'tou=_D----GSN'
 
 # xara/
@@ -1280,8 +1515,21 @@
 'determiner' 'before' 'w(/ran_N----ASF' -> 'th/n_D----ASF'
 'determiner' 'before' 'w(/ras_N----GSF' -> 'th=s_D----GSF'
 
+# w)fe/leia
+'determiner' 'before' 'w)fe/leia_N----NSF' -> 'h(_D----NSF'
+
 # a)na/gnwsis
 'determiner' 'before' 'a)nagnw/sei_N----DSF' -> 'th=|_D----DSF'
+
+# numfi/os
+'determiner' 'before' 'numfi/os_N----NSM' -> 'o(_D----NSM'
+'determiner' 'before' 'numfi/ou_N----GSM' -> 'tou=_D----GSM'
+
+# *)agri/ppas
+'determiner' 'before' '*)agri/ppas_N----NSM' -> 'o(_D----NSM'
+
+# *mari/a
+'determiner' 'before' '*mari/a_N----NSF' -> 'h(_D----NSF'
 
 # *pe/tros
 'determiner' 'before' '*pe/tros_N----NSM' -> 'o(_D----NSM'
@@ -1293,10 +1541,23 @@
 'determiner' 'before' 'a)delfo/thta_N----ASF' -> 'th/n_D----ASF'
 
 # a(/|dhs
+'determiner' 'before' 'a(/|dhs_N----NSM' -> 'o(_D----NSM'
 'determiner' 'before' 'a(/|dou_N----GSM' -> 'tou=_D----GSM'
+
+# a)eto/s
+'determiner' 'before' 'a)etoi/_N----NPM' -> 'oi(_D----NPM'
 
 # *)aqh=nai
 'determiner' 'before' '*)aqhnw=n_N----GPF' -> 'tw=n_D----GPF'
+
+# ai)ti/a
+'determiner' 'before' 'ai)ti/as_N----GSF' -> 'th=s_D----GSF'
+
+# a)krobusti/a
+'determiner' 'before' 'a)krobusti/an_N----ASF' -> 'th/n_D----ASF'
+
+# a)lazonei/a
+'determiner' 'before' 'a)lazonei/ais_N----DPF' -> 'tai=s_D----DPF'
 
 # *)/alfa
 'determiner' 'before' '*)/alfa_N----NSN' -> 'to/_D----NSN'
@@ -1309,7 +1570,11 @@
 'determiner' 'before' 'a)mpelw=ni_N----DSM' -> 'tw=|_D----DSM'
 'determiner' 'before' 'a)mpelw=nos_N----GSM' -> 'tou=_D----GSM'
 
+# a)natolh/
+'determiner' 'before' 'a)natolh=|_N----DSF' -> 'th=|_D----DSF'
+
 # a)/nemos
+'determiner' 'before' 'a)ne/mois_N----DPM' -> 'toi=s_D----DPM'
 'determiner' 'before' 'a)/nemos_N----NSM' -> 'o(_D----NSM'
 'determiner' 'before' 'a)ne/mw|_N----DSM' -> 'tw=|_D----DSM'
 
@@ -1322,9 +1587,17 @@
 # a)riqmo/s
 'determiner' 'before' 'a)riqmo/n_N----ASM' -> 'to/n_D----ASM'
 
-# a)sth/r
-'determiner' 'before' 'a)ste/ra_N----ASM' -> 'to/n_D----ASM'
-'determiner' 'before' 'a)ste/ros_N----GSM' -> 'tou=_D----GSM'
+# a)/riston
+'determiner' 'before' 'a)ri/stou_N----GSN' -> 'tou=_D----GSN'
+
+# a(/rma
+'determiner' 'before' 'a(/rmati_N----DSN' -> 'tw=|_D----DSN'
+
+# *)/artemis
+'determiner' 'before' '*)/artemis_N----NSF' -> 'h(_D----NSF'
+
+# a)rxitri/klinos
+'determiner' 'before' 'a)rxitrikli/nw|_N----DSM' -> 'tw=|_D----DSM'
 
 # *)/ayinqos
 'determiner' 'before' '*)/ayinqos_N----NSM' -> 'o(_D----NSM'
@@ -1351,11 +1624,17 @@
 # bou=s
 'determiner' 'before' 'bow=n_N----GPM' -> 'tw=n_D----GPM'
 
+# gazofula/kion
+'determiner' 'before' 'gazofula/kion_N----ASN' -> 'to/_D----ASN'
+
 # *galilai/a
 'determiner' 'before' '*galilai/an_N----ASF' -> 'th/n_D----ASF'
 
 # ge/enna
 'determiner' 'before' 'gee/nnhs_N----GSF' -> 'th=s_D----GSF'
+
+# glw=ssa
+'determiner' 'before' 'glw/ssh|_N----DSF' -> 'th=|_D----DSF'
 
 # gnw=sis
 'determiner' 'before' 'gnw=sis_N----NSF' -> 'h(_D----NSF'
@@ -1364,11 +1643,27 @@
 'determiner' 'before' 'grammatei=s_N----NPM' -> 'oi(_D----NPM'
 'determiner' 'before' 'grammate/wn_N----GPM' -> 'tw=n_D----GPM'
 
+# dia/konos
+'determiner' 'before' 'diako/nois_N----DPM' -> 'toi=s_D----DPM'
+
+# diaspora/
+'determiner' 'before' 'diaspora/n_N----ASF' -> 'th/n_D----ASF'
+
+# dida/skalos
+'determiner' 'before' 'dida/skalon_N----ASM' -> 'to/n_D----ASM'
+
 # di/ktuon
+'determiner' 'before' 'di/ktua_N----NPN' -> 'ta/_D----NPN'
 'determiner' 'before' 'di/ktua_N----APN' -> 'ta/_D----APN'
 
 # dro/mos
 'determiner' 'before' 'dro/mon_N----ASM' -> 'to/n_D----ASM'
+
+# du/namis
+'determiner' 'before' 'duna/mei_N----DSF' -> 'th=|_D----DSF'
+
+# dw=ron
+'determiner' 'before' 'dw=ra_N----APN' -> 'ta/_D----APN'
 
 # ei)/dwlon
 'determiner' 'before' 'ei)/dwla_N----APN' -> 'ta/_D----APN'
@@ -1380,6 +1675,9 @@
 # ei)rh/nh
 'determiner' 'before' 'ei)rh/nhs_N----GSF' -> 'th=s_D----GSF'
 
+# e(katonta/rxhs
+'determiner' 'before' 'e(katonta/rxhs_N----NSM' -> 'o(_D----NSM'
+
 # e)lai/a
 'determiner' 'before' 'e)laiw=n_N----GPF' -> 'tw=n_D----GPF'
 
@@ -1389,8 +1687,23 @@
 # e)/leos
 'determiner' 'before' 'e)/leos_N----ASN' -> 'to/_D----ASN'
 
+# *)elisa/bet
+'determiner' 'before' '*)elisa/bet_N----DSF' -> 'th=|_D----DSF'
+
+# *(/ellhn
+'determiner' 'before' '*(/ellhnas_N----APM' -> 'tou/s_D----APM'
+
+# e)/nduma
+'determiner' 'before' 'e)ndu/matos_N----GSN' -> 'tou=_D----GSN'
+
 # e)pistolh/
 'determiner' 'before' 'e)pistolh/n_N----ASF' -> 'th/n_D----ASF'
+
+# h(donh/
+'determiner' 'before' 'h(donw=n_N----GPF' -> 'tw=n_D----GPF'
+
+# h(liki/a
+'determiner' 'before' 'h(liki/an_N----ASF' -> 'th/n_D----ASF'
 
 # *)hsau=
 'determiner' 'before' '*)hsau=_N----ASM' -> 'to/n_D----ASM'
@@ -1398,11 +1711,13 @@
 # qa/lassa
 'determiner' 'before' 'qa/lassan_N----ASF' -> 'th/n_D----ASF'
 'determiner' 'before' 'qala/ssh|_N----DSF' -> 'th=|_D----DSF'
+'determiner' 'before' 'qala/sshs_N----GSF' -> 'th=s_D----GSF'
 
 # qerismo/s
 'determiner' 'before' 'qerismo/s_N----NSM' -> 'o(_D----NSM'
 
 # qro/nos
+'determiner' 'before' 'qro/nou_N----GSM' -> 'tou=_D----GSM'
 'determiner' 'before' 'qro/nw|_N----DSM' -> 'tw=|_D----DSM'
 
 # *)iakw/b
@@ -1420,8 +1735,23 @@
 # *)israh/l
 'determiner' 'before' '*)israh/l_N----DSM' -> 'tw=|_D----DSM'
 
+# i)sxu/s
+'determiner' 'before' 'i)sxu/os_N----GSF' -> 'th=s_D----GSF'
+
+# i)xqu/s
+'determiner' 'before' 'i)xqu/wn_N----GPM' -> 'tw=n_D----GPM'
+
+# *)iwa/nnhs
+'determiner' 'before' '*)iwa/nnhn_N----ASM' -> 'to/n_D----ASM'
+
+# *)iwsh=s
+'determiner' 'before' '*)iwsh=tos_N----GSM' -> 'h(_D----NSF'
+
 # ka/mhlos
 'determiner' 'before' 'ka/mhlon_N----ASF' -> 'th/n_D----ASF'
+
+# katape/tasma
+'determiner' 'before' 'katape/tasma_N----NSN' -> 'to/_D----NSN'
 
 # katatomh/
 'determiner' 'before' 'katatomh/n_N----ASF' -> 'th/n_D----ASF'
@@ -1431,6 +1761,9 @@
 
 # kh=nsos
 'determiner' 'before' 'kh/nsou_N----GSM' -> 'tou=_D----GSM'
+
+# koili/a
+'determiner' 'before' 'koili/an_N----ASF' -> 'th/n_D----ASF'
 
 # ko/mh
 'determiner' 'before' 'ko/mh_N----NSF' -> 'h(_D----NSF'
@@ -1444,8 +1777,15 @@
 'determiner' 'before' 'ko/smou_N----GSM' -> 'tou=_D----GSM'
 'determiner' 'before' 'ko/smw|_N----DSM' -> 'tw=|_D----DSM'
 
+# koustwdi/a
+'determiner' 'before' 'koustwdi/as_N----GSF' -> 'th=s_D----GSF'
+
 # kra/tos
+'determiner' 'before' 'kra/tei_N----DSN' -> 'tw=|_D----DSN'
 'determiner' 'before' 'kra/tos_N----NSN' -> 'to/_D----NSN'
+
+# *krh/th
+'determiner' 'before' '*krh/thn_N----ASF' -> 'th/n_D----ASF'
 
 # ku/wn
 'determiner' 'before' 'ku/nas_N----APM' -> 'tou/s_D----APM'
@@ -1456,14 +1796,24 @@
 # lu/ph
 'determiner' 'before' 'lu/ph_N----NSF' -> 'h(_D----NSF'
 
+# *magdalhnh/
+'determiner' 'before' '*magdalhnh/_N----NSF' -> 'h(_D----NSF'
+
 # magei/a
 'determiner' 'before' 'magei/ais_N----DPF' -> 'tai=s_D----DPF'
+
+# *mi/lhtos
+'determiner' 'before' '*milh/tou_N----GSF' -> 'th=s_D----GSF'
+
+# mna=
+'determiner' 'before' 'mna=_N----NSF' -> 'h(_D----NSF'
 
 # mnhmei=on
 'determiner' 'before' 'mnhmei/w|_N----DSN' -> 'tw=|_D----DSN'
 
 # *nazwrai=os
 'determiner' 'before' '*nazwrai=on_N----ASM' -> 'to/n_D----ASM'
+'determiner' 'before' '*nazwrai=os_N----NSM' -> 'o(_D----NSM'
 
 # *na/rkissos
 'determiner' 'before' '*narki/ssou_N----GSM' -> 'tw=n_D----GPM'
@@ -1474,10 +1824,8 @@
 # nh=sos
 'determiner' 'before' 'nh=sos_N----NSF' -> 'h(_D----NSF'
 
-# numfi/os
-'determiner' 'before' 'numfi/ou_N----GSM' -> 'tou=_D----GSM'
-
 # nu/c
+'determiner' 'before' 'nukto/s_N----GSF' -> 'th=s_D----GSF'
 'determiner' 'before' 'nu/c_N----NSF' -> 'h(_D----NSF'
 
 # oi)kodespo/ths
@@ -1497,6 +1845,7 @@
 'determiner' 'before' 'o)/sfrhsis_N----NSF' -> 'h(_D----NSF'
 
 # ou)rano/s
+'determiner' 'before' 'ou)rano/n_N----ASM' -> 'to/n_D----ASM'
 'determiner' 'before' 'ou)ranou=_N----GSM' -> 'tou=_D----GSM'
 'determiner' 'before' 'ou)ranw=n_N----GPM' -> 'tw=n_D----GPM'
 
@@ -1505,6 +1854,8 @@
 
 # paidi/on
 'determiner' 'before' 'paidi/on_N----NSN' -> 'to/_D----NSN'
+'determiner' 'before' 'paidi/on_N----ASN' -> 'to/_D----ASN'
+'determiner' 'before' 'paidi/ou_N----GSN' -> 'tou=_D----GSN'
 
 # pai=s
 'determiner' 'before' 'pai=da_N----ASM' -> 'to/n_D----ASM'
@@ -1519,8 +1870,18 @@
 # peismonh/
 'determiner' 'before' 'peismonh/_N----NSF' -> 'h(_D----NSF'
 
+# penqera/
+'determiner' 'before' 'penqera/_N----NSF' -> 'h(_D----NSF'
+
+# peritomh/
+'determiner' 'before' 'peritomh/n_N----ASF' -> 'th/n_D----ASF'
+'determiner' 'before' 'peritomh=s_N----GSF' -> 'th=s_D----GSF'
+
 # *pila=tos
 'determiner' 'before' '*pila=tos_N----NSM' -> 'o(_D----NSM'
+
+# pla/nh
+'determiner' 'before' 'pla/nhs_N----GSF' -> 'th=s_D----GSF'
 
 # pla/sma
 'determiner' 'before' 'pla/sma_N----NSN' -> 'to/_D----NSN'
@@ -1539,15 +1900,37 @@
 # po/rnh
 'determiner' 'before' 'po/rnh|_N----DSF' -> 'th=|_D----DSF'
 
+# pro/qesis
+'determiner' 'before' 'proqe/sews_N----GSF' -> 'th=s_D----GSF'
+
 # pu=r
 'determiner' 'before' 'puro/s_N----GSN' -> 'tou=_D----GSN'
+
+# pw=los
+'determiner' 'before' 'pw=lon_N----ASM' -> 'to/n_D----ASM'
 
 # sa/bbaton
 'determiner' 'before' 'sa/bbasi(n)_N----DPN' -> 'toi=s_D----DPN'
 'determiner' 'before' 'sabba/tou_N----GSN' -> 'tou=_D----GSN'
 
+# *saddoukai=os
+'determiner' 'before' '*saddoukai/ous_N----APM' -> 'tou/s_D----APM'
+
+# si=tos
+'determiner' 'before' 'si=ton_N----ASM' -> 'to/n_D----ASM'
+
+# ska/fh
+'determiner' 'before' 'ska/fhs_N----GSF' -> 'th=s_D----GSF'
+
 # skhnophgi/a
 'determiner' 'before' 'skhnophgi/a_N----NSF' -> 'h(_D----NSF'
+
+# sko/tos
+'determiner' 'before' 'sko/tos_N----NSN' -> 'to/_D----NSN'
+'determiner' 'before' 'sko/tous_N----GSN' -> 'tou=_D----GSN'
+
+# spo/ros
+'determiner' 'before' 'spo/ros_N----NSM' -> 'o(_D----NSM'
 
 # stauro/s
 'determiner' 'before' 'staurou=_N----GSM' -> 'tou=_D----GSM'
@@ -1562,11 +1945,23 @@
 # sune/drion
 'determiner' 'before' 'sunedri/w|_N----DSN' -> 'tw=|_D----DSN'
 
+# sxoini/on
+'determiner' 'before' 'sxoini/a_N----APN' -> 'ta/_D----APN'
+
+# talaipwri/a
+'determiner' 'before' 'talaipwri/ais_N----DPF' -> 'tai=s_D----DPF'
+
+# ta/fos
+'determiner' 'before' 'ta/fon_N----ASM' -> 'to/n_D----ASM'
+
 # te/ktwn
 'determiner' 'before' 'te/ktonos_N----GSM' -> 'tou=_D----GSM'
 
-# to/pos
-'determiner' 'before' 'to/pw|_N----DSM' -> 'tw=|_D----DSM'
+# *tiberia/s
+'determiner' 'before' '*tiberia/dos_N----GSF' -> 'th=s_D----GSF'
+
+# trofh/
+'determiner' 'before' 'trofh=s_N----GSF' -> 'th=s_D----GSF'
 
 # u(phre/ths
 'determiner' 'before' 'u(phre/tai_N----NPM' -> 'oi(_D----NPM'
@@ -1577,14 +1972,28 @@
 # filadelfi/a
 'determiner' 'before' 'filadelfi/a_N----NSF' -> 'h(_D----NSF'
 
+# fili/a
+'determiner' 'before' 'fili/a_N----NSF' -> 'h(_D----NSF'
+
 # filoceni/a
 'determiner' 'before' 'filoceni/as_N----GSF' -> 'th=s_D----GSF'
 
 # xili/arxos
 'determiner' 'before' 'xili/arxos_N----NSM' -> 'o(_D----NSM'
+'determiner' 'before' 'xilia/rxw|_N----DSM' -> 'tw=|_D----DSM'
 
 # xrhmatismo/s
 'determiner' 'before' 'xrhmatismo/s_N----NSM' -> 'o(_D----NSM'
+
+# xro/nos
+'determiner' 'before' 'xro/nos_N----NSM' -> 'o(_D----NSM'
+
+# xw/ra
+'determiner' 'before' 'xw/ra_N----NSF' -> 'h(_D----NSF'
+'determiner' 'before' 'xw/ran_N----ASF' -> 'th/n_D----ASF'
+
+# xwri/on
+'determiner' 'before' 'xwri/on_N----ASN' -> 'to/_D----ASN'
 
 # ywmi/on
 'determiner' 'before' 'ywmi/on_N----ASN' -> 'to/_D----ASN'
@@ -1595,7 +2004,7 @@
 #### adverb ####
 
 # plhsi/on
-'determiner' 'before' 'plhsi/on_B-------' -> 'to/n_D----ASM'
+'determiner' 'before' 'plhsi/on_B-------' -> 'to/n_D----ASM' | 'tw=|_D----DSM'
 
 # e)/swqen
 'determiner' 'before' 'e)/swqen_B-------' -> 'to/_D----ASN'
@@ -1621,6 +2030,11 @@
 # e)/sw
 'determiner' 'before' 'e)/sw_B-------' -> 'tou/s_D----APM'
 
+#### conjunction ####
+
+# ei)
+'determiner' 'before' 'ei)_C-------' -> 'to/_D----ASN'
+
 #### personal pronoun ####
 
 # e(autou=
@@ -1643,7 +2057,9 @@
 
 # *)ihsou=s
 'determiner' 'immediately_before' '*)ihsou=_N----DSM' -> 'tw=|_D----DSM'
-'determiner' 'immediately_before' '*)ihsou=n_N----ASM' -> 'to/n_D----ASM'
+
+# *si/mwn
+'determiner' 'immediately_before' '*si/mwni_N----DSM' -> 'tw=|_D----DSM'
 
 # *)aristo/boulos
 'determiner' 'immediately_before' '*)aristobou/lou_N----GSM' -> 'tw=n_D----GPM'
@@ -1662,20 +2078,36 @@
 'determiner' 'immediately_before' '*galilai/a|_N----DSF' -> 'th=|_D----DSF'
 'determiner' 'immediately_before' '*galilai/as_N----GSF' -> 'th=s_D----GSF'
 
+# *diotre/fhs
+'determiner' 'immediately_before' '*diotre/fhs_N----NSM' -> 'o(_D----NSM'
+
+# *(/ellhn
+'determiner' 'immediately_before' '*(ellh/nwn_N----GPM' -> 'tw=n_D----GPM'
+
 # *(hrw/|dhs
 'determiner' 'immediately_before' '*(hrw/|dhs_N----NSM' -> 'o(_D----NSM'
 
 # *)ierixw/
 'determiner' 'immediately_before' '*)ierixw/_N----ASF' -> 'th/n_D----ASF'
 
+# *(ierosolumi/ths
+'determiner' 'immediately_before' '*(ierosolumitw=n_N----GPM' -> 'tw=n_D----GPM'
+
 # *(ieroso/luma
 'determiner' 'immediately_before' '*(ierosolu/mwn_N----GPN' -> 'tw=n_D----GPN'
+
+# *)iorda/nhs
+'determiner' 'immediately_before' '*)iorda/nou_N----GSM' -> 'tou=_D----GSM'
 
 # *)ioudai/a
 'determiner' 'immediately_before' '*)ioudai/as_N----GSF' -> 'th=s_D----GSF'
 
 # *)itali/a
 'determiner' 'immediately_before' '*)itali/as_N----GSF' -> 'th=s_D----GSF'
+
+# *)iwa/nnhs
+'determiner' 'immediately_before' '*)iwa/nnh|_N----DSM' -> 'tw=|_D----DSM'
+'determiner' 'immediately_before' '*)iwa/nnhs_N----NSM' -> 'o(_D----NSM'
 
 # *kaisa/reia
 'determiner' 'immediately_before' '*kaisa/reian_N----ASF' -> 'th/n_D----ASF'
@@ -1686,11 +2118,15 @@
 # *niko/dhmos
 'determiner' 'immediately_before' '*niko/dhmos_N----NSM' -> 'o(_D----NSM'
 
+# *nikolai/+ths
+'determiner' 'immediately_before' '*nikolai+tw=n_N----GPM' -> 'tw=n_D----GPM'
+
 # *pau=los
 'determiner' 'immediately_before' '*pau=lon_N----ASM' -> 'to/n_D----ASM'
 
 # *pe/tros
 'determiner' 'immediately_before' '*pe/tron_N----ASM' -> 'to/n_D----ASM'
+'determiner' 'immediately_before' '*pe/trw|_N----DSM' -> 'tw=|_D----DSM'
 
 # *pila=tos
 'determiner' 'immediately_before' '*pila=ton_N----ASM' -> 'to/n_D----ASM'
@@ -1699,7 +2135,11 @@
 'determiner' 'immediately_before' '*samarei/as_N----GSF' -> 'th=s_D----GSF'
 
 # *satana=s
+'determiner' 'immediately_before' '*satana=n_N----ASM' -> 'to/n_D----ASM'
 'determiner' 'immediately_before' '*satana=s_N----NSM' -> 'o(_D----NSM'
+
+# *ste/fanos
+'determiner' 'immediately_before' '*ste/fanon_N----ASM' -> 'to/n_D----ASM'
 
 # *suri/a
 'determiner' 'immediately_before' '*suri/as_N----GSF' -> 'th=s_D----GSF'
@@ -1710,4 +2150,5 @@
 # *fi/lippos
 'determiner' 'immediately_before' '*fi/lippon_N----ASM' -> 'to/n_D----ASM'
 'determiner' 'immediately_before' '*fi/lippos_N----NSM' -> 'o(_D----NSM'
+'determiner' 'immediately_before' '*fili/ppw|_N----DSM' -> 'tw=|_D----DSM'
 

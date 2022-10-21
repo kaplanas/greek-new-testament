@@ -1,7 +1,6 @@
 import re
 from text_and_vocab.utils import TEXT_DATA_DIR, TAGGED_CORPUS_DIR, BOOK_MAPPING
 from os.path import basename
-from nltk.tag import str2tuple
 from nltk.corpus.reader.tagged import TaggedCorpusReader
 from nltk.corpus.reader.util import read_blankline_block
 from nltk.corpus.reader import concat, TaggedCorpusView
@@ -38,7 +37,7 @@ class NTTaggedCorpusView(TaggedCorpusView):
                                                                      '')] + \
                       ' ' + \
                       self._word_tokenizer.tokenize(sent_str, references=True)
-                sent = [str2tuple(s, self._sep)
+                sent = [(s[0:s.rindex(self._sep)], s[(s.rindex(self._sep) + 1):])
                         for s in self._word_tokenizer.tokenize(sent_str)]
                 if not self._tagged:
                     sent = [w for (w, t) in sent]

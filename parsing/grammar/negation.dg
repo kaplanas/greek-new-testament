@@ -1,16 +1,10 @@
-#### conjunction ####
+#### conjunction V ####
 
 # kai/
-'negation' 'before' 'kai/_C-------' -> 'ou)_B-------' | 'ou)xi/_L-------'
-
-# i(/na
-'negation' 'before' 'i(/na_C-------' -> 'mh/_B-------'
-
-# o(/ti
-'negation' 'before' 'o(/ti_C-------' -> 'mh/_B-------'
+'negation' 'before' 'kai/_v-------' -> 'ou)_B-------' | 'ou)xi/_L-------'
 
 # h)/
-'negation' 'before' 'h)/_C-------' -> 'mh/_B-------'
+'negation' 'before' 'h)/_v-------' -> 'mh/_B-------'
 
 #### preposition ####
 
@@ -31,12 +25,15 @@
 # a)gapa/w
 'negation' 'before' 'a)gapa=te_V2PAM-P-' -> 'mh/_B-------'
 'negation' 'before' 'a)gapw=_V1PAI-S-' -> 'ou)_B-------'
+'negation' 'before' 'a)gapw=n_V-PAPNSM' -> 'mh/_B-------'
+'negation' 'before' 'a)gapw=men_V1PAS-P-' -> 'mh/_B-------'
 
 # a)kou/w
 'negation' 'before' 'a)kou/eis_V2PAI-S-' -> 'ou)_B-------'
 'negation' 'before' 'a)kou/ete_V2PAI-P-' -> 'ou)_B-------'
 'negation' 'before' 'h)kou/samen_V1AAI-P-' -> 'ou)de/_B-------'
 'negation' 'before' 'h)/kousan_V3AAI-P-' -> 'mh/_B-------' | 'ou)_B-------'
+'negation' 'before' 'h)kou/sate_V2AAI-P-' -> 'ou)_B-------'
 
 # a)ntita/ssomai
 'negation' 'before' 'a)ntita/ssetai_V3PMI-S-' -> 'ou)_B-------'
@@ -50,6 +47,9 @@
 'negation' 'before' 'a)pole/shte_V2AAS-P-' -> 'mh/_B-------'
 'negation' 'before' 'a)po/llue_V2PAM-S-' -> 'mh/_B-------'
 'negation' 'before' 'a)po/lhtai_V3AMS-S-' -> 'mh/_B-------' | 'ou)_B-------'
+
+# a)postre/fw
+'negation' 'before' 'a)postrafh=|s_V2APS-S-' -> 'mh/_B-------'
 
 # a)pwqe/omai
 'negation' 'before' 'a)pw/sato_V3AMI-S-' -> 'mh/_B-------' | 'ou)_B-------'
@@ -73,6 +73,7 @@
 # gi/nomai
 'negation' 'before' 'gi/nesqe_V2PMM-P-' -> 'mh/_B-------'
 'negation' 'before' 'ginw/meqa_V1PMS-P-' -> 'mh/_B-------'
+'negation' 'before' 'ge/nhtai_V3AMS-S-' -> 'mh/_B-------'
 'negation' 'before' 'ge/noito_V3AMO-S-' -> 'mh/_B-------'
 
 # ginw/skw
@@ -81,6 +82,7 @@
 'negation' 'before' 'ginw/skwn_V-PAPNSM' -> 'mh/_B-------'
 'negation' 'before' 'e)/gnw_V3AAI-S-' -> 'mh/_B-------' | 'ou)_B-------'
 'negation' 'before' 'e)/gnwsan_V3AAI-P-' -> 'ou)_B-------'
+'negation' 'before' 'gnwsqh/setai_V3FPI-S-' -> 'ou)_B-------'
 
 # di/dwmi
 'negation' 'before' 'de/dwke(n)_V3RAI-S-' -> 'ou)_B-------'
@@ -94,6 +96,7 @@
 # du/namai
 'negation' 'before' 'du/namai_V1PMI-S-' -> 'ou)_B-------'
 'negation' 'before' 'duna/meqa_V1PMI-P-' -> 'ou)_B-------'
+'negation' 'before' 'du/nasai_V2PMI-S-' -> 'ou)_B-------'
 'negation' 'before' 'du/nasqe_V2PMI-P-' -> 'ou)_B-------' | 'ou)de/_B-------'
 'negation' 'before' 'du/natai_V3PMI-S-' -> 'mh/_B-------' | 'mh/ti_L-------'
 'negation' 'before' 'du/nh|_V2PMI-S-' -> 'ou)_B-------'
@@ -106,6 +109,7 @@
 'negation' 'before' 'oi)=da_V1RAI-S-' -> 'ou)_B-------'
 'negation' 'before' 'oi)/damen_V1RAI-P-' -> 'ou)_B-------'
 'negation' 'before' 'oi)/date_V2RAI-P-' -> 'ou)_B-------'
+'negation' 'before' 'oi)/dasi(n)_V3RAI-P-' -> 'ou)_B-------'
 
 # ei)mi/
 'negation' 'before' 'ei)=_V2PAI-S-' -> 'mh/_B-------'
@@ -120,9 +124,13 @@
 
 # ei)se/rxomai
 'negation' 'before' 'ei)se/lqhte_V2AAS-P-' -> 'mh/_B-------'
+'negation' 'before' 'ei)selqei=n_V-AAN---' -> 'mh/_B-------'
 
 # e)kle/gomai
 'negation' 'before' 'e)celeca/mhn_V1AMI-S-' -> 'ou)_B-------'
+
+# e)kpeira/zw
+'negation' 'before' 'e)kpeira/seis_V2FAI-S-' -> 'ou)_B-------'
 
 # e)mpi/ptw
 'negation' 'before' 'e)mpe/sh|_V3AAS-S-' -> 'mh/_B-------'
@@ -130,6 +138,7 @@
 
 # e)ce/rxomai
 'negation' 'before' 'e)celqo/ntes_V-AAPNPM' -> 'ou)_B-------'
+'negation' 'before' 'e)ce/lqh|s_V2AAS-S-' -> 'mh/_B-------' | 'ou)_B-------'
 
 # e)pidi/dwmi
 'negation' 'before' 'e)pidw/sei_V3FAI-S-' -> 'mh/_B-------'
@@ -143,6 +152,10 @@
 # e)pita/ssw
 'negation' 'before' 'e)pita/ch|_V3AAS-S-' -> 'mh/_B-------'
 
+# e)rga/zomai
+'negation' 'before' 'e)rga/zetai_V3PMI-S-' -> 'ou)_B-------'
+'negation' 'before' 'e)rga/zesqai_V-PMN---' -> 'mh/_B-------'
+
 # e)reqi/zw
 'negation' 'before' 'e)reqi/zete_V2PAM-P-' -> 'mh/_B-------'
 
@@ -155,22 +168,26 @@
 
 # e)/xw
 'negation' 'before' 'e)/xei_V3PAI-S-' -> 'ou)_B-------'
+'negation' 'before' 'e)/xeis_V2PAI-S-' -> 'ou)_B-------'
 'negation' 'before' 'e)/xete_V2PAI-P-' -> 'mh/_B-------' | 'ou)_B-------' | 'ou)/pw_B-------'
 'negation' 'before' 'e)/xomen_V1PAI-P-' -> 'mh/_B-------' | 'ou)_B-------'
 'negation' 'before' 'e)/xontes_V-PAPNPM' -> 'mh/_B-------'
 'negation' 'before' 'e)xo/ntwn_V-PAPGPM' -> 'mh/_B-------'
 'negation' 'before' 'e)/xousi(n)_V3PAI-P-' -> 'mh/_B-------' | 'ou)_B-------'
 'negation' 'before' 'e)/xw_V1PAI-S-' -> 'ou)_B-------'
+'negation' 'before' 'e)/xh|_V3PAS-S-' -> 'mh/_B-------'
 'negation' 'before' 'e)/xontas_V-PAPAPM' -> 'mh/_B-------'
 
 # zhte/w
 'negation' 'before' 'zh/tei_V2PAM-S-' -> 'mh/_B-------'
+'negation' 'before' 'zhtw=_V1PAI-S-' -> 'ou)_B-------'
 
 # qe/lw
 'negation' 'before' 'h)/qele(n)_V3IAI-S-' -> 'ou)_B-------'
 'negation' 'before' 'qe/leis_V2PAI-S-' -> 'mh/_B-------'
 'negation' 'before' 'qe/lete_V2PAI-P-' -> 'mh/_B-------'
 'negation' 'before' 'qe/lw_V1PAI-S-' -> 'ou)_B-------'
+'negation' 'before' 'qe/lontos_V-PAPGSM' -> 'ou)_B-------'
 
 # qu/w
 'negation' 'before' 'qu/ein_V-PAN---' -> 'mh/_B-------'
@@ -190,6 +207,7 @@
 'negation' 'before' 'kataluqh=|_V3APS-S-' -> 'mh/_B-------' | 'ou)_B-------'
 
 # katarge/w
+'negation' 'before' 'katargh/sei_V3FAI-S-' -> 'mh/_B-------'
 'negation' 'before' 'katargou=men_V1PAI-P-' -> 'ou)_B-------'
 
 # khmo/w
@@ -219,6 +237,7 @@
 # le/gw
 'negation' 'before' 'ei)=pon_V1AAI-S-' -> 'ou)_B-------'
 'negation' 'before' 'e)rei=_V3FAI-S-' -> 'mh/_B-------'
+'negation' 'before' 'le/gei_V3PAI-S-' -> 'ou)_B-------'
 'negation' 'before' 'le/gete_V2PAI-P-' -> 'ou)_B-------'
 'negation' 'before' 'le/gw_V1PAI-S-' -> 'ou)_B-------'
 
@@ -240,6 +259,8 @@
 
 # ni/ptw
 'negation' 'before' 'ni/ptontai_V3PMI-P-' -> 'ou)_B-------'
+'negation' 'before' 'ni/yh|s_V2AAS-S-' -> 'mh/_B-------' | 'ou)_B-------'
+'negation' 'before' 'ni/yw_V1AAS-S-' -> 'mh/_B-------'
 
 # noe/w
 'negation' 'before' 'noei=te_V2PAI-P-' -> 'ou)_B-------'
@@ -250,6 +271,7 @@
 # o(ra/w
 'negation' 'before' 'e(o/raka_V1RAI-S-' -> 'ou)xi/_L-------'
 'negation' 'before' 'i)do/ntes_V-AAPNPM' -> 'mh/_B-------'
+'negation' 'before' 'e(w/rake(n)_V3RAI-S-' -> 'ou)_B-------'
 
 # paralamba/nw
 'negation' 'before' 'pare/labon_V3AAI-P-' -> 'ou)_B-------'
@@ -262,6 +284,7 @@
 'negation' 'before' 'e)pi/steuon_V3IAI-P-' -> 'ou)de/_B-------'
 'negation' 'before' 'e)pi/steusan_V3AAI-P-' -> 'ou)_B-------'
 'negation' 'before' 'e)pisteu/sate_V2AAI-P-' -> 'ou)_B-------'
+'negation' 'before' 'e)pi/steuse(n)_V3AAI-S-' -> 'mh/_B-------'
 'negation' 'before' 'pisteu/ete_V2PAI-P-' -> 'ou)_B-------'
 'negation' 'before' 'pisteu/ousi(n)_V3PAI-P-' -> 'ou)_B-------'
 
@@ -290,6 +313,7 @@
 
 # sumfe/rw
 'negation' 'before' 'sumfe/rei_V3PAI-S-' -> 'ou)_B-------'
+'negation' 'before' 'sumfe/ron_V-PAPNSN' -> 'ou)_B-------'
 
 # sune/rxomai
 'negation' 'before' 'sune/rxhsqe_V2PMS-P-' -> 'mh/_B-------'
@@ -315,6 +339,7 @@
 # fobe/omai
 'negation' 'before' 'fobei=sqai_V-PMN---' -> 'mh/_B-------'
 'negation' 'before' 'fobei=sqe_V2PMM-P-' -> 'mh/_B-------'
+'negation' 'before' 'fobou=_V2PMM-S-' -> 'mh/_B-------'
 
 # xrh/
 'negation' 'before' 'xrh/_V3PAI-S-' -> 'ou)_B-------'
@@ -345,6 +370,10 @@
 
 # e)gkake/w
 'negation' 'before' 'e)gkakh/shte_V2AAS-P-' -> 'mh/_B-------'
+'negation' 'before' 'e)gkakw=men_V1PAS-P-' -> 'mh/_B-------'
+
+# e)/cesti(n)
+'negation' 'before' 'e)/cesti(n)_V3PAI-S-' -> 'ou)_B-------'
 
 # e)cousia/zw
 'negation' 'before' 'e)cousiasqh/somai_V1FPI-S-' -> 'ou)_B-------'
@@ -364,6 +393,9 @@
 
 # suntri/bw
 'negation' 'before' 'suntribh/setai_V3FPI-S-' -> 'ou)_B-------'
+
+# sw/|zw
+'negation' 'before' 'e)sw/qh_V3API-S-' -> 'ou)_B-------'
 
 # tara/ssw
 'negation' 'before' 'tarasse/sqw_V3PPM-S-' -> 'mh/_B-------'
@@ -389,11 +421,17 @@
 # e)paine/w
 'negation' 'before' 'e)painw=_V1PAI-S-' -> 'ou)_B-------'
 
+# katapate/w
+'negation' 'before' 'katapatei=sqai_V-PPN---' -> 'mh/_B-------'
+
 # kopia/w
 'negation' 'before' 'kekopi/aka_V1RAI-S-' -> 'mh/_B-------'
 
 # merimna/w
 'negation' 'before' 'merimnh/shte_V2AAS-P-' -> 'mh/_B-------'
+
+# nika/w
+'negation' 'before' 'nikw=_V2PPM-S-' -> 'mh/_B-------'
 
 # peripate/w
 'negation' 'before' 'periepath/samen_V1AAI-P-' -> 'ou)_B-------'
@@ -416,21 +454,39 @@
 # a)na/keimai
 'negation' 'before' 'a)nakei/menos_V-PMPNSM' -> 'ou)xi/_L-------'
 
+# a)pokalu/ptw
+'negation' 'before' 'a)pokalufqh/setai_V3FPI-S-' -> 'ou)_B-------'
+
 # a)poste/llw
 'negation' 'before' 'a)postalw=si(n)_V3APS-P-' -> 'mh/_B-------'
 
 # a)sqene/w
 'negation' 'before' 'a)sqenw=_V1PAI-S-' -> 'ou)_B-------'
 
+# bapti/zw
+'negation' 'before' 'e)bapti/sqh_V3API-S-' -> 'ou)_B-------'
+
+# genna/w
+'negation' 'before' 'gegennh/meqa_V1RPI-P-' -> 'ou)_B-------'
+
+# e)a/w
+'negation' 'before' 'ei)/a_V3IAI-S-' -> 'ou)_B-------'
+
+# e)klu/omai
+'negation' 'before' 'e)kluo/menoi_V-PPPNPM' -> 'mh/_B-------'
+
+# e)pide/xomai
+'negation' 'before' 'e)pide/xetai_V3PMI-S-' -> 'ou)_B-------'
+
 # e)pispa/omai
 'negation' 'before' 'e)pispa/sqw_V3PMM-S-' -> 'mh/_B-------'
-
-# e)rga/zomai
-'negation' 'before' 'e)rga/zesqai_V-PMN---' -> 'mh/_B-------'
 
 # qauma/zw
 'negation' 'before' 'qauma/zete_V2PAM-P-' -> 'mh/_B-------'
 'negation' 'before' 'qauma/sh|s_V2AAS-S-' -> 'mh/_B-------'
+
+# katabare/w
+'negation' 'before' 'kateba/rhsa_V1AAI-S-' -> 'ou)_B-------'
 
 # katara/omai
 'negation' 'before' 'katara=sqe_V2PMM-P-' -> 'mh/_B-------'
@@ -441,6 +497,9 @@
 # manqa/nw
 'negation' 'before' 'memaqhkw/s_V-RAPNSM' -> 'mh/_B-------'
 
+# me/llw
+'negation' 'before' 'me/llei_V3PAI-S-' -> 'mh/_B-------'
+
 # metanoe/w
 'negation' 'before' 'metanoh=te_V2PAS-P-' -> 'mh/_B-------'
 
@@ -448,11 +507,18 @@
 'negation' 'before' 'moixeu/ein_V-PAN---' -> 'mh/_B-------'
 'negation' 'before' 'moixeu/seis_V2FAI-S-' -> 'ou)_B-------'
 
+# o(dhge/w
+'negation' 'before' 'o(dhgh/sei_V3FAI-S-' -> 'mh/_B-------'
+
 # perite/mnw
 'negation' 'before' 'peritemne/sqw_V3PPM-S-' -> 'mh/_B-------'
 
 # skandali/zw
 'negation' 'before' 'skandalisqh=te_V2APS-P-' -> 'mh/_B-------'
+
+# tima/w
+'negation' 'before' 'tima=|_V3PAI-S-' -> 'ou)_B-------'
+'negation' 'before' 'timw=n_V-PAPNSM' -> 'mh/_B-------'
 
 #### adjective ####
 
@@ -475,16 +541,23 @@
 # dia/bolos
 'negation' 'before' 'diabo/lous_A----APF' -> 'mh/_B-------'
 
+# a)llogenh/s
+'negation' 'before' 'a)llogenh/s_A----NSM' -> 'mh/_B-------'
+
 # neo/futos
 'negation' 'before' 'neo/futon_A----ASM' -> 'mh/_B-------'
 
 # o)li/gos
 'negation' 'before' 'o)li/gon_A----ASM' -> 'ou)_B-------'
+'negation' 'before' 'o)li/gos_A----NSM' -> 'ou)_B-------'
 
 #### adverb ####
 
 # ma=llon
 'negation' 'before' 'ma=llon_B-------' -> 'ou)_B-------'
+
+# e)nteu=qen
+'negation' 'before' 'e)nteu=qen_B-------' -> 'ou)_B-------'
 
 # kalw=s
 'negation' 'before' 'kalw=s_B-------' -> 'ou)_B-------'
@@ -518,6 +591,9 @@
 # qeo/s
 'negation' 'before' 'qeo/s_N----NSM' -> 'mh/_B-------'
 
+# *)ihsou=s
+'negation' 'before' '*)ihsou=n_N----ASM' -> 'mh/_B-------'
+
 # i)/xnos
 'negation' 'before' 'i)/xnesi(n)_N----DPN' -> 'ou)_B-------'
 
@@ -527,10 +603,18 @@
 # *kai=sar
 'negation' 'before' '*kai/sara_N----ASM' -> 'mh/_B-------'
 
+#### conjunction ####
+
+# i(/na
+'negation' 'before' 'i(/na_C-------' -> 'mh/_B-------'
+
+# o(/ti
+'negation' 'before' 'o(/ti_C-------' -> 'mh/_B-------'
+
 #### personal pronoun ####
 
 # e)gw/
-'negation' 'before' 'e)gw/_E----NS-' -> 'mh/ti_L-------'
+'negation' 'before' 'e)gw/_E----NS-' -> 'mh/ti_L-------' | 'ou)_B-------'
 
 #### relative pronoun ####
 
