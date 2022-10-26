@@ -27,7 +27,6 @@ ei(=s_A----NSM,kata/_P-------,after
 e(/n_A----NSN,e)k_P-------,after
 mia=|_A----DSF,sunagwgw=n_N----GPF,after
 e(/kastos_A----NSM,h(mw=n_E----GP-,after
-e(ka/stw|_A----DSM,w(s_P-------,after
 e)klekto/n_A----ASM,e)n_P-------,after
 e)klektou/s_A----APM,e)cele/cato_V3AMI-S-,after
 e)klektw=n_A----GPM,qeou=_N----GSM,after
@@ -113,22 +112,18 @@ ou(/tw(s)_B-------,w(s_C-------,after
 plhsi/on_B-------,sou_E----GS-,after
 w(=de_B-------,pro/s_P-------,after
 ei)_C-------,e)pa/rantes_V-AAPNPM,before
-h)/_C-------,po/te_B-------,before
 i(/na_C-------,a)po/_P-------,before
 i(/na_C-------,ma=llon_B-------,before
-kai/_C-------,a)pelqo/ntes_V-AAPNPM,before
 kai/_C-------,dia/_P-------,before
-kai/_C-------,e)moi/_E----DS-,before
 kai/_C-------,mo/nos_A----NSM,before
 kai/_a-------,e)n_P-------,after
-kai/_b-------,e)n_P-------,after
-kai/_n-------,a(gi/wn_A----GPM,after
 kai/_n-------,kopiw/sas_V-PAPAPF,after
 kai/_n-------,pantaxou=_B-------,after
 kai/_n-------,pa/ntes_A----NPM,before
 kai/_v-------,a)kou/santes_V-AAPNPM,before
 kai/_v-------,a)nasta/s_V-AAPNSM,before
 kai/_v-------,diegerqei/s_V-APPNSM,before
+kai/_v-------,ei)/te_C-------,before
 kai/_v-------,e)lqw/n_V-AAPNSM,before
 kai/_v-------,e)n_P-------,before
 kai/_v-------,e)pikalesa/menos_V-AMPNSM,after
@@ -205,8 +200,8 @@ a)/ndra_N----ASM,sou_E----GS-,after
 a)/ndras_N----APM,e)/kamyan_V3AAI-P-,after
 a)/ndras_N----APM,e(ptakisxili/ous_A----APM,before
 a)/ndres_N----VPM,a)delfoi/_N----VPM,after
+a)/ndres_N----NPM,dw/deka_A----NPM,after
 a)/ndres_N----VPM,*)israhli=tai_N----VPM,after
-a)/ndres_N----NPM,pa/ntes_A----NPM,before
 a)/ndres_N----NPM,pentakisxi/lioi_A----NPM,any
 a)/ndres_N----NPM,tetrakisxi/lioi_A----NPM,before
 a)/ndres_N----NPM,w(sei/_B-------,any
@@ -517,7 +512,6 @@ ku/rios_N----NSM,a)mpelw=nos_N----GSM,after
 ku/rios_N----NSM,sabba/tou_N----GSN,after
 ku/rios_N----NSM,u(mw=n_E----GP-,after
 kuri/ou_N----GSM,h(mw=n_E----GP-,after
-kuri/ou_N----GSM,*)ihsou=_N----GSM,after
 kuri/w|_N----DSM,au)tou=_E----GSM,after
 kw=la_N----NPN,w(=n_R----GPM,before
 kw/mas_N----APF,ku/klw|_B-------,after
@@ -797,7 +791,6 @@ sugkata/qesis_N----NSF,meta/_P-------,after
 sugkata/qesis_N----NSF,naw=|_N----DSM,after
 sugkoinwno/s_N----NSM,au)tou=_E----GSN,after
 suzhthth/s_N----NSM,ai)w=nos_N----GSM,after
-su=ka_N----APN,a)po/_P-------,after
 su/mboulos_N----NSM,au)tou=_E----GSM,after
 sumpo/sia_N----APN,sumpo/sia_N----APN,after
 sunagwgai=s_N----DPF,au)tw=n_E----GPM,after
@@ -1190,7 +1183,6 @@ h)/rcanto_V3AMI-P-,lupou/menoi_V-PPPNPM,before
 h)/rcato_V3AMI-S-,a)naba/s_V-AAPNSM,before
 h)/rcato_V3AMI-S-,proslabo/menos_V-AMPNSM,before
 a)sqenou=nta_V-PAPASM,pi/stei_N----DSF,after
-h)sqe/nei_V3IAI-S-,e)n_P-------,after
 a)spa/zontai_V3PMI-P-,ma/lista_B-------,after
 a)spa/zou_V2PMM-S-,kata/_P-------,after
 a)spa/sasqe_V2AMM-P-,e)n_P-------,after
@@ -1240,7 +1232,6 @@ gi/netai_V3PMI-S-,e)n_P-------,before
 gi/netai_V3PMI-S-,metatiqeme/nhs_V-PPPGSF,before
 gi/nou_V2PMM-S-,a)/xri_P-------,after
 ginw/meqa_V1PMS-P-,a)lhqei/a|_N----DSF,after
-ginw/meqa_V1PMS-P-,prokalou/menoi_V-PMPNPM,after
 e)ge/neto_V3AMI-S-,dia/_P-------,any
 e)ge/neto_V3AMI-S-,e)k_P-------,after
 e)ge/neto_V3AMI-S-,e)moi/_E----DS-,before
@@ -1280,9 +1271,7 @@ dialogi/zesqe_V2PMI-P-,ti/_I----ASN,before
 dielogi/zonto_V3IMI-P-,e)n_P-------,after
 dielogi/zonto_V3IMI-P-,le/gontes_V-PAPNPM,after
 diarpa/sei_V3FAI-S-,to/te_B-------,before
-diapera/santes_V-AAPNPM,e)pi/_P-------,after
 diepe/rase(n)_V3AAI-S-,e)mba/s_V-AAPNSM,before
-diepri/onto_V3IPI-P-,kai/_C-------,before
 diestei/lato_V3AMI-S-,to/te_B-------,before
 diatri/bontes_V-PAPNPM,e)n_P-------,before
 diatri/bontes_V-PAPNPM,h(me/ras_N----APF,after
@@ -1371,7 +1360,6 @@ e)/stai_V3FMI-S-,e)n_P-------,any
 e)/stai_V3FMI-S-,e)/ti_B-------,after
 e)/stai_V3FMI-S-,h(me/ra|_N----DSF,after
 e)/stai_V3FMI-S-,kai/_n-------,before
-e)/stai_V3FMI-S-,o(/tan_B-------,before
 e)ste/_V2PAI-P-,a)kmh/n_B-------,before
 e)ste/_V2PAI-P-,dia/_P-------,after
 e)ste/_V2PAI-P-,e)k_P-------,after
@@ -1392,7 +1380,6 @@ h)=n_V3IAI-S-,e)pi/_P-------,after
 h)=n_V3IAI-S-,h(me/ras_N----APF,after
 h)=n_V3IAI-S-,meta/_P-------,before
 h)=n_V3IAI-S-,moi_E----DS-,after
-h)=n_V3IAI-S-,pro/s_P-------,after
 h)=san_V3IAI-P-,xwri/s_P-------,after
 o)/ntas_V-PAPAPM,e)n_P-------,after
 o)/ntwn_V-PAPGPM,e)/ti_B-------,before
@@ -1404,7 +1391,6 @@ ei)sh=lqe(n)_V3AAI-S-,e)pau/rion_B-------,before
 ei)sh=lqe(n)_V3AAI-S-,kuklwsa/ntwn_V-AAPGPM,before
 ei)sh=lqe(n)_V3AAI-S-,meta/_P-------,before
 ei)sh=lqe(n)_V3AAI-S-,to/te_B-------,before
-ei)sh=lqon_V3AAI-P-,a)kou/santes_V-AAPNPM,before
 ei)sh=lqon_V3AAI-P-,u(po/_P-------,after
 e)kba/llei_V3PAI-S-,e)n_P-------,before
 e)kba/llei_V3PAI-S-,eu)qu/s_B-------,before
@@ -1530,7 +1516,7 @@ h)/lqomen_V1AAI-P-,proskunh=sai_V-AAN---,after
 h)=lqon_V1AAI-S-,dia/_P-------,before
 h)=lqon_V3AAI-P-,diapera/santes_V-AAPNPM,before
 h)=lqon_V1AAI-S-,e)/peita_B-------,before
-h)=lqon_V3AAI-P-,e)pi/_P-------,after
+h)=lqon_V3AAI-P-,e)pi/_P-------,any
 h)/rxonto_V3IMI-P-,kai/_n-------,after
 e)rwta=|s_V2PAI-S-,peri/_P-------,after
 e)rwta=|s_V2PAI-S-,ti/_I----ASN,before
@@ -1597,7 +1583,6 @@ e)qambou=nto_V3IPI-P-,e)pi/_P-------,after
 e)/qayan_V3AAI-P-,e)cene/gkantes_V-AAPNPM,before
 qarrw=_V1PAI-S-,e)n_P-------,any
 e)qau/mazon_V3IAI-P-,le/gontes_V-PAPNPM,after
-e)qau/masan_V3AAI-P-,a)kou/santes_V-AAPNPM,before
 e)qau/masan_V3AAI-P-,i)do/ntes_V-AAPNPM,before
 e)qau/masan_V3AAI-P-,le/gontes_V-PAPNPM,after
 h)qe/lhse(n)_V3AAI-S-,e)pau/rion_B-------,before
@@ -1752,7 +1737,6 @@ lalw=_V1PAI-S-,lalw=_V1PAI-S-,before
 lalw=_V1PAI-S-,ou(/tw(s)_B-------,before
 lalw=n_V-PAPNSM,glw/ssh|_N----DSF,after
 ei)/lhfe(n)_V3RAI-S-,e)k_P-------,after
-e)/labe(n)_V3AAI-S-,to/te_B-------,before
 e)/labes_V2AAI-S-,kai/_B-------,before
 e)la/bete_V2AAI-P-,dwrea/n_B-------,before
 e)/labon_V3AAI-P-,a)na/_P-------,after
@@ -1954,7 +1938,6 @@ e)pi/steusan_V3AAI-P-,e)kei=_B-------,after
 e)pi/steusan_V3AAI-P-,lalou=ntos_V-PAPGSM,before
 e)pisteu/sate_V2AAI-P-,dia/_P-------,before
 e)pisteu/sate_V2AAI-P-,ou(/tw(s)_B-------,before
-e)pi/steuon_V3IAI-P-,ou)de/_B-------,before
 pisteu/ei_V3PAI-S-,fagei=n_V-AAN---,after
 pisteu/ete_V2PAI-P-,a)/rti_B-------,before
 pisteu/ete_V2PAI-P-,dia/_P-------,before
@@ -1966,7 +1949,6 @@ plhrw/seis_V2FAI-S-,meta/_P-------,after
 ploutw=n_V-PAPNSM,ei)s_P-------,before
 e)poi/ei_V3IAI-S-,au)toi=s_E----DPM,after
 e)poi/ei_V3IAI-S-,e)pi/_P-------,after
-e)poi/ei_V3IAI-S-,kaqw/s_C-------,before
 e)poi/hsan_V3AAI-P-,labo/ntes_V-AAPNPM,before
 e)poi/hsan_V3AAI-P-,ou(/tw(s)_B-------,after
 e)poi/hsan_V3AAI-P-,w(s_P-------,after
@@ -2099,7 +2081,6 @@ u(yw=n_V-PAPNSM,pa=s_A----NSM,before
 e)fa/nh_V3API-S-,e)n_P-------,after
 e)fa/nh_V3API-S-,ou)de/pote_B-------,before
 e)fa/nh_V3API-S-,ou(/tw(s)_B-------,after
-e)fa/nh_V3API-S-,u(giai/nontas_V-PAPAPM,after
 e)fanerw/qh_V3API-S-,e)gerqei/s_V-APPNSM,after
 e)fanerw/qh_V3API-S-,maqhtai=s_N----DPM,after
 e)fanerw/qh_V3API-S-,tou=to_M----ASN,before

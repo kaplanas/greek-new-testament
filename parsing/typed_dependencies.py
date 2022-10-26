@@ -44,6 +44,30 @@ class TypedDependencyProduction(DependencyProduction):
         """
         return super().__str__() + ' (' + self._rel + ', ' + self._position + ')'
 
+    def matches(self, head, dep):
+        """
+        Check whether the production matches the head and dependent provided.
+        """
+        if self._lhs == head[0]:
+            for rhs in self._rhs:
+                if rhs == dep[0] and \
+                        ((self._position == 'any') or \
+                         (self._position == 'before' and dep[1] < head[1]) or \
+                         (self._position == 'after' and dep[1] > head[1]) or \
+                         (self._position == 'immediately_before' and dep[1] == head[1] - 1) or \
+                         (self._position == 'immediately_after' and dep[1] == head[1] + 1)):
+                    return True
+        return False
+
+    def type_of(self, head, dep):
+        """
+        Return the type of the production from the head to the dependent (if any).
+        """
+        if self.matches(head, dep):
+            return self._rel
+        else:
+            return None
+
 
 # The following is mostly copied from nltk's grammar module, with minimal
 # tweaks that allow dependency rules to specify a relation type and a position.
@@ -109,25 +133,17 @@ class TypedDependencyGrammar(DependencyGrammar):
         Return whether the grammar contains the specified dependency.
         """
         for production in self._productions:
-            if production._lhs == head[0]:
-                for rhs in production._rhs:
-                    if rhs == dep[0] and \
-                            ((production._position == 'any') or \
-                             (production._position == 'before' and dep[1] < head[1]) or \
-                             (production._position == 'after' and dep[1] > head[1]) or \
-                             (production._position == 'immediately_before' and dep[1] == head[1] - 1) or \
-                             (production._position == 'immediately_after' and dep[1] == head[1] + 1)):
-                        return True
+            if production.matches(head, dep):
+                return True
         return False
 
     def type_of(self, head, dep):
         """
-        Return the type of the production from the head to the mod (if any).
+        Return the types of the productions from the head to the dependent (if any).
         """
-        rels = [production._rel
+        rels = [production.type_of(head, dep)
                 for production in self._productions
-                for possible_dep in production._rhs
-                if production._lhs == head[0] and possible_dep == dep[0]]
+                if production.matches(head, dep)]
         if len(rels) > 0:
             return rels
         return None
@@ -268,32 +284,33 @@ class TypedNonprojectiveDependencyParser(NonprojectiveDependencyParser):
         for root_node, tree in analyses:
             graph = DependencyGraph()
             for i in range(n_tokens + 1):
-                graph.nodes[i].update({"address": i})
+                graph.nodes[i].update({'address': i})
             root_address = root_node + 1
             graph.root = graph.nodes[root_address]
-            graph.nodes[0]["deps"]["ROOT"].append(root_address)
+            graph.nodes[0]['deps']['ROOT'].append(root_address)
             for edge in tree:
                 address = edge[0] + 1
                 dep_address = edge[1] + 1
-                graph.nodes[address]["deps"][""].append(dep_address)
+                graph.nodes[dep_address].update({'head': address})
+                graph.nodes[address]['deps'][''].append(dep_address)
             for address in range(len(graph.nodes)):
                 if address > 0:
-                    graph.nodes[address].update({"word": tokens[address - 1]})
+                    graph.nodes[address].update({'word': tokens[address - 1]})
             graphs = [graph]
             for address in range(len(graph.nodes)):
                 if address > 0:
-                    for dep_address in graph.nodes[address]["deps"][""]:
+                    for dep_address in graph.nodes[address]['deps']['']:
                         rel_types = self._grammar.type_of((tokens[address - 1], address - 1),
                                                           (tokens[dep_address - 1], dep_address - 1))
                         if len(rel_types) == 1:
                             for g in graphs:
-                                g.nodes[dep_address].update({"rel": rel_types[0]})
+                                g.nodes[dep_address].update({'rel': rel_types[0]})
                         else:
                             orig_count = len(graphs)
                             for i in range(orig_count):
                                 for rel_type in rel_types[1:]:
                                     graphs.append(deepcopy(graphs[i]))
-                                    graphs[-1].nodes[dep_address].update({"rel": rel_type})
-                                graphs[i].nodes[dep_address].update({"rel": rel_types[0]})
+                                    graphs[-1].nodes[dep_address].update({'rel': rel_type})
+                                graphs[i].nodes[dep_address].update({'rel': rel_types[0]})
             for graph in graphs:
                 yield graph

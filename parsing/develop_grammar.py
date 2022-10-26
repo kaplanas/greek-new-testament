@@ -2,9 +2,10 @@ import re
 import dill
 import pandas as pd
 import termtables
+from copy import deepcopy
 from yachalk import chalk
 from text_and_vocab import load_text_df, load_text_tagged
-from parsing.utils import PARSER, load_grammar
+from parsing.utils import GRAMMAR, PARSER, load_grammar
 from typed_dependencies import SavedParse
 
 SAVED_PARSES_DIR = '../parsing/saved_parses/saved_parses'
@@ -112,11 +113,58 @@ def print_parses(parses, first_index=0, features=False):
         print('')
         trees = parse.other_parses
         if parse.parse is not None:
-            trees = [parse.parse] + trees
+            print('BEST PARSE')
+            print_parse(parse.parse, features=features)
+            print('')
         for j, tree in enumerate(trees):
             print('[' + str(j) + ']')
             print_parse(tree, features=features)
             print('')
+
+
+def find_unused_rules():
+    """Find rules in the grammar that aren't being used in any best parses."""
+    for production in GRAMMAR._productions:
+        found_use_before = False
+        found_use_after = False
+        if production._position == 'before':
+            found_use_after = True
+        elif production._position == 'after':
+            found_use_before = True
+        sent_lengths = sorted((k for k in parses.keys()), reverse=True)
+        while not (found_use_before and found_use_after) and len(sent_lengths) > 0:
+            sl = sent_lengths.pop()
+            indexes = [i for i, p in enumerate(parses[sl]) if p.parse is not None]
+            while not (found_use_before and found_use_after) and len(indexes) > 0:
+                i = indexes.pop()
+                parse = parses[sl][i].parse
+                current_head = parse.root['address']
+                current_heads = [current_head]
+                current_deps = [deepcopy(parse.nodes[current_head]['deps'][''])]
+                while not (found_use_before and found_use_after) and len(current_heads) > 0:
+                    while len(current_heads) > 0 and len(current_deps[-1]) == 0:
+                        current_heads.pop()
+                        current_deps.pop()
+                    if len(current_heads) > 0:
+                        current_head = current_heads[-1]
+                        current_dep = current_deps[-1].pop()
+                        if production.type_of((parse.nodes[current_head]['word'], current_head),
+                                              (parse.nodes[current_dep]['word'], current_dep)) == \
+                                parse.nodes[current_dep]['rel']:
+                            if current_head > current_dep:
+                                found_use_before = True
+                            elif current_head < current_dep:
+                                found_use_after = True
+                        current_heads.append(current_dep)
+                        current_deps.append(deepcopy(parse.nodes[current_dep]['deps']['']))
+        if not found_use_before:
+            print(production)
+            if production._position == 'any':
+                print('...before')
+        if not found_use_after:
+            print(production)
+            if production._position == 'any':
+                print('...after')
 
 
 if __name__ == '__main__':
@@ -163,16 +211,16 @@ if __name__ == '__main__':
                 old_best_parse = old_parse.parse
                 if old_best_parse is not None:
                     n_old_parses += 1
-                    if old_best_parse.to_dot() in [op.to_dot()
-                                                   for op in p.other_parses]:
-                        p.set_best_parse([op.to_dot()
-                                          for op in p.other_parses].index(old_best_parse.to_dot()))
+                    if old_best_parse.to_conll(4) in [op.to_conll(4)
+                                                      for op in p.other_parses]:
+                        p.set_best_parse([op.to_conll(4)
+                                          for op in p.other_parses].index(old_best_parse.to_conll(4)))
                         changes[sl]['parsed'].append(p)
                     else:
                         changes[sl]['unparsed'].append(p)
                 else:
-                    if len(set(op.to_dot() for op in p.other_parses) -
-                           set(op.to_dot() for op in old_parse.other_parses)) > 0:
+                    if len(set(op.to_conll(4) for op in p.other_parses) -
+                           set(op.to_conll(4) for op in old_parse.other_parses)) > 0:
                         changes[sl]['new'].append(p)
                     elif len(p.other_parses) == 0:
                         changes[sl]['none'].append(p)

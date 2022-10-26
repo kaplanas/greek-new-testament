@@ -150,9 +150,6 @@
 # kolla/omai
 'determiner' 'before' 'kollw/menos_V-PPPNSM' -> 'o(_D----NSM'
 
-# kri/nw
-'determiner' 'before' 'kri/nwn_V-PAPNSM' -> 'o(_D----NSM'
-
 # lale/w
 'determiner' 'before' 'lalw=n_V-PAPNSM' -> 'o(_D----NSM'
 'determiner' 'before' 'lelalhme/nois_V-RPPDPN' -> 'toi=s_D----DPN'
@@ -274,6 +271,9 @@
 
 # kopia/w
 'determiner' 'before' 'kopiw/sas_V-PAPAPF' -> 'ta/s_D----APF'
+
+# kri/nw
+'determiner' 'before' 'kri/nwn_V-PAPNSM' -> 'o(_D----NSM'
 
 # me/nw
 'determiner' 'before' 'mei=nai_V-AAN---' -> 'tou=_D----GSN'

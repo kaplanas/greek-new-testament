@@ -1,7 +1,7 @@
 #### conjunction V ####
 
 # kai/
-'interjection' 'before' 'kai/_v-------' -> 'a)gaphtoi/_A----VPM' | 'a)/ndres_N----NPM' | 'ku/rie_N----VSM' | '*pe/tre_N----VSM'
+'interjection' 'before' 'kai/_v-------' -> 'a)gaphtoi/_A----VPM' | 'ku/rie_N----VSM' | '*pe/tre_N----VSM'
 
 #### verb ####
 
@@ -129,9 +129,6 @@
 # a)fi/hmi
 'interjection' 'before' 'a)/fes_V2AAM-S-' -> 'pa/ter_N----VSM'
 
-# e)gei/rw
-'interjection' 'before' 'e)/geire_V2PAM-S-' -> 'pai=s_N----NSF'
-
 # gi/nomai
 'interjection' 'before' 'ge/gonas_V2RAI-S-' -> 'r(abbi/_N----VSM'
 
@@ -156,7 +153,7 @@
 'interjection' 'before' 'ei)_C-------' -> 'a)gaphtoi/_A----VPM' | 'a)delfoi/_N----VPM' | 'ku/rie_N----VSM'
 
 # i(/na
-'interjection' 'before' 'i(/na_C-------' -> 'ku/rie_N----VSM' | 'pate/res_N----NPM' | 'rabbouni_N----VSM' | 'tekni/a_N----VPN'
+'interjection' 'before' 'i(/na_C-------' -> 'ku/rie_N----VSM' | 'rabbouni_N----VSM' | 'tekni/a_N----VPN'
 
 # o(/tan
 'interjection' 'before' 'o(/tan_C-------' -> '*)ihsou=_N----VSM'

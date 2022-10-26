@@ -307,9 +307,6 @@
 # ei(=s
 'second_position_clitic' 'immediately_after' 'e(/n_A----NSN' -> 'de/_C-------'
 
-# e(/kastos
-'second_position_clitic' 'immediately_after' 'e(ka/stw|_A----DSM' -> 'de/_C-------'
-
 # me/sos
 'second_position_clitic' 'immediately_after' 'me/shs_A----GSF' -> 'de/_C-------'
 
@@ -335,6 +332,9 @@
 
 # deu/teros
 'second_position_clitic' 'immediately_after' 'deute/ra_A----NSF' -> 'de/_C-------'
+
+# e(/kastos
+'second_position_clitic' 'immediately_after' 'e(ka/stw|_A----DSM' -> 'de/_C-------'
 
 # e)/kfobos
 'second_position_clitic' 'immediately_after' 'e)/kfoboi_A----NPM' -> 'ga/r_C-------'
