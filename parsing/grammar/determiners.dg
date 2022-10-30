@@ -511,11 +511,6 @@
 # ce/nos
 'determiner' 'before' 'ce/nos_A----NSM' -> 'o(_D----NSM'
 
-# deu/teros
-'determiner' 'before' 'deute/ra_A----NSF' -> 'h(_D----NSF'
-'determiner' 'before' 'deu/teros_A----NSM' -> 'o(_D----NSM'
-'determiner' 'before' 'deute/rou_A----GSM' -> 'tou=_D----GSM'
-
 # a)llogenh/s
 'determiner' 'before' 'a)llogenh/s_A----NSM' -> 'o(_D----NSM'
 
@@ -552,6 +547,11 @@
 
 # de/ka
 'determiner' 'before' 'de/ka_A----NPM' -> 'oi(_D----NPM'
+
+# deu/teros
+'determiner' 'before' 'deute/ra_A----NSF' -> 'h(_D----NSF'
+'determiner' 'before' 'deu/teros_A----NSM' -> 'o(_D----NSM'
+'determiner' 'before' 'deute/rou_A----GSM' -> 'tou=_D----GSM'
 
 # dia/bolos
 'determiner' 'before' 'dia/bolos_A----NSM' -> 'o(_D----NSM'
@@ -1525,17 +1525,11 @@
 'determiner' 'before' 'numfi/os_N----NSM' -> 'o(_D----NSM'
 'determiner' 'before' 'numfi/ou_N----GSM' -> 'tou=_D----GSM'
 
-# *)agri/ppas
-'determiner' 'before' '*)agri/ppas_N----NSM' -> 'o(_D----NSM'
-
-# *mari/a
-'determiner' 'before' '*mari/a_N----NSF' -> 'h(_D----NSF'
-
-# *pe/tros
-'determiner' 'before' '*pe/tros_N----NSM' -> 'o(_D----NSM'
-
 # a)/bussos
 'determiner' 'before' 'a)/busson_N----ASF' -> 'th/n_D----ASF'
+
+# *)agri/ppas
+'determiner' 'before' '*)agri/ppas_N----NSM' -> 'o(_D----NSM'
 
 # a)delfo/ths
 'determiner' 'before' 'a)delfo/thta_N----ASF' -> 'th/n_D----ASF'
@@ -1802,6 +1796,9 @@
 # magei/a
 'determiner' 'before' 'magei/ais_N----DPF' -> 'tai=s_D----DPF'
 
+# *mari/a
+'determiner' 'before' '*mari/a_N----NSF' -> 'h(_D----NSF'
+
 # *mi/lhtos
 'determiner' 'before' '*milh/tou_N----GSF' -> 'th=s_D----GSF'
 
@@ -1876,6 +1873,9 @@
 # peritomh/
 'determiner' 'before' 'peritomh/n_N----ASF' -> 'th/n_D----ASF'
 'determiner' 'before' 'peritomh=s_N----GSF' -> 'th=s_D----GSF'
+
+# *pe/tros
+'determiner' 'before' '*pe/tros_N----NSM' -> 'o(_D----NSM'
 
 # *pila=tos
 'determiner' 'before' '*pila=tos_N----NSM' -> 'o(_D----NSM'

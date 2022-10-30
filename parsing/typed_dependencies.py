@@ -1,7 +1,7 @@
 import re
 from copy import deepcopy
 from nltk.sem.logic import Variable
-from nltk.featstruct import FeatStructReader
+from nltk.featstruct import FeatDict, FeatStructReader
 from nltk.parse import NonprojectiveDependencyParser
 from nltk.parse.dependencygraph import DependencyGraph
 from nltk.grammar import DependencyProduction, DependencyGrammar, read_grammar
@@ -33,7 +33,8 @@ class TypedDependencyProduction(DependencyProduction):
         """
         Construct a new ``TypedDependencyProduction``.
         """
-        DependencyProduction.__init__(self, lhs, rhs)
+        self._lhs = lhs
+        self._rhs = tuple(rhs)
         self._rel = rel
         self._position = position
 
@@ -44,68 +45,101 @@ class TypedDependencyProduction(DependencyProduction):
         """
         return super().__str__() + ' (' + self._rel + ', ' + self._position + ')'
 
-    def matches(self, head, dep):
+    def matches(self, head, dep, lexicon):
         """
         Check whether the production matches the head and dependent provided.
         """
-        if self._lhs == head[0]:
+        head_matches = False
+        if isinstance(self._lhs, str) and self._lhs == head[0]:
+            head_matches = True
+        elif isinstance(self._lhs, FeatDict) and head[0] in lexicon.keys():
+            fs_left = self._lhs.unify(lexicon[head[0]])
+            if fs_left is not None:
+                bindings_left = {item[1].name: fs_left[item[0]]
+                                 for item in self._lhs.items()
+                                 if isinstance(item[1], Variable)}
+                head_matches = True
+        if head_matches:
             for rhs in self._rhs:
-                if rhs == dep[0] and \
-                        ((self._position == 'any') or \
-                         (self._position == 'before' and dep[1] < head[1]) or \
-                         (self._position == 'after' and dep[1] > head[1]) or \
-                         (self._position == 'immediately_before' and dep[1] == head[1] - 1) or \
-                         (self._position == 'immediately_after' and dep[1] == head[1] + 1)):
-                    return True
+                dep_matches = False
+                if isinstance(rhs, str) and rhs == dep[0]:
+                    dep_matches = True
+                elif isinstance(rhs, FeatDict) and dep[0] in lexicon.keys():
+                    fs_right = rhs.unify(lexicon[dep[0]])
+                    if fs_right is not None:
+                        dep_matches = True
+                        for item in rhs.items():
+                            if isinstance(item[1], Variable) and \
+                                    item[1].name in bindings_left.keys() and \
+                                    not isinstance(bindings_left[item[1].name], Variable) and \
+                                    bindings_left[item[1].name] != fs_right[item[0]]:
+                                dep_matches = False
+                                break
+                if dep_matches:
+                    position_matches = False
+                    if self._position == 'any':
+                        position_matches = True
+                    elif self._position == 'before' and dep[1] < head[1]:
+                        position_matches = True
+                    elif self._position == 'after' and dep[1] > head[1]:
+                        position_matches = True
+                    elif self._position == 'immediately_before' and dep[1] == head[1] - 1:
+                        position_matches = True
+                    elif self._position == 'immediately_after' and dep[1] == head[1] + 1:
+                        position_matches = True
+                    if position_matches:
+                        return True
         return False
 
-    def type_of(self, head, dep):
+    def type_of(self, head, dep, lexicon):
         """
         Return the type of the production from the head to the dependent (if any).
         """
-        if self.matches(head, dep):
+        if self.matches(head, dep, lexicon):
             return self._rel
         else:
             return None
 
 
-# The following is mostly copied from nltk's grammar module, with minimal
-# tweaks that allow dependency rules to specify a relation type and a position.
+# The following is mostly copied from nltk's grammar module, with changes that
+# allow dependency rules to specify a relation type and a position, and that
+# allow for feature-based dependency rules.
 
-_READ_TDG_RE = re.compile(
-    r"""^\s*                # leading whitespace
-                              ('[A-Za-z_]+')\s*     # relation type (no quotes); letters and underscore only
-                              ('[A-Za-z_]+')\s*     # position (no quotes); letters and underscore only
-                              ('[^']+')\s*        # single-quoted lhs
-                              (?:[-=]+>)\s*        # arrow
-                              (?:(                 # rhs:
-                                   "[^"]+"         # doubled-quoted terminal
-                                 | '[^']+'         # single-quoted terminal
-                                 | \|              # disjunction
-                                 )
-                                 \s*)              # trailing space
-                                 *$""",  # zero or more copies
-    re.VERBOSE,
-)
-_SPLIT_TDG_RE = re.compile(r"""('[^']'|[-=]+>|"[^"]+"|'[^']+'|\|)""")
+_ATOM_RE = re.compile(r"'[A-Za-z0-9()/\\=_*+|-]+' *")
+_ARROW_RE = re.compile(r'-> +')
+_SPLIT_TDG_RE = re.compile(r' \| ')
 
 
 def _read_typed_dependency_production(s):
-    if not _READ_TDG_RE.match(s):
+    fsr = FeatStructReader()
+    current_s = s
+    if not _ATOM_RE.match(current_s):
+        print(current_s)
         raise ValueError("Bad production string")
-    pieces = _SPLIT_TDG_RE.split(s)
-    pieces = [p for i, p in enumerate(pieces) if i % 2 == 1]
-    rel = pieces[0].strip("'\" ")
-    position = pieces[1].strip("'\" ")
-    lhside = pieces[2].strip("'\"")
-    rhsides = [[]]
-    for piece in pieces[4:]:
-        if piece == "|":
-            rhsides.append([])
+    rel = _ATOM_RE.search(current_s).group(0).strip("'\" ")
+    current_s = re.sub(_ATOM_RE, '', current_s, count=1)
+    if not _ATOM_RE.match(current_s):
+        print(current_s)
+        raise ValueError("Bad production string")
+    pos = _ATOM_RE.search(current_s).group(0).strip("'\" ")
+    current_s = re.sub(_ATOM_RE, '', current_s, count=1)
+    if _ATOM_RE.match(current_s):
+        lhs = _ATOM_RE.search(current_s).group(0).strip("'\" ")
+        current_s = re.sub(_ATOM_RE, '', current_s, count=1)
+    else:
+        lhs, new_pos = fsr.read_partial(current_s)
+        current_s = current_s[new_pos:]
+    if _ARROW_RE.match(current_s):
+        current_s = re.sub(_ARROW_RE, '', current_s, count=1)
+    pieces = _SPLIT_TDG_RE.split(current_s)
+    rhss = []
+    for piece in pieces:
+        if _ATOM_RE.match(piece):
+            rhs = piece.strip("'\" ")
         else:
-            rhsides[-1].append(piece.strip("'\""))
-    return [TypedDependencyProduction(lhside, rhside, rel, position)
-            for rhside in rhsides]
+            rhs, _ = fsr.read_partial(piece)
+        rhss.append(rhs)
+    return TypedDependencyProduction(lhs, rhss, rel, pos)
 
 
 class TypedDependencyGrammar(DependencyGrammar):
@@ -121,19 +155,28 @@ class TypedDependencyGrammar(DependencyGrammar):
             if line.startswith("#") or line == "":
                 continue
             try:
-                productions += _read_typed_dependency_production(line)
+                productions.append(_read_typed_dependency_production(line))
             except ValueError as e:
                 raise ValueError(f"Unable to parse line {linenum}: {line}") from e
         if len(productions) == 0:
             raise ValueError("No productions found!")
         return cls(productions)
 
+    def load_lexicon(self, lexicon_input):
+        """
+        Read a lexicon file and store it as a dict.
+        """
+        fsr = FeatStructReader()
+        start, lexicon = read_grammar(lexicon_input, fsr.read_partial)
+        self._lexicon = {p._rhs[0]: p._lhs
+                         for p in lexicon}
+
     def contains(self, head, dep):
         """
         Return whether the grammar contains the specified dependency.
         """
         for production in self._productions:
-            if production.matches(head, dep):
+            if production.matches(head, dep, self._lexicon):
                 return True
         return False
 
@@ -141,23 +184,11 @@ class TypedDependencyGrammar(DependencyGrammar):
         """
         Return the types of the productions from the head to the dependent (if any).
         """
-        rels = [production.type_of(head, dep)
+        rels = [production.type_of(head, dep, self._lexicon)
                 for production in self._productions
-                if production.matches(head, dep)]
+                if production.matches(head, dep, self._lexicon)]
         if len(rels) > 0:
-            return rels
-        return None
-
-    def position_of(self, head, dep):
-        """
-        Return the type of the production from the head to the mod (if any).
-        """
-        positions = [production._pos
-                     for production in self._productions
-                     for possible_dep in production._rhs
-                     if production._lhs == head and possible_dep == dep]
-        if len(positions) > 0:
-            return positions
+            return list(set(rels))
         return None
 
 

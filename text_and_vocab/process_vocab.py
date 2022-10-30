@@ -11,49 +11,32 @@ PROCESSED_DATA_DIR = 'processed_data/'
 POS_PROCESSING = {
     'noun': {'id_cols': ['gender'],
              'form_cols': ['gs'],
-             'class_cols': ['declension'],
-             'feature_cols': ['proper_mod', 's_arg', 'adverb']},
+             'class_cols': ['declension']},
     'relative pronoun': {'id_cols': [],
                          'form_cols': ['fem', 'neut'],
                          'class_cols': ['declension']},
     'verb': {'id_cols': [],
              'form_cols': ['pp' + str(i + 2) for i in range(5)],
-             'class_cols': ['verb_type'],
-             'feature_cols': ['deponent', 'arg_nom', 'arg_gen', 'arg_acc',
-                              'arg_dat', 'arg_inf', 'arg_oti', 'arg_s',
-                              'arg_conj', 'arg_rel', 's_arg', 'rel_arg',
-                              'conjoined']},
+             'class_cols': ['verb_type']},
     'personal pronoun': {'id_cols': [],
-                         'form_cols': ['gs'],
-                         'feature_cols': ['person', 'conjoined', 'adverb']},
+                         'form_cols': ['gs']},
     'definite article': {'id_cols': [],
                          'form_cols': ['fem', 'neut'],
                          'class_cols': ['declension']},
-    'preposition': {'id_cols': [],
-                    'feature_cols': ['arg_nom', 'arg_gen', 'arg_acc',
-                                     'arg_dat', 'arg_adv', 'postposition',
-                                     's_arg', 'determiner', 'conjoined']},
+    'preposition': {'id_cols': []},
     'conjunction': {'id_cols': [],
-                    'feature_cols': ['second_position', 'sentential',
-                                     'complementizer']},
+                    'feature_cols': ['second_position']},
     'adjective': {'id_cols': [],
                   'form_cols': ['fem', 'neut'],
-                  'class_cols': ['declension'],
-                  'feature_cols': ['standalone', 's_arg', 'adverb',
-                                   'conjoined']},
-    'adverb': {'id_cols': [],
-               'feature_cols': ['negation', 'kai', 'conjoined']},
+                  'class_cols': ['declension']},
+    'adverb': {'id_cols': []},
     'interjection': {'id_cols': []},
-    'particle': {'id_cols': [],
-                 'feature_cols': ['negation', 'interjection', 'arg_s',
-                                  's_arg']},
+    'particle': {'id_cols': []},
     'demonstrative pronoun': {'id_cols': [],
                               'form_cols': ['fem', 'neut'],
-                              'class_cols': ['declension'],
-                              'feature_cols': ['s_arg']},
+                              'class_cols': ['declension']},
     'interrogative/indefinite pronoun': {'id_cols': [],
-                                         'form_cols': ['gs'],
-                                         'feature_cols': ['adverb', 's_arg']}
+                                         'form_cols': ['gs']}
 }
 
 
@@ -337,6 +320,8 @@ def write_lexicon():
         for (i, r) in wordforms_df.iterrows():
             entry_feats = {}
             for feature in lexicon_feature_cols:
+                if r['pos'] == 'personal pronoun' and feature == 'person' and feature not in r.keys():
+                    r['person'] = '3'
                 if not pd.isnull(r[feature]):
                     if isinstance(r[feature], float):
                         entry_feats[feature.upper()] = str(int(r[feature]))
