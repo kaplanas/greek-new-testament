@@ -1,4 +1,13 @@
-# Anything can be followed by a second-position clitic.
+# Determiners.
+
+'determiner' 'immediately_before' N[GENDER=?g, NUMBER=?n, CASE=?c, DISTANT_DETERMINER=n] -> D[GENDER=?g, NUMBER=?n, CASE=?c]
+'determiner' 'before' N[GENDER=?g, NUMBER=?n, CASE=?c, DISTANT_DETERMINER=y] -> D[GENDER=?g, NUMBER=?n, CASE=?c]
+'determiner' 'immediately_before' A[GENDER=?g, NUMBER=?n, CASE=?c, STANDALONE=y, DISTANT_DETERMINER=n] -> D[GENDER=?g, NUMBER=?n, CASE=?c]
+'determiner' 'before' A[GENDER=?g, NUMBER=?n, CASE=?c, STANDALONE=y, DISTANT_DETERMINER=y] -> D[GENDER=?g, NUMBER=?n, CASE=?c]
+'determiner' 'immediately_before' V[MOOD=participle, GENDER=?g, NUMBER=?n, CASE=?c, DETERMINER=y, DISTANT_DETERMINER=n] -> D[GENDER=?g, NUMBER=?n, CASE=?c]
+'determiner' 'before' V[MOOD=participle, GENDER=?g, NUMBER=?n, CASE=?c, DETERMINER=y, DISTANT_DETERMINER=y] -> D[GENDER=?g, NUMBER=?n, CASE=?c]
+
+# Second-position clitics.
 
 'second_position_clitic' 'immediately_after' A -> C[SECOND_POSITION=y]
 'second_position_clitic' 'immediately_after' B -> C[SECOND_POSITION=y]

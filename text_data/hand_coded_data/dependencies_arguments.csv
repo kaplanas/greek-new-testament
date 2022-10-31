@@ -475,7 +475,7 @@ pro/s_P-------,au)tou/s_E----APM,after
 pro/s_P-------,e(autou/s_E----APM,after
 pro/s_P-------,e)boulo/mhn_V1IMI-S-,after
 pro/s_P-------,e)ntroph/n_N----ASF,after
-pro/s_P-------,e)/cw_B-------,after
+pro/s_P-------,e)/cw_P-------,after
 pro/s_P-------,e(/teron_A----ASM,after
 pro/s_P-------,h(ma=s_E----AP-,after
 pro/s_P-------,qa/naton_N----ASM,after
@@ -829,9 +829,9 @@ a)fi/hsi(n)_V3PAI-S-,au)to/n_E----ASM,after
 a)pe/sth_V3AAI-S-,a)po/_P-------,after
 ba/lletai_V3PPI-S-,ei)s_P-------,before
 ba/llousi(n)_V3PAI-P-,au)to/_E----ASN,after
-ba/llousi(n)_V3PAI-P-,e)/cw_B-------,before
+ba/llousi(n)_V3PAI-P-,e)/cw_P-------,before
 beblhme/non_V-RPPASM,e)pi/_P-------,before
-blhqe/n_V-APPNSN,e)/cw_B-------,after
+blhqe/n_V-APPNSN,e)/cw_P-------,after
 e)/balon_V3AAI-P-,klh/rous_N----APM,after
 e)blh/qhsan_V3API-P-,ei)s_P-------,after
 basani/sai_V-AAN---,h(ma=s_E----AP-,after
@@ -932,7 +932,7 @@ dei=con_V2AAM-S-,h(mi=n_E----DP-,after
 dei=con_V2AAM-S-,pate/ra_N----ASM,after
 e)/deice(n)_V3AAI-S-,au)toi=s_E----DPM,after
 e)/deice(n)_V3AAI-S-,kai/_n-------,after
-deu=ro_V2-AM---,e)/cw_B-------,after
+deu=ro_V2-AM---,e)/cw_P-------,after
 deu=te_V2-AM---,pro/s_P-------,after
 de/desai_V2RPI-S-,gunaiki/_N----DSF,after
 dei=_V3PAI-S-,au)ca/nein_V-PAN---,after
@@ -1343,7 +1343,7 @@ e)celqo/ntes_V-AAPNPM,e)k_P-------,after
 e)celqo/ntwn_V-AAPGPM,a)po/_P-------,after
 e)celqw/n_V-AAPNSM,e)k_P-------,after
 e)celqw/n_V-AAPNSM,e)kei=qen_B-------,after
-e)celqw/n_V-AAPNSM,e)/cw_B-------,after
+e)celqw/n_V-AAPNSM,e)/cw_P-------,after
 e)ce/rxesqe_V2PMM-P-,ei)s_P-------,after
 e)cerxw/meqa_V1PMS-P-,e)/cw_P-------,after
 e)ch/lqate_V2AAI-P-,i)dei=n_V-AAN---,after
@@ -1688,12 +1688,12 @@ krath/sas_V-AAPNSM,xeiro/s_N----GSF,after
 e)krau/gasan_V3AAI-P-,a)=ron_V2AAM-S-,after
 e)krau/gase(n)_V3AAI-S-,deu=ro_V2-AM---,after
 kri/nate_V2AAM-P-,fhmi/_V1PAI-S-,after
-kri/nei_V3PAI-S-,e)/cw_B-------,before
+kri/nei_V3PAI-S-,e)/cw_P-------,before
 krinei=_V3FAI-S-,ko/smon_N----ASM,after
-kri/nein_V-PAN---,e)/cw_B-------,before
+kri/nein_V-PAN---,e)/cw_P-------,before
 kri/neis_V2PAI-S-,a)delfo/n_N----ASM,after
 kri/nete_V2PAI-P-,di/kaion_A----ASN,after
-kri/nete_V2PAI-P-,e)/sw_B-------,before
+kri/nete_V2PAI-P-,e)/sw_P-------,before
 kri/nete_V2PAM-P-,kri/sin_N----ASF,before
 krinou=men_V1FAI-P-,a)gge/lous_N----APM,before
 krinou=si(n)_V3FAI-P-,ko/smon_N----ASM,before
@@ -2275,7 +2275,7 @@ e)poi/hsas_V2AAI-S-,me_E----AS-,before
 e)poi/hsas_V2AAI-S-,ou(/tw(s)_B-------,after
 e)poi/hse(n)_V3AAI-S-,diataxqe/nta_V-APPAPN,after
 e)poi/hse(n)_V3AAI-S-,duna/meis_N----APF,after
-e)poi/hse(n)_V3AAI-S-,e)/swqen_B-------,before
+e)poi/hse(n)_V3AAI-S-,e)/swqen_P-------,before
 e)poi/hse(n)_V3AAI-S-,qe/lhma_N----ASN,after
 e)poi/hse(n)_V3AAI-S-,soi_E----DS-,after
 e)poi/hse(n)_V3AAI-S-,tau=ta_M----APN,after
@@ -2302,7 +2302,7 @@ poih=sai_V-AAN---,tou=to_M----ASN,before
 poih=sai_V-AAN---,u(/dwr_N----ASN,after
 poih/santi_V-AAPDSM,e)/leos_N----ASN,after
 poih/sas_V-AAPNSM,e)/leos_N----ASN,after
-poih/sas_V-AAPNSM,e)/cwqen_B-------,after
+poih/sas_V-AAPNSM,e)/cwqen_P-------,after
 poih/sasan_V-AAPASF,tou=to_M----ASN,before
 poih/sate_V2AAM-P-,a)napesei=n_V-AAN---,after
 poih/sei_V3FAI-S-,e)kdi/khsin_N----ASF,after

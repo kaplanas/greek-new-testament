@@ -225,7 +225,7 @@
 
 # i(/sthmi
 'modifier' 'after' 'e)/sthsan_V3AAI-P-' -> 'e)n_P-------'
-'modifier' 'after' 'ei(sth/kei_V3LAI-S-' -> 'e)/cw_B-------' | 'qewrw=n_V-PAPNSM' | 'klai/ousa_V-PAPNSF' | 'meta/_P-------' | 'pro/s_P-------'
+'modifier' 'after' 'ei(sth/kei_V3LAI-S-' -> 'e)/cw_P-------' | 'qewrw=n_V-PAPNSM' | 'klai/ousa_V-PAPNSF' | 'meta/_P-------' | 'pro/s_P-------'
 'modifier' 'after' 'ei(sth/keisan_V3LAI-P-' -> 'kathgorou=ntes_V-PAPNPM'
 'modifier' 'after' 'e)/sth_V3AAI-S-' -> 'e)n_P-------'
 
@@ -235,7 +235,7 @@
 'modifier' 'after' 'kalw=n_V-PAPNSM' -> 'poih/sei_V3FAI-S-'
 
 # ka/mptw
-'modifier' 'after' 'e)/kamyan_V3AAI-P-' -> '*ba/al_N----GSM'
+'modifier' 'after' 'e)/kamyan_V3AAI-P-' -> '*ba/al_N----DSF'
 
 # katagela/w
 'modifier' 'after' 'katege/lwn_V3IAI-P-' -> 'ei)do/tes_V-RAPNPM'
@@ -1994,6 +1994,9 @@
 # peri/
 'modifier' 'before' 'peri/_P-------' -> 'kai/_B-------'
 
+# e)/swqen
+'modifier' 'before' 'e)/swqen_P-------' -> 'kai/_B-------'
+
 #### verb ####
 
 # a)gapa/w
@@ -3074,9 +3077,6 @@
 
 # e)kei=
 'modifier' 'before' 'e)kei=_B-------' -> 'oi)ki/an_N----ASF'
-
-# e)/swqen
-'modifier' 'before' 'e)/swqen_B-------' -> 'kai/_B-------'
 
 #### conjunction ####
 

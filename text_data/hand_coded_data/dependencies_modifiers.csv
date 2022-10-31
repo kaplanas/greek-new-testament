@@ -931,7 +931,7 @@ e)k_P-------,mo/non_A----ASN,after
 e)k_P-------,*narki/ssou_N----GSM,after
 e)k_P-------,o)/ntas_V-PAPAPM,after
 e)pi/_P-------,kai/_B-------,before
-e)/swqen_B-------,kai/_B-------,before
+e)/swqen_P-------,kai/_B-------,before
 meta/_P-------,e)n_P-------,after
 meta/_P-------,pa/ntes_A----NPM,after
 peri/_P-------,kai/_B-------,before
@@ -1598,7 +1598,7 @@ e)qhrioma/xhsa_V1AAI-S-,kata/_P-------,before
 qhsauri/zwn_V-PAPNSM,e(autw=|_E----DSM,after
 i)a/qh_V3API-S-,a)po/_P-------,after
 i)a/sato_V3AMI-S-,e)pilabo/menos_V-AMPNSM,before
-ei(sth/kei_V3LAI-S-,e)/cw_B-------,after
+ei(sth/kei_V3LAI-S-,e)/cw_P-------,after
 ei(sth/kei_V3LAI-S-,qewrw=n_V-PAPNSM,after
 ei(sth/kei_V3LAI-S-,klai/ousa_V-PAPNSF,after
 ei(sth/kei_V3LAI-S-,meta/_P-------,after
@@ -1629,7 +1629,7 @@ e)klh/qh_V3API-S-,e)n_P-------,before
 e)klh/qh_V3API-S-,e(/ws_P-------,after
 kalei=te_V2PAI-P-,ti/_I----ASN,before
 kalw=n_V-PAPNSM,poih/sei_V3FAI-S-,after
-e)/kamyan_V3AAI-P-,*ba/al_N----GSM,after
+e)/kamyan_V3AAI-P-,*ba/al_N----DSF,after
 kate/bh_V3AAI-S-,speu/sas_V-AAPNSM,before
 katege/lwn_V3IAI-P-,ei)do/tes_V-RAPNPM,after
 kathgorei=sqai_V-PPN---,u(po/_P-------,after
