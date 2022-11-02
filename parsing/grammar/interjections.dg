@@ -72,12 +72,12 @@
 # fula/ssw
 'interjection' 'before' 'e)fulaca/mhn_V1AMI-S-' -> 'dida/skale_N----VSM'
 
-# e)gkake/w
-'interjection' 'before' 'e)gkakh/shte_V2AAS-P-' -> 'a)delfoi/_N----VPM'
-
 # me/nw
 'interjection' 'before' 'mene/tw_V3PAM-S-' -> 'a)delfoi/_N----VPM'
 'interjection' 'before' 'me/neis_V2PAI-S-' -> 'r(abbi/_N----VSM'
+
+# e)gkake/w
+'interjection' 'before' 'e)gkakh/shte_V2AAS-P-' -> 'a)delfoi/_N----VPM'
 
 # klai/w
 'interjection' 'before' 'klai/eis_V2PAI-S-' -> 'gu/nai_N----VSF'

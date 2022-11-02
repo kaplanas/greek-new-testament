@@ -20,3 +20,12 @@
 'second_position_clitic' 'immediately_after' M -> C[SECOND_POSITION=y]
 'second_position_clitic' 'immediately_after' R -> C[SECOND_POSITION=y]
 'second_position_clitic' 'immediately_after' V -> C[SECOND_POSITION=y]
+
+# Subjects.
+
+'subject' 'any' V[PERSON=3, NUMBER=?n, MOOD=indicative, ARG_NOM=n] -> N[NUMBER=?n, CASE=nominative]
+'subject' 'any' V[PERSON=3, NUMBER=?n, MOOD=subjunctive, ARG_NOM=n] -> N[NUMBER=?n, CASE=nominative]
+'subject' 'any' V[PERSON=?p, NUMBER=?n, MOOD=indicative, ARG_NOM=n] -> E[PERSON=?p, NUMBER=?n, CASE=nominative]
+'subject' 'any' V[PERSON=?p, NUMBER=?n, MOOD=subjunctive, ARG_NOM=n] -> E[PERSON=?p, NUMBER=?n, CASE=nominative]
+'subject' 'any' V[PERSON=3, NUMBER=?n, MOOD=indicative, ARG_NOM=n] -> A[NUMBER=?n, CASE=nominative, STANDALONE=y]
+'subject' 'any' V[PERSON=3, NUMBER=?n, MOOD=subjunctive, ARG_NOM=n] -> A[NUMBER=?n, CASE=nominative, STANDALONE=y]

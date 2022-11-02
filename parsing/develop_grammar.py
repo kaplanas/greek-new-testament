@@ -149,7 +149,8 @@ def find_unused_rules():
                         current_head = current_heads[-1]
                         current_dep = current_deps[-1].pop()
                         if production.type_of((parse.nodes[current_head]['word'], current_head),
-                                              (parse.nodes[current_dep]['word'], current_dep)) == \
+                                              (parse.nodes[current_dep]['word'], current_dep),
+                                              GRAMMAR._lexicon) == \
                                 parse.nodes[current_dep]['rel']:
                             if current_head > current_dep:
                                 found_use_before = True

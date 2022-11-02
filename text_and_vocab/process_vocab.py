@@ -19,9 +19,10 @@ POS_PROCESSING = {
     'verb': {'id_cols': [],
              'form_cols': ['pp' + str(i + 2) for i in range(5)],
              'class_cols': ['verb_type'],
-             'feature_cols': ['determiner', 'distant_determiner']},
+             'feature_cols': ['arg_nom', 'determiner', 'distant_determiner']},
     'personal pronoun': {'id_cols': [],
-                         'form_cols': ['gs']},
+                         'form_cols': ['gs'],
+                         'feature_cols': ['person']},
     'definite article': {'id_cols': [],
                          'form_cols': ['fem', 'neut'],
                          'class_cols': ['declension']},
@@ -323,8 +324,6 @@ def write_lexicon():
         for (i, r) in wordforms_df.iterrows():
             entry_feats = {}
             for feature in lexicon_feature_cols:
-                if r['pos'] == 'personal pronoun' and feature == 'person' and feature not in r.keys():
-                    r['person'] = '3'
                 if not pd.isnull(r[feature]):
                     if isinstance(r[feature], float):
                         entry_feats[feature.upper()] = str(int(r[feature]))

@@ -263,29 +263,23 @@
 # dokima/zw
 'conjunction' 'after' 'dokimaze/sqwsan_V3PPM-P-' -> 'diakonei/twsan_V3PAM-P-'
 
+# katarge/w
+'conjunction' 'after' 'kathrgh/qhte_V2API-P-' -> 'e)cepe/sate_V2AAI-P-'
+
+# pisteu/w
+'conjunction' 'after' 'pisteu/ei_V3PAI-S-' -> 'e)sqi/ei_V3PAI-S-'
+
 # e)kkla/w
 'conjunction' 'after' 'e)cekla/sqhsan_V3API-P-' -> 'e(/sthkas_V2RAI-S-'
 
 # e)nerge/w
 'conjunction' 'after' 'e)nergei=tai_V3PMI-S-' -> 'e)n_P-------'
 
-# katarge/w
-'conjunction' 'after' 'kathrgh/qhte_V2API-P-' -> 'e)cepe/sate_V2AAI-P-'
+# sth/kw
+'conjunction' 'after' 'sth/kete_V2PAM-P-' -> 'a)ndri/zesqe_V2PMM-P-'
 
 # me/nw
 'conjunction' 'after' 'e)/meine(n)_V3AAI-S-' -> 'a)pe/lipon_V1AAI-S-'
-
-# pisteu/w
-'conjunction' 'after' 'pisteu/ei_V3PAI-S-' -> 'e)sqi/ei_V3PAI-S-'
-
-# proko/ptw
-'conjunction' 'after' 'proe/koye(n)_V3AAI-S-' -> 'h)/ggike(n)_V3RAI-S-'
-
-# fusio/w
-'conjunction' 'after' 'fusioi=_V3PAI-S-' -> 'oi)kodomei=_V3PAI-S-'
-
-# sth/kw
-'conjunction' 'after' 'sth/kete_V2PAM-P-' -> 'a)ndri/zesqe_V2PMM-P-'
 
 # xai/rw
 'conjunction' 'after' 'xai/rein_V-PAN---' -> 'klai/ein_V-PAN---'
@@ -311,8 +305,14 @@
 # nh/fw
 'conjunction' 'after' 'nh/yate_V2AAM-P-' -> 'grhgorh/sate_V2AAM-P-'
 
+# proko/ptw
+'conjunction' 'after' 'proe/koye(n)_V3AAI-S-' -> 'h)/ggike(n)_V3RAI-S-'
+
 # siwpa/w
 'conjunction' 'after' 'siw/pa_V2PAM-S-' -> 'pefi/mwso_V2RPM-S-'
+
+# fusio/w
+'conjunction' 'after' 'fusioi=_V3PAI-S-' -> 'oi)kodomei=_V3PAI-S-'
 
 #### adjective ####
 
