@@ -21,14 +21,14 @@
 # ei)mi/
 'determiner' 'before' 'ei)/h_V3PAO-S-' -> 'to/_D----NSN'
 
+# qu/w
+'determiner' 'before' 'qu/ein_V-PAN---' -> 'tou=_D----GSN'
+
 # e)ci/sthmi
 'determiner' 'before' 'e)cestake/nai_V-RAN---' -> 'to/_D----ASN'
 
 # qe/lw
 'determiner' 'before' 'qe/loi_V3PAO-S-' -> 'to/_D----ASN'
-
-# qu/w
-'determiner' 'before' 'qu/ein_V-PAN---' -> 'tou=_D----GSN'
 
 #### adjective ####
 
@@ -91,12 +91,6 @@
 # e)mpi/ptw
 'determiner' 'immediately_before' 'e)mpesei=n_V-AAN---' -> 'to/_D----NSN'
 
-# e)sqi/w
-'determiner' 'immediately_before' 'fagei=n_V-AAN---' -> 'to/_D----ASN'
-
-# paradi/dwmi
-'determiner' 'immediately_before' 'paradou=nai_V-AAN---' -> 'tou=_D----GSN'
-
 # e)gei/rw
 'determiner' 'immediately_before' 'e)gerqh=nai_V-APN---' -> 'to/_D----ASN'
 
@@ -115,8 +109,14 @@
 # me/nw
 'determiner' 'immediately_before' 'mei=nai_V-AAN---' -> 'tou=_D----GSN'
 
+# paradi/dwmi
+'determiner' 'immediately_before' 'paradou=nai_V-AAN---' -> 'tou=_D----GSN'
+
 # a)poqnh/|skw
 'determiner' 'immediately_before' 'a)poqanei=n_V-AAN---' -> 'to/_D----NSN'
+
+# e)sqi/w
+'determiner' 'immediately_before' 'fagei=n_V-AAN---' -> 'to/_D----ASN'
 
 # za/w
 'determiner' 'immediately_before' 'zh=n_V-PAN---' -> 'to/_D----NSN'

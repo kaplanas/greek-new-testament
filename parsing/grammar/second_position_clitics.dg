@@ -8,11 +8,6 @@
 # kai/
 'second_position_clitic' 'immediately_after' 'kai/_c-------' -> 'ga/r_C-------'
 
-#### verb ####
-
-# e)/xw
-'second_position_clitic' 'after' 'ei)=xe(n)_V3IAI-S-' -> 'ou)=n_C-------'
-
 #### interrogative/indefinite pronoun ####
 
 # ti/s
@@ -32,4 +27,9 @@
 
 # o(
 'second_position_clitic' 'after' 'oi(_D----NPM' -> 'ou)=n_C-------'
+
+#### verb ####
+
+# e)/xw
+'second_position_clitic' 'after' 'ei)=xe(n)_V3IAI-S-' -> 'ou)=n_C-------'
 

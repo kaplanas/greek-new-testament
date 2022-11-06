@@ -1,3 +1,16 @@
+# Arguments.
+
+'argument' 'any' V[ARG_GEN=y] -> N[CASE=genitive]
+'argument' 'any' V[ARG_GEN=y] -> E[CASE=genitive]
+'argument' 'any' V[ARG_GEN=y] -> A[CASE=genitive, STANDALONE=y]
+'argument' 'any' V[ARG_DAT=y] -> N[CASE=dative]
+'argument' 'any' V[ARG_DAT=y] -> E[CASE=dative]
+'argument' 'any' V[ARG_DAT=y] -> A[CASE=dative, STANDALONE=y]
+'argument' 'any' V[ARG_ACC=y] -> N[CASE=accusative]
+'argument' 'any' V[ARG_ACC=y] -> E[CASE=accusative]
+'argument' 'any' V[ARG_ACC=y] -> A[CASE=accusative, STANDALONE=y]
+'argument' 'any' V[ARG_INF=y] -> V[MOOD=infinitive]
+
 # Determiners.
 
 'determiner' 'immediately_before' N[GENDER=?g, NUMBER=?n, CASE=?c, DISTANT_DETERMINER=n] -> D[GENDER=?g, NUMBER=?n, CASE=?c]
