@@ -20,6 +20,13 @@
 'determiner' 'immediately_before' V[MOOD=participle, GENDER=?g, NUMBER=?n, CASE=?c, DETERMINER=y, DISTANT_DETERMINER=n] -> D[GENDER=?g, NUMBER=?n, CASE=?c]
 'determiner' 'before' V[MOOD=participle, GENDER=?g, NUMBER=?n, CASE=?c, DETERMINER=y, DISTANT_DETERMINER=y] -> D[GENDER=?g, NUMBER=?n, CASE=?c]
 
+# Modifiers.
+
+'modifier' 'any' N[GENDER=?g, NUMBER=?n, CASE=?c] -> A[GENDER=?g, NUMBER=?n, CASE=?c]
+'modifier' 'any' N[GENDER=?g, NUMBER=?n, CASE=genitive] -> M[GENDER=?g, NUMBER=?n, CASE=genitive]
+'modifier' 'any' N[GENDER=?g, NUMBER=?n, CASE=dative] -> M[GENDER=?g, NUMBER=?n, CASE=dative]
+'modifier' 'any' N[GENDER=?g, NUMBER=?n, CASE=accusative] -> M[GENDER=?g, NUMBER=?n, CASE=accusative]
+
 # Second-position clitics.
 
 'second_position_clitic' 'immediately_after' A -> C[SECOND_POSITION=y]
