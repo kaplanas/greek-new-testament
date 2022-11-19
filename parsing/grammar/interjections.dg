@@ -8,14 +8,19 @@
 # a)pe/rxomai
 'interjection' 'before' 'a)peleuso/meqa_V1FMI-P-' -> 'ku/rie_N----VSM'
 
+# gi/nomai
+'interjection' 'before' 'ge/gonas_V2RAI-S-' -> 'r(abbi/_N----VSM'
+
 # di/dwmi
 'interjection' 'before' 'do/s_V2AAM-S-' -> 'ku/rie_N----VSM'
 
 # du/namai
 'interjection' 'before' 'du/nasqe_V2PMI-P-' -> 'gennh/mata_N----VPN'
+'interjection' 'before' 'du/namai_V1PMI-S-' -> 'ku/rie_N----VSM'
 
 # ei)/dw
 'interjection' 'before' 'oi)=das_V2RAI-S-' -> 'ku/rie_N----VSM' | 'nai/_L-------'
+'interjection' 'before' 'oi)/date_V2RAI-P-' -> 'moixali/des_A----VPF'
 
 # ei)mi/
 'interjection' 'before' 'ei)=_V2PAI-S-' -> 'a)/nqrwpe_N----VSM' | 'su/_E----VS-'
@@ -27,10 +32,11 @@
 'interjection' 'before' 'qe/lw_V1PAI-S-' -> 'a)delfoi/_N----VPM'
 
 # le/gw
-'interjection' 'before' 'le/gw_V1PAI-S-' -> 'a)mh/n_J-------'
+'interjection' 'before' 'le/gw_V1PAI-S-' -> 'a)delfoi/_N----VPM'
 
 # poie/w
 'interjection' 'before' 'e)poi/hse(n)_V3AAI-S-' -> 'a)/frones_A----VPM'
+'interjection' 'before' 'poih/swmen_V1AAS-P-' -> 'dida/skale_N----VSM'
 
 # u(pa/gw
 'interjection' 'before' 'u(pa/geis_V2PAI-S-' -> 'ku/rie_N----VSM'
@@ -70,11 +76,11 @@
 # pa/reimi
 'interjection' 'before' 'pa/rei_V2PAI-S-' -> 'e(tai=re_N----VSM'
 
+# file/w
+'interjection' 'before' 'filei=s_V2PAI-S-' -> '*si/mwn_N----VSM'
+
 # xai/rw
 'interjection' 'before' 'xai/rete_V2PAM-P-' -> 'a)delfoi/_N----VPM'
-
-# mime/omai
-'interjection' 'before' 'mimou=_V2PMM-S-' -> 'a)gaphte/_A----VSM'
 
 # a)gapa/w
 'interjection' 'before' 'a)gapa=|s_V2PAI-S-' -> '*si/mwn_N----VSM'
@@ -85,16 +91,113 @@
 # ni/ptw
 'interjection' 'before' 'ni/pteis_V2PAI-S-' -> 'ku/rie_N----VSM'
 
-# file/w
-'interjection' 'before' 'filei=s_V2PAI-S-' -> '*si/mwn_N----VSM'
+# proserga/zomai
+'interjection' 'before' 'proshrga/sato_V3AMI-S-' -> 'ku/rie_N----VSM'
 
 #### conjunction ####
 
 # i(/na
 'interjection' 'before' 'i(/na_C-------' -> 'tekni/a_N----VPN'
 
+# a)lla/
+'interjection' 'before' 'a)lla/_C-------' -> 'a)gaphte/_A----VSM' | 'tekni/a_N----VPN'
+
 # o(/tan
 'interjection' 'before' 'o(/tan_C-------' -> '*)ihsou=_N----VSM'
+
+# pri/n
+'interjection' 'before' 'pri/n_C-------' -> 'ku/rie_N----VSM'
+
+#### particle ####
+
+# i)/de
+'interjection' 'immediately_before' 'i)/de_L-------' -> 'ku/rie_N----VSM'
+
+#### verb ####
+
+# a)kolouqe/w
+'interjection' 'immediately_before' 'a)kolouqh/sw_V1FAI-S-' -> 'dida/skale_N----VSM'
+
+# deu=ro
+'interjection' 'immediately_before' 'deu=ro_V2-AM---' -> '*la/zare_N----VSM'
+
+# de/omai
+'interjection' 'immediately_before' 'de/omai_V1PMI-S-' -> 'a)delfoi/_N----VPM'
+
+# e)/rxomai
+'interjection' 'immediately_before' 'e)/rxomai_V1PMI-S-' -> 'nai/_L-------'
+'interjection' 'immediately_before' 'e)/rxou_V2PMM-S-' -> 'a)mh/n_J-------'
+
+# e)/xw
+'interjection' 'immediately_before' 'e)/xw_V1PAI-S-' -> '*si/mwn_N----VSM'
+
+# qewre/w
+'interjection' 'immediately_before' 'qewrw=_V1PAI-S-' -> 'ku/rie_N----VSM'
+
+# le/gw
+'interjection' 'immediately_before' 'ei)pe/_V2AAM-S-' -> 'dida/skale_N----VSM'
+'interjection' 'immediately_before' 'le/gw_V1PAI-S-' -> 'a)mh/n_J-------'
+
+# poie/w
+'interjection' 'immediately_before' 'e)poi/hse(n)_V3AAI-S-' -> 'ku/rie_N----VSM'
+
+# proseu/xomai
+'interjection' 'immediately_before' 'proseu/xesqe_V2PMM-P-' -> 'a)delfoi/_N----VPM'
+
+# sw/|zw
+'interjection' 'immediately_before' 'sw=son_V2AAM-S-' -> 'ku/rie_N----VSM' | 'pa/ter_N----VSM'
+
+# u(pota/ssw
+'interjection' 'immediately_before' 'u(pota/ghte_V2APM-P-' -> 'new/teroi_A----VPM'
+
+# fula/ssw
+'interjection' 'immediately_before' 'fula/cate_V2AAM-P-' -> 'tekni/a_N----VPN'
+
+# a)fi/hmi
+'interjection' 'immediately_before' 'a)/fes_V2AAM-S-' -> 'pa/ter_N----VSM'
+'interjection' 'immediately_before' 'a)fe/wntai_V3RPI-P-' -> 'a)/nqrwpe_N----VSM'
+
+# u(pa/gw
+'interjection' 'immediately_before' 'u(/page_V2PAM-S-' -> 'te/knon_N----VSN'
+
+# bohqe/w
+'interjection' 'immediately_before' 'boh/qei_V2PAM-S-' -> 'ku/rie_N----VSM'
+
+# doca/zw
+'interjection' 'immediately_before' 'do/cason_V2AAM-S-' -> 'pa/ter_N----VSM'
+
+# e)pitre/pw
+'interjection' 'immediately_before' 'e)pi/treyon_V2AAM-S-' -> 'ku/rie_N----VSM'
+
+# e)sqi/w
+'interjection' 'immediately_before' 'fa/ge_V2AAM-S-' -> 'r(abbi/_N----VSM'
+
+# qa/
+'interjection' 'immediately_before' 'qa/_V2AAM-S-' -> 'mara/na_N----VSM'
+
+# kaqeu/dw
+'interjection' 'immediately_before' 'kaqeu/deis_V2PAI-S-' -> '*si/mwn_N----VSM'
+
+#### conjunction ####
+
+# i(/na
+'interjection' 'immediately_before' 'i(/na_C-------' -> 'ku/rie_N----VSM' | 'rabbouni_N----VSM'
+
+# ei)
+'interjection' 'immediately_before' 'ei)_C-------' -> 'a)gaphtoi/_A----VPM' | 'a)delfoi/_N----VPM' | 'ku/rie_N----VSM'
+
+#### demonstrative pronoun ####
+
+# ou(=tos
+'interjection' 'immediately_before' 'ou(=tos_M----NSM' -> 'ku/rie_N----VSM'
+
+# tosou=tos
+'interjection' 'immediately_before' 'tosou/tou_M----GSN' -> 'nai/_L-------'
+
+#### interjection ####
+
+# a)mh/n
+'interjection' 'immediately_before' 'a)mh/n_J-------' -> 'a)mh/n_J-------'
 
 #### particle ####
 
@@ -143,94 +246,8 @@
 
 #### verb ####
 
-# a)kolouqe/w
-'interjection' 'immediately_before' 'a)kolouqh/sw_V1FAI-S-' -> 'dida/skale_N----VSM'
-
-# deu=ro
-'interjection' 'immediately_before' 'deu=ro_V2-AM---' -> '*la/zare_N----VSM'
-
-# de/omai
-'interjection' 'immediately_before' 'de/omai_V1PMI-S-' -> 'a)delfoi/_N----VPM'
-
-# e)/rxomai
-'interjection' 'immediately_before' 'e)/rxomai_V1PMI-S-' -> 'nai/_L-------'
-'interjection' 'immediately_before' 'e)/rxou_V2PMM-S-' -> 'a)mh/n_J-------'
-
-# qewre/w
-'interjection' 'immediately_before' 'qewrw=_V1PAI-S-' -> 'ku/rie_N----VSM'
-
-# le/gw
-'interjection' 'immediately_before' 'ei)pe/_V2AAM-S-' -> 'dida/skale_N----VSM'
-
-# poie/w
-'interjection' 'immediately_before' 'e)poi/hse(n)_V3AAI-S-' -> 'ku/rie_N----VSM'
-'interjection' 'immediately_before' 'poih/swmen_V1AAS-P-' -> 'ku/rie_N----VSM'
-
-# proseu/xomai
-'interjection' 'immediately_before' 'proseu/xesqe_V2PMM-P-' -> 'a)delfoi/_N----VPM'
-
-# sw/|zw
-'interjection' 'immediately_before' 'sw=son_V2AAM-S-' -> 'ku/rie_N----VSM' | 'pa/ter_N----VSM'
-
-# u(pota/ssw
-'interjection' 'immediately_before' 'u(pota/ghte_V2APM-P-' -> 'new/teroi_A----VPM'
-
-# fula/ssw
-'interjection' 'immediately_before' 'fula/cate_V2AAM-P-' -> 'tekni/a_N----VPN'
-
-# a)fi/hmi
-'interjection' 'immediately_before' 'a)/fes_V2AAM-S-' -> 'pa/ter_N----VSM'
-
-# u(pa/gw
-'interjection' 'immediately_before' 'u(/page_V2PAM-S-' -> 'te/knon_N----VSN'
-
-# bohqe/w
-'interjection' 'immediately_before' 'boh/qei_V2PAM-S-' -> 'ku/rie_N----VSM'
-
-# gi/nomai
-'interjection' 'immediately_before' 'ge/gonas_V2RAI-S-' -> 'r(abbi/_N----VSM'
-
-# dei/knumi
-'interjection' 'immediately_before' 'dei=con_V2AAM-S-' -> 'ku/rie_N----VSM'
-
-# doca/zw
-'interjection' 'immediately_before' 'do/cason_V2AAM-S-' -> 'pa/ter_N----VSM'
-
-# e)pitre/pw
-'interjection' 'immediately_before' 'e)pi/treyon_V2AAM-S-' -> 'ku/rie_N----VSM'
-
-# e)sqi/w
-'interjection' 'immediately_before' 'fa/ge_V2AAM-S-' -> 'r(abbi/_N----VSM'
-
-# qa/
-'interjection' 'immediately_before' 'qa/_V2AAM-S-' -> 'mara/na_N----VSM'
-
-# kaqeu/dw
-'interjection' 'immediately_before' 'kaqeu/deis_V2PAI-S-' -> '*si/mwn_N----VSM'
-
-# proserga/zomai
-'interjection' 'immediately_before' 'proshrga/sato_V3AMI-S-' -> 'ku/rie_N----VSM'
-
-#### conjunction ####
-
-# ei)
-'interjection' 'immediately_before' 'ei)_C-------' -> 'a)gaphtoi/_A----VPM' | 'a)delfoi/_N----VPM' | 'ku/rie_N----VSM'
-
-# i(/na
-'interjection' 'immediately_before' 'i(/na_C-------' -> 'ku/rie_N----VSM' | 'rabbouni_N----VSM'
-
-# pri/n
-'interjection' 'immediately_before' 'pri/n_C-------' -> 'ku/rie_N----VSM'
-
-#### demonstrative pronoun ####
-
-# ou(=tos
-'interjection' 'immediately_before' 'ou(=tos_M----NSM' -> 'ku/rie_N----VSM'
-
-# tosou=tos
-'interjection' 'immediately_before' 'tosou/tou_M----GSN' -> 'nai/_L-------'
-
-#### verb ####
+# du/namai
+'interjection' 'immediately_after' 'du/natai_V3PMI-S-' -> 'a)delfoi/_N----VPM'
 
 # ei)/dw
 'interjection' 'immediately_after' 'oi)=das_V2RAI-S-' -> 'a)/ner_N----VSM' | 'gu/nai_N----VSF'
@@ -246,9 +263,6 @@
 
 # a)kou/w
 'interjection' 'immediately_after' 'a)kou/sate_V2AAM-P-' -> 'a)delfoi/_N----VPM'
-
-# du/namai
-'interjection' 'immediately_after' 'du/natai_V3PMI-S-' -> 'a)delfoi/_N----VPM'
 
 # eu)frai/nw
 'interjection' 'immediately_after' 'eu)fra/nqhte_V2APM-P-' -> 'e)/qnh_N----VPN'
@@ -285,11 +299,6 @@
 
 # dio/
 'interjection' 'immediately_after' 'dio/_C-------' -> 'a)delfoi/_N----VPM'
-
-#### interjection ####
-
-# a)mh/n
-'interjection' 'immediately_after' 'a)mh/n_J-------' -> 'a)mh/n_J-------'
 
 #### particle ####
 

@@ -127,9 +127,9 @@ def find_unused_rules():
     for production in GRAMMAR._productions:
         found_use_before = False
         found_use_after = False
-        if production._position == 'before':
+        if production._position == 'before' or production._position == 'immediately_before':
             found_use_after = True
-        elif production._position == 'after':
+        elif production._position == 'after' or production._position == 'immediately_after':
             found_use_before = True
         sent_lengths = sorted((k for k in parses.keys()), reverse=True)
         while not (found_use_before and found_use_after) and len(sent_lengths) > 0:

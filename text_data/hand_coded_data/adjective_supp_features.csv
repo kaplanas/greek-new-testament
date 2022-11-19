@@ -25,7 +25,7 @@ plou/sios,y,n
 mhdei/s,y,n
 dia/bolos,y,n
 de/ka,y,n
-deu/teros,n,n
+deu/teros,y,n
 o)li/gos,n,n
 ei)dwlo/qutos,y,n
 kaino/s,n,n
@@ -172,7 +172,7 @@ eu)qu/s,n,n
 skolio/s,n,n
 traxu/s,n,n
 lei=os,n,n
-kalo/s,y,n
+kalo/s,y,y
 i(kano/s,y,n
 a)/sbestos,n,n
 e(/teros,y,n
@@ -190,8 +190,8 @@ me/toxos,n,n
 a(martwlo/s,y,n
 eu)kopw/teros,n,n
 para/docos,n,n
-so/s,n,n
-palaio/s,n,n
+so/s,y,n
+palaio/s,y,n
 ne/os,y,n
 blhte/os,n,n
 xrhsto/s,n,n
@@ -210,7 +210,7 @@ monogenh/s,n,n
 xwlo/s,n,n
 malako/s,y,n
 e)/ndocos,n,n
-basi/leios,n,n
+basi/leios,y,n
 perisso/teros,n,n
 gennhto/s,n,n
 nomiko/s,y,n
@@ -221,8 +221,8 @@ e(katontaplasi/wn,n,n
 krupto/s,n,n
 fanero/s,y,n
 a)po/krufos,n,n
-*gerashno/s,n,n
-a)sqenh/s,n,n
+*gerashno/s,y,n
+a)sqenh/s,y,n
 pentakisxi/lioi,n,n
 eu)/qetos,n,n
 e(bdomh/konta,n,n
@@ -246,7 +246,7 @@ o)ligo/pistos,n,n
 a)ne/kleiptos,n,n
 e(/toimos,n,n
 fro/nimos,y,n
-lepto/s,n,n
+lepto/s,y,y
 *galilai=os,n,n
 dekaoktw/,n,n
 pantelh/s,n,n
@@ -265,10 +265,10 @@ fila/rguros,n,n
 a)ne/ndektos,n,n
 muliko/s,n,n
 a)xrei=os,n,n
-a)llogenh/s,n,n
+a)llogenh/s,y,n
 a(/rpac,n,n
 peri/lupos,n,n
-a)du/natos,n,n
+a)du/natos,y,n
 pollaplasi/wn,n,n
 tetraplou=s,n,n
 eu)genh/s,n,n
@@ -367,7 +367,7 @@ a)mi/antos,n,n
 o)rfano/s,y,n
 a)/spilos,n,n
 xrusodaktu/lios,n,n
-basiliko/s,n,n
+basiliko/s,y,n
 a)ne/leos,n,n
 e)fh/meros,n,n
 e)pith/deios,n,n
@@ -408,7 +408,7 @@ probatiko/s,n,n
 u(gih/s,n,n
 kri/qinos,n,n
 o)/yios,n,n
-pro/teros,n,n
+pro/teros,y,n
 e)pa/ratos,n,n
 a)resto/s,n,n
 a)posuna/gwgos,n,n
@@ -766,7 +766,7 @@ nwqro/s,n,n
 a)/peiros,n,n
 a)meta/qetos,n,n
 pro/dromos,n,n
-dekato/s,n,n
+dekato/s,y,n
 a)pa/twr,n,n
 a)mh/twr,n,n
 a)genealo/ghtos,n,n

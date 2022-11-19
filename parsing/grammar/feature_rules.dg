@@ -34,6 +34,7 @@
 'second_position_clitic' 'immediately_after' C[SECOND_POSITION=n] -> C[SECOND_POSITION=y]
 'second_position_clitic' 'immediately_after' D -> C[SECOND_POSITION=y]
 'second_position_clitic' 'immediately_after' N -> C[SECOND_POSITION=y]
+'second_position_clitic' 'immediately_after' L -> C[SECOND_POSITION=y]
 'second_position_clitic' 'immediately_after' P -> C[SECOND_POSITION=y]
 'second_position_clitic' 'immediately_after' E -> C[SECOND_POSITION=y]
 'second_position_clitic' 'immediately_after' I -> C[SECOND_POSITION=y]
