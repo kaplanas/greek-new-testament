@@ -8,7 +8,7 @@ pa=s,y,y
 kuriako/s,n,n
 me/gas,y,n
 xrusou=s,n,n
-me/sos,n,n
+me/sos,y,n
 o(/moios,n,n
 podh/rhs,n,n
 leuko/s,n,n
@@ -21,7 +21,7 @@ e)/sxatos,y,n
 kako/s,y,n
 yeudh/s,n,n
 plou/sios,y,n
-*)ioudai=os,y,n
+*)ioudai=os,y,y
 mhdei/s,y,n
 dia/bolos,y,n
 de/ka,y,n
@@ -64,7 +64,7 @@ e(/c,n,n
 i)sxuro/s,n,n
 purro/s,n,n
 me/las,n,n
-trei=s,n,n
+trei=s,y,n
 xlwro/s,n,n
 pe/mptos,n,n
 e(/ktos,n,n
@@ -77,7 +77,7 @@ e(/bdomos,n,n
 pe/nte,n,n
 *(ellhniko/s,n,n
 du/o,y,n
-i(ppiko/s,n,n
+i(ppiko/s,y,n
 pu/rinos,n,n
 u(aki/nqinos,n,n
 qeiw/dhs,n,n
@@ -86,12 +86,12 @@ xalkou=s,n,n
 li/qinos,n,n
 cu/linos,n,n
 eu)w/numos,n,n
-gluku/s,n,n
+gluku/s,y,n
 xi/lioi,n,n
 diako/sioi,n,n
 e(ch/konta,n,n
 e)xqro/s,y,n
-platu/s,n,n
+platu/s,y,n
 h(/misus,n,n
 de/katos,n,n
 e)/mfobos,n,n
@@ -129,7 +129,7 @@ mu/linos,n,n
 mousiko/s,n,n
 deilo/s,n,n
 a)/pistos,n,n
-u(yhlo/s,n,n
+u(yhlo/s,y,n
 tetra/gwnos,n,n
 i)/sos,y,n
 e)/natos,n,n
@@ -144,12 +144,12 @@ a)mfo/teroi,y,n
 a)/memptos,n,n
 stei=ros,n,n
 a)peiqh/s,n,n
-kwfo/s,n,n
+kwfo/s,y,n
 u(/yistos,n,n
 o)reino/s,n,n
 dunato/s,n,n
 u(perh/fanos,n,n
-tapeino/s,n,n
+tapeino/s,y,n
 a)gaqo/s,y,y
 keno/s,n,n
 peri/oikos,n,n
@@ -199,7 +199,7 @@ spo/rimos,n,n
 chro/s,n,n
 pedino/s,n,n
 para/lios,n,n
-u(me/teros,n,n
+u(me/teros,y,n
 a)xa/ristos,n,n
 oi)kti/rmwn,n,n
 i)/dios,y,n
@@ -223,12 +223,12 @@ fanero/s,y,n
 a)po/krufos,n,n
 *gerashno/s,y,n
 a)sqenh/s,y,n
-pentakisxi/lioi,n,n
+pentakisxi/lioi,y,n
 eu)/qetos,n,n
 e(bdomh/konta,n,n
 a)nekto/s,n,n
-sofo/s,n,n
-suneto/s,n,n
+sofo/s,y,n
+suneto/s,y,n
 nh/pios,n,n
 h(miqanh/s,n,n
 e)piou/sios,n,n
@@ -286,7 +286,7 @@ e)ktene/steron,n,n
 braxu/s,n,n
 ai)/tios,n,n
 u(gro/s,n,n
-kakou=rgos,y,n
+kakou=rgos,y,y
 a)ristero/s,n,n
 a)/topos,n,n
 laceuto/s,n,n
@@ -308,7 +308,7 @@ a)nqrw/pinos,n,n
 pneumatiko/s,y,n
 yuxiko/s,y,n
 sa/rkinos,n,n
-sarkiko/s,n,n
+sarkiko/s,y,n
 sunergo/s,y,n
 ma/taios,n,n
 e)piqana/tios,n,n
@@ -328,7 +328,7 @@ e(kw/n,n,n
 a)/kwn,n,n
 a)da/panos,n,n
 e)/nnomos,n,n
-fqarto/s,n,n
+fqarto/s,y,n
 a)/fqartos,n,n
 a)do/kimos,n,n
 i(ero/qutos,n,n
@@ -354,7 +354,7 @@ e)poura/nios,n,n
 e)pi/geios,n,n
 xoi+ko/s,n,n
 a)/tomos,n,n
-qnhto/s,n,n
+qnhto/s,y,n
 a)metaki/nhtos,n,n
 e)nergh/s,n,n
 o(lo/klhros,n,n
@@ -376,7 +376,7 @@ sklhro/s,n,n
 e)na/lion,n,n
 mesto/s,n,n
 qanathfo/ros,n,n
-pikro/s,n,n
+pikro/s,y,n
 a(luko/s,n,n
 e)pisth/mwn,n,n
 daimoniw/dhs,n,n

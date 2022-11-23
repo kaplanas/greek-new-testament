@@ -15,6 +15,9 @@
 
 #### adjective ####
 
+# biwtiko/s
+'second_position_clitic' 'after' 'biwtika/_A----APN' -> 'ou)=n_C-------'
+
 # prw=tos
 'second_position_clitic' 'after' 'prw=ton_A----ASN' -> 'ga/r_C-------'
 
@@ -26,6 +29,7 @@
 #### definite article ####
 
 # o(
+'second_position_clitic' 'after' 'ai(_D----NPF' -> 'ou)=n_C-------'
 'second_position_clitic' 'after' 'oi(_D----NPM' -> 'ou)=n_C-------'
 
 #### verb ####

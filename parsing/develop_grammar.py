@@ -171,8 +171,8 @@ def find_unused_rules():
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
-    sent_lengths = [i + 1 for i in range(12)]
-    # sent_lengths = [12]
+    sent_lengths = [i + 1 for i in range(13)]
+    # sent_lengths = [13]
     old_parses = {}
     old_parse_counts = {}
     parses = {}
