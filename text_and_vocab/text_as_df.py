@@ -35,7 +35,7 @@ def write_text_tagged():
                 if r['verse'] not in current_verses:
                     current_verses = current_verses + [r['verse']]
                 current_sentence = current_sentence + [r['parsing_atom']]
-                if re.match('.*[.;@]', r['wordform']):
+                if re.match('^.*[.;@][⸃—]?$', r['wordform']):
                     file.write(str(chapter) + ':' + str(current_verses[0]))
                     if len(current_verses) > 1:
                         file.write('-' + str(current_verses[-1]))

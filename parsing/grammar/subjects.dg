@@ -102,9 +102,6 @@
 'subject' 'before' 'e)lqei=n_V-AAN---' -> '*)hli/an_N----ASM'
 'subject' 'before' 'h)=lqe(n)_V3AAI-S-' -> 'o(_D----NSM'
 
-# e)rwta/w
-'subject' 'before' 'e)rwta=|_V3PAS-S-' -> 'ti\s_I----NSM'
-
 # e)/xw
 'subject' 'before' 'e)/xei_V3PAI-S-' -> 'tau=ta_M----NPN' | 'ti\s_I----NSM'
 'subject' 'before' 'e)/xousi(n)_V3PAI-P-' -> 'ou(=toi_M----NPM'
@@ -146,7 +143,6 @@
 # le/gw
 'subject' 'before' 'ei)=pan_V3AAI-P-' -> 'oi(_D----NPM' | 'tine/s_I----NPM'
 'subject' 'before' 'ei)=pe(n)_V3AAI-S-' -> 'h(_D----NSF' | 'o(_D----NSM'
-'subject' 'before' 'ei)/ph|_V3AAS-S-' -> 'ti\s_I----NSM'
 'subject' 'before' 'e)/lege(n)_V3IAI-S-' -> 'e)kei=nos_M----NSM'
 'subject' 'before' 'e)/legon_V3IAI-P-' -> 'oi(_D----NPM'
 'subject' 'before' 'le/gei_V3PAI-S-' -> 'o(_D----NSM'
@@ -196,6 +192,9 @@
 
 # a)gapa/w
 'subject' 'before' 'a)gaph/sei_V3FAI-S-' -> 'ti/s_I----NSM'
+
+# a)gnoe/w
+'subject' 'before' 'h)gno/oun_V3IAI-P-' -> 'oi(_D----NPM'
 
 # a)/gw
 'subject' 'before' 'a)/gontai_V3PPI-P-' -> 'o(/soi_R----NPM'
@@ -268,6 +267,9 @@
 # diame/nw
 'subject' 'before' 'diame/nei_V3PAI-S-' -> 'pa/nta_A----NPN'
 
+# diapri/omai
+'subject' 'before' 'diepri/onto_V3IPI-P-' -> 'oi(_D----NPM'
+
 # diatara/ssw
 'subject' 'before' 'dietara/xqh_V3API-S-' -> 'h(_D----NSF'
 
@@ -310,6 +312,9 @@
 
 # e)pe/xw
 'subject' 'before' 'e)pei=xe(n)_V3IAI-S-' -> 'o(_D----NSM'
+
+# e)piba/llw
+'subject' 'before' 'e)pe/balan_V3AAI-P-' -> 'oi(_D----NPM'
 
 # e)pidi/dwmi
 'subject' 'before' 'e)pe/dwkan_V3AAI-P-' -> 'oi(_D----NPM'
@@ -476,6 +481,9 @@
 
 # fwti/zw
 'subject' 'before' 'fwti/zei_V3PAI-S-' -> 'o(/_R----NSN'
+
+# xai/rw
+'subject' 'before' 'e)xa/rhsan_V3API-P-' -> 'oi(_D----NPM'
 
 # xwre/w
 'subject' 'before' 'xwrei/tw_V3PAM-S-' -> 'duna/menos_V-PMPNSM'
@@ -1035,7 +1043,7 @@
 'subject' 'after' 'gnou/s_V-AAPNSM' -> '*)ihsou=s_N----NSM'
 
 # gra/fw
-'subject' 'after' 'ge/graptai_V3RPI-S-' -> 'e)kpeira/seis_V2FAI-S-' | 'kai/_v-------' | 'khmw/seis_V2FAI-S-' | 'w(rai=oi_A----NPM'
+'subject' 'after' 'ge/graptai_V3RPI-S-' -> 'a)polw=_V1FAI-S-' | 'e)kpeira/seis_V2FAI-S-' | 'khmw/seis_V2FAI-S-' | 'w(rai=oi_A----NPM'
 
 # diarrh/gnumi
 'subject' 'after' 'dierrh/sseto_V3IPI-S-' -> 'di/ktua_N----NPN'

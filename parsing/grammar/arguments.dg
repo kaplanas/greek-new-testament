@@ -128,7 +128,6 @@
 'argument' 'before' 'e)kpesei=n_V-AAN---' -> 'ei)s_P-------'
 
 # e)mpi/ptw
-'argument' 'before' 'e)mpe/sh|_V3AAS-S-' -> 'ei)s_P-------'
 'argument' 'before' 'e)mpesou=ntai_V3FMI-P-' -> 'ei)s_P-------'
 
 # e)nte/llomai
@@ -340,10 +339,10 @@
 #### particle ####
 
 # i)/de
-'argument' 'after' 'i)/de_L-------' -> 'a)sqenei=_V3PAI-S-' | 'basileu/s_N----NSM' | 'e)ch/rantai_V3RPI-S-' | 'e)fi/lei_V3IAI-S-' | 'h)kou/sate_V2AAI-P-' | 'kai/_v-------' | 'kathgorou=si(n)_V3PAI-P-' | 'le/gw_V1PAI-S-' | 'oi)/dasi(n)_V3RAI-P-' | 'poiou=si(n)_V3PAI-P-' | 'fwnei=_V3PAI-S-'
+'argument' 'after' 'i)/de_L-------' -> 'a)sqenei=_V3PAI-S-' | 'basileu/s_N----NSM' | 'e)ch/rantai_V3RPI-S-' | 'e)fi/lei_V3IAI-S-' | 'h)kou/sate_V2AAI-P-' | 'kai/_v-------' | 'kathgorou=si(n)_V3PAI-P-' | 'lalei=s_V2PAI-S-' | 'le/gw_V1PAI-S-' | 'oi)/dasi(n)_V3RAI-P-' | 'poiou=si(n)_V3PAI-P-' | 'fwnei=_V3PAI-S-'
 
 # i)dou/
-'argument' 'after' 'i)dou/_L-------' -> 'a)/nqrwpos_N----NSM' | 'dou/lh_N----NSF' | 'e)zhtou=men_V1IAI-P-' | 'ei)=pan_V3AAI-P-' | 'ei)si/(n)_V3PAI-P-' | 'e)/rxetai_V3PMI-S-' | 'e)sti/(n)_V3PAI-S-' | 'h)/ggike(n)_V3RAI-S-' | 'h)kolouqh/samen_V1AAI-P-' | 'h)=n_V3IAI-S-' | 'kai/_v-------' | 'numfi/os_N----NSM' | 'o(/ti_C-------' | 'poiw=_V1PAI-S-' | 'proseku/nei_V3IAI-S-'
+'argument' 'after' 'i)dou/_L-------' -> 'a)/nqrwpos_N----NSM' | 'dou/lh_N----NSF' | 'e)zhtou=men_V1IAI-P-' | 'ei)=pan_V3AAI-P-' | 'ei)si/(n)_V3PAI-P-' | 'e)/rxetai_V3PMI-S-' | 'e)sti/(n)_V3PAI-S-' | 'h)/ggike(n)_V3RAI-S-' | 'h)kolouqh/samen_V1AAI-P-' | 'h)=n_V3IAI-S-' | 'kai/_v-------' | 'numfi/os_N----NSM' | 'o(/ti_C-------' | 'poiw=_V1PAI-S-' | 'proseku/nei_V3IAI-S-' | 'prosh=lqon_V3AAI-P-'
 
 # o)/felon
 'argument' 'after' 'o)/felon_L-------' -> 'a)poko/yontai_V3FMI-P-' | 'h)=s_V2IAI-S-'
@@ -420,7 +419,7 @@
 'argument' 'after' 'a)ph=lqon_V3AAI-P-' -> 'ei)s_P-------' | 'pro/s_P-------'
 
 # a)pokri/nomai
-'argument' 'after' 'a)pekri/qh_V3API-S-' -> 'a)peleuso/meqa_V1FMI-P-' | 'ge/grafa_V1RAI-S-' | 'du/nasai_V2PMI-S-' | 'e)a/n_C-------' | 'ei)mi/_V1PAI-S-' | 'ei)pe/_V2AAM-S-' | 'ei)si/(n)_V3PAI-P-' | 'e)kthsa/mhn_V1AMI-S-' | 'e)celeca/mhn_V1AMI-S-' | 'e)pike/klhsai_V2RMI-S-' | 'e)/xeis_V2PAI-S-' | 'h)/_v-------' | 'kai/_v-------' | 'le/geis_V2PAI-S-' | 'lo/gon_N----ASM' | 'pisteu/ete_V2PAI-P-' | 'poiei=te_V2PAI-P-' | 'pro/s_P-------' | 'fobou=_V2PMM-S-'
+'argument' 'after' 'a)pekri/qh_V3API-S-' -> 'a)peleuso/meqa_V1FMI-P-' | 'ge/grafa_V1RAI-S-' | 'du/nasai_V2PMI-S-' | 'e)a/n_C-------' | 'ei)mi/_V1PAI-S-' | 'ei)pe/_V2AAM-S-' | 'ei)=pon_V1AAI-S-' | 'ei)si/(n)_V3PAI-P-' | 'e)kthsa/mhn_V1AMI-S-' | 'e)celeca/mhn_V1AMI-S-' | 'e)pike/klhsai_V2RMI-S-' | 'e)/xeis_V2PAI-S-' | 'h)/_v-------' | 'kai/_v-------' | 'le/geis_V2PAI-S-' | 'lo/gon_N----ASM' | 'pisteu/ete_V2PAI-P-' | 'poiei=te_V2PAI-P-' | 'pro/s_P-------' | 'fobou=_V2PMM-S-'
 'argument' 'after' 'a)pekri/qhn_V1API-S-' -> 'ei)=_V2PAI-S-'
 'argument' 'after' 'a)pekri/qhsan_V3API-P-' -> 'ei)_C-------' | 'e)la/lhse(n)_V3AAI-S-' | '*)ihsou=n_N----ASM' | 'ou)/_L-------' | 'pepla/nhsqe_V2RPI-P-'
 'argument' 'after' 'a)pekri/nato_V3AMI-S-' -> 'e)rga/zetai_V3PMI-S-'
@@ -439,7 +438,6 @@
 'argument' 'after' 'a)pesta/lkamen_V1RAI-P-' -> 'kai/_n-------' | 'kai/_v-------'
 'argument' 'after' 'a)pe/steilan_V3AAI-P-' -> 'pro/s_P-------'
 'argument' 'after' 'a)pe/steile(n)_V3AAI-S-' -> 'ei)s_P-------' | 'pro/s_P-------'
-'argument' 'after' 'a)poste/llei_V3PAI-S-' -> 'w(=de_B-------'
 
 # a)poti/qhmi
 'argument' 'after' 'a)pe/qento_V3AMI-P-' -> 'para/_P-------'
@@ -601,9 +599,6 @@
 'argument' 'after' 'e)cerxw/meqa_V1PMS-P-' -> 'e)/cw_P-------'
 'argument' 'after' 'e)ch=lqe(n)_V3AAI-S-' -> 'ei)s_P-------' | 'e)/cw_P-------'
 
-# e)ceta/zw
-'argument' 'after' 'e)ceta/sai_V-AAN---' -> 'ei)=_V2PAI-S-'
-
 # e)perwta/w
 'argument' 'after' 'e)phrw/ta_V3IAI-S-' -> 'au)to/n_E----ASM' | 'dielogi/zesqe_V2IMI-P-' | 'le/gete_V2PAI-P-' | 'ti/_I----NSN'
 'argument' 'after' 'e)phrw/thse(n)_V3AAI-S-' -> 'au)to/n_E----ASM' | 'ei)=_V2PAI-S-' | 'e)sti/(n)_V3PAI-S-' | 'zhtei=te_V2PAI-P-' | 'qe/leis_V2PAI-S-' | '*)ihsou=n_N----ASM' | 'pate/ra_N----ASM' | 'suzhtei=te_V2PAI-P-'
@@ -638,7 +633,6 @@
 'argument' 'after' 'h)=lqon_V3AAI-P-' -> 'ei)s_P-------'
 
 # e)rwta/w
-'argument' 'after' 'e)rwta=|_V3PAS-S-' -> 'lu/ete_V2PAI-P-'
 'argument' 'after' 'e)rwta=|_V3PAI-S-' -> 'pro/s_P-------'
 'argument' 'after' 'e)rw/thson_V2AAM-S-' -> 'a)khkoo/tas_V-RAPAPM' | 'e)la/lhsa_V1AAI-S-'
 'argument' 'after' 'h)rw/ta_V3IAI-S-' -> 'e)/xete_V2PAI-P-'
@@ -734,25 +728,23 @@
 
 # le/gw
 'argument' 'after' 'ei)=pa_V1AAI-S-' -> 'ei)=_V2PAI-S-'
-'argument' 'after' 'ei)=pan_V3AAI-P-' -> '*barabba=n_N----ASM' | 'blasfhmei=_V3PAI-S-' | 'gegennh/meqa_V1RPI-P-' | 'ge/noito_V3AMO-S-' | 'duna/meqa_V1PMI-P-' | 'ei)_C-------' | 'ei)=_V2PAI-S-' | 'e)sti/(n)_V3PAI-S-' | 'e)/xomen_V1PAI-P-' | 'h)/_C-------' | 'qe/leis_V2PAI-S-' | 'i)dou/_L-------' | '*)ihsou=n_N----ASM' | 'kaqw/s_C-------' | 'kai/_C-------' | 'kai/_v-------' | '*kai/saros_N----GSM' | 'lalei=s_V2PAI-S-' | 'loidorei=s_V2PAI-S-' | 'me/neis_V2PAI-S-' | 'oi)/damen_V1RAI-P-' | 'poiei=te_V2PAI-P-' | 'poih/swmen_V1AAS-P-' | 'pro/sqes_V2AAM-S-'
+'argument' 'after' 'ei)=pan_V3AAI-P-' -> '*barabba=n_N----ASM' | 'blasfhmei=_V3PAI-S-' | 'gegennh/meqa_V1RPI-P-' | 'ge/noito_V3AMO-S-' | 'duna/meqa_V1PMI-P-' | 'e)gennh/qhs_V2API-S-' | 'ei)_C-------' | 'ei)=_V2PAI-S-' | 'e)sti/(n)_V3PAI-S-' | 'e)/xomen_V1PAI-P-' | 'h)/_C-------' | 'qe/leis_V2PAI-S-' | 'i)dou/_L-------' | '*)ihsou=n_N----ASM' | 'kaqw/s_C-------' | 'kai/_C-------' | 'kai/_v-------' | '*kai/saros_N----GSM' | 'lalei=s_V2PAI-S-' | 'loidorei=s_V2PAI-S-' | 'me/neis_V2PAI-S-' | 'oi)/damen_V1RAI-P-' | 'poiei=te_V2PAI-P-' | 'poih/swmen_V1AAS-P-' | 'pro/sqes_V2AAM-S-'
 'argument' 'after' 'ei)/pate_V2AAM-P-' -> 'i(/na_C-------'
 'argument' 'after' 'ei)pe/_V2AAM-S-' -> 'ei)_C-------' | 'i(/na_C-------'
 'argument' 'after' 'ei)pei=n_V-AAN---' -> 'gegono/s_V-RAPASN'
-'argument' 'after' 'ei)=pe(n)_V3AAI-S-' -> 'ai)th/swmai_V1AMS-S-' | 'a)kolou/qei_V2PAM-S-' | 'a)kolouqh/sw_V1FAI-S-' | 'a)lla/_C-------' | 'a)na/bleyon_V2AAM-S-' | 'a)pekri/qhs_V2API-S-' | 'a)pokri/nh|_V2PMI-S-' | 'a)fe/wntai_V3RPI-P-' | 'ble/peis_V2PAI-S-' | 'ge/gonan_V3RAI-P-' | 'ge/graptai_V3RPI-S-' | 'gi/nou_V2PMM-S-' | 'gnw/somai_V1FMI-S-' | 'goggu/zete_V2PAM-P-' | 'do/te_V2AAM-P-' | 'du/natai_V3PMI-S-' | 'e)a/n_C-------' | 'e)bapti/sqhte_V2API-P-' | 'e)qew/roun_V1IAI-S-' | 'ei)_C-------' | 'ei)=_V2PAI-S-' | 'ei)mi/_V1PAI-S-' | 'ei)=xe(n)_V3IAI-S-' | 'e)kaqari/sqhsan_V3API-P-' | 'e)/krinas_V2AAI-S-' | 'e)netei/lato_V3AMI-S-' | 'e)pei/_C-------' | 'e)pidei/cate_V2AAM-P-' | 'e)pisunaxqh/sontai_V3FPI-P-' | 'e)pi/treyon_V2AAM-S-' | 'e)poi/hse(n)_V3AAI-S-' | 'e)rwta=|s_V2PAI-S-' | 'e)ste/_V2PAI-P-' | 'e)sti/(n)_V3PAI-S-' | 'e)fu/laca_V1AAI-S-' | 'e)/xousi(n)_V3PAI-P-' | 'e)/xw_V1PAI-S-' | 'qe/leis_V2PAI-S-' | 'qe/lete_V2PAI-P-' | 'qe/lw_V1PAI-S-' | 'i)dou/_L-------' | 'i(/na_C-------' | 'kai/_C-------' | 'kai/_n-------' | 'kai/_v-------' | 'katakli/nate_V2AAM-P-' | 'kate/sthse(n)_V3AAI-S-' | 'kefalh/n_N----ASF' | 'klai=e_V2PAM-S-' | 'klai/ete_V2PAM-P-' | 'lalw=_V1PAI-S-' | 'le/ge_V2PAM-S-' | 'le/geis_V2PAI-S-' | 'le/gete_V2PAI-P-' | 'le/gousi(n)_V3PAI-P-' | 'le/gw_V1PAI-S-' | 'oi)=das_V2RAI-S-' | 'o(moiw/sw_V1FAI-S-' | 'o(/ti_C-------' | 'o)fei/leis_V2PAI-S-' | 'parabolh/n_N----ASF' | 'paradi/dws_V2PAI-S-' | 'pare/xete_V2PAI-P-' | 'peira/zete_V2PAI-P-' | 'poi=a_A----APN' | 'poih/sate_V2AAM-P-' | 'paratiqe/nai_V-PAN---' | 'pa/rei_V2PAI-S-' | 'poih/sas_V-AAPNSM' | 'poih/sw_V1AAS-S-' | 'poreu/ou_V2PMM-S-' | 'pou=_B-------' | 'pra/ssete_V2PAM-P-' | 'pro/s_P-------' | 'proseu/xesqe_V2PMM-P-' | 'se/swke(n)_V3RAI-S-' | 'siw/pa_V2PAM-S-' | 'sunelqei=n_V-AAN---' | 'ti/_I----ASN' | 'ti/nes_I----NPM' | 'ti/s_I----NSM' | 'tosou/tou_M----GSN' | 'tou/tw|_M----DSM' | 'u(/page_V2PAM-S-' | 'u(pa/gete_V2PAM-P-' | 'fa/goi_V3AAO-S-' | 'filei=s_V2PAI-S-' | 'fra/son_V2AAM-S-' | 'xai=re_V2PAM-S-' | '*xristo/n_N----ASM'
-'argument' 'after' 'ei)/ph|_V3AAS-S-' -> 'poiei=te_V2PAI-P-'
+'argument' 'after' 'ei)=pe(n)_V3AAI-S-' -> 'ai)th/swmai_V1AMS-S-' | 'a)kolou/qei_V2PAM-S-' | 'a)kolouqh/sw_V1FAI-S-' | 'a)lla/_C-------' | 'a)na/bleyon_V2AAM-S-' | 'a)pekri/qhs_V2API-S-' | 'a)pokri/nh|_V2PMI-S-' | 'a)fe/wntai_V3RPI-P-' | 'ble/peis_V2PAI-S-' | 'ge/gonan_V3RAI-P-' | 'ge/gone(n)_V3RAI-S-' | 'ge/graptai_V3RPI-S-' | 'gi/nou_V2PMM-S-' | 'gnw/somai_V1FMI-S-' | 'goggu/zete_V2PAM-P-' | 'do/te_V2AAM-P-' | 'du/natai_V3PMI-S-' | 'e)a/n_C-------' | 'e)bapti/sqhte_V2API-P-' | 'e)/ghma_V1AAI-S-' | 'e)qew/roun_V1IAI-S-' | 'ei)_C-------' | 'ei)=_V2PAI-S-' | 'ei)mi/_V1PAI-S-' | 'ei)=xe(n)_V3IAI-S-' | 'e)kaqari/sqhsan_V3API-P-' | 'e)/krinas_V2AAI-S-' | 'e)netei/lato_V3AMI-S-' | 'e)pei/_C-------' | 'e)pidei/cate_V2AAM-P-' | 'e)pisunaxqh/sontai_V3FPI-P-' | 'e)pi/treyon_V2AAM-S-' | 'e)poi/hsa_V1AAI-S-' | 'e)poi/hse(n)_V3AAI-S-' | 'e)rwta=|s_V2PAI-S-' | 'e)ste/_V2PAI-P-' | 'e)sti/(n)_V3PAI-S-' | 'e)fu/laca_V1AAI-S-' | 'e)/xousi(n)_V3PAI-P-' | 'e)/xw_V1PAI-S-' | 'qe/leis_V2PAI-S-' | 'qe/lete_V2PAI-P-' | 'qe/lw_V1PAI-S-' | 'i)dou/_L-------' | 'i(/na_C-------' | 'kai/_C-------' | 'kai/_n-------' | 'kai/_v-------' | 'katakli/nate_V2AAM-P-' | 'kate/sthse(n)_V3AAI-S-' | 'kefalh/n_N----ASF' | 'klai=e_V2PAM-S-' | 'klai/ete_V2PAM-P-' | 'lalw=_V1PAI-S-' | 'le/ge_V2PAM-S-' | 'le/geis_V2PAI-S-' | 'le/gete_V2PAI-P-' | 'le/gousi(n)_V3PAI-P-' | 'le/gw_V1PAI-S-' | 'mhde/_C-------' | 'oi)=das_V2RAI-S-' | 'o(moiw/sw_V1FAI-S-' | 'o(/ti_C-------' | 'o)fei/leis_V2PAI-S-' | 'parabolh/n_N----ASF' | 'paradi/dws_V2PAI-S-' | 'pare/xete_V2PAI-P-' | 'peira/zete_V2PAI-P-' | 'poi=a_A----APN' | 'poih/sate_V2AAM-P-' | 'paratiqe/nai_V-PAN---' | 'pa/rei_V2PAI-S-' | 'poih/sas_V-AAPNSM' | 'poih/sw_V1AAS-S-' | 'poreu/ou_V2PMM-S-' | 'pou=_B-------' | 'pra/ssete_V2PAM-P-' | 'pro/s_P-------' | 'pro/selqe_V2AAM-S-' | 'proseu/xesqe_V2PMM-P-' | 'se/swke(n)_V3RAI-S-' | 'siw/pa_V2PAM-S-' | 'sunelqei=n_V-AAN---' | 'ti/_I----ASN' | 'ti/nes_I----NPM' | 'ti/s_I----NSM' | 'tosou/tou_M----GSN' | 'tou/tw|_M----DSM' | 'u(/page_V2PAM-S-' | 'u(pa/gete_V2PAM-P-' | 'fa/goi_V3AAO-S-' | 'filei=s_V2PAI-S-' | 'fra/son_V2AAM-S-' | 'xai=re_V2PAM-S-' | '*xristo/n_N----ASM'
 'argument' 'after' 'ei)=pon_V1AAI-S-' -> 'dei=_V3PAI-S-' | 'kai/_v-------' | 'o(/ti_C-------' | 'poih/sw_V1AAS-S-'
-'argument' 'after' 'ei)=pon_V3AAI-P-' -> 'ge/gonas_V2RAI-S-' | 'do/s_V2AAM-S-' | 'e)gnw/kamen_V1RAI-P-' | 'ei)=_V2PAI-S-' | 'e)poi/hse(n)_V3AAI-S-' | 'i(/na_C-------' | 'kai/_v-------' | 'pro/s_P-------'
+'argument' 'after' 'ei)=pon_V3AAI-P-' -> 'ge/gonas_V2RAI-S-' | 'do/s_V2AAM-S-' | 'e)gnw/kamen_V1RAI-P-' | 'ei)=_V2PAI-S-' | 'e)poi/hse(n)_V3AAI-S-' | 'e)/xeis_V2PAI-S-' | 'i(/na_C-------' | 'kai/_v-------' | 'pro/s_P-------'
 'argument' 'after' 'ei)po/ntes_V-AAPNPM' -> 'gine/sqw_V3PMM-S-'
 'argument' 'after' 'ei)pw/n_V-AAPNSM' -> 'kai/_v-------'
 'argument' 'after' 'ei)/rhka_V1RAI-S-' -> 'oi)=das_V2RAI-S-'
-'argument' 'after' 'e)/lege(n)_V3IAI-S-' -> 'a)koue/tw_V3PAM-S-' | 'a)/fes_V2AAM-S-' | 'ble/pete_V2PAM-P-' | 'du/natai_V3PMI-S-' | 'e)/celqe_V2AAM-S-' | 'h)ge/rqh_V3API-S-' | 'kai/_v-------' | 'o(/tan_C-------' | 'o(/ti_C-------' | 'e)poi/hse(n)_V3AAI-S-' | 'e)sti/(n)_V3PAI-S-' | 'parabolh/n_N----ASF' | 'suni/ete_V2PAI-P-' | 'u(ponoei=te_V2PAI-P-'
+'argument' 'after' 'e)/lege(n)_V3IAI-S-' -> 'a)koue/tw_V3PAM-S-' | 'a)kou/sate_V2AAM-P-' | 'a)/fes_V2AAM-S-' | 'ble/pete_V2PAM-P-' | 'du/natai_V3PMI-S-' | 'e)/celqe_V2AAM-S-' | 'h)ge/rqh_V3API-S-' | 'kai/_v-------' | 'o(/tan_C-------' | 'o(/ti_C-------' | 'e)poi/hse(n)_V3AAI-S-' | 'e)sti/(n)_V3PAI-S-' | 'parabolh/n_N----ASF' | 'suni/ete_V2PAI-P-' | 'u(ponoei=te_V2PAI-P-'
 'argument' 'after' 'e)/legon_V3IAI-P-' -> 'a)lla/_C-------' | 'du/natai_V3PMI-S-' | 'ei)=_V2PAI-S-' | 'e)kba/llei_V3PAI-S-' | 'e)sti/(n)_V3PAI-S-' | 'e)/xei_V3PAI-S-' | 'e(wra/kamen_V1RAI-P-' | 'h)/negke(n)_V3AAI-S-' | 'h)new/|xqhsan_V3API-P-' | 'i)/de_L-------' | 'kai/_v-------' | 'o(/ti_C-------' | 'poiei=te_V2PAI-P-' | 'pro/s_P-------'
 'argument' 'after' 'e)rei=_V3FAI-S-' -> 'e)gei/rontai_V3PPI-P-' | 'e)pisteu/sate_V2AAI-P-' | 'e)poi/hsas_V2AAI-S-' | 'e)/xeis_V2PAI-S-' | 'pla/santi_V-AAPDSM'
 'argument' 'after' 'e)rei=s_V2FAI-S-' -> 'i(/na_C-------' | 'me/mfetai_V3PMI-S-'
-'argument' 'after' 'e)rei=te_V2FAI-P-' -> 'o(/ti_C-------'
 'argument' 'after' 'e)rou=si(n)_V3FAI-P-' -> 'i)dou/_L-------'
 'argument' 'after' 'le/ge_V2PAM-S-' -> 'ei)=_V2PAI-S-'
-'argument' 'after' 'le/gei_V3PAI-S-' -> 'a)gapa=|s_V2PAI-S-' | 'a)kolou/qei_V2PAM-S-' | 'a)kou/eis_V2PAI-S-' | 'a)lla/_C-------' | 'a)nasth/setai_V3FMI-S-' | 'a)/rate_V2AAM-P-' | 'bo/ske_V2PAM-S-' | 'gemi/sate_V2AAM-P-' | 'ginw/skeis_V2PAI-S-' | 'deu=te_V2-AM---' | 'dialogi/zesqe_V2PMI-P-' | 'die/lqwmen_V1AAS-P-' | 'du/namai_V1PMI-S-' | 'du/natai_V3PMI-S-' | 'e)a/n_C-------' | 'e)/geire_V2PAM-S-' | 'ei)=_V2PAI-S-' | 'ei)mi/_V1PAI-S-' | 'ei)=pas_V2AAI-S-' | 'ei)si/(n)_V3PAI-P-' | 'e)ne/gkate_V2AAM-P-' | 'e)/cesti(n)_V3PAI-S-' | 'e)/rxomai_V1PMI-S-' | 'e)/somai_V1FMI-S-' | 'e)ste/_V2PAI-P-' | 'e)sti/(n)_V3PAI-S-' | 'e)fu/laca_V1AAI-S-' | 'e)/xete_V2PAI-P-' | 'e)/xomen_V1PAI-P-' | 'e)/xousi(n)_V3PAI-P-' | 'zhtei=_V3PAI-S-' | 'zhtei=te_V2PAI-P-' | 'h)|xmalw/teuse(n)_V3AAI-S-' | 'qerapeu/sw_V1FAI-S-' | 'qewrw=_V1PAI-S-' | 'i)/de_L-------' | 'i)dou/_L-------' | 'kaqeu/deis_V2PAI-S-' | 'kai/_e-------' | 'kai/_v-------' | 'klai/eis_V2PAI-S-' | 'ku/rion_N----ASM' | 'lalei=s_V2PAI-S-' | 'le/geis_V2PAI-S-' | 'le/gete_V2PAI-P-' | '*maria/m_N----VSF' | 'nai/_L-------' | 'ni/pteis_V2PAI-S-' | 'ni/yh|s_V2AAS-S-' | 'o)/zei_V3PAI-S-' | 'oi)=da_V1RAI-S-' | 'oi)/damen_V1RAI-P-' | 'oi)=das_V2RAI-S-' | 'o(/ti_C-------' | 'ou(=tos_M----NSM' | 'poi/as_A----APF' | 'poih/sate_V2AAM-P-' | 'poi/hson_V2AAM-S-' | 'poih/sw_V1AAS-S-' | 'poi/maine_V2PAM-S-' | 'poreu/ou_V2PMM-S-' | 'pri/n_C-------' | 'pro/s_P-------' | 'r(abbi/_N----VSM' | 'rabbouni_N----VSM' | 'staurw/sw_V1AAS-S-' | 'ti/nos_I----GSM' | 'u(bri/zeis_V2PAI-S-' | 'u(pa/geis_V2PAI-S-' | 'u(pa/gete_V2PAM-P-' | 'u(pa/gw_V1PAI-S-' | 'filei=s_V2PAI-S-'
+'argument' 'after' 'le/gei_V3PAI-S-' -> 'a)gapa=|s_V2PAI-S-' | 'a)kolou/qei_V2PAM-S-' | 'a)kou/eis_V2PAI-S-' | 'a)lla/_C-------' | 'a)nasth/setai_V3FMI-S-' | 'a)ntlh/sate_V2AAM-P-' | 'a)/rate_V2AAM-P-' | 'bo/ske_V2PAM-S-' | 'gemi/sate_V2AAM-P-' | 'ginw/skeis_V2PAI-S-' | 'deu=te_V2-AM---' | 'dialogi/zesqe_V2PMI-P-' | 'die/lqwmen_V1AAS-P-' | 'du/namai_V1PMI-S-' | 'du/natai_V3PMI-S-' | 'e)a/n_C-------' | 'e)/geire_V2PAM-S-' | 'ei)=_V2PAI-S-' | 'ei)mi/_V1PAI-S-' | 'ei)=pas_V2AAI-S-' | 'ei)si/(n)_V3PAI-P-' | 'e)ne/gkate_V2AAM-P-' | 'e)/cesti(n)_V3PAI-S-' | 'e)/rxesqe_V2PMM-P-' | 'e)/rxomai_V1PMI-S-' | 'e)/rxou_V2PMM-S-' | 'e)/somai_V1FMI-S-' | 'e)ste/_V2PAI-P-' | 'e)sti/(n)_V3PAI-S-' | 'e)fu/laca_V1AAI-S-' | 'e)/xete_V2PAI-P-' | 'e)/xomen_V1PAI-P-' | 'e)/xousi(n)_V3PAI-P-' | 'zhtei=_V3PAI-S-' | 'zhtei=te_V2PAI-P-' | 'h)|xmalw/teuse(n)_V3AAI-S-' | 'qerapeu/sw_V1FAI-S-' | 'qewrw=_V1PAI-S-' | 'i)/de_L-------' | 'i)dou/_L-------' | 'kaqeu/deis_V2PAI-S-' | 'kai/_e-------' | 'kai/_v-------' | 'klai/eis_V2PAI-S-' | 'ku/rion_N----ASM' | 'lalei=s_V2PAI-S-' | 'le/geis_V2PAI-S-' | 'le/gete_V2PAI-P-' | 'lu/sate_V2AAM-P-' | '*maria/m_N----VSF' | 'nai/_L-------' | 'ni/pteis_V2PAI-S-' | 'ni/yh|s_V2AAS-S-' | 'o)/zei_V3PAI-S-' | 'oi)=da_V1RAI-S-' | 'oi)/damen_V1RAI-P-' | 'oi)=das_V2RAI-S-' | 'o(/ti_C-------' | 'ou(=tos_M----NSM' | 'peribalou=_V2AMM-S-' | 'poi/as_A----APF' | 'poih/sate_V2AAM-P-' | 'poi/hson_V2AAM-S-' | 'poih/sw_V1AAS-S-' | 'poi/maine_V2PAM-S-' | 'poreu/ou_V2PMM-S-' | 'pri/n_C-------' | 'pro/s_P-------' | 'r(abbi/_N----VSM' | 'rabbouni_N----VSM' | 'staurw/sw_V1AAS-S-' | 'ti/nos_I----GSM' | 'u(bri/zeis_V2PAI-S-' | 'u(/page_V2PAM-S-' | 'u(pa/geis_V2PAI-S-' | 'u(pa/gete_V2PAM-P-' | 'u(pa/gw_V1PAI-S-' | 'filei=s_V2PAI-S-'
 'argument' 'after' 'le/gein_V-PAN---' -> 'e)gw/_E----NS-' | 'ei)mi/_V1PAI-S-' | 'i)dou/_L-------'
 'argument' 'after' 'le/geis_V2PAI-S-' -> 'o(/ti_C-------'
 'argument' 'after' 'le/getai_V3PPI-S-' -> '*)/ayinqos_N----NSM' | 'dida/skale_N----VSM'
@@ -761,11 +753,11 @@
 'argument' 'after' 'le/gh|_V3PAS-S-' -> 'e)/xein_V-PAN---'
 'argument' 'after' 'le/gomen_V1PAI-P-' -> 'e)logi/sqh_V3API-S-'
 'argument' 'after' 'le/gontas_V-PAPAPM' -> 'e)sti/(n)_V3PAI-S-'
-'argument' 'after' 'le/gontes_V-PAPNPM' -> 'a)lla/_C-------' | 'du/natai_V3PMI-S-' | 'ei)_C-------' | 'ei)=_V2PAI-S-' | 'ei)/pwmen_V1AAS-P-' | 'e)fa/nh_V3API-S-' | 'qa/rsei_V2PAM-S-' | 'qe/lei_V3PAI-S-' | 'kai/_e-------' | 'kai/_v-------' | 'oi)=de(n)_V3RAI-S-' | 'e)chra/nqh_V3API-S-' | 'poih/swmen_V1AAS-P-' | 'sw=son_V2AAM-S-' | 'fa/ge_V2AAM-S-' | 'fa/gwmen_V1AAS-P-'
+'argument' 'after' 'le/gontes_V-PAPNPM' -> 'a)lla/_C-------' | 'du/natai_V3PMI-S-' | 'ei)_C-------' | 'ei)=_V2PAI-S-' | 'ei)/pwmen_V1AAS-P-' | 'e)fa/nh_V3API-S-' | 'h)/_C-------' | 'qa/rsei_V2PAM-S-' | 'qe/lei_V3PAI-S-' | 'kai/_e-------' | 'kai/_v-------' | 'oi)=de(n)_V3RAI-S-' | 'e)chra/nqh_V3API-S-' | 'poih/swmen_V1AAS-P-' | 'sw=son_V2AAM-S-' | 'fa/ge_V2AAM-S-' | 'fa/gwmen_V1AAS-P-'
 'argument' 'after' 'le/gousa_V-PAPNSF' -> 'boh/qei_V2PAM-S-' | 'e)sti/(n)_V3PAI-S-'
 'argument' 'after' 'le/gousai_V-PAPNPF' -> 'i)/de_L-------'
-'argument' 'after' 'le/gousi(n)_V3PAI-P-' -> '*daui/d_N----GSM' | 'duna/meqa_V1PMI-P-' | 'dw/deka_A----APM' | 'ei)=nai_V-PAN---' | 'e)netei/lato_V3AMI-S-' | 'e(pta/_A----APF' | 'e)rxo/meqa_V1PMI-P-' | 'i)/de_L-------' | 'i(/na_C-------' | 'kai/_C-------' | 'kai/_v-------' | '*kai/saros_N----GSM' | 'klai/eis_V2PAI-S-' | 'nai/_L-------' | 'oi)/damen_V1RAI-P-' | 'o(/ti_C-------' | 'pou=_B-------' | 'prw=tos_A----NSM' | 'staurwqh/tw_V3APM-S-'
-'argument' 'after' 'le/gw_V1PAI-S-' -> 'a)lla/_C-------' | 'a)pw/sato_V3AMI-S-' | 'a)feqh=|_V3APS-S-' | 'e)/gnw_V3AAI-S-' | 'ei)_C-------' | 'e)/sh|_V2FMI-S-' | 'e)/stai_V3FMI-S-' | 'e)/xei_V3PAI-S-' | 'e(/ws_C-------' | 'e(/ws_P-------' | 'h)/_v-------' | 'h)/kousan_V3AAI-P-' | 'h(/cei_V3FAI-S-' | 'i(/na_C-------' | 'kai/_C-------' | 'kai/_v-------' | 'o(/ti_C-------' | 'poiw=_V1PAI-S-' | 'pri/n_C-------'
+'argument' 'after' 'le/gousi(n)_V3PAI-P-' -> 'a)gora/swmen_V1AAS-P-' | '*daui/d_N----GSM' | 'duna/meqa_V1PMI-P-' | 'dw/deka_A----APM' | 'ei)=nai_V-PAN---' | 'e)netei/lato_V3AMI-S-' | 'e(pta/_A----APF' | 'e)rxo/meqa_V1PMI-P-' | 'e)/rxou_V2PMM-S-' | 'i)/de_L-------' | 'i(/na_C-------' | 'kai/_C-------' | 'kai/_v-------' | '*kai/saros_N----GSM' | 'klai/eis_V2PAI-S-' | 'nai/_L-------' | 'oi)/damen_V1RAI-P-' | 'o(/ti_C-------' | 'pou=_B-------' | 'prw=tos_A----NSM' | 'staurwqh/tw_V3APM-S-'
+'argument' 'after' 'le/gw_V1PAI-S-' -> 'a)lla/_C-------' | 'a)pw/sato_V3AMI-S-' | 'a)feqh=|_V3APS-S-' | 'e)/gnw_V3AAI-S-' | 'ei)_C-------' | 'e)/sh|_V2FMI-S-' | 'e)/stai_V3FMI-S-' | 'e)/xei_V3PAI-S-' | 'e(/ws_C-------' | 'e(/ws_P-------' | 'h)/_v-------' | 'h)/kousan_V3AAI-P-' | 'h(/cei_V3FAI-S-' | 'i(/na_C-------' | 'kai/_C-------' | 'kai/_v-------' | 'o(/ti_C-------' | 'peripatei=te_V2PAM-P-' | 'poiw=_V1PAI-S-' | 'pri/n_C-------'
 'argument' 'after' 'le/gwn_V-PAPNSM' -> 'a)kou/sate_V2AAM-P-' | 'a)pokri/nh|_V2PMI-S-' | 'genhqh/tw_V3APM-S-' | 'dou=nai_V-AAN---' | 'e)a/n_C-------' | 'e)/geire_V2PAM-S-' | 'ei)=_V2PAI-S-' | 'ei)se/lqh|s_V2AAS-S-' | 'e)le/hson_V2AAM-S-' | 'e)poi/hse(n)_V3AAI-S-' | 'e)sti/(n)_V3PAI-S-' | 'eu)fo/rhse(n)_V3AAI-S-' | 'kai/_v-------' | 'klhronomh/sw_V1FAI-S-' | 'me/lleis_V2PAI-S-' | 'moixeu/ein_V-PAN---' | 'proshrga/sato_V3AMI-S-'
 
 # marture/w
@@ -1299,9 +1291,6 @@
 'argument' 'immediately_after' 'e)ch=lqe(n)_V3AAI-S-' -> 'e)k_P-------'
 'argument' 'immediately_after' 'e)ch=lqon_V3AAI-P-' -> 'ei)s_P-------' | 'e)k_P-------'
 
-# e)ceta/zw
-'argument' 'immediately_after' 'e)ceta/sai_V-AAN---' -> 'au)to/n_E----ASM'
-
 # e)pana/gw
 'argument' 'immediately_after' 'e)pana/gwn_V-PAPNSM' -> 'ei)s_P-------'
 
@@ -1396,8 +1385,7 @@
 
 # le/gw
 'argument' 'immediately_after' 'ei)=pan_V3AAI-P-' -> 'ei)s_P-------' | 'e)pe/treye(n)_V3AAI-S-' | 'e(pta/_A----APM' | 'mai/nh|_V2PMI-S-' | 'o(/ti_C-------' | 'ou)qeno/s_A----GSN' | 'pro/s_P-------' | 'ti/_I----NSN'
-'argument' 'immediately_after' 'ei)/pate_V2AAM-P-' -> 'o(/ti_C-------'
-'argument' 'immediately_after' 'ei)=pe(n)_V3AAI-S-' -> 'a)/fete_V2AAM-P-' | 'ble/yon_V2AAM-S-' | 'doqh=nai_V-APN---' | 'kai/_c-------' | 'legiw/n_N----NSF' | 'u(polamba/nw_V1PAI-S-' | 'fe/rete_V2PAM-P-' | 'fwnh/sate_V2AAM-P-'
+'argument' 'immediately_after' 'ei)=pe(n)_V3AAI-S-' -> 'a)/fete_V2AAM-P-' | 'ble/yon_V2AAM-S-' | 'doqh=nai_V-APN---' | 'e)ge/rqhte_V2APM-P-' | 'kai/_c-------' | 'legiw/n_N----NSF' | 'u(polamba/nw_V1PAI-S-' | 'fe/rete_V2PAM-P-' | 'fwnh/sate_V2AAM-P-'
 'argument' 'immediately_after' 'ei)/pwmen_V1AAS-P-' -> 'e)k_P-------'
 'argument' 'immediately_after' 'ei)/pwsi(n)_V3AAS-P-' -> 'o(/ti_C-------'
 'argument' 'immediately_after' 'e)/lege(n)_V3IAI-S-' -> 'ble/pw_V1PAI-S-' | 'pisteu/w_V1PAI-S-'
@@ -1412,7 +1400,7 @@
 'argument' 'immediately_after' 'le/gontes_V-PAPNPM' -> 'a)po/luson_V2AAM-S-' | 'ei)s_P-------' | 'mega/lh_A----NSF' | 'o(/ti_C-------' | 'pro/s_P-------' | 'stau/rou_V2PAM-S-' | 'staurwqh/tw_V3APM-S-' | 'stau/rwson_V2AAM-S-'
 'argument' 'immediately_after' 'le/gontos_V-PAPGSN' -> 'e)/rxou_V2PMM-S-'
 'argument' 'immediately_after' 'le/gousi(n)_V3PAI-P-' -> 'qe/leis_V2PAI-S-'
-'argument' 'immediately_after' 'le/gwn_V-PAPNSM' -> 'a)na/sthqi_V2AAM-S-' | 'e)ntraph/sontai_V3FPI-P-' | 'qarsei=te_V2PAM-P-' | 'qe/lete_V2PAI-P-' | 'i)dou/_L-------'
+'argument' 'immediately_after' 'le/gwn_V-PAPNSM' -> 'a)na/sthqi_V2AAM-S-' | 'e)ntraph/sontai_V3FPI-P-' | 'qarsei=te_V2PAM-P-' | 'qe/lete_V2PAI-P-' | 'i)dou/_L-------' | 'fimw/qhti_V2APM-S-'
 
 # marture/w
 'argument' 'immediately_after' 'marturou/menos_V-PPPNSM' -> 'o(/ti_C-------'
@@ -1459,7 +1447,6 @@
 # poie/w
 'argument' 'immediately_after' 'e)poi/hsas_V2AAI-S-' -> 'ou(/tw(s)_B-------'
 'argument' 'immediately_after' 'e)poi/hse(n)_V3AAI-S-' -> 'tau=ta_M----APN'
-'argument' 'immediately_after' 'poiei=te_V2PAI-P-' -> 'tou=to_M----ASN'
 
 # poreu/omai
 'argument' 'immediately_after' 'e)poreu/eto_V3IMI-S-' -> 'e)/mprosqen_B-------'
@@ -1637,7 +1624,6 @@
 'argument' 'immediately_before' 'e)rxo/menos_V-PMPNSM' -> 'a)/nwqen_B-------'
 
 # e)rwta/w
-'argument' 'immediately_before' 'e)rwta=|_V3PAS-S-' -> 'u(ma=s_E----AP-'
 'argument' 'immediately_before' 'e)rwta=|s_V2PAI-S-' -> 'me_E----AS-'
 
 # e)sqi/w

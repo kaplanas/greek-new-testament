@@ -3,9 +3,6 @@
 # h)/
 'negation' 'before' 'h)/_v-------' -> 'mh/_B-------'
 
-# kai/
-'negation' 'before' 'kai/_v-------' -> 'ou)_B-------' | 'ou)xi/_L-------'
-
 #### verb ####
 
 # a)kou/w
@@ -48,7 +45,6 @@
 'negation' 'before' 'ei)se/lqh|s_V2AAS-S-' -> 'mhde/_B-------'
 
 # e)mpi/ptw
-'negation' 'before' 'e)mpe/sh|_V3AAS-S-' -> 'mh/_B-------'
 'negation' 'before' 'e)mpesou=ntai_V3FMI-P-' -> 'ou)xi/_L-------'
 
 # e)ce/rxomai
@@ -174,6 +170,9 @@
 'negation' 'before' 'mele/tw_V3PAM-S-' -> 'mh/_B-------'
 'negation' 'before' 'me/lei_V3PAI-S-' -> 'mh/_B-------'
 
+# me/nw
+'negation' 'before' 'e)/mene(n)_V3IAI-S-' -> 'ou)xi/_L-------'
+
 # merimna/w
 'negation' 'before' 'merimnh/shte_V2AAS-P-' -> 'mh/_B-------'
 
@@ -195,9 +194,6 @@
 
 # xra/omai
 'negation' 'before' 'e)xrhsa/mhn_V1AMI-S-' -> 'mh/ti_L-------'
-
-# fobe/omai
-'negation' 'before' 'fobei=sqe_V2PMM-P-' -> 'mh/_B-------'
 
 # a)na/keimai
 'negation' 'before' 'a)nakei/menos_V-PMPNSM' -> 'ou)xi/_L-------'
@@ -229,6 +225,9 @@
 # kaqari/zw
 'negation' 'before' 'e)kaqari/sqhsan_V3API-P-' -> 'ou)xi/_L-------'
 
+# katadunasteu/w
+'negation' 'before' 'katadunasteu/ousi(n)_V3PAI-P-' -> 'ou)_B-------'
+
 # katarge/w
 'negation' 'before' 'katargh/sei_V3FAI-S-' -> 'mh/_B-------'
 
@@ -246,6 +245,9 @@
 
 # tele/w
 'negation' 'before' 'tele/shte_V2AAS-P-' -> 'ou)_B-------'
+
+# fobe/omai
+'negation' 'before' 'fobei=sqe_V2PMM-P-' -> 'mh/_B-------'
 
 # fwne/w
 'negation' 'before' 'fwnh/sh|_V3AAS-S-' -> 'mh/_B-------' | 'ou)_B-------'
@@ -591,16 +593,6 @@
 'negation' 'immediately_before' 'yeu/domai_V1PMI-S-' -> 'ou)_B-------'
 'negation' 'immediately_before' 'e)yeu/sw_V2AMI-S-' -> 'ou)_B-------'
 
-# klai/w
-'negation' 'immediately_before' 'klai/ete_V2PAM-P-' -> 'mh/_B-------'
-'negation' 'immediately_before' 'klai=e_V2PAM-S-' -> 'mh/_B-------'
-
-# kurieu/w
-'negation' 'immediately_before' 'kurieu/sei_V3FAI-S-' -> 'ou)_B-------'
-
-# sumfe/rw
-'negation' 'immediately_before' 'sumfe/ron_V-PAPNSN' -> 'ou)_B-------'
-
 # a)pe/rxomai
 'negation' 'immediately_before' 'a)pe/lqhte_V2AAS-P-' -> 'mh/_B-------'
 
@@ -672,6 +664,10 @@
 # khmo/w
 'negation' 'immediately_before' 'khmw/seis_V2FAI-S-' -> 'ou)_B-------'
 
+# klai/w
+'negation' 'immediately_before' 'klai=e_V2PAM-S-' -> 'mh/_B-------'
+'negation' 'immediately_before' 'klai/ete_V2PAM-P-' -> 'mh/_B-------'
+
 # kle/ptw
 'negation' 'immediately_before' 'kle/ptein_V-PAN---' -> 'mh/_B-------'
 
@@ -680,6 +676,9 @@
 
 # krate/w
 'negation' 'immediately_before' 'e)krath/sate_V2AAI-P-' -> 'ou)_B-------'
+
+# kurieu/w
+'negation' 'immediately_before' 'kurieu/sei_V3FAI-S-' -> 'ou)_B-------'
 
 # manqa/nw
 'negation' 'immediately_before' 'memaqhkw/s_V-RAPNSM' -> 'mh/_B-------'
@@ -711,6 +710,9 @@
 
 # skandali/zw
 'negation' 'immediately_before' 'skandalisqh=te_V2APS-P-' -> 'mh/_B-------'
+
+# sumfe/rw
+'negation' 'immediately_before' 'sumfe/ron_V-PAPNSN' -> 'ou)_B-------'
 
 # suntri/bw
 'negation' 'immediately_before' 'suntribh/setai_V3FPI-S-' -> 'ou)_B-------'
@@ -747,9 +749,6 @@
 
 # dia/bolos
 'negation' 'immediately_before' 'diabo/lous_A----APF' -> 'mh/_B-------'
-
-# neo/futos
-'negation' 'immediately_before' 'neo/futon_A----ASM' -> 'mh/_B-------'
 
 # o)li/gos
 'negation' 'immediately_before' 'o)li/gon_A----ASM' -> 'ou)_B-------'

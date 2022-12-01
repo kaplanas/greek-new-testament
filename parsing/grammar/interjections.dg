@@ -25,6 +25,7 @@
 
 # ei)mi/
 'interjection' 'before' 'ei)=_V2PAI-S-' -> 'a)/nqrwpe_N----VSM' | 'su/_E----VS-'
+'interjection' 'before' 'e)sme/n_V1PAI-P-' -> 'a)gaphtoi/_A----VPM'
 'interjection' 'before' 'e)/somai_V1FMI-S-' -> 'genea/_N----VSF' | 'w)=_L-------'
 
 # eu)/xomai
@@ -160,6 +161,9 @@
 # a)kolouqe/w
 'interjection' 'immediately_before' 'a)kolouqh/sw_V1FAI-S-' -> 'dida/skale_N----VSM'
 
+# gi/nomai
+'interjection' 'immediately_before' 'ge/gone(n)_V3RAI-S-' -> 'ku/rie_N----VSM'
+
 # deu=ro
 'interjection' 'immediately_before' 'deu=ro_V2-AM---' -> '*la/zare_N----VSM'
 
@@ -168,7 +172,7 @@
 
 # e)/rxomai
 'interjection' 'immediately_before' 'e)/rxomai_V1PMI-S-' -> 'nai/_L-------'
-'interjection' 'immediately_before' 'e)/rxou_V2PMM-S-' -> 'a)mh/n_J-------'
+'interjection' 'immediately_before' 'e)/rxou_V2PMM-S-' -> 'a)mh/n_J-------' | 'ku/rie_N----VSM'
 
 # e)/xw
 'interjection' 'immediately_before' 'e)/xw_V1PAI-S-' -> '*si/mwn_N----VSM'
@@ -187,6 +191,9 @@
 
 # sw/|zw
 'interjection' 'immediately_before' 'sw=son_V2AAM-S-' -> 'ku/rie_N----VSM' | 'pa/ter_N----VSM'
+
+# qu/w
+'interjection' 'immediately_before' 'qu=son_V2AAM-S-' -> '*pe/tre_N----VSM'
 
 # u(pota/ssw
 'interjection' 'immediately_before' 'u(pota/ghte_V2APM-P-' -> 'new/teroi_A----VPM'
@@ -324,9 +331,6 @@
 # peira/zw
 'interjection' 'immediately_after' 'peira/zete_V2PAI-P-' -> 'u(pokritai/_N----VPM'
 
-# xai/rw
-'interjection' 'immediately_after' 'xai=re_V2PAM-S-' -> 'kexaritwme/nh_V-RPPVSF' | 'r(abbi/_N----VSM'
-
 # qauma/zw
 'interjection' 'immediately_after' 'qauma/zete_V2PAM-P-' -> 'a)delfoi/_N----VPM'
 
@@ -338,6 +342,9 @@
 
 # pisteu/w
 'interjection' 'immediately_after' 'pisteu/w_V1PAI-S-' -> 'ku/rie_N----VSM'
+
+# xai/rw
+'interjection' 'immediately_after' 'xai=re_V2PAM-S-' -> 'kexaritwme/nh_V-RPPVSF' | 'r(abbi/_N----VSM'
 
 #### adverb ####
 

@@ -16,6 +16,7 @@ Instead, I've settled on a hybrid (and somewhat clunky) system that tries to min
   - Determiners of nouns and of adjectives used as substantives
 - Use individually recorded dependencies for everything else, especially for prepositions, where the small number of items makes spurious dependencies highly likely in a given sentence
 - Annotate rules with position constraints: the dependent must come before or after its head (adjacent or not), or in any position; for each rule, use the narrowest constraint allowed by the corpus
+- Tag individual instances of καί and ἤ with the parts of speech they conjoin; since they can combine practically anything, this helps cut down on the number of spurious dependencies elsewhere
 
 The parsing is _not_ intended to be theoretically sophisticated.  My goal is to have a decent representation of the constituent structure for each sentence, for the purpose of automatically extracting meaningful phrases.  The labels are somewhat idiosyncratic, and are drastically oversimplified.
 
