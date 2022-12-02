@@ -1092,7 +1092,7 @@
 'argument' 'immediately_after' 'xwri/s_P-------' -> 'au)tou=_E----GSM' | 'e)/rgwn_N----GPN' | 'khru/ssontos_V-PAPGSM'
 
 # w(s
-'argument' 'immediately_after' 'w(s_P-------' -> 'a)po/_P-------' | 'a)/rnas_N----APM' | 'a)straph/n_N----ASF' | 'de/ndra_N----APN' | 'e)gw/_E----NS-' | 'e)dida/xqhsan_V3API-P-' | 'e)me/_E----AS-' | 'nekroi/_A----NPM' | 'pro/bata_N----NPN' | 'seauto/n_E----ASM' | 'tetrakisxi/lioi_A----NPM' | 'u(mei=s_E----NP-'
+'argument' 'immediately_after' 'w(s_P-------' -> 'a)po/_P-------' | 'a)/rnas_N----APM' | 'a)straph/n_N----ASF' | 'de/ndra_N----APN' | 'e)gw/_E----NS-' | 'e)dida/xqhsan_V3API-P-' | 'e(/kth_A----NSF' | 'e)me/_E----AS-' | 'nekroi/_A----NPM' | 'pro/bata_N----NPN' | 'seauto/n_E----ASM' | 'tetrakisxi/lioi_A----NPM' | 'u(mei=s_E----NP-'
 
 #### verb ####
 
@@ -1244,7 +1244,7 @@
 'argument' 'immediately_after' 'e)sme/n_V1PAI-P-' -> 'a)do/kimoi_A----NPM' | 'ma/rtures_N----NPM' | 'u(postolh=s_N----GSF' | 'u(po/_P-------'
 'argument' 'immediately_after' 'e)/stai_V3FMI-S-' -> 'gunh/_N----NSF'
 'argument' 'immediately_after' 'e)ste/_V2PAI-P-' -> 'u(po/_P-------'
-'argument' 'immediately_after' 'e)sti/(n)_V3PAI-S-' -> 'a)ntipe/ra_P-------' | 'a)parxh/_N----NSF' | 'au)tou=_E----GSM' | 'e)pilelhsme/non_V-RPPNSN' | 'sw=ma_N----NSN'
+'argument' 'immediately_after' 'e)sti/(n)_V3PAI-S-' -> 'a)ntipe/ra_P-------' | 'a)parxh/_N----NSF' | 'au)tou=_E----GSM' | 'e)pilelhsme/non_V-RPPNSN'
 'argument' 'immediately_after' 'h)=n_V3IAI-S-' -> 'e)kba/llwn_V-PAPNSM' | 'khru/sswn_V-PAPNSM' | 'suneudokw=n_V-PAPNSM' | 'sunexome/nh_V-PPPNSF' | 'u(potasso/menos_V-PPPNSM'
 'argument' 'immediately_after' 'h)=s_V2IAI-S-' -> 'h)/_C-------'
 'argument' 'immediately_after' 'h)=san_V3IAI-P-' -> 'mwrai/_A----NPF' | 'sullalou=ntes_V-PAPNPM'
@@ -1794,7 +1794,7 @@
 # ei)mi/
 'argument' 'any' 'ei)=_V2PAI-S-' -> 'basileu/s_N----NSM' | 'ui(o/s_N----NSM'
 'argument' 'any' 'e)sme/n_V1PAI-P-' -> 'te/kna_N----NPN'
-'argument' 'any' 'e)sti/(n)_V3PAI-S-' -> 'au(/th_M----NSF' | 'to/pos_N----NSM' | 'ui(o/s_N----NSM' | 'w(=de_B-------'
+'argument' 'any' 'e)sti/(n)_V3PAI-S-' -> 'au(/th_M----NSF' | 'sw=ma_N----NSN' | 'to/pos_N----NSM' | 'ui(o/s_N----NSM' | 'w(=de_B-------'
 'argument' 'any' 'h)=n_V3IAI-S-' -> 'e)ggu/s_P-------'
 
 # ei)se/rxomai

@@ -28,7 +28,57 @@ def parse_sents(sent_length=1):
     for sent in ts:
         ap = PARSER.parse([w + '_' + m for (w, m) in sent[1]])
         try:
-            trees = [tree for tree in ap]
+            trees = []
+            for tree in ap:
+                head_dep_rels = [(node['word'],
+                                  [(tree.nodes[dep]['word'],
+                                    tree.nodes[dep]['rel'])
+                                   for dep in node['deps']['']])
+                                 for key, node in tree.nodes.items()
+                                 if key != 0]
+                plausible_parse = True
+                for head_word, rels in head_dep_rels:
+                    if len(rels) == 0:
+                        if re.match('.*_P.*', head_word) and head_word not in ['e)/cw_P-------',
+                                                                               'e)ggu/s_P-------']:
+                            plausible_parse = False
+                        if re.match('.*_[Ccvanpl].*', head_word) and head_word not in ['ou)=n_C-------',
+                                                                                       'ga/r_C-------',
+                                                                                       'de/_C-------',
+                                                                                       'ge/_C-------',
+                                                                                       'me/n_C-------',
+                                                                                       'te/_C-------',
+                                                                                       'a)/ra_C-------',
+                                                                                       'me/ntoi_C-------']:
+                            plausible_parse = False
+                    else:
+                        any_subjects = False
+                        any_determiners = False
+                        any_prep_arguments = False
+                        for dep_word, rel in rels:
+                            if rel == 'subject' and head_word != 'ou(=_B-------':
+                                if any_subjects:
+                                    plausible_parse = False
+                                    break
+                                else:
+                                    any_subjects = True
+                            elif rel == 'determiner' and dep_word not in ['tou=_D----GSM',
+                                                                          'th=s_D----GSF']:
+                                if any_determiners:
+                                    plausible_parse = False
+                                    break
+                                else:
+                                    any_determiners = True
+                            elif rel == 'argument' and re.match('.*_P.*', head_word) and head_word != 'pro/s_P-------':
+                                if any_prep_arguments:
+                                    plausible_parse = False
+                                    break
+                                else:
+                                    any_prep_arguments = True
+                    if not plausible_parse:
+                        break
+                if plausible_parse:
+                    trees.append(tree)
         except UnboundLocalError:
             trees = []
         sp = SavedParse(sent[0],

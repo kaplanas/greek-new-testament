@@ -38,7 +38,6 @@ e(/kastos_A----NSM,h(mw=n_E----GP-,immediately_after
 e)klekto/n_A----ASM,e)n_P-------,immediately_after
 e)klektou/s_A----APM,e)cele/cato_V3AMI-S-,after
 e)klektw=n_A----GPM,qeou=_N----GSM,immediately_after
-e(/kth_A----NSF,w(s_P-------,immediately_before
 e)leu/qeroi_A----NPM,dikaiosu/nh|_N----DSF,after
 e)/nnuxa_A----APN,li/an_B-------,immediately_after
 e)/noxon_A----ASM,qana/tou_N----GSM,after
@@ -1006,6 +1005,7 @@ yuxh/n_N----ASF,sou_E----GS-,immediately_after
 yuxh=s_N----GSF,au)tou=_E----GSM,immediately_after
 yuxw=n_N----GPF,u(mw=n_E----GP-,immediately_after
 w(/ra_N----NSF,mou_E----GS-,immediately_after
+w(/ra_N----NSF,w(s_P-------,after
 w(=rai_N----NPF,h(me/ras_N----GSF,after
 w(/ran_N----ASF,kai/_a-------,before
 w)fe/leia_N----NSF,peritomh=s_N----GSF,after

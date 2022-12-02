@@ -159,7 +159,7 @@
 'conjunction' 'immediately_after' 'h)/_C-------' -> 'a)nqrw/pois_N----DPM' | 'a)po/_P-------' | 'e)k_P-------' | 'e)n_P-------' | 'zesto/s_A----NSM'
 
 # mhde/
-'conjunction' 'immediately_after' 'mhde/_C-------' -> 'deilia/tw_V3PAM-S-' | 'diw/chte_V2AAS-P-' | 'kaqa/per_C-------' | 'koinw/nei_V2PAM-S-' | 'sukofanth/shte_V2AAS-P-'
+'conjunction' 'immediately_after' 'mhde/_C-------' -> 'deilia/tw_V3PAM-S-' | 'diw/chte_V2AAS-P-' | 'koinw/nei_V2PAM-S-' | 'sukofanth/shte_V2AAS-P-'
 
 # o(/tan
 'conjunction' 'immediately_after' 'o(/tan_C-------' -> 'a)nastw=si(n)_V3AAS-P-' | 'a)fe/lwmai_V1AMS-S-' | 'ge/nhtai_V3AMS-S-' | 'e)/lqh|s_V2AAS-S-'
@@ -344,7 +344,7 @@
 'conjunction' 'after' 'kaqo/_C-------' -> 'e)/xei_V3PAI-S-' | 'e)/xh|_V3PAS-S-'
 
 # mhde/
-'conjunction' 'after' 'mhde/_C-------' -> 'glw/ssh|_N----DSF' | 'e)n_P-------' | 'kaqw/s_C-------'
+'conjunction' 'after' 'mhde/_C-------' -> 'glw/ssh|_N----DSF' | 'e)n_P-------' | 'kaqa/per_C-------' | 'kaqw/s_C-------'
 
 # o(/tan
 'conjunction' 'after' 'o(/tan_C-------' -> 'e)ge/neto_V3AMI-S-' | 'ei)mi/_V1PAI-S-' | 'e)/lqh|_V3AAS-S-' | 'e)ceporeu/onto_V3IMI-P-' | 'e)sqi/wsi(n)_V3PAS-P-' | 'e)/stai_V3FMI-S-' | 'o(/ti_C-------' | 'paradoi=_V3AAS-S-' | 'pisteu/shte_V2AAS-P-' | 'poih/sei_V3FAI-S-' | 'w)=_V1PAS-S-'

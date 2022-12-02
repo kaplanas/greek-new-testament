@@ -54,6 +54,9 @@
 # katagge/llw
 'determiner' 'before' 'katagge/llousi(n)_V-PAPDPM' -> 'toi=s_D----DPM'
 
+# pari/sthmi
+'determiner' 'before' 'parestw=tes_V-RAPNPM' -> 'oi(_D----NPM'
+
 #### conjunction A ####
 
 # kai/

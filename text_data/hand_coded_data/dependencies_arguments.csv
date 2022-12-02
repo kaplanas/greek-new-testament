@@ -748,6 +748,7 @@ w(s_P-------,de/ndra_N----APN,immediately_after
 w(s_P-------,diakonw=n_V-PAPNSM,after
 w(s_P-------,e)gw/_E----NS-,immediately_after
 w(s_P-------,e)dida/xqhsan_V3API-P-,immediately_after
+w(s_P-------,e(/kth_A----NSF,immediately_after
 w(s_P-------,e)me/_E----AS-,immediately_after
 w(s_P-------,h(/lios_N----NSM,after
 w(s_P-------,kai/_n-------,after
@@ -1217,7 +1218,7 @@ e)sti/(n)_V3PAI-S-,r(h=ma_N----NSN,after
 e)sti/(n)_V3PAI-S-,*(rwmai=os_A----NSM,immediately_before
 e)sti/(n)_V3PAI-S-,sko/tos_N----NSN,immediately_before
 e)sti/(n)_V3PAI-S-,sugkekalumme/non_V-RPPNSN,immediately_before
-e)sti/(n)_V3PAI-S-,sw=ma_N----NSN,immediately_after
+e)sti/(n)_V3PAI-S-,sw=ma_N----NSN,any
 e)sti/(n)_V3PAI-S-,te/leios_A----NSM,immediately_before
 e)sti/(n)_V3PAI-S-,tetartai=os_A----NSM,before
 e)sti/(n)_V3PAI-S-,ti\_I----NSN,before
