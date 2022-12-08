@@ -1,3 +1,57 @@
+#### conjunction N ####
+
+# kai/
+'interjection' 'after' 'kai/_n-------' -> 'a)mh/n_J-------'
+
+#### preposition ####
+
+# meta/
+'interjection' 'after' 'meta/_P-------' -> 'a)delfoi/_N----VPM' | 'a)mh/n_J-------'
+
+#### verb ####
+
+# dialogi/zomai
+'interjection' 'after' 'dialogi/zesqe_V2PMI-P-' -> 'o)ligo/pistoi_A----VPM'
+
+# ei)mi/
+'interjection' 'after' 'ei)=_V2PAI-S-' -> 'ku/rie_N----VSM'
+
+# qe/lw
+'interjection' 'after' 'qe/leis_V2PAI-S-' -> 'a)/nqrwpe_N----VSM' | 'w)=_J-------'
+
+# pisteu/w
+'interjection' 'after' 'pisteu/eis_V2PAI-S-' -> '*)agri/ppa_N----VSM'
+
+# makroqume/w
+'interjection' 'after' 'makroqumh/sate_V2AAM-P-' -> 'a)delfoi/_N----VPM'
+
+# ginw/skw
+'interjection' 'after' 'e)/gnwkas_V2RAI-S-' -> '*fi/lippe_N----VSM'
+
+# a(gni/zw
+'interjection' 'after' 'a(gni/sate_V2AAM-P-' -> 'di/yuxoi_A----VPM'
+
+# e)/rxomai
+'interjection' 'after' 'e)/rxou_V2PMM-S-' -> '*)ihsou=_N----VSM'
+
+# kaqari/zw
+'interjection' 'after' 'kaqari/sate_V2AAM-P-' -> 'a(martwloi/_A----VPM'
+
+#### adverb ####
+
+# pou=
+'interjection' 'after' 'pou=_B-------' -> 'qa/nate_N----VSM'
+
+#### conjunction E ####
+
+# kai/
+'interjection' 'after' 'kai/_e-------' -> 'gu/nai_N----VSF' | 'ui(e/_N----VSM'
+
+#### personal pronoun ####
+
+# au)to/s
+'interjection' 'after' 'au)tw=|_E----DSM' -> 'a)mh/n_J-------'
+
 #### conjunction V ####
 
 # kai/
@@ -109,6 +163,9 @@
 # xai/rw
 'interjection' 'before' 'xai/rete_V2PAM-P-' -> 'a)delfoi/_N----VPM'
 
+# a)dike/w
+'interjection' 'before' 'a)dikw=_V1PAI-S-' -> 'e(tai=re_N----VSM'
+
 # a)gapa/w
 'interjection' 'before' 'a)gapa=|s_V2PAI-S-' -> '*si/mwn_N----VSM'
 
@@ -135,7 +192,7 @@
 'interjection' 'before' 'e)a/n_C-------' -> 'a)delfoi/_N----VPM'
 
 # i(/na
-'interjection' 'before' 'i(/na_C-------' -> 'tekni/a_N----VPN'
+'interjection' 'before' 'i(/na_C-------' -> 'dida/skale_N----VSM' | 'tekni/a_N----VPN'
 
 # a)lla/
 'interjection' 'before' 'a)lla/_C-------' -> 'a)gaphte/_A----VSM' | 'tekni/a_N----VPN'
@@ -234,6 +291,9 @@
 # i(/na
 'interjection' 'immediately_before' 'i(/na_C-------' -> 'ku/rie_N----VSM' | 'rabbouni_N----VSM'
 
+# a)lla/
+'interjection' 'immediately_before' 'a)lla/_C-------' -> '*fh=ste_N----VSM'
+
 # ei)
 'interjection' 'immediately_before' 'ei)_C-------' -> 'a)gaphtoi/_A----VPM' | 'a)delfoi/_N----VPM' | 'ku/rie_N----VSM'
 
@@ -265,46 +325,6 @@
 # ei)mi/
 'interjection' 'any' 'e)sti/(n)_V3PAI-S-' -> 'ku/rie_N----VSM'
 
-#### preposition ####
-
-# meta/
-'interjection' 'after' 'meta/_P-------' -> 'a)delfoi/_N----VPM' | 'a)mh/n_J-------'
-
-#### verb ####
-
-# ei)mi/
-'interjection' 'after' 'ei)=_V2PAI-S-' -> 'ku/rie_N----VSM'
-
-# pisteu/w
-'interjection' 'after' 'pisteu/eis_V2PAI-S-' -> '*)agri/ppa_N----VSM'
-
-# makroqume/w
-'interjection' 'after' 'makroqumh/sate_V2AAM-P-' -> 'a)delfoi/_N----VPM'
-
-# a(gni/zw
-'interjection' 'after' 'a(gni/sate_V2AAM-P-' -> 'di/yuxoi_A----VPM'
-
-# e)/rxomai
-'interjection' 'after' 'e)/rxou_V2PMM-S-' -> '*)ihsou=_N----VSM'
-
-# kaqari/zw
-'interjection' 'after' 'kaqari/sate_V2AAM-P-' -> 'a(martwloi/_A----VPM'
-
-#### adverb ####
-
-# pou=
-'interjection' 'after' 'pou=_B-------' -> 'qa/nate_N----VSM'
-
-#### conjunction E ####
-
-# kai/
-'interjection' 'after' 'kai/_e-------' -> 'gu/nai_N----VSF' | 'ui(e/_N----VSM'
-
-#### personal pronoun ####
-
-# au)to/s
-'interjection' 'after' 'au)tw=|_E----DSM' -> 'a)mh/n_J-------'
-
 #### verb ####
 
 # du/namai
@@ -324,6 +344,9 @@
 
 # a)kou/w
 'interjection' 'immediately_after' 'a)kou/sate_V2AAM-P-' -> 'a)delfoi/_N----VPM'
+
+# doke/w
+'interjection' 'immediately_after' 'dokei=_V3PAI-S-' -> '*si/mwn_N----VSM'
 
 # eu)frai/nw
 'interjection' 'immediately_after' 'eu)fra/nqhte_V2APM-P-' -> 'e)/qnh_N----VPN'

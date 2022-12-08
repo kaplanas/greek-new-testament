@@ -40,16 +40,17 @@ def parse_sents(sent_length=1):
                 for head_word, rels in head_dep_rels:
                     if len(rels) == 0:
                         if re.match('.*_P.*', head_word) and head_word not in ['e)/cw_P-------',
+                                                                               'e)/sw_P-------',
                                                                                'e)ggu/s_P-------']:
                             plausible_parse = False
-                        if re.match('.*_[Ccvanpl].*', head_word) and head_word not in ['ou)=n_C-------',
-                                                                                       'ga/r_C-------',
-                                                                                       'de/_C-------',
-                                                                                       'ge/_C-------',
-                                                                                       'me/n_C-------',
-                                                                                       'te/_C-------',
-                                                                                       'a)/ra_C-------',
-                                                                                       'me/ntoi_C-------']:
+                        if re.match('.*_[Ccvanplb].*', head_word) and head_word not in ['ou)=n_C-------',
+                                                                                        'ga/r_C-------',
+                                                                                        'de/_C-------',
+                                                                                        'ge/_C-------',
+                                                                                        'me/n_C-------',
+                                                                                        'te/_C-------',
+                                                                                        'a)/ra_C-------',
+                                                                                        'me/ntoi_C-------']:
                             plausible_parse = False
                     else:
                         any_subjects = False
@@ -221,8 +222,8 @@ def find_unused_rules():
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
-    sent_lengths = [i + 1 for i in range(13)]
-    # sent_lengths = [13]
+    sent_lengths = [i + 1 for i in range(14)]
+    # sent_lengths = [14]
     old_parses = {}
     old_parse_counts = {}
     parses = {}

@@ -13,6 +13,8 @@ Matthew,5,47,1,C
 Matthew,6,24,26,N
 Matthew,6,28,1,V
 Matthew,6,31,10,V
+Matthew,6,33,6,N
+Matthew,6,33,10,V
 Matthew,7,7,2,V
 Matthew,7,7,6,V
 Matthew,7,7,9,V
@@ -35,10 +37,13 @@ Matthew,9,1,1,V
 Matthew,9,1,6,V
 Matthew,9,2,1,L
 Matthew,9,3,1,L
+Matthew,9,5,10,V
+Matthew,9,5,13,V
 Matthew,9,7,1,V
 Matthew,9,15,29,V
 Matthew,9,19,1,C
 Matthew,9,22,16,V
+Matthew,9,25,11,V
 Matthew,9,26,1,V
 Matthew,9,30,1,V
 Matthew,9,33,8,V
@@ -47,10 +52,13 @@ Matthew,10,40,6,V
 Matthew,11,19,20,V
 Matthew,11,22,5,N
 Matthew,11,28,7,N
+Matthew,12,9,1,V
+Matthew,12,10,1,L
 Matthew,12,10,7,V
 Matthew,12,21,1,V
 Matthew,12,23,1,V
 Matthew,12,23,6,V
+Matthew,12,27,1,C
 Matthew,12,29,22,V
 Matthew,13,3,1,V
 Matthew,13,7,7,V
@@ -62,15 +70,29 @@ Matthew,13,53,1,V
 Matthew,13,56,1,V
 Matthew,13,57,1,V
 Matthew,13,58,1,V
+Matthew,14,14,1,V
+Matthew,14,14,6,V
+Matthew,14,14,10,V
+Matthew,14,17,12,N
+Matthew,14,20,1,V
+Matthew,14,20,4,V
+Matthew,14,20,6,V
 Matthew,14,21,10,N
 Matthew,14,23,1,V
+Matthew,14,30,7,V
 Matthew,14,32,1,V
 Matthew,14,34,1,V
 Matthew,15,21,1,V
 Matthew,15,21,11,N
+Matthew,15,23,7,V
 Matthew,15,28,17,V
 Matthew,15,34,1,V
+Matthew,15,37,1,V
+Matthew,15,37,4,V
+Matthew,15,37,6,V
 Matthew,15,38,9,N
+Matthew,15,39,1,V
+Matthew,15,39,9,V
 Matthew,16,4,17,V
 Matthew,16,5,1,V
 Matthew,16,11,17,N
@@ -85,12 +107,17 @@ Matthew,17,7,10,V
 Matthew,17,16,1,V
 Matthew,17,16,7,V
 Matthew,17,23,9,V
+Matthew,17,25,3,V
 Matthew,17,25,25,N
 Matthew,17,25,31,P
+Matthew,18,26,11,V
+Matthew,18,27,10,V
+Matthew,18,29,12,V
 Matthew,19,2,1,V
 Matthew,19,2,6,V
 Matthew,19,7,10,V
 Matthew,19,15,1,V
+Matthew,19,16,1,L
 Matthew,20,5,8,A
 Matthew,20,9,1,V
 Matthew,20,15,10,C
@@ -98,6 +125,8 @@ Matthew,20,24,1,V
 Matthew,20,29,1,V
 Matthew,20,32,1,V
 Matthew,20,32,7,V
+Matthew,20,34,9,V
+Matthew,20,34,12,V
 Matthew,21,10,1,V
 Matthew,21,14,1,V
 Matthew,21,14,5,A
@@ -145,7 +174,9 @@ Matthew,27,5,9,V
 Matthew,27,12,1,V
 Matthew,27,12,9,N
 Matthew,27,14,1,C
+Matthew,27,36,1,V
 Matthew,27,38,10,P
+Matthew,27,61,7,N
 Matthew,28,4,9,V
 Matthew,28,15,9,V
 Mark,1,12,1,V
@@ -154,6 +185,8 @@ Mark,1,21,1,V
 Mark,1,21,5,V
 Mark,1,25,1,V
 Mark,1,25,8,V
+Mark,1,26,1,V
+Mark,1,26,8,N
 Mark,1,27,1,C
 Mark,1,27,22,V
 Mark,1,28,1,V
@@ -173,14 +206,23 @@ Mark,3,4,1,V
 Mark,3,4,8,V
 Mark,3,4,12,V
 Mark,3,12,1,V
+Mark,3,13,1,V
+Mark,3,13,6,V
+Mark,3,13,11,V
 Mark,3,21,1,V
 Mark,3,23,1,V
 Mark,3,33,1,V
 Mark,3,33,10,N
 Mark,4,1,1,V
+Mark,4,2,1,V
+Mark,4,2,7,V
 Mark,4,9,1,V
+Mark,4,13,1,V
+Mark,4,13,9,V
 Mark,4,24,1,V
 Mark,4,24,13,V
+Mark,4,30,1,V
+Mark,4,30,9,V
 Mark,4,35,1,V
 Mark,4,39,1,V
 Mark,4,39,6,V
@@ -192,6 +234,7 @@ Mark,5,9,1,V
 Mark,5,13,1,V
 Mark,5,16,1,V
 Mark,5,17,1,V
+Mark,5,18,1,V
 Mark,5,24,1,V
 Mark,5,24,5,V
 Mark,5,24,10,V
@@ -205,7 +248,10 @@ Mark,5,43,9,V
 Mark,6,3,19,V
 Mark,6,3,28,V
 Mark,6,6,7,V
+Mark,6,10,1,V
 Mark,6,24,1,V
+Mark,6,31,1,V
+Mark,6,31,12,V
 Mark,6,31,19,N
 Mark,6,31,23,V
 Mark,6,32,1,V
@@ -217,6 +263,7 @@ Mark,6,40,1,V
 Mark,6,40,7,P
 Mark,6,44,1,V
 Mark,6,46,1,V
+Mark,6,50,13,V
 Mark,6,51,1,V
 Mark,6,51,8,V
 Mark,6,53,1,V
@@ -224,6 +271,9 @@ Mark,6,53,9,V
 Mark,7,14,1,V
 Mark,7,14,11,V
 Mark,7,18,1,V
+Mark,7,32,1,V
+Mark,7,32,5,A
+Mark,7,32,7,V
 Mark,8,5,1,V
 Mark,8,7,1,V
 Mark,8,7,5,V
@@ -259,6 +309,7 @@ Mark,9,16,1,V
 Mark,9,20,1,V
 Mark,9,21,1,V
 Mark,9,27,10,V
+Mark,9,29,1,V
 Mark,9,32,6,V
 Mark,9,33,1,V
 Mark,9,33,5,V
@@ -294,13 +345,17 @@ Mark,11,27,1,V
 Mark,11,28,9,C
 Mark,11,31,1,V
 Mark,11,33,1,V
+Mark,11,33,8,V
 Mark,12,4,1,V
 Mark,12,4,10,V
+Mark,12,5,1,V
 Mark,12,8,1,V
 Mark,12,8,5,V
 Mark,12,9,8,V
 Mark,12,9,12,V
 Mark,12,12,17,V
+Mark,12,13,1,C
+Mark,12,13,8,N
 Mark,12,14,37,V
 Mark,12,16,4,V
 Mark,12,16,11,N
@@ -322,6 +377,7 @@ Mark,14,17,1,V
 Mark,14,19,3,V
 Mark,14,23,1,V
 Mark,14,23,7,V
+Mark,14,24,1,V
 Mark,14,26,1,V
 Mark,14,37,1,V
 Mark,14,37,3,V
@@ -341,28 +397,39 @@ Mark,15,22,1,V
 Mark,15,23,1,V
 Mark,15,25,5,V
 Mark,15,26,1,V
+Mark,15,27,1,V
+Mark,15,27,10,P
 Mark,15,32,15,V
 Mark,15,33,1,V
 Mark,15,34,1,V
 Mark,15,35,1,V
 Mark,15,38,1,V
 Mark,15,47,6,N
+Mark,16,2,1,V
+Mark,16,3,1,V
 Mark,16,4,1,V
+Mark,16,15,1,V
 Mark,16,16,3,N
 Luke,1,12,1,V
 Luke,1,12,5,V
 Luke,1,18,1,V
 Luke,1,18,15,V
+Luke,1,23,1,V
 Luke,1,28,1,V
 Luke,1,29,7,V
 Luke,1,38,14,V
 Luke,1,43,1,C
 Luke,1,45,1,A
+Luke,1,56,9,V
 Luke,1,57,10,V
 Luke,1,60,1,V
 Luke,1,63,1,V
 Luke,1,63,10,V
 Luke,1,66,17,V
+Luke,2,33,1,V
+Luke,2,33,6,N
+Luke,2,40,5,V
+Luke,2,40,9,V
 Luke,2,41,1,V
 Luke,2,49,1,V
 Luke,2,50,1,V
@@ -377,6 +444,7 @@ Luke,3,14,11,V
 Luke,3,14,18,V
 Luke,4,2,7,V
 Luke,4,2,15,V
+Luke,4,12,1,V
 Luke,4,13,1,V
 Luke,4,14,1,V
 Luke,4,14,13,V
@@ -384,6 +452,7 @@ Luke,4,15,1,V
 Luke,4,31,1,V
 Luke,4,35,1,V
 Luke,4,35,8,V
+Luke,4,35,12,V
 Luke,4,37,1,V
 Luke,4,38,19,V
 Luke,4,41,17,C
@@ -391,6 +460,8 @@ Luke,4,44,1,V
 Luke,5,6,1,V
 Luke,5,11,1,V
 Luke,5,20,1,V
+Luke,5,23,10,V
+Luke,5,23,13,V
 Luke,5,28,1,V
 Luke,5,39,1,V
 Luke,6,5,1,V
@@ -414,6 +485,9 @@ Luke,7,31,9,V
 Luke,7,35,1,V
 Luke,7,40,1,V
 Luke,7,44,1,V
+Luke,7,49,1,V
+Luke,8,6,1,V
+Luke,8,6,7,V
 Luke,8,7,1,V
 Luke,8,7,8,V
 Luke,8,8,1,V
@@ -453,7 +527,9 @@ Luke,10,4,8,V
 Luke,10,14,3,N
 Luke,10,14,10,E
 Luke,10,15,1,V
+Luke,10,25,1,L
 Luke,10,28,8,V
+Luke,10,29,10,V
 Luke,10,37,16,V
 Luke,11,12,1,V
 Luke,11,14,1,V
@@ -492,6 +568,8 @@ Luke,16,2,1,V
 Luke,16,12,1,C
 Luke,16,13,27,N
 Luke,16,14,9,V
+Luke,16,19,6,V
+Luke,16,19,9,N
 Luke,16,29,6,N
 Luke,17,5,1,V
 Luke,17,14,1,V
@@ -516,6 +594,7 @@ Luke,19,23,1,V
 Luke,19,28,1,V
 Luke,19,31,1,C
 Luke,19,40,1,V
+Luke,20,8,1,V
 Luke,20,11,1,V
 Luke,20,11,10,N
 Luke,20,12,1,V
@@ -530,14 +609,19 @@ Luke,22,6,1,V
 Luke,22,6,3,V
 Luke,22,13,7,V
 Luke,22,14,1,C
+Luke,22,51,9,V
+Luke,22,55,8,N
 Luke,22,60,10,V
 Luke,22,62,1,V
 Luke,22,65,1,V
 Luke,23,1,1,V
 Luke,23,10,5,N
 Luke,23,23,9,V
+Luke,23,27,8,N
+Luke,23,27,12,V
 Luke,23,35,1,V
 Luke,23,39,16,E
+Luke,23,41,1,B
 Luke,23,42,1,V
 Luke,23,43,1,V
 Luke,23,54,1,V
@@ -580,6 +664,7 @@ John,2,8,1,V
 John,2,8,6,V
 John,2,13,1,V
 John,2,13,8,V
+John,2,18,5,V
 John,3,4,22,V
 John,3,9,3,V
 John,3,35,6,V
@@ -596,12 +681,14 @@ John,5,9,1,V
 John,5,9,7,V
 John,5,9,12,V
 John,5,12,12,V
+John,5,15,4,V
 John,5,16,1,C
 John,6,3,7,V
 John,6,25,1,V
 John,6,30,11,V
 John,6,36,8,V
 John,6,43,3,V
+John,6,55,8,V
 John,6,70,11,V
 John,7,11,9,V
 John,7,14,11,V
@@ -613,6 +700,7 @@ John,7,34,6,V
 John,7,35,24,V
 John,7,52,2,V
 John,7,52,13,V
+John,8,18,7,V
 John,8,39,2,V
 John,8,50,11,N
 John,8,53,11,V
@@ -621,6 +709,8 @@ John,9,1,1,V
 John,9,7,16,V
 John,9,7,18,V
 John,9,12,1,V
+John,9,15,20,V
+John,9,15,22,V
 John,9,16,28,V
 John,9,27,6,V
 John,9,34,2,V
@@ -628,8 +718,11 @@ John,9,34,10,V
 John,9,34,14,V
 John,9,36,3,V
 John,9,36,5,C
+John,9,37,5,V
+John,9,37,8,V
 John,9,38,6,V
 John,10,20,8,V
+John,10,24,6,V
 John,10,39,6,V
 John,10,42,1,V
 John,11,5,11,N
@@ -639,6 +732,7 @@ John,11,44,23,V
 John,12,27,6,V
 John,12,28,12,V
 John,12,28,14,V
+John,12,30,3,V
 John,12,36,16,V
 John,12,38,16,V
 John,12,41,9,V
@@ -648,6 +742,7 @@ John,13,13,9,V
 John,13,27,1,V
 John,14,4,1,V
 John,14,8,9,V
+John,14,9,10,V
 John,14,28,7,V
 John,14,29,1,C
 John,16,3,1,C
@@ -656,6 +751,7 @@ John,16,16,6,C
 John,16,17,26,C
 John,16,29,10,V
 John,17,6,18,V
+John,18,4,10,V
 John,18,6,11,V
 John,18,15,7,N
 John,18,25,6,N
@@ -678,6 +774,8 @@ John,20,13,1,V
 John,20,13,15,V
 John,20,20,1,V
 John,20,20,7,N
+John,20,26,1,V
+John,20,26,11,P
 John,20,28,3,V
 John,20,28,9,N
 John,20,29,13,N
@@ -685,18 +783,31 @@ John,21,2,15,V
 John,21,3,15,V
 John,21,3,20,V
 John,21,6,18,V
+John,21,9,13,N
+John,21,13,4,V
+John,21,13,8,C
 John,21,17,19,V
 John,21,19,10,V
+Acts,1,9,1,V
+Acts,1,9,7,V
 Acts,1,23,1,V
 Acts,1,23,11,N
 Acts,2,8,1,V
 Acts,2,12,4,V
 Acts,2,21,1,V
+Acts,2,43,9,N
 Acts,5,4,5,V
 Acts,5,6,7,V
+Acts,5,9,25,V
+Acts,5,11,1,V
+Acts,5,11,9,P
 Acts,5,21,10,V
 Acts,5,29,4,N
 Acts,5,33,5,V
+Acts,6,8,5,N
+Acts,6,8,9,N
+Acts,7,22,1,V
+Acts,7,22,12,N
 Acts,7,24,1,V
 Acts,7,24,6,V
 Acts,7,43,19,V
@@ -715,7 +826,10 @@ Acts,10,4,5,N
 Acts,10,13,1,V
 Acts,10,13,9,V
 Acts,10,14,12,A
+Acts,10,15,1,P
 Acts,10,16,6,V
+Acts,10,24,18,A
+Acts,11,8,7,A
 Acts,11,10,6,V
 Acts,11,24,11,V
 Acts,11,26,1,V
@@ -728,12 +842,15 @@ Acts,13,3,5,N
 Acts,13,11,23,N
 Acts,13,11,25,V
 Acts,13,20,6,V
+Acts,14,2,6,V
 Acts,14,18,1,V
 Acts,14,20,11,V
 Acts,15,27,4,N
 Acts,15,27,6,V
 Acts,16,1,6,P
 Acts,16,5,8,V
+Acts,16,32,1,V
+Acts,17,18,31,N
 Acts,18,11,4,N
 Acts,18,16,1,V
 Acts,19,18,7,N
@@ -748,6 +865,9 @@ Acts,22,1,3,N
 Acts,22,16,1,V
 Acts,22,16,7,V
 Acts,22,21,1,V
+Acts,23,7,9,N
+Acts,23,7,11,V
+Acts,26,25,11,N
 Acts,27,32,9,V
 Acts,28,1,1,V
 Acts,28,12,1,V
@@ -765,11 +885,15 @@ Romans,11,34,6,V
 Romans,11,35,1,C
 Romans,11,35,5,V
 Romans,12,14,5,V
+Romans,14,4,12,V
 Romans,14,9,6,V
 Romans,14,9,9,C
 Romans,14,10,8,V
 Romans,14,19,7,N
+Romans,15,1,11,V
 Romans,15,10,1,V
+Romans,15,11,1,V
+Romans,15,11,9,V
 Romans,16,9,8,N
 Romans,16,12,3,N
 Romans,16,13,7,N
@@ -778,6 +902,9 @@ Romans,16,14,7,N
 Romans,16,23,18,N
 1 Corinthians,1,13,9,V
 1 Corinthians,1,19,8,V
+1 Corinthians,3,3,10,N
+1 Corinthians,3,3,15,V
+1 Corinthians,3,16,7,V
 1 Corinthians,4,1,8,N
 1 Corinthians,6,2,1,V
 1 Corinthians,6,2,10,C
@@ -797,6 +924,7 @@ Romans,16,23,18,N
 1 Corinthians,10,10,7,V
 1 Corinthians,10,19,8,C
 1 Corinthians,10,22,1,V
+1 Corinthians,11,2,8,C
 1 Corinthians,11,22,9,V
 1 Corinthians,11,22,11,V
 1 Corinthians,11,22,17,V
@@ -809,7 +937,9 @@ Romans,16,23,18,N
 1 Corinthians,14,36,9,V
 1 Corinthians,15,11,8,V
 1 Corinthians,15,32,16,V
+1 Corinthians,15,34,3,V
 1 Corinthians,15,53,8,V
+1 Corinthians,16,19,13,N
 2 Corinthians,2,16,15,A
 2 Corinthians,3,1,5,C
 2 Corinthians,3,1,14,P
@@ -821,6 +951,7 @@ Romans,16,23,18,N
 2 Corinthians,12,18,3,V
 Galatians,1,10,8,V
 Galatians,1,21,8,N
+Galatians,2,13,1,C
 Galatians,3,6,6,V
 Galatians,3,15,11,V
 Galatians,4,10,7,N
@@ -829,9 +960,13 @@ Galatians,5,15,5,V
 Galatians,5,16,5,V
 Galatians,5,24,11,N
 Galatians,6,2,5,V
+Ephesians,5,32,11,P
 Ephesians,6,10,6,P
+Ephesians,6,23,4,N
+Ephesians,6,23,11,N
 Philippians,1,21,6,N
 Philippians,4,2,3,V
+Philippians,4,20,4,N
 Colossians,3,19,6,V
 Colossians,4,14,8,N
 Colossians,4,15,8,N
@@ -843,16 +978,20 @@ Colossians,4,17,1,V
 2 Thessalonians,3,4,12,V
 1 Timothy,3,10,1,V
 1 Timothy,4,11,3,V
+1 Timothy,5,23,10,N
 1 Timothy,6,2,25,V
 2 Timothy,4,6,5,V
 2 Timothy,4,19,5,N
 2 Timothy,4,21,14,N
+2 Timothy,5,23,10,N
 Titus,2,15,3,V
 Titus,2,15,5,V
 Titus,3,13,4,N
 Hebrews,3,19,1,V
 Hebrews,6,3,1,C
 Hebrews,7,8,1,V
+Hebrews,8,12,7,V
+Hebrews,8,13,11,N
 Hebrews,11,20,9,N
 Hebrews,11,32,1,V
 Hebrews,13,16,4,N
@@ -863,6 +1002,10 @@ James,2,19,14,V
 James,3,11,11,A
 James,3,13,3,A
 James,4,1,3,B
+James,4,2,2,V
+James,4,2,6,V
+James,4,2,8,V
+James,4,2,13,V
 James,4,8,10,V
 James,4,17,5,N
 James,5,16,6,C
@@ -877,13 +1020,18 @@ James,5,16,6,C
 1 John,3,2,6,V
 1 John,3,18,11,N
 1 John,4,6,28,N
+1 John,4,14,1,C
+1 John,4,14,4,V
 1 John,4,16,1,C
 1 John,4,16,4,V
 1 John,5,17,5,V
+1 John,5,19,7,V
 1 John,5,20,33,N
 3 John,1,2,7,V
 Revelation,1,19,8,V
 Revelation,2,10,26,V
+Revelation,2,21,1,C
+Revelation,2,21,7,V
 Revelation,3,19,6,V
 Revelation,3,19,10,V
 Revelation,5,7,1,V
@@ -893,21 +1041,31 @@ Revelation,5,14,7,V
 Revelation,5,14,11,V
 Revelation,6,3,1,C
 Revelation,6,5,1,C
+Revelation,6,7,1,C
 Revelation,7,14,1,V
+Revelation,8,1,1,C
 Revelation,8,6,1,C
 Revelation,8,11,1,V
 Revelation,9,16,1,N
 Revelation,10,3,8,C
 Revelation,10,9,1,V
+Revelation,11,3,1,V
+Revelation,11,3,7,V
 Revelation,13,10,21,N
 Revelation,13,12,1,V
+Revelation,15,4,19,V
 Revelation,17,3,1,V
+Revelation,17,6,18,V
+Revelation,17,7,1,V
 Revelation,17,11,13,V
 Revelation,17,11,18,V
 Revelation,17,13,5,V
 Revelation,17,13,8,N
+Revelation,19,3,1,V
+Revelation,19,3,5,V
 Revelation,19,9,15,V
 Revelation,19,10,1,V
+Revelation,19,9,1,V
 Revelation,20,14,1,V
 Revelation,20,14,4,N
 Revelation,21,5,1,V
@@ -920,5 +1078,7 @@ Revelation,21,7,5,V
 Revelation,21,7,9,V
 Revelation,21,16,1,V
 Revelation,21,16,6,N
+Revelation,21,17,1,V
 Revelation,22,3,1,V
 Revelation,22,8,5,N
+Revelation,22,16,17,N
