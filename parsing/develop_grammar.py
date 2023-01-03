@@ -50,21 +50,24 @@ def parse_sents(sent_length=1):
                                                                                         'me/n_C-------',
                                                                                         'te/_C-------',
                                                                                         'a)/ra_C-------',
-                                                                                        'me/ntoi_C-------']:
+                                                                                        'me/ntoi_C-------',
+                                                                                        'dh/_C-------']:
                             plausible_parse = False
                     else:
                         any_subjects = False
                         any_determiners = False
                         any_prep_arguments = False
                         for dep_word, rel in rels:
-                            if rel == 'subject' and head_word != 'ou(=_B-------':
+                            if rel == 'subject' and head_word not in ['ou(=_B-------',
+                                                                      '*)apollw=_N----GSM']:
                                 if any_subjects:
                                     plausible_parse = False
                                     break
                                 else:
                                     any_subjects = True
                             elif rel == 'determiner' and dep_word not in ['tou=_D----GSM',
-                                                                          'th=s_D----GSF']:
+                                                                          'th=s_D----GSF',
+                                                                          'tw=n_D----GPM']:
                                 if any_determiners:
                                     plausible_parse = False
                                     break
@@ -76,6 +79,8 @@ def parse_sents(sent_length=1):
                                     break
                                 else:
                                     any_prep_arguments = True
+                    if plausible_parse and len(rels) < len(set(rels)):
+                        plausible_parse = False
                     if not plausible_parse:
                         break
                 if plausible_parse:
@@ -222,8 +227,8 @@ def find_unused_rules():
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
-    sent_lengths = [i + 1 for i in range(14)]
-    # sent_lengths = [14]
+    sent_lengths = [i + 1 for i in range(15)]
+    # sent_lengths = [15]
     old_parses = {}
     old_parse_counts = {}
     parses = {}

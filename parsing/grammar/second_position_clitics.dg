@@ -26,10 +26,16 @@
 # e)a/n
 'second_position_clitic' 'after' 'e)a/n_C-------' -> 'ou)=n_C-------'
 
+#### personal pronoun ####
+
+# su/
+'second_position_clitic' 'after' 'su/_E----NS-' -> 'ga/r_C-------'
+
 #### definite article ####
 
 # o(
 'second_position_clitic' 'after' 'ai(_D----NPF' -> 'ou)=n_C-------'
+'second_position_clitic' 'after' 'o(_D----NSM' -> 'ou)=n_C-------'
 'second_position_clitic' 'after' 'oi(_D----NPM' -> 'ou)=n_C-------'
 
 #### verb ####

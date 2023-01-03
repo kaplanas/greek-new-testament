@@ -3,7 +3,7 @@ maka/rios,n,n
 e(pta/,y,y
 pisto/s,n,n
 prwto/tokos,n,n
-nekro/s,y,n
+nekro/s,y,y
 pa=s,y,y
 kuriako/s,n,n
 me/gas,y,n
@@ -59,7 +59,7 @@ presbu/teros,y,n
 u(a/linos,n,n
 tri/tos,y,n
 te/tartos,n,n
-ei(=s,y,n
+ei(=s,y,y
 e(/c,n,n
 i)sxuro/s,n,n
 purro/s,n,n
@@ -97,7 +97,7 @@ de/katos,n,n
 e)/mfobos,n,n
 a)/rshn,n,n
 e)/rhmos,y,n
-a)rxai=os,n,n
+a)rxai=os,y,n
 *dia/bolos,n,n
 potamofo/rhtos,n,n
 e(cako/sioi,n,n
@@ -350,8 +350,8 @@ a)/karpos,n,n
 e(tero/glwssos,n,n
 dh=los,n,n
 pthno/n,n,n
-e)poura/nios,n,n
-e)pi/geios,n,n
+e)poura/nios,y,n
+e)pi/geios,y,n
 xoi+ko/s,n,n
 a)/tomos,n,n
 qnhto/s,y,n
@@ -414,7 +414,7 @@ a)resto/s,n,n
 a)posuna/gwgos,n,n
 qeosebh/s,n,n
 perisso/s,y,n
-misqwto/s,n,n
+misqwto/s,y,n
 dekape/nte,n,n
 tetartai=os,n,n
 *(rwmai=os,n,n
@@ -426,7 +426,7 @@ liqo/strwtos,n,n
 a)/rafos,n,n
 u(fanto/s,n,n
 pro/qumos,n,n
-a)o/ratos,n,n
+a)o/ratos,y,y
 a)i/+dios,n,n
 a)napolo/ghtos,n,n
 a)su/netos,n,n
@@ -735,7 +735,7 @@ eu)ru/xwros,n,n
 e)cw/teros,n,n
 *gadarhno/s,n,n
 e)lafro/s,n,n
-a)nai/tios,n,n
+a)nai/tios,y,n
 *xananai=os,n,n
 i(/lews,n,n
 qauma/sios,n,n

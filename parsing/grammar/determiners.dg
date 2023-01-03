@@ -18,14 +18,15 @@
 
 #### verb ####
 
+# gi/nomai
+'determiner' 'before' 'gegone/nai_V-RAN---' -> 'to/_D----ASN'
+
 # ei)mi/
 'determiner' 'before' 'ei)/h_V3PAO-S-' -> 'to/_D----NSN'
+'determiner' 'before' 'ei)=nai_V-PAN---' -> 'to/_D----NSN' | 'to/_D----ASN'
 
-# e)kporeu/omai
-'determiner' 'before' 'e)kporeuo/mena_V-PMPNPN' -> 'ta/_D----NPN'
-
-# u(pa/rxw
-'determiner' 'before' 'u(pa/rxontes_V-PAPNPM' -> 'oi(_D----NPM'
+# e)/rxomai
+'determiner' 'before' 'e)lqei=n_V-AAN---' -> 'tou=_D----GSN'
 
 # doke/w
 'determiner' 'before' 'dokei=_V3PAI-S-' -> 'to/_D----NSN'
@@ -39,8 +40,8 @@
 # qu/w
 'determiner' 'before' 'qu/ein_V-PAN---' -> 'tou=_D----GSN'
 
-# a)gapa/w
-'determiner' 'before' 'a)gapw=n_V-PAPNSM' -> 'o(_D----NSM'
+# a)naire/w
+'determiner' 'before' 'a)ne/lwsi(n)_V3AAS-P-' -> 'to/_D----ASN'
 
 # a)ni/sthmi
 'determiner' 'before' 'a)nasth=nai_V-AAN---' -> 'to/_D----NSN'
@@ -48,23 +49,17 @@
 # e)ci/sthmi
 'determiner' 'before' 'e)cestake/nai_V-RAN---' -> 'to/_D----ASN'
 
-# kale/w
-'determiner' 'before' 'keklhme/noi_V-RPPNPM' -> 'oi(_D----NPM'
+# e)sqi/w
+'determiner' 'before' 'fagei=n_V-AAN---' -> 'to/_D----NSN'
 
-# latreu/w
-'determiner' 'before' 'latreu/ontes_V-PAPNPM' -> 'oi(_D----NPM'
+# a)gapa/w
+'determiner' 'before' 'a)gapa=n_V-PAN---' -> 'to/_D----ASN'
 
-# tima/w
-'determiner' 'before' 'timw=n_V-PAPNSM' -> 'o(_D----NSM'
+# daimoni/zomai
+'determiner' 'before' 'daimonizome/nwn_V-PMPGPM' -> 'ta/_D----APN'
 
-# de/xomai
-'determiner' 'before' 'dexo/menos_V-PMPNSM' -> 'o(_D----NSM'
-
-# katagge/llw
-'determiner' 'before' 'katagge/llousi(n)_V-PAPDPM' -> 'toi=s_D----DPM'
-
-# pari/sthmi
-'determiner' 'before' 'parestw=tes_V-RAPNPM' -> 'oi(_D----NPM'
+# e)/peimi
+'determiner' 'before' 'e)piou/sh|_V-PAPDSF' -> 'th=|_D----DSF'
 
 #### conjunction A ####
 
@@ -101,8 +96,16 @@
 
 #### adverb ####
 
+# a(/pac
+'determiner' 'before' 'a(/pac_B-------' -> 'to/_D----NSN'
+
 # e)pau/rion
 'determiner' 'before' 'e)pau/rion_B-------' -> 'th=|_D----DSF'
+
+#### conjunction ####
+
+# kaqw/s
+'determiner' 'before' 'kaqw/s_C-------' -> 'to/_D----ASN'
 
 #### preposition ####
 
@@ -116,7 +119,7 @@
 'determiner' 'immediately_before' 'e)k_P-------' -> 'oi(_D----NPM' | 'tou/s_D----APM'
 
 # e)n
-'determiner' 'immediately_before' 'e)n_P-------' -> 'ta/_D----APN' | 'to/_D----NSN' | 'toi=s_D----DPM'
+'determiner' 'immediately_before' 'e)n_P-------' -> 'ta/_D----APN' | 'tai=s_D----DPF' | 'to/_D----NSN' | 'toi=s_D----DPM'
 
 # kata/
 'determiner' 'immediately_before' 'kata/_P-------' -> 'ta/_D----APN'
@@ -144,31 +147,30 @@
 
 #### verb ####
 
-# ba/llw
-'determiner' 'immediately_before' 'ba/llontas_V-PAPAPM' -> 'tou/s_D----APM'
-
 # gi/nomai
 'determiner' 'immediately_before' 'gene/sqai_V-AMN---' -> 'tou=_D----GSN' | 'tw=|_D----DSN'
 'determiner' 'immediately_before' 'gegono/s_V-RAPASN' -> 'to/_D----ASN'
 
-# ei)mi/
-'determiner' 'immediately_before' 'ei)=nai_V-PAN---' -> 'to/_D----ASN'
+# e)ggi/zw
+'determiner' 'immediately_before' 'e)ggi/zein_V-PAN---' -> 'tw=|_D----DSN'
 
 # e)mpi/ptw
 'determiner' 'immediately_before' 'e)mpesei=n_V-AAN---' -> 'to/_D----NSN'
-'determiner' 'immediately_before' 'e)mpeso/ntos_V-AAPGSM' -> 'tou=_D----GSM'
-
-# kale/w
-'determiner' 'immediately_before' 'kalou/menon_V-PPPASM' -> 'to/n_D----ASM'
 
 # le/gw
 'determiner' 'immediately_before' 'le/gein_V-PAN---' -> 'tw=|_D----DSN'
+
+# poreu/omai
+'determiner' 'immediately_before' 'poreu/esqai_V-PMN---' -> 'tw=|_D----DSN'
 
 # a)poqnh/|skw
 'determiner' 'immediately_before' 'a)poqanei=n_V-AAN---' -> 'to/_D----NSN'
 
 # e)gei/rw
 'determiner' 'immediately_before' 'e)gerqh=nai_V-APN---' -> 'to/_D----ASN'
+
+# eu)loge/w
+'determiner' 'immediately_before' 'eu)logei=n_V-PAN---' -> 'tw=|_D----DSN'
 
 # kathgore/w
 'determiner' 'immediately_before' 'kathgorei=sqai_V-PPN---' -> 'tw=|_D----DSN'
@@ -181,25 +183,18 @@
 
 # u(pa/gw
 'determiner' 'immediately_before' 'u(pa/gein_V-PAN---' -> 'tw=|_D----DSN'
-'determiner' 'immediately_before' 'u(pa/gontes_V-PAPNPM' -> 'oi(_D----NPM'
 
-# e)kxe/w
-'determiner' 'immediately_before' 'e)kxunno/menon_V-PPPNSN' -> 'to/_D----NSN'
-
-# e)couqene/w
-'determiner' 'immediately_before' 'e)couqenhme/nous_V-RPPAPM' -> 'tou/s_D----APM'
-
-# e)pikale/w
-'determiner' 'immediately_before' 'e)piklhqe/n_V-APPASN' -> 'to/_D----ASN'
+# u(postre/fw
+'determiner' 'immediately_before' 'u(postre/fein_V-PAN---' -> 'tw=|_D----DSN'
 
 # e)sqi/w
 'determiner' 'immediately_before' 'fagei=n_V-AAN---' -> 'to/_D----ASN'
 
-# eu)aggeli/zw
-'determiner' 'immediately_before' 'eu)aggelisqe/n_V-APPNSN' -> 'to/_D----NSN'
-
 # za/w
 'determiner' 'immediately_before' 'zh=n_V-PAN---' -> 'to/_D----NSN'
+
+# lale/w
+'determiner' 'immediately_before' 'lalh=sai_V-AAN---' -> 'tw=|_D----DSN'
 
 # me/nw
 'determiner' 'immediately_before' 'mei=nai_V-AAN---' -> 'tou=_D----GSN'
@@ -207,75 +202,11 @@
 # paradi/dwmi
 'determiner' 'immediately_before' 'paradou=nai_V-AAN---' -> 'tou=_D----GSN'
 
-# perisseu/w
-'determiner' 'immediately_before' 'perisseu=on_V-PAPASN' -> 'to/_D----ASN'
-'determiner' 'immediately_before' 'perisseu=san_V-AAPNSN' -> 'to/_D----NSN'
-
-# pleona/zw
-'determiner' 'immediately_before' 'pleona/zonta_V-PAPASM' -> 'to/n_D----ASM'
-
-# strateu/omai
-'determiner' 'immediately_before' 'strateuome/nwn_V-PMPGPF' -> 'tw=n_D----GPF'
-
-# a)peiqe/w
-'determiner' 'immediately_before' 'a)peiqh/sasi(n)_V-AAPDPM' -> 'toi=s_D----DPM'
-
-# a(gia/zw
-'determiner' 'immediately_before' 'a(gia/zon_V-PAPNSN' -> 'to/_D----NSN'
-
-# ai)/rw
-'determiner' 'immediately_before' 'ai)/rontos_V-PAPGSM' -> 'tou=_D----GSM'
-
-# e)pe/rxomai
-'determiner' 'immediately_before' 'e)perxome/nais_V-PMPDPF' -> 'tai=s_D----DPF'
-
-# zhte/w
-'determiner' 'immediately_before' 'zhtw=n_V-PAPNSM' -> 'o(_D----NSM'
-
-# qa/ptw
-'determiner' 'immediately_before' 'qaya/ntwn_V-AAPGPM' -> 'tw=n_D----GPM'
-
-# qhla/zw
-'determiner' 'immediately_before' 'qhlazou/sais_V-PAPDPF' -> 'tai=s_D----DPF'
-
-# i)sxu/w
-'determiner' 'immediately_before' 'i)sxu/ontes_V-PAPNPM' -> 'oi(_D----NPM'
-
-# kakopoie/w
-'determiner' 'immediately_before' 'kakopoiw=n_V-PAPNSM' -> 'o(_D----NSM'
-
-# kakouxe/omai
-'determiner' 'immediately_before' 'kakouxoume/nwn_V-PPPGPM' -> 'tw=n_D----GPM'
-
-# katoike/w
-'determiner' 'immediately_before' 'katoikou=ntas_V-PAPAPM' -> 'tou/s_D----APM'
-
-# katapone/w
-'determiner' 'immediately_before' 'kataponoume/nw|_V-PPPDSM' -> 'tw=|_D----DSM'
-
-# krou/w
-'determiner' 'immediately_before' 'krou/onti_V-PAPDSM' -> 'tw=|_D----DSM'
-
-# lale/w
-'determiner' 'immediately_before' 'lalh=sai_V-AAN---' -> 'tw=|_D----DSN'
-
-# me/llw
-'determiner' 'immediately_before' 'me/llontas_V-PAPAPM' -> 'tou/s_D----APM'
-
 # parazhlo/w
 'determiner' 'immediately_before' 'parazhlw=sai_V-AAN---' -> 'to/_D----ASN'
 
 # spei/rw
 'determiner' 'immediately_before' 'spei/rein_V-PAN---' -> 'tou=_D----GSN'
-
-# sunana/keimai
-'determiner' 'immediately_before' 'sunanakei/menoi_V-PMPNPM' -> 'oi(_D----NPM'
-
-# teleuta/w
-'determiner' 'immediately_before' 'teteleuthko/tos_V-RAPGSM' -> 'tou=_D----GSM'
-
-# u(pota/ssw
-'determiner' 'immediately_before' 'u(pota/cantos_V-AAPGSM' -> 'tou=_D----GSM'
 
 #### adjective ####
 
@@ -291,6 +222,7 @@
 # a)ka/qartos
 'determiner' 'immediately_before' 'a)kaqa/rtois_A----DPN' -> 'toi=s_D----DPN'
 'determiner' 'immediately_before' 'a)ka/qarton_A----NSN' -> 'to/_D----NSN'
+'determiner' 'immediately_before' 'a)kaqa/rtw|_A----DSN' -> 'tw=|_D----DSN'
 
 # a)lhqino/s
 'determiner' 'immediately_before' 'a)lhqino/n_A----NSN' -> 'to/_D----NSN'
@@ -300,6 +232,9 @@
 
 # e(/bdomos
 'determiner' 'immediately_before' 'e(bdo/mhn_A----ASF' -> 'th/n_D----ASF'
+
+# h(/sswn
+'determiner' 'immediately_before' 'h(=sson_A----ASN' -> 'to/_D----ASN'
 
 # lampro/s
 'determiner' 'immediately_before' 'lampro/s_A----NSM' -> 'o(_D----NSM'
@@ -325,10 +260,22 @@
 'determiner' 'immediately_before' 'pe/ran_B-------' -> 'to/_D----ASN'
 
 # plhsi/on
-'determiner' 'immediately_before' 'plhsi/on_B-------' -> 'to/n_D----ASM' | 'tw=|_D----DSM'
+'determiner' 'immediately_before' 'plhsi/on_B-------' -> 'to/n_D----ASM' | 'tou=_D----GSM' | 'tw=|_D----DSM'
+
+# a)na/
+'determiner' 'immediately_before' 'a)na/_B-------' -> 'to/_D----ASN'
+
+# e)/mprosqen
+'determiner' 'immediately_before' 'e)/mprosqen_B-------' -> 'to/_D----ASN'
+
+# kaqo/lou
+'determiner' 'immediately_before' 'kaqo/lou_B-------' -> 'to/_D----ASN'
 
 # metacu/
 'determiner' 'immediately_before' 'metacu/_B-------' -> 'to/_D----ASN' | 'tw=|_D----DSN'
+
+# nu=n
+'determiner' 'immediately_before' 'nu=n_B-------' -> 'tou=_D----GSM'
 
 # o)pi/sw
 'determiner' 'immediately_before' 'o)pi/sw_B-------' -> 'ta/_D----APN'
@@ -352,6 +299,9 @@
 
 # *na/rkissos
 'determiner' 'immediately_before' '*narki/ssou_N----GSM' -> 'tw=n_D----GPM'
+
+# *xlo/h
+'determiner' 'immediately_before' '*xlo/hs_N----GSF' -> 'tw=n_D----GPM'
 
 #### conjunction ####
 
