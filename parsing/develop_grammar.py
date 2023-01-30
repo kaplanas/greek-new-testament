@@ -65,21 +65,41 @@ def parse_sents(sent_length=1):
                                     break
                                 else:
                                     any_subjects = True
-                            elif rel == 'determiner' and dep_word not in ['tou=_D----GSM',
-                                                                          'th=s_D----GSF',
-                                                                          'tw=n_D----GPM']:
+                            elif rel == 'determiner' and head_word not in ['e(te/rou_A----GSM',
+                                                                           'a)sqenei/as_N----GSF',
+                                                                           'patro/s_N----GSM',
+                                                                           '*(alfai/ou_N----GSM',
+                                                                           'daimonizome/nwn_V-PMPGPM',
+                                                                           'a)delfou=_N----GSM',
+                                                                           'qeou=_N----GSM',
+                                                                           '*xristou=_N----GSM',
+                                                                           'ei)rh/nhs_N----GSF',
+                                                                           'oi)kodomh=s_N----GSF',
+                                                                           'a)nqrw/pou_N----GSM']:
                                 if any_determiners:
                                     plausible_parse = False
                                     break
                                 else:
                                     any_determiners = True
-                            elif rel == 'argument' and re.match('.*_P.*', head_word) and head_word != 'pro/s_P-------':
+                            elif rel == 'argument' and \
+                                    re.match('.*_P.*', head_word) and \
+                                    head_word not in['pro/s_P-------']:
                                 if any_prep_arguments:
                                     plausible_parse = False
                                     break
                                 else:
                                     any_prep_arguments = True
-                    if plausible_parse and len(rels) < len(set(rels)):
+                    if plausible_parse and \
+                            len(rels) > len(set(rels)) and \
+                            head_word not in ['kai/_p-------', 'w(/sper_C-------', 'h)/_v-------',
+                                              'h)/_p-------', 'ei)_C-------', 'qarrw=_V1PAI-S-',
+                                              'xrh/simon_A----ASN', 'kai/_b-------', 'le/gw_V1PAI-S-',
+                                              'ou)/te_C-------', 'mene/tw_V3PAM-S-', 'h)/_c-------',
+                                              'a)lla/_C-------', 'e)gkate/lipes_V2AAI-S-', 'dida/skwn_V-PAPNSM',
+                                              'kai/_n-------', 'kai/_v-------', 'o(/te_C-------',
+                                              'h)=lqon_V3AAI-P-', 'o)fei/lei_V3PAI-S-', 'kai/_c-------',
+                                              'e)sme/n_V1PAI-P-', 'a)nasth/setai_V3FMI-S-', 'a)pekri/qh_V3API-S-',
+                                              'e)ntolh/n_N----ASF', 'h)=lqe(n)_V3AAI-S-']:
                         plausible_parse = False
                     if not plausible_parse:
                         break
@@ -227,8 +247,8 @@ def find_unused_rules():
 if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
     chalk.enable_full_colors()
-    sent_lengths = [i + 1 for i in range(15)]
-    # sent_lengths = [15]
+    sent_lengths = [i + 1 for i in range(16)]
+    # sent_lengths = [16]
     old_parses = {}
     old_parse_counts = {}
     parses = {}

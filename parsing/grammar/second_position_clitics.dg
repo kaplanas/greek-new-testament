@@ -18,6 +18,9 @@
 # biwtiko/s
 'second_position_clitic' 'after' 'biwtika/_A----APN' -> 'ou)=n_C-------'
 
+# polu/s
+'second_position_clitic' 'after' 'polloi/_A----NPM' -> 'ou)=n_C-------'
+
 # prw=tos
 'second_position_clitic' 'after' 'prw=ton_A----ASN' -> 'ga/r_C-------'
 
@@ -31,6 +34,11 @@
 # su/
 'second_position_clitic' 'after' 'su/_E----NS-' -> 'ga/r_C-------'
 
+#### verb ####
+
+# e)/xw
+'second_position_clitic' 'after' 'ei)=xe(n)_V3IAI-S-' -> 'ou)=n_C-------'
+
 #### definite article ####
 
 # o(
@@ -38,8 +46,13 @@
 'second_position_clitic' 'after' 'o(_D----NSM' -> 'ou)=n_C-------'
 'second_position_clitic' 'after' 'oi(_D----NPM' -> 'ou)=n_C-------'
 
-#### verb ####
+#### noun ####
 
-# e)/xw
-'second_position_clitic' 'after' 'ei)=xe(n)_V3IAI-S-' -> 'ou)=n_C-------'
+# *saddoukai=os
+'second_position_clitic' 'after' '*saddoukai=oi_N----NPM' -> 'ga/r_C-------'
+
+#### demonstrative pronoun ####
+
+# e)kei=nos
+'second_position_clitic' 'after' 'e)kei=noi_M----NPM' -> 'ou)=n_C-------'
 

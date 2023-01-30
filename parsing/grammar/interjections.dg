@@ -23,6 +23,7 @@
 'interjection' 'after' 'le/gw_V1PAI-S-' -> '*pe/tre_N----VSM'
 
 # parakale/w
+'interjection' 'after' 'parakalou=men_V1PAI-P-' -> 'a)delfoi/_N----VPM'
 'interjection' 'after' 'parakalw=_V1PAI-S-' -> 'a)delfoi/_N----VPM'
 
 # pisteu/w
@@ -72,6 +73,11 @@
 # kai/
 'interjection' 'before' 'kai/_v-------' -> 'a)gaphtoi/_A----VPM' | 'e)pista/ta_N----VSM' | 'ku/rie_N----VSM' | '*pe/tre_N----VSM'
 
+#### preposition ####
+
+# e)pi/
+'interjection' 'before' 'e)pi/_P-------' -> 'i)dou/_L-------'
+
 #### verb ####
 
 # a)pe/rxomai
@@ -96,6 +102,7 @@
 'interjection' 'before' 'ei)=_V2PAI-S-' -> 'a)/nqrwpe_N----VSM' | 'r(abbi/_N----VSM' | 'su/_E----VS-'
 'interjection' 'before' 'e)sme/n_V1PAI-P-' -> 'a)gaphtoi/_A----VPM'
 'interjection' 'before' 'e)/somai_V1FMI-S-' -> 'genea/_N----VSF' | 'w)=_L-------'
+'interjection' 'before' 'e)sti/(n)_V3PAI-S-' -> 'kai/_a-------'
 
 # eu)/xomai
 'interjection' 'before' 'eu)/xomai_V1PMI-S-' -> 'a)gaphte/_A----VSM'
@@ -127,6 +134,7 @@
 'interjection' 'before' 'e)pi/steuse(n)_V3AAI-S-' -> 'ku/rie_N----VSM'
 
 # poie/w
+'interjection' 'before' 'e)poi/hsas_V2AAI-S-' -> 'te/knon_N----VSN'
 'interjection' 'before' 'e)poi/hse(n)_V3AAI-S-' -> 'a)/frones_A----VPM'
 'interjection' 'before' 'poih/swmen_V1AAS-P-' -> 'dida/skale_N----VSM'
 
@@ -145,7 +153,7 @@
 'interjection' 'before' 'e)fulaca/mhn_V1AMI-S-' -> 'dida/skale_N----VSM'
 
 # a)kou/w
-'interjection' 'before' 'a)kou/sate_V2AAM-P-' -> 'a)/ndres_N----VPM' | 'kai/_n-------'
+'interjection' 'before' 'a)kou/sate_V2AAM-P-' -> 'a)/ndres_N----VPM' | 'kai/_C-------' | 'kai/_n-------'
 
 # baskai/nw
 'interjection' 'before' 'e)ba/skane(n)_V3AAI-S-' -> '*gala/tai_N----VPM' | 'w)=_L-------'
@@ -153,6 +161,9 @@
 # me/nw
 'interjection' 'before' 'mene/tw_V3PAM-S-' -> 'a)delfoi/_N----VPM'
 'interjection' 'before' 'me/neis_V2PAI-S-' -> 'r(abbi/_N----VSM'
+
+# dista/zw
+'interjection' 'before' 'e)di/stasas_V2AAI-S-' -> 'o)ligo/piste_A----VSM'
 
 # e)gkake/w
 'interjection' 'before' 'e)gkakh/shte_V2AAS-P-' -> 'a)delfoi/_N----VPM'
@@ -197,7 +208,7 @@
 'interjection' 'before' 'a)gapa=|s_V2PAI-S-' -> '*si/mwn_N----VSM'
 
 # e)lea/w
-'interjection' 'before' 'e)le/hson_V2AAM-S-' -> '*)ihsou=_N----VSM' | 'ui(e/_N----VSM'
+'interjection' 'before' 'e)le/hson_V2AAM-S-' -> '*)ihsou=_N----VSM'
 
 # ni/ptw
 'interjection' 'before' 'ni/pteis_V2PAI-S-' -> 'ku/rie_N----VSM'
@@ -211,7 +222,28 @@
 #### adjective ####
 
 # me/gas
+'interjection' 'before' 'mega/lh_A----NSF' -> 'w)=_L-------'
 'interjection' 'before' 'mei=zon_A----NSN' -> 'tufloi/_A----VPM'
+
+#### conjunction ####
+
+# i(/na
+'interjection' 'before' 'i(/na_C-------' -> 'a)delfoi/_N----VPM' | 'dida/skale_N----VSM' | 'pa/ter_N----VSM' | 'tekni/a_N----VPN'
+
+# e)a/n
+'interjection' 'before' 'e)a/n_C-------' -> 'a)delfoi/_N----VPM'
+
+# o(/tan
+'interjection' 'before' 'o(/tan_C-------' -> '*)ihsou=_N----VSM'
+
+# a)lla/
+'interjection' 'before' 'a)lla/_C-------' -> 'a)gaphte/_A----VSM' | 'a)delfoi/_N----VPM' | 'tekni/a_N----VPN'
+
+# h)/
+'interjection' 'before' 'h)/_C-------' -> 'ku/rie_N----VSM'
+
+# pri/n
+'interjection' 'before' 'pri/n_C-------' -> 'ku/rie_N----VSM'
 
 #### noun ####
 
@@ -220,26 +252,6 @@
 
 # qeo/s
 'interjection' 'before' 'qeo/s_N----NSM' -> 'qeo/s_N----NSM'
-
-#### conjunction ####
-
-# e)a/n
-'interjection' 'before' 'e)a/n_C-------' -> 'a)delfoi/_N----VPM'
-
-# i(/na
-'interjection' 'before' 'i(/na_C-------' -> 'a)delfoi/_N----VPM' | 'dida/skale_N----VSM' | 'tekni/a_N----VPN'
-
-# a)lla/
-'interjection' 'before' 'a)lla/_C-------' -> 'a)gaphte/_A----VSM' | 'a)delfoi/_N----VPM' | 'tekni/a_N----VPN'
-
-# h)/
-'interjection' 'before' 'h)/_C-------' -> 'ku/rie_N----VSM'
-
-# o(/tan
-'interjection' 'before' 'o(/tan_C-------' -> '*)ihsou=_N----VSM'
-
-# pri/n
-'interjection' 'before' 'pri/n_C-------' -> 'ku/rie_N----VSM'
 
 #### particle ####
 
@@ -259,6 +271,9 @@
 
 # de/omai
 'interjection' 'immediately_before' 'de/omai_V1PMI-S-' -> 'a)delfoi/_N----VPM'
+
+# e)pitre/pw
+'interjection' 'immediately_before' 'e)pi/treyon_V2AAM-S-' -> 'ku/rie_N----VSM'
 
 # e)/rxomai
 'interjection' 'immediately_before' 'e)/rxomai_V1PMI-S-' -> 'nai/_L-------'
@@ -308,9 +323,6 @@
 # e)pitima/w
 'interjection' 'immediately_before' 'e)piti/mhson_V2AAM-S-' -> 'dida/skale_N----VSM'
 
-# e)pitre/pw
-'interjection' 'immediately_before' 'e)pi/treyon_V2AAM-S-' -> 'ku/rie_N----VSM'
-
 # e)sqi/w
 'interjection' 'immediately_before' 'fa/ge_V2AAM-S-' -> 'r(abbi/_N----VSM'
 
@@ -323,13 +335,18 @@
 # kaqeu/dw
 'interjection' 'immediately_before' 'kaqeu/deis_V2PAI-S-' -> '*si/mwn_N----VSM'
 
-#### conjunction ####
+#### adjective ####
 
-# e)a/n
-'interjection' 'immediately_before' 'e)a/n_C-------' -> 'ku/rie_N----VSM'
+# me/gas
+'interjection' 'immediately_before' 'mega/lh_A----NSF' -> 'gu/nai_N----VSF'
+
+#### conjunction ####
 
 # i(/na
 'interjection' 'immediately_before' 'i(/na_C-------' -> 'ku/rie_N----VSM' | 'rabbouni_N----VSM'
+
+# e)a/n
+'interjection' 'immediately_before' 'e)a/n_C-------' -> 'ku/rie_N----VSM'
 
 # a)lla/
 'interjection' 'immediately_before' 'a)lla/_C-------' -> '*fh=ste_N----VSM'
@@ -366,7 +383,11 @@
 #### verb ####
 
 # ei)mi/
+'interjection' 'any' 'ei)mi/_V1PAI-S-' -> 'ku/rie_N----VSM'
 'interjection' 'any' 'e)sti/(n)_V3PAI-S-' -> 'ku/rie_N----VSM'
+
+# e)lea/w
+'interjection' 'any' 'e)le/hson_V2AAM-S-' -> 'ui(e/_N----VSM'
 
 #### verb ####
 
@@ -381,7 +402,7 @@
 'interjection' 'immediately_after' 'i)/ste_V2RAM-P-' -> 'a)delfoi/_N----VPM'
 
 # ei)mi/
-'interjection' 'immediately_after' 'ei)mi/_V1PAI-S-' -> 'ku/rie_N----VSM' | 'r(abbi/_N----VSM'
+'interjection' 'immediately_after' 'ei)mi/_V1PAI-S-' -> 'r(abbi/_N----VSM'
 'interjection' 'immediately_after' 'e)ste/_V2PAI-P-' -> 'o)ligo/pistoi_A----VPM'
 'interjection' 'immediately_after' 'e)sti/(n)_V3PAI-S-' -> 'a)delfoi/_N----VPM'
 
@@ -396,6 +417,9 @@
 
 # doke/w
 'interjection' 'immediately_after' 'dokei=_V3PAI-S-' -> '*si/mwn_N----VSM'
+
+# lamba/nw
+'interjection' 'immediately_after' 'la/bete_V2AAM-P-' -> 'a)delfoi/_N----VPM'
 
 # eu)frai/nw
 'interjection' 'immediately_after' 'eu)fra/nqhte_V2APM-P-' -> 'e)/qnh_N----VPN'
@@ -416,7 +440,7 @@
 'interjection' 'immediately_after' 'eu)qumei=te_V2PAM-P-' -> 'a)/ndres_N----VPM'
 
 # qarse/w
-'interjection' 'immediately_after' 'qa/rsei_V2PAM-S-' -> 'qu/gater_N----VSF'
+'interjection' 'immediately_after' 'qa/rsei_V2PAM-S-' -> 'qu/gater_N----VSF' | 'te/knon_N----VSN'
 
 # xai/rw
 'interjection' 'immediately_after' 'xai=re_V2PAM-S-' -> 'kexaritwme/nh_V-RPPVSF' | 'r(abbi/_N----VSM'
