@@ -1,0 +1,50 @@
+book,chapter,verse,position,head,word,new_relation
+Matt,6,25,29,σῶμα,ἐνδύματος,gap
+Matt,10,28,13,ἀποκτεννόντων,δυναμένων,conjunction
+Mark,2,21,20,καινὸν,παλαιοῦ,gap
+Mark,10,40,13,ἐμὸν,δοῦναι,"modifier, infinitive"
+Luke,3,1,11,Ποντίου,Πιλάτου,name
+Luke,5,33,18,οἱ,Φαρισαίων,gap
+Luke,12,23,12,σῶμα,ἐνδύματος,gap
+John,1,40,6,Σίμωνος,Πέτρου,name
+John,5,3,7,ἀσθενούντων,τυφλῶν,conjunction
+John,5,3,8,τυφλῶν,χωλῶν,conjunction
+John,5,3,9,χωλῶν,ξηρῶν,conjunction
+John,6,8,12,Σίμωνος,Πέτρου,name
+John,6,56,15,μένει,ἐν,conjunction
+John,6,71,6,Σίμωνος,Ἰσκαριώτου,name
+John,8,44,6,πατρὸς,διαβόλου,appositive
+John,9,18,20,αὐτοῦ,ἀναβλέψαντος,appositive
+John,9,32,10,γεγεννημένου,τυφλοῦ,"object, predicate"
+John,13,2,16,Σίμωνος,Ἰσκαριώτου,name
+John,13,26,21,Σίμωνος,Ἰσκαριώτου,name
+Acts,17,23,15,ἐπεγέγραπτο,θεῷ,"subject of infinitive, dative"
+Acts,27,3,18,Παύλῳ,πορευθέντι,appositive
+Rom,8,28,16,ἀγαπῶσι,οὖσιν,appositive
+1Cor,1,2,16,ἐπικαλουμένοις,πᾶσιν,"modifier, adjective"
+1Cor,1,18,15,σῳζομένοις,ἡμῖν,appositive
+1Cor,9,25,7,ἐγκρατεύεται,ἐκεῖνοι,conjunction
+1Cor,10,33,14,τὸ,πολλῶν,gap
+1Cor,11,26,2,ὁδοιπορίαις,κινδύνοις,conjunction
+1Cor,11,26,4,κινδύνοις,κινδύνοις,conjunction
+1Cor,11,26,6,κινδύνοις,κινδύνοις,conjunction
+1Cor,14,22,18,πιστεύουσιν,ἀπίστοις,conjunction
+1Cor,16,18,8,τὸ,ὑμῶν,gap
+2Cor,11,26,3,ὁδοιπορίαις,κινδύνοις,appositive
+2Cor,11,26,5,κινδύνοις,κινδύνοις,conjunction
+2Cor,11,26,7,κινδύνοις,κινδύνοις,conjunction
+2Cor,11,26,10,κινδύνοις,κινδύνοις,conjunction
+2Cor,11,26,13,κινδύνοις,κινδύνοις,conjunction
+2Cor,11,26,16,κινδύνοις,κινδύνοις,conjunction
+2Cor,11,26,19,κινδύνοις,κινδύνοις,conjunction
+2Cor,11,26,22,κινδύνοις,κινδύνοις,conjunction
+2Cor,11,27,2,κινδύνοις,καὶ,conjunction
+Gal,2,7,13,Πέτρος,περιτομῆς,gap
+Gal,4,27,23,πολλὰ,ἐχούσης,gap
+1Tim,1,12,6,ἐνδυναμώσαντί,Χριστῷ,appositive
+2Tim,3,9,16,ἡ,ἐκείνων,gap
+1Pet,3,18,8,Χριστὸς,δίκαιος,appositive
+1Pet,4,14,10,τὸ,δόξης,gap
+1Pet,5,9,16,ἐπιτελεῖσθαι,ἀδελφότητι,"subject of infinitive, dative"
+1John,3,12,27,τὰ,ἀδελφοῦ,gap
+1John,4,3,19,τὸ,ἀντιχρίστου,gap
