@@ -1,1 +1,0 @@
-from parsing.utils import GRAMMAR_DIR, LEXICON_FILE
