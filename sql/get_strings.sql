@@ -69,13 +69,14 @@ WITH forbidden_words AS
      filtered_strings AS
      (SELECT allowed_strings.SentenceID, Start, Stop, Citation, String
       FROM allowed_strings
-           JOIN required_relations
-           ON (allowed_strings.SentenceID = required_relations.SentenceID
-               AND FirstPos >= Start
-               AND FirstPos <= Stop
-               AND LastPos >= Start
-               AND LastPos <= Stop) OR
-              (SELECT COUNT(*) FROM required_relations) = 0),
+           LEFT JOIN required_relations
+           ON allowed_strings.SentenceID = required_relations.SentenceID
+              AND FirstPos >= Start
+              AND FirstPos <= Stop
+              AND LastPos >= Start
+              AND LastPos <= Stop
+      WHERE required_relations.SentenceID IS NOT NULL
+            OR (SELECT COUNT(*) FROM required_relations) = 0),
      longest_strings_left AS
      (SELECT SentenceID, Start, MAX(Stop) AS LastStop
       FROM filtered_strings
@@ -118,7 +119,7 @@ WITH forbidden_words AS
              MIN(Verse) AS FirstVerse, MIN(VersePosition) AS FirstPosition
       FROM words
       GROUP BY SentenceID)
-SELECT Citation, String, Book, FirstChapter, FirstVerse, FirstPosition
+SELECT Citation, String
 FROM filtered_strings
      JOIN longest_strings_left
      ON filtered_strings.SentenceID = longest_strings_left.SentenceID
@@ -130,4 +131,5 @@ FROM filtered_strings
         AND filtered_strings.Stop = longest_strings_right.Stop
      JOIN book_chapter_verse
      ON filtered_strings.SentenceID = book_chapter_verse.SentenceID
-ORDER BY Citation;
+ORDER BY book_chapter_verse.Book, book_chapter_verse.FirstChapter,
+         book_chapter_verse.FirstVerse, book_chapter_verse.FirstPosition;
