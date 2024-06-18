@@ -1,50 +1,453 @@
-book,chapter,verse,position,head,word,new_relation
-Matt,6,25,29,σῶμα,ἐνδύματος,gap
-Matt,10,28,13,ἀποκτεννόντων,δυναμένων,conjunction
-Mark,2,21,20,καινὸν,παλαιοῦ,gap
-Mark,10,40,13,ἐμὸν,δοῦναι,"modifier, infinitive"
-Luke,3,1,11,Ποντίου,Πιλάτου,name
-Luke,5,33,18,οἱ,Φαρισαίων,gap
-Luke,12,23,12,σῶμα,ἐνδύματος,gap
-John,1,40,6,Σίμωνος,Πέτρου,name
-John,5,3,7,ἀσθενούντων,τυφλῶν,conjunction
-John,5,3,8,τυφλῶν,χωλῶν,conjunction
-John,5,3,9,χωλῶν,ξηρῶν,conjunction
-John,6,8,12,Σίμωνος,Πέτρου,name
-John,6,56,15,μένει,ἐν,conjunction
-John,6,71,6,Σίμωνος,Ἰσκαριώτου,name
-John,8,44,6,πατρὸς,διαβόλου,appositive
-John,9,18,20,αὐτοῦ,ἀναβλέψαντος,appositive
-John,9,32,10,γεγεννημένου,τυφλοῦ,"object, predicate"
-John,13,2,16,Σίμωνος,Ἰσκαριώτου,name
-John,13,26,21,Σίμωνος,Ἰσκαριώτου,name
-Acts,17,23,15,ἐπεγέγραπτο,θεῷ,"subject of infinitive, dative"
-Acts,27,3,18,Παύλῳ,πορευθέντι,appositive
-Rom,8,28,16,ἀγαπῶσι,οὖσιν,appositive
-1Cor,1,2,16,ἐπικαλουμένοις,πᾶσιν,"modifier, adjective"
-1Cor,1,18,15,σῳζομένοις,ἡμῖν,appositive
-1Cor,9,25,7,ἐγκρατεύεται,ἐκεῖνοι,conjunction
-1Cor,10,33,14,τὸ,πολλῶν,gap
-1Cor,11,26,2,ὁδοιπορίαις,κινδύνοις,conjunction
-1Cor,11,26,4,κινδύνοις,κινδύνοις,conjunction
-1Cor,11,26,6,κινδύνοις,κινδύνοις,conjunction
-1Cor,14,22,18,πιστεύουσιν,ἀπίστοις,conjunction
-1Cor,16,18,8,τὸ,ὑμῶν,gap
-2Cor,11,26,3,ὁδοιπορίαις,κινδύνοις,appositive
-2Cor,11,26,5,κινδύνοις,κινδύνοις,conjunction
-2Cor,11,26,7,κινδύνοις,κινδύνοις,conjunction
-2Cor,11,26,10,κινδύνοις,κινδύνοις,conjunction
-2Cor,11,26,13,κινδύνοις,κινδύνοις,conjunction
-2Cor,11,26,16,κινδύνοις,κινδύνοις,conjunction
-2Cor,11,26,19,κινδύνοις,κινδύνοις,conjunction
-2Cor,11,26,22,κινδύνοις,κινδύνοις,conjunction
-2Cor,11,27,2,κινδύνοις,καὶ,conjunction
-Gal,2,7,13,Πέτρος,περιτομῆς,gap
-Gal,4,27,23,πολλὰ,ἐχούσης,gap
-1Tim,1,12,6,ἐνδυναμώσαντί,Χριστῷ,appositive
-2Tim,3,9,16,ἡ,ἐκείνων,gap
-1Pet,3,18,8,Χριστὸς,δίκαιος,appositive
-1Pet,4,14,10,τὸ,δόξης,gap
-1Pet,5,9,16,ἐπιτελεῖσθαι,ἀδελφότητι,"subject of infinitive, dative"
-1John,3,12,27,τὰ,ἀδελφοῦ,gap
-1John,4,3,19,τὸ,ἀντιχρίστου,gap
+book,chapter,verse,position,new_relation
+Matt,2,23,15,appositive
+Matt,3,3,11,sentential complement
+Matt,5,12,8,conjunction
+Matt,5,19,11,subject
+Matt,5,25,24,gap
+Matt,5,37,6,appositive
+Matt,5,37,8,gap
+Matt,6,20,15,subject
+Matt,6,25,27,gap
+Matt,7,14,8,subject of verbless predicate
+Matt,7,18,9,gap
+Matt,7,24,9,subject
+Matt,7,26,9,subject
+Matt,8,20,12,gap
+Matt,9,13,8,subject
+Matt,10,20,9,gap
+Matt,10,21,8,gap
+Matt,10,24,8,gap
+Matt,10,26,12,subject
+Matt,10,28,13,conjunction
+Matt,10,38,8,subject
+Matt,12,7,8,subject
+Matt,12,18,3,sentential complement
+Matt,13,8,12,appositive
+Matt,13,8,15,gap
+Matt,13,8,18,gap
+Matt,13,16,10,gap
+Matt,13,19,1,"nominal modifier, adjective"
+Matt,13,23,21,appositive
+Matt,13,23,24,conjunction
+Matt,13,23,27,conjunction
+Matt,13,55,16,gap
+Matt,13,56,6,modifier
+Matt,14,19,31,gap
+Matt,15,31,8,subject of small clause
+Matt,15,36,17,gap
+Matt,16,14,4,gap
+Matt,16,14,9,gap
+Matt,16,14,12,gap
+Matt,19,9,14,subject
+Matt,19,24,13,gap
+Matt,19,30,7,gap
+Matt,20,16,8,gap
+Matt,20,21,17,gap
+Matt,20,21,22,gap
+Matt,21,30,11,sentential complement
+Matt,21,31,12,sentential complement
+Matt,22,4,17,subject of verbless predicate
+Matt,22,5,5,gap
+Matt,22,5,11,gap
+Matt,22,14,5,gap
+Matt,22,14,7,conjunction
+Matt,24,7,7,gap
+Matt,24,36,15,appositive
+Matt,24,41,1,gap
+Matt,25,2,8,gap
+Matt,25,6,8,sentential complement
+Matt,25,38,3,subject of small clause
+Matt,25,44,8,subject of small clause
+Matt,25,46,9,gap
+Matt,25,46,10,conjunction
+Matt,26,24,14,conjunction
+Matt,27,38,7,gap
+Matt,27,38,11,gap
+Mark,2,27,13,gap
+Mark,2,21,20,gap
+Mark,4,8,17,gap
+Mark,4,8,20,gap
+Mark,4,8,23,gap
+Mark,4,20,19,gap
+Mark,4,20,22,gap
+Mark,4,20,25,gap
+Mark,4,31,4,subject of verbless predicate
+Mark,8,24,8,subject of small clause
+Mark,8,28,11,gap
+Mark,8,28,13,gap
+Mark,9,14,7,subject of small clause
+Mark,9,39,18,subject
+Mark,10,11,10,subject
+Mark,10,31,8,gap
+Mark,10,37,8,gap
+Mark,10,37,13,gap
+Mark,10,40,12,"predicate, nominative"
+Mark,10,40,13,"modifier, infinitive"
+Mark,11,8,10,gap
+Mark,11,8,12,conjunction
+Mark,11,10,4,subject of verbless predicate
+Mark,13,8,7,gap
+Mark,13,12,8,gap
+Mark,13,32,16,appositive
+Mark,14,19,10,sentential complement
+Mark,14,21,15,conjunction
+Mark,14,36,22,gap
+Mark,14,58,4,subject of small clause
+Mark,16,16,3,subject
+Luke,1,18,17,gap
+Luke,1,42,8,subject of verbless predicate
+Luke,1,42,14,subject of verbless predicate
+Luke,1,50,3,subject of verbless predicate
+Luke,2,3,5,gap
+Luke,2,28,1,subject
+Luke,2,36,10,subject of verbless predicate
+Luke,2,49,6,sentential complement
+Luke,3,1,11,name
+Luke,3,4,9,sentential complement
+Luke,3,5,18,gap
+Luke,4,28,3,"nominal modifier, adjective"
+Luke,4,28,5,"verbal modifier, prepositional phrase"
+Luke,5,33,18,gap
+Luke,6,43,11,gap
+Luke,6,49,4,subject
+Luke,7,25,15,predicate
+Luke,7,37,3,subject
+Luke,7,41,13,gap
+Luke,7,41,14,conjunction
+Luke,8,2,1,conjunction
+Luke,8,4,7,"verbal modifier, prepositional phrase"
+Luke,9,13,19,comparative
+Luke,9,19,8,gap
+Luke,9,19,11,gap
+Luke,9,58,12,gap
+Luke,12,23,10,gap
+Luke,12,35,8,gap
+Luke,12,36,2,gap
+Luke,12,52,11,gap
+Luke,12,52,15,gap
+Luke,12,53,6,gap
+Luke,12,53,9,gap
+Luke,12,53,13,gap
+Luke,12,53,17,gap
+Luke,12,53,23,gap
+Luke,13,28,13,subject of small clause
+Luke,13,34,21,gap
+Luke,14,27,7,subject
+Luke,16,18,7,subject
+Luke,16,25,16,gap
+Luke,17,1,15,subject of verbless predicate
+Luke,17,7,1,subject
+Luke,17,31,10,subject
+Luke,18,36,3,subject of small clause
+Luke,19,2,12,gap
+Luke,19,20,9,sentential complement
+Luke,19,38,5,subject of verbless predicate
+Luke,21,10,9,gap
+Luke,21,23,21,gap
+Luke,21,25,14,gap
+Luke,22,27,6,appositive
+Luke,22,38,6,sentential complement
+Luke,23,7,15,subject of participle
+Luke,24,12,13,subject of small clause
+Luke,24,33,14,subject of small clause
+John,1,36,4,subject of small clause
+John,1,37,6,subject of small clause
+John,1,40,6,name
+John,4,1,18,comparative
+John,4,37,14,gap
+John,5,3,7,conjunction
+John,5,3,8,conjunction
+John,5,3,9,conjunction
+John,5,24,11,subject
+John,6,8,12,name
+John,6,40,15,subject
+John,6,45,17,subject
+John,6,54,6,subject
+John,6,56,6,subject
+John,6,56,14,gap
+John,6,56,15,conjunction
+John,6,71,6,name
+John,7,32,5,subject of small clause
+John,8,11,4,sentential complement
+John,8,44,6,appositive
+John,8,50,11,subject
+John,9,2,12,appositive
+John,9,18,20,appositive
+John,9,32,10,"object, predicate"
+John,10,12,3,subject
+John,11,1,6,"modifier, preposition"
+John,11,26,5,subject
+John,11,49,4,"modifier, preposition"
+John,12,13,20,subject of verbless predicate
+John,12,48,4,subject
+John,13,2,16,name
+John,13,16,13,gap
+John,13,26,21,name
+John,14,10,4,gap
+John,15,4,4,gap
+John,15,5,5,gap
+John,17,10,9,gap
+John,17,22,13,gap
+John,17,26,18,gap
+John,18,26,17,subject of small clause
+John,19,41,13,gap
+John,20,12,8,gap
+John,20,12,13,gap
+John,20,26,12,gap
+Acts,1,13,14,conjunction
+Acts,2,6,19,subject of small clause
+Acts,2,11,10,subject of small clause
+Acts,4,19,19,comparative
+Acts,4,24,13,appositive
+Acts,5,10,15,subject of small clause
+Acts,5,42,16,subject of small clause
+Acts,6,11,7,subject of small clause
+Acts,6,14,3,subject of small clause
+Acts,7,8,19,gap
+Acts,7,8,23,gap
+Acts,7,17,16,subject
+Acts,7,51,20,conjunction
+Acts,8,30,6,subject of small clause
+Acts,9,10,22,sentential complement
+Acts,10,19,13,subject of verbless predicate
+Acts,10,35,8,subject
+Acts,10,46,3,subject of small clause
+Acts,11,7,4,subject of small clause
+Acts,14,4,14,gap
+Acts,14,9,4,subject of small clause
+Acts,15,8,3,appositive
+Acts,15,11,13,"modifier, relative clause"
+Acts,15,12,9,subject of small clause
+Acts,15,17,13,conjunction
+Acts,17,4,17,conjunction
+Acts,17,18,21,sentential complement
+Acts,17,19,14,"modifier, adjective"
+Acts,17,23,15,sentential complement
+Acts,19,2,10,subject of implicit speech
+Acts,19,10,20,appositive
+Acts,21,29,4,subject of small clause
+Acts,22,7,8,subject of small clause
+Acts,23,6,13,gap
+Acts,24,5,4,subject of small clause
+Acts,26,3,4,subject of participle
+Acts,26,22,21,subject of small clause
+Acts,27,3,18,appositive
+Acts,27,44,4,gap
+Acts,27,44,8,gap
+Acts,28,11,14,argument of adjective
+Rom,1,15,5,conjunction
+Rom,1,27,28,"subject, attraction"
+Rom,2,8,14,gap
+Rom,2,10,3,gap
+Rom,2,28,11,"nominal modifier, prepositional phrase"
+Rom,2,29,3,"nominal modifier, prepositional phrase"
+Rom,2,29,16,conjunction
+Rom,3,4,10,gap
+Rom,3,10,8,conjunction
+Rom,5,4,3,gap
+Rom,5,4,7,gap
+Rom,8,28,16,appositive
+Rom,8,33,6,subject of verbless predicate
+Rom,8,34,1,subject of verbless predicate
+Rom,8,35,10,conjunction
+Rom,9,5,16,appositive
+Rom,9,7,6,"nominal modifier, adjective, irregular agreement"
+Rom,10,18,22,gap
+Rom,11,18,15,gap
+Rom,11,24,20,"nominal modifier, prepositional phrase"
+Rom,14,9,4,subject
+1Cor,1,2,16,"modifier, adjective"
+1Cor,1,12,12,gap
+1Cor,1,12,15,gap
+1Cor,1,12,18,gap
+1Cor,1,18,15,appositive
+1Cor,1,25,12,gap
+1Cor,3,4,9,conjunction
+1Cor,3,4,11,gap
+1Cor,3,22,1,appositive
+1Cor,3,23,1,gap
+1Cor,3,23,4,gap
+1Cor,5,1,6,subject
+1Cor,6,14,3,subject
+1Cor,7,3,12,gap
+1Cor,7,7,16,gap
+1Cor,7,7,19,gap
+1Cor,8,15,18,conjunction
+1Cor,9,25,7,conjunction
+1Cor,9,25,14,gap
+1Cor,10,33,14,gap
+1Cor,11,1,5,gap
+1Cor,11,3,17,gap
+1Cor,11,3,23,gap
+1Cor,11,8,8,gap
+1Cor,11,26,2,conjunction
+1Cor,11,26,6,conjunction
+1Cor,12,2,24,subject of small clause
+1Cor,12,4,8,conjunction
+1Cor,12,6,8,conjunction
+1Cor,12,8,10,gap
+1Cor,12,8,12,conjunction
+1Cor,12,9,2,gap
+1Cor,12,9,8,gap
+1Cor,12,10,2,gap
+1Cor,12,10,5,conjunction
+1Cor,12,10,7,gap
+1Cor,12,10,9,conjunction
+1Cor,12,10,10,gap
+1Cor,12,10,13,gap
+1Cor,12,11,7,"nominal modifier, adjective"
+1Cor,12,13,12,appositive
+1Cor,12,21,16,gap
+1Cor,14,7,6,appositive
+1Cor,15,10,25,conjunction
+1Cor,15,45,14,gap
+1Cor,15,46,11,conjunction
+1Cor,16,18,8,gap
+2Cor,1,14,13,gap
+2Cor,2,2,7,subject of verbless predicate
+2Cor,4,12,9,gap
+2Cor,8,11,10,conjunction
+2Cor,8,13,7,conjunction
+2Cor,9,4,10,subject of small clause
+2Cor,9,10,7,"accusative, object"
+2Cor,10,7,22,conjunction
+2Cor,10,10,17,subject of verbless predicate
+2Cor,11,22,3,conjunction
+2Cor,11,22,6,conjunction
+2Cor,11,22,10,conjunction
+2Cor,11,23,7,conjunction
+2Cor,11,26,3,appositive
+2Cor,11,26,5,conjunction
+2Cor,11,26,7,conjunction
+2Cor,11,26,10,conjunction
+2Cor,11,26,13,conjunction
+2Cor,11,26,16,conjunction
+2Cor,11,26,19,conjunction
+2Cor,11,26,22,conjunction
+2Cor,11,27,2,conjunction
+2Cor,11,31,3,subject
+2Cor,12,7,15,appositive
+2Cor,12,20,19,conjunction
+Gal,1,15,11,subject
+Gal,2,7,13,gap
+Gal,4,23,12,gap
+Gal,4,27,23,gap
+Gal,5,17,10,gap
+Gal,5,24,4,subject
+Gal,6,14,21,gap
+Gal,6,16,10,conjunction
+Eph,1,18,3,subject of participle
+Eph,2,1,2,subject of participle
+Eph,2,5,3,subject of participle
+Eph,5,23,10,gap
+Phil,1,7,36,subject of participle
+Phil,1,16,1,gap
+Phil,4,22,9,appositive
+Col,1,21,2,subject of participle
+Col,2,13,2,subject of participle
+1Thess,2,14,22,"nominal modifier, adverb"
+1Thess,2,18,6,gap
+1Thess,2,19,13,conjunction
+1Thess,3,6,30,gap
+1Thess,3,12,17,gap
+1Thess,4,5,8,conjunction
+2Thess,1,12,12,gap
+1Tim,1,12,6,appositive
+1Tim,2,13,6,conjunction
+1Tim,5,5,5,subject
+2Tim,3,9,16,gap
+2Tim,4,10,13,gap
+2Tim,4,10,16,gap
+Heb,2,6,15,"nominal modifier, clause"
+Heb,2,13,12,sentential complement
+Heb,4,2,6,conjunction
+Heb,5,4,15,conjunction
+Heb,5,7,1,subject of verbless predicate
+Heb,5,11,9,argument of adjective
+Heb,7,19,6,conjunction
+Heb,7,21,1,gap
+Heb,7,23,12,infinitive argument of verb
+Heb,7,28,10,gap
+Heb,9,7,10,gap
+Heb,9,23,15,gap
+Heb,9,27,12,conjunction
+Heb,10,18,6,conjunction
+Heb,10,27,6,conjunction
+Heb,10,29,12,subject
+Heb,10,30,6,sentential complement
+Heb,11,12,6,parenthetical
+Heb,12,10,12,gap
+Heb,12,15,3,subject of verbless predicate
+Heb,13,3,10,subject of verbless predicate
+Heb,13,21,22,conjunction
+Jas,1,10,3,gap
+Jas,3,12,9,gap
+Jas,4,9,14,gap
+Jas,4,12,4,subject
+Jas,5,12,26,gap
+1Pet,2,10,9,determiner of participle
+1Pet,3,18,8,appositive
+1Pet,4,14,10,gap
+1Pet,4,14,11,"nominal modifier, genitive"
+1Pet,4,18,9,subject
+1Pet,5,1,8,subject
+1Pet,5,5,5,vocative
+1Pet,5,11,1,conjunction
+2Pet,2,22,7,sentential complement
+1John,2,4,6,subject
+1John,2,9,7,subject
+1John,3,12,27,gap
+1John,3,24,11,gap
+1John,4,3,19,gap
+1John,4,13,9,gap
+1John,4,15,17,gap
+2John,1,1,14,conjunction
+2John,1,9,4,subject
+Jude,1,5,6,subject of participle
+Rev,2,2,29,subject of small clause
+Rev,2,8,13,subject
+Rev,3,20,27,gap
+Rev,4,1,6,subject of verbless predicate
+Rev,4,4,14,subject of verbless predicate
+Rev,4,7,17,subject of verbless predicate
+Rev,5,6,16,subject of small clause
+Rev,5,13,37,subject of verbless predicate
+Rev,6,1,14,subject of small clause
+Rev,6,3,11,subject of small clause
+Rev,6,5,11,subject of small clause
+Rev,7,5,5,subject of verbless predicate
+Rev,7,5,11,conjunction
+Rev,7,5,16,conjunction
+Rev,7,6,5,conjunction
+Rev,7,6,10,conjunction
+Rev,7,6,15,conjunction
+Rev,7,7,5,conjunction
+Rev,7,7,10,conjunction
+Rev,7,7,15,conjunction
+Rev,7,8,5,conjunction
+Rev,7,8,10,conjunction
+Rev,7,8,15,subject of verbless predicate
+Rev,8,13,6,subject of small clause
+Rev,8,13,13,subject of verbless predicate
+Rev,11,12,3,subject of small clause
+Rev,12,1,8,appositive
+Rev,12,3,25,subject of small clause
+Rev,13,1,20,subject of small clause
+Rev,13,1,26,subject of small clause
+Rev,14,1,6,subject of verbless predicate
+Rev,14,4,11,subject of verbless predicate
+Rev,14,13,3,subject of small clause
+Rev,14,14,13,subject of verbless predicate
+Rev,15,2,3,direct object
+Rev,16,1,4,subject of small clause
+Rev,16,5,4,subject of small clause
+Rev,16,7,4,subject of small clause
+Rev,16,13,20,"accusative, object"
+Rev,19,1,4,direct object
+Rev,21,3,3,subject of small clause
+Rev,21,12,13,subject of small clause
+Rev,21,14,3,subject of verbless predicate
+Rev,21,14,13,subject of small clause
+Rev,21,19,2,subject of verbless predicate
+Rev,21,22,17,conjunction
+Rev,22,8,1,subject of verbless predicate

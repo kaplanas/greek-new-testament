@@ -100,4 +100,5 @@ VALUES
 (1, 'subject, neuter plural, regular agreement'),
 (1, 'subject, irregular agreement'),
 (1, 'subject of verbless predicate'),
+(1, 'subject, non-nominative')
 ;
