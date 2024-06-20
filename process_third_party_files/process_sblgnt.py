@@ -59,8 +59,8 @@ KEEP_DETERMINER_LEMMAS = ['Ἀθηναῖος', 'Ἀδραμυττηνός', 'Α
 NEGATION = ['μή', 'οὐ', 'οὐδαμῶς']
 PSEUDO_PREPOSITIONS = ['ὡσεί', 'ἕως']
 COPULA = ['εἰμί']
-CONJUNCTIONS = ['καί', 'ἤ', 'ἀλλά', 'μήτε', 'οὐδέ', 'οὔτε', 'μηδέ', 'πλήν', 'εἴτε']
-PSEUDO_CONJUNCTIONS = ['ὅτι', 'ὥσπερ', 'ὡς', 'εἰ', 'ἵνα', 'ὥστε', 'ὡσεί', 'καθώς']
+CONJUNCTIONS = ['καί', 'ἤ', 'ἀλλά', 'μήτε', 'οὐδέ', 'οὔτε', 'μηδέ', 'πλήν', 'εἴτε', 'εἰ', 'εἴπερ']
+PSEUDO_CONJUNCTIONS = ['ὅτι', 'ὥσπερ', 'ὡς', 'ἵνα', 'ὥστε', 'ὡσεί', 'καθώς', 'διότι']
 PARTITIVE_HEADS = ['εἷς', 'τις', 'οὐδείς', 'πᾶς']
 PARTITIVE_PS = ['ἐκ', 'ἀπό', 'ἐν']
 
@@ -232,6 +232,8 @@ def get_tree_structure(sentence):
                 if word_dict['lemma'] == 'Ἰησοῦς':
                     word_dict['noun_class'] = 'Ihsous'
                 elif word_dict['lemma'].endswith('μα'):
+                    word_dict['noun_class'] = 'third declension'
+                elif word_dict['lemma'].endswith('ος') and word_dict['gender'] == 'neuter':
                     word_dict['noun_class'] = 'third declension'
                 elif word_dict['lemma'].endswith('ος') or word_dict['lemma'].endswith('ός') \
                         or word_dict['lemma'].endswith('ον') or word_dict['lemma'].endswith('όν'):
@@ -482,7 +484,7 @@ def get_tree_structure(sentence):
                     edit_index = edit_targets.index((word['book'], word['chapter'], word['verse'], word['position']))
                     new_relation = edits_df['new_relation'][edit_index]
                     if relation_type != 'other':
-                        new_relation += ', ' + edits_df['new_relation'][edit_index]
+                        new_relation = relation_type + ', ' + new_relation
                     if word['relation'] == new_relation:
                         print('REDUNDANT RELATION EDIT: ' + word['book'] + ' ' + str(word['chapter']) + ':' +
                               str(word['verse']) + ' ' + str(word['position']) + ' ' + new_relation)
@@ -677,18 +679,18 @@ if __name__ == '__main__':
                       str(words[0]['position']) + ' - ' + words[-1]['book'] + ' ' + str(words[-1]['chapter']) + ':' + \
                       str(words[-1]['verse']) + '.' + str(words[-1]['position'])
 
-        # # Write the words to the database.
-        # with con.cursor() as cur:
-        #     sql = """INSERT INTO words
-        #              (Book, Chapter, Verse, VersePosition, SentenceID, SentencePosition, Lemma, Wordform, POS, Gender,
-        #               Number, NCase, Person, Tense, Voice, Mood, NounClass, VerbClass)
-        #              VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
-        #     cur.executemany(sql,
-        #                     [(w['book'], w['chapter'], w['verse'], w['position'], sentence_id, j, w['lemma'],
-        #                       w['wordform'], w['pos'], w['gender'], w['number'], w['case'], w['person'], w['tense'],
-        #                       w['voice'], w['mood'], w['noun_class'], w['verb_class'])
-        #                      for j, w in enumerate(words)])
-        #     con.commit()
+        # Write the words to the database.
+        with con.cursor() as cur:
+            sql = """INSERT INTO words
+                     (Book, Chapter, Verse, VersePosition, SentenceID, SentencePosition, Lemma, Wordform, POS, Gender,
+                      Number, NCase, Person, Tense, Voice, Mood, NounClass, VerbClass)
+                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+            cur.executemany(sql,
+                            [(w['book'], w['chapter'], w['verse'], w['position'], sentence_id, j, w['lemma'],
+                              w['wordform'], w['pos'], w['gender'], w['number'], w['case'], w['person'], w['tense'],
+                              w['voice'], w['mood'], w['noun_class'], w['verb_class'])
+                             for j, w in enumerate(words)])
+            con.commit()
 
         # Write the strings to the database.
         with con.cursor() as cur:
