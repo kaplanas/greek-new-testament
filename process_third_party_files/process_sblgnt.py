@@ -60,8 +60,8 @@ NEGATION = ['μή', 'οὐ', 'οὐδαμῶς']
 PSEUDO_PREPOSITIONS = ['ὡσεί', 'ἕως']
 COPULA = ['εἰμί']
 CONJUNCTIONS = ['καί', 'ἤ', 'ἀλλά', 'μήτε', 'οὐδέ', 'οὔτε', 'μηδέ', 'πλήν', 'εἴτε', 'εἰ', 'εἴπερ']
-PSEUDO_CONJUNCTIONS = ['ὅτι', 'ὥσπερ', 'ὡς', 'ἵνα', 'ὥστε', 'ὡσεί', 'καθώς', 'διότι']
-PARTITIVE_HEADS = ['εἷς', 'τις', 'οὐδείς', 'πᾶς']
+PSEUDO_CONJUNCTIONS = ['ὅτι', 'ὥσπερ', 'ὡς', 'ἵνα', 'ὥστε', 'ὡσεί', 'καθώς', 'διότι', 'καθάπερ']
+PARTITIVE_HEADS = ['εἷς', 'τις', 'οὐδείς', 'πᾶς', 'δύο', 'ἕκαστος']
 PARTITIVE_PS = ['ἐκ', 'ἀπό', 'ἐν']
 
 
@@ -174,7 +174,7 @@ def get_tree_structure(sentence):
                         break
             if ('lemma' in possible_fake_head and possible_fake_head['lemma'] in PARTITIVE_PS) or \
                     ((possible_fake_head_case == 'genitive' or possible_fake_head['class'] == 'num') and
-                     node['case'] != 'genitive'):
+                     'case' in node and node['case'] != 'genitive'):
                 possible_fake_head['relation'] = 'genitive, part-whole'
                 all_nodes[all_nodes[node['parent_n']]['head_child_n']]['is_head'] = False
                 all_nodes[node['parent_n']]['head_child_n'] = key
@@ -344,7 +344,7 @@ def get_tree_structure(sentence):
         paths += [current_path + [dep] for dep in words[current_path[-1]]['deps']]
 
     # Code some syntactic relations.
-    for word in words:
+    for i, word in enumerate(words):
         word_features = dict()
         for feature in ['case', 'gender', 'number', 'pos', 'mood']:
             word_features[feature] = None
@@ -387,7 +387,7 @@ def get_tree_structure(sentence):
                             break
             conjunction = False
             if head['lemma'] in CONJUNCTIONS:
-                walking_parent = all_nodes[all_nodes[word['id']]['parent_n']]
+                walking_parent = all_nodes[all_nodes[word['id']]['n']]
                 conjunction = walking_parent['n'] == all_nodes[head['id']]['parent_n']
                 while 'parent_n' in walking_parent:
                     walking_parent = all_nodes[walking_parent['parent_n']]
@@ -424,6 +424,8 @@ def get_tree_structure(sentence):
                     word['relation'] = 'subject, irregular agreement'
                 else:
                     word['relation'] = 'subject'
+            elif word['pos'] == 'det':
+                word['relation'] = 'determiner'
             elif word['relation'] == 'p':
                 if 'case' in word and word_features['case'] == 'nominative':
                     word['relation'] = 'predicate, nominative'
@@ -433,6 +435,8 @@ def get_tree_structure(sentence):
                     word['relation'] = 'predicate, dative'
                 else:
                     word['relation'] = 'predicate, other'
+            elif head['pos'] == 'prep':
+                word['relation'] = 'object of preposition'
             else:
                 if 'case' in word and 'case' in words[word['head']] \
                         and (word['case'] is not None or words[word['head']]['case'] is not None) \
@@ -462,12 +466,22 @@ def get_tree_structure(sentence):
                                                                               'personal pronoun']:
                     word['relation'] = 'appositive'
                 elif 'case' in word and word['case'] == 'genitive':
-                    if words[word['head']]['pos'] == 'verb':
-                        word['relation'] = 'object, genitive'
+                    if word['lemma'] in ['ὅς', 'ὅστις'] and i > 0 and \
+                            words[i - 1]['lemma'] in ['ἕως', 'μέχρι(ς)', 'ἄχρι', 'ἄχρις']:
+                        word['relation'] = 'genitive, time'
+                    elif head['pos'] == 'verb':
+                        if word['mood'] == 'participle':
+                            word['relation'] = 'verbal modifier, participle, genitive'
+                        else:
+                            word['relation'] = 'direct object, genitive'
                     elif words[word['head']]['pos'] == 'adj' and words[word['head']]['degree'] == 'comparative':
                         word['relation'] = 'genitive, comparison'
                     elif words[word['head']]['pos'] == 'adj':
                         word['relation'] = 'argument of adjective, genitive'
+                    elif head['lemma'] in PARTITIVE_HEADS:
+                        word['relaiton'] = 'genitive, part-whole'
+                    else:
+                        word['relation'] = 'genitive, other'
                 elif 'case' in word and word['case'] == 'dative':
                     if words[word['head']]['pos'] == 'verb':
                         word['relation'] = 'dative, indirect object'
@@ -668,7 +682,7 @@ if __name__ == '__main__':
 
         # Find strings of consecutive words that all connect to a single head (with no missing intermediate heads).
         licit_strings = get_licit_strings(words)
-        # print('    ' + str(len(words)) + ' words, ' + str(len(licit_strings)) + ' licit strings')
+        print('    ' + str(len(words)) + ' words, ' + str(len(licit_strings)) + ' licit strings')
 
         # for ls in licit_strings:
         #     print(get_pretty_string(sentence, ls))
