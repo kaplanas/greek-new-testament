@@ -476,15 +476,22 @@ def get_tree_structure(sentence):
                             word['relation'] = 'direct object, genitive'
                     elif words[word['head']]['pos'] == 'adj' and words[word['head']]['degree'] == 'comparative':
                         word['relation'] = 'genitive, comparison'
-                    elif words[word['head']]['pos'] == 'adj':
+                    elif head['pos'] == 'adj':
                         word['relation'] = 'argument of adjective, genitive'
                     elif head['lemma'] in PARTITIVE_HEADS:
                         word['relaiton'] = 'genitive, part-whole'
                     else:
                         word['relation'] = 'genitive, other'
                 elif 'case' in word and word['case'] == 'dative':
-                    if words[word['head']]['pos'] == 'verb':
-                        word['relation'] = 'dative, indirect object'
+                    if head['pos'] == 'verb':
+                        if word['mood'] == 'participle':
+                            word['relation'] = 'verbal modifier, participle, dative'
+                        else:
+                            word['relation'] = 'indirect object'
+                    elif head['pos'] == 'adj':
+                        word['relation'] = 'argument of adjective, dative'
+                    else:
+                        word['relation'] = 'dative, other'
 
     # Hand-entered edits to syntactic relations.
     for relation_type, relation_edits_df in RELATION_EDITS.items():
@@ -497,7 +504,9 @@ def get_tree_structure(sentence):
                 if (word['book'], word['chapter'], word['verse'], word['position']) in edit_targets:
                     edit_index = edit_targets.index((word['book'], word['chapter'], word['verse'], word['position']))
                     new_relation = edits_df['new_relation'][edit_index]
-                    if relation_type != 'other':
+                    if relation_type == 'dative' and new_relation == 'direct object':
+                        new_relation = new_relation + ', ' + relation_type
+                    elif relation_type != 'other':
                         new_relation = relation_type + ', ' + new_relation
                     if word['relation'] == new_relation:
                         print('REDUNDANT RELATION EDIT: ' + word['book'] + ' ' + str(word['chapter']) + ':' +
@@ -667,7 +676,7 @@ if __name__ == '__main__':
 
     # Get all sentences from all books.
     sentences = [sentence
-                 for sbl_file in SBL_FILES
+                 for sbl_file in SBL_FILES[26:27]
                  for sentence in ElementTree.parse(SBL_DIR + '/' + sbl_file).findall('.//sentence')]
 
     # Connect to the database.
@@ -682,7 +691,7 @@ if __name__ == '__main__':
 
         # Find strings of consecutive words that all connect to a single head (with no missing intermediate heads).
         licit_strings = get_licit_strings(words)
-        print('    ' + str(len(words)) + ' words, ' + str(len(licit_strings)) + ' licit strings')
+        # print('    ' + str(len(words)) + ' words, ' + str(len(licit_strings)) + ' licit strings')
 
         # for ls in licit_strings:
         #     print(get_pretty_string(sentence, ls))
@@ -693,18 +702,18 @@ if __name__ == '__main__':
                       str(words[0]['position']) + ' - ' + words[-1]['book'] + ' ' + str(words[-1]['chapter']) + ':' + \
                       str(words[-1]['verse']) + '.' + str(words[-1]['position'])
 
-        # Write the words to the database.
-        with con.cursor() as cur:
-            sql = """INSERT INTO words
-                     (Book, Chapter, Verse, VersePosition, SentenceID, SentencePosition, Lemma, Wordform, POS, Gender,
-                      Number, NCase, Person, Tense, Voice, Mood, NounClass, VerbClass)
-                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
-            cur.executemany(sql,
-                            [(w['book'], w['chapter'], w['verse'], w['position'], sentence_id, j, w['lemma'],
-                              w['wordform'], w['pos'], w['gender'], w['number'], w['case'], w['person'], w['tense'],
-                              w['voice'], w['mood'], w['noun_class'], w['verb_class'])
-                             for j, w in enumerate(words)])
-            con.commit()
+        # # Write the words to the database.
+        # with con.cursor() as cur:
+        #     sql = """INSERT INTO words
+        #              (Book, Chapter, Verse, VersePosition, SentenceID, SentencePosition, Lemma, Wordform, POS, Gender,
+        #               Number, NCase, Person, Tense, Voice, Mood, NounClass, VerbClass)
+        #              VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+        #     cur.executemany(sql,
+        #                     [(w['book'], w['chapter'], w['verse'], w['position'], sentence_id, j, w['lemma'],
+        #                       w['wordform'], w['pos'], w['gender'], w['number'], w['case'], w['person'], w['tense'],
+        #                       w['voice'], w['mood'], w['noun_class'], w['verb_class'])
+        #                      for j, w in enumerate(words)])
+        #     con.commit()
 
         # Write the strings to the database.
         with con.cursor() as cur:
