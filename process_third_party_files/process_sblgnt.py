@@ -26,11 +26,15 @@ GENITIVE_EDITS = pd.read_csv(SBL_DIR + '/genitive_edits.csv',
 DATIVE_EDITS = pd.read_csv(SBL_DIR + '/dative_edits.csv',
                            dtype=defaultdict(lambda: str,
                                              {'chapter': np.float64, 'verse': np.float64, 'position': np.float64}))
+ACCUSATIVE_EDITS = pd.read_csv(SBL_DIR + '/accusative_edits.csv',
+                               dtype=defaultdict(lambda: str,
+                                               {'chapter': np.float64, 'verse': np.float64, 'position': np.float64}))
 OTHER_RELATION_EDITS = pd.read_csv(SBL_DIR + '/other_relation_edits.csv',
                                    dtype=defaultdict(lambda: str,
                                                      {'chapter': np.float64, 'verse': np.float64,
                                                       'position': np.float64}))
-RELATION_EDITS = {'genitive': GENITIVE_EDITS, 'dative': DATIVE_EDITS, 'other': OTHER_RELATION_EDITS}
+RELATION_EDITS = {'genitive': GENITIVE_EDITS, 'dative': DATIVE_EDITS, 'accusative': ACCUSATIVE_EDITS,
+                  'other': OTHER_RELATION_EDITS}
 
 BOOKS_OF_THE_BIBLE = ['Matt', 'Mark', 'Luke', 'John', 'Acts', 'Rom', '1Cor', '2Cor', 'Gal', 'Eph', 'Phil', 'Col',
                       '1Thess', '2Thess', '1Tim', '2Tim', 'Titus', 'Phlm', 'Heb', 'Jas', '1Pet', '2Pet', '1John',
@@ -57,10 +61,11 @@ KEEP_DETERMINER_LEMMAS = ['Ἀθηναῖος', 'Ἀδραμυττηνός', 'Α
                           'Σαδδουκαῖος', 'Σαμαρίτης', 'Σαμαρῖτις', 'Σεβαστός', 'Σιδώνιος', 'Σύρος', 'Συροφοινίκισσα',
                           'Τύριος', 'Φαρισαῖος', 'Φιλιππήσιος', 'Χαλδαῖος', 'Χαναναῖος', 'Χριστιανός', 'Ὦ']
 NEGATION = ['μή', 'οὐ', 'οὐδαμῶς']
-PSEUDO_PREPOSITIONS = ['ὡσεί', 'ἕως']
+PSEUDO_PREPOSITIONS = ['ἕως']
 COPULA = ['εἰμί']
-CONJUNCTIONS = ['καί', 'ἤ', 'ἀλλά', 'μήτε', 'οὐδέ', 'οὔτε', 'μηδέ', 'πλήν', 'εἴτε', 'εἰ', 'εἴπερ']
-PSEUDO_CONJUNCTIONS = ['ὅτι', 'ὥσπερ', 'ὡς', 'ἵνα', 'ὥστε', 'ὡσεί', 'καθώς', 'διότι', 'καθάπερ']
+GENERAL_CONJUNCTIONS = ['καί', 'ἤ', 'ἀλλά', 'μήτε', 'οὐδέ', 'οὔτε', 'μηδέ', 'πλήν', 'ὡς', 'ὡσεί', 'εἴτε', 'ἤπερ', 'ἤ']
+SENTENTIAL_CONJUNCTIONS = ['ὅτι', 'ὥσπερ', 'ἵνα', 'ὥστε', 'καθώς', 'διότι', 'καθάπερ', 'εἰ', 'εἴπερ', 'ὅταν']
+ADVERB_CONJUNCTIONS = ['καί', 'μηδέ']
 PARTITIVE_HEADS = ['εἷς', 'τις', 'οὐδείς', 'πᾶς', 'δύο', 'ἕκαστος']
 PARTITIVE_PS = ['ἐκ', 'ἀπό', 'ἐν']
 
@@ -135,15 +140,16 @@ def get_tree_structure(sentence):
                 if 'parent_n' in n and n['parent_n'] == node['parent_n'] and k != key:
                     n['is_head'] = False
         if ('class' in node and node['class'] == 'prep') or \
-                ('lemma' in node and node['lemma'] in CONJUNCTIONS and node['class'] != 'adv' and
+                ('lemma' in node and node['lemma'] in GENERAL_CONJUNCTIONS and
+                 not (node['class'] == 'adv' and node['lemma'] in ADVERB_CONJUNCTIONS) and
                  ('role' not in node or node['role'] != 'adv') and
                  node['position'] == min(n['position']
                                          for k, n in all_nodes.items()
-                                         if 'lemma' in n and n['lemma'] in CONJUNCTIONS and
-                                            n['class'] != 'adv' and
+                                         if 'lemma' in n and n['lemma'] in GENERAL_CONJUNCTIONS and
+                                            not (n['class'] == 'adv' and n['lemma'] in ADVERB_CONJUNCTIONS) and
                                             ('role' not in n or n['role'] != 'adv') and
                                             'position' in n and n['parent_n'] == node['parent_n'])) or \
-                ('lemma' in node and node['lemma'] in PSEUDO_CONJUNCTIONS):
+                ('lemma' in node and node['lemma'] in SENTENTIAL_CONJUNCTIONS):
             node['is_head'] = True
             all_nodes[node['parent_n']]['head_child_n'] = key
             for k, n in all_nodes.items():
@@ -162,7 +168,7 @@ def get_tree_structure(sentence):
             possible_fake_head_case = None
             if 'case' in possible_fake_head:
                 possible_fake_head_case = possible_fake_head['case']
-            if 'lemma' in possible_fake_head and possible_fake_head['lemma'] in CONJUNCTIONS:
+            if 'lemma' in possible_fake_head and possible_fake_head['lemma'] in GENERAL_CONJUNCTIONS:
                 for k, n in all_nodes.items():
                     if 'parent_n' in n and n['parent_n'] == possible_fake_head['parent_n'] and \
                             k != possible_fake_head['n']:
@@ -348,7 +354,7 @@ def get_tree_structure(sentence):
         word_features = dict()
         for feature in ['case', 'gender', 'number', 'pos', 'mood']:
             word_features[feature] = None
-            if 'lemma' in word and word['lemma'] in CONJUNCTIONS:
+            if 'lemma' in word and word['lemma'] in GENERAL_CONJUNCTIONS:
                 temp_values = []
                 for dep_pos in word['deps']:
                     if feature in words[dep_pos] and words[dep_pos][feature] is not None:
@@ -367,9 +373,9 @@ def get_tree_structure(sentence):
         if word['head'] is not None:
             head = words[word['head']]
             word_head_features = dict()
-            for feature in ['mood', 'pos', 'number']:
+            for feature in ['mood', 'pos', 'number', 'case']:
                 word_head_features[feature] = None
-                if 'lemma' in head and head['lemma'] in CONJUNCTIONS:
+                if 'lemma' in head and head['lemma'] in GENERAL_CONJUNCTIONS:
                     temp_values = []
                     for dep_pos in [dp for dp in head['deps'] if words[dp]['id'] != word['id']]:
                         if feature in words[dep_pos] and words[dep_pos][feature] is not None:
@@ -386,18 +392,19 @@ def get_tree_structure(sentence):
                             word_head_features[feature] = words[dep_pos][feature]
                             break
             conjunction = False
-            if head['lemma'] in CONJUNCTIONS:
+            if head['lemma'] in SENTENTIAL_CONJUNCTIONS:
+                conjunction = True
+            elif head['lemma'] in GENERAL_CONJUNCTIONS:
                 walking_parent = all_nodes[all_nodes[word['id']]['n']]
                 conjunction = walking_parent['n'] == all_nodes[head['id']]['parent_n']
-                while 'parent_n' in walking_parent:
+                while 'parent_n' in walking_parent and not conjunction:
                     walking_parent = all_nodes[walking_parent['parent_n']]
                     conjunction = walking_parent['n'] == all_nodes[head['id']]['parent_n']
-                    if conjunction:
-                        break
-            if conjunction and head['pos'] == 'conj':
+            if conjunction and (head['pos'] == 'conj' or
+                                head['lemma'] in GENERAL_CONJUNCTIONS + SENTENTIAL_CONJUNCTIONS):
                 word['relation'] = 'conjunction'
             elif word['relation'] == 's':
-                if head['lemma'] in PSEUDO_CONJUNCTIONS:
+                if head['lemma'] in SENTENTIAL_CONJUNCTIONS:
                     word['relation'] = 'conjunction'
                 elif word_head_features['pos'] != 'verb':
                     word['relation'] = 'subject of verbless predicate'
@@ -492,6 +499,16 @@ def get_tree_structure(sentence):
                         word['relation'] = 'argument of adjective, dative'
                     else:
                         word['relation'] = 'dative, other'
+                elif 'case' in word and word['case'] == 'accusative':
+                    if word['relation'] == 'adv' and word['gender'] == 'neuter':
+                        if word['lemma'] == 'τίς':
+                            word['relation'] = 'accusative, other'
+                        else:
+                            word['relation'] = 'accusative, manner'
+                    elif head['pos'] == 'verb':
+                        word['relation'] = 'direct object'
+                    else:
+                        word['relation'] = 'accusative, other'
 
     # Hand-entered edits to syntactic relations.
     for relation_type, relation_edits_df in RELATION_EDITS.items():
@@ -565,7 +582,7 @@ def get_mandatory_pairs(words):
             pairs += [(i, dep) for dep in word['deps'] if 'predicate' in words[dep]['relation']]
 
         # If the word is a conjunction of anything except finite verbs, its conjuncts must be present.
-        if word['lemma'] in CONJUNCTIONS and \
+        if word['lemma'] in GENERAL_CONJUNCTIONS and \
                 len([dep for dep in word['deps']
                      if words[dep]['pos'] == 'verb' and
                         words[dep]['mood'] in ['indicative', 'imperative', 'subjunctive', 'optative']]) == 0:
@@ -669,14 +686,17 @@ def get_citation(words):
 
 
 def get_pretty_string(sentence, limits):
-    return ' '.join(sentence[1].text.split(' ')[limits[0]:(limits[1] + 1)])
+    sentence_text = sentence[1].text
+    if sentences[0].text == 'John 8:7':
+        sentence_text = 'ὡς δὲ ἐπέμενον ἐρωτῶντες αὐτόν, ἀνακύψας εἶπεν πρὸς αὐτούς Ὁ ἀναμάρτητος ὑμῶν πρῶτον ἐπ’ αὐτὴν τὸν λίθον· βαλέτω'
+    return ' '.join(sentence_text.split(' ')[limits[0]:(limits[1] + 1)])
 
 
 if __name__ == '__main__':
 
     # Get all sentences from all books.
     sentences = [sentence
-                 for sbl_file in SBL_FILES[26:27]
+                 for sbl_file in SBL_FILES
                  for sentence in ElementTree.parse(SBL_DIR + '/' + sbl_file).findall('.//sentence')]
 
     # Connect to the database.
@@ -702,18 +722,18 @@ if __name__ == '__main__':
                       str(words[0]['position']) + ' - ' + words[-1]['book'] + ' ' + str(words[-1]['chapter']) + ':' + \
                       str(words[-1]['verse']) + '.' + str(words[-1]['position'])
 
-        # # Write the words to the database.
-        # with con.cursor() as cur:
-        #     sql = """INSERT INTO words
-        #              (Book, Chapter, Verse, VersePosition, SentenceID, SentencePosition, Lemma, Wordform, POS, Gender,
-        #               Number, NCase, Person, Tense, Voice, Mood, NounClass, VerbClass)
-        #              VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
-        #     cur.executemany(sql,
-        #                     [(w['book'], w['chapter'], w['verse'], w['position'], sentence_id, j, w['lemma'],
-        #                       w['wordform'], w['pos'], w['gender'], w['number'], w['case'], w['person'], w['tense'],
-        #                       w['voice'], w['mood'], w['noun_class'], w['verb_class'])
-        #                      for j, w in enumerate(words)])
-        #     con.commit()
+        # Write the words to the database.
+        with con.cursor() as cur:
+            sql = """INSERT INTO words
+                     (Book, Chapter, Verse, VersePosition, SentenceID, SentencePosition, Lemma, Wordform, POS, Gender,
+                      Number, NCase, Person, Tense, Voice, Mood, NounClass, VerbClass)
+                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+            cur.executemany(sql,
+                            [(w['book'], w['chapter'], w['verse'], w['position'], sentence_id, j, w['lemma'],
+                              w['wordform'], w['pos'], w['gender'], w['number'], w['case'], w['person'], w['tense'],
+                              w['voice'], w['mood'], w['noun_class'], w['verb_class'])
+                             for j, w in enumerate(words)])
+            con.commit()
 
         # Write the strings to the database.
         with con.cursor() as cur:
