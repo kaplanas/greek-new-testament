@@ -1,45 +1,82 @@
 CREATE OR REPLACE VIEW study_strings AS
-WITH forbidden_words AS
-     (SELECT SentenceID, SentencePosition
+WITH word_status AS
+     (SELECT SentenceID, SentencePosition, POS,
+             other_pos.FeatureValue AS OtherPOSFeatureValue,
+             other_pos.Required AS OtherPOSRequired,
+             nouns.FeatureValue AS NounFeatureValue,
+             nouns.Required AS NounRequired,
+             tense_mood.FeatureValue AS TenseMoodFeatureValue,
+             tense_mood.Required AS TenseMoodRequired,
+             voice.FeatureValue AS VoiceFeatureValue,
+             voice.Required AS VoiceRequired,
+             verb_class.FeatureValue AS VerbClassFeatureValue,
+             verb_class.Required AS VerbClassRequired
       FROM words
-           LEFT JOIN (SELECT FeatureValue
+           LEFT JOIN (SELECT FeatureValue, Required
                       FROM students_words
                       WHERE StudentID = 1
                             AND Feature = 'POS') other_pos
            ON words.POS = other_pos.FeatureValue
-           LEFT JOIN (SELECT FeatureValue
+           LEFT JOIN (SELECT FeatureValue, Required
                       FROM students_words
                       WHERE StudentID = 1
                             AND Feature = 'NounClass') nouns
            ON words.NounClass = nouns.FeatureValue
-           LEFT JOIN (SELECT FeatureValue
+           LEFT JOIN (SELECT FeatureValue, Required
                       FROM students_words
                       WHERE StudentID = 1
                             AND Feature = 'TenseMood') tense_mood
            ON CONCAT(words.Tense, '-', words.Mood) = tense_mood.FeatureValue
-           LEFT JOIN (SELECT FeatureValue
+           LEFT JOIN (SELECT FeatureValue, Required
                       FROM students_words
                       WHERE StudentID = 1
                             AND Feature = 'Voice') voice
            ON words.Voice = voice.FeatureValue
-           LEFT JOIN (SELECT FeatureValue
+           LEFT JOIN (SELECT FeatureValue, Required
                       FROM students_words
                       WHERE StudentID = 1
                             AND Feature = 'VerbClass') verb_class
-           ON words.VerbClass = verb_class.FeatureValue
-      WHERE other_pos.FeatureValue IS NULL
-            AND (words.POS <> 'noun' OR nouns.FeatureValue IS NULL)
-            AND (words.POS <> 'verb' OR
-                 tense_mood.FeatureValue IS NULL
-                 OR voice.FeatureValue IS NULL
-                 OR verb_class.FeatureValue IS NULL)),
+           ON words.VerbClass = verb_class.FeatureValue),
+     forbidden_words AS
+     (SELECT SentenceID, SentencePosition
+      FROM word_status
+      WHERE OtherPOSFeatureValue IS NULL
+            AND (POS <> 'noun' OR NounFeatureValue IS NULL)
+            AND (POS <> 'verb' OR
+                 TenseMoodFeatureValue IS NULL
+                 OR VoiceFeatureValue IS NULL
+                 OR VerbClassFeatureValue IS NULL)),
+     allowed_words AS
+     (SELECT words.SentenceID, words.SentencePosition
+      FROM words
+           LEFT JOIN forbidden_words
+           ON words.SentenceID = forbidden_words.SentenceID
+              AND words.SentencePosition = forbidden_words.SentencePosition
+      WHERE forbidden_words.SentenceID IS NULL),
+     required_words AS
+     (SELECT SentenceID, SentencePosition
+      FROM word_status
+      WHERE OtherPOSRequired
+            OR NounRequired
+            OR TenseMoodRequired
+            OR VoiceRequired
+            OR VerbClassRequired),
      strings_filtered_by_words AS
-     (SELECT strings.SentenceID, Start, Stop, Citation, String
+     (SELECT DISTINCT strings.SentenceID, Start, Stop, Citation, String
       FROM strings
+           JOIN allowed_words
+           ON strings.SentenceID = allowed_words.SentenceID
+              AND allowed_words.SentencePosition >= Start
+              AND allowed_words.SentencePosition <= Stop
+           JOIN required_words
+           ON (strings.SentenceID = required_words.SentenceID
+               AND required_words.SentencePosition >= Start
+               AND required_words.SentencePosition <= Stop)
+              OR (SELECT COUNT(*) FROM required_words) = 0
            LEFT JOIN forbidden_words
            ON strings.SentenceID = forbidden_words.SentenceID
-              AND SentencePosition >= Start
-              AND SentencePosition <= Stop
+              AND forbidden_words.SentencePosition >= Start
+              AND forbidden_words.SentencePosition <= Stop
       WHERE forbidden_words.SentenceID IS NULL
             AND Stop > Start),
      forbidden_relations AS
