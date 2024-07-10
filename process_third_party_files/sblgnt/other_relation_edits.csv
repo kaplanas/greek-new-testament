@@ -13,6 +13,7 @@ Matt,4,15,6,conjunction
 Matt,4,19,9,subject of small clause
 Matt,5,6,7,direct object
 Matt,5,19,11,subject
+Matt,5,22,23,sentential complement
 Matt,5,25,24,gap
 Matt,5,37,6,appositive
 Matt,5,37,8,gap
@@ -24,6 +25,7 @@ Matt,7,9,7,"indirect object, attraction"
 Matt,7,12,3,direct object
 Matt,7,14,8,subject of verbless predicate
 Matt,7,18,9,gap
+Matt,7,21,6,sentential complement
 Matt,7,24,9,subject
 Matt,7,26,9,subject
 Matt,8,17,9,"nominal modifier, participle"
@@ -117,7 +119,13 @@ Matt,22,21,10,direct object
 Matt,22,36,2,sentential complement
 Matt,22,42,14,sentential complement
 Matt,22,43,9,subject of small clause
+Matt,23,13,7,appositive
+Matt,23,15,6,appositive
 Matt,23,15,21,subject of small clause
+Matt,23,23,6,appositive
+Matt,23,25,6,appositive
+Matt,23,27,6,appositive
+Matt,23,29,6,appositive
 Matt,23,39,13,sentential complement
 Matt,24,7,7,gap
 Matt,24,36,15,appositive
@@ -189,7 +197,6 @@ Mark,9,14,7,subject of small clause
 Mark,9,34,12,sentential complement
 Mark,9,39,18,subject
 Mark,10,11,10,subject
-Mark,10,18,11,conjunction
 Mark,10,27,15,conjunction
 Mark,10,31,8,gap
 Mark,10,37,8,gap
@@ -225,6 +232,7 @@ Mark,14,36,7,sentential complement
 Mark,14,36,22,gap
 Mark,14,38,16,conjunction
 Mark,14,39,6,"nominal modifier, adjective"
+Mark,14,45,7,sentential complement
 Mark,14,58,4,subject of small clause
 Mark,15,12,12,subject of small clause
 Mark,15,21,5,appositive
@@ -273,6 +281,7 @@ Luke,6,14,2,subject of small clause
 Luke,6,20,12,sentential complement
 Luke,6,23,13,conjunction
 Luke,6,43,11,gap
+Luke,6,46,5,sentential complement
 Luke,6,49,4,subject
 Luke,7,8,13,"nominal modifier, pronoun"
 Luke,7,22,8,direct object
@@ -352,7 +361,6 @@ Luke,17,7,1,subject
 Luke,17,31,10,subject
 Luke,18,11,20,conjunction
 Luke,18,12,6,"nominal modifier, adjective"
-Luke,18,19,11,conjunction
 Luke,18,22,11,"nominal modifier, adjective"
 Luke,18,36,3,subject of small clause
 Luke,19,2,12,gap
@@ -499,6 +507,8 @@ John,19,41,13,gap
 John,20,7,3,conjunction
 John,20,12,8,gap
 John,20,12,13,gap
+John,20,16,4,sentential complement
+John,20,16,10,sentential complement
 John,20,19,35,sentential complement
 John,20,21,8,sentential complement
 John,20,26,12,gap
@@ -547,6 +557,7 @@ Acts,8,24,18,"direct object, attraction"
 Acts,8,25,8,direct object
 Acts,8,30,6,subject of small clause
 Acts,9,10,8,appositive
+Acts,9,10,17,sentential complement
 Acts,9,10,22,sentential complement
 Acts,9,13,12,"nominal modifier, pronoun"
 Acts,9,15,24,conjunction
@@ -554,6 +565,7 @@ Acts,9,21,27,subject of small clause
 Acts,9,36,8,appositive
 Acts,9,36,20,"direct object, attraction"
 Acts,10,1,7,appositive
+Acts,10,3,20,sentential complement
 Acts,10,19,13,subject of verbless predicate
 Acts,10,21,13,conjunction
 Acts,10,35,8,subject
@@ -695,6 +707,7 @@ Rom,8,5,16,conjunction
 Rom,8,6,13,conjunction
 Rom,8,10,15,conjunction
 Rom,8,12,8,indirect object
+Rom,8,15,16,sentential complement
 Rom,8,17,9,conjunction
 Rom,8,28,16,appositive
 Rom,8,33,6,subject of verbless predicate
@@ -775,6 +788,7 @@ Rom,16,18,13,conjunction
 1Cor,5,1,6,subject
 1Cor,5,13,12,"nominal modifier, adjective"
 1Cor,6,14,3,subject
+1Cor,6,18,5,subject
 1Cor,6,19,15,"direct object, attraction"
 1Cor,7,1,3,"direct object, attraction"
 1Cor,7,3,12,gap
@@ -940,6 +954,7 @@ Gal,2,18,9,subject of small clause
 Gal,3,13,15,sentential complement
 Gal,3,15,8,direct object
 Gal,3,29,12,appositive
+Gal,4,6,18,sentential complement
 Gal,4,12,5,gap
 Gal,4,14,3,direct object
 Gal,4,23,12,gap
@@ -1312,7 +1327,6 @@ Rev,18,6,18,"direct object, attraction"
 Rev,18,18,11,sentential complement
 Rev,19,1,4,direct object
 Rev,19,1,12,"nominal modifier, participle"
-Rev,19,1,23,conjunction
 Rev,19,6,7,subject of small clause
 Rev,19,9,5,sentential complement
 Rev,20,8,26,"nominal modifier, relative clause"

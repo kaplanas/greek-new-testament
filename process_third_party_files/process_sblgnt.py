@@ -64,10 +64,13 @@ NEGATION = ['μή', 'οὐ', 'οὐδαμῶς']
 PSEUDO_PREPOSITIONS = ['ἕως']
 COPULA = ['εἰμί']
 GENERAL_CONJUNCTIONS = ['καί', 'ἤ', 'ἀλλά', 'μήτε', 'οὐδέ', 'οὔτε', 'μηδέ', 'πλήν', 'ὡς', 'ὡσεί', 'εἴτε', 'ἤπερ', 'ἤ']
-SENTENTIAL_CONJUNCTIONS = ['ὅτι', 'ὥσπερ', 'ἵνα', 'ὥστε', 'καθώς', 'διότι', 'καθάπερ', 'εἰ', 'εἴπερ', 'ὅταν']
+SENTENTIAL_CONJUNCTIONS = ['ὅτι', 'ὥσπερ', 'ἵνα', 'ὥστε', 'καθώς', 'διότι', 'καθάπερ', 'εἰ', 'εἴπερ', 'ὅταν', 'ἐάν']
+BURIED_CONJUNCTIONS = ['εἰ', 'ἐάν']
 ADVERB_CONJUNCTIONS = ['καί', 'μηδέ']
 PARTITIVE_HEADS = ['εἷς', 'τις', 'οὐδείς', 'πᾶς', 'δύο', 'ἕκαστος']
 PARTITIVE_PS = ['ἐκ', 'ἀπό', 'ἐν']
+SENTENTIAL_COMPLEMENT_HEADS = ['ὁράω', 'οἶδα', 'μιμνῄσκομαι', 'γράφω', 'πιστεύω', 'συμβουλεύω', 'ἀπολογέομαι',
+                               'γνωστός', 'δῆλος', 'ἐξομολογέω', 'πρόδηλος', 'λέγω']
 
 
 def get_tree_structure(sentence):
@@ -150,11 +153,31 @@ def get_tree_structure(sentence):
                                             ('role' not in n or n['role'] != 'adv') and
                                             'position' in n and n['parent_n'] == node['parent_n'])) or \
                 ('lemma' in node and node['lemma'] in SENTENTIAL_CONJUNCTIONS):
+            sentential_complement = False
+            if node['lemma'] == 'ὅτι':
+                if 'parent_n' in node and 'parent_n' in all_nodes[node['parent_n']]:
+                    if 'role' in all_nodes[node['parent_n']] and all_nodes[node['parent_n']]['role'] == 's':
+                        sentential_complement = True
+                    else:
+                        grandparent = all_nodes[all_nodes[node['parent_n']]['parent_n']]
+                        head = all_nodes[grandparent['head_child_n']]
+                        while 'head_child_n' in head:
+                            head = all_nodes[head['head_child_n']]
+                        if 'lemma' in head and head['lemma'] in SENTENTIAL_COMPLEMENT_HEADS:
+                            sentential_complement = True
             node['is_head'] = True
             all_nodes[node['parent_n']]['head_child_n'] = key
             for k, n in all_nodes.items():
                 if 'parent_n' in n and n['parent_n'] == node['parent_n'] and k != key:
                     n['is_head'] = False
+            if node['lemma'] in BURIED_CONJUNCTIONS or (node['lemma'] == 'ὅτι' and not sentential_complement):
+                all_nodes[node['parent_n']]['is_head'] = True
+                all_nodes[all_nodes[node['parent_n']]['parent_n']]['head_child_n'] = node['parent_n']
+                for k, n in all_nodes.items():
+                    if 'parent_n' in n and n['parent_n'] == all_nodes[node['parent_n']]['parent_n'] and \
+                          k != node['parent_n']:
+                        n['is_head'] = False
+
     # (We have to do these things in a separate loop because prepositions aren't reliably heads until the previous loop
     # finishes.)
     #   - Partitives are consistently coded with the genitive or PP as the head; I want the noun to be the head.
@@ -509,6 +532,8 @@ def get_tree_structure(sentence):
                         word['relation'] = 'direct object'
                     else:
                         word['relation'] = 'accusative, other'
+                elif 'case' in word and word['case'] == 'vocative':
+                    word['relation'] = 'interjection, vocative'
 
     # Hand-entered edits to syntactic relations.
     for relation_type, relation_edits_df in RELATION_EDITS.items():
