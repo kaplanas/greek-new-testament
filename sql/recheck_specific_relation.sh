@@ -1,8 +1,13 @@
 echo "WITH relations_to_check AS
-           (SELECT SentenceID, Relation, HeadPos, DependentPos, FirstPos,
+           (SELECT relations.SentenceID, relations.Relation, relations.HeadPos,
+                   relations.DependentPos, relations.FirstPos,
                    LastPos
             FROM gnt.relations
-            WHERE Relation = '$1'),
+                 JOIN gnt.checked_relation_tokens
+                 ON relations.SentenceID = checked_relation_tokens.SentenceID
+                    AND relations.HeadPos = checked_relation_tokens.HeadPos
+                    AND relations.DependentPos = checked_relation_tokens.DependentPos
+            WHERE relations.Relation = '$1'),
            shortest_strings AS
            (SELECT strings.SentenceID, relations_to_check.HeadPos,
                    relations_to_check.DependentPos, relations_to_check.FirstPos,
@@ -106,7 +111,7 @@ echo "WITH relations_to_check AS
            JOIN book_chapter_verse
            ON strings.SentenceID = book_chapter_verse.SentenceID
       ORDER BY book_chapter_verse.Book, book_chapter_verse.Chapter,
-               book_chapter_verse.Verse, shortest_strings.HeadPos;" | mysql -u root -p 2>/dev/null | while IFS=$'\t' read citation string sentence_id head_pos dependent_pos relation
+               book_chapter_verse.Verse, shortest_strings.HeadPos;" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null | while IFS=$'\t' read citation string sentence_id head_pos dependent_pos relation
 do
   if [ "$citation" != "Citation" ]
   then
@@ -119,7 +124,7 @@ do
             SET Relation = '$new_relation'
             WHERE SentenceID = '$sentence_id'
                   AND HeadPos = '$head_pos'
-                  AND DependentPos = '$dependent_pos';" | mysql -u root -p 2>/dev/null
+                  AND DependentPos = '$dependent_pos';" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null
     fi
     echo ""
   fi

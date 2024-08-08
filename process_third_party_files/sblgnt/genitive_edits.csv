@@ -2387,8 +2387,8 @@ Acts,7,32,10,θεὸς,καὶ,relation
 Rom,15,5,6,θεὸς,καὶ,property
 Eph,1,17,5,θεὸς,κυρίου,relation
 Acts,13,17,4,θεὸς,λαοῦ,relation
-Mark,12,27,4,θεὸς,νεκρῶν,relation
-Matt,22,32,18,θεὸς,νεκρῶν,relation
+Mark,12,27,5,θεὸς,ἀλλὰ,relation
+Matt,22,32,19,θεὸς,ἀλλὰ,relation
 2Cor,1,3,18,θεὸς,παρακλήσεως,property
 Acts,3,13,11,θεὸς,πατέρων,relation
 Acts,5,30,4,θεὸς,πατέρων,relation
@@ -3041,7 +3041,7 @@ Phil,1,5,4,κοινωνίᾳ,ὑμῶν,subject
 2Cor,8,4,12,κοινωνίαν,διακονίας,object
 Phil,3,10,12,κοινωνίαν,παθημάτων,object
 1Cor,1,9,10,κοινωνίαν,υἱοῦ,other
-2Cor,1,7,14,κοινωνοί,παθημάτων,object
+2Cor,1,7,10,κοινωνοί,ὡς,object
 Matt,23,30,14,κοινωνοὶ,αὐτῶν,relation
 1Cor,10,18,13,κοινωνοὶ,θυσιαστηρίου,other
 2Pet,1,4,16,κοινωνοὶ,φύσεως,object
@@ -5105,7 +5105,7 @@ Luke,8,55,5,πνεῦμα,αὐτῆς,body part
 Acts,17,16,12,πνεῦμα,αὐτοῦ,body part
 Rom,8,11,29,πνεῦμα,αὐτοῦ,body part
 Luke,4,33,9,πνεῦμα,δαιμονίου,body part
-2Tim,1,7,8,πνεῦμα,δειλίας,property
+2Tim,1,7,9,πνεῦμα,ἀλλὰ,property
 Rom,8,15,5,πνεῦμα,δουλείας,property
 Rom,8,11,6,πνεῦμα,ἐγείραντος,body part
 Rev,11,11,9,πνεῦμα,ζωῆς,other
@@ -5592,6 +5592,7 @@ John,6,55,4,σάρξ,μου,body part
 John,6,51,32,σάρξ,μού,body part
 Acts,2,31,16,σὰρξ,αὐτοῦ,body part
 2Cor,7,5,12,σὰρξ,ἡμῶν,body part
+1Cor,15,39,18,σὰρξ,πτηνῶν,body part
 Luke,13,21,9,σάτα,ἀλεύρου,material
 Matt,13,33,17,σάτα,ἀλεύρου,material
 Acts,17,23,7,σεβάσματα,ὑμῶν,possession
@@ -5619,6 +5620,7 @@ John,19,33,13,σκέλη,αὐτοῦ,body part
 John,19,31,31,σκέλη,αὐτῶν,body part
 John,19,32,12,σκέλη,καὶ,body part
 Luke,17,31,13,σκεύη,αὐτοῦ,possession
+2Tim,2,20,12,σκεύη,ἀλλὰ,material
 Mark,3,27,12,σκεύη,αὐτοῦ,possession
 Matt,12,29,14,σκεύη,αὐτοῦ,possession
 Rom,9,23,11,σκεύη,ἐλέους,other
@@ -6047,7 +6049,7 @@ Rom,9,8,11,τέκνα,θεοῦ,relation
 1Cor,4,14,9,τέκνα,μου,relation
 Gal,4,19,2,τέκνα,μου,relation
 Eph,2,3,26,τέκνα,ὀργῆς,son of
-Gal,4,31,5,τέκνα,παιδίσκης,relation
+Gal,4,31,7,τέκνα,ἀλλὰ,relation
 Rom,9,8,7,τέκνα,σαρκὸς,other
 Luke,13,34,18,τέκνα,σου,relation
 Luke,19,44,7,τέκνα,σου,relation

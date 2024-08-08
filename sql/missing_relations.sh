@@ -18,21 +18,21 @@ echo "WITH relations_to_check AS
                     AND checked_relation_tokens.DependentPos = relations.DependentPos
             WHERE relations.SentenceID IS NULL),
            shortest_strings AS
-           (SELECT strings.SentenceID, relations_to_check.HeadPos,
+           (SELECT relations_to_check.SentenceID, relations_to_check.HeadPos,
                    relations_to_check.DependentPos,
                    relations_to_check.FirstPos,
                    relations_to_check.LastPos,
                    relations_to_check.Relation,
                    MAX(strings.Start) AS Start,
                    MIN(strings.Stop) AS Stop
-            FROM gnt.strings
-                 JOIN relations_to_check
-                 ON strings.SentenceID = relations_to_check.SentenceID
+            FROM relations_to_check
+                 LEFT JOIN gnt.strings
+                 ON relations_to_check.SentenceID = strings.SentenceID
                     AND FirstPos >= Start
                     AND FirstPos <= Stop
                     AND LastPos >= Start
                     AND LastPos <= Stop
-            GROUP BY strings.SentenceID, relations_to_check.HeadPos,
+            GROUP BY relations_to_check.SentenceID, relations_to_check.HeadPos,
                      relations_to_check.DependentPos,
                      relations_to_check.FirstPos,
                      relations_to_check.LastPos,
@@ -116,21 +116,30 @@ echo "WITH relations_to_check AS
                                          shortest_strings.LastPos))) AS String,
              shortest_strings.SentenceID, shortest_strings.HeadPos,
              shortest_strings.DependentPos, shortest_strings.Relation
-      FROM gnt.strings
-           JOIN shortest_strings
-           ON strings.SentenceID = shortest_strings.SentenceID
-              AND strings.Start = shortest_strings.Start
-              AND strings.Stop = shortest_strings.Stop
-           JOIN book_chapter_verse
-           ON strings.SentenceID = book_chapter_verse.SentenceID
+      FROM shortest_strings
+           LEFT JOIN gnt.strings
+           ON shortest_strings.SentenceID = strings.SentenceID
+              AND shortest_strings.Start = strings.Start
+              AND shortest_strings.Stop = strings.Stop
+           LEFT JOIN book_chapter_verse
+           ON shortest_strings.SentenceID = book_chapter_verse.SentenceID
       ORDER BY book_chapter_verse.Book, book_chapter_verse.Chapter,
                book_chapter_verse.Verse, shortest_strings.HeadPos
-      LIMIT 50;" | mysql -u root -p 2>/dev/null | while IFS=$'\t' read citation string sentence_id head_pos dependent_pos relation
+      LIMIT 50;" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null | while IFS=$'\t' read citation string sentence_id head_pos dependent_pos relation
 do
   if [ "$citation" != "Citation" ]
   then
+    citation_string=$citation
+    if [ "$citation" == "NULL" ]
+    then
+      citation_string=$sentence_id
+    fi
     colored_string=$(echo "$string" | sed ''/H/s//`printf "\e[1;35m"`/'' | sed ''/h/s//`printf "\e[0m"`/'' | sed ''/D/s//`printf "\e[1;36m"`/'' | sed ''/d/s//`printf "\e[0m"`/'')
-    echo "$citation ($relation): $colored_string"
+    if [ "$colored_string" == "NULL" ]
+    then
+      colored_string="$head_pos $dependent_pos"
+    fi
+    echo "$citation_string ($relation): $colored_string"
     echo ""
   fi
 done

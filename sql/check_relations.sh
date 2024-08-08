@@ -122,8 +122,8 @@ echo "WITH relations_to_check AS
            ON strings.SentenceID = book_chapter_verse.SentenceID
       ORDER BY shortest_strings.CheckOrder, book_chapter_verse.Book,
                book_chapter_verse.Chapter, book_chapter_verse.Verse,
-               shortest_strings.HeadPos
-      LIMIT 50;" | mysql -u root -p 2>/dev/null | while IFS=$'\t' read citation string sentence_id head_pos dependent_pos relation
+               shortest_strings.HeadPos, shortest_strings.DependentPos
+      LIMIT 50;" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null | while IFS=$'\t' read citation string sentence_id head_pos dependent_pos relation
 do
   if [ "$citation" != "Citation" ]
   then
@@ -144,12 +144,12 @@ do
                                                 FROM gnt.relations
                                                 WHERE relations.SentenceID = '$sentence_id'
                                                       AND relations.HeadPos = '$head_pos'
-                                                      AND relations.DependentPos = '$dependent_pos');" | mysql -u root -p 2>/dev/null
+                                                      AND relations.DependentPos = '$dependent_pos');" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null
     else
       echo "DELETE FROM gnt.checked_relation_tokens
             WHERE SentenceID = '$sentence_id'
                   AND HeadPos = '$head_pos'
-                  AND DependentPos = '$dependent_pos';" | mysql -u root -p 2>/dev/null
+                  AND DependentPos = '$dependent_pos';" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null
     fi
     echo ""
   fi
