@@ -68,16 +68,17 @@ WITH word_status AS
            ON strings.SentenceID = allowed_words.SentenceID
               AND allowed_words.SentencePosition >= Start
               AND allowed_words.SentencePosition <= Stop
-           JOIN required_words
-           ON (strings.SentenceID = required_words.SentenceID
-               AND required_words.SentencePosition >= Start
-               AND required_words.SentencePosition <= Stop)
-              OR (SELECT COUNT(*) FROM required_words) = 0
+           LEFT JOIN required_words
+           ON strings.SentenceID = required_words.SentenceID
+              AND required_words.SentencePosition >= Start
+              AND required_words.SentencePosition <= Stop
            LEFT JOIN forbidden_words
            ON strings.SentenceID = forbidden_words.SentenceID
               AND forbidden_words.SentencePosition >= Start
               AND forbidden_words.SentencePosition <= Stop
-      WHERE forbidden_words.SentenceID IS NULL
+      WHERE (required_words.SentenceID IS NOT NULL
+             OR (SELECT COUNT(*) FROM required_words) = 0)
+            AND forbidden_words.SentenceID IS NULL
             AND Stop > Start),
      forbidden_relations AS
      (SELECT SentenceID, FirstPos, LastPos

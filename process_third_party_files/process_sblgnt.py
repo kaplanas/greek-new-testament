@@ -51,8 +51,8 @@ PRETTY_BOOKS_OF_THE_BIBLE = ['Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans'
 GREEK_CAPITALS = '^[' + ''.join(set(chr(cp)
                                     for cp in range(0x0370, 0x1FFF)
                                     if "GREEK CAPITAL" in unicodedata.name(chr(cp), ""))) + ']'
-SECOND_POSITION_CLITICS = ['δέ', 'οὖν', 'γάρ', 'μέν', 'τέ']
-SON_OF_WORDS = ['υἱός', 'θυγάτηρ', 'τέκνον', 'ἀδελφός', 'ἀδελφή', 'ἀνήρ', 'γυνή', 'πατήρ', 'μήτηρ']
+SECOND_POSITION_CLITICS = ['ἄρα', 'γάρ', 'γέ', 'δέ', 'μέν', 'οὖν', 'τέ']
+SON_OF_WORDS = ['ἀδελφή', 'ἀδελφός', 'ἀνήρ', 'γυνή', 'θυγάτηρ', 'μήτηρ', 'πατήρ', 'τέκνον', 'υἱός']
 SON_OF_POS = ['noun', 'personal pronoun', 'personal pronoun with kai', 'demonstrative pronoun',
               'demonstrative pronoun with kai', 'reflexive pronoun', 'interrogative pronoun', 'relative pronoun']
 KEEP_DETERMINER_POS = ['noun', 'verb', 'adj']
@@ -68,21 +68,23 @@ KEEP_DETERMINER_LEMMAS = ['Ἀθηναῖος', 'Ἀδραμυττηνός', 'Α
 NEGATION = ['μή', 'οὐ', 'οὐδαμῶς']
 PSEUDO_PREPOSITIONS = ['ἕως']
 COPULA = ['εἰμί']
-GENERAL_CONJUNCTIONS = ['καί', 'ἤ', 'ἀλλά', 'μήτε', 'οὐδέ', 'οὔτε', 'μηδέ', 'πλήν', 'ὡς', 'ὡσεί', 'εἴτε', 'ἤπερ',
-                        'οὔπω', 'ἤτοι']
-SENTENTIAL_CONJUNCTIONS = ['ὅτι', 'ὥσπερ', 'ἵνα', 'ὥστε', 'καθώς', 'διότι', 'καθάπερ', 'εἰ', 'εἴπερ', 'ὅταν', 'ἐάν',
-                           'ὅπως', 'ὅτε', 'καθότι', 'ἐπειδή', 'μήποτε', 'νή']
-COORDINATING_CONJUNCTIONS = ['καί', 'ἤ', 'ἤτοι', 'ἀλλά']
-BURIED_CONJUNCTIONS = ['εἰ', 'ἐάν', 'ὅταν', 'ὅτε', 'μήποτε', 'ὥστε', 'νή']
-ADVERB_CONJUNCTIONS = ['καί', 'μηδέ']
-PARTITIVE_HEADS = ['εἷς', 'τις', 'οὐδείς', 'πᾶς', 'δύο', 'ἕκαστος']
-PARTITIVE_PS = ['ἐκ', 'ἀπό', 'ἐν']
-SENTENTIAL_COMPLEMENT_HEADS = ['ὁράω', 'οἶδα', 'μιμνῄσκομαι', 'γράφω', 'πιστεύω', 'συμβουλεύω', 'ἀπολογέομαι',
-                               'γνωστός', 'δῆλος', 'ἐξομολογέω', 'πρόδηλος', 'λέγω', 'ὁμολογέω', 'ἀναγινώσκω',
-                               'νομίζω', 'γινώσκω', 'δοκέω', 'ἀρνέομαι', 'ἀκούω', 'ἀποκρίνομαι', 'διαλογίζομαι',
-                               'ἐπερωτάω', 'ὀμνύω', 'θεωρέω', 'ἐπιγινώσκω', 'πείθω', 'μαρτυρέω', 'ἀναγγέλλω', 'θεάομαι',
-                               'καταλαμβάνω', 'διαμαρτύρομαι', 'διδάσκω', 'ἐπίσταμαι', 'λογίζομαι', 'πληροφορέω',
-                               'ἀγνοέω', 'προφητεύω']
+GENERAL_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤπερ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε', 'πλήν',
+                        'ὡς', 'ὡσεί']
+SENTENTIAL_CONJUNCTIONS = ['διό', 'διότι', 'ἐάν', 'εἰ', 'εἴπερ', 'ἐπεί', 'ἐπειδή', 'ἡνίκα', 'ἵνα', 'καθάπερ', 'καθότι',
+                           'καθώς', 'μήποτε', 'νή', 'ὅπως', 'ὅταν', 'ὅτε', 'ὅτι', 'ὥσπερ', 'ὥστε']
+COORDINATING_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔτε', 'πλήν']
+BURIED_CONJUNCTIONS = ['ἐάν', 'εἰ', 'ἐπεί', 'ἡνίκα', 'καθάπερ', 'καθώς', 'μήποτε', 'νή', 'ὅταν', 'ὅτε', 'ὥστε']
+ADVERB_CONJUNCTIONS = ['καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε']
+PARTITIVE_HEADS = ['δύο', 'εἷς', 'ἕκαστος', 'τις', 'οὐδείς', 'πᾶς']
+PARTITIVE_PS = ['ἀπό', 'ἐκ', 'ἐν']
+SENTENTIAL_COMPLEMENT_HEADS = ['ἀγνοέω', 'ἀκούω', 'ἀναγγέλλω', 'ἀναγινώσκω', 'ἀποκρίνομαι', 'ἀπολογέομαι', 'ἀρνέομαι',
+                               'βοάω', 'γινώσκω', 'γνωρίζω', 'γνωστός', 'γράφω', 'δείκνυμι', 'δῆλος', 'διαλογίζομαι',
+                               'διαμαρτύρομαι', 'διδάσκω', 'δοκέω', 'ἐλπίζω', 'ἐπερωτάω', 'ἐπιγινώσκω', 'ἐπίσταμαι',
+                               'ἐξομολογέω', 'θεάομαι', 'θεωρέω', 'καταλαμβάνω', 'λέγω', 'λογίζομαι', 'μαρτυρέω',
+                               'μαρτύρομαι', 'μιμνῄσκομαι', 'μνημονεύω', 'νοέω', 'νομίζω', 'οἶδα', 'οἶμαι', 'ὀμνύω',
+                               'ὁμολογέω', 'ὁράω', 'πείθω', 'πιστεύω', 'πληροφορέω', 'πρόδηλος', 'προευαγγελίζομαι',
+                               'προλέγω', 'προοράω', 'προφητεύω', 'συμβιβάζω', 'συμβουλεύω', 'συμμαρτυρέω', 'συνίημι',
+                               'ὑποδείκνυμι', 'φανερόω']
 
 
 class UncutSentence:
@@ -99,6 +101,10 @@ class UncutSentence:
             self.text = 'οἱ δὲ ἀκούσαντες καὶ ὑπὸ τῆς συνειδήσεως ἐλεγχόμενοι ἐξήρχοντο εἷς καθ’ εἷς ἀρξάμενοι ἀπὸ τῶν πρεσβυτέρων, καὶ κατελείφθη μόνος, ὁ Ἰησοῦς καὶ ἡ γυνὴ ἐν μέσῳ οὖσα.'
         elif self.citation == '1Cor.12.8':
             self.text = 'ᾧ μὲν γὰρ διὰ τοῦ πνεύματος δίδοται λόγος σοφίας, ἄλλῳ δὲ λόγος γνώσεως κατὰ τὸ αὐτὸ πνεῦμα, ἑτέρῳ πίστις ἐν τῷ αὐτῷ πνεύματι, ἄλλῳ χαρίσματα ἰαμάτων ἐν τῷ ἑνὶ πνεύματι, ἄλλῳ ἐνεργήματα δυνάμεων, ⸁ἄλλῳ προφητεία, ἄλλῳ διακρίσεις πνευμάτων, ἑτέρῳ γένη γλωσσῶν, 2ἄλλῳ ἑρμηνεία γλωσσῶν·'
+        elif self.citation == '2Cor 7:12':
+            self.text = 'ἄρα εἰ καὶ ἔγραψα ὑμῖν, οὐχ ἕνεκεν τοῦ ἀδικήσαντος, οὐδὲ ⸁ἕνεκεν τοῦ ἀδικηθέντος, ἀλλ’ ἕνεκεν τοῦ φανερωθῆναι τὴν σπουδὴν ὑμῶν τὴν ὑπὲρ ἡμῶν πρὸς ὑμᾶς ἐνώπιον τοῦ θεοῦ.'
+        elif self.text == 'τί γάρ; εἰ ἠπίστησάν τινες,':
+            self.text = 'τί γάρ εἰ ἠπίστησάν τινες,'
         self.tree = sbl_tree[2]
 
         # Initialize the list of words.
@@ -349,7 +355,8 @@ class UncutSentence:
         for word in self.words:
             if 'head_id' in word:
                 conj_head = self.nodes[word['head_id']]
-                if conj_head['lemma'] in ['καί', 'ἤ'] and ('role' not in conj_head or conj_head['role'] != 'adv'):
+                if conj_head['lemma'] in ['καί', 'ἤ', 'οὐδέ'] and \
+                        ('role' not in conj_head or conj_head['role'] != 'adv'):
                     left_conj_children = [w for w in self.words
                                           if 'head_id' in w and w['head_id'] == word['head_id'] and
                                              w['lemma'] == conj_head['lemma'] and
@@ -389,7 +396,7 @@ class UncutSentence:
         # Attach second-position clitics to the immediately preceding word.  Attach whatever was attached to the clitic
         # to the thing the clitic was attached to.
         for i, word in enumerate(self.words):
-            if word['lemma'] in SECOND_POSITION_CLITICS:
+            if word['lemma'] in SECOND_POSITION_CLITICS and i != 0:
                 for j, w in enumerate(self.words):
                     if 'head_id' in w and w['head_id'] == word['id']:
                         w['head_id'] = word['id']
@@ -580,15 +587,37 @@ class Sentence:
                     while 'parent_n' in walking_parent and not conjunction:
                         walking_parent = uncut_sentence.nodes[walking_parent['parent_n']]
                         conjunction = walking_parent['n'] == uncut_sentence.nodes[head['id']]['parent_n']
-                if conjunction and (head['pos'] == 'conj' or
-                                    head['lemma'] in GENERAL_CONJUNCTIONS + SENTENTIAL_CONJUNCTIONS) and \
-                    not (word['lemma'] == 'καί' and 'pos' in head and head['pos'] == 'adv'):
+                if word['lemma'] in SECOND_POSITION_CLITICS and word['id'] > head['id']:
+                    word['relation'] = 'second-position clitic'
+                elif conjunction and (head['pos'] == 'conj' or
+                                      head['lemma'] in GENERAL_CONJUNCTIONS + SENTENTIAL_CONJUNCTIONS) and \
+                      not (head['lemma'] in ADVERB_CONJUNCTIONS and 'pos' in head and head['pos'] == 'adv'):
                     if head['lemma'] in COORDINATING_CONJUNCTIONS:
                         word['relation'] = 'conjunct'
+                    elif head['lemma'] in SENTENTIAL_CONJUNCTIONS + ['ὡς', 'ὡσεί']:
+                        if head['lemma'] == 'ὅτι' and \
+                            ((head['head'] is not None and
+                              self.words[head['head']]['lemma'] in SENTENTIAL_COMPLEMENT_HEADS) or
+                             head['relation'] == 's'):
+                            word['relation'] = 'conjunct, ὅτι'
+                        else:
+                            right_conjuncts = [index for index, w in enumerate(self.words)
+                                               if 'head_id' in w and w['head_id'] == word['head_id'] and
+                                                  w['lemma'] not in SECOND_POSITION_CLITICS and
+                                                  (w['verse'] * 100) + w['position'] >
+                                                  (head['verse'] * 100) + head['position']]
+                            if len(right_conjuncts) > 0 and min(right_conjuncts) == i:
+                                if head['lemma'] in ['ὡς', 'ὡσεί']:
+                                    if word['pos'] == 'verb':
+                                        word['relation'] = 'conjunct, ὡς, clause'
+                                    else:
+                                        word['relation'] = 'conjunct, ὡς, non-clause'
+                                else:
+                                    word['relation'] = 'conjunct, subordinate'
+                            else:
+                                word['relation'] = 'conjunct, main'
                     else:
                         word['relation'] = 'conjunct, other'
-                elif word['lemma'] in SECOND_POSITION_CLITICS:
-                    word['relation'] = 'second-position clitic'
                 elif word['relation'] == 's':
                     if head['lemma'] in SENTENTIAL_CONJUNCTIONS:
                         word['relation'] = 'conjunction'
@@ -675,7 +704,7 @@ class Sentence:
                     elif head['pos'] == 'adj':
                         word['relation'] = 'argument of adjective, genitive'
                     elif head['lemma'] in PARTITIVE_HEADS:
-                        word['relaiton'] = 'genitive, part-whole'
+                        word['relation'] = 'genitive, part-whole'
                     else:
                         word['relation'] = 'genitive, other'
                 elif 'case' in word and word['case'] == 'dative':
@@ -761,7 +790,9 @@ class Sentence:
 
             # If the word is a conjunction, its conjuncts must be present.
             if word['lemma'] in GENERAL_CONJUNCTIONS + SENTENTIAL_CONJUNCTIONS:
-                mandatory_pairs += [(i, dep) for dep in word['deps']]
+                mandatory_pairs += [(i, dep) for dep in word['deps']
+                                    if self.words[dep]['relation'] in ['conjunct', 'conjunct, subordinate',
+                                                                       'conjunct, main']]
 
         # Initialize the licit strings with all the individual words.
         licit_strings = [(i, i) for i in range(len(self.words))]
@@ -776,7 +807,7 @@ class Sentence:
                 licit_string = True
 
                 # If the string starts with a second-position clitic, it's not licit.
-                if self.words[first_word]['lemma'] in SECOND_POSITION_CLITICS:
+                if self.words[first_word]['lemma'] in SECOND_POSITION_CLITICS and first_word > 0:
                     licit_string = False
                     # print('second-position clitic')
 

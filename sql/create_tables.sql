@@ -84,7 +84,8 @@ VALUES
 (1, 'Voice', 'active'),
 (1, 'VerbClass', 'omega'),
 (1, 'VerbClass', 'eimi'),
-(1, 'NounClass', 'first declension')
+(1, 'NounClass', 'first declension'),
+(1, 'POS', 'conjunction')
 ;
 
 CREATE TABLE students_relations (

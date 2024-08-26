@@ -756,7 +756,6 @@ Rev,6,13,5,ἀστέρες,οὐρανοῦ,location
 Rev,12,4,11,ἀστέρων,οὐρανοῦ,location
 Heb,11,12,13,ἄστρα,οὐρανοῦ,location
 Acts,7,43,11,ἄστρον,θεοῦ,other
-Luke,1,4,6,ἀσφάλειαν,λόγων,characterized by
 1Cor,12,23,15,ἀσχήμονα,ἡμῶν,body part
 1Cor,12,23,7,ἀτιμότερα,σώματος,body part
 Acts,2,19,19,ἀτμίδα,καπνοῦ,material
@@ -1590,10 +1589,6 @@ Luke,1,35,14,δύναμις,Ὑψίστου,characterized by
 2Cor,12,9,30,δύναμις,Χριστοῦ,characterized by
 Rom,9,22,13,δυνατὸν,αὐτοῦ,characterized by
 Acts,19,22,8,δύο,διακονούντων,part-whole
-Luke,19,29,18,δύο,μαθητῶν,part-whole
-Mark,11,1,18,δύο,μαθητῶν,part-whole
-Mark,14,13,5,δύο,μαθητῶν,part-whole
-Acts,10,7,12,δύο,οἰκετῶν,part-whole
 Acts,26,7,5,δωδεκάφυλον,ἡμῶν,relation
 Luke,21,1,11,δῶρα,αὐτῶν,possession
 Acts,10,45,20,δωρεὰ,πνεύματος,specification
@@ -1645,7 +1640,6 @@ Mark,5,22,5,εἷς,ἀρχισυναγώγων,part-whole
 Mark,12,28,5,εἷς,γραμματέων,part-whole
 Luke,23,39,5,Εἷς,κακούργων,part-whole
 John,12,4,8,εἷς,μαθητῶν,part-whole
-Mark,14,47,5,εἷς,παρεστηκότων,part-whole
 John,19,34,4,εἷς,στρατιωτῶν,part-whole
 John,18,22,8,εἷς,ὑπηρετῶν,part-whole
 Luke,5,19,4,εἰσενέγκωσιν,ποίας,other
@@ -5456,7 +5450,6 @@ Rev,11,6,16,προφητείας,αὐτῶν,subject
 Rev,22,7,13,προφητείας,βιβλίου,other
 Rev,22,10,11,προφητείας,βιβλίου,other
 Rev,22,18,11,προφητείας,βιβλίου,other
-Luke,9,8,13,προφήτης,ἀρχαίων,part-whole
 Luke,9,19,17,προφήτης,ἀρχαίων,part-whole
 Titus,1,12,6,προφήτης,αὐτῶν,part-whole
 Luke,1,76,6,προφήτης,Ὑψίστου,relation
@@ -6088,8 +6081,7 @@ Acts,12,4,10,τετραδίοις,στρατιωτῶν,material
 Acts,11,6,10,τετράποδα,γῆς,location
 Rev,18,22,20,τεχνίτης,τέχνης,other
 1Cor,7,19,12,τήρησις,ἐντολῶν,object
-Eph,5,27,16,τι,τοιούτων,part-whole
-Acts,4,32,16,τι,ὑπαρχόντων,part-whole
+2Cor,11,1,6,τι,ἀφροσύνης,other
 Matt,27,6,17,τιμὴ,αἵματός,other
 Acts,7,16,14,τιμῆς,ἀργυρίου,other
 Acts,5,3,26,τιμῆς,χωρίου,other
@@ -6097,40 +6089,14 @@ Rev,18,19,34,τιμιότητος,αὐτῆς,characterized by
 Heb,1,13,5,τίνα,ἀγγέλων,part-whole
 Acts,7,52,3,τίνα,προφητῶν,part-whole
 Mark,12,13,8,τινας,καὶ,part-whole
-Mark,7,2,5,τινὰς,μαθητῶν,part-whole
-1Cor,10,8,5,τινες,αὐτῶν,part-whole
-1Cor,10,9,7,τινες,αὐτῶν,part-whole
-Mark,8,3,15,τινες,αὐτῶν,part-whole
-Luke,20,39,5,τινες,γραμματέων,part-whole
-Mark,2,6,5,τινες,γραμματέων,part-whole
-Mark,7,1,10,τινες,γραμματέων,part-whole
-Matt,9,3,5,τινες,γραμματέων,part-whole
-Acts,19,13,8,τινες,ἐξορκιστῶν,part-whole
-Mark,9,1,12,τινες,ἑστηκότων,part-whole
-Mark,11,5,5,τινες,ἑστηκότων,part-whole
-Matt,16,28,9,τινες,ἑστώτων,part-whole
 Acts,6,9,11,τινες,καὶ,part-whole
 Acts,17,18,3,τινες,καὶ,part-whole
 Matt,12,38,7,τινες,καὶ,part-whole
-Matt,28,11,7,τινες,κουστωδίας,part-whole
-Acts,17,28,15,τινες,ποιητῶν,part-whole
-Luke,20,27,5,τινες,Σαδδουκαίων,part-whole
-Luke,19,39,4,τινες,Φαρισαίων,part-whole
-Acts,19,31,5,τινὲς,Ἀσιαρχῶν,part-whole
-1Cor,10,10,5,τινὲς,αὐτῶν,part-whole
-Matt,27,47,5,τινὲς,ἑστηκότων,part-whole
-Luke,6,2,4,τινὲς,Φαρισαίων,part-whole
-Acts,5,15,23,τινὶ,αὐτῶν,part-whole
 Heb,1,5,6,Τίνι,ἀγγέλων,part-whole
-Luke,14,1,11,τινος,ἀρχόντων,part-whole
 1Cor,15,37,19,τινος,λοιπῶν,part-whole
 Luke,20,33,8,τίνος,αὐτῶν,part-whole
 Mark,12,23,7,τίνος,αὐτῶν,part-whole
 Luke,14,5,6,Τίνος,ὑμῶν,part-whole
-Luke,11,1,16,τις,μαθητῶν,part-whole
-Luke,11,45,5,τις,νομικῶν,part-whole
-Jas,1,5,4,τις,ὑμῶν,part-whole
-Luke,7,36,6,τις,Φαρισαίων,part-whole
 1Cor,2,11,4,τίς,ἀνθρώπων,part-whole
 Acts,19,35,13,τίς,ἀνθρώπων,part-whole
 Luke,7,42,9,τίς,αὐτῶν,part-whole
