@@ -158,16 +158,17 @@ WITH word_status AS
       FROM words
       GROUP BY SentenceID)
 SELECT Citation, String
-FROM filtered_strings
-     JOIN longest_strings_left
-     ON filtered_strings.SentenceID = longest_strings_left.SentenceID
-        AND filtered_strings.Start = longest_strings_left.Start
-        AND filtered_strings.Stop = longest_strings_left.LastStop
-     JOIN longest_strings_right
-     ON filtered_strings.SentenceID = longest_strings_right.SentenceID
-        AND filtered_strings.Start = longest_strings_right.FirstStart
-        AND filtered_strings.Stop = longest_strings_right.Stop
+FROM (SELECT DISTINCT filtered_strings.SentenceID, Citation, String
+      FROM filtered_strings
+           JOIN longest_strings_left
+           ON filtered_strings.SentenceID = longest_strings_left.SentenceID
+              AND filtered_strings.Start = longest_strings_left.Start
+              AND filtered_strings.Stop = longest_strings_left.LastStop
+           JOIN longest_strings_right
+           ON filtered_strings.SentenceID = longest_strings_right.SentenceID
+              AND filtered_strings.Start = longest_strings_right.FirstStart
+              AND filtered_strings.Stop = longest_strings_right.Stop) final_strings
      JOIN book_chapter_verse
-     ON filtered_strings.SentenceID = book_chapter_verse.SentenceID
+     ON final_strings.SentenceID = book_chapter_verse.SentenceID
 ORDER BY book_chapter_verse.Book, book_chapter_verse.FirstChapter,
          book_chapter_verse.FirstVerse, book_chapter_verse.FirstPosition;

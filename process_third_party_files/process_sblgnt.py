@@ -65,15 +65,15 @@ KEEP_DETERMINER_LEMMAS = ['Ἀθηναῖος', 'Ἀδραμυττηνός', 'Α
                           'Μῆδος', 'Ναζαρηνός', 'Ναζωραῖος', 'Νινευίτης', 'Πάρθος', 'Ποντικός', 'Ῥωμαῖος',
                           'Σαδδουκαῖος', 'Σαμαρίτης', 'Σαμαρῖτις', 'Σεβαστός', 'Σιδώνιος', 'Σύρος', 'Συροφοινίκισσα',
                           'Τύριος', 'Φαρισαῖος', 'Φιλιππήσιος', 'Χαλδαῖος', 'Χαναναῖος', 'Χριστιανός', 'Ὦ']
-NEGATION = ['μή', 'οὐ', 'οὐδαμῶς']
-PSEUDO_PREPOSITIONS = ['ἕως']
+NEGATION = ['μή', 'οὐ']
+EXTENDED_NEGATION = ['οὐδαμῶς', 'οὐκέτι']
 COPULA = ['εἰμί']
 GENERAL_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤπερ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε', 'πλήν',
                         'ὡς', 'ὡσεί']
-SENTENTIAL_CONJUNCTIONS = ['διό', 'διότι', 'ἐάν', 'εἰ', 'εἴπερ', 'ἐπεί', 'ἐπειδή', 'ἡνίκα', 'ἵνα', 'καθάπερ', 'καθότι',
-                           'καθώς', 'μήποτε', 'νή', 'ὅπως', 'ὅταν', 'ὅτε', 'ὅτι', 'ὥσπερ', 'ὥστε']
+SENTENTIAL_CONJUNCTIONS = ['διό', 'διότι', 'ἐάν', 'εἰ', 'εἴπερ', 'ἐπεί', 'ἐπειδή', 'ἕως', 'ἡνίκα', 'ἵνα', 'καθάπερ',
+                           'καθότι', 'καθώς', 'μήποτε', 'νή', 'ὅπως', 'ὅταν', 'ὅτε', 'ὅτι', 'ὥσπερ', 'ὥστε']
 COORDINATING_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔτε', 'πλήν']
-BURIED_CONJUNCTIONS = ['ἐάν', 'εἰ', 'ἐπεί', 'ἡνίκα', 'καθάπερ', 'καθώς', 'μήποτε', 'νή', 'ὅταν', 'ὅτε', 'ὥστε']
+BURIED_CONJUNCTIONS = ['ἐάν', 'εἰ', 'ἐπεί', 'ἕως', 'ἡνίκα', 'καθάπερ', 'καθώς', 'μήποτε', 'νή', 'ὅταν', 'ὅτε', 'ὥστε']
 ADVERB_CONJUNCTIONS = ['καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε']
 PARTITIVE_HEADS = ['δύο', 'εἷς', 'ἕκαστος', 'τις', 'οὐδείς', 'πᾶς']
 PARTITIVE_PS = ['ἀπό', 'ἐκ', 'ἐν']
@@ -762,7 +762,7 @@ class Sentence:
         for i, word in enumerate(self.words):
 
             # If the word is a negation, its head requires its presence.
-            if word['lemma'] in NEGATION and word['head'] is not None:
+            if word['lemma'] in NEGATION + EXTENDED_NEGATION and word['head'] is not None:
                 mandatory_pairs += [(word['head'], i)]
 
             # If the word is a determiner, its head must be present.
@@ -781,7 +781,7 @@ class Sentence:
                 mandatory_pairs += [(i, dep) for dep in word['deps'] if self.words[dep]['pos'] in SON_OF_POS]
 
             # If the word is a preposition, its argument must be present.
-            if word['pos'] == 'prep' or word['lemma'] in PSEUDO_PREPOSITIONS:
+            if word['pos'] == 'prep':
                 mandatory_pairs += [(i, dep) for dep in word['deps']]
 
             # If the word is copula-like and has a predicate, its predicate must be present.
@@ -791,8 +791,7 @@ class Sentence:
             # If the word is a conjunction, its conjuncts must be present.
             if word['lemma'] in GENERAL_CONJUNCTIONS + SENTENTIAL_CONJUNCTIONS:
                 mandatory_pairs += [(i, dep) for dep in word['deps']
-                                    if self.words[dep]['relation'] in ['conjunct', 'conjunct, subordinate',
-                                                                       'conjunct, main']]
+                                    if self.words[dep]['relation'].startswith('conjunct')]
 
         # Initialize the licit strings with all the individual words.
         licit_strings = [(i, i) for i in range(len(self.words))]

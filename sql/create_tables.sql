@@ -85,7 +85,7 @@ VALUES
 (1, 'VerbClass', 'omega'),
 (1, 'VerbClass', 'eimi'),
 (1, 'NounClass', 'first declension'),
-(1, 'POS', 'conjunction')
+(1, 'POS', 'conj')
 ;
 
 CREATE TABLE students_relations (
@@ -144,5 +144,8 @@ VALUES
 (1, 'accusative, manner'),
 (1, 'accusative, cognate of verb'),
 (1, 'accusative, other'),
-(1, 'interjection, vocative')
+(1, 'interjection, vocative'),
+(1, 'conjunct'),
+(1, 'conjunct, chain'),
+(1, 'conjunct, μέν δέ')
 ;

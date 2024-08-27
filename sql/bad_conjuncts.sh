@@ -37,6 +37,21 @@ echo "WITH mixed_types AS
                    'conjunct, ὡς, other')
             GROUP BY SentenceID, HeadPos, Relation
             HAVING COUNT(*) > 1),
+           no_deps AS
+           (SELECT words.SentenceID, SentencePosition AS DependentPos
+            FROM gnt.words
+                 LEFT JOIN gnt.relations
+                 ON words.SentenceID = relations.SentenceID
+                    AND words.SentencePosition = relations.HeadPos
+                    AND relations.Relation LIKE '%conjunct%'
+                 LEFT JOIN gnt.relations spc
+                 ON words.SentenceID = spc.SentenceID
+                    AND words.SentencePosition = spc.DependentPos
+                    AND spc.Relation = 'second-position clitic'
+            WHERE words.POS = 'conj'
+                  AND words.Relation <> 'adv'
+                  AND relations.SentenceID IS NULL
+                  AND spc.SentenceID IS NULL),
            all_heads AS
            (SELECT SentenceID, HeadPos
             FROM mixed_types
@@ -52,7 +67,10 @@ echo "WITH mixed_types AS
             FROM gnt.relations
             WHERE (SentenceID, HeadPos) IN
                   (SELECT SentenceID, HeadPos
-                   FROM all_heads)),
+                   FROM all_heads)
+                  OR (SentenceID, DependentPos) IN
+                     (SELECT SentenceID, DependentPos
+                      FROM no_deps)),
            shortest_strings AS
            (SELECT relations_to_check.SentenceID, relations_to_check.HeadPos,
                    relations_to_check.DependentPos,
