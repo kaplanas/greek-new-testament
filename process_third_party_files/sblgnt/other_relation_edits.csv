@@ -81,6 +81,7 @@ Matt,12,7,8,direct object
 Matt,12,16,7,subject of small clause
 Matt,12,17,9,"nominal modifier, participle"
 Matt,12,18,3,sentential complement
+Matt,12,28,10,"conjunct, main"
 Matt,12,33,4,subject of small clause
 Matt,12,33,8,subject of small clause
 Matt,12,33,14,subject of small clause
@@ -137,6 +138,7 @@ Matt,17,15,4,"conjunct, main"
 Matt,17,15,10,"conjunct, subordinate"
 Matt,17,20,17,"conjunct, ὡς, clause"
 Matt,17,20,19,conjunct
+Matt,17,26,10,sentential complement
 Matt,18,4,7,"conjunct, ὡς, clause"
 Matt,18,8,35,"conjunct, ἤ"
 Matt,18,9,26,"conjunct, ἤ"
@@ -501,6 +503,7 @@ Luke,10,38,15,appositive
 Luke,10,40,11,"interjection, vocative"
 Luke,10,42,1,conjunct
 Luke,11,1,20,"interjection, vocative"
+Luke,11,20,9,"conjunct, main"
 Luke,11,27,17,sentential complement
 Luke,11,28,5,sentential complement
 Luke,11,36,17,"conjunct, ὡς, clause"
@@ -960,6 +963,7 @@ Acts,11,8,10,"conjunct, subordinate"
 Acts,11,16,8,"conjunct, ὡς, other"
 Acts,11,17,12,"conjunct, ὡς, clause"
 Acts,11,17,22,"nominal modifier, adjective"
+Acts,11,18,10,sentential complement
 Acts,11,28,7,appositive
 Acts,12,13,12,appositive
 Acts,13,2,23,direct object
@@ -1421,6 +1425,7 @@ Rom,16,18,13,conjunct
 2Cor,5,13,4,"conjunct, main"
 2Cor,5,13,5,"conjunct, chain"
 2Cor,5,13,7,"conjunct, main"
+2Cor,5,14,15,"conjunct, ὅτι"
 2Cor,5,19,2,"conjunct, ὡς, clause"
 2Cor,6,9,2,"conjunct, ὡς, non-clause"
 2Cor,6,9,6,"conjunct, ὡς, non-clause"
@@ -1516,9 +1521,11 @@ Gal,2,10,8,"verbal modifier, relative clause"
 Gal,2,10,9,"nominal modifier, adjective"
 Gal,2,16,37,"conjunct, subordinate"
 Gal,2,18,9,subject of small clause
+Gal,2,21,12,"conjunct, main"
 Gal,3,11,16,"conjunct, subordinate"
 Gal,3,13,15,sentential complement
 Gal,3,15,8,direct object
+Gal,3,29,5,"conjunct, main"
 Gal,3,29,12,appositive
 Gal,4,6,18,sentential complement
 Gal,4,12,5,gap
@@ -1825,6 +1832,7 @@ Heb,11,27,14,"conjunct, ὡς, non-clause"
 Heb,12,2,9,appositive
 Heb,12,5,8,"conjunct, ὡς, clause"
 Heb,12,7,5,"conjunct, ὡς, clause"
+Heb,12,8,10,"conjunct, main"
 Heb,12,10,12,gap
 Heb,12,15,3,subject of verbless predicate
 Heb,12,16,4,"conjunct, chain"

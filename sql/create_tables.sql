@@ -147,5 +147,6 @@ VALUES
 (1, 'interjection, vocative'),
 (1, 'conjunct'),
 (1, 'conjunct, chain'),
-(1, 'conjunct, μέν δέ')
+(1, 'conjunct, μέν δέ'),
+(1, 'second-position clitic')
 ;
