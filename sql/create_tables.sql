@@ -85,7 +85,8 @@ VALUES
 (1, 'VerbClass', 'omega'),
 (1, 'VerbClass', 'eimi'),
 (1, 'NounClass', 'first declension'),
-(1, 'POS', 'conj')
+(1, 'POS', 'conj'),
+(1, 'POS', 'negation')
 ;
 
 CREATE TABLE students_relations (
@@ -148,5 +149,9 @@ VALUES
 (1, 'conjunct'),
 (1, 'conjunct, chain'),
 (1, 'conjunct, μέν δέ'),
-(1, 'second-position clitic')
+(1, 'second-position clitic'),
+(1, 'negation of verb'),
+(1, 'negation of verb, semantically embedded'),
+(1, 'negation, double'),
+(1, 'negation, other')
 ;

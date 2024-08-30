@@ -650,6 +650,15 @@ class Sentence:
                     word['relation'] = 'particle'
                 elif word['pos'] == 'det':
                     word['relation'] = 'determiner'
+                elif word['lemma'] in NEGATION:
+                    if head['pos'] == 'verb' and head['mood'] != 'participle':
+                        word['relation'] = 'negation of verb'
+                    elif head['lemma'] in NEGATION:
+                        word['relation'] = 'negation, double'
+                    elif head['head'] is not None and self.words[head['head']]['lemma'] in ['εἰ', 'ἐάν']:
+                        word['relation'] = 'negation, εἰ μὴ'
+                    else:
+                        word['relation'] = 'negation, other'
                 elif word['relation'] == 'p':
                     if 'case' in word and word_features['case'] == 'nominative':
                         word['relation'] = 'predicate, nominative'
@@ -761,9 +770,9 @@ class Sentence:
         # Iterate over words, looking for words that require some other word to be present.
         for i, word in enumerate(self.words):
 
-            # If the word is a negation, its head requires its presence.
+            # If the word is a negation, its head requires its presence (and it requires its head).
             if word['lemma'] in NEGATION + EXTENDED_NEGATION and word['head'] is not None:
-                mandatory_pairs += [(word['head'], i)]
+                mandatory_pairs += [(word['head'], i), (i, word['head'])]
 
             # If the word is a determiner, its head must be present.
             if word['pos'] == 'det' and word['head'] is not None:
@@ -792,6 +801,10 @@ class Sentence:
             if word['lemma'] in GENERAL_CONJUNCTIONS + SENTENTIAL_CONJUNCTIONS:
                 mandatory_pairs += [(i, dep) for dep in word['deps']
                                     if self.words[dep]['relation'].startswith('conjunct')]
+
+            # If the μὴ is part of εἰ μὴ, include the εἰ.
+            if word['relation'] == 'negation, εἰ μὴ':
+                mandatory_pairs += [(i, self.words[word['head']]['head'])]
 
         # Initialize the licit strings with all the individual words.
         licit_strings = [(i, i) for i in range(len(self.words))]
