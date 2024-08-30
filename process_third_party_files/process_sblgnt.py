@@ -85,6 +85,7 @@ SENTENTIAL_COMPLEMENT_HEADS = ['ἀγνοέω', 'ἀκούω', 'ἀναγγέλ�
                                'ὁμολογέω', 'ὁράω', 'πείθω', 'πιστεύω', 'πληροφορέω', 'πρόδηλος', 'προευαγγελίζομαι',
                                'προλέγω', 'προοράω', 'προφητεύω', 'συμβιβάζω', 'συμβουλεύω', 'συμμαρτυρέω', 'συνίημι',
                                'ὑποδείκνυμι', 'φανερόω']
+THIRD_DECLENSION_NOUNS = ['γόης', 'ἐπιστάτης', 'Κλήμης']
 
 
 class UncutSentence:
@@ -303,7 +304,8 @@ class UncutSentence:
                     elif word_dict['lemma'].endswith('η') or word_dict['lemma'].endswith('ή') or \
                             word_dict['lemma'].endswith('α') or word_dict['lemma'].endswith('ά'):
                         word_dict['noun_class'] = 'first declension'
-                    elif word_dict['lemma'].endswith('ης'):
+                    elif word_dict['lemma'].endswith('ης') and word_dict['gender'] == 'masculine' and \
+                            word_dict['lemma'] not in THIRD_DECLENSION_NOUNS:
                         word_dict['noun_class'] = 'second declension with hs'
                     else:
                         word_dict['noun_class'] = 'third declension'

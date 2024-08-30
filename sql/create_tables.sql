@@ -86,7 +86,9 @@ VALUES
 (1, 'VerbClass', 'eimi'),
 (1, 'NounClass', 'first declension'),
 (1, 'POS', 'conj'),
-(1, 'POS', 'negation')
+(1, 'POS', 'negation'),
+(1, 'VerbClass', 'contract'),
+(1, 'NounClass', 'second declension with hs')
 ;
 
 CREATE TABLE students_relations (
