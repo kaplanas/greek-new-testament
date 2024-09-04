@@ -66,7 +66,7 @@ KEEP_DETERMINER_LEMMAS = ['Ἀθηναῖος', 'Ἀδραμυττηνός', 'Α
                           'Σαδδουκαῖος', 'Σαμαρίτης', 'Σαμαρῖτις', 'Σεβαστός', 'Σιδώνιος', 'Σύρος', 'Συροφοινίκισσα',
                           'Τύριος', 'Φαρισαῖος', 'Φιλιππήσιος', 'Χαλδαῖος', 'Χαναναῖος', 'Χριστιανός', 'Ὦ']
 NEGATION = ['μή', 'οὐ']
-EXTENDED_NEGATION = ['οὐδαμῶς', 'οὐκέτι']
+EXTENDED_NEGATION = ['οὐδαμῶς', 'οὐδέ', 'οὐκέτι']
 COPULA = ['εἰμί']
 GENERAL_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤπερ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε', 'πλήν',
                         'ὡς', 'ὡσεί']
@@ -85,7 +85,11 @@ SENTENTIAL_COMPLEMENT_HEADS = ['ἀγνοέω', 'ἀκούω', 'ἀναγγέλ�
                                'ὁμολογέω', 'ὁράω', 'πείθω', 'πιστεύω', 'πληροφορέω', 'πρόδηλος', 'προευαγγελίζομαι',
                                'προλέγω', 'προοράω', 'προφητεύω', 'συμβιβάζω', 'συμβουλεύω', 'συμμαρτυρέω', 'συνίημι',
                                'ὑποδείκνυμι', 'φανερόω']
-THIRD_DECLENSION_NOUNS = ['γόης', 'ἐπιστάτης', 'Κλήμης']
+THIRD_DECLENSION_NOUNS = ['γάλα', 'γόης', 'γυνή', 'ἐπιστάτης', 'Κλήμης']
+IRREGULAR_NOUNS = ['αββα', 'Ἀβιά', 'Ἄλφα', 'Βηθσαϊδά', 'Βηθφαγή', 'Γαββαθα', 'Δαλμανουθά', 'δεῖνα', 'Ζάρα', 'Θάρα',
+                   'Ἰωδά', 'Κανά', 'Καῦδα', 'Μαθουσαλά', 'μάννα', 'μαράνα', 'Ματταθά', 'Μελεά', 'Μεννά', 'Μύρα',
+                   'Ναζαρά', 'πάσχα', 'Πάταρα', 'ῥακά', 'Ῥαμά', 'Ῥησά', 'Σαλά', 'Σαλά', 'Συροφοινίκισσα', 'Ταβιθά',
+                   'ταλιθα']
 
 
 class UncutSentence:
@@ -292,7 +296,11 @@ class UncutSentence:
 
                 # Set noun class.
                 if word_dict['pos'] == 'noun':
-                    if word_dict['lemma'] == 'Ἰησοῦς':
+                    if word_dict['lemma'] in IRREGULAR_NOUNS:
+                        word_dict['noun_class'] = 'irregular'
+                    elif word_dict['lemma'] in THIRD_DECLENSION_NOUNS:
+                        word_dict['noun_class'] = 'third declension'
+                    elif word_dict['lemma'] == 'Ἰησοῦς':
                         word_dict['noun_class'] = 'Ihsous'
                     elif word_dict['lemma'].endswith('μα'):
                         word_dict['noun_class'] = 'third declension'
@@ -304,8 +312,7 @@ class UncutSentence:
                     elif word_dict['lemma'].endswith('η') or word_dict['lemma'].endswith('ή') or \
                             word_dict['lemma'].endswith('α') or word_dict['lemma'].endswith('ά'):
                         word_dict['noun_class'] = 'first declension'
-                    elif word_dict['lemma'].endswith('ης') and word_dict['gender'] == 'masculine' and \
-                            word_dict['lemma'] not in THIRD_DECLENSION_NOUNS:
+                    elif word_dict['lemma'].endswith('ης') and word_dict['gender'] == 'masculine':
                         word_dict['noun_class'] = 'second declension with hs'
                     else:
                         word_dict['noun_class'] = 'third declension'
@@ -651,7 +658,33 @@ class Sentence:
                 elif word['pos'] == 'ptcl':
                     word['relation'] = 'particle'
                 elif word['pos'] == 'det':
-                    word['relation'] = 'determiner'
+                    if head['pos'] == 'verb' and head['mood'] == 'infinitive':
+                        word['relation'] = 'determiner of infinitive'
+                    elif head['pos'] == 'verb' and \
+                            head['mood'] in ['indicative', 'imperative', 'subjunctive', 'optative']:
+                        word['relation'] = 'determiner, other'
+                    elif 'gender' not in head or head['gender'] != word['gender'] or \
+                            'number' not in head or head['number'] != word['number'] or \
+                            'case' not in head or head['case'] != word['case']:
+                        if word['gender'] == 'neuter' and word['number'] == 'plural':
+                            word['relation'] = 'determiner, things of'
+                        elif head['pos'] == 'num':
+                            word['relation'] = 'determiner of adjective'
+                        else:
+                            word['relation'] = 'determiner of headless phrase'
+                    elif head['pos'] == 'noun':
+                        if bool(re.match(GREEK_CAPITALS, head['lemma'])) and head['lemma'] != 'Χριστός':
+                            word['relation'] = 'determiner of name'
+                        else:
+                            word['relation'] = 'determiner of noun'
+                    elif head['pos'] in ['adj', 'num']:
+                        word['relation'] = 'determiner of adjective'
+                    elif head['pos'] == 'verb' and head['mood'] == 'participle':
+                        word['relation'] = 'determiner of participle'
+                    elif head['pos'] == 'demonstrative pronoun':
+                        word['relation'] = 'determiner of demonstrative'
+                    else:
+                        word['relation'] = 'determiner, other'
                 elif word['lemma'] in NEGATION:
                     if head['pos'] == 'verb' and head['mood'] != 'participle':
                         word['relation'] = 'negation of verb'

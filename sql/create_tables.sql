@@ -88,7 +88,8 @@ VALUES
 (1, 'POS', 'conj'),
 (1, 'POS', 'negation'),
 (1, 'VerbClass', 'contract'),
-(1, 'NounClass', 'second declension with hs')
+(1, 'NounClass', 'second declension with hs'),
+(1, 'POS', 'det')
 ;
 
 CREATE TABLE students_relations (
@@ -155,5 +156,9 @@ VALUES
 (1, 'negation of verb'),
 (1, 'negation of verb, semantically embedded'),
 (1, 'negation, double'),
-(1, 'negation, other')
+(1, 'negation, other'),
+(1, 'determiner of noun'),
+(1, 'determiner of name'),
+(1, 'determiner, things of'),
+(1, 'determiner of headless phrase')
 ;
