@@ -4,7 +4,9 @@ WITH word_status AS
              other_pos.FeatureValue AS OtherPOSFeatureValue,
              other_pos.Required AS OtherPOSRequired,
              nouns.FeatureValue AS NounFeatureValue,
-             nouns.Required AS NounRequired,
+             nouns.Required AS NounRequired, words.Degree,
+             adjectives.FeatureValue AS AdjectiveFeatureValue,
+             adjectives.Required AS AdjectiveRequired,
              tense_mood.FeatureValue AS TenseMoodFeatureValue,
              tense_mood.Required AS TenseMoodRequired,
              voice.FeatureValue AS VoiceFeatureValue,
@@ -25,6 +27,11 @@ WITH word_status AS
            LEFT JOIN (SELECT FeatureValue, Required
                       FROM students_words
                       WHERE StudentID = 1
+                            AND Feature = 'Degree') adjectives
+           ON words.Degree = adjectives.FeatureValue
+           LEFT JOIN (SELECT FeatureValue, Required
+                      FROM students_words
+                      WHERE StudentID = 1
                             AND Feature = 'TenseMood') tense_mood
            ON CONCAT(words.Tense, '-', words.Mood) = tense_mood.FeatureValue
            LEFT JOIN (SELECT FeatureValue, Required
@@ -40,8 +47,12 @@ WITH word_status AS
      forbidden_words AS
      (SELECT SentenceID, SentencePosition
       FROM word_status
-      WHERE OtherPOSFeatureValue IS NULL
-            AND (POS <> 'noun' OR NounFeatureValue IS NULL)
+      WHERE (OtherPOSFeatureValue IS NULL
+             OR (OtherPOSFeatureValue IN ('noun', 'adj')
+                 AND NounFeatureValue IS NULL)
+             OR (OtherPOSFeatureValue = 'adj'
+                 AND Degree IS NOT NULL
+                 AND AdjectiveFeatureValue IS NULL))
             AND (POS <> 'verb' OR
                  TenseMoodFeatureValue IS NULL
                  OR VoiceFeatureValue IS NULL

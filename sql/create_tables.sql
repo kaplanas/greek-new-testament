@@ -15,6 +15,7 @@ CREATE TABLE words (
   Tense varchar(20),
   Voice varchar(20),
   Mood varchar(20),
+  Degree varchar(20),
   NounClass varchar(50),
   VerbClass varchar(20),
   PRIMARY KEY(Book, Chapter, Verse, VersePosition),
@@ -78,6 +79,7 @@ INSERT INTO students_words
 (StudentID, Feature, FeatureValue)
 VALUES
 (1, 'POS', 'personal pronoun'),
+(1, 'POS', 'noun'),
 (1, 'NounClass', 'second declension'),
 (1, 'NounClass', 'Ihsous'),
 (1, 'TenseMood', 'present-indicative'),
@@ -86,10 +88,13 @@ VALUES
 (1, 'VerbClass', 'eimi'),
 (1, 'NounClass', 'first declension'),
 (1, 'POS', 'conj'),
+(1, 'POS', 'personal pronoun with kai'),
 (1, 'POS', 'negation'),
 (1, 'VerbClass', 'contract'),
 (1, 'NounClass', 'second declension with hs'),
-(1, 'POS', 'det')
+(1, 'POS', 'det'),
+(1, 'POS', 'adj'),
+(1, 'NounClass', 'first/second declension')
 ;
 
 CREATE TABLE students_relations (
@@ -148,6 +153,7 @@ VALUES
 (1, 'accusative, manner'),
 (1, 'accusative, cognate of verb'),
 (1, 'accusative, other'),
+(1, 'predicate, accusative'),
 (1, 'interjection, vocative'),
 (1, 'conjunct'),
 (1, 'conjunct, chain'),
@@ -160,5 +166,12 @@ VALUES
 (1, 'determiner of noun'),
 (1, 'determiner of name'),
 (1, 'determiner, things of'),
-(1, 'determiner of headless phrase')
+(1, 'determiner of headless phrase'),
+(1, 'modifier of nominal, adjective'),
+(1, 'modifier of nominal, adjective, irregular agreement'),
+(1, 'modifier of headless phrase, adjective'),
+(1, 'determiner of adjective'),
+(1, 'argument of adjective'),
+(1, 'argument of adjective, genitive'),
+(1, 'argument of adjective, dative')
 ;

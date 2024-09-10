@@ -748,6 +748,7 @@ Matt,8,17,13,ἀσθενείας,ἡμῶν,subject
 1Tim,5,23,13,ἀσθενείας,σου,subject
 Luke,13,12,14,ἀσθενείας,σου,subject
 Luke,5,15,18,ἀσθενειῶν,αὐτῶν,subject
+1Cor,1,25,14,ἀσθενὲς,θεοῦ,other
 1Cor,1,27,17,ἀσθενῆ,κόσμου,location
 Rom,15,1,9,ἀσθενήματα,ἀδυνάτων,subject
 Luke,1,41,8,ἀσπασμὸν,Μαρίας,subject
@@ -788,6 +789,7 @@ Eph,1,7,13,ἄφεσιν,παραπτωμάτων,object
 Acts,13,38,12,ἄφεσις,ἁμαρτιῶν,object
 Heb,10,18,4,ἄφεσις,τούτων,object
 Eph,4,16,13,ἁφῆς,ἐπιχορηγίας,other
+1Pet,3,4,14,ἀφθάρτῳ,πνεύματος,other
 Acts,20,29,8,ἄφιξίν,μου,subject
 2Cor,5,12,10,ἀφορμὴν,καυχήματος,other
 Rev,2,24,21,βαθέα,Σατανᾶ,other
@@ -1063,6 +1065,7 @@ Acts,8,27,19,γάζης,αὐτῆς,possession
 Matt,4,15,13,Γαλιλαία,ἐθνῶν,other
 Rev,19,7,14,γάμος,ἀρνίου,subject
 Rev,19,9,13,γάμου,ἀρνίου,possession
+Matt,25,6,1,γέγονεν,μέσης,time
 Matt,5,22,39,γέενναν,πυρός,material
 Matt,18,9,31,γέενναν,πυρός,material
 Jas,4,9,8,γέλως,ὑμῶν,subject
@@ -1636,31 +1639,11 @@ Rev,13,15,16,εἰκὼν,θηρίου,other
 Acts,4,25,8,εἰπών,στόματος,other
 Phil,4,7,5,εἰρήνη,θεοῦ,other
 Col,3,15,5,εἰρήνη,Χριστοῦ,other
-Mark,5,22,5,εἷς,ἀρχισυναγώγων,part-whole
-Mark,12,28,5,εἷς,γραμματέων,part-whole
-Luke,23,39,5,Εἷς,κακούργων,part-whole
-John,12,4,8,εἷς,μαθητῶν,part-whole
-John,19,34,4,εἷς,στρατιωτῶν,part-whole
 John,18,22,8,εἷς,ὑπηρετῶν,part-whole
 Luke,5,19,4,εἰσενέγκωσιν,ποίας,other
 Luke,7,45,8,εἰσῆλθον,ἧς,time
 1Thess,2,1,7,εἴσοδον,ἡμῶν,subject
 Acts,13,24,7,εἰσόδου,αὐτοῦ,subject
-1Cor,12,18,10,ἕκαστον,αὐτῶν,part-whole
-Heb,11,21,6,ἕκαστον,υἱῶν,part-whole
-1Thess,4,4,3,ἕκαστον,ὑμῶν,part-whole
-Heb,6,11,4,ἕκαστον,ὑμῶν,part-whole
-Acts,11,29,9,ἕκαστος,αὐτῶν,part-whole
-Rom,14,12,3,ἕκαστος,ἡμῶν,part-whole
-Rom,15,2,2,ἕκαστος,ἡμῶν,part-whole
-Rev,21,21,11,ἕκαστος,πυλώνων,part-whole
-1Cor,1,12,6,ἕκαστος,ὑμῶν,part-whole
-1Cor,16,2,5,ἕκαστος,ὑμῶν,part-whole
-Acts,2,38,9,ἕκαστος,ὑμῶν,part-whole
-Luke,13,15,10,ἕκαστος,ὑμῶν,part-whole
-Acts,21,26,30,ἑκάστου,αὐτῶν,part-whole
-Acts,17,27,18,ἑκάστου,ἡμῶν,part-whole
-1Cor,15,38,12,ἑκάστῳ,σπερμάτων,part-whole
 Acts,27,1,21,ἑκατοντάρχῃ,σπείρης,relation
 Heb,13,7,17,ἔκβασιν,ἀναστροφῆς,subject
 Luke,18,8,7,ἐκδίκησιν,αὐτῶν,object
@@ -1751,17 +1734,6 @@ Rev,18,3,26,ἔμποροι,γῆς,location
 Rev,18,11,5,ἔμποροι,γῆς,location
 Rev,18,15,3,ἔμποροι,τούτων,object
 Rev,18,23,24,ἔμποροί,σου,part-whole
-Matt,5,29,23,ἓν,μελῶν,part-whole
-Matt,5,30,22,ἓν,μελῶν,part-whole
-Matt,18,14,16,ἓν,μικρῶν,part-whole
-Mark,9,37,6,ἓν,παιδίων,part-whole
-Luke,12,27,23,ἓν,τούτων,part-whole
-Matt,6,29,15,ἓν,τούτων,part-whole
-Luke,17,2,20,ἕνα,μικρῶν,part-whole
-Mark,9,42,7,ἕνα,μικρῶν,part-whole
-Matt,10,42,7,ἕνα,μικρῶν,part-whole
-Matt,18,6,7,ἕνα,μικρῶν,part-whole
-Matt,18,28,9,ἕνα,συνδούλων,part-whole
 2Thess,1,5,4,ἔνδειγμα,κρίσεως,object
 Rom,3,25,15,ἔνδειξιν,δικαιοσύνης,object
 Rom,3,26,10,ἔνδειξιν,δικαιοσύνης,object
@@ -1787,8 +1759,6 @@ Matt,9,4,7,ἐνθυμήσεις,αὐτῶν,subject
 Matt,12,25,5,ἐνθυμήσεις,αὐτῶν,subject
 Luke,4,19,3,ἐνιαυτὸν,κυρίου,other
 1Cor,9,21,11,ἔννομος,Χριστοῦ,relation
-Matt,18,10,6,ἑνὸς,μικρῶν,part-whole
-2Thess,1,3,24,ἑνὸς,ὑμῶν,part-whole
 Eph,4,13,10,ἑνότητα,καὶ,other
 Eph,4,3,6,ἑνότητα,πνεύματος,other
 Mark,7,7,8,ἐντάλματα,ἀνθρώπων,subject
@@ -2034,6 +2004,7 @@ Matt,12,45,21,ἔσχατα,ἀνθρώπου,other
 1Cor,15,8,3,ἔσχατον,πάντων,part-whole
 Mark,12,22,8,ἔσχατον,πάντων,part-whole
 Mark,9,35,15,ἔσχατος,πάντων,part-whole
+Acts,1,8,28,ἐσχάτου,γῆς,part-whole
 Acts,13,47,20,ἐσχάτου,γῆς,part-whole
 Heb,1,2,4,ἐσχάτου,ἡμερῶν,part-whole
 1Pet,1,20,11,ἐσχάτου,χρόνων,part-whole
@@ -2677,6 +2648,7 @@ Matt,12,50,14,καὶ,μου,relation
 Phil,1,20,6,καὶ,μου,subject
 Phil,2,25,11,καὶ,μου,relation
 John,6,42,10,καὶ,οὗ,relation
+Acts,7,52,18,καὶ,οὗ,object
 Heb,12,2,5,καὶ,πίστεως,object
 Phil,2,17,11,καὶ,πίστεως,material
 Acts,4,32,3,καὶ,πλήθους,body part
@@ -3755,6 +3727,7 @@ Heb,8,6,10,μεσίτης,διαθήκης,other
 Heb,9,15,4,μεσίτης,διαθήκης,other
 1Tim,2,5,8,μεσίτης,καὶ,other
 Phil,2,15,10,μέσον,γενεᾶς,location
+1Cor,6,5,18,μέσον,ἀδελφοῦ,other
 Rev,7,17,8,μέσον,θρόνου,location
 Luke,17,11,14,μέσον,καὶ,location
 Acts,27,27,14,μέσον,νυκτὸς,part-whole
@@ -3790,6 +3763,7 @@ Matt,10,16,9,μέσῳ,λύκων,location
 Rev,1,13,5,μέσῳ,λυχνιῶν,location
 Rev,2,1,25,μέσῳ,λυχνιῶν,location
 Acts,17,22,8,μέσῳ,Πάγου,location
+Rev,22,2,4,μέσῳ,πλατείας,location
 Rev,5,6,15,μέσῳ,πρεσβυτέρων,location
 1Thess,2,7,13,μέσῳ,ὑμῶν,location
 Acts,2,22,30,μέσῳ,ὑμῶν,location
@@ -3872,8 +3846,6 @@ Luke,1,15,22,μητρὸς,αὐτοῦ,relation
 Matt,1,18,12,μητρὸς,αὐτοῦ,relation
 Matt,2,11,13,μητρὸς,αὐτοῦ,relation
 Acts,12,12,11,μητρὸς,Ἰωάννου,relation
-Mark,14,66,12,μία,παιδισκῶν,part-whole
-Matt,5,19,7,μίαν,ἐντολῶν,part-whole
 2Pet,2,20,7,μιάσματα,κόσμου,other
 John,19,39,15,μίγμα,καὶ,material
 1Cor,4,16,5,μιμηταί,μου,object
@@ -4474,15 +4446,6 @@ Matt,3,4,18,ὀσφὺν,αὐτοῦ,body part
 Eph,6,14,6,ὀσφὺν,ὑμῶν,body part
 Heb,7,5,29,ὀσφύος,Ἀβραάμ,body part
 Acts,2,30,16,ὀσφύος,αὐτοῦ,body part
-Luke,14,24,7,οὐδεὶς,ἀνδρῶν,part-whole
-Jas,3,8,7,οὐδεὶς,ἀνθρώπων,part-whole
-Luke,19,30,17,οὐδεὶς,ἀνθρώπων,part-whole
-Mark,11,2,23,οὐδεὶς,ἀνθρώπων,part-whole
-Luke,4,27,14,οὐδεὶς,αὐτῶν,part-whole
-Acts,5,13,3,οὐδεὶς,λοιπῶν,part-whole
-John,21,12,11,οὐδεὶς,μαθητῶν,part-whole
-Acts,27,34,15,οὐδενὸς,ὑμῶν,part-whole
-Acts,26,26,15,οὐθέν,τούτων,part-whole
 Rev,12,4,4,οὐρὰ,αὐτοῦ,body part
 Rev,9,19,19,οὐραὶ,αὐτῶν,body part
 Rev,9,10,12,οὐραῖς,αὐτῶν,body part
@@ -4657,6 +4620,7 @@ Heb,11,34,16,παρεμβολὰς,ἀλλοτρίων,material
 Rev,20,9,13,παρεμβολὴν,ἁγίων,contents
 1Pet,1,1,7,παρεπιδήμοις,διασπορᾶς,other
 Rom,3,25,22,πάρεσιν,ἁμαρτημάτων,object
+Gal,6,17,2,παρεχέτω,λοιποῦ,other
 1Cor,7,36,8,παρθένον,αὐτοῦ,relation
 1Cor,7,37,28,παρθένον,ἑαυτοῦ,relation
 1Cor,7,38,7,παρθένον,ἑαυτοῦ,relation
@@ -4820,6 +4784,7 @@ Col,1,3,6,πατρὶ,κυρίου,relation
 Heb,12,9,19,πατρὶ,πνευμάτων,other
 Matt,6,1,25,πατρὶ,ὑμῶν,relation
 Acts,3,25,31,πατριαὶ,γῆς,location
+Gal,1,14,18,πατρικῶν,μου,other
 Phil,1,2,8,πατρός,ἡμῶν,relation
 John,2,16,16,πατρός,μου,relation
 John,5,43,8,πατρός,μου,relation
@@ -5300,6 +5265,7 @@ John,4,39,11,πολλοὶ,Σαμαριτῶν,part-whole
 Acts,26,10,10,πολλούς,ἁγίων,part-whole
 2Cor,12,21,17,πολλοὺς,καὶ,part-whole
 Matt,3,7,6,πολλοὺς,καὶ,part-whole
+Luke,1,16,4,πολλοὺς,υἱῶν,part-whole
 Matt,6,7,14,πολυλογίᾳ,αὐτῶν,subject
 Jas,1,11,31,πορείαις,αὐτοῦ,subject
 Luke,11,5,14,πορεύσεται,μεσονυκτίου,time
@@ -5328,6 +5294,7 @@ Rev,14,10,18,ποτηρίῳ,ὀργῆς,other
 Mark,9,45,5,πούς,σου,body part
 Matt,18,8,9,πούς,σου,body part
 2Tim,2,4,6,πραγματείαις,βίου,other
+Matt,26,9,5,πραθῆναι,πολλοῦ,amount
 Acts,23,35,15,πραιτωρίῳ,Ἡρῴδου,possession
 Acts,19,18,11,πράξεις,αὐτῶν,subject
 Rom,8,13,14,πράξεις,σώματος,other
@@ -5463,6 +5430,9 @@ Acts,25,2,10,πρῶτοι,Ἰουδαίων,part-whole
 Luke,19,47,23,πρῶτοι,λαοῦ,part-whole
 Mark,6,21,22,πρώτοις,Γαλιλαίας,relation
 1Tim,2,1,4,πρῶτον,πάντων,part-whole
+John,15,18,10,πρῶτον,ὑμῶν,comparison
+John,1,15,21,πρῶτός,μου,comparison
+John,1,30,17,πρῶτός,μου,comparison
 1Tim,1,15,17,πρῶτός,ὧν,part-whole
 Acts,24,5,22,πρωτοστάτην,αἱρέσεως,other
 Heb,12,16,15,πρωτοτόκια,ἑαυτοῦ,possession
@@ -6135,6 +6105,7 @@ Rev,8,12,21,τρίτον,ἀστέρων,part-whole
 Rev,12,4,9,τρίτον,ἀστέρων,part-whole
 Rev,8,12,34,τρίτον,αὐτῆς,part-whole
 Rev,8,12,26,τρίτον,αὐτῶν,part-whole
+Rev,8,7,22,τρίτον,γῆς,part-whole
 Rev,8,7,28,τρίτον,δένδρων,part-whole
 Rev,8,12,11,τρίτον,ἡλίου,part-whole
 Rev,8,8,21,τρίτον,θαλάσσης,part-whole

@@ -24,7 +24,11 @@ CUTS = pd.read_csv(SBL_DIR + '/cuts.csv',
 CASE_EDITS = pd.read_csv(SBL_DIR + '/case_edits.csv',
                          dtype=defaultdict(lambda: str,
                                            {'chapter': np.float64, 'verse': np.float64, 'position': np.float64}))
+GENDER_EDITS = pd.read_csv(SBL_DIR + '/gender_edits.csv',
+                           dtype=defaultdict(lambda: str,
+                                             {'chapter': np.float64, 'verse': np.float64, 'position': np.float64}))
 POS_EDITS = pd.read_csv(SBL_DIR + '/pos_edits.csv', dtype=str)
+LEMMA_EDITS = pd.read_csv(SBL_DIR + '/lemma_edits.csv', dtype=str)
 GENITIVE_EDITS = pd.read_csv(SBL_DIR + '/genitive_edits.csv',
                              dtype=defaultdict(lambda: str,
                                                {'chapter': np.float64, 'verse': np.float64, 'position': np.float64}))
@@ -65,7 +69,7 @@ KEEP_DETERMINER_LEMMAS = ['Ἀθηναῖος', 'Ἀδραμυττηνός', 'Α
                           'Μῆδος', 'Ναζαρηνός', 'Ναζωραῖος', 'Νινευίτης', 'Πάρθος', 'Ποντικός', 'Ῥωμαῖος',
                           'Σαδδουκαῖος', 'Σαμαρίτης', 'Σαμαρῖτις', 'Σεβαστός', 'Σιδώνιος', 'Σύρος', 'Συροφοινίκισσα',
                           'Τύριος', 'Φαρισαῖος', 'Φιλιππήσιος', 'Χαλδαῖος', 'Χαναναῖος', 'Χριστιανός', 'Ὦ']
-NEGATION = ['μή', 'οὐ']
+NEGATION = ['μή', 'οὐ', 'οὐχί']
 EXTENDED_NEGATION = ['οὐδαμῶς', 'οὐδέ', 'οὐκέτι']
 COPULA = ['εἰμί']
 GENERAL_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤπερ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε', 'πλήν',
@@ -90,6 +94,8 @@ IRREGULAR_NOUNS = ['αββα', 'Ἀβιά', 'Ἄλφα', 'Βηθσαϊδά', 'Β
                    'Ἰωδά', 'Κανά', 'Καῦδα', 'Μαθουσαλά', 'μάννα', 'μαράνα', 'Ματταθά', 'Μελεά', 'Μεννά', 'Μύρα',
                    'Ναζαρά', 'πάσχα', 'Πάταρα', 'ῥακά', 'Ῥαμά', 'Ῥησά', 'Σαλά', 'Σαλά', 'Συροφοινίκισσα', 'Ταβιθά',
                    'ταλιθα']
+NUMBERS = ['εἷς', 'τρεῖς', 'τέσσαρες', 'διακόσιοι', 'τριακόσιοι', 'τετρακόσιοι', 'πεντακόσιοι', 'ἑξακόσιοι', 'χίλιοι',
+           'χιλιάς', 'δισχίλιοι', 'τρισχίλιοι', 'τετρακισχίλιοι', 'πεντακισχίλιοι']
 
 
 class UncutSentence:
@@ -101,7 +107,7 @@ class UncutSentence:
         self.citation = sbl_tree[0].text
         self.text = sbl_tree[1].text
         if self.citation == 'John.8.7':
-            self.text = 'ὡς δὲ ἐπέμενον ἐρωτῶντες αὐτόν, ἀνακύψας εἶπεν πρὸς αὐτούς Ὁ ἀναμάρτητος ὑμῶν πρῶτον ἐπ’ αὐτὴν τὸν λίθον· βαλέτω'
+            self.text = 'ὡς δὲ ἐπέμενον ἐρωτῶντες αὐτόν, ἀνακύψας εἶπεν πρὸς αὐτούς Ὁ ἀναμάρτητος ὑμῶν πρῶτον ἐπ’ αὐτὴν τὸν λίθον βαλέτω'
         elif self.citation == 'John.8.9':
             self.text = 'οἱ δὲ ἀκούσαντες καὶ ὑπὸ τῆς συνειδήσεως ἐλεγχόμενοι ἐξήρχοντο εἷς καθ’ εἷς ἀρξάμενοι ἀπὸ τῶν πρεσβυτέρων, καὶ κατελείφθη μόνος, ὁ Ἰησοῦς καὶ ἡ γυνὴ ἐν μέσῳ οὖσα.'
         elif self.citation == '1Cor.12.8':
@@ -268,7 +274,7 @@ class UncutSentence:
                 for child in reversed([(k2, n2) for k2, n2 in self.nodes.items()
                                        if 'parent_n' in n2 and n2['parent_n'] == node[0]]):
                     if 'head_child_n' in node[1] and node[1]['head_child_n'] == child[0] and \
-                            'role' in node[1] and ('role' not in child[1] or node[1]['role'] == 'p'):
+                            'role' in node[1] and ('role' not in child[1] or node[1]['role'] in ['p', 'adv']):
                         child[1]['role'] = node[1]['role']
                     node_stack += [child]
 
@@ -285,6 +291,10 @@ class UncutSentence:
                 # Edit some properties by hand.
                 if word_dict['lemma'] in list(POS_EDITS.lemma):
                     word_dict['pos'] = POS_EDITS.loc[POS_EDITS.lemma == word_dict['lemma'],].iloc[0]['pos']
+                edit_targets = list(zip(LEMMA_EDITS['lemma'], LEMMA_EDITS['pos']))
+                if (word_dict['lemma'], word_dict['pos']) in edit_targets:
+                    edit_index = edit_targets.index((word_dict['lemma'], word_dict['pos']))
+                    word_dict['lemma'] = LEMMA_EDITS['new_lemma'][edit_index]
 
                 # Add properties that might or might not be present.
                 for field in ['number', 'gender', 'case', 'person', 'tense', 'voice', 'mood', 'degree', 'noun_class',
@@ -295,7 +305,7 @@ class UncutSentence:
                         word_dict[field] = None
 
                 # Set noun class.
-                if word_dict['pos'] == 'noun':
+                if word_dict['pos'] in ['noun', 'adj']:
                     if word_dict['lemma'] in IRREGULAR_NOUNS:
                         word_dict['noun_class'] = 'irregular'
                     elif word_dict['lemma'] in THIRD_DECLENSION_NOUNS:
@@ -308,11 +318,18 @@ class UncutSentence:
                         word_dict['noun_class'] = 'third declension'
                     elif word_dict['lemma'].endswith('ος') or word_dict['lemma'].endswith('ός') \
                             or word_dict['lemma'].endswith('ον') or word_dict['lemma'].endswith('όν'):
-                        word_dict['noun_class'] = 'second declension'
+                        if word_dict['pos'] == 'noun':
+                            word_dict['noun_class'] = 'second declension'
+                        elif word_dict['pos'] == 'adj':
+                            word_dict['noun_class'] = 'first/second declension'
                     elif word_dict['lemma'].endswith('η') or word_dict['lemma'].endswith('ή') or \
                             word_dict['lemma'].endswith('α') or word_dict['lemma'].endswith('ά'):
-                        word_dict['noun_class'] = 'first declension'
-                    elif word_dict['lemma'].endswith('ης') and word_dict['gender'] == 'masculine':
+                        if word_dict['pos'] == 'noun':
+                            word_dict['noun_class'] = 'first declension'
+                        elif word_dict['pos'] == 'adj':
+                            word_dict['noun_class'] = 'first/second declension'
+                    elif word_dict['pos'] == 'noun' and word_dict['lemma'].endswith('ης') and \
+                            word_dict['gender'] == 'masculine':
                         word_dict['noun_class'] = 'second declension with hs'
                     else:
                         word_dict['noun_class'] = 'third declension'
@@ -445,6 +462,15 @@ class UncutSentence:
                 if (word['book'], word['chapter'], word['verse'], word['position']) in edit_targets:
                     edit_index = edit_targets.index((word['book'], word['chapter'], word['verse'], word['position']))
                     word['case'] = edits_df['new_case'][edit_index]
+        edits_df = pd.DataFrame(self.words)
+        edits_df = edits_df.merge(GENDER_EDITS, left_on=['book', 'chapter', 'verse', 'position'],
+                                  right_on=['book', 'chapter', 'verse', 'position'])
+        edit_targets = list(zip(edits_df['book'], edits_df['chapter'], edits_df['verse'], edits_df['position']))
+        if edits_df.shape[0] > 0:
+            for word in self.words:
+                if (word['book'], word['chapter'], word['verse'], word['position']) in edit_targets:
+                    edit_index = edit_targets.index((word['book'], word['chapter'], word['verse'], word['position']))
+                    word['gender'] = edits_df['new_gender'][edit_index]
 
         # Set the sentence ID.
         self.sentence_id = self.words[0]['book'] + ' ' + str(self.words[0]['chapter']) + ':' + \
@@ -598,6 +624,9 @@ class Sentence:
                         conjunction = walking_parent['n'] == uncut_sentence.nodes[head['id']]['parent_n']
                 if word['lemma'] in SECOND_POSITION_CLITICS and word['id'] > head['id']:
                     word['relation'] = 'second-position clitic'
+                elif (word['pos'] == 'num' or word['lemma'] in NUMBERS) and \
+                        (head['pos'] == 'num' or head['lemma'] in NUMBERS):
+                    word['relation'] = 'number'
                 elif conjunction and (head['pos'] == 'conj' or
                                       head['lemma'] in GENERAL_CONJUNCTIONS + SENTENTIAL_CONJUNCTIONS) and \
                       not (head['lemma'] in ADVERB_CONJUNCTIONS and 'pos' in head and head['pos'] == 'adv'):
@@ -705,6 +734,8 @@ class Sentence:
                         word['relation'] = 'predicate, other'
                 elif head['pos'] == 'prep':
                     word['relation'] = 'object of preposition'
+                elif word['mood'] == 'participle' and word['relation'] == 'adv' and head['pos'] == 'verb':
+                    word['relation'] = 'modifier of verb, participle, ' + word['case']
                 elif 'case' in word and 'case' in self.words[word['head']] and \
                         (word['case'] is not None or self.words[word['head']]['case'] is not None) \
                         and (word['case'] == self.words[word['head']]['case']
@@ -717,17 +748,19 @@ class Sentence:
                              or word['number'] is None or self.words[word['head']]['number'] is None) \
                         and (word['pos'] in ['adj', 'demonstrative pronoun', 'interrogative pronoun', 'pron',
                                              'verb']
-                             or word['lemma'] in ['Καῖσαρ']):
+                             or word['lemma'] in ['Καῖσαρ']) and \
+                        self.words[word['head']]['mood'] not in ['indicative', 'imperative', 'subjunctive', 'optative',
+                                                                 'infinitive']:
                     if word['pos'] == 'adj':
-                        word['relation'] = 'nominal modifier, adjective'
+                        word['relation'] = 'modifier of nominal, adjective'
                     elif word['pos'] == 'demonstrative pronoun':
-                        word['relation'] = 'nominal modifier, demonstrative'
+                        word['relation'] = 'modifier of nominal, demonstrative'
                     elif word['pos'] == 'interrogative pronoun':
-                        word['relation'] = 'nominal modifier, interrogative'
+                        word['relation'] = 'modifier of nominal, interrogative'
                     elif word['pos'] == 'pron':
-                        word['relation'] = 'nominal modifier, pronoun'
+                        word['relation'] = 'modifier of nominal, pronoun'
                     elif word['pos'] == 'verb':
-                        word['relation'] = 'nominal modifier, participle'
+                        word['relation'] = 'modifier of nominal, participle'
                     elif word['lemma'] in ['Καῖσαρ']:
                         word['relation'] = 'title'
                 elif word['pos'] == 'noun' and self.words[word['head']]['pos'] in ['noun', 'demonstrative pronoun',
@@ -739,22 +772,22 @@ class Sentence:
                         word['relation'] = 'genitive, time'
                     elif head['pos'] == 'verb':
                         if word['mood'] == 'participle':
-                            word['relation'] = 'verbal modifier, participle, genitive'
+                            word['relation'] = 'modifier of verb, participle, genitive'
                         else:
                             word['relation'] = 'direct object, genitive'
                     elif self.words[word['head']]['pos'] == 'adj' and \
                             self.words[word['head']]['degree'] == 'comparative':
                         word['relation'] = 'genitive, comparison'
-                    elif head['pos'] == 'adj':
-                        word['relation'] = 'argument of adjective, genitive'
                     elif head['lemma'] in PARTITIVE_HEADS:
                         word['relation'] = 'genitive, part-whole'
+                    elif head['pos'] == 'adj':
+                        word['relation'] = 'argument of adjective, genitive'
                     else:
                         word['relation'] = 'genitive, other'
                 elif 'case' in word and word['case'] == 'dative':
                     if head['pos'] == 'verb':
                         if word['mood'] == 'participle':
-                            word['relation'] = 'verbal modifier, participle, dative'
+                            word['relation'] = 'modifier of verb, participle, dative'
                         else:
                             word['relation'] = 'indirect object'
                     elif head['pos'] == 'adj':
@@ -839,6 +872,10 @@ class Sentence:
 
             # If the μὴ is part of εἰ μὴ, include the εἰ.
             if word['relation'] == 'negation, εἰ μὴ':
+                mandatory_pairs += [(i, self.words[word['head']]['head'])]
+
+            # If the word is the subject of a small clause, include the head of its head.
+            if word['relation'] == 'subject of small clause':
                 mandatory_pairs += [(i, self.words[word['head']]['head'])]
 
         # Initialize the licit strings with all the individual words.
@@ -989,13 +1026,13 @@ class Sentence:
             cur.executemany(sql, [(w['book'], w['chapter'], w['verse'], w['position']) for w in self.words])
             sql = """INSERT INTO words
                      (Book, Chapter, Verse, VersePosition, SentenceID, SentencePosition, Lemma, Wordform, POS, Gender,
-                      Number, NCase, Person, Tense, Voice, Mood, NounClass, VerbClass)
+                      Number, NCase, Person, Tense, Voice, Mood, Degree, NounClass, VerbClass)
                      VALUES
-                     (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+                     (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
             cur.executemany(sql,
                             [(w['book'], w['chapter'], w['verse'], w['position'], self.sentence_id, j, w['lemma'],
                               w['wordform'], w['pos'], w['gender'], w['number'], w['case'], w['person'], w['tense'],
-                              w['voice'], w['mood'], w['noun_class'], w['verb_class'])
+                              w['voice'], w['mood'], w['degree'], w['noun_class'], w['verb_class'])
                              for j, w in enumerate(self.words)])
 
             # Commit changes.
