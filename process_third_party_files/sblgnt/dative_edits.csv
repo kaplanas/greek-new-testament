@@ -303,6 +303,7 @@ Jude,1,9,8,διακρινόμενος,διαβόλῳ,direct object
 Luke,1,22,19,διανεύων,αὐτοῖς,direct object
 Gal,2,6,11,διαφέρει,μοι,direct object
 Matt,12,12,1,διαφέρει,πόσῳ,other
+Acts,20,20,14,διδάξαι,καὶ,manner
 1Tim,2,12,3,διδάσκειν,γυναικὶ,other
 Heb,11,29,1,διέβησαν,Πίστει,instrument
 John,13,5,18,διεζωσμένος,ᾧ,agent
@@ -660,6 +661,7 @@ John,5,46,7,ἐπιστεύετε,ἐμοί,direct object
 John,5,46,4,ἐπιστεύετε,Μωϋσεῖ,direct object
 Matt,21,32,20,ἐπίστευσαν,αὐτῷ,direct object
 Mark,16,14,17,ἐπίστευσαν,θεασαμένοις,direct object
+John,2,22,17,ἐπίστευσαν,καὶ,direct object
 Acts,8,12,5,ἐπίστευσαν,Φιλίππῳ,direct object
 Luke,1,20,19,ἐπίστευσας,λόγοις,direct object
 Luke,20,5,17,ἐπιστεύσατε,αὐτῷ,direct object
@@ -1150,6 +1152,7 @@ Rom,1,9,7,λατρεύω,ᾧ,direct object
 Heb,12,28,12,λατρεύωμεν,θεῷ,direct object
 Rev,5,12,2,λέγοντες,φωνῇ,manner
 Rev,8,13,11,λέγοντος,φωνῇ,manner
+Rev,6,1,20,λέγοντος,ὡς,manner
 Acts,26,14,15,λέγουσαν,διαλέκτῳ,manner
 Mark,14,12,4,λέγουσιν,ἡμέρᾳ,time
 Luke,18,22,9,λείπει,σοι,other
@@ -1159,6 +1162,7 @@ Acts,13,2,5,λειτουργούντων,κυρίῳ,direct object
 John,18,20,5,λελάληκα,παρρησίᾳ,manner
 Heb,10,22,18,λελουσμένοι,ὕδατι,instrument
 Rom,13,2,14,λήμψονται,ἑαυτοῖς,benefit
+2Cor,12,7,1,λογίσηται,καὶ,other
 Heb,5,11,4,λόγος,ἡμῖν,possession
 Luke,13,15,12,λύει,σαββάτῳ,time
 Luke,13,16,23,λυθῆναι,ἡμέρᾳ,time
@@ -1344,6 +1348,7 @@ John,5,47,11,πιστεύσετε,ῥήμασιν,direct object
 John,6,30,13,πιστεύσωμέν,σοι,direct object
 Acts,27,25,7,πιστεύω,θεῷ,direct object
 1John,5,10,17,πιστεύων,θεῷ,direct object
+Acts,24,14,23,πιστεύων,καὶ,direct object
 John,5,24,14,πιστεύων,πέμψαντί,direct object
 Heb,3,10,13,πλανῶνται,καρδίᾳ,other
 John,4,41,2,πλείους,πολλῷ,other

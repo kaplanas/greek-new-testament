@@ -2,6 +2,7 @@ book,chapter,verse,position,new_relation
 Matt,1,18,18,"conjunct, ἤ"
 Matt,1,19,9,negation of verb
 Matt,1,22,14,"modifier of nominal, participle"
+Matt,2,3,1,"modifier of verb, participle"
 Matt,2,4,4,determiner of noun
 Matt,2,9,8,particle
 Matt,2,15,17,"modifier of nominal, participle"
@@ -12,10 +13,12 @@ Matt,3,3,10,"modifier of nominal, participle"
 Matt,3,3,11,sentential complement
 Matt,3,3,23,subject of small clause
 Matt,3,7,4,determiner of noun
+Matt,3,7,20,infinitive argument of verb
 Matt,3,9,10,appositive
 Matt,3,10,14,negation of verb
 Matt,3,15,14,"argument of adjective, dative"
 Matt,3,16,21,"conjunct, ὡς, clause"
+Matt,4,8,18,direct object
 Matt,4,14,9,"modifier of nominal, participle"
 Matt,4,15,6,appositive
 Matt,4,19,9,subject of small clause
@@ -38,6 +41,7 @@ Matt,5,44,9,"conjunct, main"
 Matt,5,45,19,"conjunct, subordinate"
 Matt,5,46,14,determiner of adjective
 Matt,5,47,15,determiner of adjective
+Matt,6,8,12,direct object
 Matt,6,18,2,"negation of verb, semantically embedded"
 Matt,6,20,16,negation of verb
 Matt,6,24,24,conjunct
@@ -64,6 +68,8 @@ Matt,7,26,10,negation of verb
 Matt,7,29,7,"conjunct, ὡς, non-clause"
 Matt,7,29,12,"conjunct, ὡς, clause"
 Matt,8,2,8,"interjection, vocative"
+Matt,8,4,9,clause argument of verb
+Matt,8,14,14,direct object
 Matt,8,16,18,conjunct
 Matt,8,17,9,"modifier of nominal, participle"
 Matt,8,20,12,gap
@@ -76,6 +82,10 @@ Matt,9,12,5,"negation of verb, semantically embedded"
 Matt,9,13,8,direct object
 Matt,9,13,11,"negation of verb, semantically embedded"
 Matt,9,16,12,determiner of noun
+Matt,9,22,5,"modifier of verb, participle"
+Matt,9,23,10,"modifier of verb, participle"
+Matt,9,23,14,direct object
+Matt,9,30,14,clause argument of verb
 Matt,9,36,14,"conjunct, ὡς, clause"
 Matt,9,36,15,negation of verb
 Matt,9,37,9,sentential complement
@@ -88,8 +98,11 @@ Matt,10,24,8,gap
 Matt,10,25,12,gap
 Matt,10,26,5,subject
 Matt,10,26,12,subject
+Matt,10,27,2,direct object
 Matt,10,28,12,negation of verb
 Matt,10,28,13,"conjunct, chain"
+Matt,10,32,4,subject
+Matt,10,33,4,subject
 Matt,10,34,10,"negation of verb, semantically embedded"
 Matt,10,38,8,subject
 Matt,11,1,14,determiner of infinitive
@@ -124,6 +137,8 @@ Matt,13,8,18,gap
 Matt,13,11,8,"conjunct, subordinate"
 Matt,13,13,13,negation of verb
 Matt,13,16,10,gap
+Matt,13,17,13,direct object
+Matt,13,17,20,direct object
 Matt,13,19,1,"modifier of nominal, adjective"
 Matt,13,19,8,negation of verb
 Matt,13,20,9,determiner of participle
@@ -139,12 +154,14 @@ Matt,13,46,8,"modifier of nominal, adjective"
 Matt,13,54,19,sentential complement
 Matt,13,55,8,negation of verb
 Matt,13,55,16,gap
+Matt,14,7,1,"modifier of verb, adverb"
 Matt,14,14,11,conjunct
 Matt,14,19,31,gap
 Matt,14,19,33,"conjunct, chain"
 Matt,14,20,13,appositive
 Matt,14,28,7,"interjection, vocative"
 Matt,14,30,4,subject of small clause
+Matt,15,5,9,indirect object
 Matt,15,5,12,sentential complement
 Matt,15,23,15,"conjunct, main"
 Matt,15,23,18,"conjunct, subordinate"
@@ -161,6 +178,7 @@ Matt,15,37,13,appositive
 Matt,16,1,3,determiner of noun
 Matt,16,2,9,sentential complement
 Matt,16,3,4,sentential complement
+Matt,16,3,23,"conjunct, chain"
 Matt,16,6,12,determiner of noun
 Matt,16,11,15,determiner of noun
 Matt,16,12,4,"negation of verb, semantically embedded"
@@ -189,6 +207,7 @@ Matt,18,8,34,"modifier of verb, participle"
 Matt,18,8,35,"conjunct, ἤ"
 Matt,18,9,25,"modifier of verb, participle"
 Matt,18,9,26,"conjunct, ἤ"
+Matt,18,10,3,clause argument of verb
 Matt,18,12,17,determiner of adjective
 Matt,18,13,15,"conjunct, ἤ"
 Matt,18,13,16,determiner of adjective
@@ -221,6 +240,8 @@ Matt,21,12,10,determiner of participle
 Matt,21,13,13,subject of small clause
 Matt,21,15,15,determiner of participle
 Matt,21,15,24,sentential complement
+Matt,21,16,7,direct object
+Matt,21,16,21,conjunct
 Matt,21,21,20,direct object
 Matt,21,22,2,"modifier of nominal, adjective"
 Matt,21,23,9,"modifier of nominal, participle"
@@ -253,13 +274,17 @@ Matt,23,13,7,appositive
 Matt,23,13,23,"subject of infinitive, accusative"
 Matt,23,15,6,appositive
 Matt,23,15,21,subject of small clause
+Matt,23,20,10,"modifier of verb, prepositional phrase"
 Matt,23,20,13,determiner of headless phrase
+Matt,23,21,10,"modifier of verb, prepositional phrase"
+Matt,23,22,13,"modifier of verb, prepositional phrase"
 Matt,23,23,6,appositive
 Matt,23,25,6,appositive
 Matt,23,27,6,appositive
 Matt,23,29,6,appositive
 Matt,23,37,3,determiner of participle
 Matt,23,39,13,sentential complement
+Matt,24,6,5,direct object
 Matt,24,7,7,gap
 Matt,24,17,8,determiner of headless phrase
 Matt,24,24,10,direct object
@@ -291,6 +316,7 @@ Matt,26,44,10,"modifier of nominal, adjective"
 Matt,26,47,7,appositive
 Matt,26,47,21,determiner of noun
 Matt,26,51,2,particle
+Matt,26,64,22,direct object
 Matt,26,73,22,subject of small clause
 Matt,27,3,14,determiner of noun
 Matt,27,4,9,sentential complement
@@ -308,17 +334,22 @@ Matt,27,41,7,determiner of noun
 Matt,27,44,1,determiner of adjective
 Matt,27,56,10,determiner of name
 Matt,27,57,10,appositive
+Matt,28,10,18,"modifier of verb, adverb"
 Matt,28,14,12,subject of small clause
 Matt,28,20,9,particle
 Mark,1,3,1,appositive
 Mark,1,3,13,subject of small clause
+Mark,1,10,11,direct object
 Mark,1,10,15,"conjunct, ὡς, clause"
+Mark,1,19,9,direct object
 Mark,1,22,13,"conjunct, ὡς, non-clause"
+Mark,1,22,14,"modifier of verb, participle"
 Mark,1,22,18,"conjunct, ὡς, clause"
 Mark,1,24,4,sentential complement
 Mark,1,24,16,appositive
 Mark,1,27,8,"modifier of verb, participle"
 Mark,1,27,12,appositive
+Mark,1,44,8,clause argument of verb
 Mark,2,4,2,negation of verb
 Mark,2,12,18,"modifier of verb, participle"
 Mark,2,16,10,determiner of noun
@@ -328,6 +359,7 @@ Mark,2,19,20,"modifier of nominal, other"
 Mark,2,21,13,determiner of noun
 Mark,2,21,20,gap
 Mark,2,27,13,gap
+Mark,3,8,21,direct object
 Mark,3,12,7,subject of small clause
 Mark,3,22,19,"conjunct, ὅτι"
 Mark,3,28,13,appositive
@@ -337,6 +369,7 @@ Mark,4,1,18,"modifier of verb, participle"
 Mark,4,8,17,gap
 Mark,4,8,20,gap
 Mark,4,8,23,gap
+Mark,4,9,4,subject
 Mark,4,20,19,gap
 Mark,4,20,22,gap
 Mark,4,20,25,gap
@@ -352,29 +385,37 @@ Mark,4,41,20,"conjunct, ὅτι"
 Mark,5,4,2,determiner of infinitive
 Mark,5,7,8,sentential complement
 Mark,5,9,4,sentential complement
-Mark,5,9,10,sentential complement
+Mark,5,9,10,"conjunct, main"
 Mark,5,9,15,"conjunct, subordinate"
 Mark,5,22,7,appositive
+Mark,5,33,9,direct object
+Mark,5,38,11,direct object
 Mark,6,3,6,determiner of noun
 Mark,6,8,12,"modifier of nominal, adjective"
 Mark,6,15,11,"conjunct, main"
 Mark,6,15,13,"conjunct, ὡς, clause"
 Mark,6,16,9,appositive
 Mark,6,20,8,subject of small clause
+Mark,6,22,1,"modifier of verb, participle"
 Mark,6,22,5,"modifier of nominal, adjective"
 Mark,6,24,13,sentential complement
 Mark,6,34,14,negation of verb
 Mark,6,35,4,"modifier of nominal, adjective"
 Mark,6,36,6,determiner of noun
+Mark,6,48,8,parenthetical
+Mark,6,55,15,"modifier of verb, adverb"
 Mark,7,3,16,"modifier of verb, participle"
 Mark,7,4,16,appositive
+Mark,7,11,9,indirect object
 Mark,7,11,12,sentential complement
 Mark,7,13,9,"direct object, attraction"
 Mark,7,19,2,"negation of verb, semantically embedded"
 Mark,7,26,6,appositive
+Mark,8,1,9,"modifier of verb, participle"
 Mark,8,1,10,negation of verb
 Mark,8,2,1,"conjunct, main"
 Mark,8,2,11,"conjunct, subordinate"
+Mark,8,15,6,clause argument of verb
 Mark,8,17,18,subject of small clause
 Mark,8,24,10,"conjunct, ὅτι"
 Mark,8,27,14,name
@@ -390,9 +431,13 @@ Mark,8,38,14,determiner of adjective
 Mark,9,2,17,subject of small clause
 Mark,9,3,5,conjunct
 Mark,9,3,9,topic
+Mark,9,8,7,direct object
 Mark,9,9,15,"negation, εἰ μὴ"
+Mark,9,11,11,"conjunct, ὅτι"
 Mark,9,12,21,conjunct
 Mark,9,14,7,subject of small clause
+Mark,9,14,11,direct object
+Mark,9,18,2,"modifier of verb, adverb"
 Mark,9,18,15,conjunct
 Mark,9,23,6,"determiner, other"
 Mark,9,34,12,sentential complement
@@ -406,6 +451,7 @@ Mark,9,45,22,"modifier of verb, participle"
 Mark,9,47,23,"modifier of verb, participle"
 Mark,10,11,10,subject
 Mark,10,15,13,"conjunct, ὡς, clause"
+Mark,10,17,8,"modifier of verb, participle"
 Mark,10,18,7,subject of small clause
 Mark,10,27,8,sentential complement
 Mark,10,31,8,gap
@@ -418,6 +464,7 @@ Mark,11,8,10,gap
 Mark,11,8,12,"conjunct, chain"
 Mark,11,10,4,subject of verbless predicate
 Mark,11,17,21,subject of small clause
+Mark,11,32,5,"conjunct, chain"
 Mark,12,6,4,appositive
 Mark,12,16,7,sentential complement
 Mark,12,16,18,sentential complement
@@ -426,6 +473,7 @@ Mark,12,21,8,negation of verb
 Mark,12,23,14,subject of small clause
 Mark,12,24,9,negation of verb
 Mark,12,26,6,"conjunct, ὅτι"
+Mark,12,26,16,"modifier of verb, adverb"
 Mark,12,26,26,sentential complement
 Mark,12,31,8,"conjunct, ὡς, clause"
 Mark,12,33,25,"conjunct, ὡς, clause"
@@ -435,6 +483,7 @@ Mark,12,40,1,determiner of participle
 Mark,12,44,14,"modifier of nominal, adjective"
 Mark,12,44,20,appositive
 Mark,13,1,17,sentential complement
+Mark,13,7,5,direct object
 Mark,13,8,7,gap
 Mark,13,12,8,gap
 Mark,13,22,12,determiner of infinitive
@@ -442,8 +491,11 @@ Mark,13,32,16,appositive
 Mark,13,34,15,gap
 Mark,13,34,17,"conjunct, chain"
 Mark,13,34,22,conjunct
+Mark,13,37,4,direct object
+Mark,13,37,7,appositive
+Mark,14,18,4,"modifier of verb, participle"
 Mark,14,19,10,sentential complement
-Mark,14,20,5,sentential complement
+Mark,14,20,5,"conjunct, main"
 Mark,14,21,8,"conjunct, subordinate"
 Mark,14,21,15,conjunction
 Mark,14,30,19,"conjunct, ἤ"
@@ -457,17 +509,21 @@ Mark,14,45,7,sentential complement
 Mark,14,53,15,conjunct
 Mark,14,56,11,conjunct
 Mark,14,58,4,subject of small clause
+Mark,14,62,18,direct object
 Mark,14,72,14,"conjunct, ὡς, other"
 Mark,15,12,12,subject of small clause
 Mark,15,21,5,appositive
 Mark,15,21,11,appositive
 Mark,15,29,13,determiner of participle
+Mark,16,7,7,indirect object
+Mark,16,13,6,"direct object, dative"
 Mark,16,14,4,"modifier of nominal, adjective"
 Mark,16,14,15,conjunct
 Mark,16,16,1,determiner of participle
 Mark,16,16,3,subject
 Luke,1,2,1,"conjunct, subordinate"
 Luke,1,3,1,"conjunct, main"
+Luke,1,4,1,infinitive argument of verb
 Luke,1,5,12,appositive
 Luke,1,6,11,determiner of noun
 Luke,1,6,17,"modifier of non-nominal, adjective"
@@ -485,7 +541,7 @@ Luke,1,47,1,"conjunct, main"
 Luke,1,48,2,"conjunct, subordinate"
 Luke,1,50,3,subject of verbless predicate
 Luke,1,59,14,subject of verbless predicate
-Luke,1,68,1,sentential complement
+Luke,1,68,1,"conjunct, main"
 Luke,1,68,9,"conjunct, subordinate"
 Luke,1,70,1,conjunct
 Luke,1,74,5,"modifier of verb, participle"
@@ -512,13 +568,14 @@ Luke,2,38,2,"modifier of nominal, adjective"
 Luke,2,45,2,negation of verb
 Luke,2,49,6,sentential complement
 Luke,3,1,11,name
-Luke,3,4,9,sentential complement
+Luke,3,4,9,subject
 Luke,3,4,21,subject of small clause
 Luke,3,5,18,gap
 Luke,3,5,19,conjunct
 Luke,3,8,16,appositive
 Luke,3,9,15,negation of verb
 Luke,3,11,11,negation of verb
+Luke,3,15,5,"modifier of verb, participle"
 Luke,3,19,19,"direct object, attraction"
 Luke,3,21,9,"modifier of verb, participle"
 Luke,3,21,10,subject of participle
@@ -533,7 +590,8 @@ Luke,4,28,3,"modifier of nominal, adjective"
 Luke,4,28,5,"modifier of verb, prepositional phrase"
 Luke,4,34,4,sentential complement
 Luke,4,34,16,appositive
-Luke,4,36,11,sentential complement
+Luke,4,36,11,"conjunct, main"
+Luke,4,36,24,"conjunct, subordinate"
 Luke,5,1,4,determiner of infinitive
 Luke,5,7,10,"modifier of verb, participle"
 Luke,5,8,10,"conjunct, main"
@@ -552,7 +610,7 @@ Luke,5,33,18,gap
 Luke,6,1,17,direct object
 Luke,6,13,14,subject of small clause
 Luke,6,14,2,subject of small clause
-Luke,6,20,12,sentential complement
+Luke,6,20,12,"conjunct, main"
 Luke,6,20,17,"conjunct, subordinate"
 Luke,6,23,18,determiner of adjective
 Luke,6,26,10,determiner of adjective
@@ -564,6 +622,7 @@ Luke,6,43,1,"negation of verb, semantically embedded"
 Luke,6,43,11,gap
 Luke,6,46,5,sentential complement
 Luke,6,47,2,determiner of participle
+Luke,6,47,6,topic
 Luke,6,49,1,determiner of participle
 Luke,6,49,4,subject
 Luke,6,49,5,negation of verb
@@ -591,6 +650,7 @@ Luke,7,47,5,"conjunct, main"
 Luke,7,47,12,"conjunct, subordinate"
 Luke,8,1,17,direct object
 Luke,8,2,17,"object of preposition, ἀπό, genitive"
+Luke,8,4,5,"modifier of verb, participle"
 Luke,8,4,7,"modifier of verb, prepositional phrase"
 Luke,8,10,15,"conjunct, chain"
 Luke,8,21,14,determiner of participle
@@ -625,7 +685,9 @@ Luke,9,19,18,"conjunct, ὅτι"
 Luke,9,22,13,determiner of adjective
 Luke,9,25,9,direct object
 Luke,9,26,4,topic
+Luke,9,32,17,direct object
 Luke,9,33,33,negation of verb
+Luke,9,33,36,direct object
 Luke,9,38,10,"conjunct, main"
 Luke,9,39,1,"conjunct, subordinate"
 Luke,9,43,14,"direct object, attraction"
@@ -633,12 +695,14 @@ Luke,9,49,5,"interjection, vocative"
 Luke,9,49,14,"conjunct, main"
 Luke,9,49,19,"conjunct, subordinate"
 Luke,9,52,14,"conjunct, ὡς, non-clause"
+Luke,9,54,17,infinitive argument of verb
 Luke,9,58,12,gap
 Luke,10,2,8,sentential complement
 Luke,10,2,12,"conjunct, μέν δέ"
 Luke,10,3,6,"conjunct, ὡς, clause"
 Luke,10,5,11,sentential complement
 Luke,10,7,2,"modifier of nominal, adjective"
+Luke,10,10,7,topic
 Luke,10,13,5,"conjunct, chain"
 Luke,10,14,11,"conjunct, ἤ"
 Luke,10,15,3,"interjection, vocative"
@@ -650,6 +714,8 @@ Luke,10,21,32,particle
 Luke,10,21,38,"conjunct, subordinate"
 Luke,10,22,21,gap
 Luke,10,23,9,sentential complement
+Luke,10,24,13,direct object
+Luke,10,24,20,direct object
 Luke,10,27,38,"conjunct, ὡς, clause"
 Luke,10,38,15,appositive
 Luke,10,40,11,"interjection, vocative"
@@ -665,12 +731,15 @@ Luke,11,28,5,sentential complement
 Luke,11,28,6,determiner of participle
 Luke,11,36,8,negation of verb
 Luke,11,36,17,"conjunct, ὡς, clause"
-Luke,11,46,5,sentential complement
+Luke,11,46,5,"conjunct, main"
 Luke,11,46,15,"conjunct, subordinate"
 Luke,11,48,1,particle
 Luke,12,4,10,determiner of participle
 Luke,12,4,17,negation of verb
+Luke,12,8,7,topic
+Luke,12,11,17,"modifier of verb, adverb"
 Luke,12,12,8,"modifier of nominal, adjective"
+Luke,12,12,12,direct object
 Luke,12,15,6,"conjunct, main"
 Luke,12,15,20,"conjunct, subordinate"
 Luke,12,17,7,"conjunct, main"
@@ -683,6 +752,9 @@ Luke,12,28,21,"interjection, vocative"
 Luke,12,33,11,negation of verb
 Luke,12,35,8,gap
 Luke,12,36,2,gap
+Luke,12,38,2,"modifier of verb, prepositional phrase"
+Luke,12,38,6,gap
+Luke,12,41,12,"modifier of verb, prepositional phrase"
 Luke,12,47,5,determiner of participle
 Luke,12,47,13,negation of verb
 Luke,12,48,3,negation of verb
@@ -696,6 +768,7 @@ Luke,12,53,9,gap
 Luke,12,53,13,gap
 Luke,12,53,17,gap
 Luke,12,53,23,gap
+Luke,12,56,17,"conjunct, chain"
 Luke,13,1,5,"modifier of nominal, adjective"
 Luke,13,2,5,"conjunct, main"
 Luke,13,2,18,"conjunct, subordinate"
@@ -703,12 +776,15 @@ Luke,13,3,1,conjunct
 Luke,13,5,1,conjunct
 Luke,13,6,22,conjunct
 Luke,13,8,6,"interjection, vocative"
+Luke,13,9,8,"conjunct, chain"
 Luke,13,11,13,negation of verb
 Luke,13,14,5,"conjunct, main"
+Luke,13,14,6,"modifier of verb, participle"
 Luke,13,14,9,"conjunct, subordinate"
 Luke,13,15,13,negation of verb
 Luke,13,23,5,"interjection, vocative"
 Luke,13,24,1,"conjunct, main"
+Luke,13,24,13,"conjunct, subordinate"
 Luke,13,25,7,"modifier of verb, relative clause"
 Luke,13,28,13,subject of small clause
 Luke,13,31,2,"modifier of nominal, adjective"
@@ -716,6 +792,7 @@ Luke,13,31,11,"conjunct, main"
 Luke,13,31,16,"conjunct, subordinate"
 Luke,13,34,3,determiner of participle
 Luke,13,34,21,gap
+Luke,13,35,16,"modifier of verb, adverb"
 Luke,13,35,17,subject
 Luke,13,35,18,sentential complement
 Luke,14,3,7,determiner of adjective
@@ -751,15 +828,18 @@ Luke,16,15,24,"conjunct, subordinate"
 Luke,16,18,2,determiner of participle
 Luke,16,18,7,subject
 Luke,16,20,5,appositive
+Luke,16,23,16,direct object
 Luke,16,24,5,"interjection, vocative"
 Luke,16,24,9,"conjunct, main"
 Luke,16,24,26,"conjunct, subordinate"
 Luke,16,25,16,gap
 Luke,16,30,4,conjunct
+Luke,16,31,6,"direct object, genitive"
 Luke,16,31,11,"negation, other"
 Luke,17,1,15,subject of verbless predicate
 Luke,17,6,9,"conjunct, ὡς, clause"
 Luke,17,7,1,subject
+Luke,17,23,10,"conjunct, chain"
 Luke,17,30,2,determiner of adjective
 Luke,17,31,10,subject
 Luke,17,35,5,determiner of adjective
@@ -783,6 +863,7 @@ Luke,19,2,12,gap
 Luke,19,2,13,conjunct
 Luke,19,11,9,determiner of infinitive
 Luke,19,15,7,"modifier of verb, participle"
+Luke,19,15,21,infinitive argument of verb
 Luke,19,17,4,particle
 Luke,19,17,6,"interjection, vocative"
 Luke,19,17,11,"conjunct, subordinate"
@@ -812,6 +893,8 @@ Luke,20,43,5,subject of small clause
 Luke,20,44,3,subject of small clause
 Luke,20,46,5,determiner of participle
 Luke,21,6,1,topic
+Luke,21,9,5,direct object
+Luke,21,29,8,direct object
 Luke,21,10,9,gap
 Luke,21,12,15,determiner of noun
 Luke,21,22,10,"subject of infinitive, accusative"
@@ -833,6 +916,8 @@ Luke,22,42,2,"interjection, vocative"
 Luke,22,47,3,"modifier of verb, participle"
 Luke,22,49,9,"interjection, vocative"
 Luke,22,52,5,determiner of noun
+Luke,22,56,10,"modifier of verb, participle"
+Luke,22,60,9,direct object
 Luke,22,61,12,determiner of noun
 Luke,22,61,17,"conjunct, ὡς, other"
 Luke,22,66,12,appositive
@@ -849,7 +934,9 @@ Luke,23,40,16,"modifier of nominal, adjective"
 Luke,23,41,7,"direct object, attraction"
 Luke,23,42,3,"interjection, vocative"
 Luke,23,50,5,appositive
+Luke,23,55,15,direct object
 Luke,23,55,17,"conjunct, ὡς, other"
+Luke,24,5,5,"modifier of verb, participle"
 Luke,24,6,8,"conjunct, ὡς, other"
 Luke,24,9,6,conjunct
 Luke,24,12,13,subject of small clause
@@ -867,29 +954,46 @@ Luke,24,29,12,"conjunct, subordinate"
 Luke,24,33,3,"modifier of nominal, adjective"
 Luke,24,33,14,subject of small clause
 Luke,24,35,10,"conjunct, ὡς, other"
+Luke,24,37,3,"modifier of verb, participle"
+Luke,24,39,5,direct object
+Luke,24,39,11,"conjunct, ὅτι"
+Luke,24,40,8,direct object
+Luke,24,41,8,"modifier of verb, participle"
 Luke,24,44,5,sentential complement
+Luke,24,44,18,"conjunct, ὅτι"
 Luke,24,44,22,"subject of infinitive, accusative"
 Luke,24,46,10,subject of infinitive
 Luke,24,47,1,conjunct
+John,1,5,12,negation of verb
 John,1,15,18,"conjunct, main"
 John,1,15,22,"conjunct, subordinate"
 John,1,16,10,appositive
 John,1,21,4,sentential complement
-John,1,23,3,sentential complement
+John,1,23,3,"conjunct, main"
+John,1,27,7,"modifier of nominal, relative clause"
 John,1,29,13,sentential complement
 John,1,32,11,"conjunct, ὡς, clause"
+John,1,33,22,direct object
 John,1,36,4,subject of small clause
 John,1,36,9,sentential complement
 John,1,37,6,subject of small clause
+John,1,38,5,"modifier of verb, participle"
 John,1,40,6,name
 John,1,40,11,determiner of participle
+John,1,45,14,"subject, irregular agreement"
 John,1,45,18,appositive
 John,1,47,15,sentential complement
 John,1,50,7,"conjunct, subordinate"
+John,1,50,15,"conjunct, main"
+John,1,51,12,direct object
 John,2,4,8,sentential complement
 John,2,9,10,"conjunct, ὡς, clause"
+John,2,9,18,"conjunct, chain"
+John,2,18,14,"conjunct, ὅτι"
 John,3,1,7,parenthetical
 John,3,8,11,conjunct
+John,3,11,7,direct object
+John,3,11,11,direct object
 John,3,17,1,"negation of verb, semantically embedded"
 John,3,18,9,negation of verb
 John,3,19,13,"conjunct, ὅτι"
@@ -908,26 +1012,34 @@ John,4,9,17,appositive
 John,4,14,8,"direct object, attraction"
 John,4,24,6,"subject of infinitive, accusative"
 John,4,29,7,"modifier of nominal, adjective"
+John,4,29,9,direct object
 John,4,35,25,"conjunct, ὅτι"
 John,4,37,13,"conjunct, ὅτι"
 John,4,37,14,gap
 John,4,39,21,"modifier of nominal, adjective"
+John,4,39,23,direct object
 John,4,45,11,"modifier of nominal, adjective"
+John,4,45,14,direct object
+John,4,48,10,direct object
 John,5,3,7,appositive
 John,5,3,8,"conjunct, chain"
 John,5,3,9,"conjunct, chain"
+John,5,6,6,"modifier of verb, participle"
 John,5,11,7,subject of small clause
 John,5,15,13,subject of small clause
 John,5,18,24,subject of small clause
 John,5,20,8,"modifier of nominal, adjective"
+John,5,20,13,direct object
 John,5,23,11,negation of verb
 John,5,24,6,determiner of participle
 John,5,24,11,subject
 John,5,35,5,determiner of participle
 John,5,36,6,"modifier of nominal, adjective, irregular agreement"
+John,6,5,7,"modifier of verb, participle"
 John,6,8,12,name
 John,6,10,20,subject of small clause
 John,6,11,18,conjunct
+John,6,19,16,direct object
 John,6,22,17,"conjunct, ὅτι"
 John,6,22,32,"conjunct, ὅτι"
 John,6,23,1,"conjunct, ὅτι"
@@ -936,6 +1048,7 @@ John,6,33,7,determiner of participle
 John,6,38,10,conjunct
 John,6,40,11,determiner of participle
 John,6,40,15,subject
+John,6,42,15,direct object
 John,6,45,12,determiner of participle
 John,6,45,17,subject
 John,6,46,1,"negation, other"
@@ -952,6 +1065,7 @@ John,6,64,18,negation of verb
 John,6,66,10,determiner of headless phrase
 John,6,71,6,name
 John,6,71,12,appositive
+John,7,12,18,"conjunct, μέν δέ"
 John,7,15,10,negation of verb
 John,7,16,11,"negation of verb, semantically embedded"
 John,7,23,17,subject of small clause
@@ -968,9 +1082,11 @@ John,7,39,21,"conjunct, subordinate"
 John,7,49,6,negation of verb
 John,8,2,15,conjunct
 John,8,6,21,negation of verb
+John,8,10,5,"modifier of verb, participle"
 John,8,11,4,sentential complement
 John,8,14,12,"conjunct, main"
 John,8,14,17,"conjunct, subordinate"
+John,8,19,11,direct object
 John,8,22,6,"conjunct, main"
 John,8,22,9,"conjunct, subordinate"
 John,8,23,6,determiner of headless phrase
@@ -987,6 +1103,7 @@ John,9,8,17,determiner of participle
 John,9,13,8,appositive
 John,9,16,8,"conjunct, main"
 John,9,16,18,"conjunct, subordinate"
+John,9,17,8,"conjunct, main"
 John,9,17,12,"conjunct, subordinate"
 John,9,18,20,appositive
 John,9,20,11,"conjunct, ὅτι"
@@ -995,6 +1112,7 @@ John,9,22,7,"conjunct, subordinate"
 John,9,22,18,subject of small clause
 John,9,32,10,"predicate, genitive"
 John,9,39,15,negation of verb
+John,9,41,20,"conjunct, chain"
 John,10,1,5,determiner of participle
 John,10,1,6,negation of verb
 John,10,10,6,"negation, εἰ μὴ"
@@ -1002,9 +1120,12 @@ John,10,12,1,determiner of noun
 John,10,12,3,subject
 John,10,12,4,negation of verb
 John,10,12,7,"predicate, genitive"
+John,10,15,7,"conjunct, chain"
 John,10,16,20,conjunct
 John,10,26,7,"conjunct, subordinate"
+John,10,27,10,"conjunct, chain"
 John,10,33,20,subject of small clause
+John,10,36,5,topic
 John,10,36,15,"conjunct, subordinate"
 John,10,38,16,"conjunct, ὅτι"
 John,11,1,6,"modifier, preposition"
@@ -1017,10 +1138,13 @@ John,11,26,3,determiner of participle
 John,11,26,5,subject
 John,11,31,4,determiner of participle
 John,11,32,18,"interjection, vocative"
+John,11,33,7,direct object
 John,11,41,14,"interjection, vocative"
 John,11,41,15,"conjunct, main"
 John,11,41,18,"conjunct, subordinate"
 John,11,45,6,determiner of participle
+John,11,45,14,direct object
+John,11,46,13,direct object
 John,11,47,12,"conjunct, main"
 John,11,47,18,"conjunct, subordinate"
 John,11,49,4,"modifier, preposition"
@@ -1032,6 +1156,7 @@ John,12,13,20,subject of verbless predicate
 John,12,29,4,determiner of participle
 John,12,40,11,negation of verb
 John,12,43,10,"conjunct, ἤ"
+John,12,44,14,"modifier of verb, prepositional phrase"
 John,12,47,15,"negation of verb, semantically embedded"
 John,12,48,1,determiner of participle
 John,12,48,4,subject
@@ -1040,17 +1165,20 @@ John,12,50,13,topic
 John,13,2,16,name
 John,13,3,4,"conjunct, ὅτι"
 John,13,3,16,"conjunct, ὅτι"
+John,13,7,8,direct object
 John,13,16,13,gap
 John,13,26,21,name
 John,13,28,1,topic
 John,13,34,8,"conjunct, subordinate"
 John,13,34,11,"conjunct, chain"
+John,14,1,13,"conjunct, chain"
 John,14,10,4,gap
 John,14,11,19,"modifier of nominal, adjective"
 John,14,12,16,"conjunct, main"
 John,14,12,25,"conjunct, subordinate"
 John,14,17,24,"conjunct, subordinate"
 John,14,18,3,subject of small clause
+John,14,19,11,"conjunct, chain"
 John,14,19,16,"conjunct, subordinate"
 John,14,21,1,determiner of participle
 John,14,22,6,appositive
@@ -1070,11 +1198,13 @@ John,15,15,3,subject of small clause
 John,15,15,9,"conjunct, subordinate"
 John,15,15,15,subject of small clause
 John,15,15,20,"modifier of nominal, adjective"
+John,15,15,22,direct object
 John,15,15,27,"conjunct, subordinate"
 John,15,20,4,"direct object, attraction"
 John,15,25,13,"conjunct, ὅτι"
 John,15,27,10,"conjunct, subordinate"
 John,16,2,3,subject of small clause
+John,16,3,9,direct object
 John,16,4,27,"conjunct, subordinate"
 John,16,10,4,"conjunct, μέν δέ"
 John,16,11,4,"conjunct, chain"
@@ -1082,6 +1212,7 @@ John,16,18,8,appositive
 John,16,19,16,"conjunct, ὅτι"
 John,16,32,12,subject of small clause
 John,17,2,8,"modifier of nominal, adjective"
+John,17,3,14,direct object
 John,17,5,11,"direct object, attraction"
 John,17,8,9,"conjunct, subordinate"
 John,17,9,12,"direct object, attraction"
@@ -1091,11 +1222,15 @@ John,17,12,12,"direct object, attraction"
 John,17,12,23,"negation, εἰ μὴ"
 John,17,22,13,gap
 John,17,24,1,"interjection, vocative"
+John,17,25,12,"conjunct, chain"
 John,17,26,18,gap
 John,18,2,12,"conjunct, subordinate"
 John,18,5,3,sentential complement
 John,18,6,9,determiner of headless phrase
 John,18,7,10,sentential complement
+John,18,20,14,"modifier of verb, prepositional phrase"
+John,18,21,14,direct object
+John,19,22,5,direct object
 John,18,23,11,"conjunct, chain"
 John,18,26,17,subject of small clause
 John,19,2,13,direct object
@@ -1113,6 +1248,7 @@ John,19,26,18,sentential complement
 John,19,27,7,sentential complement
 John,19,32,9,conjunct
 John,19,41,13,gap
+John,20,7,1,direct object
 John,20,7,3,subject of verbless predicate
 John,20,12,8,gap
 John,20,12,13,gap
@@ -1123,6 +1259,7 @@ John,20,16,10,sentential complement
 John,20,17,24,determiner of noun
 John,20,18,12,"conjunct, ὅτι"
 John,20,19,35,sentential complement
+John,20,20,7,direct object
 John,20,21,8,sentential complement
 John,20,23,9,gap
 John,20,24,3,appositive
@@ -1130,6 +1267,7 @@ John,20,26,12,gap
 John,20,26,27,conjunct
 John,20,26,29,sentential complement
 John,20,29,6,"conjunct, subordinate"
+John,20,29,8,"conjunct, main"
 John,20,29,10,determiner of participle
 John,20,29,11,negation of verb
 John,21,10,9,"direct object, attraction"
@@ -1141,8 +1279,10 @@ John,21,25,16,"modifier of nominal, adjective"
 Acts,1,1,7,"modifier of nominal, adjective"
 Acts,1,3,4,subject of small clause
 Acts,1,6,8,"interjection, vocative"
+Acts,1,7,10,direct object
 Acts,1,8,20,determiner of name
 Acts,1,13,14,appositive
+Acts,1,15,13,parenthetical
 Acts,1,15,18,determiner of adjective
 Acts,1,16,1,"interjection, vocative"
 Acts,1,16,3,"conjunct, main"
@@ -1153,6 +1293,7 @@ Acts,2,1,13,determiner of adjective
 Acts,2,5,12,determiner of headless phrase
 Acts,2,6,13,"modifier of nominal, adjective"
 Acts,2,6,19,subject of small clause
+Acts,2,9,2,subject
 Acts,2,9,6,conjunct
 Acts,2,11,10,subject of small clause
 Acts,2,20,8,gap
@@ -1161,6 +1302,7 @@ Acts,2,20,16,determiner of adjective
 Acts,2,21,3,"modifier of nominal, adjective"
 Acts,2,22,22,"direct object, attraction"
 Acts,2,23,2,determiner of noun
+Acts,2,25,6,"conjunct, main"
 Acts,2,25,17,"conjunct, subordinate"
 Acts,2,31,9,"conjunct, ὅτι"
 Acts,2,33,20,direct object
@@ -1168,8 +1310,10 @@ Acts,2,35,5,subject of small clause
 Acts,2,44,7,determiner of adjective
 Acts,2,44,11,subject of small clause
 Acts,2,47,20,determiner of adjective
+Acts,3,9,8,direct object
 Acts,3,12,24,conjunct
 Acts,3,14,3,determiner of adjective
+Acts,3,14,5,direct object
 Acts,3,16,9,direct object
 Acts,3,21,10,"direct object, attraction"
 Acts,3,22,16,"conjunct, ὡς, clause"
@@ -1197,6 +1341,7 @@ Acts,5,7,11,negation of verb
 Acts,5,8,17,sentential complement
 Acts,5,10,15,subject of small clause
 Acts,5,12,22,name
+Acts,5,15,16,"modifier of verb, participle"
 Acts,5,25,15,"conjunct, ὅτι"
 Acts,5,29,13,"conjunct, ἤ"
 Acts,5,34,9,appositive
@@ -1226,6 +1371,8 @@ Acts,7,45,15,"direct object, attraction"
 Acts,7,49,4,sentential complement
 Acts,7,49,8,"conjunct, chain"
 Acts,7,51,17,"conjunct, ὡς, clause"
+Acts,7,55,13,direct object
+Acts,7,56,8,direct object
 Acts,8,1,28,determiner of name
 Acts,8,6,12,determiner of infinitive
 Acts,8,7,7,"modifier of verb, participle"
@@ -1237,6 +1384,8 @@ Acts,8,24,18,"direct object, attraction"
 Acts,8,25,8,direct object
 Acts,8,27,5,particle
 Acts,8,30,6,subject of small clause
+Acts,8,30,13,particle
+Acts,8,30,17,direct object
 Acts,8,32,11,"conjunct, ὡς, clause"
 Acts,8,32,22,"conjunct, ὡς, clause"
 Acts,9,9,5,negation of verb
@@ -1244,10 +1393,13 @@ Acts,9,9,8,negation of verb
 Acts,9,10,8,appositive
 Acts,9,10,17,sentential complement
 Acts,9,10,22,sentential complement
+Acts,9,12,9,direct object
+Acts,9,13,17,direct object
 Acts,9,13,12,"modifier of nominal, pronoun"
 Acts,9,15,7,"conjunct, main"
 Acts,9,15,11,"conjunct, subordinate"
 Acts,9,15,24,"conjunct, chain"
+Acts,9,16,6,direct object
 Acts,9,20,11,"conjunct, ὅτι"
 Acts,9,21,8,negation of verb
 Acts,9,21,27,subject of small clause
@@ -1259,7 +1411,10 @@ Acts,9,36,8,appositive
 Acts,9,36,20,"direct object, attraction"
 Acts,9,41,15,subject of small clause
 Acts,10,1,7,appositive
+Acts,10,3,17,direct object
 Acts,10,3,20,sentential complement
+Acts,10,4,5,"modifier of verb, participle"
+Acts,10,11,6,direct object
 Acts,10,11,11,"conjunct, ὡς, clause"
 Acts,10,19,13,subject of verbless predicate
 Acts,10,12,5,determiner of noun
@@ -1268,6 +1423,8 @@ Acts,10,14,5,"conjunct, main"
 Acts,10,14,9,"conjunct, subordinate"
 Acts,10,23,19,conjunct
 Acts,10,28,15,indirect object
+Acts,10,28,22,direct object
+Acts,10,28,25,subject of small clause
 Acts,10,35,5,determiner of participle
 Acts,10,35,8,subject
 Acts,10,38,6,"conjunct, ὡς, other"
@@ -1275,10 +1432,14 @@ Acts,10,39,5,"direct object, attraction"
 Acts,10,41,12,appositive
 Acts,10,43,15,"subject of infinitive, accusative"
 Acts,10,46,3,subject of small clause
+Acts,10,46,6,"direct object, genitive"
 Acts,10,47,19,"conjunct, ὡς, clause"
+Acts,11,6,11,direct object
 Acts,11,7,4,subject of small clause
 Acts,11,8,3,"conjunct, main"
 Acts,11,8,10,"conjunct, subordinate"
+Acts,11,13,4,"modifier of verb, adverb"
+Acts,11,13,13,direct object
 Acts,11,16,8,"conjunct, ὡς, other"
 Acts,11,17,12,"conjunct, ὡς, clause"
 Acts,11,17,22,"modifier of nominal, adjective"
@@ -1288,17 +1449,23 @@ Acts,11,29,22,"conjunct, ὅτι"
 Acts,12,13,12,appositive
 Acts,12,19,6,negation of verb
 Acts,13,1,29,appositive
+Acts,13,2,6,"modifier of verb, participle"
 Acts,13,2,16,determiner of name
 Acts,13,2,23,direct object
 Acts,13,6,14,relative clause
 Acts,13,10,11,appositive
 Acts,13,11,11,negation of verb
 Acts,13,15,16,"interjection, vocative"
+Acts,13,16,4,"modifier of verb, participle"
+Acts,13,16,11,"interjection, vocative"
+Acts,13,27,12,direct object
 Acts,13,33,5,"conjunct, ὅτι"
+Acts,13,37,5,subject
 Acts,13,38,17,"direct object, attraction"
 Acts,13,41,4,"conjunct, main"
 Acts,13,41,10,"conjunct, subordinate"
 Acts,13,46,25,subject of small clause
+Acts,13,48,15,subject
 Acts,13,50,19,determiner of name
 Acts,14,1,6,determiner of adjective
 Acts,14,2,9,direct object
@@ -1308,17 +1475,23 @@ Acts,14,5,5,determiner of noun
 Acts,14,5,17,direct object
 Acts,14,8,4,"modifier of nominal, adjective"
 Acts,14,9,4,subject of small clause
+Acts,14,9,9,"modifier of verb, participle"
+Acts,14,11,6,direct object
 Acts,14,12,8,subject of small clause
 Acts,14,12,9,"conjunct, chain"
 Acts,14,15,35,determiner of headless phrase
 Acts,14,17,4,subject of small clause
 Acts,14,22,15,"conjunct, ὅτι"
+Acts,14,27,3,"modifier of verb, participle"
+Acts,14,27,14,direct object
 Acts,15,2,26,determiner of noun
 Acts,15,3,9,determiner of name
+Acts,15,4,20,direct object
 Acts,15,8,3,appositive
 Acts,15,11,13,"modifier, relative clause"
 Acts,15,12,9,subject of small clause
 Acts,15,17,13,"conjunct, chain"
+Acts,15,22,5,indirect object
 Acts,15,22,20,determiner of name
 Acts,15,22,30,appositive
 Acts,15,23,13,determiner of name
@@ -1327,6 +1500,7 @@ Acts,15,25,3,"modifier of nominal, participle"
 Acts,15,25,5,"predicate, dative"
 Acts,15,26,1,appositive
 Acts,15,27,11,determiner of adjective
+Acts,15,28,7,indirect object
 Acts,15,28,10,"modifier of non-nominal, adjective"
 Acts,15,28,16,determiner of headless phrase
 Acts,15,35,16,direct object
@@ -1337,6 +1511,7 @@ Acts,16,4,14,determiner of noun
 Acts,16,6,3,determiner of name
 Acts,16,14,5,appositive
 Acts,16,15,4,"conjunct, ὡς, clause"
+Acts,16,18,10,"modifier of verb, participle"
 Acts,16,18,26,"modifier of nominal, adjective"
 Acts,16,21,4,direct object
 Acts,16,36,12,"conjunct, ὅτι"
@@ -1345,9 +1520,10 @@ Acts,17,3,16,"conjunct, ὅτι"
 Acts,17,4,17,"conjunct, chain"
 Acts,17,6,1,negation of verb
 Acts,17,9,10,conjunct
+Acts,17,12,7,subject
 Acts,17,13,28,direct object
 Acts,17,15,17,conjunct
-Acts,17,18,21,sentential complement
+Acts,17,18,21,subject of implicit speech
 Acts,17,18,34,"conjunct, subordinate"
 Acts,17,19,12,sentential complement
 Acts,17,19,14,"modifier of nominal, adjective"
@@ -1362,6 +1538,8 @@ Acts,17,29,14,appositive
 Acts,17,30,10,determiner of headless phrase
 Acts,17,31,14,"direct object, attraction"
 Acts,17,34,16,appositive
+Acts,18,4,12,direct object
+Acts,18,6,4,"modifier of verb, participle"
 Acts,18,7,9,appositive
 Acts,18,15,1,"conjunct, μέν δέ"
 Acts,18,23,8,determiner of name
@@ -1385,8 +1563,11 @@ Acts,20,2,4,direct object
 Acts,20,9,6,appositive
 Acts,20,20,6,determiner of infinitive
 Acts,20,20,7,negation of verb
+Acts,20,21,4,indirect object
 Acts,20,21,6,determiner of noun
+Acts,20,21,10,direct object
 Acts,20,22,16,negation of verb
+Acts,20,23,1,direct object
 Acts,20,24,6,subject of small clause
 Acts,20,24,10,"conjunct, ὡς, other"
 Acts,20,28,9,subject of small clause
@@ -1397,18 +1578,22 @@ Acts,20,35,26,"conjunct, ἤ"
 Acts,20,38,10,"conjunct, ὅτι"
 Acts,21,3,7,subject of small clause
 Acts,21,10,12,appositive
+Acts,21,11,5,"modifier of verb, participle"
 Acts,21,14,1,negation of verb
 Acts,21,19,8,"direct object, attraction"
 Acts,21,21,7,"conjunct, ὅτι"
+Acts,21,21,22,infinitive argument of verb
 Acts,21,24,18,"direct object, attraction"
 Acts,21,29,4,subject of small clause
 Acts,21,31,13,"conjunct, ὅτι"
+Acts,21,32,15,direct object
 Acts,21,34,9,negation of verb
 Acts,21,38,7,determiner of participle
 Acts,21,39,16,appositive
 Acts,22,7,8,subject of small clause
 Acts,22,10,20,"modifier of nominal, adjective"
 Acts,22,10,21,"direct object, attraction"
+Acts,22,13,4,"modifier of verb, participle"
 Acts,22,13,12,"modifier of nominal, adjective"
 Acts,22,14,9,"conjunct, main"
 Acts,22,15,2,"conjunct, subordinate"
@@ -1421,6 +1606,7 @@ Acts,23,6,14,"conjunct, chain"
 Acts,23,6,24,appositive
 Acts,23,7,7,determiner of name
 Acts,23,8,7,conjunct
+Acts,23,8,14,"conjunct, μέν δέ"
 Acts,23,15,16,"conjunct, ὡς, non-clause"
 Acts,23,20,19,"conjunct, ὡς, non-clause"
 Acts,23,22,13,"conjunct, ὅτι"
@@ -1436,6 +1622,7 @@ Acts,24,27,20,subject of small clause
 Acts,25,11,14,"conjunct, μέν δέ"
 Acts,25,16,18,"conjunct, ἤ"
 Acts,25,18,9,"direct object, attraction"
+Acts,25,24,7,"interjection, vocative"
 Acts,25,25,9,"modifier of nominal, adjective"
 Acts,25,27,5,"modifier of verb, participle"
 Acts,26,2,2,"modifier of nominal, adjective"
@@ -1446,6 +1633,8 @@ Acts,26,3,6,determiner of noun
 Acts,26,7,16,appositive
 Acts,26,16,19,"direct object, attraction"
 Acts,26,16,23,"direct object, attraction"
+Acts,26,16,25,"conjunct, chain"
+Acts,26,22,16,indirect object
 Acts,26,22,21,subject of small clause
 Acts,26,23,2,appositive
 Acts,26,23,5,"conjunct, chain"
@@ -1460,19 +1649,24 @@ Acts,27,15,6,negation of verb
 Acts,27,16,1,direct object
 Acts,27,19,9,conjunct
 Acts,27,22,2,determiner of headless phrase
+Acts,27,30,9,"modifier of verb, participle"
 Acts,27,30,21,"conjunct, ὡς, non-clause"
+Acts,27,31,6,indirect object
 Acts,27,43,15,"subject of infinitive, accusative"
 Acts,27,43,17,"modifier of verb, participle"
 Acts,27,44,4,gap
 Acts,27,44,8,gap
 Acts,27,44,12,determiner of headless phrase
+Acts,28,6,16,"modifier of verb, participle"
 Acts,28,7,3,determiner of headless phrase
 Acts,28,7,15,appositive
 Acts,28,11,13,"modifier of nominal, adjective"
 Acts,28,11,14,"argument of adjective, dative"
 Acts,28,15,13,name
+Acts,28,22,7,direct object
 Acts,28,22,19,"conjunct, ὅτι"
 Acts,28,28,8,"conjunct, ὅτι"
+Acts,28,28,15,"modifier of verb, adverb"
 Acts,28,31,1,conjunct
 Rom,1,1,1,subject of verbless predicate
 Rom,1,4,3,"predicate, genitive"
@@ -1480,6 +1674,7 @@ Rom,1,7,6,appositive
 Rom,1,7,8,appositive
 Rom,1,7,9,"predicate, dative"
 Rom,1,9,23,"conjunct, ὡς, other"
+Rom,1,16,18,appositive
 Rom,1,20,12,determiner of noun
 Rom,1,21,5,negation of verb
 Rom,1,26,20,gap
@@ -1504,6 +1699,7 @@ Rom,2,14,5,negation of verb
 Rom,2,14,11,direct object
 Rom,2,14,15,negation of verb
 Rom,2,15,4,subject of small clause
+Rom,2,21,3,"interjection, vocative"
 Rom,2,25,8,"conjunct, μέν δέ"
 Rom,2,28,11,"modifier of nominal, prepositional phrase"
 Rom,2,29,3,"modifier of nominal, prepositional phrase"
@@ -1514,7 +1710,7 @@ Rom,3,10,8,appositive
 Rom,3,25,1,subject of small clause
 Rom,4,4,6,"negation of verb, semantically embedded"
 Rom,4,5,3,negation of verb
-Rom,4,7,1,sentential complement
+Rom,4,7,1,appositive
 Rom,4,17,8,subject of small clause
 Rom,4,17,10,"direct object, attraction"
 Rom,4,17,13,determiner of participle
@@ -1539,9 +1735,11 @@ Rom,6,15,5,"negation of verb, semantically embedded"
 Rom,6,16,6,subject of small clause
 Rom,6,19,13,subject of small clause
 Rom,6,19,28,subject of small clause
+Rom,7,1,7,parenthetical
 Rom,7,3,1,particle
 Rom,7,3,3,"modifier of verb, participle"
 Rom,7,5,11,determiner of headless phrase
+Rom,7,15,3,direct object
 Rom,7,16,12,"conjunct, ὅτι"
 Rom,7,19,6,"modifier of nominal, adjective"
 Rom,7,19,11,"modifier of nominal, adjective"
@@ -1561,10 +1759,13 @@ Rom,8,15,16,sentential complement
 Rom,8,17,9,"conjunct, μέν δέ"
 Rom,8,20,7,negation of verb
 Rom,8,21,6,"conjunct, ὅτι"
+Rom,8,24,13,direct object
+Rom,8,25,5,direct object
 Rom,8,28,16,appositive
 Rom,8,33,6,subject of verbless predicate
 Rom,8,34,1,subject of verbless predicate
 Rom,8,35,18,conjunct
+Rom,9,1,6,parenthetical
 Rom,9,5,16,appositive
 Rom,9,5,17,"modifier of nominal, adjective"
 Rom,9,6,2,subject of verbless predicate
@@ -1583,11 +1784,13 @@ Rom,9,30,7,negation of verb
 Rom,9,30,10,"conjunct, ὅτι"
 Rom,9,32,5,conjunct
 Rom,10,12,13,conjunction
+Rom,10,14,13,direct object
 Rom,10,15,10,sentential complement
 Rom,10,18,22,gap
 Rom,11,18,15,gap
 Rom,10,20,10,negation of verb
 Rom,10,20,16,negation of verb
+Rom,11,2,19,appositive
 Rom,11,4,15,determiner of noun
 Rom,11,24,20,"modifier of nominal, prepositional phrase"
 Rom,11,25,6,"interjection, vocative"
@@ -1595,6 +1798,7 @@ Rom,11,28,12,"conjunct, μέν δέ"
 Rom,11,33,14,"conjunct, ὡς, other"
 Rom,12,2,17,sentential complement
 Rom,12,2,22,determiner of adjective
+Rom,12,3,20,infinitive argument of verb
 Rom,12,4,15,"modifier of nominal, adjective"
 Rom,12,5,14,"conjunct, chain"
 Rom,12,11,4,"conjunct, chain"
@@ -1610,13 +1814,16 @@ Rom,13,6,12,"modifier of nominal, adjective"
 Rom,13,7,9,"conjunct, chain"
 Rom,13,9,28,"conjunct, ὡς, clause"
 Rom,13,11,2,"modifier of nominal, pronoun"
+Rom,13,11,20,"modifier of verb, adverb"
 Rom,13,11,21,"conjunct, ἤ"
 Rom,13,13,5,"conjunct, main"
+Rom,14,2,10,"conjunct, μέν δέ"
 Rom,14,3,4,negation of verb
 Rom,14,3,10,negation of verb
 Rom,14,6,18,negation of verb
 Rom,14,8,8,"conjunct, chain"
 Rom,14,8,18,"conjunct, chain"
+Rom,14,11,12,"conjunct, ὅτι"
 Rom,14,14,12,"conjunct, ὅτι"
 Rom,14,17,1,"negation of verb, semantically embedded"
 Rom,14,21,2,determiner of infinitive
@@ -1625,8 +1832,12 @@ Rom,14,22,17,"direct object, attraction"
 Rom,15,1,5,appositive
 Rom,15,5,11,determiner of adjective
 Rom,15,6,7,determiner of noun
+Rom,15,15,7,"modifier of verb, participle"
 Rom,15,18,6,"direct object, attraction"
+Rom,15,21,6,subject
+Rom,15,21,13,subject
 Rom,15,23,18,"modifier of nominal, adjective"
+Rom,15,24,12,infinitive argument of verb
 Rom,16,2,13,d
 Rom,16,2,26,"modifier of nominal, adjective"
 Rom,16,3,6,appositive
@@ -1653,7 +1864,7 @@ Rom,16,23,5,appositive
 1Cor,1,10,34,"modifier of nominal, adjective"
 1Cor,1,11,15,"conjunct, ὅτι"
 1Cor,1,12,12,gap
-1Cor,1,12,14,"conjunct, chain"
+1Cor,1,12,14,"conjunct, μέν δέ"
 1Cor,1,12,15,gap
 1Cor,1,12,17,"conjunct, chain"
 1Cor,1,12,18,gap
@@ -1685,7 +1896,7 @@ Rom,16,23,5,appositive
 1Cor,3,2,5,"conjunct, chain"
 1Cor,3,4,9,gap
 1Cor,3,4,11,gap
-1Cor,3,4,12,sentential complement
+1Cor,3,4,12,"conjunct, chain"
 1Cor,3,10,11,"conjunct, ὡς, clause"
 1Cor,3,19,15,sentential complement
 1Cor,3,22,1,appositive
@@ -1694,17 +1905,20 @@ Rom,16,23,5,appositive
 1Cor,3,23,3,"conjunct, chain"
 1Cor,3,23,4,gap
 1Cor,3,23,6,"conjunct, chain"
+1Cor,4,1,2,subject of small clause
+1Cor,4,1,5,direct object
 1Cor,4,6,15,"determiner, other"
 1Cor,4,7,18,negation of verb
 1Cor,4,7,19,"conjunct, ὡς, non-clause"
 1Cor,4,9,5,subject of small clause
-1Cor,4,9,9,"conjunct, main"
 1Cor,4,9,14,"conjunct, subordinate"
 1Cor,4,10,7,"conjunct, chain"
 1Cor,4,10,14,"conjunct, chain"
 1Cor,4,10,19,"conjunct, chain"
+1Cor,4,14,6,"modifier of verb, participle"
 1Cor,4,18,2,negation of verb
 1Cor,4,18,3,"conjunct, ὡς, non-clause"
+1Cor,4,19,17,direct object
 1Cor,5,1,6,subject
 1Cor,5,3,14,"conjunct, ὡς, non-clause"
 1Cor,5,11,26,"conjunct, chain"
@@ -1722,7 +1936,8 @@ Rom,16,23,5,appositive
 1Cor,7,5,18,determiner of adjective
 1Cor,7,7,16,gap
 1Cor,7,7,19,gap
-1Cor,7,8,8,sentential complement
+1Cor,7,8,5,indirect object
+1Cor,7,8,8,"conjunct, main"
 1Cor,7,9,11,"conjunct, ἤ"
 1Cor,7,16,4,"interjection, vocative"
 1Cor,7,16,12,"interjection, vocative"
@@ -1742,6 +1957,7 @@ Rom,16,23,5,appositive
 1Cor,7,34,30,direct object
 1Cor,7,35,6,"modifier of nominal, adjective"
 1Cor,7,35,9,"negation, other"
+1Cor,7,35,14,"modifier of verb, prepositional phrase"
 1Cor,7,35,16,determiner of adjective
 1Cor,7,36,10,"conjunct, chain"
 1Cor,7,37,9,negation of verb
@@ -1770,6 +1986,7 @@ Rom,16,23,5,appositive
 1Cor,9,26,13,"conjunct, ὡς, non-clause"
 1Cor,10,3,4,"modifier of nominal, adjective"
 1Cor,10,4,4,"modifier of nominal, adjective"
+1Cor,10,15,1,indirect object
 1Cor,10,15,3,"conjunct, ὡς, non-clause"
 1Cor,10,17,2,"modifier of nominal, adjective"
 1Cor,10,17,3,"predicate, nominative"
@@ -1836,6 +2053,7 @@ Rom,16,23,5,appositive
 1Cor,12,25,9,determiner of adjective
 1Cor,12,26,3,"conjunct, subordinate"
 1Cor,12,26,11,"conjunct, subordinate"
+1Cor,13,2,10,direct object
 1Cor,13,2,28,"conjunct, main"
 1Cor,13,3,19,"conjunct, chain"
 1Cor,13,3,21,"conjunct, main"
@@ -1848,19 +2066,22 @@ Rom,16,23,5,appositive
 1Cor,13,11,12,"conjunct, ὡς, clause"
 1Cor,13,11,19,direct object
 1Cor,13,12,10,"conjunct, chain"
+1Cor,13,12,20,"conjunct, chain"
 1Cor,14,5,17,"conjunct, ἤ"
 1Cor,14,6,3,"interjection, vocative"
 1Cor,14,7,1,"modifier of verb, adverb"
-1Cor,14,7,3,"conjunct, main"
 1Cor,14,7,5,"modifier of verb, participle"
 1Cor,14,7,6,appositive
+1Cor,14,7,16,"modifier of verb, adverb"
 1Cor,14,9,1,"modifier of verb, adverb"
 1Cor,14,19,17,"conjunct, ἤ"
 1Cor,14,23,8,determiner of adjective
+1Cor,14,24,5,"conjunct, chain"
 1Cor,14,25,23,"conjunct, ὅτι"
 1Cor,14,27,4,"conjunct, subordinate"
 1Cor,14,33,1,"negation of verb, semantically embedded"
 1Cor,14,33,10,"conjunct, ὡς, clause"
+1Cor,14,37,10,topic
 1Cor,15,2,11,"modifier of verb, adverb"
 1Cor,15,3,11,"conjunct, ὅτι"
 1Cor,15,4,3,"conjunct, ὅτι"
@@ -1889,6 +2110,7 @@ Rom,16,23,5,appositive
 1Cor,15,50,14,"conjunct, ὅτι"
 1Cor,15,56,14,"conjunct, chain"
 1Cor,15,58,7,"conjunct, chain"
+1Cor,16,7,16,infinitive argument of verb
 1Cor,16,10,17,"conjunct, ὡς, clause"
 1Cor,16,14,1,"modifier of headless phrase, adjective"
 1Cor,16,14,2,subject
@@ -1907,8 +2129,10 @@ Rom,16,23,5,appositive
 2Cor,1,7,18,"conjunct, main"
 2Cor,1,8,6,"interjection, vocative"
 2Cor,1,9,11,"negation of verb, semantically embedded"
+2Cor,1,9,16,"modifier of verb, prepositional phrase"
 2Cor,1,12,8,appositive
 2Cor,1,12,27,"conjunct, ὅτι"
+2Cor,1,13,6,direct object
 2Cor,1,14,13,gap
 2Cor,1,17,19,"determiner, other"
 2Cor,1,17,23,"determiner, other"
@@ -1930,6 +2154,7 @@ Rom,16,23,5,appositive
 2Cor,2,17,6,"conjunct, ὡς, clause"
 2Cor,3,1,9,"conjunct, ὡς, clause"
 2Cor,3,5,1,"negation, other"
+2Cor,3,5,9,"modifier of verb, prepositional phrase"
 2Cor,3,6,4,subject of small clause
 2Cor,3,13,2,"negation, other"
 2Cor,3,14,21,negation of verb
@@ -1950,6 +2175,7 @@ Rom,16,23,5,appositive
 2Cor,4,18,18,"conjunct, chain"
 2Cor,5,4,12,"negation of verb, semantically embedded"
 2Cor,5,5,6,"modifier of nominal, adjective"
+2Cor,5,7,4,parenthetical
 2Cor,5,10,3,"modifier of nominal, adjective"
 2Cor,5,10,4,"subject of infinitive, accusative"
 2Cor,5,13,4,"conjunct, main"
@@ -1970,6 +2196,7 @@ Rom,16,23,5,appositive
 2Cor,6,10,2,"conjunct, ὡς, non-clause"
 2Cor,6,10,13,"conjunct, ὡς, non-clause"
 2Cor,6,13,3,"modifier of nominal, adjective"
+2Cor,6,13,5,indirect object
 2Cor,7,3,14,determiner of infinitive
 2Cor,7,4,6,"conjunct, chain"
 2Cor,7,7,17,"modifier of verb, participle"
@@ -1978,9 +2205,10 @@ Rom,16,23,5,appositive
 2Cor,7,8,19,"conjunct, ὅτι"
 2Cor,7,9,3,"negation, other"
 2Cor,7,12,1,particle
-2Cor,8,3,5,"conjunct, subordinate"
+2Cor,8,3,5,sentential complement
 2Cor,8,3,8,"modifier of non-nominal, adjective"
 2Cor,8,5,2,"negation, other"
+2Cor,8,8,5,"modifier of verb, prepositional phrase"
 2Cor,8,13,1,"negation, other"
 2Cor,8,13,7,"conjunct, chain"
 2Cor,8,15,5,subject
@@ -2006,13 +2234,17 @@ Rom,16,23,5,appositive
 2Cor,9,10,15,direct object
 2Cor,9,13,11,determiner of noun
 2Cor,10,1,8,determiner of noun
+2Cor,10,2,16,subject of small clause
 2Cor,10,1,18,appositive
+2Cor,10,2,17,direct object
 2Cor,10,2,20,"conjunct, ὡς, non-clause"
 2Cor,10,8,11,"direct object, attraction"
+2Cor,10,9,4,predicate
 2Cor,10,9,6,"conjunct, ὡς, non-clause"
 2Cor,10,10,7,sentential complement
 2Cor,10,10,17,subject of verbless predicate
 2Cor,10,12,7,direct object
+2Cor,10,12,18,"modifier of verb, participle"
 2Cor,10,13,14,"direct object, attraction"
 2Cor,10,14,4,negation of verb
 2Cor,10,14,5,"conjunct, ὡς, non-clause"
@@ -2048,7 +2280,11 @@ Rom,16,23,5,appositive
 2Cor,12,2,9,"conjunct, subordinate"
 2Cor,12,2,14,"conjunct, subordinate"
 2Cor,12,2,12,parenthetical
+2Cor,12,2,18,"conjunct, chain"
+2Cor,12,2,21,"conjunct, chain"
 2Cor,12,3,9,"conjunct, subordinate"
+2Cor,12,3,14,parenthetical
+2Cor,12,3,17,"conjunct, chain"
 2Cor,12,4,11,negation of verb
 2Cor,12,7,15,appositive
 2Cor,12,13,11,"negation, εἰ μὴ"
@@ -2074,6 +2310,9 @@ Gal,1,4,20,determiner of noun
 Gal,1,5,1,relative clause
 Gal,1,7,9,determiner of participle
 Gal,1,8,2,"modifier of verb, adverb"
+Gal,1,9,3,"conjunct, ὡς, clause"
+Gal,1,9,7,sentential complement
+Gal,1,10,5,direct object
 Gal,1,11,6,direct object
 Gal,1,15,4,determiner of participle
 Gal,1,15,11,subject
@@ -2083,6 +2322,7 @@ Gal,1,20,6,"modifier of verb, prepositional phrase"
 Gal,1,20,11,"conjunct, ὅτι"
 Gal,2,2,20,negation of verb
 Gal,2,7,13,gap
+Gal,2,8,9,parenthetical
 Gal,2,10,6,appositive
 Gal,2,10,8,"modifier of verb, relative clause"
 Gal,2,10,9,"modifier of nominal, adjective"
@@ -2092,7 +2332,7 @@ Gal,2,20,24,determiner of participle
 Gal,2,21,12,"conjunct, main"
 Gal,3,5,1,determiner of participle
 Gal,3,11,16,"conjunct, subordinate"
-Gal,3,13,15,sentential complement
+Gal,3,13,15,subject
 Gal,3,15,8,direct object
 Gal,3,29,5,"conjunct, main"
 Gal,3,29,12,appositive
@@ -2103,6 +2343,7 @@ Gal,4,12,5,gap
 Gal,4,14,3,direct object
 Gal,4,14,15,"conjunct, ὡς, clause"
 Gal,4,14,20,"conjunct, ὡς, clause"
+Gal,4,21,6,"interjection, vocative"
 Gal,4,23,12,gap
 Gal,4,25,1,determiner of name
 Gal,4,27,3,"conjunct, main"
@@ -2129,6 +2370,7 @@ Eph,1,6,7,"direct object, attraction"
 Eph,1,8,1,"direct object, attraction"
 Eph,1,10,13,determiner of headless phrase
 Eph,1,10,18,determiner of headless phrase
+Eph,1,15,13,direct object
 Eph,1,18,1,"modifier of verb, participle"
 Eph,1,18,3,subject of participle
 Eph,2,1,2,subject of participle
@@ -2154,6 +2396,7 @@ Eph,4,1,13,"other, attraction"
 Eph,4,9,7,"negation, other"
 Eph,4,11,13,determiner of noun
 Eph,4,16,18,"modifier of nominal, adjective"
+Eph,4,17,11,infinitive argument of verb
 Eph,4,24,1,infinitive argument of verb
 Eph,4,32,5,"conjunct, chain"
 Eph,5,1,7,"conjunct, ὡς, clause"
@@ -2177,6 +2420,7 @@ Eph,5,27,8,negation of verb
 Eph,5,28,13,"conjunct, ὡς, clause"
 Eph,5,29,12,direct object
 Eph,5,29,16,gap
+Eph,5,32,11,"modifier of verb, prepositional phrase"
 Eph,5,33,14,"conjunct, ὡς, clause"
 Eph,6,5,19,"conjunct, ὡς, clause"
 Eph,6,6,5,"conjunct, ὡς, clause"
@@ -2196,6 +2440,7 @@ Phil,1,20,11,"conjunct, ὅτι"
 Phil,1,23,4,determiner of adjective
 Phil,1,23,10,determiner of infinitive
 Phil,1,27,4,"argument of adjective, genitive"
+Phil,1,27,9,"modifier of verb, participle"
 Phil,1,28,2,negation of verb
 Phil,1,28,16,"conjunct, chain"
 Phil,1,30,2,"modifier of nominal, adjective"
@@ -2214,6 +2459,7 @@ Phil,2,15,18,"conjunct, ὡς, clause"
 Phil,2,16,15,"conjunct, ὅτι"
 Phil,2,17,6,determiner of noun
 Phil,2,18,1,determiner of adjective
+Phil,2,19,10,infinitive argument of verb
 Phil,2,21,5,direct object
 Phil,2,21,9,"conjunct, chain"
 Phil,2,22,9,"conjunct, ὡς, clause"
@@ -2229,27 +2475,32 @@ Phil,3,6,3,"conjunct, chain"
 Phil,3,7,6,subject of small clause
 Phil,3,9,5,"negation of verb, semantically embedded"
 Phil,3,9,13,gap
+Phil,3,10,4,direct object
 Phil,3,12,1,"negation, other"
 Phil,3,15,3,relative clause
 Phil,3,16,5,determiner of adjective
 Phil,3,17,7,determiner of participle
 Phil,3,17,13,subject of small clause
+Phil,3,18,12,"conjunct, chain"
 Phil,3,19,4,relative clause
 Phil,3,19,20,"modifier of nominal, participle"
 Phil,3,21,4,subject of small clause
 Phil,4,2,6,determiner of adjective
+Phil,4,8,5,topic
 Phil,4,8,8,"conjunct, chain"
 Phil,4,8,10,"conjunct, chain"
 Phil,4,8,12,"conjunct, chain"
 Phil,4,8,14,"conjunct, chain"
 Phil,4,8,16,"conjunct, chain"
 Phil,4,11,1,"negation, other"
+Phil,4,12,4,"conjunct, chain"
 Phil,4,16,13,"conjunct, subordinate"
 Phil,4,17,1,"negation, other"
 Phil,4,18,10,determiner of headless phrase
 Phil,4,20,1,determiner of noun
 Phil,4,22,8,gap
 Phil,4,22,9,appositive
+Col,1,4,8,direct object
 Col,1,10,4,"argument of adjective, genitive"
 Col,1,16,5,determiner of headless phrase
 Col,1,20,19,determiner of headless phrase
@@ -2283,14 +2534,17 @@ Col,3,22,14,"conjunct, ὡς, clause"
 Col,4,7,8,determiner of noun
 Col,4,8,6,"modifier of nominal, adjective"
 Col,4,16,17,gap
+1Thess,1,3,7,"direct object, genitive"
 1Thess,1,3,23,determiner of noun
 1Thess,1,5,5,"negation of verb, semantically embedded"
 1Thess,1,5,23,"conjunct, ὅτι"
+1Thess,1,7,11,"modifier of nominal, prepositional phrase"
 1Thess,2,4,12,"negation of verb, semantically embedded"
 1Thess,2,4,15,"conjunct, ὡς, non-clause"
 1Thess,2,5,15,parenthetical
 1Thess,2,7,7,"conjunct, ὡς, clause"
 1Thess,2,7,15,"conjunct, ὡς, clause"
+1Thess,2,9,7,direct object
 1Thess,2,11,5,topic
 1Thess,2,11,7,"conjunct, ὡς, clause"
 1Thess,2,11,8,gap
@@ -2323,7 +2577,9 @@ Col,4,16,17,gap
 1Thess,4,5,10,negation of verb
 1Thess,4,6,1,determiner of infinitive
 1Thess,4,6,2,negation of verb
+1Thess,4,6,4,"conjunct, chain"
 1Thess,4,6,10,direct object
+1Thess,4,6,19,"modifier of verb, adverb"
 1Thess,4,7,1,"negation of verb, semantically embedded"
 1Thess,4,10,17,"interjection, vocative"
 1Thess,4,13,18,negation of verb
@@ -2335,6 +2591,8 @@ Col,4,16,17,gap
 1Thess,5,9,2,"negation of verb, semantically embedded"
 1Thess,5,10,8,"conjunct, subordinate"
 1Thess,5,12,6,determiner of participle
+1Thess,5,12,10,direct object
+1Thess,5,15,9,clause argument of verb
 1Thess,5,23,8,subject of small clause
 1Thess,5,23,15,subject of small clause
 2Thess,1,3,8,"interjection, vocative"
@@ -2365,6 +2623,7 @@ Col,4,16,17,gap
 2Thess,3,15,9,"conjunct, ὡς, clause"
 1Tim,1,4,12,n
 1Tim,1,7,4,negation of verb
+1Tim,1,7,6,direct object
 1Tim,1,9,6,"negation of verb, semantically embedded"
 1Tim,1,10,5,"conjunct, chain"
 1Tim,1,12,6,appositive
@@ -2374,6 +2633,7 @@ Col,4,16,17,gap
 1Tim,1,17,9,"conjunct, chain"
 1Tim,2,5,4,"conjunct, chain"
 1Tim,2,6,3,subject of small clause
+1Tim,2,7,11,"conjunct, chain"
 1Tim,2,13,6,"conjunct, chain"
 1Tim,3,2,9,"conjunct, chain"
 1Tim,3,2,10,"conjunct, chain"
@@ -2419,11 +2679,15 @@ Col,4,16,17,gap
 1Tim,6,16,2,appositive
 1Tim,6,16,5,direct object
 1Tim,6,16,15,relative clause
+1Tim,6,17,15,"modifier of verb, prepositional phrase"
 1Tim,6,20,7,determiner of noun
 2Tim,1,3,18,subject of small clause
 2Tim,1,9,1,determiner of participle
 2Tim,1,12,3,appositive
+2Tim,1,12,13,direct object
+2Tim,1,18,17,direct object
 2Tim,2,3,4,"conjunct, ὡς, clause"
+2Tim,2,7,3,direct object
 2Tim,2,9,7,"conjunct, ὡς, clause"
 2Tim,2,15,2,subject of small clause
 2Tim,2,15,7,"conjunct, chain"
@@ -2455,6 +2719,7 @@ Col,4,16,17,gap
 2Tim,3,11,14,"modifier of nominal, pronoun"
 2Tim,3,14,5,"direct object, attraction"
 2Tim,3,15,7,"conjunct, ὅτι"
+2Tim,4,1,14,direct object
 2Tim,4,10,13,gap
 2Tim,4,10,16,gap
 2Tim,4,18,17,relative clause
@@ -2470,6 +2735,7 @@ Titus,1,8,4,"conjunct, chain"
 Titus,1,8,5,"conjunct, chain"
 Titus,1,8,6,"conjunct, chain"
 Titus,1,8,7,"conjunct, chain"
+Titus,1,11,11,direct object
 Titus,1,12,10,sentential complement
 Titus,1,14,1,negation of verb
 Titus,1,15,5,determiner of participle
@@ -2486,6 +2752,7 @@ Titus,2,7,3,subject of small clause
 Titus,2,7,11,"conjunct, chain"
 Titus,2,9,9,negation of verb
 Titus,2,10,1,negation of verb
+Titus,2,12,7,direct object
 Titus,2,13,2,determiner of noun
 Titus,2,13,9,determiner of noun
 Titus,2,13,15,appositive
@@ -2495,6 +2762,7 @@ Titus,3,5,4,determiner of headless phrase
 Titus,3,6,1,"direct object, attraction"
 Titus,3,13,3,appositive
 Phlm,1,1,10,determiner of adjective
+Phlm,1,5,5,direct object
 Phlm,1,7,19,"interjection, vocative"
 Phlm,1,9,9,"conjunct, ὡς, clause"
 Phlm,1,9,14,appositive
@@ -2520,7 +2788,6 @@ Heb,2,10,17,"modifier of verb, participle"
 Heb,2,11,10,"modifier of nominal, adjective"
 Heb,2,11,13,appositive
 Heb,2,11,17,subject of small clause
-Heb,2,13,12,sentential complement
 Heb,2,14,13,determiner of adjective
 Heb,2,15,8,"modifier of nominal, adjective"
 Heb,2,18,2,"direct object, attraction"
@@ -2605,16 +2872,16 @@ Heb,10,2,14,"subject of infinitive, accusative"
 Heb,10,2,16,"modifier of verb, participle"
 Heb,10,10,3,appositive
 Heb,10,11,11,"modifier of nominal, adjective"
-Heb,10,16,1,sentential complement
+Heb,10,16,1,conjunct
 Heb,10,22,17,direct object
 Heb,10,23,3,subject of small clause
 Heb,10,25,1,negation of verb
 Heb,10,27,6,"conjunct, chain"
+Heb,10,29,4,infinitive argument of verb
 Heb,10,29,6,determiner of participle
 Heb,10,29,12,subject
 Heb,10,29,14,subject of small clause
 Heb,10,30,3,determiner of participle
-Heb,10,30,6,sentential complement
 Heb,11,1,8,negation of verb
 Heb,11,3,14,"subject of infinitive, accusative"
 Heb,11,6,10,"subject of infinitive, accusative"
@@ -2652,6 +2919,7 @@ Heb,12,24,10,"modifier of nominal, participle"
 Heb,12,27,1,"determiner, other"
 Heb,12,27,10,"conjunct, ὡς, non-clause"
 Heb,12,27,14,negation of verb
+Heb,13,3,4,"modifier of verb, participle"
 Heb,13,3,10,subject of verbless predicate
 Heb,13,6,7,sentential complement
 Heb,13,8,6,determiner of adjective
@@ -2670,6 +2938,7 @@ Jas,1,19,13,"conjunct, chain"
 Jas,1,19,17,"conjunct, chain"
 Jas,1,25,1,determiner of participle
 Jas,1,26,6,negation of verb
+Jas,1,26,10,"modifier of verb, participle"
 Jas,1,27,6,determiner of noun
 Jas,1,27,21,subject of small clause
 Jas,2,4,1,negation of verb
@@ -2679,6 +2948,9 @@ Jas,2,8,14,"conjunct, ὡς, clause"
 Jas,2,9,11,"conjunct, ὡς, clause"
 Jas,2,13,6,negation of verb
 Jas,2,14,3,"interjection, vocative"
+Jas,2,14,13,"conjunct, chain"
+Jas,2,16,14,"conjunct, chain"
+Jas,2,18,20,"conjunct, chain"
 Jas,2,22,9,"conjunct, ὅτι"
 Jas,3,2,14,"conjunct, chain"
 Jas,3,6,16,determiner of participle
@@ -2709,6 +2981,8 @@ Jas,5,3,22,"conjunct, ὡς, clause"
 Jas,5,7,3,"interjection, vocative"
 Jas,5,7,9,particle
 Jas,5,11,16,"conjunct, ὅτι"
+Jas,5,12,8,direct object
+Jas,5,12,17,conjunct
 Jas,5,12,21,"determiner, other"
 Jas,5,12,25,"determiner, other"
 Jas,5,12,26,gap
@@ -2780,6 +3054,7 @@ Jas,5,19,1,"interjection, vocative"
 1Pet,5,5,5,"interjection, vocative"
 1Pet,5,8,8,"conjunct, ὡς, clause"
 1Pet,5,9,7,determiner of adjective
+1Pet,5,12,13,"modifier of verb, participle"
 2Pet,1,1,20,appositive
 2Pet,1,5,2,"modifier of nominal, adjective"
 2Pet,1,5,20,"conjunct, chain"
@@ -2794,6 +3069,8 @@ Jas,5,19,1,"interjection, vocative"
 2Pet,1,11,17,appositive
 2Pet,1,16,1,negation of verb
 2Pet,1,16,8,determiner of noun
+2Pet,1,16,15,direct object
+2Pet,1,16,17,"modifier of verb, participle"
 2Pet,1,17,1,"modifier of verb, participle"
 2Pet,1,18,4,subject of small clause
 2Pet,1,18,9,direct object
@@ -2813,7 +3090,6 @@ Jas,5,19,1,"interjection, vocative"
 2Pet,2,20,14,appositive
 2Pet,2,21,13,"conjunct, ἤ"
 2Pet,2,22,6,subject
-2Pet,2,22,7,sentential complement
 2Pet,3,2,15,determiner of noun
 2Pet,3,5,8,"conjunct, ὅτι"
 2Pet,3,7,9,"modifier of nominal, adjective"
@@ -2835,6 +3111,7 @@ Jas,5,19,1,"interjection, vocative"
 1John,2,4,1,determiner of participle
 1John,2,4,6,subject
 1John,2,4,10,negation of verb
+1John,2,7,7,direct object
 1John,2,9,1,determiner of participle
 1John,2,9,7,subject
 1John,2,12,5,"conjunct, subordinate"
@@ -2844,7 +3121,9 @@ Jas,5,19,1,"interjection, vocative"
 1John,2,14,12,"conjunct, subordinate"
 1John,2,14,22,"conjunct, subordinate"
 1John,2,15,6,determiner of headless phrase
+1John,2,18,16,"modifier of verb, adverb"
 1John,2,21,1,"negation of verb, semantically embedded"
+1John,2,22,23,direct object
 1John,2,27,29,"conjunct, ὡς, clause"
 1John,3,1,23,"conjunct, subordinate"
 1John,3,2,1,"interjection, vocative"
@@ -2856,8 +3135,9 @@ Jas,5,19,1,"interjection, vocative"
 1John,3,12,29,"conjunct, chain"
 1John,3,13,3,"interjection, vocative"
 1John,3,14,16,negation of verb
+1John,3,16,13,"conjunct, ὅτι"
 1John,3,18,2,"negation of verb, semantically embedded"
-1John,3,20,1,"conjunct, main"
+1John,3,20,1,appositive
 1John,3,20,15,"conjunct, subordinate"
 1John,3,21,1,"interjection, vocative"
 1John,3,24,11,gap
@@ -2865,6 +3145,8 @@ Jas,5,19,1,"interjection, vocative"
 1John,4,1,1,"interjection, vocative"
 1John,4,3,19,gap
 1John,4,3,20,"subject, attraction"
+1John,4,6,14,subject
+1John,4,6,28,direct object
 1John,4,7,1,"interjection, vocative"
 1John,4,8,2,negation of verb
 1John,4,8,12,"conjunct, subordinate"
@@ -2889,6 +3171,7 @@ Jas,5,19,1,"interjection, vocative"
 2John,1,9,2,determiner of participle
 2John,1,9,4,subject
 2John,1,9,5,negation of verb
+2John,1,12,21,infinitive argument of verb
 3John,1,2,1,"interjection, vocative"
 3John,1,5,1,"interjection, vocative"
 3John,1,6,14,"argument of adjective, genitive"
@@ -2898,6 +3181,7 @@ Jas,5,19,1,"interjection, vocative"
 3John,1,12,7,"modifier of nominal, adjective"
 Jude,1,4,12,"conjunct, chain"
 Jude,1,4,22,determiner of noun
+Jude,1,4,25,direct object
 Jude,1,5,5,"modifier of verb, participle"
 Jude,1,5,6,subject of participle
 Jude,1,5,19,negation of verb
@@ -2914,34 +3198,44 @@ Jude,1,19,5,"conjunct, chain"
 Jude,1,19,7,negation of verb
 Jude,1,24,5,subject of small clause
 Jude,1,25,2,appositive
+Rev,1,1,14,direct object
+Rev,1,2,7,direct object
 Rev,1,3,5,determiner of participle
 Rev,1,5,20,determiner of participle
 Rev,1,6,3,subject of small clause
 Rev,1,6,6,determiner of noun
-Rev,1,8,14,sentential complement
+Rev,1,8,14,conjunct
 Rev,1,9,3,determiner of noun
 Rev,1,9,9,determiner of noun
 Rev,1,10,15,conjunct
+Rev,1,11,3,direct object
 Rev,1,14,11,"modifier of nominal, adjective"
 Rev,1,15,10,"conjunct, ὡς, non-clause"
 Rev,1,16,21,subject of verbless predicate
 Rev,1,17,11,"conjunct, ὡς, clause"
+Rev,1,19,5,direct object
+Rev,2,2,5,direct object
 Rev,2,2,18,"conjunct, ὅτι"
 Rev,2,2,22,subject of small clause
 Rev,2,2,29,subject of small clause
 Rev,2,4,11,"conjunct, ὅτι"
 Rev,2,6,5,"conjunct, ὅτι"
 Rev,2,8,13,subject
+Rev,2,9,5,direct object
 Rev,2,14,7,"conjunct, ὅτι"
+Rev,2,19,5,direct object
 Rev,2,20,6,"conjunct, ὅτι"
 Rev,2,20,12,subject of small clause
 Rev,2,23,24,"modifier of nominal, adjective, irregular agreement"
 Rev,3,1,30,"conjunct, ὅτι"
 Rev,3,3,17,"conjunct, ὡς, clause"
+Rev,3,5,29,"modifier of verb, prepositional phrase"
 Rev,3,7,14,"conjunct, chain"
 Rev,3,7,20,determiner of participle
 Rev,3,8,15,resumptive pronoun
+Rev,3,8,20,"conjunct, ὅτι"
 Rev,3,12,4,subject of small clause
+Rev,3,12,27,direct object
 Rev,3,14,11,"determiner, other"
 Rev,3,14,15,determiner of adjective
 Rev,3,17,9,"modifier of nominal, adjective, irregular agreement"
@@ -2950,6 +3244,7 @@ Rev,3,17,18,determiner of adjective
 Rev,3,20,27,gap
 Rev,3,21,15,"conjunct, ὡς, clause"
 Rev,4,1,6,subject of verbless predicate
+Rev,4,1,30,direct object
 Rev,4,4,14,subject of verbless predicate
 Rev,4,4,15,conjunct
 Rev,4,5,13,subject of verbless predicate
@@ -2973,6 +3268,7 @@ Rev,6,1,14,subject of small clause
 Rev,6,3,11,subject of small clause
 Rev,6,4,11,conjunct
 Rev,6,5,11,subject of small clause
+Rev,6,6,3,direct object
 Rev,6,6,10,"conjunct, ὡς, non-clause"
 Rev,6,10,10,determiner of adjective
 Rev,6,10,14,negation of verb
@@ -2980,6 +3276,7 @@ Rev,6,11,4,"modifier of nominal, adjective, irregular agreement"
 Rev,6,11,30,"conjunct, ὡς, clause"
 Rev,6,12,19,"conjunct, ὡς, clause"
 Rev,6,14,6,"conjunct, ὡς, clause"
+Rev,6,16,5,indirect object
 Rev,6,16,11,"conjunct, main"
 Rev,6,17,10,"conjunct, subordinate"
 Rev,7,2,22,resumptive pronoun
@@ -3035,6 +3332,7 @@ Rev,12,10,29,"conjunct, subordinate"
 Rev,12,15,14,"conjunct, ὡς, clause"
 Rev,12,15,16,subject of small clause
 Rev,12,17,18,determiner of participle
+Rev,13,1,14,direct object
 Rev,13,1,20,subject of small clause
 Rev,13,1,26,subject of small clause
 Rev,13,2,11,gap
@@ -3045,7 +3343,9 @@ Rev,13,6,23,appositive
 Rev,13,7,23,conjunct
 Rev,13,11,18,"conjunct, ὡς, clause"
 Rev,14,1,6,subject of verbless predicate
+Rev,14,2,3,"conjunct, main"
 Rev,14,2,8,"conjunct, ὡς, clause"
+Rev,14,2,11,direct object
 Rev,14,2,13,"conjunct, ὡς, clause"
 Rev,14,4,11,subject of verbless predicate
 Rev,14,7,8,"conjunct, main"
@@ -3058,7 +3358,7 @@ Rev,14,18,30,"conjunct, main"
 Rev,14,18,39,"conjunct, subordinate"
 Rev,14,19,27,"modifier of nominal, adjective, irregular agreement"
 Rev,15,1,11,appositive
-Rev,15,2,3,direct object
+Rev,15,2,8,direct object
 Rev,15,3,17,sentential complement
 Rev,15,3,33,determiner of noun
 Rev,16,1,4,subject of small clause
@@ -3103,15 +3403,19 @@ Rev,19,6,7,subject of small clause
 Rev,19,6,18,"conjunct, main"
 Rev,19,6,20,"conjunct, subordinate"
 Rev,19,9,5,sentential complement
-Rev,19,10,13,sentential complement
+Rev,19,10,13,clause argument of verb
 Rev,19,14,4,determiner of headless phrase
+Rev,20,4,12,direct object
 Rev,20,8,6,determiner of headless phrase
 Rev,20,8,13,determiner of noun
 Rev,20,8,26,"modifier of nominal, relative clause"
 Rev,20,10,11,determiner of noun
 Rev,20,10,16,"modifier of nominal, adverb"
+Rev,20,11,6,direct object
+Rev,21,1,5,direct object
 Rev,21,2,18,"conjunct, ὡς, clause"
 Rev,21,3,3,subject of small clause
+Rev,21,5,14,"conjunct, main"
 Rev,21,5,22,"conjunct, subordinate"
 Rev,21,7,9,conjunct
 Rev,21,9,14,"modifier of nominal, participle"
@@ -3138,7 +3442,8 @@ Rev,22,2,11,conjunct
 Rev,22,2,24,conjunct
 Rev,22,6,8,sentential complement
 Rev,22,6,19,conjunct
+Rev,22,6,28,direct object
 Rev,22,8,1,subject of verbless predicate
 Rev,22,8,3,determiner of participle
-Rev,22,9,5,sentential complement
+Rev,22,9,5,clause argument of verb
 Rev,22,15,21,direct object

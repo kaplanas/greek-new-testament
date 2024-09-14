@@ -55,7 +55,7 @@ PRETTY_BOOKS_OF_THE_BIBLE = ['Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans'
 GREEK_CAPITALS = '^[' + ''.join(set(chr(cp)
                                     for cp in range(0x0370, 0x1FFF)
                                     if "GREEK CAPITAL" in unicodedata.name(chr(cp), ""))) + ']'
-SECOND_POSITION_CLITICS = ['ἄρα', 'γάρ', 'γέ', 'δέ', 'μέν', 'οὖν', 'τέ']
+SECOND_POSITION_CLITICS = ['ἄρα', 'γάρ', 'γέ', 'δέ', 'μέν', 'μέντοι', 'οὖν', 'τέ']
 SON_OF_WORDS = ['ἀδελφή', 'ἀδελφός', 'ἀνήρ', 'γυνή', 'θυγάτηρ', 'μήτηρ', 'πατήρ', 'τέκνον', 'υἱός']
 SON_OF_POS = ['noun', 'personal pronoun', 'personal pronoun with kai', 'demonstrative pronoun',
               'demonstrative pronoun with kai', 'reflexive pronoun', 'interrogative pronoun', 'relative pronoun']
@@ -75,7 +75,8 @@ COPULA = ['εἰμί']
 GENERAL_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤπερ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε', 'πλήν',
                         'ὡς', 'ὡσεί']
 SENTENTIAL_CONJUNCTIONS = ['διό', 'διότι', 'ἐάν', 'εἰ', 'εἴπερ', 'ἐπεί', 'ἐπειδή', 'ἕως', 'ἡνίκα', 'ἵνα', 'καθάπερ',
-                           'καθότι', 'καθώς', 'μήποτε', 'νή', 'ὅπως', 'ὅταν', 'ὅτε', 'ὅτι', 'ὥσπερ', 'ὥστε']
+                           'καθότι', 'καθώς', 'κἄν', 'μήποτε', 'νή', 'ὅπως', 'ὅταν', 'ὅτε', 'ὅτι', 'πρίν', 'ὥσπερ',
+                           'ὥστε']
 COORDINATING_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔτε', 'πλήν']
 BURIED_CONJUNCTIONS = ['ἐάν', 'εἰ', 'ἐπεί', 'ἕως', 'ἡνίκα', 'καθάπερ', 'καθώς', 'μήποτε', 'νή', 'ὅταν', 'ὅτε', 'ὥστε']
 ADVERB_CONJUNCTIONS = ['καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε']
@@ -684,7 +685,7 @@ class Sentence:
                         word['relation'] = 'subject, irregular agreement'
                     else:
                         word['relation'] = 'subject'
-                elif word['pos'] == 'ptcl':
+                elif word['pos'] == 'ptcl' or word['lemma'] == 'ἄρα':
                     word['relation'] = 'particle'
                 elif word['pos'] == 'det':
                     if head['pos'] == 'verb' and head['mood'] == 'infinitive':
@@ -732,6 +733,10 @@ class Sentence:
                         word['relation'] = 'predicate, dative'
                     else:
                         word['relation'] = 'predicate, other'
+                elif head['lemma'] in SENTENTIAL_COMPLEMENT_HEADS and word['pos'] in ['verb', 'conj'] and \
+                        word['case'] != 'accusative' and word['mood'] not in ['participle', 'infinitive'] \
+                        and head['voice'] != 'passive' and ('role' not in head or head['role'] != 'adv'):
+                    word['relation'] = 'sentential complement'
                 elif head['pos'] == 'prep':
                     word['relation'] = 'object of preposition'
                 elif word['mood'] == 'participle' and word['relation'] == 'adv' and head['pos'] == 'verb':
@@ -759,7 +764,7 @@ class Sentence:
                         word['relation'] = 'modifier of nominal, interrogative'
                     elif word['pos'] == 'pron':
                         word['relation'] = 'modifier of nominal, pronoun'
-                    elif word['pos'] == 'verb':
+                    elif word['pos'] == 'verb' and word['mood'] == 'participle':
                         word['relation'] = 'modifier of nominal, participle'
                     elif word['lemma'] in ['Καῖσαρ']:
                         word['relation'] = 'title'
@@ -877,6 +882,11 @@ class Sentence:
             # If the word is the subject of a small clause, include the head of its head.
             if word['relation'] == 'subject of small clause':
                 mandatory_pairs += [(i, self.words[word['head']]['head'])]
+
+            # If the word is sentential ὅτι, its head must be present.
+            if word['lemma'] == 'ὅτι' and word['head'] is not None and \
+                    len([dep for dep in word['deps'] if self.words[dep]['relation'] == 'conjunct, ὅτι']) > 0:
+                mandatory_pairs += [(i, word['head'])]
 
         # Initialize the licit strings with all the individual words.
         licit_strings = [(i, i) for i in range(len(self.words))]

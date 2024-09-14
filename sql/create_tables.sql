@@ -94,7 +94,8 @@ VALUES
 (1, 'NounClass', 'second declension with hs'),
 (1, 'POS', 'det'),
 (1, 'POS', 'adj'),
-(1, 'NounClass', 'first/second declension')
+(1, 'NounClass', 'first/second declension'),
+(1, 'TenseMood', 'imperfect-indicative')
 ;
 
 CREATE TABLE students_relations (
@@ -173,5 +174,10 @@ VALUES
 (1, 'determiner of adjective'),
 (1, 'argument of adjective'),
 (1, 'argument of adjective, genitive'),
-(1, 'argument of adjective, dative')
+(1, 'argument of adjective, dative'),
+(1, 'subject of small clause'),
+(1, 'conjunct, main'),
+(1, 'conjunct, subordinate'),
+(1, 'conjunct, ὅτι'),
+(1, 'sentential complement')
 ;

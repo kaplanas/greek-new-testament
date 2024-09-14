@@ -7,7 +7,8 @@ echo "WITH mixed_types AS
                    'conjunct, ὡς, non-clause', 'conjunct, ὡς, other')
                   AND SentenceID NOT IN
                       ('1Cor 13:2.1 - 1Cor 13:2.28',
-                       '1Cor 13:3.1 - 1Cor 13:3.21')
+                       '1Cor 13:3.1 - 1Cor 13:3.21',
+                       'Rev 14:2.1 - Rev 14:2.15')
             GROUP BY SentenceID, HeadPos
             HAVING COUNT(DISTINCT CASE WHEN Relation LIKE '%main'
                                             OR Relation LIKE '%subordinate'
@@ -49,7 +50,7 @@ echo "WITH mixed_types AS
                     AND words.SentencePosition = spc.DependentPos
                     AND spc.Relation = 'second-position clitic'
             WHERE words.POS = 'conj'
-                  AND words.Relation <> 'adv'
+                  AND relations.Relation <> 'adv'
                   AND relations.SentenceID IS NULL
                   AND spc.SentenceID IS NULL),
            all_heads AS
