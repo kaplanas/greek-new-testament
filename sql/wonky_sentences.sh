@@ -71,7 +71,8 @@ echo "WITH word_positions AS
                     AND wp.SentencePosition >= s.Start
                     AND wp.SentencePosition <= s.Stop
             WHERE wp.SentenceID NOT IN
-                  ('Luke 7:26.5 - Luke 7:26.5',
+                  ('Mark 16:8.52 - Mark 16:8.52',
+                   'Luke 7:26.5 - Luke 7:26.5',
                    'Acts 15:29.15 - Acts 15:29.15',
                    '1Cor 7:36.22 - 1Cor 7:36.22',
                    '2Cor 11:22.3 - 2Cor 11:22.3',

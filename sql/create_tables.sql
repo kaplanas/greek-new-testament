@@ -95,7 +95,8 @@ VALUES
 (1, 'POS', 'det'),
 (1, 'POS', 'adj'),
 (1, 'NounClass', 'first/second declension'),
-(1, 'TenseMood', 'imperfect-indicative')
+(1, 'TenseMood', 'imperfect-indicative'),
+(1, 'POS', 'ptcl')
 ;
 
 CREATE TABLE students_relations (
@@ -179,5 +180,6 @@ VALUES
 (1, 'conjunct, main'),
 (1, 'conjunct, subordinate'),
 (1, 'conjunct, ὅτι'),
-(1, 'sentential complement')
+(1, 'sentential complement'),
+(1, 'particle')
 ;

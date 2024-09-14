@@ -69,7 +69,7 @@ KEEP_DETERMINER_LEMMAS = ['Ἀθηναῖος', 'Ἀδραμυττηνός', 'Α
                           'Μῆδος', 'Ναζαρηνός', 'Ναζωραῖος', 'Νινευίτης', 'Πάρθος', 'Ποντικός', 'Ῥωμαῖος',
                           'Σαδδουκαῖος', 'Σαμαρίτης', 'Σαμαρῖτις', 'Σεβαστός', 'Σιδώνιος', 'Σύρος', 'Συροφοινίκισσα',
                           'Τύριος', 'Φαρισαῖος', 'Φιλιππήσιος', 'Χαλδαῖος', 'Χαναναῖος', 'Χριστιανός', 'Ὦ']
-NEGATION = ['μή', 'οὐ', 'οὐχί']
+NEGATION = ['μή', 'μήτι', 'οὐ', 'οὐχί']
 EXTENDED_NEGATION = ['οὐδαμῶς', 'οὐδέ', 'οὐκέτι']
 COPULA = ['εἰμί']
 GENERAL_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤπερ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε', 'πλήν',
@@ -685,7 +685,7 @@ class Sentence:
                         word['relation'] = 'subject, irregular agreement'
                     else:
                         word['relation'] = 'subject'
-                elif word['pos'] == 'ptcl' or word['lemma'] == 'ἄρα':
+                elif word['pos'] == 'ptcl' and word['lemma'] not in NEGATION:
                     word['relation'] = 'particle'
                 elif word['pos'] == 'det':
                     if head['pos'] == 'verb' and head['mood'] == 'infinitive':
@@ -716,7 +716,7 @@ class Sentence:
                     else:
                         word['relation'] = 'determiner, other'
                 elif word['lemma'] in NEGATION:
-                    if head['pos'] == 'verb' and head['mood'] != 'participle':
+                    if head['pos'] in ['verb', 'ptcl'] and head['mood'] != 'participle':
                         word['relation'] = 'negation of verb'
                     elif head['lemma'] in NEGATION:
                         word['relation'] = 'negation, double'
@@ -1063,7 +1063,7 @@ if __name__ == '__main__':
     sentences = dict()
 
     # Iterate over books.
-    for sbl_file in SBL_FILES:
+    for sbl_file in SBL_FILES[12:13]:
 
         # Get all the sentences from the book.
         sentence_counter = 0
