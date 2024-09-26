@@ -1,6 +1,7 @@
 book,chapter,verse,position,head,word,new_relation
 1Pet,1,8,13,ἀγαλλιᾶσθε,χαρᾷ,manner
 Gal,5,18,3,ἄγεσθε,πνεύματι,manner
+1Cor,7,34,18,ἁγία,καὶ,other
 Luke,2,23,13,ἅγιον,κυρίῳ,other
 Gal,1,22,7,ἀγνοούμενος,ἐκκλησίαις,agent
 Gal,1,22,5,ἀγνοούμενος,προσώπῳ,instrument
@@ -18,39 +19,6 @@ Rev,19,5,10,Αἰνεῖτε,θεῷ,direct object
 1Cor,11,6,11,αἰσχρὸν,γυναικὶ,other
 1Cor,14,35,15,αἰσχρὸν,γυναικὶ,other
 1Cor,11,5,9,ἀκατακαλύπτῳ,κεφαλῇ,other
-John,10,4,12,ἀκολουθεῖ,αὐτῷ,direct object
-Acts,12,8,25,ἀκολούθει,μοι,direct object
-John,1,43,17,Ἀκολούθει,μοι,direct object
-John,21,19,16,Ἀκολούθει,μοι,direct object
-John,21,22,15,ἀκολούθει,μοι,direct object
-Luke,5,27,18,Ἀκολούθει,μοι,direct object
-Luke,9,59,6,Ἀκολούθει,μοι,direct object
-Luke,18,22,26,ἀκολούθει,μοι,direct object
-Mark,2,14,16,Ἀκολούθει,μοι,direct object
-Mark,10,21,30,ἀκολούθει,μοι,direct object
-Matt,8,22,7,Ἀκολούθει,μοι,direct object
-Matt,9,9,18,Ἀκολούθει,μοι,direct object
-Matt,19,21,25,ἀκολούθει,μοι,direct object
-John,12,26,5,ἀκολουθείτω,ἐμοὶ,direct object
-Luke,9,23,22,ἀκολουθείτω,μοι,direct object
-Mark,8,34,26,ἀκολουθείτω,μοι,direct object
-Matt,16,24,23,ἀκολουθείτω,μοι,direct object
-John,13,36,14,ἀκολουθῆσαι,μοι,direct object
-John,13,37,10,ἀκολουθῆσαι,σοι,direct object
-Matt,19,28,13,ἀκολουθήσαντές,μοι,direct object
-John,1,40,17,ἀκολουθησάντων,αὐτῷ,direct object
-Luke,22,10,18,ἀκολουθήσατε,αὐτῷ,direct object
-Mark,14,13,22,ἀκολουθήσατε,αὐτῷ,direct object
-John,10,5,1,ἀκολουθήσουσιν,ἀλλοτρίῳ,direct object
-Luke,9,57,12,Ἀκολουθήσω,σοι,direct object
-Luke,9,61,6,Ἀκολουθήσω,σοι,direct object
-Matt,8,19,9,ἀκολουθήσω,σοι,direct object
-Rev,14,4,15,ἀκολουθοῦντες,ἀρνίῳ,direct object
-Luke,7,9,12,ἀκολουθοῦντι,αὐτῷ,direct object
-Mark,6,1,12,ἀκολουθοῦσιν,αὐτῷ,direct object
-John,10,27,14,ἀκολουθοῦσίν,μοι,direct object
-John,20,6,7,ἀκολουθῶν,αὐτῷ,direct object
-John,8,12,16,ἀκολουθῶν,ἐμοὶ,direct object
 Acts,2,8,8,ἀκούομεν,διαλέκτῳ,other
 Acts,24,4,15,ἀκοῦσαί,ἐπιεικείᾳ,manner
 Acts,28,26,9,ἀκούσετε,Ἀκοῇ,Hebrew infinitive construct
@@ -63,6 +31,7 @@ John,11,2,8,ἀλείψασα,μύρῳ,instrument
 Gal,4,16,6,ἀληθεύων,ὑμῖν,direct object
 Mark,9,49,3,ἁλισθήσεται,πυρὶ,instrument
 Heb,13,17,27,ἀλυσιτελὲς,ὑμῖν,other
+2Cor,4,16,18,ἀνακαινοῦται,καὶ,time
 Eph,4,23,4,ἀνανεοῦσθαι,πνεύματι,instrument
 Matt,13,14,3,ἀναπληροῦται,αὐτοῖς,other
 Luke,24,33,5,ἀναστάντες,ὥρᾳ,time
@@ -78,6 +47,7 @@ Luke,18,33,7,ἀναστήσεται,ἡμέρᾳ,time
 John,6,39,23,ἀναστήσω,ἡμέρᾳ,time
 John,6,40,28,ἀναστήσω,ἡμέρᾳ,time
 John,6,54,19,ἀναστήσω,ἡμέρᾳ,time
+Acts,10,9,3,ἀνέβη,ἐπαύριον,time
 Rev,8,4,8,ἀνέβη,προσευχαῖς,other
 Acts,22,13,14,ἀνέβλεψα,ὥρᾳ,time
 Matt,27,46,9,ἀνεβόησεν,φωνῇ,manner
@@ -86,6 +56,7 @@ Acts,7,21,12,ἀνεθρέψατο,ἑαυτῇ,other
 Acts,12,2,7,ἀνεῖλεν,μαχαίρῃ,instrument
 Luke,4,33,13,ἀνέκραξεν,φωνῇ,manner
 Matt,10,15,6,ἀνεκτότερον,γῇ,other
+Luke,10,14,3,ἀνεκτότερον,καὶ,other
 Luke,10,12,4,ἀνεκτότερον,Σοδόμοις,other
 2Thess,2,8,12,ἀνελεῖ,πνεύματι,instrument
 Jas,2,13,7,ἀνέλεος,ποιήσαντι,other
@@ -95,9 +66,6 @@ Matt,4,16,12,ἀνέτειλεν,καθημένοις,other
 Luke,1,42,3,ἀνεφώνησεν,κραυγῇ,manner
 1Cor,16,9,3,ἀνέῳγεν,μοι,benefit
 2Cor,2,12,13,ἀνεῳγμένης,μοι,benefit
-Rom,9,19,10,ἀνθέστηκεν,βουλήματι,direct object
-Rom,13,2,9,ἀνθέστηκεν,διαταγῇ,direct object
-Acts,13,8,3,ἀνθίστατο,αὐτοῖς,direct object
 Luke,2,38,8,ἀνθωμολογεῖτο,θεῷ,direct object
 Luke,2,38,4,ἀνθωμολογεῖτο,ὥρᾳ,time
 John,10,3,1,ἀνοίγει,τούτῳ,benefit
@@ -110,44 +78,30 @@ Luke,13,25,22,ἄνοιξον,ἡμῖν,benefit
 Matt,25,11,12,ἄνοιξον,ἡμῖν,benefit
 Luke,12,36,20,ἀνοίξωσιν,αὐτῷ,benefit
 Acts,13,45,14,ἀντέλεγον,λαλουμένοις,direct object
-2Tim,4,15,10,ἀντέστη,λόγοις,direct object
-Gal,2,11,9,ἀντέστην,αὐτῷ,direct object
-2Tim,3,8,8,ἀντέστησαν,Μωϋσεῖ,direct object
-Luke,13,17,9,ἀντικείμενοι,αὐτῷ,direct object
-Luke,21,15,17,ἀντικείμενοι,ὑμῖν,direct object
-Gal,5,17,16,ἀντίκειται,ἀλλήλοις,direct object
-1Tim,1,10,12,ἀντίκειται,διδασκαλίᾳ,direct object
 John,19,12,28,ἀντιλέγει,Καίσαρι,direct object
 Luke,6,38,17,ἀντιμετρηθήσεται,μέτρῳ,other
 Acts,7,51,11,ἀντιπίπτετε,πνεύματι,direct object
-Matt,5,39,8,ἀντιστῆναι,πονηρῷ,direct object
-Jas,4,7,8,ἀντίστητε,διαβόλῳ,direct object
-1Pet,5,9,1,ἀντίστητε,ᾧ,direct object
 Rom,7,23,11,ἀντιστρατευόμενον,νόμῳ,direct object
 Jas,5,6,7,ἀντιτάσσεται,ὑμῖν,direct object
-1Pet,5,5,14,ἀντιτάσσεται,ὑπερηφάνοις,direct object
 Jas,4,6,9,ἀντιτάσσεται,ὑπερηφάνοις,direct object
+1Pet,5,5,14,ἀντιτάσσεται,ὑπερηφάνοις,direct object
 Rom,13,2,5,ἀντιτασσόμενος,ἐξουσίᾳ,direct object
 Acts,27,15,10,ἀντοφθαλμεῖν,ἀνέμῳ,direct object
 John,16,25,15,ἀπαγγελῶ,παρρησίᾳ,manner
 Luke,12,20,9,ἀπαιτοῦσιν,νυκτὶ,time
 Mark,14,13,16,ἀπαντήσει,ὑμῖν,direct object
 Mark,14,30,14,ἀπαρνήσῃ,νυκτὶ,time
+Rev,14,4,27,ἀπαρχὴ,καὶ,possession
 Eph,5,6,5,ἀπατάτω,λόγοις,instrument
 Acts,4,33,2,ἀπεδίδουν,δυνάμει,manner
 Rom,6,10,5,ἀπέθανεν,ἁμαρτίᾳ,other
 Rom,6,2,6,ἀπεθάνομεν,ἁμαρτίᾳ,other
 Gal,2,19,5,ἀπέθανον,νόμῳ,other
 Rom,5,15,15,ἀπέθανον,παραπτώματι,instrument
-1Pet,2,8,10,ἀπειθοῦντες,λόγῳ,direct object
-1Pet,4,17,26,ἀπειθούντων,εὐαγγελίῳ,direct object
-Rom,2,8,8,ἀπειθοῦσι,ἀληθείᾳ,direct object
-Rom,2,8,9,ἀπειθοῦσι,πειθομένοις,conjunction
-1Pet,3,1,13,ἀπειθοῦσιν,λόγῳ,direct object
-John,3,36,13,ἀπειθῶν,υἱῷ,direct object
 Col,2,5,5,ἄπειμι,σαρκὶ,other
 Gal,5,5,3,ἀπεκδεχόμεθα,πνεύματι,instrument
 Jas,1,18,4,ἀπεκύησεν,λόγῳ,instrument
+Acts,7,51,5,ἀπερίτμητοι,καὶ,other
 Luke,20,10,2,ἀπέστειλεν,καιρῷ,time
 Mark,12,2,7,ἀπέστειλεν,καιρῷ,time
 Luke,14,17,7,ἀπέστειλεν,ὥρᾳ,time
@@ -155,6 +109,7 @@ Phlm,1,16,10,ἀπέχῃς,ἐμοί,benefit
 Phil,1,19,5,ἀποβήσεται,μοι,benefit
 Luke,21,13,2,ἀποβήσεται,ὑμῖν,benefit
 1Pet,2,24,16,ἀπογενόμενοι,ἁμαρτίαις,other
+Acts,2,22,18,ἀποδεδειγμένον,καὶ,instrument
 1Tim,6,19,2,ἀποθησαυρίζοντας,ἑαυτοῖς,benefit
 Rom,14,7,8,ἀποθνῄσκει,ἑαυτῷ,other
 John,12,33,6,ἀποθνῄσκειν,θανάτῳ,cognate of verb
@@ -170,25 +125,10 @@ Rom,14,15,15,ἀπόλλυε,βρώματί,instrument
 Luke,15,17,15,ἀπόλλυμαι,λιμῷ,instrument
 Luke,10,11,15,ἀπομασσόμεθα,ὑμῖν,other
 1Thess,2,17,10,ἀπορφανισθέντες,προσώπῳ,other
-Acts,18,18,9,ἀποταξάμενος,ἀδελφοῖς,direct object
-2Cor,2,13,17,ἀποταξάμενος,αὐτοῖς,direct object
-Mark,6,46,3,ἀποταξάμενος,αὐτοῖς,direct object
 Luke,9,61,14,ἀποτάξασθαι,εἰς,direct object
-Luke,14,33,12,ἀποτάσσεται,ὑπάρχουσιν,direct object
 Jude,1,11,18,ἀπώλοντο,ἀντιλογίᾳ,other
 1Cor,5,3,6,ἀπὼν,σώματι,other
 2Pet,2,3,8,ἀργεῖ,οἷς,other
-Rom,8,8,6,ἀρέσαι,θεῷ,direct object
-1Cor,7,34,34,ἀρέσῃ,ἀνδρί,direct object
-1Cor,7,33,11,ἀρέσῃ,γυναικί,direct object
-1Cor,7,32,15,ἀρέσῃ,κυρίῳ,direct object
-2Tim,2,4,10,ἀρέσῃ,στρατολογήσαντι,direct object
-Gal,1,10,10,ἀρέσκειν,ἀνθρώποις,direct object
-Rom,15,1,13,ἀρέσκειν,ἑαυτοῖς,direct object
-1Thess,4,1,23,ἀρέσκειν,θεῷ,direct object
-1Thess,2,4,16,ἀρέσκοντες,ἀλλὰ,direct object
-1Thess,2,15,14,ἀρεσκόντων,θεῷ,direct object
-1Cor,10,33,4,ἀρέσκω,πᾶσιν,direct object
 John,14,8,11,ἀρκεῖ,ἡμῖν,other
 2Cor,12,9,5,Ἀρκεῖ,σοι,other
 Luke,3,14,21,ἀρκεῖσθε,ὀψωνίοις,other
@@ -199,15 +139,11 @@ Titus,1,16,6,ἀρνοῦνται,ἔργοις,instrument
 Rom,4,19,5,ἀσθενήσας,πίστει,other
 Rom,14,1,5,ἀσθενοῦντα,πίστει,other
 Luke,4,40,9,ἀσθενοῦντας,νόσοις,other
+1Cor,16,21,5,ἀσπασμὸς,χειρὶ,instrument
+Col,4,18,5,ἀσπασμὸς,χειρὶ,instrument
+2Thess,3,17,5,ἀσπασμὸς,χειρὶ,instrument
 Acts,7,20,10,ἀστεῖος,θεῷ,other
 Phil,3,1,16,ἀσφαλές,ὑμῖν,other
-Acts,3,12,16,ἀτενίζετε,ἡμῖν,direct object
-Acts,3,12,24,ἀτενίζετε,πεποιηκόσιν,direct object
-Luke,4,20,18,ἀτενίζοντες,αὐτῷ,direct object
-Acts,10,4,4,ἀτενίσας,αὐτῷ,direct object
-Acts,14,9,8,ἀτενίσας,αὐτῷ,direct object
-Acts,23,1,6,ἀτενίσας,συνεδρίῳ,direct object
-Luke,22,56,12,ἀτενίσασα,αὐτῷ,direct object
 Col,1,10,16,αὐξανόμενοι,ἐπιγνώσει,other
 Acts,13,2,15,Ἀφορίσατε,μοι,benefit
 Heb,7,3,14,ἀφωμοιωμένος,υἱῷ,direct object
@@ -220,13 +156,9 @@ Rev,19,13,5,βεβαμμένον,αἵματι,other
 Luke,9,32,10,βεβαρημένοι,ὕπνῳ,agent
 Matt,12,5,9,βεβηλοῦσιν,σάββασιν,time
 1Pet,4,2,6,βιῶσαι,ἀλλὰ,manner
+John,1,29,2,βλέπει,ἐπαύριον,time
 Heb,10,25,14,βλέπετε,ὅσῳ,other
 Rev,18,21,17,βληθήσεται,ὁρμήματι,manner
-Mark,9,24,12,βοήθει,ἀπιστίᾳ,direct object
-Matt,15,25,9,βοήθει,μοι,direct object
-Heb,2,18,9,βοηθῆσαι,πειραζομένοις,direct object
-Acts,16,9,22,βοήθησον,ἡμῖν,direct object
-Mark,9,22,19,βοήθησον,ἡμῖν,direct object
 Heb,13,6,6,βοηθός,ἐμοὶ,possession
 Acts,8,7,8,βοῶντα,φωνῇ,manner
 Luke,7,38,10,βρέχειν,δάκρυσιν,instrument
@@ -264,11 +196,13 @@ Acts,1,16,22,γενομένου,συλλαβοῦσιν,benefit
 1Cor,14,20,6,γίνεσθε,φρεσίν,other
 1Cor,14,20,13,γίνεσθε,φρεσὶν,other
 Heb,11,6,17,γίνεται,ἐκζητοῦσιν,benefit
+Mark,4,11,15,γίνεται,ἔξω,other
 1Pet,4,12,10,γινομένῃ,ὑμῖν,benefit
 Acts,24,2,18,γινομένων,ἔθνει,benefit
 3John,1,8,11,γινώμεθα,ἀληθείᾳ,other
 Luke,12,46,15,γινώσκει,ᾗ,time
 Matt,24,50,15,γινώσκει,ᾗ,time
+Phil,4,6,8,γνωριζέσθω,καὶ,instrument
 Phil,4,5,6,γνωσθήτω,ἀνθρώποις,agent
 Acts,28,22,15,γνωστὸν,ἡμῖν,agent
 Acts,1,19,6,γνωστὸν,κατοικοῦσιν,agent
@@ -276,13 +210,14 @@ Acts,2,14,23,γνωστὸν,ὑμῖν,agent
 Acts,13,38,4,γνωστὸν,ὑμῖν,agent
 Acts,28,28,4,γνωστὸν,ὑμῖν,agent
 John,18,15,17,γνωστὸς,ἀρχιερεῖ,agent
+Luke,1,5,18,γυνὴ,αὐτῷ,possession
 Acts,12,6,19,δεδεμένος,ἁλύσεσιν,instrument
 John,11,44,10,δεδεμένος,κειρίαις,instrument
 Acts,20,22,7,δεδεμένος,πνεύματι,agent
 1Cor,7,27,2,δέδεσαι,γυναικί,other
+Mark,5,4,6,δεδέσθαι,καὶ,instrument
 Rom,7,2,7,δέδεται,ἀνδρὶ,other
 Rom,7,2,9,δέδεται,νόμῳ,agent
-John,8,33,8,δεδουλεύκαμεν,οὐδενὶ,direct object
 Acts,21,33,10,δεθῆναι,ἁλύσεσι,instrument
 Acts,26,9,5,δεῖν,ἐμαυτῷ,other
 1Tim,6,15,2,δείξει,καιροῖς,time
@@ -290,15 +225,7 @@ Acts,16,37,9,Δείραντες,δημοσίᾳ,manner
 Mark,5,3,10,δῆσαι,ἁλύσει,instrument
 Acts,18,28,6,διακατηλέγχετο,δημοσίᾳ,manner
 Acts,18,28,4,διακατηλέγχετο,Ἰουδαίοις,direct object
-Luke,17,8,11,διακόνει,μοι,direct object
 Acts,6,2,20,διακονεῖν,τραπέζαις,other
-John,12,26,2,διακονῇ,ἐμοί,direct object
-John,12,26,20,διακονῇ,ἐμοὶ,direct object
-Phlm,1,13,10,διακονῇ,μοι,direct object
-Luke,12,37,22,διακονήσει,αὐτοῖς,direct object
-Acts,19,22,9,διακονούντων,αὐτῷ,direct object
-Matt,27,55,17,διακονοῦσαι,αὐτῷ,direct object
-Rom,15,25,8,διακονῶν,ἁγίοις,direct object
 Jude,1,9,8,διακρινόμενος,διαβόλῳ,direct object
 Luke,1,22,19,διανεύων,αὐτοῖς,direct object
 Gal,2,6,11,διαφέρει,μοι,direct object
@@ -314,83 +241,36 @@ Acts,18,19,16,διελέξατο,Ἰουδαίοις,direct object
 Acts,2,40,3,διεμαρτύρατο,λόγοις,instrument
 Acts,7,54,6,διεπρίοντο,καρδίαις,other
 Luke,1,51,8,διεσκόρπισεν,διανοίᾳ,other
-Luke,4,39,15,διηκόνει,αὐτοῖς,direct object
-Mark,1,31,15,διηκόνει,αὐτοῖς,direct object
-Matt,8,15,15,διηκόνει,αὐτῷ,direct object
-Matt,25,44,25,διηκονήσαμέν,σοι,direct object
-Luke,8,3,14,διηκόνουν,αὐτοῖς,direct object
-Mark,1,13,21,διηκόνουν,αὐτῷ,direct object
-Mark,15,41,11,διηκόνουν,αὐτῷ,direct object
-Matt,4,11,12,διηκόνουν,αὐτῷ,direct object
-1Pet,1,12,5,διηκόνουν,ἑαυτοῖς,direct object
 Luke,24,32,21,διήνοιγεν,ἡμῖν,benefit
 Phil,1,7,4,δίκαιον,ἐμοὶ,other
 Rom,3,24,5,δικαιούμενοι,χάριτι,instrument
 Rom,3,28,4,δικαιοῦσθαι,πίστει,instrument
 Titus,3,7,5,δικαιωθέντες,χάριτι,instrument
 Gal,6,12,13,διώκωνται,σταυρῷ,other
-Acts,25,27,3,δοκεῖ,μοι,direct object
-Luke,10,36,7,δοκεῖ,σοι,direct object
-Matt,17,25,14,δοκεῖ,σοι,direct object
-Matt,22,17,5,δοκεῖ,σοι,direct object
-John,11,56,15,δοκεῖ,ὑμῖν,direct object
-Matt,18,12,2,δοκεῖ,ὑμῖν,direct object
-Matt,21,28,3,δοκεῖ,ὑμῖν,direct object
-Matt,22,42,3,δοκεῖ,ὑμῖν,direct object
-Matt,26,66,2,δοκεῖ,ὑμῖν,direct object
 Matt,24,44,8,δοκεῖτε,ᾗ,time
 Heb,10,29,1,δοκεῖτε,πόσῳ,other
 Luke,12,40,6,δοκεῖτε,ᾗ,time
-Heb,12,10,10,δοκοῦν,αὐτοῖς,direct object
 John,21,19,6,δοξάσει,θανάτῳ,instrument
 John,17,5,10,δόξασόν,δόξῃ,instrument
-Rom,6,6,20,δουλεύειν,ἁμαρτίᾳ,direct object
-1Thess,1,9,21,δουλεύειν,θεῷ,direct object
-Luke,16,13,25,δουλεύειν,θεῷ,direct object
-Matt,6,24,24,δουλεύειν,θεῷ,direct object
-Luke,16,13,5,δουλεύειν,κυρίοις,direct object
-Matt,6,24,4,δουλεύειν,κυρίοις,direct object
-Gal,4,9,19,δουλεύειν,οἷς,direct object
-Gal,5,13,20,δουλεύετε,ἀλλήλοις,direct object
-Col,3,24,11,δουλεύετε,κυρίῳ,direct object
-Rom,12,11,9,δουλεύοντες,κυρίῳ,direct object
-Rom,16,18,13,δουλεύουσιν,κοιλίᾳ,direct object
-Rom,16,18,5,δουλεύουσιν,κυρίῳ,direct object
-Rom,9,12,15,δουλεύσει,ἐλάσσονι,direct object
-Acts,7,7,4,δουλεύσουσιν,ᾧ,direct object
 Rom,7,25,16,δουλεύω,νοῒ,other
-Rom,7,25,18,δουλεύω,νόμῳ,direct object
-Rom,7,25,23,δουλεύω,νόμῳ,direct object
-Luke,15,29,12,δουλεύω,σοι,direct object
-Acts,20,19,3,δουλεύων,κυρίῳ,direct object
-Rom,14,18,7,δουλεύων,Χριστῷ,direct object
 Rom,6,22,10,δουλωθέντες,θεῷ,direct object
 2Cor,10,4,12,δυνατὰ,θεῷ,other
 Mark,9,23,12,δυνατὰ,πιστεύοντι,other
 Mark,14,36,8,δυνατὰ,σοι,other
-Luke,21,15,8,δυνήσονται,ᾗ,direct object
 1Cor,14,7,13,δῷ,φθόγγοις,instrument
 Rev,8,3,21,δώσει,προσευχαῖς,other
 Mark,1,8,4,ἐβάπτισα,ὕδατι,instrument
 Acts,1,5,5,ἐβάπτισεν,ὕδατι,instrument
 Acts,11,16,12,ἐβάπτισεν,ὕδατι,instrument
 2Pet,2,8,16,ἐβασάνιζεν,ἔργοις,instrument
+2Pet,2,8,3,ἐβασάνιζεν,καὶ,other
 Rom,5,17,6,ἐβασίλευσεν,παραπτώματι,instrument
-2Cor,6,2,12,ἐβοήθησά,σοι,direct object
-Rev,12,16,6,ἐβοήθησεν,γυναικί,direct object
 Mark,15,34,8,ἐβόησεν,φωνῇ,manner
 Mark,15,34,4,ἐβόησεν,ὥρᾳ,time
 2Cor,1,15,4,ἐβουλόμην,πεποιθήσει,other
 Luke,7,44,27,ἔβρεξέν,δάκρυσιν,instrument
 Luke,17,29,3,ἔβρεξέν,ἡμέρᾳ,time
 2Cor,3,3,12,ἐγγεγραμμένη,ἀλλὰ,instrument
-Jas,4,8,6,ἐγγιεῖ,ὑμῖν,direct object
-Acts,9,3,9,ἐγγίζειν,Δαμασκῷ,direct object
-Heb,7,19,14,ἐγγίζομεν,θεῷ,direct object
-Luke,15,1,3,ἐγγίζοντες,αὐτῷ,direct object
-Acts,22,6,8,ἐγγίζοντι,Δαμασκῷ,direct object
-Acts,10,9,8,ἐγγιζόντων,πόλει,direct object
-Jas,4,8,3,ἐγγίσατε,θεῷ,direct object
 Luke,3,8,31,ἐγεῖραι,Ἀβραάμ,benefit
 Matt,3,9,25,ἐγεῖραι,Ἀβραάμ,benefit
 Phil,1,17,14,ἐγείρειν,δεσμοῖς,other
@@ -428,20 +308,17 @@ Gal,6,11,4,ἔγραψα,γράμμασιν,manner
 Gal,6,11,8,ἔγραψα,χειρί,instrument
 Phlm,1,19,6,ἔγραψα,χειρί,instrument
 Luke,22,7,7,ἔδει,ᾗ,time
+Luke,8,29,19,ἐδεσμεύετο,καὶ,instrument
 Acts,12,21,3,ἐδημηγόρει,ἡμέρᾳ,time
 John,19,40,10,ἔδησαν,ὀθονίοις,instrument
 Mark,1,21,8,ἐδίδασκεν,σάββασιν,time
 2Cor,12,7,14,ἐδόθη,σαρκί,other
 Rom,3,13,7,ἐδολιοῦσαν,γλώσσαις,instrument
-Luke,1,3,2,ἔδοξε,κἀμοὶ,direct object
-Luke,1,3,3,ἔδοξε,παρηκολουθηκότι,direct object
-Acts,15,25,3,ἔδοξεν,γενομένοις,direct object
-Acts,15,25,5,ἔδοξεν,ἐκλεξαμένοις,direct object
-Acts,15,25,2,ἔδοξεν,ἡμῖν,direct object
-Gal,4,8,11,ἐδουλεύσατε,οὖσι,direct object
 Rom,6,18,8,ἐδουλώθητε,δικαιοσύνῃ,direct object
 Rom,7,4,8,ἐθανατώθητε,νόμῳ,other
 Luke,13,14,8,ἐθεράπευσεν,σαββάτῳ,time
+Rom,11,11,12,ἔθνεσιν,παραπτώματι,instrument
+John,6,22,2,εἶδον,ἐπαύριον,time
 Acts,20,16,21,εἴη,αὐτῷ,benefit
 Col,2,5,9,εἰμι,πνεύματι,other
 1Cor,9,2,8,εἰμι,ὑμῖν,other
@@ -458,16 +335,19 @@ John,11,14,7,εἶπεν,παρρησίᾳ,manner
 Acts,13,14,18,εἰσελθόντες,ἡμέρᾳ,time
 Rev,22,14,19,εἰσέλθωσιν,πυλῶσιν,instrument
 Acts,21,18,3,εἰσῄει,ἐπιούσῃ,time
+Acts,10,24,3,εἰσῆλθεν,ἐπαύριον,time
 John,17,9,16,εἰσιν,σοί,possession
 Acts,24,11,8,εἰσίν,μοι,possession
 Acts,21,23,8,εἰσὶν,ἡμῖν,possession
 Luke,9,13,14,εἰσὶν,ἡμῖν,possession
 Rom,13,3,12,εἰσὶν,κακῷ,other
+John,1,35,2,εἱστήκει,ἐπαύριον,time
 Luke,4,16,13,εἰωθὸς,αὐτῷ,possession
 Acts,17,2,6,εἰωθὸς,Παύλῳ,possession
 Jas,2,25,16,ἐκβαλοῦσα,ὁδῷ,other
 2Tim,3,9,12,ἔκδηλος,πᾶσιν,other
 Heb,10,30,5,ἐκδίκησις,Ἐμοὶ,possession
+Acts,2,23,5,ἔκδοτον,καὶ,other
 1Cor,7,20,5,ἐκλήθη,ᾗ,other
 John,11,2,15,ἐκμάξασα,θριξὶν,instrument
 John,13,5,17,ἐκμάσσειν,λεντίῳ,instrument
@@ -487,6 +367,7 @@ John,11,43,4,ἐκραύγασεν,φωνῇ,manner
 Heb,11,23,1,ἐκρύβη,Πίστει,instrument
 Heb,11,11,1,ἔλαβεν,πίστει,instrument
 2Cor,12,16,10,ἔλαβον,δόλῳ,instrument
+John,12,12,2,ἔλαβον,ἐπαύριον,time
 Mark,14,65,21,ἔλαβον,ῥαπίσμασιν,manner
 Mark,4,33,3,ἐλάλει,παραβολαῖς,manner
 John,7,13,3,ἐλάλει,παρρησίᾳ,manner
@@ -494,19 +375,13 @@ Mark,8,32,2,ἐλάλει,παρρησίᾳ,manner
 Acts,6,10,10,ἐλάλει,ᾧ,instrument
 Acts,19,6,16,ἐλάλουν,γλώσσαις,manner
 Luke,14,1,14,ἐλθεῖν,σαββάτῳ,time
+Acts,25,23,3,ἐλθόντος,ἐπαύριον,time
 Matt,12,21,3,ἐλπιοῦσιν,ὀνόματι,other
+Acts,22,30,3,ἔλυσεν,ἐπαύριον,time
 1Pet,1,19,1,ἐλυτρώθητε,ἀλλὰ,instrument
 3John,1,6,5,ἐμαρτύρησάν,ἀγάπῃ,other
 Luke,4,22,4,ἐμαρτύρουν,αὐτῷ,other
-Luke,20,17,4,ἐμβλέψας,αὐτοῖς,direct object
-Mark,10,27,2,ἐμβλέψας,αὐτοῖς,direct object
-John,1,42,7,ἐμβλέψας,αὐτῷ,direct object
-Mark,10,21,5,ἐμβλέψας,αὐτῷ,direct object
-John,1,36,5,ἐμβλέψας,περιπατοῦντι,direct object
-Mark,14,67,7,ἐμβλέψασα,αὐτῷ,direct object
 Mark,1,43,3,ἐμβριμησάμενος,αὐτῷ,direct object
-John,12,6,10,ἔμελεν,αὐτῷ,direct object
-Acts,18,17,15,ἔμελεν,Γαλλίωνι,direct object
 Acts,5,4,3,ἔμενεν,σοὶ,possession
 Heb,6,17,18,ἐμεσίτευσεν,ὅρκῳ,instrument
 Rev,21,16,18,ἐμέτρησεν,καλάμῳ,instrument
@@ -514,8 +389,6 @@ Acts,26,11,14,ἐμμαινόμενος,αὐτοῖς,direct object
 Gal,3,10,20,ἐμμένει,γεγραμμένοις,direct object
 Acts,14,22,9,ἐμμένειν,πίστει,direct object
 Heb,11,22,1,ἐμνημόνευσεν,πίστει,instrument
-Luke,14,29,14,ἐμπαίζειν,αὐτῷ,direct object
-Mark,10,34,3,ἐμπαίξουσιν,αὐτῷ,direct object
 Matt,12,11,19,ἐμπέσῃ,σάββασιν,time
 2Pet,2,20,16,ἐμπλακέντες,τούτοις,agent
 2Tim,2,4,7,ἐμπλέκεται,πραγματείαις,agent
@@ -524,7 +397,6 @@ Mark,14,65,5,ἐμπτύειν,αὐτῷ,direct object
 Mark,10,34,6,ἐμπτύσουσιν,αὐτῷ,direct object
 Gal,3,3,5,ἐναρξάμενοι,πνεύματι,other
 Luke,12,22,19,ἐνδύσησθε,σώματι,other
-Luke,22,61,7,ἐνέβλεψεν,Πέτρῳ,direct object
 John,11,33,15,ἐνεβριμήσατο,πνεύματι,other
 Matt,9,30,8,ἐνεβριμήθη,αὐτοῖς,direct object
 Mark,14,5,16,ἐνεβριμῶντο,αὐτῇ,direct object
@@ -535,11 +407,6 @@ Mark,6,19,5,ἐνεῖχεν,αὐτῷ,direct object
 Heb,10,20,3,ἐνεκαίνισεν,ἡμῖν,benefit
 Acts,23,28,9,ἐνεκάλουν,αὐτῷ,direct object
 Luke,1,62,4,ἐνένευον,πατρὶ,direct object
-Luke,22,63,8,ἐνέπαιζον,αὐτῷ,direct object
-Luke,23,36,3,ἐνέπαιξαν,αὐτῷ,direct object
-Mark,15,20,4,ἐνέπαιξαν,αὐτῷ,direct object
-Matt,27,29,22,ἐνέπαιξαν,αὐτῷ,direct object
-Matt,27,31,4,ἐνέπαιξαν,αὐτῷ,direct object
 Mark,15,19,9,ἐνέπτυον,αὐτῷ,direct object
 Luke,23,53,5,ἐνετύλιξεν,σινδόνι,instrument
 Matt,27,59,9,ἐνετύλιξεν,σινδόνι,instrument
@@ -550,14 +417,12 @@ Gal,5,1,11,ἐνέχεσθε,ζυγῷ,direct object
 Rom,11,2,22,ἐντυγχάνει,θεῷ,direct object
 John,19,34,5,ἔνυξεν,λόγχῃ,instrument
 Acts,2,17,37,ἐνυπνιασθήσονται,ἐνυπνίοις,direct object
-2Pet,1,16,4,ἐξακολουθήσαντες,μύθοις,direct object
-2Pet,2,15,7,ἐξακολουθήσαντες,ὁδῷ,direct object
-2Pet,2,2,6,ἐξακολουθήσουσιν,ἀσελγείαις,direct object
 Luke,20,28,27,ἐξαναστήσῃ,ἀδελφῷ,benefit
 Mark,12,19,28,ἐξαναστήσῃ,ἀδελφῷ,benefit
 Matt,8,16,12,ἐξέβαλεν,λόγῳ,instrument
 Matt,7,22,18,ἐξεβάλομεν,ὀνόματι,instrument
 Rom,11,20,3,ἐξεκλάσθησαν,ἀπιστίᾳ,other
+Mark,11,12,3,ἐξελθόντων,ἐπαύριον,time
 John,12,3,18,ἐξέμαξεν,θριξὶν,instrument
 Luke,7,44,34,ἐξέμαξεν,θριξὶν,instrument
 Luke,7,38,18,ἐξέμασσεν,θριξὶν,instrument
@@ -580,34 +445,27 @@ John,5,10,12,ἔξεστίν,σοι,other
 Mark,6,18,10,ἔξεστίν,σοι,other
 Matt,14,4,8,ἔξεστίν,σοι,other
 Jude,1,11,11,ἐξεχύθησαν,πλάνῃ,other
+Acts,10,23,7,ἐξῆλθεν,ἐπαύριον,time
+Acts,14,20,13,ἐξῆλθεν,ἐπαύριον,time
 Luke,17,29,1,ἐξῆλθεν,ᾗ,time
 Acts,16,18,28,ἐξῆλθεν,ὥρᾳ,time
 Acts,16,13,3,ἐξήλθομεν,ἡμέρᾳ,time
-Rom,14,11,17,ἐξομολογήσεται,θεῷ,direct object
-Rom,15,9,14,ἐξομολογήσομαί,σοι,direct object
-Luke,10,21,13,Ἐξομολογοῦμαί,σοι,direct object
-Matt,11,25,10,Ἐξομολογοῦμαί,σοι,direct object
+Acts,20,7,18,ἐξιέναι,ἐπαύριον,time
 2Cor,12,4,13,ἐξὸν,ἀνθρώπῳ,other
-Matt,12,4,18,ἐξὸν,αὐτῷ,other
+Matt,12,4,20,ἐξὸν,αὐτῷ,other
 1Cor,7,28,17,ἕξουσιν,σαρκὶ,other
-Jas,1,23,12,ἔοικεν,ἀνδρὶ,direct object
-Jas,1,6,11,ἔοικεν,κλύδωνι,direct object
 Jude,1,3,23,ἐπαγωνίζεσθαι,πίστει,direct object
 Acts,7,22,5,ἐπαιδεύθη,σοφίᾳ,other
 Rom,6,21,7,ἐπαισχύνεσθε,οἷς,direct object
-1Pet,2,21,17,ἐπακολουθήσητε,ἴχνεσιν,direct object
-1Tim,5,24,10,ἐπακολουθοῦσιν,τισὶν,direct object
 Rom,2,17,8,ἐπαναπαύῃ,νόμῳ,direct object
 Acts,27,40,20,ἐπάραντες,πνεούσῃ,other
 1Tim,5,16,7,ἐπαρκείτω,αὐταῖς,direct object
 1Tim,5,16,16,ἐπαρκέσῃ,χήραις,direct object
 Luke,22,15,5,ἐπεθύμησα,Ἐπιθυμίᾳ,cognate of verb
 Luke,1,25,8,ἐπεῖδεν,αἷς,time
-Acts,5,36,24,ἐπείθοντο,αὐτῷ,direct object
-Acts,5,37,23,ἐπείθοντο,αὐτῷ,direct object
 Acts,28,24,6,ἐπείθοντο,λεγομένοις,direct object
-Acts,5,39,16,ἐπείσθησαν,αὐτῷ,direct object
 Luke,23,23,4,ἐπέκειντο,φωναῖς,manner
+Phil,3,13,15,ἐπεκτεινόμενος,ἔμπροσθεν,direct object
 Acts,20,10,6,ἐπέπεσεν,αὐτῷ,direct object
 Acts,16,5,11,ἐπερίσσευον,ἀριθμῷ,other
 John,6,13,17,ἐπερίσσευσαν,βεβρωκόσιν,other
@@ -615,28 +473,7 @@ Rom,5,15,19,ἐπερίσσευσεν,πολλῷ,other
 Luke,21,26,10,ἐπερχομένων,οἰκουμένῃ,direct object
 1Cor,10,8,10,ἔπεσαν,ἡμέρᾳ,time
 Heb,11,30,1,ἔπεσαν,πίστει,instrument
-Luke,2,9,5,ἐπέστη,αὐτοῖς,direct object
-Luke,24,4,14,ἐπέστησαν,αὐταῖς,direct object
-Acts,4,1,8,ἐπέστησαν,αὐτοῖς,direct object
-Mark,3,12,4,ἐπετίμα,αὐτοῖς,direct object
-Mark,10,13,12,ἐπετίμησαν,αὐτοῖς,direct object
-Matt,19,13,16,ἐπετίμησαν,αὐτοῖς,direct object
-Mark,4,39,5,ἐπετίμησεν,ἀνέμῳ,direct object
-Luke,9,55,4,ἐπετίμησεν,αὐτοῖς,direct object
-Mark,8,30,3,ἐπετίμησεν,αὐτοῖς,direct object
-Matt,12,16,3,ἐπετίμησεν,αὐτοῖς,direct object
-Matt,20,31,5,ἐπετίμησεν,αὐτοῖς,direct object
-Luke,4,35,3,ἐπετίμησεν,αὐτῷ,direct object
-Mark,1,25,3,ἐπετίμησεν,αὐτῷ,direct object
-Matt,17,18,3,ἐπετίμησεν,αὐτῷ,direct object
-Mark,8,33,10,ἐπετίμησεν,Πέτρῳ,direct object
-Luke,9,42,16,ἐπετίμησεν,πνεύματι,direct object
-Mark,9,25,10,ἐπετίμησεν,πνεύματι,direct object
-Luke,4,39,7,ἐπετίμησεν,πυρετῷ,direct object
-Luke,18,15,15,ἐπετίμων,αὐτοῖς,direct object
-Luke,18,39,5,ἐπετίμων,αὐτῷ,direct object
-Mark,10,48,3,ἐπετίμων,αὐτῷ,direct object
-1Tim,5,10,18,ἐπηκολούθησεν,ἔργῳ,direct object
+1Tim,4,16,3,ἔπεχε,καὶ,direct object
 2Cor,6,2,3,ἐπήκουσά,Καιρῷ,time
 1Tim,5,10,14,ἐπήρκεσεν,θλιβομένοις,direct object
 Acts,27,2,3,ἐπιβάντες,πλοίῳ,direct object
@@ -644,46 +481,14 @@ Acts,25,1,5,ἐπιβὰς,ἐπαρχείᾳ,direct object
 Mark,2,8,7,ἐπιγνοὺς,πνεύματι,other
 Luke,5,1,8,ἐπικεῖσθαι,αὐτῷ,direct object
 1Cor,9,16,10,ἐπίκειται,μοι,direct object
-1Tim,4,16,7,ἐπίμενε,αὐτοῖς,direct object
-Col,1,23,5,ἐπιμένετε,πίστει,direct object
-Rom,11,22,20,ἐπιμένῃς,χρηστότητι,direct object
-Rom,6,1,6,ἐπιμένωμεν,ἁμαρτίᾳ,direct object
-Rom,11,23,7,ἐπιμένωσι,ἀπιστίᾳ,direct object
 Mark,3,10,6,ἐπιπίπτειν,αὐτῷ,direct object
 1Tim,5,1,1,ἐπιπλήξῃς,Πρεσβυτέρῳ,direct object
 2Cor,9,14,3,ἐπιποθούντων,δεήσει,other
-Mark,9,7,5,ἐπισκιάζουσα,αὐτοῖς,direct object
-Luke,1,35,16,ἐπισκιάσει,σοι,direct object
-Acts,5,15,22,ἐπισκιάσῃ,τινὶ,direct object
-Acts,17,5,20,ἐπιστάντες,οἰκίᾳ,direct object
-Acts,23,11,6,ἐπιστὰς,αὐτῷ,direct object
-John,5,46,7,ἐπιστεύετε,ἐμοί,direct object
-John,5,46,4,ἐπιστεύετε,Μωϋσεῖ,direct object
-Matt,21,32,20,ἐπίστευσαν,αὐτῷ,direct object
-Mark,16,14,17,ἐπίστευσαν,θεασαμένοις,direct object
+2Cor,11,28,6,ἐπίστασίς,μοι,possession
 John,2,22,17,ἐπίστευσαν,καὶ,direct object
-Acts,8,12,5,ἐπίστευσαν,Φιλίππῳ,direct object
-Luke,1,20,19,ἐπίστευσας,λόγοις,direct object
-Luke,20,5,17,ἐπιστεύσατε,αὐτῷ,direct object
-Mark,11,31,18,ἐπιστεύσατε,αὐτῷ,direct object
-Matt,21,25,29,ἐπιστεύσατε,αὐτῷ,direct object
-Matt,21,32,12,ἐπιστεύσατε,αὐτῷ,direct object
-John,12,38,14,ἐπίστευσεν,ἀκοῇ,direct object
-Rom,10,16,14,ἐπίστευσεν,ἀκοῇ,direct object
-Gal,3,6,5,ἐπίστευσεν,θεῷ,direct object
-Jas,2,23,11,Ἐπίστευσεν,θεῷ,direct object
-Rom,4,3,10,Ἐπίστευσεν,θεῷ,direct object
-Acts,18,8,7,ἐπίστευσεν,κυρίῳ,direct object
-John,4,50,14,ἐπίστευσεν,λόγῳ,direct object
 2Tim,4,3,15,ἐπισωρεύσουσιν,ἑαυτοῖς,benefit
+Luke,8,25,23,ἐπιτάσσει,καὶ,direct object
 Gal,3,3,7,ἐπιτελεῖσθε,σαρκὶ,other
-Mark,8,32,13,ἐπιτιμᾶν,αὐτῷ,direct object
-Matt,16,22,8,ἐπιτιμᾶν,αὐτῷ,direct object
-Jude,1,9,23,Ἐπιτιμήσαι,σοι,direct object
-Luke,9,21,4,ἐπιτιμήσας,αὐτοῖς,direct object
-Luke,17,3,9,ἐπιτίμησον,αὐτῷ,direct object
-Luke,19,39,14,ἐπιτίμησον,μαθηταῖς,direct object
-Luke,23,40,6,ἐπιτιμῶν,αὐτῷ,direct object
 Eph,5,14,19,ἐπιφαύσει,σοι,direct object
 Acts,7,23,4,ἐπληροῦτο,αὐτῷ,other
 Luke,1,57,3,ἐπλήσθη,Ἐλισάβετ,benefit
@@ -707,6 +512,7 @@ Luke,8,39,22,ἐποίησεν,αὐτῷ,benefit
 Mark,5,20,11,ἐποίησεν,αὐτῷ,benefit
 Mark,6,21,8,ἐποίησεν,γενεσίοις,benefit
 John,9,14,5,ἐποίησεν,ᾗ,time
+Mark,6,21,15,ἐποίησεν,καὶ,benefit
 Acts,7,24,10,ἐποίησεν,καταπονουμένῳ,benefit
 Luke,1,68,13,ἐποίησεν,λαῷ,benefit
 Luke,8,39,9,ἐποίησεν,σοι,benefit
@@ -717,6 +523,7 @@ Jude,1,20,9,ἐποικοδομοῦντες,πίστει,other
 Acts,15,3,25,ἐποίουν,ἀδελφοῖς,other
 Luke,6,23,23,ἐποίουν,προφήταις,other
 Luke,6,26,15,ἐποίουν,ψευδοπροφήταις,other
+Acts,27,18,6,ἐποιοῦντο,ἑξῆς,time
 Matt,12,1,9,ἐπορεύθη,σάββασιν,time
 Jude,1,11,5,ἐπορεύθησαν,ὁδῷ,direct object
 Luke,2,41,11,ἐπορεύοντο,ἑορτῇ,time
@@ -725,6 +532,7 @@ Heb,7,26,3,ἔπρεπεν,ἡμῖν,other
 Matt,7,22,13,ἐπροφητεύσαμεν,ὀνόματι,instrument
 Heb,9,21,12,ἐράντισεν,αἵματι,instrument
 1Thess,4,11,11,ἐργάζεσθαι,χερσὶν,instrument
+Rom,13,10,4,ἐργάζεται,πλησίον,benefit
 1Cor,4,12,6,ἐργαζόμενοι,χερσίν,instrument
 Eph,4,28,11,ἐργαζόμενος,χερσὶν,instrument
 Acts,27,19,3,ἔρριψαν,τρίτῃ,time
@@ -774,6 +582,8 @@ Jas,5,3,14,ἔσται,ὑμῖν,other
 Mark,11,24,15,ἔσται,ὑμῖν,possession
 Gal,6,14,18,ἐσταύρωται,ἐμοὶ,other
 Acts,16,5,7,ἐστερεοῦντο,πίστει,other
+Heb,2,9,16,ἐστεφανωμένον,καὶ,other
+Heb,2,7,8,ἐστεφάνωσας,καὶ,other
 Rom,11,20,8,ἕστηκας,πίστει,instrument
 2Cor,1,24,15,ἑστήκατε,πίστει,instrument
 Acts,18,10,16,ἐστί,μοι,possession
@@ -844,33 +654,13 @@ Rom,7,10,6,εὑρέθη,μοι,other
 2Cor,12,20,13,εὑρεθῶ,ὑμῖν,agent
 Acts,7,46,12,εὑρεῖν,θεῷ,benefit
 Matt,11,29,22,εὑρήσετε,ψυχαῖς,other
-Rom,14,6,15,εὐχαριστεῖ,θεῷ,direct object
-Rom,14,6,26,εὐχαριστεῖ,θεῷ,direct object
-2Thess,1,3,4,Εὐχαριστεῖν,θεῷ,direct object
-2Thess,2,13,6,εὐχαριστεῖν,θεῷ,direct object
-Acts,28,15,24,εὐχαριστήσας,θεῷ,direct object
-Acts,27,35,9,εὐχαρίστησεν,θεῷ,direct object
-1Thess,1,2,3,Εὐχαριστοῦμεν,θεῷ,direct object
-1Thess,2,13,8,εὐχαριστοῦμεν,θεῷ,direct object
-Col,1,3,3,Εὐχαριστοῦμεν,θεῷ,direct object
-Rev,11,17,3,Εὐχαριστοῦμέν,σοι,direct object
-Col,3,17,19,εὐχαριστοῦντες,θεῷ,direct object
-Col,1,12,3,εὐχαριστοῦντες,πατρὶ,direct object
-1Cor,1,4,3,Εὐχαριστῶ,θεῷ,direct object
-1Cor,14,18,3,εὐχαριστῶ,θεῷ,direct object
-Phil,1,3,3,Εὐχαριστῶ,θεῷ,direct object
-Phlm,1,4,3,Εὐχαριστῶ,θεῷ,direct object
-Rom,1,8,5,εὐχαριστῶ,θεῷ,direct object
-Rom,16,4,10,εὐχαριστῶ,οἷς,direct object
-John,11,41,16,εὐχαριστῶ,σοι,direct object
-Luke,18,11,11,εὐχαριστῶ,σοι,direct object
-Luke,17,16,10,εὐχαριστῶν,αὐτῷ,direct object
-1Thess,5,3,8,ἐφίσταται,αὐτοῖς,direct object
+Phlm,1,11,8,εὔχρηστον,καὶ,benefit
 Acts,16,28,3,ἐφώνησεν,φωνῇ,manner
 Rev,14,18,15,ἐφώνησεν,φωνῇ,manner
 Mark,1,34,7,ἔχοντας,νόσοις,other
 1Cor,9,12,14,ἐχρησάμεθα,ἐξουσίᾳ,direct object
 2Cor,1,17,7,ἐχρησάμην,ἐλαφρίᾳ,manner
+Acts,10,38,12,ἔχρισεν,καὶ,instrument
 Acts,27,17,3,ἐχρῶντο,βοηθείαις,instrument
 1John,1,1,10,ἑωράκαμεν,ὀφθαλμοῖς,instrument
 Rom,12,11,6,ζέοντες,πνεύματι,other
@@ -886,7 +676,9 @@ Rom,6,11,14,ζῶντας,θεῷ,other
 1Pet,3,18,21,ζῳοποιηθεὶς,πνεύματι,other
 1Pet,4,6,17,ζῶσι,πνεύματι,other
 Luke,20,38,10,ζῶσιν,αὐτῷ,other
+2Cor,5,15,11,ζῶσιν,ἀλλὰ,other
 1Cor,11,5,7,ἢ,ἀκατακαλύπτῳ,manner
+Rom,14,4,10,ἢ,κυρίῳ,other
 Luke,10,21,7,ἠγαλλιάσατο,πνεύματι,other
 Acts,13,22,7,ἤγειρεν,αὐτοῖς,benefit
 Acts,10,40,7,ἤγειρεν,ἡμέρᾳ,time
@@ -894,44 +686,7 @@ Luke,1,69,5,ἤγειρεν,ἡμῖν,benefit
 Acts,26,18,28,ἡγιασμένοις,πίστει,instrument
 Rev,5,9,21,ἠγόρασας,θεῷ,benefit
 Phil,2,3,9,ἡγούμενοι,ταπεινοφροσύνῃ,manner
-John,6,2,3,ἠκολούθει,αὐτῷ,direct object
-Luke,5,28,6,ἠκολούθει,αὐτῷ,direct object
-Luke,18,43,6,ἠκολούθει,αὐτῷ,direct object
-Luke,23,27,3,Ἠκολούθει,αὐτῷ,direct object
-Mark,5,24,7,ἠκολούθει,αὐτῷ,direct object
-Mark,10,52,17,ἠκολούθει,αὐτῷ,direct object
-Matt,9,19,6,ἠκολούθει,αὐτῷ,direct object
-Matt,26,58,5,ἠκολούθει,αὐτῷ,direct object
-Rev,19,14,9,ἠκολούθει,αὐτῷ,direct object
-Mark,9,38,20,ἠκολούθει,ἡμῖν,direct object
-John,18,15,4,Ἠκολούθει,Ἰησοῦ,direct object
-Mark,10,28,12,ἠκολουθήκαμέν,σοι,direct object
-Luke,18,28,11,ἠκολουθήσαμέν,σοι,direct object
-Matt,19,27,13,ἠκολουθήσαμέν,σοι,direct object
-John,11,31,23,ἠκολούθησαν,αὐτῇ,direct object
-Luke,5,11,11,ἠκολούθησαν,αὐτῷ,direct object
-Luke,9,11,6,ἠκολούθησαν,αὐτῷ,direct object
-Luke,22,39,14,ἠκολούθησαν,αὐτῷ,direct object
-Mark,1,18,7,ἠκολούθησαν,αὐτῷ,direct object
-Matt,4,20,8,ἠκολούθησαν,αὐτῷ,direct object
-Matt,4,22,12,ἠκολούθησαν,αὐτῷ,direct object
-Matt,4,25,3,ἠκολούθησαν,αὐτῷ,direct object
-Matt,8,1,8,ἠκολούθησαν,αὐτῷ,direct object
-Matt,8,23,7,ἠκολούθησαν,αὐτῷ,direct object
-Matt,9,27,7,ἠκολούθησαν,αὐτῷ,direct object
-Matt,12,15,9,ἠκολούθησαν,αὐτῷ,direct object
-Matt,14,13,19,ἠκολούθησαν,αὐτῷ,direct object
-Matt,19,2,3,ἠκολούθησαν,αὐτῷ,direct object
-Matt,20,34,14,ἠκολούθησαν,αὐτῷ,direct object
-John,1,37,11,ἠκολούθησαν,Ἰησοῦ,direct object
-Matt,27,55,12,ἠκολούθησαν,Ἰησοῦ,direct object
-Rev,14,9,6,ἠκολούθησεν,αὐτοῖς,direct object
-Mark,2,14,20,ἠκολούθησεν,αὐτῷ,direct object
-Mark,14,54,7,ἠκολούθησεν,αὐτῷ,direct object
-Matt,9,9,22,ἠκολούθησεν,αὐτῷ,direct object
-Matt,20,29,7,ἠκολούθησεν,αὐτῷ,direct object
-Mark,2,15,26,ἠκολούθουν,αὐτῷ,direct object
-Mark,15,41,8,ἠκολούθουν,αὐτῷ,direct object
+John,1,43,2,ἠθέλησεν,ἐπαύριον,time
 Acts,28,27,10,ἤκουσαν,ὠσὶν,instrument
 Matt,13,15,10,ἤκουσαν,ὠσὶν,instrument
 Rom,11,30,13,ἠλεήθητε,ἀπειθείᾳ,other
@@ -943,6 +698,7 @@ Gal,5,1,2,ἠλευθέρωσεν,ἐλευθερίᾳ,cognate of verb
 Matt,28,1,5,ἦλθεν,ἐπιφωσκούσῃ,time
 Matt,14,25,3,ἦλθεν,φυλακῇ,time
 Rev,18,10,24,ἦλθεν,ὥρᾳ,time
+Acts,21,8,3,ἤλθομεν,ἐπαύριον,time
 Acts,20,15,16,ἤλθομεν,ἐχομένῃ,time
 Luke,24,1,3,ἦλθον,μιᾷ,time
 John,21,8,6,ἦλθον,πλοιαρίῳ,instrument
@@ -961,11 +717,7 @@ John,11,6,10,ἦν,ᾧ,other
 Acts,12,10,21,ἠνοίγη,αὐτοῖς,benefit
 Acts,14,27,18,ἤνοιξεν,ἔθνεσιν,benefit
 Rom,11,31,8,ἠπείθησαν,ἐλέει,instrument
-Rom,11,30,7,ἠπειθήσατε,θεῷ,direct object
 Luke,24,11,12,ἠπίστουν,αὐταῖς,direct object
-Rom,15,3,6,ἤρεσεν,ἑαυτῷ,direct object
-Matt,14,6,17,ἤρεσεν,Ἡρῴδῃ,direct object
-Gal,1,10,14,ἤρεσκον,ἀνθρώποις,direct object
 Rev,18,17,3,ἠρημώθη,ὥρᾳ,time
 Rev,18,19,37,ἠρημώθη,ὥρᾳ,time
 Heb,11,24,1,ἠρνήσατο,πίστει,instrument
@@ -980,6 +732,7 @@ Eph,2,12,4,ἦτε,καιρῷ,time
 1Cor,2,9,23,ἡτοίμασεν,ἀγαπῶσιν,benefit
 Heb,11,16,19,ἡτοίμασεν,αὐτοῖς,benefit
 Matt,25,34,18,ἡτοιμασμένην,ὑμῖν,benefit
+Matt,25,41,21,ἡτοιμασμένον,καὶ,benefit
 Mark,10,40,15,ἡτοίμασται,οἷς,benefit
 Matt,20,23,22,ἡτοίμασται,οἷς,benefit
 2Pet,2,19,9,ἥττηται,ᾧ,direct object
@@ -1001,6 +754,7 @@ Matt,6,19,3,θησαυρίζετε,ὑμῖν,benefit
 Matt,6,20,3,θησαυρίζετε,ὑμῖν,benefit
 Luke,12,21,4,θησαυρίζων,ἑαυτῷ,benefit
 Acts,7,49,3,θρόνος,μοι,possession
+Acts,12,20,5,θυμομαχῶν,καὶ,direct object
 1Pet,2,24,23,ἰάθητε,μώλωπι,instrument
 Acts,28,27,21,ἴδωσιν,ὀφθαλμοῖς,instrument
 John,12,40,14,ἴδωσιν,ὀφθαλμοῖς,instrument
@@ -1015,16 +769,29 @@ Eph,5,26,6,καθαρίσας,λουτρῷ,instrument
 Acts,15,9,10,καθαρίσας,πίστει,instrument
 Titus,2,14,14,καθαρίσῃ,ἑαυτῷ,benefit
 Matt,5,8,5,καθαροὶ,καρδίᾳ,other
+Titus,1,15,8,καὶ,καθαρόν,other
 Acts,11,5,19,καθιεμένην,ἀρχαῖς,instrument
 Acts,10,11,14,καθιέμενον,ἀρχαῖς,instrument
+Acts,25,17,8,καθίσας,ἑξῆς,time
+Acts,25,6,15,καθίσας,ἐπαύριον,time
+1Thess,3,12,9,καὶ,ἀγάπῃ,other
 Eph,4,14,9,καὶ,ἀνέμῳ,agent
+Titus,3,8,24,καὶ,ἀνθρώποις,benefit
 Acts,10,41,17,καὶ,αὐτῷ,direct object
+Col,1,21,9,καὶ,διανοίᾳ,other
+Matt,11,29,17,καὶ,καρδίᾳ,other
 Luke,24,25,11,καὶ,καρδίᾳ,other
+Eph,5,19,13,καὶ,καρδίᾳ,instrument
+Rom,1,25,15,καὶ,κτίσει,direct object
+Heb,4,13,14,καὶ,ὀφθαλμοῖς,other
 2Cor,11,9,25,καὶ,ὑμῖν,benefit
+Phil,1,25,10,καὶ,ὑμῖν,other
+2Pet,1,8,3,καὶ,ὑμῖν,other
 Jas,3,7,16,καὶ,φύσει,agent
 Col,3,16,16,καὶ,ψαλμοῖς,instrument
 Acts,1,21,10,καὶ,ᾧ,time
 Matt,13,40,7,καίεται,πυρὶ,instrument
+Rev,21,8,29,καιομένῃ,καὶ,manner
 Rev,8,8,10,καιόμενον,πυρὶ,instrument
 Rom,14,20,15,κακὸν,ἀνθρώπῳ,other
 Luke,1,61,15,καλεῖται,ὀνόματι,other
@@ -1049,6 +816,7 @@ Phil,1,18,6,καταγγέλλεται,τρόπῳ,manner
 Luke,3,17,24,κατακαύσει,πυρὶ,instrument
 Matt,3,12,25,κατακαύσει,πυρὶ,instrument
 2Pet,3,6,6,κατακλυσθεὶς,ὕδατι,agent
+Acts,16,17,5,κατακολουθοῦσα,καὶ,direct object
 Mark,5,5,19,κατακόπτων,λίθοις,instrument
 Mark,10,33,20,κατακρινοῦσιν,θανάτῳ,other
 Matt,20,18,18,κατακρινοῦσιν,θανάτῳ,other
@@ -1058,14 +826,16 @@ Acts,12,17,5,κατασείσας,χειρὶ,instrument
 Acts,13,16,7,κατασείσας,χειρὶ,instrument
 Acts,20,9,11,καταφερόμενος,ὕπνῳ,agent
 1Cor,9,18,18,καταχρήσασθαι,ἐξουσίᾳ,direct object
+Rom,15,18,16,κατειργάσατο,καὶ,instrument
 2Cor,7,11,11,κατειργάσατο,ὑμῖν,other
+2Cor,12,12,14,κατειργάσθη,καὶ,instrument
 Rom,7,6,9,κατειχόμεθα,ᾧ,agent
+Acts,13,20,1,κατεκληρονόμησεν,ὡς,time
 2Pet,2,6,7,κατέκρινεν,καταστροφῇ,instrument
 Heb,11,27,1,κατέλιπεν,πίστει,instrument
 Rom,11,4,8,Κατέλιπον,ἐμαυτῷ,benefit
 Acts,18,12,12,κατεπέστησαν,Παύλῳ,direct object
 2Cor,4,17,16,κατεργάζεται,ἡμῖν,direct object
-2Cor,9,11,13,κατεργάζεται,θεῷ,other
 Rom,7,13,18,κατεργαζομένη,μοι,other
 Acts,21,40,12,κατέσεισε,χειρὶ,instrument
 Heb,11,7,1,κατεσκεύασεν,πίστει,instrument
@@ -1081,7 +851,10 @@ Acts,27,3,3,κατήχθημεν,ἑτέρᾳ,time
 Heb,1,4,6,κεκληρονόμηκεν,ὅσῳ,manner
 Rev,21,2,21,κεκοσμημένην,ἀνδρὶ,benefit
 Rev,21,19,8,κεκοσμημένοι,λίθῳ,instrument
+Luke,21,5,10,κεκόσμηται,καὶ,instrument
 Rev,18,6,21,κεράσατε,αὐτῇ,benefit
+Rev,17,4,12,κεχρυσωμένη,καὶ,instrument
+Rev,18,16,18,κεχρυσωμένη,καὶ,instrument
 Acts,19,27,6,κινδυνεύει,ἡμῖν,other
 Matt,23,4,15,κινῆσαι,δακτύλῳ,instrument
 Acts,24,5,12,κινοῦντα,Ἰουδαίοις,other
@@ -1094,7 +867,6 @@ Rom,14,14,19,κοινόν,ἐκείνῳ,other
 1Tim,5,22,7,κοινώνει,ἁμαρτίαις,direct object
 1Pet,4,13,7,κοινωνεῖτε,παθήμασιν,direct object
 Gal,6,6,8,Κοινωνείτω,κατηχοῦντι,other
-Luke,5,10,13,κοινωνοὶ,Σίμωνι,other
 Rom,12,13,2,κοινωνοῦντες,χρείαις,direct object
 Rev,7,10,3,κράζουσι,φωνῇ,manner
 Acts,7,57,3,κράξαντες,φωνῇ,manner
@@ -1108,7 +880,6 @@ Matt,5,40,4,κριθῆναι,σοι,other
 1Pet,4,6,12,κριθῶσι,σαρκὶ,other
 Rom,2,1,10,κρίνεις,ᾧ,other
 Matt,7,2,2,κρίνετε,ᾧ,cognate of verb
-Acts,24,10,17,κριτὴν,ἔθνει,other
 Heb,7,23,10,κωλύεσθαι,θανάτῳ,instrument
 Luke,19,12,11,λαβεῖν,ἑαυτῷ,benefit
 Acts,15,14,13,λαβεῖν,ὀνόματι,other
@@ -1120,6 +891,7 @@ John,7,26,3,λαλεῖ,παρρησίᾳ,manner
 Acts,2,4,10,λαλεῖν,γλώσσαις,manner
 1Cor,14,19,8,λαλῆσαι,νοΐ,instrument
 Mark,16,17,13,λαλήσουσιν,γλώσσαις,manner
+Eph,5,19,4,λαλοῦντες,καὶ,instrument
 Acts,2,11,13,λαλούντων,γλώσσαις,manner
 Acts,10,46,5,λαλούντων,γλώσσαις,manner
 Acts,2,6,17,λαλούντων,διαλέκτῳ,manner
@@ -1134,22 +906,10 @@ Acts,2,6,17,λαλούντων,διαλέκτῳ,manner
 1Cor,14,23,13,λαλῶσιν,γλώσσαις,manner
 Heb,5,4,8,λαμβάνει,ἀλλὰ,benefit
 Matt,5,15,18,λάμπει,ἐν,other
-Luke,1,74,7,λατρεύειν,αὐτῷ,direct object
 Luke,1,75,9,λατρεύειν,ἡμέραις,time
-Heb,9,14,26,λατρεύειν,θεῷ,direct object
-Acts,7,42,10,λατρεύειν,στρατιᾷ,direct object
 Phil,3,3,7,λατρεύοντες,πνεύματι,other
 Heb,13,10,11,λατρεύοντες,σκηνῇ,other
-Rev,7,15,11,λατρεύουσιν,αὐτῷ,direct object
-Luke,4,8,14,λατρεύσεις,αὐτῷ,direct object
-Matt,4,10,16,λατρεύσεις,αὐτῷ,direct object
-Rev,22,3,23,λατρεύσουσιν,αὐτῷ,direct object
-Acts,7,7,18,λατρεύσουσίν,μοι,direct object
-Acts,24,14,16,λατρεύω,θεῷ,direct object
-Acts,27,23,11,λατρεύω,ᾧ,direct object
-2Tim,1,3,5,λατρεύω,ᾧ,direct object
-Rom,1,9,7,λατρεύω,ᾧ,direct object
-Heb,12,28,12,λατρεύωμεν,θεῷ,direct object
+Luke,2,37,14,λατρεύουσα,καὶ,manner
 Rev,5,12,2,λέγοντες,φωνῇ,manner
 Rev,8,13,11,λέγοντος,φωνῇ,manner
 Rev,6,1,20,λέγοντος,ὡς,manner
@@ -1172,18 +932,12 @@ Rom,5,17,13,μᾶλλον,πολλῷ,other
 2Cor,3,11,7,μᾶλλον,πολλῷ,other
 Phil,1,23,16,μᾶλλον,πολλῷ,other
 John,18,37,32,μαρτυρήσω,ἀληθείᾳ,other
+1Tim,2,6,9,μαρτύριον,καιροῖς,time
 Acts,14,3,13,μαρτυροῦντι,λόγῳ,other
 3John,1,3,10,μαρτυρούντων,ἀληθείᾳ,other
 Acts,10,43,1,μαρτυροῦσιν,τούτῳ,other
 Eph,5,18,4,μεθύσκεσθε,οἴνῳ,instrument
-1Pet,5,7,9,μέλει,αὐτῷ,direct object
-John,10,13,7,μέλει,αὐτῷ,direct object
-1Cor,9,9,16,μέλει,θεῷ,direct object
-Luke,10,40,14,μέλει,σοι,direct object
-Mark,4,38,20,μέλει,σοι,direct object
-Mark,12,14,13,μέλει,σοι,direct object
-Matt,22,16,27,μέλει,σοι,direct object
-1Cor,7,21,4,μελέτω,σοι,direct object
+2Pet,2,11,4,μείζονες,καὶ,other
 John,3,26,17,μεμαρτύρηκας,ᾧ,other
 John,5,33,8,μεμαρτύρηκε,ἀληθείᾳ,other
 3John,1,12,1,μεμαρτύρηται,Δημητρίῳ,other
@@ -1209,6 +963,7 @@ Mark,9,5,18,μίαν,σοὶ,benefit
 Luke,9,33,26,μίαν,σοὶ,benefit
 Luke,9,38,19,μονογενής,μοί,possession
 Rom,6,11,10,νεκροὺς,ἁμαρτίᾳ,other
+Eph,2,1,7,νεκροὺς,καὶ,other
 Eph,2,5,6,νεκροὺς,παραπτώμασιν,other
 1Cor,14,20,9,νηπιάζετε,κακίᾳ,other
 Mark,7,3,10,νίψωνται,πυγμῇ,manner
@@ -1219,7 +974,6 @@ Rom,1,20,9,νοούμενα,ποιήμασιν,instrument
 John,2,20,8,οἰκοδομήθη,ἔτεσιν,time
 Acts,7,47,4,οἰκοδόμησεν,αὐτῷ,benefit
 Acts,7,49,15,οἰκοδομήσετέ,μοι,benefit
-Mark,11,17,17,οἶκος,ἔθνεσιν,other
 Phil,3,1,12,ὀκνηρόν,ἐμοὶ,other
 Rom,12,11,2,ὀκνηροί,σπουδῇ,other
 Phil,3,5,1,ὀκταήμερος,περιτομῇ,other
@@ -1240,8 +994,6 @@ Luke,2,25,7,ὄνομά,ᾧ,possession
 Luke,8,41,5,ὄνομά,ᾧ,possession
 Acts,7,5,26,ὄντος,αὐτῷ,possession
 Matt,5,22,10,ὀργιζόμενος,ἀδελφῷ,direct object
-Rom,8,12,8,ὀφειλέται,σαρκὶ,other
-Mark,16,13,7,ἐπίστευσαν,ἐκείνοις,direct object
 John,20,19,5,Οὔσης,ἡμέρᾳ,time
 Gal,4,8,9,οὖσι,φύσει,other
 1Pet,4,1,4,παθόντος,σαρκὶ,other
@@ -1251,8 +1003,6 @@ Luke,22,48,6,παραδίδως,φιλήματι,instrument
 Acts,20,2,9,παρακαλέσας,λόγῳ,instrument
 Rom,7,21,12,παράκειται,ἐμοὶ,other
 Rom,7,18,19,παράκειταί,μοι,other
-2Tim,3,10,6,παρηκολούθησάς,διδασκαλίᾳ,direct object
-Mark,16,17,4,παρακολουθήσει,πιστεύσασιν,direct object
 Acts,21,26,9,παραλαβὼν,ἡμέρᾳ,time
 Acts,27,24,5,παραστῆναι,Καίσαρί,direct object
 Rom,14,10,20,παραστησόμεθα,βήματι,direct object
@@ -1266,15 +1016,13 @@ Acts,1,10,15,παρειστήκεισαν,αὐτοῖς,direct object
 Luke,19,43,12,παρεμβαλοῦσιν,σοι,other
 Acts,15,19,10,παρενοχλεῖν,ἐπιστρέφουσιν,direct object
 Luke,7,4,14,παρέξῃ,ᾧ,direct object
-2Tim,4,17,4,παρέστη,μοι,direct object
 Acts,27,23,3,παρέστη,μοι,direct object
+2Tim,4,17,4,παρέστη,μοι,direct object
 Acts,27,23,6,παρέστη,νυκτὶ,time
 Acts,9,39,14,παρέστησαν,αὐτῷ,direct object
 2Pet,1,9,1,πάρεστιν,ᾧ,direct object
 Acts,23,2,8,παρεστῶσιν,αὐτῷ,direct object
 Acts,5,28,2,παρηγγείλαμεν,Παραγγελίᾳ,cognate of verb
-1Tim,4,6,19,παρηκολούθηκας,ᾗ,direct object
-Luke,1,3,5,παρηκολουθηκότι,πᾶσιν,direct object
 Matt,23,27,9,παρομοιάζετε,τάφοις,direct object
 2Cor,7,4,2,παρρησία,μοι,possession
 Heb,11,9,1,παρῴκησεν,πίστει,instrument
@@ -1282,24 +1030,15 @@ Heb,11,9,1,παρῴκησεν,πίστει,instrument
 Acts,5,29,10,Πειθαρχεῖν,θεῷ,direct object
 Acts,27,21,18,πειθαρχήσαντάς,μοι,direct object
 Acts,5,32,19,πειθαρχοῦσιν,αὐτῷ,direct object
-Gal,5,7,7,πείθεσθαι,ἀληθείᾳ,direct object
-Jas,3,3,15,πείθεσθαι,ἡμῖν,direct object
-Heb,13,17,3,Πείθεσθε,ἡγουμένοις,direct object
-Rom,2,8,12,πειθομένοις,ἀδικίᾳ,direct object
 Acts,23,21,5,πεισθῇς,αὐτοῖς,agent
-2Tim,1,12,12,πεπίστευκα,ᾧ,direct object
-John,8,31,8,πεπιστευκότας,αὐτῷ,direct object
-Titus,3,8,17,πεπιστευκότες,θεῷ,direct object
-Acts,16,34,14,πεπιστευκὼς,θεῷ,direct object
 2Cor,7,4,13,πεπλήρωμαι,παρακλήσει,agent
 Rom,1,29,3,πεπληρωμένους,ἀδικίᾳ,agent
 John,13,12,20,πεποίηκα,ὑμῖν,benefit
 Luke,1,25,3,πεποίηκεν,μοι,benefit
 Heb,11,28,1,πεποίηκεν,πίστει,instrument
 Mark,5,19,22,πεποίηκεν,σοι,benefit
-2Cor,10,7,8,πέποιθεν,ἑαυτῷ,direct object
+Acts,3,12,22,πεποιηκόσιν,ἢ,instrument
 Phil,1,14,10,πεποιθότας,δεσμοῖς,instrument
-Phlm,1,21,3,πεποιθὼς,ὑπακοῇ,direct object
 Acts,23,1,16,πεπολίτευμαι,θεῷ,other
 Acts,23,1,12,πεπολίτευμαι,συνειδήσει,manner
 Luke,23,15,16,πεπραγμένον,αὐτῷ,agent
@@ -1320,36 +1059,15 @@ Jas,1,2,7,περιπέσητε,πειρασμοῖς,direct object
 2Cor,3,9,15,περισσεύει,δόξῃ,other
 2Cor,3,9,8,περισσεύει,πολλῷ,other
 Luke,12,15,16,περισσεύειν,τινὶ,benefit
+2Cor,8,7,7,περισσεύετε,καὶ,other
 Luke,21,4,7,περισσεύοντος,αὐτοῖς,benefit
 Mark,12,44,6,περισσεύοντος,αὐτοῖς,benefit
 Luke,9,17,10,περισσεῦσαν,αὐτοῖς,benefit
 2Cor,9,1,11,περισσόν,μοί,other
 Acts,15,1,15,περιτμηθῆτε,ἔθει,other
 Luke,21,24,3,πεσοῦνται,στόματι,instrument
-John,4,21,6,Πίστευέ,μοι,direct object
-Acts,26,27,5,πιστεύεις,προφήταις,direct object
 Rom,10,10,1,πιστεύεται,καρδίᾳ,instrument
-John,5,47,5,πιστεύετε,γράμμασιν,direct object
-John,10,38,9,πιστεύετε,ἔργοις,direct object
-1John,4,1,4,πιστεύετε,πνεύματι,direct object
-John,5,38,14,πιστεύετε,τούτῳ,direct object
-John,8,45,9,πιστεύετέ,μοι,direct object
-John,8,46,16,πιστεύετέ,μοι,direct object
-John,10,37,11,πιστεύετέ,μοι,direct object
-John,14,11,2,πιστεύετέ,μοι,direct object
-John,10,38,5,πιστεύητε,ἐμοὶ,direct object
-Acts,5,14,6,πιστεύοντες,κυρίῳ,direct object
-Matt,21,32,29,πιστεῦσαι,αὐτῷ,direct object
-2Thess,2,11,15,πιστεῦσαι,ψεύδει,direct object
-2Thess,2,12,8,πιστεύσαντες,ἀληθείᾳ,direct object
-Luke,16,11,13,πιστεύσει,ὑμῖν,direct object
-John,5,47,11,πιστεύσετε,ῥήμασιν,direct object
-1John,3,23,10,πιστεύσωμεν,ὀνόματι,direct object
-John,6,30,13,πιστεύσωμέν,σοι,direct object
-Acts,27,25,7,πιστεύω,θεῷ,direct object
-1John,5,10,17,πιστεύων,θεῷ,direct object
 Acts,24,14,23,πιστεύων,καὶ,direct object
-John,5,24,14,πιστεύων,πέμψαντί,direct object
 Heb,3,10,13,πλανῶνται,καρδίᾳ,other
 John,4,41,2,πλείους,πολλῷ,other
 1Pet,1,2,16,πληθυνθείη,ὑμῖν,benefit
@@ -1364,9 +1082,11 @@ Matt,7,12,15,ποιεῖτε,αὐτοῖς,benefit
 Luke,6,27,13,ποιεῖτε,μισοῦσιν,benefit
 Heb,12,13,6,ποιεῖτε,ποσὶν,benefit
 Mark,14,7,12,ποιῆσαι,αὐτοῖς,benefit
+Mark,7,12,8,ποιῆσαι,ἢ,benefit
 Rev,13,14,27,ποιῆσαι,θηρίῳ,benefit
 Mark,15,15,6,ποιῆσαι,ὄχλῳ,benefit
 Luke,6,11,13,ποιήσαιεν,Ἰησοῦ,benefit
+Acts,28,17,27,ποιήσας,ἢ,benefit
 Luke,12,33,9,ποιήσατε,ἑαυτοῖς,benefit
 Luke,16,9,5,ποιήσατε,ἑαυτοῖς,benefit
 Luke,20,15,11,ποιήσει,αὐτοῖς,other
@@ -1387,9 +1107,8 @@ Matt,7,12,8,ποιῶσιν,ὑμῖν,other
 Rom,2,14,8,ποιῶσιν,φύσει,manner
 Acts,18,2,9,Ποντικὸν,γένει,other
 Acts,14,16,12,πορεύεσθαι,ὁδοῖς,other
-Eph,5,3,14,πρέπει,ἁγίοις,direct object
-1Tim,2,10,4,πρέπει,γυναιξὶν,direct object
-Titus,2,1,8,πρέπει,διδασκαλίᾳ,direct object
+Acts,9,31,22,πορευομένη,καὶ,other
+Luke,2,52,5,προέκοπτεν,καὶ,other
 Acts,22,25,6,προέτειναν,ἱμᾶσιν,instrument
 Rom,12,10,7,προηγούμενοι,τιμῇ,other
 2Cor,9,7,5,προῄρηται,καρδίᾳ,instrument
@@ -1397,51 +1116,16 @@ Eph,2,10,12,προητοίμασεν,οἷς,benefit
 Heb,12,2,14,προκειμένης,αὐτῷ,direct object
 Heb,12,1,22,προκείμενον,ἡμῖν,direct object
 Acts,3,20,14,προκεχειρισμένον,ὑμῖν,benefit
-Rom,5,2,8,προσαγωγὴν,πίστει,other
+Gal,1,16,17,προσανεθέμην,καὶ,direct object
 Luke,12,46,9,προσδοκᾷ,ᾗ,time
 Matt,24,50,9,προσδοκᾷ,ᾗ,time
-Acts,8,11,3,προσεῖχον,αὐτῷ,direct object
-Acts,8,6,6,προσεῖχον,λεγομένοις,direct object
-Acts,8,10,1,προσεῖχον,ᾧ,direct object
+Acts,17,4,10,προσεκληρώθησαν,καὶ,direct object
 Acts,5,36,12,προσεκλίθη,ᾧ,direct object
 Rom,9,32,13,προσέκοψαν,λίθῳ,direct object
 Matt,7,27,16,προσέκοψαν,οἰκίᾳ,direct object
-Matt,8,2,6,προσεκύνει,αὐτῷ,direct object
-Matt,9,18,10,προσεκύνει,αὐτῷ,direct object
-Matt,15,25,5,προσεκύνει,αὐτῷ,direct object
-Matt,18,26,6,προσεκύνει,αὐτῷ,direct object
-Matt,2,11,17,προσεκύνησαν,αὐτῷ,direct object
-Matt,14,33,7,προσεκύνησαν,αὐτῷ,direct object
-Matt,28,9,17,προσεκύνησαν,αὐτῷ,direct object
-Rev,13,4,4,προσεκύνησαν,δράκοντι,direct object
-Rev,7,11,28,προσεκύνησαν,θεῷ,direct object
-Rev,11,16,23,προσεκύνησαν,θεῷ,direct object
-Rev,19,4,15,προσεκύνησαν,θεῷ,direct object
-Rev,13,4,14,προσεκύνησαν,θηρίῳ,direct object
-John,9,38,8,προσεκύνησεν,αὐτῷ,direct object
-Mark,15,19,15,προσεκύνουν,αὐτῷ,direct object
-Mark,6,35,7,προσελθόντες,αὐτῷ,direct object
-Matt,17,19,6,προσελθόντες,Ἰησοῦ,direct object
-Acts,9,1,16,προσελθὼν,ἀρχιερεῖ,direct object
-Mark,14,45,5,προσελθὼν,αὐτῷ,direct object
-Matt,21,30,4,προσελθὼν,δευτέρῳ,direct object
-Matt,26,49,5,προσελθὼν,Ἰησοῦ,direct object
-Matt,21,28,11,προσελθὼν,πρώτῳ,direct object
-Acts,22,26,7,προσελθὼν,χιλιάρχῳ,direct object
 Heb,11,17,1,προσενήνοχεν,Πίστει,instrument
-Matt,7,25,16,προσέπεσαν,οἰκίᾳ,direct object
-Luke,8,28,7,προσέπεσεν,αὐτῷ,direct object
-Mark,5,33,14,προσέπεσεν,αὐτῷ,direct object
-Luke,5,8,7,προσέπεσεν,γόνασιν,direct object
-Mark,3,11,10,προσέπιπτον,αὐτῷ,direct object
 Luke,6,49,17,προσέρηξεν,ᾗ,direct object
 Luke,6,48,23,προσέρηξεν,οἰκίᾳ,direct object
-Heb,11,6,12,προσερχόμενον,θεῷ,direct object
-Heb,7,25,13,προσερχομένους,θεῷ,direct object
-Matt,9,14,3,προσέρχονται,αὐτῷ,direct object
-Matt,15,1,4,προσέρχονται,Ἰησοῦ,direct object
-Heb,4,16,6,προσερχώμεθα,θρόνῳ,direct object
-Heb,7,13,14,προσέσχηκεν,θυσιαστηρίῳ,direct object
 1Cor,14,15,11,προσεύξομαι,νοΐ,instrument
 1Cor,14,15,6,προσεύξομαι,πνεύματι,instrument
 Mark,12,40,8,προσευχόμενοι,προφάσει,manner
@@ -1450,70 +1134,18 @@ Luke,20,47,8,προσεύχονται,προφάσει,manner
 1Cor,14,14,4,προσεύχωμαι,γλώσσῃ,instrument
 Acts,22,2,6,προσεφώνει,διαλέκτῳ,manner
 Acts,21,40,22,προσεφώνησεν,διαλέκτῳ,manner
-1Tim,4,13,5,πρόσεχε,ἀναγνώσει,direct object
-Heb,2,1,8,προσέχειν,ἀκουσθεῖσιν,direct object
-Acts,16,14,21,προσέχειν,λαλουμένοις,direct object
 Acts,5,35,8,προσέχετε,ἑαυτοῖς,other
 Luke,12,1,19,Προσέχετε,ἑαυτοῖς,other
 Luke,17,3,2,προσέχετε,ἑαυτοῖς,other
 Luke,21,34,3,Προσέχετε,ἑαυτοῖς,other
-1Tim,3,8,7,προσέχοντας,οἴνῳ,direct object
-2Pet,1,19,7,προσέχοντες,ᾧ,direct object
-Matt,5,1,13,προσῆλθαν,αὐτῷ,direct object
-Acts,18,2,31,προσῆλθεν,αὐτοῖς,direct object
-Matt,8,5,7,προσῆλθεν,αὐτῷ,direct object
-Matt,17,14,7,προσῆλθεν,αὐτῷ,direct object
-Matt,20,20,3,προσῆλθεν,αὐτῷ,direct object
-Matt,26,7,2,προσῆλθεν,αὐτῷ,direct object
-Matt,26,69,11,προσῆλθεν,αὐτῷ,direct object
-Matt,9,28,7,προσῆλθον,αὐτῷ,direct object
-Matt,13,36,11,προσῆλθον,αὐτῷ,direct object
-Matt,14,15,5,προσῆλθον,αὐτῷ,direct object
-Matt,15,30,3,προσῆλθον,αὐτῷ,direct object
-Matt,19,3,3,προσῆλθον,αὐτῷ,direct object
-Matt,21,14,3,προσῆλθον,αὐτῷ,direct object
-Matt,21,23,8,προσῆλθον,αὐτῷ,direct object
-Matt,22,23,6,προσῆλθον,αὐτῷ,direct object
-Matt,24,3,10,προσῆλθον,αὐτῷ,direct object
-Matt,21,23,9,προσῆλθον,διδάσκοντι,direct object
-Matt,18,1,9,προσῆλθον,Ἰησοῦ,direct object
-Matt,26,17,10,προσῆλθον,Ἰησοῦ,direct object
-Matt,17,24,12,προσῆλθον,Πέτρῳ,direct object
 Matt,26,17,3,προσῆλθον,πρώτῃ,time
-John,12,21,4,προσῆλθον,Φιλίππῳ,direct object
 Col,2,14,21,προσηλώσας,σταυρῷ,other
 Heb,11,4,1,προσήνεγκεν,Πίστει,instrument
 Jas,5,17,7,προσηύξατο,προσευχῇ,cognate of verb
-Col,4,2,2,προσκαρτερεῖτε,προσευχῇ,direct object
 Mark,3,9,9,προσκαρτερῇ,αὐτῷ,benefit
-Acts,1,14,7,προσκαρτεροῦντες,προσευχῇ,direct object
-Rom,12,12,8,προσκαρτεροῦντες,προσευχῇ,direct object
-Acts,10,7,18,προσκαρτερούντων,αὐτῷ,direct object
-Acts,8,13,12,προσκαρτερῶν,Φιλίππῳ,direct object
 Eph,5,31,13,προσκολληθήσεται,γυναικὶ,direct object
 Matt,27,60,19,προσκυλίσας,θύρᾳ,direct object
-Acts,7,43,18,προσκυνεῖν,αὐτοῖς,direct object
-Matt,2,2,20,προσκυνῆσαι,αὐτῷ,direct object
-Rev,19,10,8,προσκυνῆσαι,αὐτῷ,direct object
-Rev,14,7,22,προσκυνήσατε,ποιήσαντι,direct object
-Heb,1,6,13,προσκυνησάτωσαν,αὐτῷ,direct object
-1Cor,14,25,15,προσκυνήσει,θεῷ,direct object
-John,4,21,22,προσκυνήσετε,πατρί,direct object
-Matt,4,9,11,προσκυνήσῃς,μοι,direct object
-Rev,19,10,27,προσκύνησον,θεῷ,direct object
-Rev,22,9,24,προσκύνησον,θεῷ,direct object
-Rev,4,10,15,προσκυνήσουσιν,ζῶντι,direct object
-John,4,23,13,προσκυνήσουσιν,πατρὶ,direct object
-Matt,2,8,22,προσκυνήσω,αὐτῷ,direct object
-Rev,13,15,25,προσκυνήσωσιν,εἰκόνι,direct object
-Rev,16,2,32,προσκυνοῦντας,εἰκόνι,direct object
-Rev,19,20,29,προσκυνοῦντας,εἰκόνι,direct object
-Acts,11,23,20,προσμένειν,κυρίῳ,direct object
 Acts,11,23,15,προσμένειν,προθέσει,manner
-Acts,13,43,25,προσμένειν,χάριτι,direct object
-Mark,8,2,10,προσμένουσίν,μοι,direct object
-Matt,15,32,18,προσμένουσίν,μοι,direct object
-Luke,8,47,12,προσπεσοῦσα,αὐτῷ,direct object
 Mark,10,35,3,προσπορεύονται,αὐτῷ,direct object
 Luke,11,46,24,προσψαύετε,φορτίοις,direct object
 Heb,3,10,6,προσώχθισα,γενεᾷ,direct object
@@ -1524,7 +1156,6 @@ Jas,2,5,12,πτωχοὺς,κόσμῳ,other
 Eph,2,5,10,σεσῳσμένοι,χάριτί,instrument
 Eph,2,8,3,σεσῳσμένοι,χάριτί,instrument
 Rom,2,14,17,σημεῖόν,ἑαυτοῖς,benefit
-Acts,18,3,15,σκηνοποιοὶ,τέχνῃ,other
 Acts,26,14,22,σκληρόν,σοι,other
 Heb,3,13,18,σκληρυνθῇ,ἀπάτῃ,agent
 Jas,3,18,8,σπείρεται,ποιοῦσιν,benefit
@@ -1539,17 +1170,10 @@ Acts,9,34,14,στρῶσον,σεαυτῷ,benefit
 Acts,26,30,14,συγκαθήμενοι,αὐτοῖς,direct object
 2Tim,1,8,17,συγκακοπάθησον,εὐαγγελίῳ,direct object
 Heb,11,25,5,συγκακουχεῖσθαι,λαῷ,direct object
+Luke,23,51,7,συγκατατεθειμένος,καὶ,direct object
 Heb,4,2,20,συγκεκερασμένους,ἀκούσασιν,direct object
 Heb,4,2,18,συγκεκερασμένους,πίστει,instrument
-Eph,5,11,5,συγκοινωνεῖτε,ἔργοις,direct object
-Phil,4,14,7,συγκοινωνήσαντές,θλίψει,direct object
-Rev,18,4,19,συγκοινωνήσητε,ἁμαρτίαις,direct object
 1Cor,2,13,14,συγκρίνοντες,πνευματικοῖς,instrument
-1Cor,13,6,9,συγχαίρει,ἀληθείᾳ,direct object
-Phil,2,18,9,συγχαίρετέ,μοι,direct object
-Phil,2,17,17,συγχαίρω,ὑμῖν,direct object
-Luke,15,6,15,Συγχάρητέ,μοι,direct object
-Luke,15,9,10,Συγχάρητέ,μοι,direct object
 John,4,9,23,συγχρῶνται,Σαμαρίταις,direct object
 Rom,6,8,10,συζήσομεν,αὐτῷ,direct object
 Mark,8,11,8,συζητεῖν,αὐτῷ,direct object
@@ -1557,13 +1181,7 @@ Acts,6,9,23,συζητοῦντες,Στεφάνῳ,direct object
 Luke,5,7,12,συλλαβέσθαι,αὐτοῖς,direct object
 Mark,9,4,11,συλλαλοῦντες,Ἰησοῦ,direct object
 Phil,4,3,8,συλλαμβάνου,αὐταῖς,direct object
-Mark,10,32,31,συμβαίνειν,αὐτῷ,direct object
-1Pet,4,12,14,συμβαίνοντος,ὑμῖν,direct object
-Luke,14,31,6,συμβαλεῖν,βασιλεῖ,direct object
-Acts,20,19,13,συμβάντων,μοι,direct object
 1Cor,4,8,16,συμβασιλεύσωμεν,ὑμῖν,direct object
-2Pet,2,22,2,συμβέβηκεν,αὐτοῖς,direct object
-Acts,3,10,26,συμβεβηκότι,αὐτῷ,direct object
 John,18,14,7,συμβουλεύσας,Ἰουδαίοις,direct object
 Rev,3,18,2,συμβουλεύω,σοι,direct object
 Rom,8,16,6,συμμαρτυρεῖ,πνεύματι,direct object
@@ -1572,12 +1190,6 @@ Rom,9,1,8,συμμαρτυρούσης,μοι,direct object
 Phil,3,10,16,συμμορφιζόμενος,θανάτῳ,direct object
 Heb,4,15,9,συμπαθῆσαι,ἀσθενείαις,direct object
 Acts,25,24,11,συμπαρόντες,ἡμῖν,direct object
-Matt,18,6,14,συμφέρει,αὐτῷ,direct object
-Matt,5,29,18,συμφέρει,σοι,direct object
-Matt,5,30,17,συμφέρει,σοι,direct object
-2Cor,8,10,8,συμφέρει,ὑμῖν,direct object
-John,11,50,5,συμφέρει,ὑμῖν,direct object
-John,16,7,8,συμφέρει,ὑμῖν,direct object
 Rom,7,16,10,σύμφημι,νόμῳ,direct object
 Luke,5,36,27,συμφωνήσει,παλαιῷ,direct object
 Acts,15,15,2,συμφωνοῦσιν,τούτῳ,direct object
@@ -1591,10 +1203,8 @@ Luke,14,10,29,συνανακειμένων,σοι,direct object
 2Thess,3,14,16,συναναμίγνυσθαι,αὐτῷ,direct object
 1Cor,5,9,8,συναναμίγνυσθαι,πόρνοις,direct object
 Rom,15,32,11,συναναπαύσωμαι,ὑμῖν,direct object
-Heb,7,1,14,συναντήσας,Ἀβραὰμ,direct object
-Acts,10,25,9,συναντήσας,αὐτῷ,direct object
-Luke,22,10,12,συναντήσει,ὑμῖν,direct object
-Acts,20,22,15,συναντήσοντά,μοι,direct object
+Matt,9,10,18,συνανέκειντο,καὶ,direct object
+Mark,2,15,17,συνανέκειντο,καὶ,direct object
 Luke,10,40,27,συναντιλάβηται,μοι,direct object
 Rom,8,26,8,συναντιλαμβάνεται,ἀσθενείᾳ,direct object
 Rom,12,16,12,συναπαγόμενοι,ταπεινοῖς,direct object
@@ -1603,24 +1213,17 @@ Gal,2,13,14,συναπήχθη,ὑποκρίσει,agent
 Mark,14,31,9,συναποθανεῖν,σοι,direct object
 Heb,11,31,8,συναπώλετο,ἀπειθήσασιν,direct object
 Heb,11,31,1,συναπώλετο,πίστει,instrument
-1Cor,10,11,5,συνέβαινεν,ἐκείνοις,direct object
 Acts,18,27,21,συνεβάλετο,πεπιστευκόσιν,direct object
-Acts,20,14,4,συνέβαλλεν,ἡμῖν,direct object
-Acts,17,18,10,συνέβαλλον,αὐτῷ,direct object
 Eph,2,5,9,συνεζωοποίησεν,Χριστῷ,other
 Acts,20,4,3,συνείπετο,αὐτῷ,direct object
-John,18,15,21,συνεισῆλθεν,Ἰησοῦ,direct object
 John,6,22,25,συνεισῆλθεν,μαθηταῖς,direct object
+John,18,15,21,συνεισῆλθεν,Ἰησοῦ,direct object
 Acts,18,5,15,συνείχετο,λόγῳ,direct object
 Luke,8,37,15,συνείχοντο,φόβῳ,direct object
 Luke,9,30,6,συνελάλουν,αὐτῷ,direct object
-Luke,23,55,11,συνεληλυθυῖαι,αὐτῷ,direct object
-Acts,11,12,7,συνελθεῖν,αὐτοῖς,direct object
-Acts,15,38,13,συνελθόντα,αὐτοῖς,direct object
-John,11,33,10,συνελθόντας,αὐτῇ,direct object
-Acts,1,21,5,συνελθόντων,ἡμῖν,direct object
 Heb,10,34,4,συνεπαθήσατε,δεσμίοις,direct object
 2Cor,8,22,3,συνεπέμψαμεν,αὐτοῖς,other
+Heb,2,4,6,συνεπιμαρτυροῦντος,καὶ,instrument
 Luke,24,15,14,συνεπορεύετο,αὐτοῖς,direct object
 Luke,7,11,13,συνεπορεύοντο,αὐτῷ,direct object
 Luke,14,25,3,Συνεπορεύοντο,αὐτῷ,direct object
@@ -1637,21 +1240,18 @@ Acts,8,1,6,συνευδοκῶν,ἀναιρέσει,direct object
 Acts,11,3,10,συνέφαγες,αὐτοῖς,direct object
 Acts,5,9,9,συνεφωνήθη,ὑμῖν,direct object
 Matt,20,13,14,συνεφώνησάς,μοι,direct object
-Luke,1,58,19,συνέχαιρον,αὐτῇ,direct object
 Luke,4,38,17,συνεχομένη,πυρετῷ,direct object
+Acts,28,8,8,συνεχόμενον,καὶ,direct object
+Matt,4,24,19,συνεχομένους,καὶ,direct object
 Col,3,1,5,συνηγέρθητε,Χριστῷ,direct object
 Rom,7,22,4,συνήδομαι,νόμῳ,direct object
 Phil,4,3,14,συνήθλησάν,μοι,direct object
 Mark,14,51,5,συνηκολούθει,αὐτῷ,direct object
-Acts,10,45,10,συνῆλθαν,Πέτρῳ,direct object
-Acts,9,39,5,συνῆλθεν,αὐτοῖς,direct object
-Acts,10,23,20,συνῆλθον,αὐτῷ,direct object
-Heb,7,10,11,συνήντησεν,αὐτῷ,direct object
-Luke,9,37,12,συνήντησεν,αὐτῷ,direct object
 Jas,2,22,7,συνήργει,ἔργοις,direct object
 Luke,8,29,13,συνηρπάκει,χρόνοις,time
 Luke,9,18,11,συνῆσαν,αὐτῷ,direct object
 Acts,13,44,4,συνήχθη,σαββάτῳ,time
+Matt,27,62,3,συνήχθησαν,ἐπαύριον,time
 2Cor,4,2,19,συνιστάνοντες,φανερώσει,instrument
 Acts,9,7,6,συνοδεύοντες,αὐτῷ,direct object
 1Cor,4,4,3,σύνοιδα,ἐμαυτῷ,other
@@ -1688,21 +1288,8 @@ Heb,6,7,15,τίκτουσα,ἐκείνοις,benefit
 Mark,7,6,19,τιμᾷ,χείλεσίν,instrument
 Matt,15,8,5,τιμᾷ,χείλεσίν,instrument
 Titus,2,2,8,ὑγιαίνοντας,πίστει,other
-Mark,4,41,21,ὑπακούει,αὐτῷ,direct object
-2Thess,3,14,7,ὑπακούει,λόγῳ,direct object
-Rom,6,12,15,ὑπακούειν,ἐπιθυμίαις,direct object
-Col,3,20,5,ὑπακούετε,γονεῦσιν,direct object
-Eph,6,1,5,ὑπακούετε,γονεῦσιν,direct object
-Col,3,22,9,ὑπακούετε,κυρίοις,direct object
-Eph,6,5,7,ὑπακούετε,κυρίοις,direct object
-Rom,6,16,12,ὑπακούετε,ᾧ,direct object
-Heb,5,9,7,ὑπακούουσιν,αὐτῷ,direct object
-Luke,8,25,28,ὑπακούουσιν,αὐτῷ,direct object
-Mark,1,27,24,ὑπακούουσιν,αὐτῷ,direct object
-Matt,8,27,16,ὑπακούουσιν,αὐτῷ,direct object
-2Thess,1,8,15,ὑπακούουσιν,εὐαγγελίῳ,direct object
-Luke,14,31,25,ὑπαντῆσαι,ἐρχομένῳ,direct object
-Acts,16,16,14,ὑπαντῆσαι,ἡμῖν,direct object
+Luke,7,12,15,υἱὸς,μητρὶ,possession
+Matt,8,34,10,ὑπάντησιν,Ἰησοῦ,direct object
 Acts,3,6,9,ὑπάρχει,μοι,possession
 Acts,4,37,2,ὑπάρχοντος,αὐτῷ,possession
 Luke,8,3,18,ὑπαρχόντων,αὐταῖς,possession
@@ -1710,25 +1297,16 @@ Acts,4,32,17,ὑπαρχόντων,αὐτῷ,possession
 Luke,12,15,24,ὑπαρχόντων,αὐτῷ,possession
 Rom,8,26,23,ὑπερεντυγχάνει,στεναγμοῖς,instrument
 2Cor,7,4,16,ὑπερπερισσεύομαι,χαρᾷ,other
+Acts,23,32,3,ὑπέστρεψαν,ἐπαύριον,time
 Acts,7,39,1,ὑπήκοοι,ᾧ,other
-Acts,6,7,23,ὑπήκουον,πίστει,direct object
-Rom,10,16,6,ὑπήκουσαν,εὐαγγελίῳ,direct object
-1Pet,3,6,5,ὑπήκουσεν,Ἀβραάμ,direct object
 Heb,11,8,1,ὑπήκουσεν,Πίστει,instrument
-Luke,17,6,25,ὑπήκουσεν,ὑμῖν,direct object
-John,4,51,9,ὑπήντησαν,αὐτῷ,direct object
-Matt,8,28,13,ὑπήντησαν,αὐτῷ,direct object
-Matt,28,9,5,ὑπήντησεν,αὐταῖς,direct object
-John,11,20,10,ὑπήντησεν,αὐτῷ,direct object
-John,11,30,17,ὑπήντησεν,αὐτῷ,direct object
-Luke,8,27,3,ὑπήντησεν,αὐτῷ,direct object
-Mark,5,2,9,ὑπήντησεν,αὐτῷ,direct object
 Acts,24,23,16,ὑπηρετεῖν,αὐτῷ,direct object
 Acts,13,36,10,ὑπηρετήσας,βουλῇ,direct object
 Acts,13,36,5,ὑπηρετήσας,γενεᾷ,time
 Acts,28,7,11,ὑπῆρχεν,πρώτῳ,possession
 Rom,12,12,5,ὑπομένοντες,θλίψει,direct object
 1Pet,5,5,4,ὑποτάγητε,πρεσβυτέροις,direct object
+1Cor,16,16,7,ὑποτάσσησθε,καὶ,direct object
 Matt,15,20,10,φαγεῖν,χερσὶν,instrument
 1Tim,4,15,12,φανερὰ,πᾶσιν,other
 Heb,1,3,16,φέρων,ῥήματι,instrument

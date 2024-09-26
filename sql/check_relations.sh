@@ -2,9 +2,17 @@ echo "WITH relations_to_check AS
            (SELECT relations.SentenceID, relations.Relation, relations.HeadPos,
                    relations.DependentPos, relations.FirstPos,
                    relations.LastPos,
+                   CASE WHEN checked_relation_tokens.Relation <> relations.Relation
+                             THEN checked_relation_tokens.Relation
+                   END AS OldRelation,
                    CASE WHEN checked_relation_tokens.Relation IS NULL
                              THEN checked_relation_types.CheckOrder
-                        ELSE -1
+                        WHEN checked_relation_types.Relation IS NULL
+                             THEN -1 - (SELECT MAX(CheckOrder)
+                                        FROM gnt.checked_relation_types)
+                        ELSE (0 - (SELECT MAX(CheckOrder)
+                                   FROM gnt.checked_relation_types)) +
+                             checked_relation_types.CheckOrder
                    END AS CheckOrder
             FROM gnt.relations
                  LEFT JOIN gnt.checked_relation_types
@@ -20,6 +28,7 @@ echo "WITH relations_to_check AS
            (SELECT strings.SentenceID, relations_to_check.HeadPos,
                    relations_to_check.DependentPos, relations_to_check.FirstPos,
                    relations_to_check.LastPos, relations_to_check.Relation,
+                   relations_to_check.OldRelation,
                    relations_to_check.CheckOrder, MAX(strings.Start) AS Start,
                    MIN(strings.Stop) AS Stop
             FROM gnt.strings
@@ -33,6 +42,7 @@ echo "WITH relations_to_check AS
                      relations_to_check.DependentPos,
                      relations_to_check.FirstPos, relations_to_check.LastPos,
                      relations_to_check.Relation,
+                     relations_to_check.OldRelation,
                      relations_to_check.CheckOrder),
            book_chapter_verse AS
            (SELECT SentenceID,
@@ -112,7 +122,8 @@ echo "WITH relations_to_check AS
                                     0 - (strings.Stop -
                                          shortest_strings.LastPos))) AS String,
              shortest_strings.SentenceID, shortest_strings.HeadPos,
-             shortest_strings.DependentPos, shortest_strings.Relation
+             shortest_strings.DependentPos, shortest_strings.Relation,
+             shortest_strings.OldRelation
       FROM gnt.strings
            JOIN shortest_strings
            ON strings.SentenceID = shortest_strings.SentenceID
@@ -123,12 +134,17 @@ echo "WITH relations_to_check AS
       ORDER BY shortest_strings.CheckOrder, book_chapter_verse.Book,
                book_chapter_verse.Chapter, book_chapter_verse.Verse,
                shortest_strings.HeadPos, shortest_strings.DependentPos
-      LIMIT 50;" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null | while IFS=$'\t' read citation string sentence_id head_pos dependent_pos relation
+      LIMIT 50;" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null | while IFS=$'\t' read citation string sentence_id head_pos dependent_pos relation old_relation
 do
   if [ "$citation" != "Citation" ]
   then
     colored_string=$(echo "$string" | sed ''/H/s//`printf "\e[1;35m"`/'' | sed ''/h/s//`printf "\e[0m"`/'' | sed ''/D/s//`printf "\e[1;36m"`/'' | sed ''/d/s//`printf "\e[0m"`/'')
-    echo "$citation ($relation): $colored_string"
+    relation_string=$relation
+    if [ "$old_relation" != "NULL" ]
+    then
+      relation_string="$old_relation -> $relation"
+    fi
+    echo "$citation ($relation_string): $colored_string"
     read -u 1 -p "Ok? " relation_is_ok
     if [ "$relation_is_ok" == "y" ]
     then

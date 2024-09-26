@@ -1,4 +1,13 @@
-echo "WITH multiple_objects AS
+echo "WITH multiple_subjects AS
+           (SELECT SentenceID, HeadPos
+            FROM gnt.relations
+            WHERE Relation LIKE 'subject%'
+                  AND SentenceID NOT IN
+                      ('2Cor 3:17.7 - 2Cor 3:17.12',
+                       'Rev 21:16.6 - Rev 21:16.12')
+            GROUP BY SentenceID, HeadPos
+            HAVING COUNT(*) > 1),
+           multiple_objects AS
            (SELECT relations.SentenceID, relations.HeadPos
             FROM gnt.relations
                  JOIN gnt.words
@@ -13,17 +22,36 @@ echo "WITH multiple_objects AS
                        'φορτίζω', 'χρίω', 'ὠφελέω')
             GROUP BY relations.SentenceID, relations.HeadPos
             HAVING COUNT(*) > 1),
-           all_heads AS
+           multiple_objects_of_prep AS
            (SELECT SentenceID, HeadPos
-            FROM multiple_objects),
+            FROM gnt.relations
+            WHERE Relation LIKE 'object of preposition%'
+            GROUP BY SentenceID, HeadPos
+            HAVING COUNT(*) > 1),
            relations_to_check AS
            (SELECT SentenceID, HeadPos, DependentPos, FirstPos, LastPos,
                    Relation
             FROM gnt.relations
             WHERE (SentenceID, HeadPos) IN
                   (SELECT SentenceID, HeadPos
-                   FROM all_heads)
-                  AND Relation = 'direct object'),
+                   FROM multiple_subjects)
+                  AND Relation LIKE 'subject%'
+            UNION
+            SELECT SentenceID, HeadPos, DependentPos, FirstPos, LastPos,
+                   Relation
+            FROM gnt.relations
+            WHERE (SentenceID, HeadPos) IN
+                  (SELECT SentenceID, HeadPos
+                   FROM multiple_objects)
+                  AND Relation = 'direct object'
+            UNION
+            SELECT SentenceID, HeadPos, DependentPos, FirstPos, LastPos,
+                   Relation
+            FROM gnt.relations
+            WHERE (SentenceID, HeadPos) IN
+                  (SELECT SentenceID, HeadPos
+                   FROM multiple_objects_of_prep)
+                  AND Relation LIKE 'object of preposition%'),
            shortest_strings AS
            (SELECT relations_to_check.SentenceID, relations_to_check.HeadPos,
                    relations_to_check.DependentPos,

@@ -32,8 +32,9 @@ echo "WITH mixed_types AS
            (SELECT SentenceID, HeadPos
             FROM gnt.relations
             WHERE Relation IN
-                  ('conjunct, chain', 'conjunct, main', 'conjunct, subordinate',
-                   'conjunct, ἤ', 'conjunct, μέν δέ', 'conjunct, ὅτι',
+                  ('conjunct, chain', 'conjunct, main',
+                   'conjunct, subordinate', 'conjunct, ἤ',
+                   'conjunct, μέν δέ', 'conjunct, ὅτι',
                    'conjunct, ὡς, clause', 'conjunct, ὡς, non-clause',
                    'conjunct, ὡς, other')
             GROUP BY SentenceID, HeadPos, Relation

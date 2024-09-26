@@ -59,7 +59,7 @@ SECOND_POSITION_CLITICS = ['ἄρα', 'γάρ', 'γέ', 'δέ', 'μέν', 'μέ�
 SON_OF_WORDS = ['ἀδελφή', 'ἀδελφός', 'ἀνήρ', 'γυνή', 'θυγάτηρ', 'μήτηρ', 'πατήρ', 'τέκνον', 'υἱός']
 SON_OF_POS = ['noun', 'personal pronoun', 'personal pronoun with kai', 'demonstrative pronoun',
               'demonstrative pronoun with kai', 'reflexive pronoun', 'interrogative pronoun', 'relative pronoun']
-KEEP_DETERMINER_POS = ['noun', 'verb', 'adj']
+KEEP_DETERMINER_POS = ['noun', 'verb', 'adj', 'adv']
 KEEP_DETERMINER_LEMMAS = ['Ἀθηναῖος', 'Ἀδραμυττηνός', 'Αἰγύπτιος', 'Ἀλεξανδρῖνος', 'Ἄλφα', 'Ἀσιανός', 'Ἀσιάρχης',
                           'Ἀχαϊκός', 'Βεροιαῖος', 'Γαδαρηνός', 'Γαλατικός', 'Γερασηνός', 'Δαμασκηνός', 'Δερβαῖος',
                           'Διάβολος', 'Ἑβραῖος', 'Ἐλαμίτης', 'Ἕλλην', 'Ἑλληνικός', 'Ἑλληνιστής', 'Ἐπικούρειος',
@@ -68,9 +68,9 @@ KEEP_DETERMINER_LEMMAS = ['Ἀθηναῖος', 'Ἀδραμυττηνός', 'Α
                           'Κύπριος', 'Κυρηναῖος', 'Κυρήνιος', 'Λαοδικεύς', 'Λευίτης', 'Λευιτικός', 'Λιβερτῖνος',
                           'Μῆδος', 'Ναζαρηνός', 'Ναζωραῖος', 'Νινευίτης', 'Πάρθος', 'Ποντικός', 'Ῥωμαῖος',
                           'Σαδδουκαῖος', 'Σαμαρίτης', 'Σαμαρῖτις', 'Σεβαστός', 'Σιδώνιος', 'Σύρος', 'Συροφοινίκισσα',
-                          'Τύριος', 'Φαρισαῖος', 'Φιλιππήσιος', 'Χαλδαῖος', 'Χαναναῖος', 'Χριστιανός', 'Ὦ']
+                          'Τύριος', 'Φαρισαῖος', 'Φιλιππήσιος', 'Χαλδαῖος', 'Χαναναῖος', 'Χριστιανός', 'Χριστός', 'Ὦ']
 NEGATION = ['μή', 'μήτι', 'οὐ', 'οὐχί']
-EXTENDED_NEGATION = ['οὐδαμῶς', 'οὐδέ', 'οὐκέτι']
+EXTENDED_NEGATION = ['οὐδαμῶς', 'οὐδέ', 'οὐδείς', 'οὐκέτι']
 COPULA = ['εἰμί']
 GENERAL_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤπερ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε', 'πλήν',
                         'ὡς', 'ὡσεί']
@@ -80,7 +80,7 @@ SENTENTIAL_CONJUNCTIONS = ['διό', 'διότι', 'ἐάν', 'εἰ', 'εἴπ�
 COORDINATING_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔτε', 'πλήν']
 BURIED_CONJUNCTIONS = ['ἐάν', 'εἰ', 'ἐπεί', 'ἕως', 'ἡνίκα', 'καθάπερ', 'καθώς', 'μήποτε', 'νή', 'ὅταν', 'ὅτε', 'ὥστε']
 ADVERB_CONJUNCTIONS = ['καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε']
-PARTITIVE_HEADS = ['δύο', 'εἷς', 'ἕκαστος', 'τις', 'οὐδείς', 'πᾶς']
+PARTITIVE_HEADS = ['δύο', 'εἷς', 'ἕκαστος', 'τίς', 'τις', 'οὐδείς', 'πᾶς']
 PARTITIVE_PS = ['ἀπό', 'ἐκ', 'ἐν']
 SENTENTIAL_COMPLEMENT_HEADS = ['ἀγνοέω', 'ἀκούω', 'ἀναγγέλλω', 'ἀναγινώσκω', 'ἀποκρίνομαι', 'ἀπολογέομαι', 'ἀρνέομαι',
                                'βοάω', 'γινώσκω', 'γνωρίζω', 'γνωστός', 'γράφω', 'δείκνυμι', 'δῆλος', 'διαλογίζομαι',
@@ -97,6 +97,7 @@ IRREGULAR_NOUNS = ['αββα', 'Ἀβιά', 'Ἄλφα', 'Βηθσαϊδά', 'Β
                    'ταλιθα']
 NUMBERS = ['εἷς', 'τρεῖς', 'τέσσαρες', 'διακόσιοι', 'τριακόσιοι', 'τετρακόσιοι', 'πεντακόσιοι', 'ἑξακόσιοι', 'χίλιοι',
            'χιλιάς', 'δισχίλιοι', 'τρισχίλιοι', 'τετρακισχίλιοι', 'πεντακισχίλιοι']
+TITLES = ['ἀνθύπατος', 'βασιλεύς', 'δυνάστης', 'ἡγεμών', 'Καῖσαρ', 'κύριος', 'πατριάρχης', 'προφήτης', 'Χριστός']
 
 
 class UncutSentence:
@@ -113,10 +114,12 @@ class UncutSentence:
             self.text = 'οἱ δὲ ἀκούσαντες καὶ ὑπὸ τῆς συνειδήσεως ἐλεγχόμενοι ἐξήρχοντο εἷς καθ’ εἷς ἀρξάμενοι ἀπὸ τῶν πρεσβυτέρων, καὶ κατελείφθη μόνος, ὁ Ἰησοῦς καὶ ἡ γυνὴ ἐν μέσῳ οὖσα.'
         elif self.citation == '1Cor.12.8':
             self.text = 'ᾧ μὲν γὰρ διὰ τοῦ πνεύματος δίδοται λόγος σοφίας, ἄλλῳ δὲ λόγος γνώσεως κατὰ τὸ αὐτὸ πνεῦμα, ἑτέρῳ πίστις ἐν τῷ αὐτῷ πνεύματι, ἄλλῳ χαρίσματα ἰαμάτων ἐν τῷ ἑνὶ πνεύματι, ἄλλῳ ἐνεργήματα δυνάμεων, ⸁ἄλλῳ προφητεία, ἄλλῳ διακρίσεις πνευμάτων, ἑτέρῳ γένη γλωσσῶν, 2ἄλλῳ ἑρμηνεία γλωσσῶν·'
-        elif self.citation == '2Cor 7:12':
+        elif self.citation == '2Cor.7.12':
             self.text = 'ἄρα εἰ καὶ ἔγραψα ὑμῖν, οὐχ ἕνεκεν τοῦ ἀδικήσαντος, οὐδὲ ⸁ἕνεκεν τοῦ ἀδικηθέντος, ἀλλ’ ἕνεκεν τοῦ φανερωθῆναι τὴν σπουδὴν ὑμῶν τὴν ὑπὲρ ἡμῶν πρὸς ὑμᾶς ἐνώπιον τοῦ θεοῦ.'
         elif self.text == 'τί γάρ; εἰ ἠπίστησάν τινες,':
             self.text = 'τί γάρ εἰ ἠπίστησάν τινες,'
+        elif self.citation == 'John.8.3':
+            self.text = 'ἄγουσιν δὲ οἱ γραμματεῖς καὶ οἱ Φαρισαῖοι πρὸς αὐτὸν γυναῖκα ἐν μοιχείᾳ καταλήφθεισαν καὶ στήσαντες αὐτὴν ἐν μέσῳ λέγουσιν αὐτῷ, πειράζοντες Διδάσκαλε, αὕτη ἡ γυνὴ κατελήφθη ἐπ’ αὐτοφόρῳ μοιχευομένη·'
         self.tree = sbl_tree[2]
 
         # Initialize the list of words.
@@ -577,7 +580,8 @@ class Sentence:
             word_features = dict()
             for feature in ['case', 'gender', 'number', 'pos', 'mood']:
                 word_features[feature] = None
-                if 'lemma' in word and word['lemma'] in GENERAL_CONJUNCTIONS:
+                if 'lemma' in word and word['lemma'] in GENERAL_CONJUNCTIONS and \
+                    not (word['pos'] == 'prep' and word['lemma'] == 'πλήν'):
                     temp_values = []
                     for dep_pos in word['deps']:
                         if feature in self.words[dep_pos] and self.words[dep_pos][feature] is not None:
@@ -590,13 +594,14 @@ class Sentence:
                     word_features[feature] = word[feature]
                 else:
                     for dep_pos in word['deps']:
-                        if feature in self.words[dep_pos] and self.words[dep_pos]['pos'] in ['det']:
+                        if feature in self.words[dep_pos] and self.words[dep_pos]['pos'] in ['det'] and \
+                                feature != 'pos':
                             word_features[feature] = self.words[dep_pos][feature]
                             break
             if word['head'] is not None:
                 head = self.words[word['head']]
                 word_head_features = dict()
-                for feature in ['mood', 'pos', 'number', 'case']:
+                for feature in ['mood', 'pos', 'number', 'case', 'voice', 'degree', 'gender']:
                     word_head_features[feature] = None
                     if 'lemma' in head and head['lemma'] in GENERAL_CONJUNCTIONS:
                         temp_values = []
@@ -611,7 +616,8 @@ class Sentence:
                         word_head_features[feature] = head[feature]
                     else:
                         for dep_pos in head['deps']:
-                            if feature in self.words[dep_pos] and self.words[dep_pos]['pos'] in ['det']:
+                            if feature in self.words[dep_pos] and self.words[dep_pos]['pos'] in ['det'] and \
+                                    feature != 'pos':
                                 word_head_features[feature] = self.words[dep_pos][feature]
                                 break
                 conjunction = False
@@ -625,12 +631,12 @@ class Sentence:
                         conjunction = walking_parent['n'] == uncut_sentence.nodes[head['id']]['parent_n']
                 if word['lemma'] in SECOND_POSITION_CLITICS and word['id'] > head['id']:
                     word['relation'] = 'second-position clitic'
-                elif (word['pos'] == 'num' or word['lemma'] in NUMBERS) and \
+                elif (word_features['pos'] == 'num' or word['lemma'] in NUMBERS) and \
                         (head['pos'] == 'num' or head['lemma'] in NUMBERS):
                     word['relation'] = 'number'
                 elif conjunction and (head['pos'] == 'conj' or
                                       head['lemma'] in GENERAL_CONJUNCTIONS + SENTENTIAL_CONJUNCTIONS) and \
-                      not (head['lemma'] in ADVERB_CONJUNCTIONS and 'pos' in head and head['pos'] == 'adv'):
+                      not (head['lemma'] in ADVERB_CONJUNCTIONS and head['pos'] == 'adv'):
                     if head['lemma'] in COORDINATING_CONJUNCTIONS:
                         word['relation'] = 'conjunct'
                     elif head['lemma'] in SENTENTIAL_CONJUNCTIONS + ['ὡς', 'ὡσεί']:
@@ -647,7 +653,7 @@ class Sentence:
                                                   (head['verse'] * 100) + head['position']]
                             if len(right_conjuncts) > 0 and min(right_conjuncts) == i:
                                 if head['lemma'] in ['ὡς', 'ὡσεί']:
-                                    if word['pos'] == 'verb':
+                                    if word_features['pos'] == 'verb':
                                         word['relation'] = 'conjunct, ὡς, clause'
                                     else:
                                         word['relation'] = 'conjunct, ὡς, non-clause'
@@ -674,13 +680,14 @@ class Sentence:
                             word['relation'] = 'subject of participle'
                     elif word['lemma'] != 'καί' and word_features['gender'] == 'neuter' and \
                             word_features['number'] == 'plural':
-                        if self.words[word['head']]['number'] == 'singular':
+                        if word_head_features['number'] == 'singular':
                             word['relation'] = 'subject, neuter plural'
                         else:
                             word['relation'] = 'subject, neuter plural, regular agreement'
                     elif (word['lemma'] != 'καί' and word_features['number'] is not None and
-                          head['number'] is not None and word_features['number'] != head['number']) or \
-                            (word['lemma'] == 'καί' and head['number'] == 'singular' and
+                          word_head_features['number'] is not None and
+                          word_features['number'] != word_head_features['number']) or \
+                            (word['lemma'] == 'καί' and word_head_features['number'] == 'singular' and
                              word_features['mood'] != 'infinitive'):
                         word['relation'] = 'subject, irregular agreement'
                     else:
@@ -688,35 +695,41 @@ class Sentence:
                 elif word['pos'] == 'ptcl' and word['lemma'] not in NEGATION:
                     word['relation'] = 'particle'
                 elif word['pos'] == 'det':
-                    if head['pos'] == 'verb' and head['mood'] == 'infinitive':
+                    if word_head_features['pos'] == 'verb' and word_head_features['mood'] == 'infinitive':
                         word['relation'] = 'determiner of infinitive'
-                    elif head['pos'] == 'verb' and \
-                            head['mood'] in ['indicative', 'imperative', 'subjunctive', 'optative']:
+                    elif word_head_features['pos'] == 'verb' and \
+                            word_head_features['mood'] in ['indicative', 'imperative', 'subjunctive', 'optative']:
                         word['relation'] = 'determiner, other'
-                    elif 'gender' not in head or head['gender'] != word['gender'] or \
-                            'number' not in head or head['number'] != word['number'] or \
-                            'case' not in head or head['case'] != word['case']:
-                        if word['gender'] == 'neuter' and word['number'] == 'plural':
+                    elif (head['pos'] in GENERAL_CONJUNCTIONS and word_head_features['gender'] is None) or \
+                            (head['pos'] not in GENERAL_CONJUNCTIONS and head['gender'] is None) or \
+                            word_head_features['gender'] != word_features['gender'] or \
+                            (head['pos'] in GENERAL_CONJUNCTIONS and word_head_features['number'] is None) or \
+                            (head['pos'] not in GENERAL_CONJUNCTIONS and head['number'] is None) or \
+                            word_head_features['number'] != word_features['number'] or \
+                            (head['pos'] in GENERAL_CONJUNCTIONS and word_head_features['case'] is None) or \
+                            (head['pos'] not in GENERAL_CONJUNCTIONS and head['case'] is None) or \
+                            word_head_features['case'] != word_features['case']:
+                        if word_features['gender'] == 'neuter' and word_features['number'] == 'plural':
                             word['relation'] = 'determiner, things of'
-                        elif head['pos'] == 'num':
+                        elif word_head_features['pos'] == 'num':
                             word['relation'] = 'determiner of adjective'
                         else:
                             word['relation'] = 'determiner of headless phrase'
-                    elif head['pos'] == 'noun':
+                    elif word_head_features['pos'] == 'noun':
                         if bool(re.match(GREEK_CAPITALS, head['lemma'])) and head['lemma'] != 'Χριστός':
                             word['relation'] = 'determiner of name'
                         else:
                             word['relation'] = 'determiner of noun'
-                    elif head['pos'] in ['adj', 'num']:
+                    elif word_head_features['pos'] in ['adj', 'num']:
                         word['relation'] = 'determiner of adjective'
-                    elif head['pos'] == 'verb' and head['mood'] == 'participle':
+                    elif word_head_features['pos'] == 'verb' and word_head_features['mood'] == 'participle':
                         word['relation'] = 'determiner of participle'
-                    elif head['pos'] == 'demonstrative pronoun':
+                    elif word_head_features['pos'] == 'demonstrative pronoun':
                         word['relation'] = 'determiner of demonstrative'
                     else:
                         word['relation'] = 'determiner, other'
                 elif word['lemma'] in NEGATION:
-                    if head['pos'] in ['verb', 'ptcl'] and head['mood'] != 'participle':
+                    if word_head_features['pos'] in ['verb', 'ptcl'] and word_head_features['mood'] != 'participle':
                         word['relation'] = 'negation of verb'
                     elif head['lemma'] in NEGATION:
                         word['relation'] = 'negation, double'
@@ -734,83 +747,161 @@ class Sentence:
                     else:
                         word['relation'] = 'predicate, other'
                 elif head['lemma'] in SENTENTIAL_COMPLEMENT_HEADS and word['pos'] in ['verb', 'conj'] and \
-                        word['case'] != 'accusative' and word['mood'] not in ['participle', 'infinitive'] \
-                        and head['voice'] != 'passive' and ('role' not in head or head['role'] != 'adv'):
+                        (word['case'] is None or word_features['case'] != 'accusative') and \
+                        (word['mood'] is None or word_features['mood'] not in ['participle', 'infinitive']) and \
+                        word_head_features['voice'] != 'passive' and ('role' not in head or head['role'] != 'adv'):
                     word['relation'] = 'sentential complement'
-                elif head['pos'] == 'prep':
-                    word['relation'] = 'object of preposition'
-                elif word['mood'] == 'participle' and word['relation'] == 'adv' and head['pos'] == 'verb':
-                    word['relation'] = 'modifier of verb, participle, ' + word['case']
-                elif 'case' in word and 'case' in self.words[word['head']] and \
-                        (word['case'] is not None or self.words[word['head']]['case'] is not None) \
-                        and (word['case'] == self.words[word['head']]['case']
-                             or word['case'] is None or self.words[word['head']]['case'] is None) \
-                        and (('gender' in word and 'gender' in self.words[word['head']]
-                              and word['gender'] == self.words[word['head']]['gender'])
-                             or word['gender'] is None or self.words[word['head']]['gender'] is None) \
-                        and (('number' in word and 'number' in self.words[word['head']]
-                              and word['number'] == self.words[word['head']]['number'])
-                             or word['number'] is None or self.words[word['head']]['number'] is None) \
-                        and (word['pos'] in ['adj', 'demonstrative pronoun', 'interrogative pronoun', 'pron',
-                                             'verb']
-                             or word['lemma'] in ['Καῖσαρ']) and \
-                        self.words[word['head']]['mood'] not in ['indicative', 'imperative', 'subjunctive', 'optative',
-                                                                 'infinitive']:
-                    if word['pos'] == 'adj':
+                elif word_head_features['pos'] == 'prep' and not (word['lemma'] == 'καί' and word['pos'] == 'adv'):
+                    if word['id'] < head['id'] and word_features['pos'] == 'adj':
+                        word['relation'] = 'modifier of headless phrase, adjective'
+                    elif 'case' in word and word_features['case'] is not None:
+                        word['relation'] = 'object of preposition, ' + word_features['case']
+                    else:
+                        word['relation'] = 'object of preposition'
+                elif word_features['pos'] == 'prep':
+                    if word_head_features['pos'] in ['noun', 'adj'] or \
+                            (word_head_features['pos'] == 'verb' and word_head_features['mood'] == 'participle'):
+                        word['relation'] = 'modifier of nominal, PP'
+                    elif word_head_features['pos'] in ['verb', 'conj']:
+                        word['relation'] = 'modifier of verb, PP'
+                    else:
+                        word['relation'] = 'modifier of other, PP'
+                elif word_features['mood'] == 'participle' and word['relation'] == 'adv' and \
+                        word_head_features['pos'] == 'verb':
+                    word['relation'] = 'modifier of verb, participle, ' + word_features['case']
+                elif (word_features['case'] is not None or word_head_features['case'] is not None) \
+                        and (word_features['case'] == word_head_features['case']
+                             or word_features['case'] is None or word_head_features['case'] is None) \
+                        and (word_features['gender'] == word_head_features['gender']
+                             or word_features['gender'] is None or word_head_features['gender'] is None or
+                             head['gender'] is None) \
+                        and (word_features['number'] == word_head_features['number']
+                             or word_features['number'] is None or word_head_features['number'] is None) \
+                        and (word_features['pos'] in ['adj', 'demonstrative pronoun', 'interrogative pronoun', 'pron',
+                                                      'verb']
+                             or (head['lemma'] in TITLES and bool(re.match(GREEK_CAPITALS, word['lemma'])))
+                             or (word['lemma'] in TITLES and bool(re.match(GREEK_CAPITALS, head['lemma'])))) and \
+                        word_head_features['mood'] not in ['indicative', 'imperative', 'subjunctive', 'optative',
+                                                           'infinitive']:
+                    if word_features['pos'] == 'adj':
                         word['relation'] = 'modifier of nominal, adjective'
-                    elif word['pos'] == 'demonstrative pronoun':
+                    elif word_features['pos'] == 'demonstrative pronoun':
                         word['relation'] = 'modifier of nominal, demonstrative'
-                    elif word['pos'] == 'interrogative pronoun':
+                    elif word_features['pos'] == 'interrogative pronoun':
                         word['relation'] = 'modifier of nominal, interrogative'
-                    elif word['pos'] == 'pron':
+                    elif word_features['pos'] == 'pron':
                         word['relation'] = 'modifier of nominal, pronoun'
-                    elif word['pos'] == 'verb' and word['mood'] == 'participle':
+                    elif word_features['pos'] == 'verb' and word['mood'] == 'participle':
                         word['relation'] = 'modifier of nominal, participle'
-                    elif word['lemma'] in ['Καῖσαρ']:
+                    elif head['lemma'] in TITLES and bool(re.match(GREEK_CAPITALS, word['lemma'])):
+                        word['relation'] = 'entitled'
+                    elif word['lemma'] in TITLES and bool(re.match(GREEK_CAPITALS, head['lemma'])):
                         word['relation'] = 'title'
-                elif word['pos'] == 'noun' and self.words[word['head']]['pos'] in ['noun', 'demonstrative pronoun',
-                                                                                   'personal pronoun']:
-                    word['relation'] = 'appositive'
-                elif 'case' in word and word['case'] == 'genitive':
+                elif word_features['pos'] == 'verb' and word_features['mood'] == 'infinitive' and \
+                    word_head_features['pos'] == 'verb':
+                    if word_features['case'] == 'genitive':
+                        word['relation'] = 'infinitive, purpose'
+                    else:
+                        word['relation'] = 'infinitive argument of verb'
+                elif word_features['case'] == 'genitive':
                     if word['lemma'] in ['ὅς', 'ὅστις'] and i > 0 and \
                             self.words[i - 1]['lemma'] in ['ἕως', 'μέχρι(ς)', 'ἄχρι', 'ἄχρις']:
                         word['relation'] = 'genitive, time'
-                    elif head['pos'] == 'verb':
-                        if word['mood'] == 'participle':
+                    elif word_head_features['pos'] == 'verb':
+                        if word_features['mood'] == 'participle':
                             word['relation'] = 'modifier of verb, participle, genitive'
                         else:
                             word['relation'] = 'direct object, genitive'
-                    elif self.words[word['head']]['pos'] == 'adj' and \
-                            self.words[word['head']]['degree'] == 'comparative':
+                    elif word_head_features['pos'] == 'adj' and word_head_features['degree'] == 'comparative':
                         word['relation'] = 'genitive, comparison'
                     elif head['lemma'] in PARTITIVE_HEADS:
                         word['relation'] = 'genitive, part-whole'
-                    elif head['pos'] == 'adj':
+                    elif word_head_features['pos'] == 'adj':
                         word['relation'] = 'argument of adjective, genitive'
+                    elif head['lemma'] in ['ἄγγελος', 'ἀδελφή', 'ἀδελφός', 'ἀνήρ', 'ἄρχων', 'βασιλεύς', 'γονεύς',
+                                           'γυνή', 'δέσμιος', 'διδάσκαλος', 'δοῦλος', 'ἐχθρός', 'θεός', 'θυγάτηρ',
+                                           'κύριος', 'λαός', 'μαθητής', 'μήτηρ', 'παῖς', 'πατήρ', 'πλησίον', 'σπέρμα',
+                                           'συγγενής', 'συγγενίς', 'σύνδουλος', 'συνεργός', 'τέκνον', 'υἱός', 'φίλος',
+                                           'Χριστός']:
+                        word['relation'] = 'genitive, relation'
+                    elif head['lemma'] in ['αἷμα', 'γλῶσσα', 'δάκτυλος', 'δεξιά', 'διάνοια', 'καρδία', 'κεφαλή',
+                                           'κοιλία', 'μέλος', 'μέτωπον', 'ὀσφῦς', 'οὐρά', 'οὖς', 'ὀφθαλμός', 'πνεῦμα',
+                                           'πούς', 'πρόσωπον', 'σάρξ', 'σπλάγχνον', 'στόμα', 'συνείδησις', 'σῶμα',
+                                           'τράχηλος', 'χείρ', 'ψυχή']:
+                        word['relation'] = 'genitive, body part'
+                    elif head['lemma'] in ['ἀγαπητός', 'ἁμαρτία', 'ἀνάστασις', 'ἀναστροφή', 'ἀπόστολος', 'ἀσθένεια',
+                                           'δέησις', 'διδαχή', 'ἔλεος', 'ἐνέργεια', 'ἐντολή', 'ἐπιθυμία', 'ἐπιφάνεια',
+                                           'ἔργον', 'ζωή', 'θάνατος', 'θέλημα', 'καύχημα', 'μαρτυρία', 'ὀργή',
+                                           'παράπτωμα', 'παρουσία', 'περισσεία', 'πίστις', 'πορνεία', 'προσευχή',
+                                           'ῥῆμα', 'φωνή', 'χαρά']:
+                        word['relation'] = 'genitive, subject'
+                    elif head['lemma'] in ['ἀποκάλυψις', 'ἄφεσις', 'βρυγμός', 'γνῶσις', 'διάκονος', 'ἔνδειξις',
+                                           'ἔπαινος', 'ἐπίγνωσις', 'ἐπίθεσις', 'θλῖψις', 'καθαρισμός', 'καταβολή',
+                                           'μιμητής', 'οἰκοδομή', 'παράκλησις', 'ποιητής', 'σωτηρία', 'σωτήρ', 'φόβος',
+                                           'χρεία']:
+                        word['relation'] = 'genitive, object'
+                    elif head['lemma'] in ['βασιλεία', 'θρόνος', 'ἱμάτιον', 'κράβαττος', 'μισθός', 'ναός', 'οἰκία',
+                                           'οἶκος', 'ὄνομα', 'σταυρός', 'συναγωγή', 'τράπεζα', 'ὑπάρχω', 'φιάλη',
+                                           'χώρα']:
+                        word['relation'] = 'genitive, possession'
+                    elif head['lemma'] in ['δικαιοσύνη', 'δόξα', 'δύναμις', 'ἰσχύς']:
+                        word['relation'] = 'genitive, characterized by'
+                    elif head['lemma'] in ['ἔσχατος', 'κλάδος', 'πέρας', 'πρεσβύτερος', 'συντέλεια', 'τεῖχος']:
+                        word['relation'] = 'genitive, part-whole'
+                    elif head['lemma'] in ['ζηλωτής']:
+                        word['relation'] = 'genitive, about'
+                    elif head['lemma'] in ['μέσος']:
+                        word['relation'] = 'genitive, location'
+                    elif head['lemma'] in ['ὄρος', 'φυλή']:
+                        word['relation'] = 'genitive, specification'
+                    elif head['lemma'] in ['πλῆθος']:
+                        word['relation'] = 'genitive, material'
+                    elif head['lemma'] in ['σοφία', 'χάρις']:
+                        word['relation'] = 'genitive, source'
                     else:
                         word['relation'] = 'genitive, other'
-                elif 'case' in word and word['case'] == 'dative':
-                    if head['pos'] == 'verb':
-                        if word['mood'] == 'participle':
+                elif 'case' in word and word_features['case'] == 'dative':
+                    if head['lemma'] in ['ἀκολουθέω', 'ἀνθίστημι', 'ἀντίκειμαι', 'ἀπειθέω', 'ἀποτάσσομαι', 'ἀρέσκω',
+                                         'ἀτενίζω', 'βοηθέω', 'διακονέω', 'δοκέω', 'δουλεύω', 'ἐγγίζω', 'ἐμβλέπω',
+                                         'ἐμπαίζω', 'ἐξακολουθέω', 'ἐξομολογέω', 'ἔοικα', 'ἐπακολουθέω', 'ἐπιμένω',
+                                         'ἐπισκιάζω', 'ἐπιτιμάω', 'εὐχαριστέω', 'ἐφίστημι', 'λατρεύω', 'μέλει',
+                                         'παρακολουθέω', 'πείθω', 'πιστεύω', 'πρέπω', 'προσέρχομαι', 'προσέχω',
+                                         'προσκαρτερέω', 'προσκυνέω', 'προσμένω', 'προσπίπτω', 'συγκοινωνέω',
+                                         'συγχαίρω', 'συμβαίνω', 'συμβάλλω', 'συμφέρω', 'συναντάω', 'συνέρχομαι',
+                                         'ὑπακούω', 'ὑπαντάω']:
+                        word['relation'] = 'direct object, dative'
+                    elif word_head_features['pos'] == 'verb':
+                        if word_features['mood'] == 'participle':
                             word['relation'] = 'modifier of verb, participle, dative'
                         else:
                             word['relation'] = 'indirect object'
-                    elif head['pos'] == 'adj':
+                    elif word_head_features['pos'] == 'adj':
                         word['relation'] = 'argument of adjective, dative'
                     else:
                         word['relation'] = 'dative, other'
-                elif 'case' in word and word['case'] == 'accusative':
+                elif 'case' in word and word_features['case'] == 'accusative':
                     if word['relation'] == 'adv' and word['gender'] == 'neuter':
                         if word['lemma'] == 'τίς':
                             word['relation'] = 'accusative, other'
                         else:
                             word['relation'] = 'accusative, manner'
-                    elif head['pos'] == 'verb':
+                    elif word_head_features['pos'] == 'verb':
                         word['relation'] = 'direct object'
+                    elif word['lemma'] in ['δεύτερος', 'ἔτος', 'ἡμέρα', 'πρότερος', 'πρῶτος', 'ταχύ', 'τρίτος',
+                                           'ὕστερος', 'χρόνος', 'ὥρα']:
+                        word['relation'] = 'accusative, time'
+                    elif word['lemma'] in ['πολύς']:
+                        word['relation'] = 'accusative, amount'
+                    elif word['lemma'] in ['τρόπος']:
+                        word['relation'] = 'accusative, manner'
                     else:
                         word['relation'] = 'accusative, other'
-                elif 'case' in word and word['case'] == 'vocative':
+                elif 'case' in word and word_features['case'] == 'vocative':
                     word['relation'] = 'interjection, vocative'
+                elif word_features['pos'] in ['noun'] and word_head_features['pos'] in ['noun'] and \
+                        word_features['case'] is not None and word_head_features['case'] is not None and \
+                        word_features['case'] == word_head_features['case']:
+                    word['relation'] = 'appositive'
 
         # Hand-entered edits to syntactic relations.
         for relation_type, relation_edits_df in RELATION_EDITS.items():
@@ -1063,7 +1154,7 @@ if __name__ == '__main__':
     sentences = dict()
 
     # Iterate over books.
-    for sbl_file in SBL_FILES[12:13]:
+    for sbl_file in SBL_FILES:
 
         # Get all the sentences from the book.
         sentence_counter = 0
