@@ -96,7 +96,8 @@ VALUES
 (1, 'POS', 'adj'),
 (1, 'NounClass', 'first/second declension'),
 (1, 'TenseMood', 'imperfect-indicative'),
-(1, 'POS', 'ptcl')
+(1, 'POS', 'ptcl'),
+(1, 'POS', 'prep')
 ;
 
 CREATE TABLE students_relations (
@@ -172,6 +173,7 @@ VALUES
 (1, 'modifier of nominal, adjective'),
 (1, 'modifier of nominal, adjective, irregular agreement'),
 (1, 'modifier of headless phrase, adjective'),
+(1, 'modifier of non-nominal, adjective'),
 (1, 'determiner of adjective'),
 (1, 'argument of adjective'),
 (1, 'argument of adjective, genitive'),
@@ -181,5 +183,18 @@ VALUES
 (1, 'conjunct, subordinate'),
 (1, 'conjunct, ὅτι'),
 (1, 'sentential complement'),
-(1, 'particle')
+(1, 'particle'),
+(1, 'predicate'),
+(1, 'determiner, other'),
+(1, 'object of preposition, nominative'),
+(1, 'object of preposition, genitive'),
+(1, 'object of preposition, dative'),
+(1, 'object of preposition, accusative'),
+(1, 'object of preposition'),
+(1, 'modifier of verb, PP'),
+(1, 'modifier of verbless predicate, PP'),
+(1, 'modifier of nominal, PP'),
+(1, 'modifier of adjective, PP'),
+(1, 'modifier of headless phrase, PP'),
+(1, 'modifier of other, PP')
 ;

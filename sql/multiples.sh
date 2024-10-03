@@ -3,7 +3,8 @@ echo "WITH multiple_subjects AS
             FROM gnt.relations
             WHERE Relation LIKE 'subject%'
                   AND SentenceID NOT IN
-                      ('2Cor 3:17.7 - 2Cor 3:17.12',
+                      ('Acts 5:9.1 - Acts 5:9.27',
+                       '2Cor 3:17.7 - 2Cor 3:17.12',
                        'Rev 21:16.6 - Rev 21:16.12')
             GROUP BY SentenceID, HeadPos
             HAVING COUNT(*) > 1),
@@ -26,6 +27,12 @@ echo "WITH multiple_subjects AS
            (SELECT SentenceID, HeadPos
             FROM gnt.relations
             WHERE Relation LIKE 'object of preposition%'
+            GROUP BY SentenceID, HeadPos
+            HAVING COUNT(*) > 1),
+           multiple_predicates AS
+           (SELECT SentenceID, HeadPos
+            FROM gnt.relations
+            WHERE Relation LIKE 'predicate%'
             GROUP BY SentenceID, HeadPos
             HAVING COUNT(*) > 1),
            relations_to_check AS
@@ -51,7 +58,15 @@ echo "WITH multiple_subjects AS
             WHERE (SentenceID, HeadPos) IN
                   (SELECT SentenceID, HeadPos
                    FROM multiple_objects_of_prep)
-                  AND Relation LIKE 'object of preposition%'),
+                  AND Relation LIKE 'object of preposition%'
+            UNION
+            SELECT SentenceID, HeadPos, DependentPos, FirstPos, LastPos,
+                   Relation
+            FROM gnt.relations
+            WHERE (SentenceID, HeadPos) IN
+                  (SELECT SentenceID, HeadPos
+                   FROM multiple_predicates)
+                  AND Relation LIKE 'predicate%'),
            shortest_strings AS
            (SELECT relations_to_check.SentenceID, relations_to_check.HeadPos,
                    relations_to_check.DependentPos,

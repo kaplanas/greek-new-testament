@@ -70,7 +70,7 @@ KEEP_DETERMINER_LEMMAS = ['Ἀθηναῖος', 'Ἀδραμυττηνός', 'Α
                           'Σαδδουκαῖος', 'Σαμαρίτης', 'Σαμαρῖτις', 'Σεβαστός', 'Σιδώνιος', 'Σύρος', 'Συροφοινίκισσα',
                           'Τύριος', 'Φαρισαῖος', 'Φιλιππήσιος', 'Χαλδαῖος', 'Χαναναῖος', 'Χριστιανός', 'Χριστός', 'Ὦ']
 NEGATION = ['μή', 'μήτι', 'οὐ', 'οὐχί']
-EXTENDED_NEGATION = ['οὐδαμῶς', 'οὐδέ', 'οὐδείς', 'οὐκέτι']
+EXTENDED_NEGATION = ['μηδέ', 'οὐδαμῶς', 'οὐδέ', 'οὐδείς', 'οὐκέτι']
 COPULA = ['εἰμί']
 GENERAL_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤπερ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε', 'πλήν',
                         'ὡς', 'ὡσεί']
@@ -745,7 +745,7 @@ class Sentence:
                     elif 'case' in word and word_features['case'] == 'dative':
                         word['relation'] = 'predicate, dative'
                     else:
-                        word['relation'] = 'predicate, other'
+                        word['relation'] = 'predicate'
                 elif head['lemma'] in SENTENTIAL_COMPLEMENT_HEADS and word['pos'] in ['verb', 'conj'] and \
                         (word['case'] is None or word_features['case'] != 'accusative') and \
                         (word['mood'] is None or word_features['mood'] not in ['participle', 'infinitive']) and \
@@ -759,9 +759,13 @@ class Sentence:
                     else:
                         word['relation'] = 'object of preposition'
                 elif word_features['pos'] == 'prep':
-                    if word_head_features['pos'] in ['noun', 'adj'] or \
-                            (word_head_features['pos'] == 'verb' and word_head_features['mood'] == 'participle'):
+                    if word_head_features['pos'] in ['noun', 'pron', 'interrogative pronoun', 'num',
+                                                     'personal pronoun']:
                         word['relation'] = 'modifier of nominal, PP'
+                    elif word_head_features['degree'] == 'comparative':
+                        word['relation'] = 'comparative'
+                    elif word_head_features['pos'] == 'adj':
+                        word['relation'] = 'modifier of adjective, PP'
                     elif word_head_features['pos'] in ['verb', 'conj']:
                         word['relation'] = 'modifier of verb, PP'
                     else:
@@ -947,7 +951,8 @@ class Sentence:
             if word['pos'] in KEEP_DETERMINER_POS and \
                     not bool(re.match(GREEK_CAPITALS, word['lemma'])) and \
                     word['lemma'] not in KEEP_DETERMINER_LEMMAS:
-                mandatory_pairs += [(i, dep) for dep in word['deps'] if self.words[dep]['pos'] == 'det']
+                mandatory_pairs += [(i, dep) for dep in word['deps']
+                                    if self.words[dep]['relation'].startswith('determiner')]
 
             # If the word is the head of a "son of"-like relation, the relevant dependent must be present.
             if word['lemma'] in SON_OF_WORDS:
