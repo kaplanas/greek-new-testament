@@ -552,6 +552,7 @@ Mark,4,8,20,gap
 Mark,4,8,23,gap
 Mark,4,9,4,subject
 Mark,4,10,11,"modifier of headless phrase, PP"
+Mark,4,11,12,"modifier of headless phrase, demonstrative"
 Mark,4,20,19,gap
 Mark,4,20,22,gap
 Mark,4,20,25,gap
@@ -1880,6 +1881,7 @@ Acts,5,17,11,"modifier of other, participle"
 Acts,5,25,15,"conjunct, ὅτι"
 Acts,5,29,12,comparative
 Acts,5,29,13,"conjunct, ἤ"
+Acts,5,31,1,subject of small clause
 Acts,5,31,16,"infinitive, purpose"
 Acts,5,34,9,appositive
 Acts,5,35,6,appositive
@@ -1919,6 +1921,7 @@ Acts,7,27,10,subject of small clause
 Acts,7,32,3,appositive
 Acts,7,35,3,topic
 Acts,7,35,8,subject of small clause
+Acts,7,35,13,subject of small clause
 Acts,7,36,10,name
 Acts,7,37,10,"conjunct, main"
 Acts,7,37,20,"conjunct, ὡς, clause"
@@ -2116,6 +2119,7 @@ Acts,15,27,4,conjunct
 Acts,15,27,11,determiner of adjective
 Acts,15,28,7,indirect object
 Acts,15,28,10,"modifier of non-nominal, adjective"
+Acts,15,28,15,"modifier of headless phrase, demonstrative"
 Acts,15,28,16,determiner of headless phrase
 Acts,15,36,24,"modifier of verb, adverb"
 Acts,15,37,10,"predicate, accusative"
@@ -2573,7 +2577,7 @@ Rom,9,5,17,"modifier of nominal, adjective"
 Rom,9,6,2,subject of verbless predicate
 Rom,9,6,14,topic
 Rom,9,7,6,"modifier of nominal, adjective, irregular agreement"
-Rom,9,8,9,predicate
+Rom,9,8,9,conjunct
 Rom,9,10,11,appositive
 Rom,9,10,13,appositive
 Rom,9,12,13,"conjunct, ὅτι"
@@ -4337,6 +4341,8 @@ Jas,3,12,1,negation of verb
 Jas,3,12,9,gap
 Jas,3,13,5,"modifier of nominal, PP"
 Jas,3,15,1,"negation of verb, semantically embedded"
+Jas,3,15,3,subject
+Jas,3,15,5,"predicate, nominative"
 Jas,3,15,10,"conjunct, chain"
 Jas,3,15,11,"conjunct, chain"
 Jas,3,16,1,topic

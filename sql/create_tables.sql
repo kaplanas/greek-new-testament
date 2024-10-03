@@ -97,7 +97,8 @@ VALUES
 (1, 'NounClass', 'first/second declension'),
 (1, 'TenseMood', 'imperfect-indicative'),
 (1, 'POS', 'ptcl'),
-(1, 'POS', 'prep')
+(1, 'POS', 'prep'),
+(1, 'POS', 'demonstrative pronoun')
 ;
 
 CREATE TABLE students_relations (
@@ -196,5 +197,8 @@ VALUES
 (1, 'modifier of nominal, PP'),
 (1, 'modifier of adjective, PP'),
 (1, 'modifier of headless phrase, PP'),
-(1, 'modifier of other, PP')
+(1, 'modifier of other, PP'),
+(1, 'modifier of nominal, demonstrative'),
+(1, 'modifier of headless phrase, demonstrative'),
+(1, 'determiner of demonstrative')
 ;
