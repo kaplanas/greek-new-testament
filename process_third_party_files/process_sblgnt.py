@@ -29,6 +29,8 @@ GENDER_EDITS = pd.read_csv(SBL_DIR + '/gender_edits.csv',
                                              {'chapter': np.float64, 'verse': np.float64, 'position': np.float64}))
 POS_EDITS = pd.read_csv(SBL_DIR + '/pos_edits.csv', dtype=str)
 LEMMA_EDITS = pd.read_csv(SBL_DIR + '/lemma_edits.csv', dtype=str)
+AUTOS_FORMS = ['αὐτά', 'αὐταῖς', 'αὐτάς', 'αὐτὰς', 'αὐτῇ', 'αὐτήν', 'αὐτὴν', 'αὐτῆς', 'αὐτὸ', 'αὐτοὶ', 'αὐτοῖς',
+               'αὐτόν', 'αὐτὸς', 'αὐτοῦ', 'αὐτούς', 'αὐτοὺς', 'αὐτῷ', 'αὐτῶν']
 GENITIVE_EDITS = pd.read_csv(SBL_DIR + '/genitive_edits.csv',
                              dtype=defaultdict(lambda: str,
                                                {'chapter': np.float64, 'verse': np.float64, 'position': np.float64}))
@@ -299,6 +301,9 @@ class UncutSentence:
                 if (word_dict['lemma'], word_dict['pos']) in edit_targets:
                     edit_index = edit_targets.index((word_dict['lemma'], word_dict['pos']))
                     word_dict['lemma'] = LEMMA_EDITS['new_lemma'][edit_index]
+                if word_dict['wordform'] in AUTOS_FORMS:
+                    word_dict['lemma'] = 'αὐτός'
+                    word_dict['pos'] = 'personal pronoun'
 
                 # Add properties that might or might not be present.
                 for field in ['number', 'gender', 'case', 'person', 'tense', 'voice', 'mood', 'degree', 'noun_class',

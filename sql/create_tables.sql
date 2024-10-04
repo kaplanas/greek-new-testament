@@ -98,7 +98,10 @@ VALUES
 (1, 'TenseMood', 'imperfect-indicative'),
 (1, 'POS', 'ptcl'),
 (1, 'POS', 'prep'),
-(1, 'POS', 'demonstrative pronoun')
+(1, 'POS', 'demonstrative pronoun'),
+(1, 'POS', 'demonstrative pronoun with kai'),
+(1, 'POS', 'reflexive pronoun'),
+(1, 'TenseMood', 'future-indicative')
 ;
 
 CREATE TABLE students_relations (
