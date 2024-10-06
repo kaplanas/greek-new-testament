@@ -101,7 +101,9 @@ VALUES
 (1, 'POS', 'demonstrative pronoun'),
 (1, 'POS', 'demonstrative pronoun with kai'),
 (1, 'POS', 'reflexive pronoun'),
-(1, 'TenseMood', 'future-indicative')
+(1, 'TenseMood', 'future-indicative'),
+(1, 'TenseMood', 'present-infinitive'),
+(1, 'TenseMood', 'future-infinitive')
 ;
 
 CREATE TABLE students_relations (
@@ -203,5 +205,16 @@ VALUES
 (1, 'modifier of other, PP'),
 (1, 'modifier of nominal, demonstrative'),
 (1, 'modifier of headless phrase, demonstrative'),
-(1, 'determiner of demonstrative')
+(1, 'determiner of demonstrative'),
+(1, 'infinitive argument of verb'),
+(1, 'infinitive argument of noun'),
+(1, 'infinitive, purpose'),
+(1, 'infinitive, something'),
+(1, 'modifier of verb, infinitive'),
+(1, 'modifier of nominal, infinitive'),
+(1, 'determiner of infinitive'),
+(1, 'subject of infinitive, accusative'),
+(1, 'subject of infinitive, genitive'),
+(1, 'subject of infinitive, nominative'),
+(1, 'subject of infinitive')
 ;
