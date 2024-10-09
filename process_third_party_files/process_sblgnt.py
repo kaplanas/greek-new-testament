@@ -61,7 +61,8 @@ SECOND_POSITION_CLITICS = ['ἄρα', 'γάρ', 'γέ', 'δέ', 'μέν', 'μέ�
 SON_OF_WORDS = ['ἀδελφή', 'ἀδελφός', 'ἀνήρ', 'γυνή', 'θυγάτηρ', 'μήτηρ', 'πατήρ', 'τέκνον', 'υἱός']
 SON_OF_POS = ['noun', 'personal pronoun', 'personal pronoun with kai', 'demonstrative pronoun',
               'demonstrative pronoun with kai', 'reflexive pronoun', 'interrogative pronoun', 'relative pronoun']
-KEEP_DETERMINER_POS = ['noun', 'verb', 'adj', 'adv']
+KEEP_DETERMINER_POS = ['noun', 'verb', 'adj', 'adv', 'adverb with kai', 'relative adverb', 'interrogative adverb',
+                       'indefinite adverb', 'conj']
 KEEP_DETERMINER_LEMMAS = ['Ἀθηναῖος', 'Ἀδραμυττηνός', 'Αἰγύπτιος', 'Ἀλεξανδρῖνος', 'Ἄλφα', 'Ἀσιανός', 'Ἀσιάρχης',
                           'Ἀχαϊκός', 'Βεροιαῖος', 'Γαδαρηνός', 'Γαλατικός', 'Γερασηνός', 'Δαμασκηνός', 'Δερβαῖος',
                           'Διάβολος', 'Ἑβραῖος', 'Ἐλαμίτης', 'Ἕλλην', 'Ἑλληνικός', 'Ἑλληνιστής', 'Ἐπικούρειος',
@@ -935,6 +936,19 @@ class Sentence:
                         word_features['case'] is not None and word_head_features['case'] is not None and \
                         word_features['case'] == word_head_features['case']:
                     word['relation'] = 'appositive'
+                elif word_features['pos'] in ['adv', 'adverb with kai', 'relative adverb', 'interrogative adverb',
+                                              'indefinite adverb'] or \
+                        word['pos'] in ['adv', 'adverb with kai', 'relative adverb', 'interrogative adverb',
+                                        'indefinite adverb']:
+                    if word_head_features['pos'] == 'verb':
+                        word['relation'] = 'modifier of verb, adverb'
+                    elif word_head_features['pos'] == 'adj':
+                        word['relation'] = 'modifier of adjective, adverb'
+                    elif word_head_features['pos'] in ['noun', 'pron', 'personal pronoun', 'demonstrative pronoun',
+                                                       'num', 'reflexive pronoun', 'interrogative pronoun']:
+                        word['relation'] = 'modifier of nominal, adverb'
+                    else:
+                        word['relation'] = 'modifier of other, adverb'
 
         # Hand-entered edits to syntactic relations.
         for relation_type, relation_edits_df in RELATION_EDITS.items():
@@ -1190,7 +1204,7 @@ if __name__ == '__main__':
     sentences = dict()
 
     # Iterate over books.
-    for sbl_file in SBL_FILES[16:]:
+    for sbl_file in SBL_FILES:
 
         # Get all the sentences from the book.
         sentence_counter = 0

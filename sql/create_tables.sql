@@ -103,7 +103,10 @@ VALUES
 (1, 'POS', 'reflexive pronoun'),
 (1, 'TenseMood', 'future-indicative'),
 (1, 'TenseMood', 'present-infinitive'),
-(1, 'TenseMood', 'future-infinitive')
+(1, 'TenseMood', 'future-infinitive'),
+(1, 'POS', 'adv'),
+(1, 'POS', 'adverb with kai'),
+(1, 'POS', 'indefinite adverb')
 ;
 
 CREATE TABLE students_relations (
@@ -216,5 +219,11 @@ VALUES
 (1, 'subject of infinitive, accusative'),
 (1, 'subject of infinitive, genitive'),
 (1, 'subject of infinitive, nominative'),
-(1, 'subject of infinitive')
+(1, 'subject of infinitive'),
+(1, 'modifier of verb, adverb'),
+(1, 'modifier of verbless predicate, adverb'),
+(1, 'modifier of nominal, adverb'),
+(1, 'modifier of headless phrase, adverb'),
+(1, 'modifier of adjective, adverb'),
+(1, 'modifier of other, adverb')
 ;
