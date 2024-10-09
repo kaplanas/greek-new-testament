@@ -106,7 +106,8 @@ VALUES
 (1, 'TenseMood', 'future-infinitive'),
 (1, 'POS', 'adv'),
 (1, 'POS', 'adverb with kai'),
-(1, 'POS', 'indefinite adverb')
+(1, 'POS', 'indefinite adverb'),
+(1, 'Voice', 'middle')
 ;
 
 CREATE TABLE students_relations (
