@@ -4,6 +4,9 @@ echo "WITH multiple_subjects AS
             WHERE Relation LIKE 'subject%'
                   AND SentenceID NOT IN
                       ('Acts 5:9.1 - Acts 5:9.27',
+                       'Acts 9:5.6 - Acts 9:5.13',
+                       'Acts 25:22.1 - Acts 25:22.11',
+                       'Rom 4:15.6 - Rom 4:15.12',
                        '2Cor 3:17.7 - 2Cor 3:17.12',
                        'Rev 21:16.6 - Rev 21:16.12')
             GROUP BY SentenceID, HeadPos

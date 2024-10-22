@@ -6,8 +6,10 @@ echo "WITH mixed_types AS
                    'conjunct, ἤ', 'conjunct, ὅτι', 'conjunct, ὡς, clause',
                    'conjunct, ὡς, non-clause', 'conjunct, ὡς, other')
                   AND SentenceID NOT IN
-                      ('1Cor 13:2.1 - 1Cor 13:2.28',
+                      ('Matt 7:29.1 - Matt 7:29.13',
+                       '1Cor 13:2.1 - 1Cor 13:2.28',
                        '1Cor 13:3.1 - 1Cor 13:3.21',
+                       '2Cor 6:8.9 - 2Cor 6:10.16',
                        'Rev 14:2.1 - Rev 14:2.15')
             GROUP BY SentenceID, HeadPos
             HAVING COUNT(DISTINCT CASE WHEN Relation LIKE '%main'
@@ -37,6 +39,8 @@ echo "WITH mixed_types AS
                    'conjunct, μέν δέ', 'conjunct, ὅτι',
                    'conjunct, ὡς, clause', 'conjunct, ὡς, non-clause',
                    'conjunct, ὡς, other')
+                  AND SentenceID NOT IN
+                      ('2Cor 6:8.9 - 2Cor 6:10.16')
             GROUP BY SentenceID, HeadPos, Relation
             HAVING COUNT(*) > 1),
            no_deps AS

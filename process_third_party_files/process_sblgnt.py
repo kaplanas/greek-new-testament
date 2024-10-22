@@ -31,6 +31,10 @@ POS_EDITS = pd.read_csv(SBL_DIR + '/pos_edits.csv', dtype=str)
 LEMMA_EDITS = pd.read_csv(SBL_DIR + '/lemma_edits.csv', dtype=str)
 AUTOS_FORMS = ['αὐτά', 'αὐταῖς', 'αὐτάς', 'αὐτὰς', 'αὐτῇ', 'αὐτήν', 'αὐτὴν', 'αὐτῆς', 'αὐτὸ', 'αὐτοὶ', 'αὐτοῖς',
                'αὐτόν', 'αὐτὸς', 'αὐτοῦ', 'αὐτούς', 'αὐτοὺς', 'αὐτῷ', 'αὐτῶν']
+INDIVIDUAL_POS_EDITS = pd.read_csv(SBL_DIR + '/individual_pos_edits.csv',
+                                   dtype=defaultdict(lambda: str,
+                                                     {'chapter': np.float64, 'verse': np.float64,
+                                                      'position': np.float64}))
 GENITIVE_EDITS = pd.read_csv(SBL_DIR + '/genitive_edits.csv',
                              dtype=defaultdict(lambda: str,
                                                {'chapter': np.float64, 'verse': np.float64, 'position': np.float64}))
@@ -46,6 +50,9 @@ OTHER_RELATION_EDITS = pd.read_csv(SBL_DIR + '/other_relation_edits.csv',
                                                       'position': np.float64}))
 RELATION_EDITS = {'genitive': GENITIVE_EDITS, 'dative': DATIVE_EDITS, 'accusative': ACCUSATIVE_EDITS,
                   'other': OTHER_RELATION_EDITS}
+TYPE_EDITS = pd.read_csv(SBL_DIR + '/type_edits.csv',
+                         dtype=defaultdict(lambda: str,
+                                           {'chapter': np.float64, 'verse': np.float64, 'position': np.float64}))
 
 BOOKS_OF_THE_BIBLE = ['Matt', 'Mark', 'Luke', 'John', 'Acts', 'Rom', '1Cor', '2Cor', 'Gal', 'Eph', 'Phil', 'Col',
                       '1Thess', '2Thess', '1Tim', '2Tim', 'Titus', 'Phlm', 'Heb', 'Jas', '1Pet', '2Pet', '1John',
@@ -77,9 +84,9 @@ EXTENDED_NEGATION = ['μηδέ', 'μηδείς', 'οὐδαμῶς', 'οὐδέ'
 COPULA = ['εἰμί']
 GENERAL_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤπερ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε', 'πλήν',
                         'ὡς', 'ὡσεί']
-SENTENTIAL_CONJUNCTIONS = ['διό', 'διότι', 'ἐάν', 'εἰ', 'εἴπερ', 'ἐπεί', 'ἐπειδή', 'ἕως', 'ἡνίκα', 'ἵνα', 'καθάπερ',
-                           'καθότι', 'καθώς', 'κἄν', 'μήποτε', 'νή', 'ὅπως', 'ὅταν', 'ὅτε', 'ὅτι', 'πρίν', 'ὥσπερ',
-                           'ὥστε']
+SENTENTIAL_CONJUNCTIONS = ['διό', 'διότι', 'ἐάν', 'εἰ', 'εἴπερ', 'ἐπάν', 'ἐπεί', 'ἐπειδή', 'ἕως', 'ἡνίκα', 'ἵνα',
+                           'καθάπερ','καθότι', 'καθώς', 'κἄν', 'μήποτε', 'νή', 'ὅπως', 'ὅταν', 'ὅτε', 'ὅτι', 'πρίν',
+                           'ὥσπερ', 'ὥστε']
 COORDINATING_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔτε', 'πλήν']
 BURIED_CONJUNCTIONS = ['ἐάν', 'εἰ', 'ἐπεί', 'ἕως', 'ἡνίκα', 'καθάπερ', 'καθώς', 'μήποτε', 'νή', 'ὅταν', 'ὅτε', 'ὥστε']
 ADVERB_CONJUNCTIONS = ['καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε']
@@ -144,6 +151,8 @@ class UncutSentence:
             self.text = 'ἄγουσιν δὲ οἱ γραμματεῖς καὶ οἱ Φαρισαῖοι πρὸς αὐτὸν γυναῖκα ἐν μοιχείᾳ καταλήφθεισαν καὶ στήσαντες αὐτὴν ἐν μέσῳ λέγουσιν αὐτῷ, πειράζοντες Διδάσκαλε, αὕτη ἡ γυνὴ κατελήφθη ἐπ’ αὐτοφόρῳ μοιχευομένη·'
         elif self.citation == 'Acts.13.43':
             self.text = 'λυθείσης δὲ τῆς συναγωγῆς ἠκολούθησαν πολλοὶ τῶν Ἰουδαίων καὶ τῶν σεβομένων προσηλύτων τῷ Παύλῳ καὶ τῷ Βαρναβᾷ, οἵτινες προσλαλοῦντες αὐτοῖς ἔπειθον αὐτοὺς προσμένειν τῇ χάριτι τοῦ θεοῦ.'
+        elif self.citation == 'John.1.3':
+            self.text = 'πάντα δι’ αὐτοῦ ἐγένετο, καὶ χωρὶς αὐτοῦ ἐγένετο οὐδὲ ἕν ὃ γέγονεν.'
         self.tree = sbl_tree[2]
 
         # Initialize the list of words.
@@ -323,7 +332,7 @@ class UncutSentence:
                 if (word_dict['lemma'], word_dict['pos']) in edit_targets:
                     edit_index = edit_targets.index((word_dict['lemma'], word_dict['pos']))
                     word_dict['lemma'] = LEMMA_EDITS['new_lemma'][edit_index]
-                if word_dict['wordform'] in AUTOS_FORMS:
+                if word_dict['wordform'] in AUTOS_FORMS and word_dict['pos'] != 'adj':
                     word_dict['lemma'] = 'αὐτός'
                     word_dict['pos'] = 'personal pronoun'
 
@@ -384,6 +393,7 @@ class UncutSentence:
                 word_dict['head'] = None
                 word_dict['deps'] = []
                 word_dict['relation'] = 'unknown'
+                word_dict['nominal_type'] = None
                 if 'role' in node:
                     word_dict['relation'] = node['role']
 
@@ -404,6 +414,18 @@ class UncutSentence:
 
                 # Add the word to the list of words.
                 self.words += [word_dict]
+
+        # Edit POS by hand.
+        edits_df = pd.DataFrame(self.words)
+        edits_df = edits_df.merge(INDIVIDUAL_POS_EDITS, left_on=['book', 'chapter', 'verse', 'position'],
+                                  right_on=['book', 'chapter', 'verse', 'position'])
+        edit_targets = list(zip(edits_df['book'], edits_df['chapter'], edits_df['verse'], edits_df['position']))
+        if edits_df.shape[0] > 0:
+            for word in self.words:
+                if (word['book'], word['chapter'], word['verse'], word['position']) in edit_targets:
+                    edit_index = edit_targets.index((word['book'], word['chapter'], word['verse'],
+                                                     word['position']))
+                    word['pos'] = edits_df['new_pos'][edit_index]
 
         # Sort the words.
         self.words = sorted(self.words, key=lambda d: (d['chapter'], d['verse'], d['position']))
@@ -442,12 +464,15 @@ class UncutSentence:
 
         # Point predicate participles to the verb.
         for word in self.words:
-            if 'relation' in word and word['relation'] == 'v' and 'mood' in word and word['mood'] == 'participle' and \
-                    'head_id' in word:
+            if 'relation' in word and word['relation'] in ['v', 'vp'] and 'mood' in word and \
+                    word['mood'] == 'participle':
                 for matrix_verb in self.words:
                     if 'head_id' in matrix_verb and matrix_verb['head_id'] == word['id'] and \
                             matrix_verb['lemma'] == 'εἰμί':
-                        matrix_verb['head_id'] = word['head_id']
+                        if 'head_id' in word:
+                            matrix_verb['head_id'] = word['head_id']
+                        else:
+                            del matrix_verb['head_id']
                         word['head_id'] = matrix_verb['id']
 
         # Attach second-position clitics to the immediately preceding word.  Attach whatever was attached to the clitic
@@ -604,6 +629,8 @@ class Sentence:
 
         # Code some syntactic relations.
         for i, word in enumerate(self.words):
+
+            # Get the features of the word (some of which might be encoded on its dependents).
             word_features = dict()
             for feature in ['case', 'gender', 'number', 'pos', 'mood']:
                 word_features[feature] = None
@@ -625,6 +652,25 @@ class Sentence:
                                 feature != 'pos':
                             word_features[feature] = self.words[dep_pos][feature]
                             break
+
+            # Determine whether the word is the head of a relative clause.
+            relative = False
+            if (word_features['pos'] == 'verb' and
+                word_features['mood'] in ['indicative', 'subjunctive', 'optative']) or \
+                    word['lemma'] in SENTENTIAL_CONJUNCTIONS:
+                dep_stack = word['deps'].copy()
+                while len(dep_stack) > 0:
+                    dep_word = self.words[dep_stack.pop()]
+                    if dep_word['pos'].startswith('relative'):
+                        relative = True
+                        break
+                    elif not (dep_word['pos'] == 'verb' and
+                              dep_word['mood'] in ['indicative', 'subjunctive', 'optative'] and
+                              not (word['lemma'] in GENERAL_CONJUNCTIONS + SENTENTIAL_CONJUNCTIONS and
+                                   dep_word['head'] == i)):
+                        dep_stack = dep_stack + dep_word['deps']
+
+            # Get the features of the word's head (some of which might be encoded on its dependents).
             if word['head'] is not None:
                 head = self.words[word['head']]
                 word_head_features = dict()
@@ -656,6 +702,8 @@ class Sentence:
                     while 'parent_n' in walking_parent and not conjunction:
                         walking_parent = uncut_sentence.nodes[walking_parent['parent_n']]
                         conjunction = walking_parent['n'] == uncut_sentence.nodes[head['id']]['parent_n']
+
+                # Guess at the syntactic relation between the word and its head.
                 if word['lemma'] in SECOND_POSITION_CLITICS and word['id'] > head['id']:
                     word['relation'] = 'second-position clitic'
                 elif (word_features['pos'] == 'num' or word['lemma'] in NUMBERS) and \
@@ -723,10 +771,10 @@ class Sentence:
                     word['relation'] = 'particle'
                 elif word['pos'] == 'det':
                     if word_head_features['pos'] == 'verb' and word_head_features['mood'] == 'infinitive':
-                        word['relation'] = 'determiner of infinitive'
+                        word['relation'] = 'determiner'
                     elif word_head_features['pos'] == 'verb' and \
                             word_head_features['mood'] in ['indicative', 'imperative', 'subjunctive', 'optative']:
-                        word['relation'] = 'determiner, other'
+                        word['relation'] = 'determiner'
                     elif (head['pos'] in GENERAL_CONJUNCTIONS and word_head_features['gender'] is None) or \
                             (head['pos'] not in GENERAL_CONJUNCTIONS and head['gender'] is None) or \
                             word_head_features['gender'] != word_features['gender'] or \
@@ -738,32 +786,31 @@ class Sentence:
                             word_head_features['case'] != word_features['case']:
                         if word_features['gender'] == 'neuter' and word_features['number'] == 'plural':
                             word['relation'] = 'determiner, things of'
-                        elif word_head_features['pos'] == 'num':
-                            word['relation'] = 'determiner of adjective'
                         else:
-                            word['relation'] = 'determiner of headless phrase'
-                    elif word_head_features['pos'] == 'noun':
-                        if bool(re.match(GREEK_CAPITALS, head['lemma'])) and head['lemma'] != 'Χριστός':
-                            word['relation'] = 'determiner of name'
-                        else:
-                            word['relation'] = 'determiner of noun'
-                    elif word_head_features['pos'] in ['adj', 'num']:
-                        word['relation'] = 'determiner of adjective'
-                    elif word_head_features['pos'] == 'verb' and word_head_features['mood'] == 'participle':
-                        word['relation'] = 'determiner of participle'
-                    elif word_head_features['pos'] == 'demonstrative pronoun':
-                        word['relation'] = 'determiner of demonstrative'
+                            word['relation'] = 'determiner'
                     else:
-                        word['relation'] = 'determiner, other'
+                        word['relation'] = 'determiner'
                 elif word['lemma'] in NEGATION:
                     if word_head_features['pos'] in ['verb', 'ptcl'] and word_head_features['mood'] != 'participle':
                         word['relation'] = 'negation of verb'
                     elif head['lemma'] in NEGATION:
                         word['relation'] = 'negation, double'
                     elif head['head'] is not None and self.words[head['head']]['lemma'] in ['εἰ', 'ἐάν']:
-                        word['relation'] = 'negation, εἰ μὴ'
+                        if word_head_features['pos'] in ['noun', 'adj', 'personal pronoun'] or \
+                                (word_head_features['pos'] == 'verb' and word_head_features['mood'] == 'participle'):
+                            word['relation'] = 'negation, εἰ μὴ, nominal'
+                        else:
+                            word['relation'] = 'negation, εἰ μὴ'
                     else:
-                        word['relation'] = 'negation, other'
+                        if (word_head_features['pos'] in ['noun', 'adj', 'personal pronoun',
+                                                          'demonstrative pronoun', 'relative pronoun',
+                                                          'reflexive pronoun'] or \
+                                 (word_head_features['pos'] == 'verb' and
+                                  word_head_features['mood'] == 'participle')) and \
+                                head['lemma'] != 'ὡς':
+                            word['relation'] = 'negation of nominal'
+                        else:
+                            word['relation'] = 'negation, other'
                 elif word['relation'] == 'p':
                     if 'case' in word and word_features['case'] == 'nominative':
                         word['relation'] = 'predicate, nominative'
@@ -780,14 +827,14 @@ class Sentence:
                     word['relation'] = 'sentential complement'
                 elif word_head_features['pos'] == 'prep' and not (word['lemma'] == 'καί' and word['pos'] == 'adv'):
                     if word['id'] < head['id'] and word_features['pos'] == 'adj':
-                        word['relation'] = 'modifier of headless phrase, adjective'
+                        word['relation'] = 'modifier of nominal, nominal'
                     elif 'case' in word and word_features['case'] is not None:
                         word['relation'] = 'object of preposition, ' + word_features['case']
                     else:
                         word['relation'] = 'object of preposition'
                 elif word_features['pos'] == 'prep':
                     if word_head_features['pos'] in ['noun', 'pron', 'interrogative pronoun', 'num',
-                                                     'personal pronoun']:
+                                                     'personal pronoun', 'indefinite pronoun']:
                         word['relation'] = 'modifier of nominal, PP'
                     elif word_head_features['degree'] == 'comparative':
                         word['relation'] = 'comparative'
@@ -814,21 +861,14 @@ class Sentence:
                              or (word['lemma'] in TITLES and bool(re.match(GREEK_CAPITALS, head['lemma'])))) and \
                         word_head_features['mood'] not in ['indicative', 'imperative', 'subjunctive', 'optative',
                                                            'infinitive'] and \
-                        word_features['mood'] not in ['infinitive']:
-                    if word_features['pos'] == 'adj':
-                        word['relation'] = 'modifier of nominal, adjective'
-                    elif word_features['pos'] == 'demonstrative pronoun':
-                        word['relation'] = 'modifier of nominal, demonstrative'
-                    elif word_features['pos'] == 'interrogative pronoun':
-                        word['relation'] = 'modifier of nominal, interrogative'
-                    elif word_features['pos'] == 'pron':
-                        word['relation'] = 'modifier of nominal, pronoun'
-                    elif word_features['pos'] == 'verb' and word['mood'] == 'participle':
-                        word['relation'] = 'modifier of nominal, participle'
-                    elif head['lemma'] in TITLES and bool(re.match(GREEK_CAPITALS, word['lemma'])):
+                        word_features['mood'] not in ['infinitive'] and \
+                        not relative:
+                    if head['lemma'] in TITLES and bool(re.match(GREEK_CAPITALS, word['lemma'])):
                         word['relation'] = 'entitled'
                     elif word['lemma'] in TITLES and bool(re.match(GREEK_CAPITALS, head['lemma'])):
                         word['relation'] = 'title'
+                    else:
+                        word['relation'] = 'modifier of nominal, nominal'
                 elif word_features['pos'] == 'verb' and word_features['mood'] == 'infinitive' and \
                     word_head_features['pos'] == 'verb':
                     if word_features['case'] == 'genitive':
@@ -945,31 +985,54 @@ class Sentence:
                     elif word_head_features['pos'] == 'adj':
                         word['relation'] = 'modifier of adjective, adverb'
                     elif word_head_features['pos'] in ['noun', 'pron', 'personal pronoun', 'demonstrative pronoun',
-                                                       'num', 'reflexive pronoun', 'interrogative pronoun']:
+                                                       'num', 'reflexive pronoun', 'interrogative pronoun',
+                                                       'indefinite pronoun']:
                         word['relation'] = 'modifier of nominal, adverb'
                     else:
                         word['relation'] = 'modifier of other, adverb'
+                elif relative:
+                    if word_head_features['pos'] in ['noun', 'adj', 'pron', 'personal pronoun', 'indefinite pronoun',
+                                                     'demonstrative pronoun', 'interrogative pronoun']:
+                        word['relation'] = 'modifier of nominal, nominal'
 
-        # Hand-entered edits to syntactic relations.
-        for relation_type, relation_edits_df in RELATION_EDITS.items():
-            edits_df = pd.DataFrame(pd.DataFrame(self.words))
-            edits_df = edits_df.merge(relation_edits_df, left_on=['book', 'chapter', 'verse', 'position'],
-                                      right_on=['book', 'chapter', 'verse', 'position'])
-            edit_targets = list(zip(edits_df['book'], edits_df['chapter'], edits_df['verse'], edits_df['position']))
-            if edits_df.shape[0] > 0:
-                for word in self.words:
-                    if (word['book'], word['chapter'], word['verse'], word['position']) in edit_targets:
-                        edit_index = edit_targets.index((word['book'], word['chapter'], word['verse'],
-                                                         word['position']))
-                        new_relation = edits_df['new_relation'][edit_index]
-                        if relation_type == 'dative' and new_relation == 'direct object':
-                            new_relation = new_relation + ', ' + relation_type
-                        elif relation_type != 'other':
-                            new_relation = relation_type + ', ' + new_relation
-                        if word['relation'] == new_relation:
-                            print('REDUNDANT RELATION EDIT: ' + word['book'] + ' ' + str(word['chapter']) + ':' +
-                                  str(word['verse']) + ' ' + str(word['position']) + ' ' + new_relation)
-                        word['relation'] = new_relation
+            # Guess at the nominal type of the word.
+            if relative:
+                word['nominal_type'] = 'relative clause'
+            elif word_features['pos'] == 'noun':
+                word['nominal_type'] = 'noun'
+            elif word_features['pos'] == 'pron' or \
+                    (word_features['pos'] is not None and 'pronoun' in word_features['pos']):
+                word['nominal_type'] = 'pronoun'
+            elif word_features['pos'] in ['adj', 'num']:
+                word['nominal_type'] = 'adjective'
+            elif word_features['pos'] == 'det':
+                word['nominal_type'] = 'determiner'
+            elif word_features['pos'] == 'verb':
+                if word_features['mood'] == 'participle':
+                    word['nominal_type'] = 'participle'
+                elif word_features['mood'] == 'infinitive':
+                    word['nominal_type'] = 'infinitive'
+            elif word_features['pos'] in ['prep', 'adv'] or \
+                    (word_features['pos'] is not None and 'adverb' in word_features['pos']):
+                word['nominal_type'] = 'headless'
+            else:
+                word['nominal_type'] = 'clause'
+
+        # Hand-entered edits to types.
+        edits_df = pd.DataFrame(pd.DataFrame(self.words))
+        edits_df = edits_df.merge(TYPE_EDITS, left_on=['book', 'chapter', 'verse', 'position'],
+                                  right_on=['book', 'chapter', 'verse', 'position'])
+        edit_targets = list(zip(edits_df['book'], edits_df['chapter'], edits_df['verse'], edits_df['position']))
+        if edits_df.shape[0] > 0:
+            for word in self.words:
+                if (word['book'], word['chapter'], word['verse'], word['position']) in edit_targets:
+                    edit_index = edit_targets.index((word['book'], word['chapter'], word['verse'],
+                                                     word['position']))
+                    new_type = edits_df['new_nominal_type'][edit_index]
+                    if word['nominal_type'] == new_type:
+                        print('REDUNDANT TYPE EDIT: ' + word['book'] + ' ' + str(word['chapter']) + ':' +
+                              str(word['verse']) + ' ' + str(word['position']) + ' ' + new_type)
+                    word['nominal_type'] = new_type
 
     # Extract all licit strings from the sentence.
     def get_licit_strings(self):
@@ -1028,6 +1091,21 @@ class Sentence:
             if word['lemma'] == 'ὅτι' and word['head'] is not None and \
                     len([dep for dep in word['deps'] if self.words[dep]['relation'] == 'conjunct, ὅτι']) > 0:
                 mandatory_pairs += [(i, word['head'])]
+
+            # If the word is the head of a relative clause, the relative must be present.
+            if word['nominal_type'] == 'relative clause':
+                dep_stack = word['deps'].copy()
+                while len(dep_stack) > 0:
+                    dep_index = dep_stack.pop()
+                    dep_word = self.words[dep_index]
+                    if dep_word['pos'].startswith('relative'):
+                        mandatory_pairs += [(i, dep_index)]
+                        break
+                    elif not (dep_word['pos'] == 'verb' and
+                              dep_word['mood'] in ['indicative', 'subjunctive', 'optative'] and
+                              not (word['lemma'] in GENERAL_CONJUNCTIONS + SENTENTIAL_CONJUNCTIONS and
+                                   dep_word['head'] == i)):
+                        dep_stack = dep_stack + dep_word['deps']
 
         # Initialize the licit strings with all the individual words.
         licit_strings = [(i, i) for i in range(len(self.words))]
@@ -1177,13 +1255,13 @@ class Sentence:
             cur.executemany(sql, [(w['book'], w['chapter'], w['verse'], w['position']) for w in self.words])
             sql = """INSERT INTO words
                      (Book, Chapter, Verse, VersePosition, SentenceID, SentencePosition, Lemma, Wordform, POS, Gender,
-                      Number, NCase, Person, Tense, Voice, Mood, Degree, NounClass, VerbClass)
+                      Number, NCase, Person, Tense, Voice, Mood, Degree, NounClass, VerbClass, NominalType)
                      VALUES
-                     (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+                     (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
             cur.executemany(sql,
                             [(w['book'], w['chapter'], w['verse'], w['position'], self.sentence_id, j, w['lemma'],
                               w['wordform'], w['pos'], w['gender'], w['number'], w['case'], w['person'], w['tense'],
-                              w['voice'], w['mood'], w['degree'], w['noun_class'], w['verb_class'])
+                              w['voice'], w['mood'], w['degree'], w['noun_class'], w['verb_class'], w['nominal_type'])
                              for j, w in enumerate(self.words)])
 
             # Commit changes.

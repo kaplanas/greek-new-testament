@@ -18,6 +18,7 @@ CREATE TABLE words (
   Degree varchar(20),
   NounClass varchar(50),
   VerbClass varchar(20),
+  NominalType varchar(100),
   PRIMARY KEY(Book, Chapter, Verse, VersePosition),
   INDEX words_sentence_id_position (SentenceID, SentencePosition)
 );
@@ -79,7 +80,9 @@ INSERT INTO students_words
 (StudentID, Feature, FeatureValue)
 VALUES
 (1, 'POS', 'personal pronoun'),
+(1, 'NominalType', 'pronoun'),
 (1, 'POS', 'noun'),
+(1, 'NominalType', 'noun'),
 (1, 'NounClass', 'second declension'),
 (1, 'NounClass', 'Ihsous'),
 (1, 'TenseMood', 'present-indicative'),
@@ -94,6 +97,7 @@ VALUES
 (1, 'NounClass', 'second declension with hs'),
 (1, 'POS', 'det'),
 (1, 'POS', 'adj'),
+(1, 'NominalType', 'adjective'),
 (1, 'NounClass', 'first/second declension'),
 (1, 'TenseMood', 'imperfect-indicative'),
 (1, 'POS', 'ptcl'),
@@ -107,7 +111,9 @@ VALUES
 (1, 'POS', 'adv'),
 (1, 'POS', 'adverb with kai'),
 (1, 'POS', 'indefinite adverb'),
-(1, 'Voice', 'middle')
+(1, 'Voice', 'middle'),
+(1, 'POS', 'relative pronoun'),
+(1, 'NominalType', 'relative clause')
 ;
 
 CREATE TABLE students_relations (
@@ -125,7 +131,6 @@ VALUES
 (1, 'subject, neuter plural, regular agreement'),
 (1, 'subject, irregular agreement'),
 (1, 'subject of verbless predicate'),
-(1, 'subject, non-nominative'),
 (1, 'predicate, nominative'),
 (1, 'genitive, relation'),
 (1, 'genitive, body part'),
@@ -176,15 +181,10 @@ VALUES
 (1, 'negation of verb, semantically embedded'),
 (1, 'negation, double'),
 (1, 'negation, other'),
-(1, 'determiner of noun'),
-(1, 'determiner of name'),
+(1, 'determiner'),
 (1, 'determiner, things of'),
-(1, 'determiner of headless phrase'),
-(1, 'modifier of nominal, adjective'),
-(1, 'modifier of nominal, adjective, irregular agreement'),
-(1, 'modifier of headless phrase, adjective'),
+(1, 'modifier of nominal, nominal'),
 (1, 'modifier of non-nominal, adjective'),
-(1, 'determiner of adjective'),
 (1, 'argument of adjective'),
 (1, 'argument of adjective, genitive'),
 (1, 'argument of adjective, dative'),
@@ -195,7 +195,6 @@ VALUES
 (1, 'sentential complement'),
 (1, 'particle'),
 (1, 'predicate'),
-(1, 'determiner, other'),
 (1, 'object of preposition, nominative'),
 (1, 'object of preposition, genitive'),
 (1, 'object of preposition, dative'),
@@ -205,26 +204,20 @@ VALUES
 (1, 'modifier of verbless predicate, PP'),
 (1, 'modifier of nominal, PP'),
 (1, 'modifier of adjective, PP'),
-(1, 'modifier of headless phrase, PP'),
 (1, 'modifier of other, PP'),
-(1, 'modifier of nominal, demonstrative'),
-(1, 'modifier of headless phrase, demonstrative'),
-(1, 'determiner of demonstrative'),
 (1, 'infinitive argument of verb'),
 (1, 'infinitive argument of noun'),
 (1, 'infinitive, purpose'),
 (1, 'infinitive, something'),
 (1, 'modifier of verb, infinitive'),
 (1, 'modifier of nominal, infinitive'),
-(1, 'determiner of infinitive'),
 (1, 'subject of infinitive, accusative'),
 (1, 'subject of infinitive, genitive'),
 (1, 'subject of infinitive, nominative'),
 (1, 'subject of infinitive'),
 (1, 'modifier of verb, adverb'),
 (1, 'modifier of verbless predicate, adverb'),
-(1, 'modifier of nominal, adverb'),
-(1, 'modifier of headless phrase, adverb'),
+(1, 'modifier of nominal, adverb'),\
 (1, 'modifier of adjective, adverb'),
 (1, 'modifier of other, adverb')
 ;

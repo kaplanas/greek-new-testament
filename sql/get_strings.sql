@@ -1,6 +1,21 @@
 CREATE OR REPLACE VIEW study_strings AS
-WITH word_status AS
-     (SELECT SentenceID, SentencePosition, POS,
+WITH expanded_nominal_types AS
+     (SELECT unique_nominal_types.NominalType AS WordNominalType, all_nominal_types.NominalType
+      FROM (SELECT DISTINCT NominalType
+            FROM words
+            WHERE NominalType IS NOT NULL) unique_nominal_types
+           JOIN (SELECT DISTINCT NominalType
+                 FROM words
+                 WHERE NominalType NOT LIKE '%,%') all_nominal_types
+           ON REGEXP_LIKE(unique_nominal_types.NominalType,
+                          CONCAT('(^|, )', all_nominal_types.NominalType, '($|,)'))),
+     word_status AS
+     (SELECT words.SentenceID, words.SentencePosition, POS,
+             CASE WHEN required_nominal_types.SentenceID IS NOT NULL
+                       THEN words.NominalType
+             END AS ActualNominalType,
+             nominal_types.FeatureValue AS NominalTypeFeatureValue,
+             nominal_types.Required AS NominalTypeRequired,
              other_pos.FeatureValue AS OtherPOSFeatureValue,
              other_pos.Required AS OtherPOSRequired,
              nouns.FeatureValue AS NounFeatureValue,
@@ -14,6 +29,18 @@ WITH word_status AS
              verb_class.FeatureValue AS VerbClassFeatureValue,
              verb_class.Required AS VerbClassRequired
       FROM words
+           LEFT JOIN (SELECT DISTINCT SentenceID, SentencePosition
+                      FROM required_types
+                      WHERE TypeName = 'NominalType') required_nominal_types
+           ON words.SentenceID = required_nominal_types.SentenceID
+              AND words.SentencePosition = required_nominal_types.SentencePosition
+           LEFT JOIN expanded_nominal_types
+           ON words.NominalType = expanded_nominal_types.WordNominalType
+           LEFT JOIN (SELECT FeatureValue, Required
+                      FROM students_words
+                      WHERE StudentID = 1
+                            AND Feature = 'NominalType') nominal_types
+           ON expanded_nominal_types.NominalType = nominal_types.FeatureValue
            LEFT JOIN (SELECT FeatureValue, Required
                       FROM students_words
                       WHERE StudentID = 1
@@ -45,9 +72,11 @@ WITH word_status AS
                             AND Feature = 'VerbClass') verb_class
            ON words.VerbClass = verb_class.FeatureValue),
      forbidden_words AS
-     (SELECT SentenceID, SentencePosition
+     (SELECT DISTINCT SentenceID, SentencePosition
       FROM word_status
-      WHERE (OtherPOSFeatureValue IS NULL
+      WHERE ((ActualNominalType IS NOT NULL
+              AND NominalTypeFeatureValue IS NULL)
+             OR OtherPOSFeatureValue IS NULL
              OR (OtherPOSFeatureValue IN ('noun', 'adj')
                  AND NounFeatureValue IS NULL)
              OR (OtherPOSFeatureValue = 'adj'
@@ -67,7 +96,8 @@ WITH word_status AS
      required_words AS
      (SELECT SentenceID, SentencePosition
       FROM word_status
-      WHERE OtherPOSRequired
+      WHERE NominalTypeRequired
+            OR OtherPOSRequired
             OR NounRequired
             OR TenseMoodRequired
             OR VoiceRequired

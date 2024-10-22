@@ -2,7 +2,6 @@ lemma,pos
 ἐγώ,personal pronoun
 κἀγώ,personal pronoun with kai
 σύ,personal pronoun
-αὐτός,personal pronoun
 ἐμαυτοῦ,reflexive pronoun
 σεαυτοῦ,reflexive pronoun
 ἑαυτοῦ,reflexive pronoun
@@ -16,6 +15,7 @@ lemma,pos
 ποῖος,interrogative pronoun
 πόσος,interrogative pronoun
 ποταπός,interrogative pronoun
+τις,indefinite pronoun
 ὅς,relative pronoun
 ὅσος,relative pronoun
 ὅστις,relative pronoun
