@@ -14,11 +14,16 @@ echo "WITH multiple_subjects AS
            multiple_objects AS
            (SELECT relations.SentenceID, relations.HeadPos
             FROM gnt.relations
-                 JOIN gnt.words
-                 ON relations.SentenceID = words.SentenceID
-                    AND relations.HeadPos = words.SentencePosition
+                 JOIN gnt.words head
+                 ON relations.SentenceID = head.SentenceID
+                    AND relations.HeadPos = head.SentencePosition
+                 JOIN gnt.words dep
+                 ON relations.SentenceID = dep.SentenceID
+                    AND relations.DependentPos = dep.SentencePosition
             WHERE relations.Relation = 'direct object'
-                  AND words.Lemma NOT IN
+                  AND COALESCE(dep.CaseType, 'accusative') NOT IN
+                      ('genitive', 'dative')
+                  AND head.Lemma NOT IN
                       ('ἀγγαρεύω', 'ἀδικέω', 'αἰτέω', 'ἀναμιμνῄσκω',
                        'διδάσκω', 'δίδωμι', 'ἐκδύω', 'ἐνδιδύσκω', 'ἐνδύω',
                        'ἐνορκίζω', 'ἐπερωτάω', 'ἐρωτάω', 'εὐαγγελίζω',

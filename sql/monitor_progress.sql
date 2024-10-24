@@ -10,6 +10,11 @@ WITH type_dep AS
                        THEN 1
                   WHEN required_types.TypeName = 'NominalType'
                        THEN 0
+                  WHEN required_types.TypeName = 'CaseType'
+                       AND checked_types.CaseType IS NOT NULL
+                       THEN 1
+                  WHEN required_types.TypeName = 'CaseType'
+                       THEN 0
              END AS Checked
       FROM gnt.required_types
            LEFT JOIN gnt.checked_types
@@ -25,6 +30,11 @@ WITH type_dep AS
                        AND checked_types.NominalType IS NOT NULL
                        THEN 1
                   WHEN required_types.TypeName = 'NominalType'
+                       THEN 0
+                  WHEN required_types.TypeName = 'CaseType'
+                       AND checked_types.CaseType IS NOT NULL
+                       THEN 1
+                  WHEN required_types.TypeName = 'CaseType'
                        THEN 0
              END AS Checked
       FROM gnt.required_types
@@ -60,7 +70,7 @@ WITH type_dep AS
                        END), 1) AS RelP,
              LPAD(COALESCE(SUM(type_counts.TypeTotal), ''),
                   9, ' ') AS TypeTotal,
-             LPAD(COALESCE(SUM(type_counts.TypeN), ''), 5, ' ') AS TypeN,
+             LPAD(COALESCE(SUM(type_counts.TypeN), ''), 6, ' ') AS TypeN,
              LPAD(COALESCE(ROUND((SUM(type_counts.TypeN) /
                                   SUM(type_counts.TypeTotal)) * 100, 1),
                            ''),

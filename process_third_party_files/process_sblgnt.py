@@ -744,10 +744,7 @@ class Sentence:
                     elif word_head_features['pos'] != 'verb':
                         word['relation'] = 'subject of verbless predicate'
                     elif word_head_features['mood'] == 'infinitive':
-                        if word_features['case'] is None:
-                            word['relation'] = 'subject of infinitive'
-                        else:
-                            word['relation'] = 'subject of infinitive, ' + word_features['case']
+                        word['relation'] = 'subject of infinitive'
                     elif word_head_features['mood'] == 'participle':
                         if word_features['case'] == 'accusative':
                             word['relation'] = 'subject of small clause'
@@ -812,14 +809,13 @@ class Sentence:
                         else:
                             word['relation'] = 'negation, other'
                 elif word['relation'] == 'p':
-                    if 'case' in word and word_features['case'] == 'nominative':
-                        word['relation'] = 'predicate, nominative'
-                    elif 'case' in word and word_features['case'] == 'genitive':
-                        word['relation'] = 'predicate, genitive'
-                    elif 'case' in word and word_features['case'] == 'dative':
-                        word['relation'] = 'predicate, dative'
+                    if word_features['pos'] in ['noun', 'adj', 'num', 'pron', 'personal pronoun', 'indefinite pronoun',
+                                                'interrogative pronoun', 'demonstrative pronoun',
+                                                'relative pronoun'] or \
+                            (word_features['pos'] == 'verb' and word_features['mood'] == 'participle'):
+                        word['relation'] = 'predicate, nominal'
                     else:
-                        word['relation'] = 'predicate'
+                        word['relation'] = 'predicate, non-nominal'
                 elif head['lemma'] in SENTENTIAL_COMPLEMENT_HEADS and word['pos'] in ['verb', 'conj'] and \
                         (word['case'] is None or word_features['case'] != 'accusative') and \
                         (word['mood'] is None or word_features['mood'] not in ['participle', 'infinitive']) and \
@@ -828,8 +824,6 @@ class Sentence:
                 elif word_head_features['pos'] == 'prep' and not (word['lemma'] == 'καί' and word['pos'] == 'adv'):
                     if word['id'] < head['id'] and word_features['pos'] == 'adj':
                         word['relation'] = 'modifier of nominal, nominal'
-                    elif 'case' in word and word_features['case'] is not None:
-                        word['relation'] = 'object of preposition, ' + word_features['case']
                     else:
                         word['relation'] = 'object of preposition'
                 elif word_features['pos'] == 'prep':
@@ -885,13 +879,13 @@ class Sentence:
                         if word_features['mood'] == 'participle':
                             word['relation'] = 'modifier of verb, participle, genitive'
                         else:
-                            word['relation'] = 'direct object, genitive'
+                            word['relation'] = 'direct object'
                     elif word_head_features['pos'] == 'adj' and word_head_features['degree'] == 'comparative':
                         word['relation'] = 'genitive, comparison'
                     elif head['lemma'] in PARTITIVE_HEADS:
                         word['relation'] = 'genitive, part-whole'
                     elif word_head_features['pos'] == 'adj':
-                        word['relation'] = 'argument of adjective, genitive'
+                        word['relation'] = 'argument of adjective, nominal'
                     elif head['lemma'] in ['ἄγγελος', 'ἀδελφή', 'ἀδελφός', 'ἀνήρ', 'ἄρχων', 'βασιλεύς', 'γονεύς',
                                            'γυνή', 'δέσμιος', 'διδάσκαλος', 'δοῦλος', 'ἐχθρός', 'θεός', 'θυγάτηρ',
                                            'κύριος', 'λαός', 'μαθητής', 'μήτηρ', 'παῖς', 'πατήρ', 'πλησίον', 'σπέρμα',
@@ -943,14 +937,14 @@ class Sentence:
                                          'προσκαρτερέω', 'προσκυνέω', 'προσμένω', 'προσπίπτω', 'συγκοινωνέω',
                                          'συγχαίρω', 'συμβαίνω', 'συμβάλλω', 'συμφέρω', 'συναντάω', 'συνέρχομαι',
                                          'ὑπακούω', 'ὑπαντάω']:
-                        word['relation'] = 'direct object, dative'
+                        word['relation'] = 'direct object'
                     elif word_head_features['pos'] == 'verb':
                         if word_features['mood'] == 'participle':
                             word['relation'] = 'modifier of verb, participle, dative'
                         else:
                             word['relation'] = 'indirect object'
                     elif word_head_features['pos'] == 'adj':
-                        word['relation'] = 'argument of adjective, dative'
+                        word['relation'] = 'argument of adjective, nominal'
                     else:
                         word['relation'] = 'dative, other'
                 elif 'case' in word and word_features['case'] == 'accusative':
@@ -1018,6 +1012,30 @@ class Sentence:
             else:
                 word['nominal_type'] = 'clause'
 
+            # Guess at the case type of the word.
+            word['case_type'] = word_features['case']
+
+        # Hand-entered edits to syntactic relations.
+        for relation_type, relation_edits_df in RELATION_EDITS.items():
+            edits_df = pd.DataFrame(pd.DataFrame(self.words))
+            edits_df = edits_df.merge(relation_edits_df, left_on=['book', 'chapter', 'verse', 'position'],
+                                      right_on=['book', 'chapter', 'verse', 'position'])
+            edit_targets = list(zip(edits_df['book'], edits_df['chapter'], edits_df['verse'], edits_df['position']))
+            if edits_df.shape[0] > 0:
+                for word in self.words:
+                    if (word['book'], word['chapter'], word['verse'], word['position']) in edit_targets:
+                        edit_index = edit_targets.index((word['book'], word['chapter'], word['verse'],
+                                                         word['position']))
+                        new_relation = edits_df['new_relation'][edit_index]
+                        if relation_type == 'dative' and new_relation == 'direct object':
+                            pass
+                        elif relation_type != 'other':
+                            new_relation = relation_type + ', ' + new_relation
+                        if word['relation'] == new_relation:
+                            print('REDUNDANT RELATION EDIT: ' + word['book'] + ' ' + str(word['chapter']) + ':' +
+                                  str(word['verse']) + ' ' + str(word['position']) + ' ' + new_relation)
+                        word['relation'] = new_relation
+
         # Hand-entered edits to types.
         edits_df = pd.DataFrame(pd.DataFrame(self.words))
         edits_df = edits_df.merge(TYPE_EDITS, left_on=['book', 'chapter', 'verse', 'position'],
@@ -1028,11 +1046,13 @@ class Sentence:
                 if (word['book'], word['chapter'], word['verse'], word['position']) in edit_targets:
                     edit_index = edit_targets.index((word['book'], word['chapter'], word['verse'],
                                                      word['position']))
-                    new_type = edits_df['new_nominal_type'][edit_index]
-                    if word['nominal_type'] == new_type:
-                        print('REDUNDANT TYPE EDIT: ' + word['book'] + ' ' + str(word['chapter']) + ':' +
-                              str(word['verse']) + ' ' + str(word['position']) + ' ' + new_type)
-                    word['nominal_type'] = new_type
+                    for type_name in ['nominal_type', 'case_type']:
+                        new_type = edits_df['new_' + type_name][edit_index]
+                        if not pd.isna(new_type):
+                            if word[type_name] == new_type:
+                                print('REDUNDANT TYPE EDIT: ' + word['book'] + ' ' + str(word['chapter']) + ':' +
+                                      str(word['verse']) + ' ' + str(word['position']) + ' ' + new_type)
+                            word[type_name] = new_type
 
     # Extract all licit strings from the sentence.
     def get_licit_strings(self):
@@ -1255,13 +1275,14 @@ class Sentence:
             cur.executemany(sql, [(w['book'], w['chapter'], w['verse'], w['position']) for w in self.words])
             sql = """INSERT INTO words
                      (Book, Chapter, Verse, VersePosition, SentenceID, SentencePosition, Lemma, Wordform, POS, Gender,
-                      Number, NCase, Person, Tense, Voice, Mood, Degree, NounClass, VerbClass, NominalType)
+                      Number, NCase, Person, Tense, Voice, Mood, Degree, NounClass, VerbClass, NominalType, CaseType)
                      VALUES
-                     (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+                     (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
             cur.executemany(sql,
                             [(w['book'], w['chapter'], w['verse'], w['position'], self.sentence_id, j, w['lemma'],
                               w['wordform'], w['pos'], w['gender'], w['number'], w['case'], w['person'], w['tense'],
-                              w['voice'], w['mood'], w['degree'], w['noun_class'], w['verb_class'], w['nominal_type'])
+                              w['voice'], w['mood'], w['degree'], w['noun_class'], w['verb_class'], w['nominal_type'],
+                              w['case_type'])
                              for j, w in enumerate(self.words)])
 
             # Commit changes.

@@ -94,7 +94,7 @@ WITH expanded_nominal_types AS
               AND words.SentencePosition = forbidden_words.SentencePosition
       WHERE forbidden_words.SentenceID IS NULL),
      required_words AS
-     (SELECT SentenceID, SentencePosition
+     (SELECT DISTINCT SentenceID, SentencePosition
       FROM word_status
       WHERE NominalTypeRequired
             OR OtherPOSRequired

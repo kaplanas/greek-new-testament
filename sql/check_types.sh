@@ -12,10 +12,15 @@ echo "WITH words_to_check AS
                    words_to_check.LastPos,
                    CASE WHEN words_to_check.TypeName = 'NominalType'
                              THEN words.NominalType
+                        WHEN words_to_check.TypeName = 'CaseType'
+                             THEN words.CaseType
                    END AS NewType,
                    CASE WHEN words_to_check.TypeName = 'NominalType'
                              AND words.NominalType <> checked_types.NominalType
                              THEN checked_types.NominalType
+                        WHEN words_to_check.TypeName = 'CaseType'
+                             AND words.CaseType <> checked_types.CaseType
+                             THEN checked_types.CaseType
                    END AS OldType,
                    words_to_check.CheckOrder
             FROM words_to_check
@@ -27,7 +32,10 @@ echo "WITH words_to_check AS
                     AND words_to_check.SentencePosition = checked_types.SentencePosition
             WHERE (words_to_check.TypeName = 'NominalType'
                    AND (checked_types.NominalType IS NULL
-                        OR words.NominalType <> checked_types.NominalType))),
+                        OR words.NominalType <> checked_types.NominalType))
+                  OR (words_to_check.TypeName = 'CaseType'
+                      AND (checked_types.CaseType IS NULL
+                           OR words.CaseType <> checked_types.CaseType))),
            shortest_strings AS
            (SELECT relations_to_check.TypeName, strings.SentenceID,
                    relations_to_check.SentencePosition,
@@ -131,11 +139,7 @@ do
             VALUES
             ('$sentence_id', '$sentence_pos', '$new_type')
             ON DUPLICATE KEY UPDATE
-            checked_types.NominalType = '$new_type';" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null
-    else
-      echo "DELETE FROM gnt.checked_types
-            WHERE SentenceID = '$sentence_id'
-                  AND SentencePosition = '$sentence_pos';" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null
+            checked_types.$type_name = '$new_type';" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null
     fi
     echo ""
   fi

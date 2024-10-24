@@ -19,6 +19,7 @@ CREATE TABLE words (
   NounClass varchar(50),
   VerbClass varchar(20),
   NominalType varchar(100),
+  CaseType varchar(100),
   PRIMARY KEY(Book, Chapter, Verse, VersePosition),
   INDEX words_sentence_id_position (SentenceID, SentencePosition)
 );
@@ -54,6 +55,13 @@ CREATE TABLE checked_relation_tokens (
   DependentPos integer NOT NULL,
   Relation varchar(100) NOT NULL,
   PRIMARY KEY(SentenceID, HeadPos, DependentPos)
+);
+
+CREATE TABLE checked_types (
+  SentenceID varchar(50) NOT NULL,
+  SentencePosition integer NOT NULL,
+  NominalType varchar(100),
+  CaseType varchar(100)
 );
 
 CREATE TABLE students (
@@ -131,7 +139,7 @@ VALUES
 (1, 'subject, neuter plural, regular agreement'),
 (1, 'subject, irregular agreement'),
 (1, 'subject of verbless predicate'),
-(1, 'predicate, nominative'),
+(1, 'predicate, nominal'),
 (1, 'genitive, relation'),
 (1, 'genitive, body part'),
 (1, 'genitive, subject'),
@@ -150,7 +158,6 @@ VALUES
 (1, 'genitive, contents'),
 (1, 'genitive, son of'),
 (1, 'genitive, amount'),
-(1, 'predicate, genitive'),
 (1, 'genitive, direct object'),
 (1, 'genitive, other'),
 (1, 'indirect object'),
@@ -163,7 +170,6 @@ VALUES
 (1, 'dative, cognate of verb'),
 (1, 'dative, Hebrew infinitive construct'),
 (1, 'direct object, dative'),
-(1, 'predicate, dative'),
 (1, 'dative, other'),
 (1, 'direct object'),
 (1, 'accusative, time'),
@@ -171,7 +177,6 @@ VALUES
 (1, 'accusative, manner'),
 (1, 'accusative, cognate of verb'),
 (1, 'accusative, other'),
-(1, 'predicate, accusative'),
 (1, 'interjection, vocative'),
 (1, 'conjunct'),
 (1, 'conjunct, chain'),
@@ -179,6 +184,7 @@ VALUES
 (1, 'second-position clitic'),
 (1, 'negation of verb'),
 (1, 'negation of verb, semantically embedded'),
+(1, 'negation of nominal'),
 (1, 'negation, double'),
 (1, 'negation, other'),
 (1, 'determiner'),
@@ -186,19 +192,14 @@ VALUES
 (1, 'modifier of nominal, nominal'),
 (1, 'modifier of non-nominal, adjective'),
 (1, 'argument of adjective'),
-(1, 'argument of adjective, genitive'),
-(1, 'argument of adjective, dative'),
+(1, 'argument of adjective, nominal'),
 (1, 'subject of small clause'),
 (1, 'conjunct, main'),
 (1, 'conjunct, subordinate'),
 (1, 'conjunct, ὅτι'),
 (1, 'sentential complement'),
 (1, 'particle'),
-(1, 'predicate'),
-(1, 'object of preposition, nominative'),
-(1, 'object of preposition, genitive'),
-(1, 'object of preposition, dative'),
-(1, 'object of preposition, accusative'),
+(1, 'predicate, non-nominal'),
 (1, 'object of preposition'),
 (1, 'modifier of verb, PP'),
 (1, 'modifier of verbless predicate, PP'),
@@ -211,13 +212,18 @@ VALUES
 (1, 'infinitive, something'),
 (1, 'modifier of verb, infinitive'),
 (1, 'modifier of nominal, infinitive'),
-(1, 'subject of infinitive, accusative'),
-(1, 'subject of infinitive, genitive'),
-(1, 'subject of infinitive, nominative'),
 (1, 'subject of infinitive'),
 (1, 'modifier of verb, adverb'),
 (1, 'modifier of verbless predicate, adverb'),
-(1, 'modifier of nominal, adverb'),\
+(1, 'modifier of nominal, adverb'),
 (1, 'modifier of adjective, adverb'),
-(1, 'modifier of other, adverb')
+(1, 'modifier of other, adverb'),
+(1, 'resumptive pronoun'),
+(1, 'direct object, attraction'),
+(1, 'indirect object, attraction'),
+(1, 'subject, attraction'),
+(1, 'subject of infinitive, attraction'),
+(1, 'other, attraction'),
+(1, 'modifier of verb, nominal'),
+(1, 'modifier of verbless predicate, nominal')
 ;
