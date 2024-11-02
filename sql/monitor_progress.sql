@@ -10,10 +10,20 @@ WITH type_dep AS
                        THEN 1
                   WHEN required_types.TypeName = 'NominalType'
                        THEN 0
+                  WHEN required_types.TypeName = 'NounClassType'
+                       AND checked_types.NounClassType IS NOT NULL
+                       THEN 1
+                  WHEN required_types.TypeName = 'NounClassType'
+                       THEN 0
                   WHEN required_types.TypeName = 'CaseType'
                        AND checked_types.CaseType IS NOT NULL
                        THEN 1
                   WHEN required_types.TypeName = 'CaseType'
+                       THEN 0
+                  WHEN required_types.TypeName = 'VerbClassType'
+                       AND checked_types.VerbClassType IS NOT NULL
+                       THEN 1
+                  WHEN required_types.TypeName = 'VerbClassType'
                        THEN 0
              END AS Checked
       FROM gnt.required_types
@@ -31,10 +41,20 @@ WITH type_dep AS
                        THEN 1
                   WHEN required_types.TypeName = 'NominalType'
                        THEN 0
+                  WHEN required_types.TypeName = 'NounClassType'
+                       AND checked_types.NounClassType IS NOT NULL
+                       THEN 1
+                  WHEN required_types.TypeName = 'NounClassType'
+                       THEN 0
                   WHEN required_types.TypeName = 'CaseType'
                        AND checked_types.CaseType IS NOT NULL
                        THEN 1
                   WHEN required_types.TypeName = 'CaseType'
+                       THEN 0
+                  WHEN required_types.TypeName = 'VerbClassType'
+                       AND checked_types.VerbClassType IS NOT NULL
+                       THEN 1
+                  WHEN required_types.TypeName = 'VerbClassType'
                        THEN 0
              END AS Checked
       FROM gnt.required_types

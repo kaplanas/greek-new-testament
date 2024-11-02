@@ -12,15 +12,25 @@ echo "WITH words_to_check AS
                    words_to_check.LastPos,
                    CASE WHEN words_to_check.TypeName = 'NominalType'
                              THEN words.NominalType
+                        WHEN words_to_check.TypeName = 'NounClassType'
+                             THEN words.NounClassType
                         WHEN words_to_check.TypeName = 'CaseType'
                              THEN words.CaseType
+                        WHEN words_to_check.TypeName = 'VerbClassType'
+                             THEN words.VerbClassType
                    END AS NewType,
                    CASE WHEN words_to_check.TypeName = 'NominalType'
                              AND words.NominalType <> checked_types.NominalType
                              THEN checked_types.NominalType
+                        WHEN words_to_check.TypeName = 'NounClassType'
+                             AND words.NounClassType <> checked_types.NounClassType
+                             THEN checked_types.NounClassType
                         WHEN words_to_check.TypeName = 'CaseType'
                              AND words.CaseType <> checked_types.CaseType
                              THEN checked_types.CaseType
+                        WHEN words_to_check.TypeName = 'VerbClassType'
+                             AND words.VerbClassType <> checked_types.VerbClassType
+                             THEN checked_types.VerbClassType
                    END AS OldType,
                    words_to_check.CheckOrder
             FROM words_to_check
@@ -33,9 +43,15 @@ echo "WITH words_to_check AS
             WHERE (words_to_check.TypeName = 'NominalType'
                    AND (checked_types.NominalType IS NULL
                         OR words.NominalType <> checked_types.NominalType))
+                  OR (words_to_check.TypeName = 'NounClassType'
+                      AND (checked_types.NounClassType IS NULL
+                           OR words.NounClassType <> checked_types.NounClassType))
                   OR (words_to_check.TypeName = 'CaseType'
                       AND (checked_types.CaseType IS NULL
-                           OR words.CaseType <> checked_types.CaseType))),
+                           OR words.CaseType <> checked_types.CaseType))
+                  OR (words_to_check.TypeName = 'VerbClassType'
+                      AND (checked_types.VerbClassType IS NULL
+                           OR words.VerbClassType <> checked_types.VerbClassType))),
            shortest_strings AS
            (SELECT relations_to_check.TypeName, strings.SentenceID,
                    relations_to_check.SentencePosition,
@@ -134,12 +150,32 @@ do
     read -u 1 -p "Ok? " type_is_ok
     if [ "$type_is_ok" == "y" ]
     then
-      echo "INSERT INTO gnt.checked_types
-            (SentenceID, SentencePosition, NominalType)
-            VALUES
-            ('$sentence_id', '$sentence_pos', '$new_type')
-            ON DUPLICATE KEY UPDATE
-            checked_types.$type_name = '$new_type';" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null
+      if [ "$type_name" == "NounClassType" ] || [ "$type_name" == "VerbClassType" ]
+      then
+        echo "INSERT INTO gnt.checked_types
+              (SentenceID, SentencePosition, $type_name)
+              SELECT words.SentenceID, words.SentencePosition, '$new_type'
+              FROM gnt.words
+              WHERE (words.Lemma, words.POS) =
+                    (SELECT Lemma, POS
+                     FROM gnt.words
+                     WHERE SentenceID = '$sentence_id'
+                           AND SentencePosition = $sentence_pos)
+                    AND (words.Gender = (SELECT Gender
+                                         FROM gnt.words
+                                         WHERE SentenceID = '$sentence_id'
+                                               AND SentencePosition = $sentence_pos)
+                         OR words.POS <> 'noun')
+              ON DUPLICATE KEY UPDATE
+              checked_types.$type_name = '$new_type'" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null
+      else
+        echo "INSERT INTO gnt.checked_types
+              (SentenceID, SentencePosition, $type_name)
+              VALUES
+              ('$sentence_id', '$sentence_pos', '$new_type')
+              ON DUPLICATE KEY UPDATE
+              checked_types.$type_name = '$new_type';" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null
+      fi
     fi
     echo ""
   fi

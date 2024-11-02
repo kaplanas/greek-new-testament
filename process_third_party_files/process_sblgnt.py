@@ -104,7 +104,7 @@ INFINITIVE_ARGUMENT_HEADS = ['ἀγωνίζομαι', 'αἰτέω', 'ἀναγ�
                              'ἀναπείθω', 'ἀξιόω', 'ἀπαρνέομαι', 'ἀπειλέω', 'ἀποκρίνομαι', 'ἀρνέομαι', 'ἄρχω', 'ἀφίημι',
                              'βοάω', 'βούλομαι', 'γινώσκω', 'δεῖ', 'δείκνυμι', 'δέομαι', 'δέω', 'δηλόω',
                              'διαμαρτύρομαι', 'διατάσσω', 'διδάσκω', 'διϊσχυρίζομαι', 'δοκέω', 'δύναμαι', 'δυνατέω',
-                             'ἐάω', 'ἐγκόπτω', 'εἴωθα', 'ἐκλέγομαι', 'ἐλπίζω', 'ἐνδέχεται', 'ἐνεδρεύω', 'ἐνορκίζω',
+                             'ἐάω', 'ἐγκόπτω', 'εἴωθα', 'ἐκλέγομαι', 'ἐλπίζω', 'ἐνδέχομαι', 'ἐνεδρεύω', 'ἐνορκίζω',
                              'ἐντέλλομαι', 'ἐξαιτέομαι', 'ἐξαπορέομαι', 'ἔξεστι(ν)', 'ἐξισχύω', 'ἐπαγγέλλομαι',
                              'ἐπαισχύνομαι', 'ἐπερωτάω', 'ἐπιδείκνυμι', 'ἐπιζητέω', 'ἐπιθυμέω', 'ἐπικρίνω',
                              'ἐπιλανθάνομαι', 'ἐπιμαρτυρέω', 'ἐπιποθέω', 'ἐπισκέπτομαι', 'ἐπιτάσσω', 'ἐπιτελέω',
@@ -112,18 +112,94 @@ INFINITIVE_ARGUMENT_HEADS = ['ἀγωνίζομαι', 'αἰτέω', 'ἀναγ�
                              'εὔχομαι', 'ἐφοράω', 'ζητέω', 'ἡγέομαι', 'θέλω', 'ἰσχύω', 'καθήκω', 'κατακρίνω',
                              'καταλαμβάνω', 'καταλείπω', 'κατανεύω', 'καταξιόω', 'καταπαύω', 'κατασείω', 'κατισχύω',
                              'κελεύω', 'κηρύσσω', 'κινδυνεύω', 'κρίνω', 'κωλύω', 'λαγχάνω', 'λέγω', 'λογίζομαι',
-                             'μανθάνω', 'μαρτυρέω', 'μέλλω', 'νεύω', 'νοέω', 'νομίζω', 'οἶδα', 'οἶμαι', 'ὀκνέω', 'ὀμνύω',
-                             'ὁμολογέω', 'ὁρίζω', 'ὀφείλω', 'παραγγέλλω', 'παραδίδωμι', 'παραινέω', 'παραιτέομαι',
-                             'παρακαλέω', 'πείθω', 'πειράζω', 'πειράω', 'ποιέω', 'πρέπω', 'προαιτιάομαι', 'προμελετάω',
-                             'προσδοκάω', 'προενάρχομαι', 'προσέχω', 'προσκαλέομαι', 'προστάσσω', 'προστίθημι',
-                             'προτίθεμαι', 'σημαίνω', 'σπουδάζω', 'συμβουλεύω', 'συμφωνέω', 'συνευδοκέω', 'συντίθεμαι',
-                             'τάσσω', 'τολμάω', 'ὑποδείκνυμι', 'ὑποκρίνομαι', 'ὑπονοέω', 'φάσκω', 'φημί', 'φιλέω',
-                             'φιλοτιμέομαι', 'φοβέομαι', 'χαρίζομαι', 'χρηματίζω', 'χρονίζω']
-THIRD_DECLENSION_NOUNS = ['γάλα', 'γόης', 'γυνή', 'ἐπιστάτης', 'Κλήμης']
-IRREGULAR_NOUNS = ['αββα', 'Ἀβιά', 'Ἄλφα', 'Βηθσαϊδά', 'Βηθφαγή', 'Γαββαθα', 'Δαλμανουθά', 'δεῖνα', 'Ζάρα', 'Θάρα',
-                   'Ἰωδά', 'Κανά', 'Καῦδα', 'Μαθουσαλά', 'μάννα', 'μαράνα', 'Ματταθά', 'Μελεά', 'Μεννά', 'Μύρα',
-                   'Ναζαρά', 'πάσχα', 'Πάταρα', 'ῥακά', 'Ῥαμά', 'Ῥησά', 'Σαλά', 'Σαλά', 'Συροφοινίκισσα', 'Ταβιθά',
-                   'ταλιθα']
+                             'μανθάνω', 'μαρτυρέω', 'μέλλω', 'νεύω', 'νοέω', 'νομίζω', 'οἶδα', 'οἶμαι', 'ὀκνέω',
+                             'ὀμνύω', 'ὁμολογέω', 'ὁρίζω', 'ὀφείλω', 'παραγγέλλω', 'παραδίδωμι', 'παραινέω',
+                             'παραιτέομαι', 'παρακαλέω', 'πείθω', 'πειράζω', 'πειράω', 'ποιέω', 'πρέπω', 'προαιτιάομαι',
+                             'προμελετάω', 'προσδοκάω', 'προενάρχομαι', 'προσέχω', 'προσκαλέομαι', 'προστάσσω',
+                             'προστίθημι', 'προτίθεμαι', 'σημαίνω', 'σπουδάζω', 'συμβουλεύω', 'συμφωνέω', 'συνευδοκέω',
+                             'συντίθεμαι', 'τάσσω', 'τολμάω', 'ὑποδείκνυμι', 'ὑποκρίνομαι', 'ὑπονοέω', 'φάσκω', 'φημί',
+                             'φιλέω', 'φιλοτιμέομαι', 'φοβέομαι', 'χαρίζομαι', 'χρηματίζω', 'χρονίζω']
+FIRST_DECLENSION = ['Γολγοθᾶ', 'Κεγχρεαί', 'Κολοσσαί', 'μνᾶ', 'Συράκουσαι']
+FIRST_SECOND_DECLENSION = ['Ἀθῆναι', 'ἀλλήλων', 'ἀμφότεροι', 'διακόσιοι', 'δισχίλιοι', 'ἑαυτοῦ', 'ἐμαυτοῦ',
+                           'ἑπτακισχίλιοι', 'Ἡρῳδιανοί', 'μύριοι', 'πεντακισχίλιοι', 'πεντακόσιοι', 'πορφυροῦς',
+                           'σεαυτοῦ', 'σιδηροῦς', 'τετρακισχίλιοι', 'τετρακόσιοι', 'τετραπλοῦς', 'τριακόσιοι',
+                           'τρισχίλιοι', 'χαλκοῦς', 'χίλιοι', 'χρυσοῦς']
+SECOND_DECLENSION = ['ἀγενεαλόγητος', 'ἄγναφος', 'ἄγνωστος', 'ἀγοραῖος', 'ἀγράμματος', 'ἀδάπανος', 'ἄδηλος',
+                     'ἀδιάκριτος', 'ἀδιάλειπτος', 'ἄδικος', 'ἀδόκιμος', 'ἄδολος', 'ἀδύνατος', 'ἄζυμος', 'ἀθέμιτος',
+                     'ἄθεος', 'ἄθεσμος', 'ἀθῷος', 'ἀΐδιος', 'αἰφνίδιος', 'ἀκάθαρτος', 'ἄκακος', 'ἄκαρπος',
+                     'ἀκατάγνωστος', 'ἀκατακάλυπτος', 'ἀκατάκριτος', 'ἀκατάλυτος', 'ἀκατάπαυστος', 'ἀκατάστατος',
+                     'ἀκέραιος', 'ἄκρατος', 'ἀκρογωνιαῖος', 'ἀλάλητος', 'ἄλαλος', 'ἀλλόφυλος', 'ἄλογος', 'ἀλυπότερος',
+                     'ἀμάραντος', 'ἀμάρτυρος', 'ἁμαρτωλός', 'ἄμαχος', 'ἄμεμπτος', 'ἀμέριμνος', 'ἀμετάθετος',
+                     'ἀμετακίνητος', 'ἀμεταμέλητος', 'ἀμετανόητος', 'ἄμετρος', 'ἀμίαντος', 'ἀμώμητος', 'ἄμωμος',
+                     'ἀναίτιος', 'ἄναλος', 'ἀναμάρτητος', 'ἀναντίρρητος', 'ἀνάξιος', 'ἀνάπηρος', 'ἀναπολόγητος',
+                     'ἀναρίθμητος', 'ἀνδροφόνος', 'ἀνέγκλητος', 'ἀνεκδιήγητος', 'ἀνεκλάλητος', 'ἀνέκλειπτος', 'ἀνέλεος',
+                     'ἀνένδεκτος', 'ἀνεξεραύνητος', 'ἀνεξίκακος', 'ἀνεξιχνίαστος', 'ἀνεπαίσχυντος', 'ἀνεπίλημπτος',
+                     'ἀνεύθετος', 'ἀνήμερος', 'ἀνθρωπάρεσκος', 'ἄνιπτος', 'ἀνόητος', 'ἄνομος', 'ἀνόσιος', 'ἀντίτυπος',
+                     'ἄνυδρος', 'ἀνυπόκριτος', 'ἀνυπότακτος', 'ἀόρατος', 'ἀπαίδευτος', 'ἀπαράβατος', 'ἀπαρασκεύαστος',
+                     'ἀπείραστος', 'ἄπειρος', 'ἀπελεύθερος', 'ἀπέραντος', 'ἀπερίτμητος', 'ἄπιστος', 'ἀπόδεκτος',
+                     'ἀπόδημος', 'ἀπόκρυφος', 'ἀποσυνάγωγος', 'ἀπρόσιτος', 'ἀπρόσκοπος', 'ἄπταιστος', 'ἄραφος', 'ἀργός',
+                     'ἀργυροῦς', 'ἄρρητος', 'ἄρρωστος', 'ἀρτιγέννητος', 'ἀσάλευτος', 'ἄσβεστος', 'ἄσημος', 'ἄσοφος',
+                     'ἄσπιλος', 'ἄσπονδος', 'ἀστήρικτος', 'ἄστοργος', 'ἀσύμφωνος', 'ἀσύνετος', 'ἀσύνθετος', 'ἄτακτος',
+                     'ἄτεκνος', 'ἄτιμος', 'ἄτομος', 'ἄτοπος', 'αὐθαίρετος', 'αὐτοκατάκριτος', 'αὐτόφωρος', 'ἄφαντος',
+                     'ἄφθαρτος', 'ἀφιλάγαθος', 'ἀφιλάργυρος', 'ἄφωνος', 'ἀχάριστος', 'ἀχειροποίητος', 'ἀχρεῖος',
+                     'ἄχρηστος', 'βάρβαρος', 'βαρύτιμος', 'βασίλειος', 'βέβηλος', 'βλαβερός', 'βλάσφημος', 'βλητέος',
+                     'βοηθός', 'βρώσιμος', 'Διάβολος', 'διάβολος', 'διάφορος', 'διθάλασσος', 'δίλογος', 'Διόσκουροι',
+                     'δίστομος', 'δίψυχος', 'δόκιμος', 'δυσβάστακτος', 'δυσερμήνευτος', 'δύσκολος', 'δυσνόητος',
+                     'ἔγγυος', 'ἐγκάθετος', 'ἔγκυος', 'εἰδωλόθυτος', 'εἰρηνοποιός', 'ἔκγονος', 'ἔκδηλος', 'ἔκδικος',
+                     'ἔκδοτος', 'ἔκθετος', 'ἔκφοβος', 'ἔμφοβος', 'ἔμφυτος', 'ἔνδικος', 'ἔνδοξος', 'ἔννομος', 'ἔννυχος',
+                     'ἔνοχος', 'ἔντιμος', 'ἐντόπιος', 'ἔντρομος', 'ἑξακόσιοι', 'ἔξυπνος', 'ἐπάρατος', 'ἐπίγειος',
+                     'ἐπιθανάτιος', 'ἐπικατάρατος', 'ἐπίλοιπος', 'ἐπίορκος', 'ἐπιούσιος', 'ἐπιπόθητος', 'ἐπίσημος',
+                     'ἐπουράνιος', 'ἔρημος', 'ἑτερόγλωσσος', 'εὐάρεστος', 'εὔθετος', 'εὔθυμος', 'εὔκαιρος',
+                     'εὐκοπώτερος', 'εὐμετάδοτος', 'εὐπάρεδρος', 'εὐπερίστατος', 'εὐπρόσδεκτος', 'εὐρύχωρος', 'εὔσημος',
+                     'εὔσπλαγχνος', 'εὔφημος', 'εὐχάριστος', 'εὔχρηστος', 'εὐώνυμος', 'ἐφήμερος', 'ἤρεμος', 'ἡσύχιος',
+                     'θανατηφόρος', 'θεοδίδακτος', 'θεομάχος', 'θεόπνευστος', 'ἱερόθυτος', 'ἱερόσυλος', 'ἰσάγγελος',
+                     'ἰσότιμος', 'ἰσόψυχος', 'κακοῦργος', 'καλοδιδάσκαλος', 'καρποφόρος', 'κατάδηλος', 'κατάλαλος',
+                     'κατάλοιπος', 'καταχθόνιος', 'κατείδωλος', 'κενόδοξος', 'κόσμιος', 'λιθόστρωτος', 'μακροχρόνιος',
+                     'ματαιολόγος', 'μεμψίμοιρος', 'μέτοχος', 'μογιλάλος', 'μονόφθαλμος', 'νεόφυτος', 'νήπιος',
+                     'νηφάλιος', 'οἰκουργός', 'ὀκταήμερος', 'ὀλιγόπιστος', 'ὀλιγόψυχος', 'ὁλόκληρος', 'ὁμότεχνος',
+                     'ὀστράκινος', 'ὄψιμος', 'πανοῦργος', 'παράδοξος', 'παράλιος', 'παράσημος', 'παρείσακτος',
+                     'παρεπίδημος', 'πάροικος', 'πάροινος', 'παρόμοιος', 'πατροπαράδοτος', 'περίεργος', 'περίλυπος',
+                     'περίοικος', 'περιούσιος', 'περίχωρος', 'πολυποίκιλος', 'πολύσπλαγχνος', 'πολύτιμος',
+                     'ποταμοφόρητος', 'Ποτίολοι', 'πρόγονος', 'πρόδηλος', 'πρόδρομος', 'πρόθυμος', 'πρόϊμος',
+                     'πρόσκαιρος', 'πρόσπεινος', 'πρόσφατος', 'πρωϊνός', 'πρωτότοκος', 'σητόβρωτος', 'σκληροτράχηλος',
+                     'σκυθρωπός', 'σκῦλα', 'σκωληκόβρωτος', 'σπερμολόγος', 'σπόριμος', 'στυγητός', 'συνεργός',
+                     'συγκληρονόμος', 'σύζυγος', 'συμμέτοχος', 'σύμμορφος', 'σύμφορος', 'σύμφυτος', 'σύμφωνος',
+                     'σύντροφος', 'σύσσωμος', 'σωτήριος', 'ταλαίπωρος', 'τετράγωνος', 'τετράμηνος', 'τρίμηνος',
+                     'ὕπανδρος', 'ὑπέρακμος', 'ὑπερήφανος', 'ὑπέρογκος', 'ὑπήκοος', 'ὑπόδικος', 'φιλάγαθος',
+                     'φιλάδελφος', 'φίλανδρος', 'φιλάργυρος', 'φίλαυτος', 'φιλήδονος', 'Φίλιπποι', 'φιλόθεος',
+                     'φιλόνεικος', 'φιλόξενος', 'φιλόστοργος', 'φιλότεκνος', 'φλύαρος', 'φρόνιμος', 'φωσφόρος',
+                     'χειροποίητος', 'χρυσοδακτύλιος', 'ψευδολόγος',
+                     'ψευδώνυμος', 'ὠφέλιμος']
+THIRD_DECLENSION_CONSONANT_STEM = ['ἅλας', 'ἄρσην', 'γάλα', 'γέλως', 'γόης', 'Δάμαρις', 'δεκατέσσαρες', 'δισμυριάς',
+                                   'Δορκάς', 'Ἑβραΐς', 'Ἐλαιῶν', 'Ἑλλάς', 'Ἕλλην', 'ἐσθής', 'Ἡρῳδιάς', 'ἱδρώς', 'ἰκμάς',
+                                   'ἱμάς', 'ἶρις', 'Ἰωσῆς', 'Καῖσαρ', 'κέρας', 'Κλήμης', 'Κρής', 'λαμπάς', 'Λιμήν',
+                                   'λιμήν', 'μεγιστάν', 'μέλαν', 'μέλι', 'μήν', 'μυριάς', 'οὖς', 'παῖς', 'πέρας',
+                                   'πετρῶδες', 'πλήρης', 'ποιμήν', 'Πούδης', 'πρεσβῦτις', 'προφῆτις', 'Πτολεμαΐς',
+                                   'πῦρ', 'Σαμαρῖτις', 'σής', 'Σολομῶν', 'σπιλάς', 'στιβάς', 'τέρας', 'τέσσαρες',
+                                   'Τιβεριάς', 'τις', 'Τραχωνῖτις', 'Τρῳάς', 'φρέαρ', 'φρήν', 'φῶς', 'χιλιάς', 'χλαμύς',
+                                   'χρώς', 'ψευδόμαρτυς', 'ὠδίν']
+THIRD_DECLENSION_VOWEL_STEM = ['ἀβαρής', 'ἀγενής', 'αἰδώς', 'αἰσχροκερδής', 'ἀκλινής', 'ἀκρατής', 'ἀκριβής', 'ἀληθής',
+                               'ἀλλογενής', 'ἀλυσιτελής', 'ἀμαθής', 'ἀνωφελής', 'ἀπειθής', 'ἁπλοῦς', 'ἀσεβής',
+                               'ἀσθενής', 'αὐτάρκης', 'ἀσφαλής', 'αὐθάδης', 'ἀφανής', 'ἀψευδής', 'βοῦς', 'γῆρας',
+                               'γραώδης', 'δαιμονιώδης', 'δάκρυον', 'διαυγής', 'διετής', 'διηνεκής', 'διοπετής',
+                               'διπλοῦς', 'ἐγκρατής', 'εἰλικρινής', 'ἑκατονταετής', 'ἐκτενής', 'ἐμφανής', 'ἐνδεής',
+                               'ἐνεργής', 'ἐπιεικής', 'ἐπισφαλής', 'ἐπιφανής', 'εὐγενής', 'εὐλαβής', 'εὐπειθής',
+                               'εὐσεβής', 'ἡμιθανής', 'θειώδης', 'θεοσεβής', 'θεοστυγής', 'ἱεροπρεπής', 'κρέας',
+                               'μεγαλοπρεπής', 'μονογενής', 'ναῦς', 'νοῦς', 'ὁλοτελής', 'ὁμοιοπαθής', 'ὀσφῦς', 'ὀφρῦς',
+                               'παντελής', 'πένης', 'περικρατής', 'πλοῦς', 'πολυτελής', 'πραΰς', 'πρηνής', 'προπετής',
+                               'προσφιλής', 'σίναπι', 'συγγενής', 'συμπαθής', 'ταχύ', 'ταχύς', 'τεσσερακονταετής',
+                               'ὑγιής', 'ὗς', 'χοῦς', 'ψευδής']
+UNDECLINED_NOUNS = ['Ἀαρών', 'Ἀβαδδών', 'αββα', 'Ἀβιά', 'Αἰνών', 'Ἄλφα', 'Ἁρμαγεδών', 'Ἀσήρ', 'Βηθσαϊδά', 'Βόος',
+                    'Γαββαθα', 'Γεδεών', 'Δαλμανουθά', 'δεῖνα', 'Ζαβουλών', 'Ζάρα', 'Θάρα', 'ἵλεως', 'Ἰωδά', 'ἰῶτα',
+                    'Καῦδα', 'Κεδρών', 'Κίς', 'Λευίς', 'Μαθουσαλά', 'Μαναήν', 'μάννα', 'μαράνα', 'Ματταθά', 'Μελεά',
+                    'Μεννά', 'Μύρα', 'Ναασσών', 'Ναζαρά', 'πάσχα', 'Πάταρα', 'ῥακά', 'Ῥαμά', 'Ῥησά', 'Σαλά', 'Σαλμών',
+                    'Σαμψών', 'Σάρεπτα', 'σίκερα', 'Σιών', 'Συμεών', 'Ταβιθά', 'ταλιθα']
+IRREGULAR_NOUNS = ['ἄκων', 'ἀνήρ', 'Ἀντιπᾶς', 'ἅπας', 'Ἀπολλῶς', 'Ἁρέτας', 'ἀρήν', 'Ἀρτεμᾶς', 'ἀρχιποίμην', 'Βαριησοῦς',
+                   'Βαρναβᾶς', 'βορρᾶς', 'γαστήρ', 'γόνυ', 'γυνή', 'Δημᾶς', 'δύο', 'εἷς', 'ἑκών', 'Ἐλύμας', 'Ἐπαφρᾶς',
+                   'Ἑρμᾶς', 'Ζεύς', 'Ζηνᾶς', 'Θευδᾶς', 'θυγάτηρ', 'Ἱεροσόλυμα', 'Ἰωνᾶς', 'Καϊάφας', 'Κλωπᾶς', 'Κώς',
+                   'Λευί', 'Λουκᾶς', 'Μανασσῆς', 'μέγας', 'μέλας', 'μηδείς', 'μήτηρ', 'Μωϋσῆς', 'Νύμφας', 'Ὀλυμπᾶς',
+                   'ὄναρ', 'οὐδείς', 'Παρμενᾶς', 'πᾶς', 'πατήρ', 'ποδήρης', 'πολύς', 'πούς', 'σάββατον', 'Σίλας',
+                   'Σιλᾶς', 'Σκευᾶς', 'Στεφανᾶς', 'Σωσθένης', 'τετράπους', 'Τρεῖς', 'τρεῖς', 'χείρ', 'Χουζᾶς']
 NUMBERS = ['εἷς', 'τρεῖς', 'τέσσαρες', 'διακόσιοι', 'τριακόσιοι', 'τετρακόσιοι', 'πεντακόσιοι', 'ἑξακόσιοι', 'χίλιοι',
            'χιλιάς', 'δισχίλιοι', 'τρισχίλιοι', 'τετρακισχίλιοι', 'πεντακισχίλιοι']
 TITLES = ['ἀνθύπατος', 'βασιλεύς', 'δυνάστης', 'ἡγεμών', 'Καῖσαρ', 'κύριος', 'πατριάρχης', 'προφήτης', 'Χριστός']
@@ -344,56 +420,14 @@ class UncutSentence:
                     else:
                         word_dict[field] = None
 
-                # Set noun class.
-                if word_dict['pos'] in ['noun', 'adj']:
-                    if word_dict['lemma'] in IRREGULAR_NOUNS:
-                        word_dict['noun_class'] = 'irregular'
-                    elif word_dict['lemma'] in THIRD_DECLENSION_NOUNS:
-                        word_dict['noun_class'] = 'third declension'
-                    elif word_dict['lemma'] == 'Ἰησοῦς':
-                        word_dict['noun_class'] = 'Ihsous'
-                    elif word_dict['lemma'].endswith('μα'):
-                        word_dict['noun_class'] = 'third declension'
-                    elif word_dict['lemma'].endswith('ος') and word_dict['gender'] == 'neuter':
-                        word_dict['noun_class'] = 'third declension'
-                    elif word_dict['lemma'].endswith('ος') or word_dict['lemma'].endswith('ός') \
-                            or word_dict['lemma'].endswith('ον') or word_dict['lemma'].endswith('όν'):
-                        if word_dict['pos'] == 'noun':
-                            word_dict['noun_class'] = 'second declension'
-                        elif word_dict['pos'] == 'adj':
-                            word_dict['noun_class'] = 'first/second declension'
-                    elif word_dict['lemma'].endswith('η') or word_dict['lemma'].endswith('ή') or \
-                            word_dict['lemma'].endswith('α') or word_dict['lemma'].endswith('ά'):
-                        if word_dict['pos'] == 'noun':
-                            word_dict['noun_class'] = 'first declension'
-                        elif word_dict['pos'] == 'adj':
-                            word_dict['noun_class'] = 'first/second declension'
-                    elif word_dict['pos'] == 'noun' and word_dict['lemma'].endswith('ης') and \
-                            word_dict['gender'] == 'masculine':
-                        word_dict['noun_class'] = 'second declension with hs'
-                    else:
-                        word_dict['noun_class'] = 'third declension'
-
-                # Set verb class.
-                if word_dict['pos'] == 'verb':
-                    if word_dict['lemma'] == 'εἰμί':
-                        word_dict['verb_class'] = 'eimi'
-                    elif word_dict['lemma'].endswith('έω') or word_dict['lemma'].endswith('έομαι') or \
-                            word_dict['lemma'].endswith('άω') or word_dict['lemma'].endswith('άομαι') or \
-                            word_dict['lemma'].endswith('όω') or word_dict['lemma'].endswith('όομαι'):
-                        word_dict['verb_class'] = 'contract'
-                    elif word_dict['lemma'].endswith('ω') or word_dict['lemma'].endswith('ομαι'):
-                        word_dict['verb_class'] = 'omega'
-                    elif word_dict['lemma'].endswith('μι'):
-                        word_dict['verb_class'] = 'mi'
-                    else:
-                        word_dict['verb_class'] = 'other'
-
                 # Add fields that we'll populate later.
                 word_dict['head'] = None
                 word_dict['deps'] = []
                 word_dict['relation'] = 'unknown'
+                word_dict['noun_class_type'] = None
+                word_dict['verb_class_type'] = None
                 word_dict['nominal_type'] = None
+                word_dict['case_type'] = None
                 if 'role' in node:
                     word_dict['relation'] = node['role']
 
@@ -861,6 +895,9 @@ class Sentence:
                         word['relation'] = 'entitled'
                     elif word['lemma'] in TITLES and bool(re.match(GREEK_CAPITALS, head['lemma'])):
                         word['relation'] = 'title'
+                    elif bool(re.match(GREEK_CAPITALS, word['lemma'])) and \
+                            bool(re.match(GREEK_CAPITALS, head['lemma'])):
+                        word['relation'] = 'name'
                     else:
                         word['relation'] = 'modifier of nominal, nominal'
                 elif word_features['pos'] == 'verb' and word_features['mood'] == 'infinitive' and \
@@ -1012,8 +1049,86 @@ class Sentence:
             else:
                 word['nominal_type'] = 'clause'
 
+            # Get at the noun class type of the word
+            if ('noun' in word['pos'] and word['pos'] not in ['personal pronoun', 'personal pronoun with kai']) or \
+                    word['pos'] == 'adj':
+                if word['lemma'] == 'Ἰησοῦς':
+                    word['noun_class_type'] = 'Ihsous'
+                elif word['lemma'] == 'ὅστις':
+                    word['noun_class_type'] = 'first/second declension, third declension, consonant stem'
+                elif word['lemma'] in FIRST_DECLENSION:
+                    word['noun_class_type'] = 'first declension'
+                elif word['lemma'] in FIRST_SECOND_DECLENSION:
+                    word['noun_class_type'] = 'first/second declension'
+                elif word['lemma'] in SECOND_DECLENSION:
+                    word['noun_class_type'] = 'second declension'
+                elif word['lemma'] in THIRD_DECLENSION_CONSONANT_STEM:
+                    word['noun_class_type'] = 'third declension, consonant stem'
+                elif word['lemma'] in THIRD_DECLENSION_VOWEL_STEM:
+                    word['noun_class_type'] = 'third declension, vowel stem'
+                elif word['lemma'] in UNDECLINED_NOUNS:
+                    word['noun_class_type'] = 'undeclined'
+                elif word['lemma'] in IRREGULAR_NOUNS:
+                    word['noun_class_type'] = 'irregular'
+                elif word['lemma'].endswith('μα'):
+                    word['noun_class_type'] = 'third declension, consonant stem'
+                elif word['lemma'].endswith('ος') and word['gender'] == 'neuter' and \
+                        word['pos'] == 'noun' and word['lemma'] != 'ζῆλος':
+                    word['noun_class_type'] = 'third declension, vowel stem'
+                elif word['lemma'].endswith('ος') or word['lemma'].endswith('ός') \
+                        or word['lemma'].endswith('ον') or word['lemma'].endswith('όν') or word['lemma'] == 'ὅς':
+                    if word['pos'] == 'noun':
+                        word['noun_class_type'] = 'second declension'
+                    elif word['pos'] == 'adj' or 'pronoun' in word['pos']:
+                        word['noun_class_type'] = 'first/second declension'
+                elif word['lemma'].endswith('η') or word['lemma'].endswith('ή') or \
+                        word['lemma'].endswith('α') or word['lemma'].endswith('ά') or \
+                        word['lemma'].endswith('ῆ'):
+                    if word['pos'] == 'noun':
+                        word['noun_class_type'] = 'first declension'
+                    elif word['pos'] == 'adj':
+                        word['noun_class_type'] = 'first/second declension'
+                elif word['pos'] == 'noun' and word['gender'] == 'masculine' and \
+                        (word['lemma'].endswith('ης') or word['lemma'].endswith('ής') or
+                         word['lemma'].endswith('ίας')) or word['lemma'].endswith('ας') or \
+                        word['lemma'].endswith('ῆς') or word['lemma'].endswith('ᾶς'):
+                    word['noun_class_type'] = 'second declension with hs'
+                elif word['lemma'].endswith('ος') or word['lemma'].endswith('εύς') or \
+                        word['lemma'].endswith('υς') or word['lemma'].endswith('ύς') or \
+                        word['lemma'].endswith('ις'):
+                    word['noun_class_type'] = 'third declension, vowel stem'
+                elif word['lemma'].endswith('της') or word['lemma'].endswith('ών') or \
+                        word['lemma'].endswith('ήρ') or word['lemma'].endswith('ψ') or \
+                        word['lemma'].endswith('ίς') or word['lemma'].endswith('ωρ') or \
+                        word['lemma'].endswith('ξ') or word['lemma'].endswith('ων'):
+                    word['noun_class_type'] = 'third declension, consonant stem'
+                else:
+                    word['noun_class_type'] = 'undeclined'
+
             # Guess at the case type of the word.
             word['case_type'] = word_features['case']
+
+            # Guess at the verb class type of the word.
+            if word['pos'] == 'verb':
+                if word['lemma'] in ['εἴσειμι', 'ἔξειμι']:
+                    word['verb_class_type'] = 'mi'
+                elif word['lemma'] in ['εἰμί', 'ἔξεστι(ν)'] or word['lemma'].endswith('ειμι'):
+                    word['verb_class_type'] = 'eimi'
+                elif word['lemma'] in ['οἶδα', 'σύνοιδα']:
+                    word['verb_class_type'] = 'oida'
+                elif word['lemma'].endswith('έω') or word['lemma'].endswith('έομαι') or word['lemma'] == 'δεῖ':
+                    word['verb_class_type'] = 'contract, ew'
+                elif word['lemma'].endswith('άω') or word['lemma'].endswith('άομαι'):
+                    word['verb_class_type'] = 'contract, aw'
+                elif word['lemma'].endswith('όω') or word['lemma'].endswith('όομαι'):
+                    word['verb_class_type'] = 'contract, ow'
+                elif word['lemma'].endswith('ω') or word['lemma'].endswith('ομαι') or \
+                        word['lemma'] in ['μέλει', 'εἴωθα', 'ἀπεῖπον' 'ἔοικα', 'ἄγε']:
+                    word['verb_class_type'] = 'omega'
+                elif word['lemma'].endswith('μι') or word['lemma'].endswith('μί') or word['lemma'].endswith('μαι'):
+                    word['verb_class_type'] = 'mi'
+                else:
+                    word['verb_class_type'] = 'other'
 
         # Hand-entered edits to syntactic relations.
         for relation_type, relation_edits_df in RELATION_EDITS.items():
@@ -1275,14 +1390,15 @@ class Sentence:
             cur.executemany(sql, [(w['book'], w['chapter'], w['verse'], w['position']) for w in self.words])
             sql = """INSERT INTO words
                      (Book, Chapter, Verse, VersePosition, SentenceID, SentencePosition, Lemma, Wordform, POS, Gender,
-                      Number, NCase, Person, Tense, Voice, Mood, Degree, NounClass, VerbClass, NominalType, CaseType)
+                      Number, NCase, Person, Tense, Voice, Mood, Degree, NominalType, NounClassType, CaseType,
+                      VerbClassType)
                      VALUES
                      (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
             cur.executemany(sql,
                             [(w['book'], w['chapter'], w['verse'], w['position'], self.sentence_id, j, w['lemma'],
                               w['wordform'], w['pos'], w['gender'], w['number'], w['case'], w['person'], w['tense'],
-                              w['voice'], w['mood'], w['degree'], w['noun_class'], w['verb_class'], w['nominal_type'],
-                              w['case_type'])
+                              w['voice'], w['mood'], w['degree'], w['nominal_type'], w['noun_class_type'],
+                              w['case_type'], w['verb_class_type'])
                              for j, w in enumerate(self.words)])
 
             # Commit changes.

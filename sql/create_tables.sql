@@ -16,10 +16,10 @@ CREATE TABLE words (
   Voice varchar(20),
   Mood varchar(20),
   Degree varchar(20),
-  NounClass varchar(50),
-  VerbClass varchar(20),
   NominalType varchar(100),
+  NounClassType varchar(100),
   CaseType varchar(100),
+  VerbClassType varchar(100),
   PRIMARY KEY(Book, Chapter, Verse, VersePosition),
   INDEX words_sentence_id_position (SentenceID, SentencePosition)
 );
@@ -61,7 +61,9 @@ CREATE TABLE checked_types (
   SentenceID varchar(50) NOT NULL,
   SentencePosition integer NOT NULL,
   NominalType varchar(100),
-  CaseType varchar(100)
+  NounClassType varchar(100),
+  CaseType varchar(100),
+  VerbClassType varchar(100)
 );
 
 CREATE TABLE students (
@@ -79,7 +81,7 @@ INSERT INTO students
 CREATE TABLE students_words (
   StudentID integer,
   Feature varchar(50),
-  FeatureValue varchar(50),
+  FeatureValue varchar(100),
   Required boolean NOT NULL DEFAULT false,
   PRIMARY KEY(StudentID, Feature, FeatureValue)
 );
@@ -91,22 +93,24 @@ VALUES
 (1, 'NominalType', 'pronoun'),
 (1, 'POS', 'noun'),
 (1, 'NominalType', 'noun'),
-(1, 'NounClass', 'second declension'),
-(1, 'NounClass', 'Ihsous'),
+(1, 'NounClassType', 'second declension'),
+(1, 'NounClassType', 'Ihsous'),
 (1, 'TenseMood', 'present-indicative'),
 (1, 'Voice', 'active'),
-(1, 'VerbClass', 'omega'),
-(1, 'VerbClass', 'eimi'),
-(1, 'NounClass', 'first declension'),
+(1, 'VerbClassType', 'omega'),
+(1, 'VerbClassType', 'eimi'),
+(1, 'NounClassType', 'first declension'),
 (1, 'POS', 'conj'),
 (1, 'POS', 'personal pronoun with kai'),
 (1, 'POS', 'negation'),
-(1, 'VerbClass', 'contract'),
-(1, 'NounClass', 'second declension with hs'),
+(1, 'VerbClass', 'contract, ew'),
+(1, 'VerbClass', 'contract, aw'),
+(1, 'VerbClass', 'contract, ow'),
+(1, 'NounClassType', 'second declension with hs'),
 (1, 'POS', 'det'),
 (1, 'POS', 'adj'),
 (1, 'NominalType', 'adjective'),
-(1, 'NounClass', 'first/second declension'),
+(1, 'NounClassType', 'first/second declension'),
 (1, 'TenseMood', 'imperfect-indicative'),
 (1, 'POS', 'ptcl'),
 (1, 'POS', 'prep'),
@@ -121,7 +125,14 @@ VALUES
 (1, 'POS', 'indefinite adverb'),
 (1, 'Voice', 'middle'),
 (1, 'POS', 'relative pronoun'),
-(1, 'NominalType', 'relative clause')
+(1, 'NominalType', 'relative clause'),
+(1, 'NounClassType', 'third declension, consonant stem'),
+(1, 'NounClassType', 'third declension, vowel stem'),
+(1, 'NounClassType', 'first/second declension, third declension, consonant stem'),
+(1, 'NounClassType', 'irregular'),
+(1, 'NounClassType', 'undeclined'),
+(1, 'POS', 'indefinite pronoun'),
+(1, 'POS', 'interrogative pronoun'),
 ;
 
 CREATE TABLE students_relations (
@@ -225,5 +236,8 @@ VALUES
 (1, 'subject of infinitive, attraction'),
 (1, 'other, attraction'),
 (1, 'modifier of verb, nominal'),
-(1, 'modifier of verbless predicate, nominal')
+(1, 'modifier of verbless predicate, nominal'),
+(1, 'title'),
+(1, 'entitled'),
+(1, 'name')
 ;

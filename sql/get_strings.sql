@@ -16,6 +16,16 @@ WITH expanded_nominal_types AS
              END AS ActualNominalType,
              nominal_types.FeatureValue AS NominalTypeFeatureValue,
              nominal_types.Required AS NominalTypeRequired,
+             CASE WHEN required_noun_class_types.SentenceID IS NOT NULL
+                       THEN words.NounClassType
+             end as ActualNounClassType,
+             noun_class_types.FeatureValue AS NounClassTypeFeatureValue,
+             noun_class_types.Required AS NounClassTypeRequired,
+             CASE WHEN required_verb_class_types.SentenceID IS NOT NULL
+                       THEN words.VerbClassType
+             end as ActualVerbClassType,
+             verb_class_types.FeatureValue AS VerbClassTypeFeatureValue,
+             verb_class_types.Required AS VerbClassTypeRequired,
              other_pos.FeatureValue AS OtherPOSFeatureValue,
              other_pos.Required AS OtherPOSRequired,
              nouns.FeatureValue AS NounFeatureValue,
@@ -41,6 +51,26 @@ WITH expanded_nominal_types AS
                       WHERE StudentID = 1
                             AND Feature = 'NominalType') nominal_types
            ON expanded_nominal_types.NominalType = nominal_types.FeatureValue
+           LEFT JOIN (SELECT DISTINCT SentenceID, SentencePosition
+                      FROM required_types
+                      WHERE TypeName = 'NounClassType') required_noun_class_types
+           ON words.SentenceID = required_noun_class_types.SentenceID
+              AND words.SentencePosition = required_noun_class_types.SentencePosition
+           LEFT JOIN (SELECT FeatureValue, Required
+                      FROM students_words
+                      WHERE StudentID = 1
+                            AND Feature = 'NounClassType') noun_class_types
+           ON words.NounClassType = noun_class_types.FeatureValue
+           LEFT JOIN (SELECT DISTINCT SentenceID, SentencePosition
+                      FROM required_types
+                      WHERE TypeName = 'VerbClassType') required_verb_class_types
+           ON words.SentenceID = required_verb_class_types.SentenceID
+              AND words.SentencePosition = required_verb_class_types.SentencePosition
+           LEFT JOIN (SELECT FeatureValue, Required
+                      FROM students_words
+                      WHERE StudentID = 1
+                            AND Feature = 'VerbClassType') verb_class_types
+           ON words.VerbClassType = verb_class_types.FeatureValue
            LEFT JOIN (SELECT FeatureValue, Required
                       FROM students_words
                       WHERE StudentID = 1
@@ -76,6 +106,10 @@ WITH expanded_nominal_types AS
       FROM word_status
       WHERE ((ActualNominalType IS NOT NULL
               AND NominalTypeFeatureValue IS NULL)
+             OR ((ActualNounClassType IS NOT NULL
+                  AND NounClassTypeFeatureValue IS NULL))
+             OR ((ActualVerbClassType IS NOT NULL
+                  AND VerbClassTypeFeatureValue IS NULL))
              OR OtherPOSFeatureValue IS NULL
              OR (OtherPOSFeatureValue IN ('noun', 'adj')
                  AND NounFeatureValue IS NULL)
