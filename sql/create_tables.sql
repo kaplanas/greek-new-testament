@@ -135,7 +135,8 @@ VALUES
 (1, 'POS', 'indefinite pronoun'),
 (1, 'POS', 'interrogative pronoun'),
 (1, 'TenseMood', 'aorist-indicative'),
-(1, 'TenseMood', 'aorist-infinitive')
+(1, 'TenseMood', 'aorist-infinitive'),
+(1, 'VerbClassType', 'mi')
 ;
 
 CREATE TABLE students_relations (
