@@ -30,7 +30,7 @@ GENDER_EDITS = pd.read_csv(SBL_DIR + '/gender_edits.csv',
 POS_EDITS = pd.read_csv(SBL_DIR + '/pos_edits.csv', dtype=str)
 LEMMA_EDITS = pd.read_csv(SBL_DIR + '/lemma_edits.csv', dtype=str)
 AUTOS_FORMS = ['αὐτά', 'αὐταῖς', 'αὐτάς', 'αὐτὰς', 'αὐτῇ', 'αὐτήν', 'αὐτὴν', 'αὐτῆς', 'αὐτὸ', 'αὐτοὶ', 'αὐτοῖς',
-               'αὐτόν', 'αὐτὸς', 'αὐτοῦ', 'αὐτούς', 'αὐτοὺς', 'αὐτῷ', 'αὐτῶν']
+               'αὐτόν', 'αὐτὸν', 'αὐτὸς', 'αὐτοῦ', 'αὐτούς', 'αὐτοὺς', 'αὐτῷ', 'αὐτῶν']
 INDIVIDUAL_POS_EDITS = pd.read_csv(SBL_DIR + '/individual_pos_edits.csv',
                                    dtype=defaultdict(lambda: str,
                                                      {'chapter': np.float64, 'verse': np.float64,
@@ -1055,7 +1055,7 @@ class Sentence:
                 if word['lemma'] == 'Ἰησοῦς':
                     word['noun_class_type'] = 'Ihsous'
                 elif word['lemma'] == 'ὅστις':
-                    word['noun_class_type'] = 'first/second declension, third declension, consonant stem'
+                    word['noun_class_type'] = 'first/second declension; third declension, consonant stem'
                 elif word['lemma'] in FIRST_DECLENSION:
                     word['noun_class_type'] = 'first declension'
                 elif word['lemma'] in FIRST_SECOND_DECLENSION:
@@ -1123,7 +1123,7 @@ class Sentence:
                 elif word['lemma'].endswith('όω') or word['lemma'].endswith('όομαι'):
                     word['verb_class_type'] = 'contract, ow'
                 elif word['lemma'].endswith('ω') or word['lemma'].endswith('ομαι') or \
-                        word['lemma'] in ['μέλει', 'εἴωθα', 'ἀπεῖπον' 'ἔοικα', 'ἄγε']:
+                        word['lemma'] in ['μέλει', 'εἴωθα', 'ἀπεῖπον', 'ἔοικα', 'ἄγε']:
                     word['verb_class_type'] = 'omega'
                 elif word['lemma'].endswith('μι') or word['lemma'].endswith('μί') or word['lemma'].endswith('μαι'):
                     word['verb_class_type'] = 'mi'

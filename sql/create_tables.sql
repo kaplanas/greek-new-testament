@@ -89,6 +89,7 @@ CREATE TABLE students_words (
 INSERT INTO students_words
 (StudentID, Feature, FeatureValue)
 VALUES
+(1, 'POS', 'verb'),
 (1, 'POS', 'personal pronoun'),
 (1, 'NominalType', 'pronoun'),
 (1, 'POS', 'noun'),
@@ -128,11 +129,13 @@ VALUES
 (1, 'NominalType', 'relative clause'),
 (1, 'NounClassType', 'third declension, consonant stem'),
 (1, 'NounClassType', 'third declension, vowel stem'),
-(1, 'NounClassType', 'first/second declension, third declension, consonant stem'),
+(1, 'NounClassType', 'first/second declension; third declension, consonant stem'),
 (1, 'NounClassType', 'irregular'),
 (1, 'NounClassType', 'undeclined'),
 (1, 'POS', 'indefinite pronoun'),
 (1, 'POS', 'interrogative pronoun'),
+(1, 'TenseMood', 'aorist-indicative'),
+(1, 'TenseMood', 'aorist-infinitive')
 ;
 
 CREATE TABLE students_relations (

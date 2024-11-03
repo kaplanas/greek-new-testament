@@ -1,6 +1,7 @@
 CREATE OR REPLACE VIEW study_strings AS
 WITH expanded_nominal_types AS
-     (SELECT unique_nominal_types.NominalType AS WordNominalType, all_nominal_types.NominalType
+     (SELECT unique_nominal_types.NominalType AS WordNominalType,
+             all_nominal_types.NominalType
       FROM (SELECT DISTINCT NominalType
             FROM words
             WHERE NominalType IS NOT NULL) unique_nominal_types
@@ -9,6 +10,17 @@ WITH expanded_nominal_types AS
                  WHERE NominalType NOT LIKE '%,%') all_nominal_types
            ON REGEXP_LIKE(unique_nominal_types.NominalType,
                           CONCAT('(^|, )', all_nominal_types.NominalType, '($|,)'))),
+     expanded_noun_class_types AS
+     (SELECT unique_noun_class_types.NounClassType AS WordNounClassType,
+             all_noun_class_types.NounClassType
+      FROM (SELECT DISTINCT NounClassType
+            FROM words
+            WHERE NounClassType IS NOT NULL) unique_noun_class_types
+           JOIN (SELECT DISTINCT NounClassType
+                 FROM words
+                 WHERE NounClassType NOT LIKE '%;%') all_noun_class_types
+           ON REGEXP_LIKE(unique_noun_class_types.NounClassType,
+                          CONCAT('(^|; )', all_noun_class_types.NounClassType, '($|;)'))),
      word_status AS
      (SELECT words.SentenceID, words.SentencePosition, POS,
              CASE WHEN required_nominal_types.SentenceID IS NOT NULL
@@ -28,16 +40,12 @@ WITH expanded_nominal_types AS
              verb_class_types.Required AS VerbClassTypeRequired,
              other_pos.FeatureValue AS OtherPOSFeatureValue,
              other_pos.Required AS OtherPOSRequired,
-             nouns.FeatureValue AS NounFeatureValue,
-             nouns.Required AS NounRequired, words.Degree,
-             adjectives.FeatureValue AS AdjectiveFeatureValue,
+             words.Degree, adjectives.FeatureValue AS AdjectiveFeatureValue,
              adjectives.Required AS AdjectiveRequired,
              tense_mood.FeatureValue AS TenseMoodFeatureValue,
              tense_mood.Required AS TenseMoodRequired,
              voice.FeatureValue AS VoiceFeatureValue,
-             voice.Required AS VoiceRequired,
-             verb_class.FeatureValue AS VerbClassFeatureValue,
-             verb_class.Required AS VerbClassRequired
+             voice.Required AS VoiceRequired
       FROM words
            LEFT JOIN (SELECT DISTINCT SentenceID, SentencePosition
                       FROM required_types
@@ -56,11 +64,13 @@ WITH expanded_nominal_types AS
                       WHERE TypeName = 'NounClassType') required_noun_class_types
            ON words.SentenceID = required_noun_class_types.SentenceID
               AND words.SentencePosition = required_noun_class_types.SentencePosition
+           LEFT JOIN expanded_noun_class_types
+           ON words.NounClassType = expanded_noun_class_types.WordNounClassType
            LEFT JOIN (SELECT FeatureValue, Required
                       FROM students_words
                       WHERE StudentID = 1
                             AND Feature = 'NounClassType') noun_class_types
-           ON words.NounClassType = noun_class_types.FeatureValue
+           ON expanded_noun_class_types.NounClassType = noun_class_types.FeatureValue
            LEFT JOIN (SELECT DISTINCT SentenceID, SentencePosition
                       FROM required_types
                       WHERE TypeName = 'VerbClassType') required_verb_class_types
@@ -79,11 +89,6 @@ WITH expanded_nominal_types AS
            LEFT JOIN (SELECT FeatureValue, Required
                       FROM students_words
                       WHERE StudentID = 1
-                            AND Feature = 'NounClass') nouns
-           ON words.NounClass = nouns.FeatureValue
-           LEFT JOIN (SELECT FeatureValue, Required
-                      FROM students_words
-                      WHERE StudentID = 1
                             AND Feature = 'Degree') adjectives
            ON words.Degree = adjectives.FeatureValue
            LEFT JOIN (SELECT FeatureValue, Required
@@ -95,31 +100,23 @@ WITH expanded_nominal_types AS
                       FROM students_words
                       WHERE StudentID = 1
                             AND Feature = 'Voice') voice
-           ON words.Voice = voice.FeatureValue
-           LEFT JOIN (SELECT FeatureValue, Required
-                      FROM students_words
-                      WHERE StudentID = 1
-                            AND Feature = 'VerbClass') verb_class
-           ON words.VerbClass = verb_class.FeatureValue),
+           ON words.Voice = voice.FeatureValue),
      forbidden_words AS
      (SELECT DISTINCT SentenceID, SentencePosition
       FROM word_status
-      WHERE ((ActualNominalType IS NOT NULL
-              AND NominalTypeFeatureValue IS NULL)
-             OR ((ActualNounClassType IS NOT NULL
-                  AND NounClassTypeFeatureValue IS NULL))
-             OR ((ActualVerbClassType IS NOT NULL
-                  AND VerbClassTypeFeatureValue IS NULL))
-             OR OtherPOSFeatureValue IS NULL
-             OR (OtherPOSFeatureValue IN ('noun', 'adj')
-                 AND NounFeatureValue IS NULL)
-             OR (OtherPOSFeatureValue = 'adj'
-                 AND Degree IS NOT NULL
-                 AND AdjectiveFeatureValue IS NULL))
-            AND (POS <> 'verb' OR
-                 TenseMoodFeatureValue IS NULL
-                 OR VoiceFeatureValue IS NULL
-                 OR VerbClassFeatureValue IS NULL)),
+      WHERE (ActualNominalType IS NOT NULL
+             AND NominalTypeFeatureValue IS NULL)
+            OR ((ActualNounClassType IS NOT NULL
+                 AND NounClassTypeFeatureValue IS NULL))
+            OR ((ActualVerbClassType IS NOT NULL
+                 AND VerbClassTypeFeatureValue IS NULL))
+            OR OtherPOSFeatureValue IS NULL
+            OR (OtherPOSFeatureValue = 'adj'
+                AND Degree IS NOT NULL
+                AND AdjectiveFeatureValue IS NULL)
+            OR (POS = 'verb' AND
+                (TenseMoodFeatureValue IS NULL
+                 OR VoiceFeatureValue IS NULL))),
      allowed_words AS
      (SELECT words.SentenceID, words.SentencePosition
       FROM words
@@ -131,11 +128,11 @@ WITH expanded_nominal_types AS
      (SELECT DISTINCT SentenceID, SentencePosition
       FROM word_status
       WHERE NominalTypeRequired
+            OR NounClassTypeRequired
+            OR VerbClassTypeRequired
             OR OtherPOSRequired
-            OR NounRequired
             OR TenseMoodRequired
-            OR VoiceRequired
-            OR VerbClassRequired),
+            OR VoiceRequired),
      strings_filtered_by_words AS
      (SELECT DISTINCT strings.SentenceID, Start, Stop, Citation, String
       FROM strings
