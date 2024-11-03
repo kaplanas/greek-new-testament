@@ -217,7 +217,9 @@ Matt,13,19,8,negation of verb
 Matt,13,20,14,"modifier of verb, nominal"
 Matt,13,23,21,appositive
 Matt,13,23,24,gap
+Matt,13,23,26,"conjunct, μέν δέ"
 Matt,13,23,27,gap
+Matt,13,23,29,"conjunct, chain"
 Matt,13,41,17,conjunct
 Matt,13,43,7,"conjunct, ὡς, clause"
 Matt,13,44,24,"modifier of nominal, nominal"
@@ -606,6 +608,7 @@ Mark,5,33,9,direct object
 Mark,5,37,17,appositive
 Mark,5,38,11,direct object
 Mark,6,2,15,"modifier of verbless predicate, adverb"
+Mark,6,7,10,"conjunct, chain"
 Mark,6,8,12,"modifier of nominal, nominal"
 Mark,6,8,16,"conjunct, chain"
 Mark,6,8,21,"conjunct, chain"
@@ -1092,6 +1095,7 @@ Luke,9,52,14,"conjunct, ὡς, non-clause"
 Luke,9,54,17,infinitive argument of verb
 Luke,9,58,12,gap
 Luke,9,61,3,"modifier of nominal, adverb"
+Luke,10,1,16,"conjunct, chain"
 Luke,10,2,8,sentential complement
 Luke,10,2,12,"conjunct, μέν δέ"
 Luke,10,3,3,"conjunct, main"

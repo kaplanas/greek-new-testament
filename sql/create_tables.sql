@@ -136,7 +136,8 @@ VALUES
 (1, 'POS', 'interrogative pronoun'),
 (1, 'TenseMood', 'aorist-indicative'),
 (1, 'TenseMood', 'aorist-infinitive'),
-(1, 'VerbClassType', 'mi')
+(1, 'VerbClassType', 'mi'),
+(1, 'POS', 'number')
 ;
 
 CREATE TABLE students_relations (
@@ -243,5 +244,6 @@ VALUES
 (1, 'modifier of verbless predicate, nominal'),
 (1, 'title'),
 (1, 'entitled'),
-(1, 'name')
+(1, 'name'),
+(1, 'number')
 ;
