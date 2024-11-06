@@ -31,6 +31,12 @@ echo "WITH multiple_subjects AS
                        'φορτίζω', 'χρίω', 'ὠφελέω')
             GROUP BY relations.SentenceID, relations.HeadPos
             HAVING COUNT(*) > 1),
+           multiple_indirect_objects AS
+           (SELECT relations.SentenceID, relations.HeadPos
+            FROM gnt.relations
+            WHERE relations.Relation = 'indirect object'
+            GROUP BY relations.SentenceID, relations.HeadPos
+            HAVING COUNT(*) > 1),
            multiple_objects_of_prep AS
            (SELECT SentenceID, HeadPos
             FROM gnt.relations
@@ -59,6 +65,14 @@ echo "WITH multiple_subjects AS
                   (SELECT SentenceID, HeadPos
                    FROM multiple_objects)
                   AND Relation = 'direct object'
+            UNION
+            SELECT SentenceID, HeadPos, DependentPos, FirstPos, LastPos,
+                   Relation
+            FROM gnt.relations
+            WHERE (SentenceID, HeadPos) IN
+                  (SELECT SentenceID, HeadPos
+                   FROM multiple_indirect_objects)
+                  AND Relation = 'indirect object'
             UNION
             SELECT SentenceID, HeadPos, DependentPos, FirstPos, LastPos,
                    Relation

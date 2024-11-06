@@ -187,14 +187,17 @@ WITH expanded_nominal_types AS
               AND LastPos <= Stop
       WHERE required_relations.SentenceID IS NOT NULL
             OR (SELECT COUNT(*) FROM required_relations) = 0),
-     longest_strings_left AS
-     (SELECT SentenceID, Start, MAX(Stop) AS LastStop
+     longest_strings AS
+     (SELECT filtered_strings.SentenceID, filtered_strings.Start,
+             filtered_strings.Stop
       FROM filtered_strings
-      GROUP BY SentenceID, Start),
-     longest_strings_right AS
-     (SELECT SentenceID, MIN(Start) AS FirstStart, Stop
-      FROM filtered_strings
-      GROUP BY SentenceID, Stop),
+           LEFT JOIN filtered_strings super_strings
+           ON filtered_strings.SentenceID = super_strings.SentenceID
+              AND filtered_strings.Start >= super_strings.Start
+              AND filtered_strings.Stop <= super_strings.Stop
+              AND NOT (filtered_strings.Start = super_strings.Start
+                       AND filtered_strings.Stop = super_strings.Stop)
+      WHERE super_strings.SentenceID IS NULL),
      book_chapter_verse AS
      (SELECT SentenceID,
              CASE WHEN MIN(Book) = 'Matt' THEN 1
@@ -232,14 +235,10 @@ WITH expanded_nominal_types AS
 SELECT Citation, String
 FROM (SELECT DISTINCT filtered_strings.SentenceID, Citation, String
       FROM filtered_strings
-           JOIN longest_strings_left
-           ON filtered_strings.SentenceID = longest_strings_left.SentenceID
-              AND filtered_strings.Start = longest_strings_left.Start
-              AND filtered_strings.Stop = longest_strings_left.LastStop
-           JOIN longest_strings_right
-           ON filtered_strings.SentenceID = longest_strings_right.SentenceID
-              AND filtered_strings.Start = longest_strings_right.FirstStart
-              AND filtered_strings.Stop = longest_strings_right.Stop) final_strings
+           JOIN longest_strings
+           ON filtered_strings.SentenceID = longest_strings.SentenceID
+              AND filtered_strings.Start = longest_strings.Start
+              AND filtered_strings.Stop = longest_strings.Stop) final_strings
      JOIN book_chapter_verse
      ON final_strings.SentenceID = book_chapter_verse.SentenceID
 ORDER BY book_chapter_verse.Book, book_chapter_verse.FirstChapter,

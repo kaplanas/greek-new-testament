@@ -865,7 +865,7 @@ class Sentence:
                                                      'personal pronoun', 'indefinite pronoun']:
                         word['relation'] = 'modifier of nominal, PP'
                     elif word_head_features['degree'] == 'comparative':
-                        word['relation'] = 'comparative'
+                        word['relation'] = 'comparison'
                     elif word_head_features['pos'] == 'adj':
                         word['relation'] = 'modifier of adjective, PP'
                     elif word_head_features['pos'] in ['verb', 'conj']:
@@ -874,7 +874,7 @@ class Sentence:
                         word['relation'] = 'modifier of other, PP'
                 elif word_features['mood'] == 'participle' and word['relation'] == 'adv' and \
                         word_head_features['pos'] == 'verb':
-                    word['relation'] = 'modifier of verb, participle, ' + word_features['case']
+                    word['relation'] = 'modifier of verb, participle'
                 elif (word_features['case'] is not None or word_head_features['case'] is not None) \
                         and (word_features['case'] == word_head_features['case']
                              or word_features['case'] is None or word_head_features['case'] is None) \
@@ -914,7 +914,7 @@ class Sentence:
                         word['relation'] = 'genitive, time'
                     elif word_head_features['pos'] == 'verb':
                         if word_features['mood'] == 'participle':
-                            word['relation'] = 'modifier of verb, participle, genitive'
+                            word['relation'] = 'modifier of verb, participle'
                         else:
                             word['relation'] = 'direct object'
                     elif word_head_features['pos'] == 'adj' and word_head_features['degree'] == 'comparative':
@@ -976,10 +976,7 @@ class Sentence:
                                          'ὑπακούω', 'ὑπαντάω']:
                         word['relation'] = 'direct object'
                     elif word_head_features['pos'] == 'verb':
-                        if word_features['mood'] == 'participle':
-                            word['relation'] = 'modifier of verb, participle, dative'
-                        else:
-                            word['relation'] = 'indirect object'
+                        word['relation'] = 'indirect object'
                     elif word_head_features['pos'] == 'adj':
                         word['relation'] = 'argument of adjective, nominal'
                     else:

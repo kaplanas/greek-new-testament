@@ -68,7 +68,8 @@ WITH nominal_types_dep AS
             OR Relation = 'predicate, nominal'
             OR Relation = 'argument of adjective, nominal'
             OR Relation = 'object of preposition'
-            OR Relation = 'resumptive pronoun'),
+            OR Relation = 'resumptive pronoun'
+            OR Relation = 'modifier of verb, participle'),
      case_types_head AS
      (SELECT 'CaseType' AS TypeName, 'head' AS HeadOrDep, SentenceID,
              HeadPos AS SentencePosition, DependentPos AS OtherPosition,

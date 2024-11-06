@@ -137,7 +137,11 @@ VALUES
 (1, 'TenseMood', 'aorist-indicative'),
 (1, 'TenseMood', 'aorist-infinitive'),
 (1, 'VerbClassType', 'mi'),
-(1, 'POS', 'number')
+(1, 'POS', 'number'),
+(1, 'TenseMood', 'present-participle'),
+(1, 'TenseMood', 'future-participle'),
+(1, 'TenseMood', 'aorist-participle'),
+(1, 'NominalType', 'participle')
 ;
 
 CREATE TABLE students_relations (
@@ -245,5 +249,8 @@ VALUES
 (1, 'title'),
 (1, 'entitled'),
 (1, 'name'),
-(1, 'number')
+(1, 'number'),
+(1, 'modifier of verb, participle'),
+(1, 'modifier of other, participle'),
+(1, 'subject of participle')
 ;

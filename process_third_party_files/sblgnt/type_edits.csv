@@ -90,6 +90,7 @@ Matt,27,51,9,,genitive
 Matt,27,51,13,,accusative
 Matt,27,54,4,"noun, participle",
 Matt,27,55,7,,genitive
+Mark,1,22,14,,nominative
 Mark,1,36,5,"noun, headless",
 Mark,2,19,18,,dative
 Mark,2,15,12,"noun, adjective",
@@ -158,6 +159,7 @@ Luke,2,48,21,"noun, pronoun",
 Luke,2,49,15,,dative
 Luke,3,17,4,relative clause,
 Luke,3,19,20,,genitive
+Luke,3,21,9,,genitive
 Luke,3,22,1,infinitive,
 Luke,4,18,3,clause,
 Luke,5,9,5,"pronoun, headless",
@@ -201,6 +203,7 @@ Luke,12,12,12,,accusative
 Luke,12,18,18,"noun, adjective",
 Luke,12,47,12,participle,
 Luke,13,7,18,,genitive
+Luke,13,14,6,,nominative
 Luke,13,14,28,"pronoun, noun",
 Luke,13,28,21,,accusative
 Luke,13,35,17,relative clause,
@@ -378,6 +381,7 @@ Acts,16,33,17,"pronoun, headless",
 Acts,17,9,8,"noun, adjective",
 Acts,17,11,16,,accusative
 Acts,17,12,7,"adjective, noun",
+Acts,17,17,9,"adjective, participle",
 Acts,17,21,4,"adjective, participle",
 Acts,17,22,14,adjective,
 Acts,17,24,7,"noun, headless",
@@ -390,11 +394,13 @@ Acts,19,37,6,"adjective, participle",
 Acts,20,20,14,"adjective, headless",
 Acts,20,23,1,"relative clause, clause",
 Acts,20,28,3,"pronoun, noun",
+Acts,20,34,7,"noun, participle",
 Acts,21,12,8,"pronoun, adjective",
 Acts,21,16,5,headless,
 Acts,21,19,9,,genitive
 Acts,21,25,14,"adjective, noun",
 Acts,22,10,22,,genitive
+Acts,22,17,7,,"dative, genitive"
 Acts,22,30,10,clause,
 Acts,23,10,9,clause,
 Acts,23,14,5,"noun, adjective",
@@ -505,6 +511,7 @@ Rom,16,23,7,"pronoun, noun",
 1Cor,13,5,6,headless,accusative
 1Cor,13,11,19,headless,accusative
 1Cor,14,16,14,noun,
+1Cor,14,22,10,"participle, adjective",
 1Cor,14,23,17,"noun, adjective",
 1Cor,14,24,9,"adjective, noun",
 1Cor,14,28,12,"pronoun, noun",
@@ -548,6 +555,7 @@ Rom,16,23,7,"pronoun, noun",
 2Cor,12,14,17,"headless, pronoun",accusative
 2Cor,12,17,4,,genitive
 2Cor,13,1,10,"noun, adjective",
+2Cor,13,2,13,"participle, adjective",
 Gal,1,5,1,relative clause,
 Gal,1,8,5,"pronoun, noun",
 Gal,1,8,13,,accusative
@@ -570,6 +578,7 @@ Eph,5,27,17,"participle, clause",
 Phil,1,8,6,clause,
 Phil,1,13,13,"noun, adjective",
 Phil,1,27,2,adjective,
+Phil,1,27,9,,nominative
 Phil,1,29,8,adjective,accusative
 Phil,2,4,3,headless,accusative
 Phil,2,4,9,headless,
@@ -708,6 +717,7 @@ Rev,5,8,9,"noun, adjective",
 Rev,5,11,11,"noun, adjective",
 Rev,5,13,8,relative clause,
 Rev,5,13,20,"noun, headless",
+Rev,6,4,19,"infinitive, clause",nominative
 Rev,6,15,6,"noun, adjective",
 Rev,6,15,21,"noun, adjective",
 Rev,7,11,9,"noun, adjective",
@@ -747,7 +757,7 @@ Rev,18,20,8,"noun, adjective",
 Rev,18,24,6,"noun, adjective",
 Rev,19,4,8,"adjective, noun",
 Rev,19,5,16,"noun, participle",
-Rev,19,6,7,noun,
+Rev,19,6,7,noun,accusative
 Rev,19,10,17,"pronoun, noun",
 Rev,19,18,14,"noun, participle",
 Rev,19,18,24,"adjective, noun",
