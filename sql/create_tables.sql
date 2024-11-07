@@ -143,7 +143,11 @@ VALUES
 (1, 'TenseMood', 'aorist-participle'),
 (1, 'NominalType', 'participle'),
 (1, 'Degree', 'comparative'),
-(1, 'Degree', 'superlative')
+(1, 'Degree', 'superlative'),
+(1, 'TenseMood', 'present-subjunctive'),
+(1, 'TenseMood', 'aorist-subjunctive'),
+(1, 'TenseMood', 'present-optative'),
+(1, 'TenseMood', 'aorist-optative')
 ;
 
 CREATE TABLE students_relations (
