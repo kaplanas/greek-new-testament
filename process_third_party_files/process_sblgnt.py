@@ -865,7 +865,7 @@ class Sentence:
                                                      'personal pronoun', 'indefinite pronoun']:
                         word['relation'] = 'modifier of nominal, PP'
                     elif word_head_features['degree'] == 'comparative':
-                        word['relation'] = 'comparison'
+                        word['relation'] = 'comparative'
                     elif word_head_features['pos'] == 'adj':
                         word['relation'] = 'modifier of adjective, PP'
                     elif word_head_features['pos'] in ['verb', 'conj']:
@@ -918,7 +918,7 @@ class Sentence:
                         else:
                             word['relation'] = 'direct object'
                     elif word_head_features['pos'] == 'adj' and word_head_features['degree'] == 'comparative':
-                        word['relation'] = 'genitive, comparison'
+                        word['relation'] = 'genitive, comparative'
                     elif head['lemma'] in PARTITIVE_HEADS:
                         word['relation'] = 'genitive, part-whole'
                     elif word_head_features['pos'] == 'adj':

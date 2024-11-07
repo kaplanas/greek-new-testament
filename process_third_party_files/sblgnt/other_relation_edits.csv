@@ -172,6 +172,7 @@ Matt,11,8,5,conjunction
 Matt,11,9,6,conjunct
 Matt,11,10,5,"predicate, nominal"
 Matt,11,11,12,appositive
+Matt,11,11,16,"modifier of nominal, PP"
 Matt,11,12,7,appositive
 Matt,11,19,12,sentential complement
 Matt,11,21,5,"conjunct, chain"
@@ -298,7 +299,9 @@ Matt,17,20,19,conjunct
 Matt,17,25,2,sentential complement
 Matt,17,26,3,sentential complement
 Matt,17,26,10,sentential complement
+Matt,18,1,15,"modifier of nominal, PP"
 Matt,18,4,7,"conjunct, ὡς, clause"
+Matt,18,4,13,"modifier of nominal, PP"
 Matt,18,7,4,"modifier of verbless predicate, PP"
 Matt,18,8,21,subject
 Matt,18,8,35,"conjunct, ἤ"
@@ -1009,6 +1012,7 @@ Luke,7,18,13,"modifier of nominal, nominal"
 Luke,7,25,15,object of preposition
 Luke,7,26,6,conjunct
 Luke,7,27,5,"predicate, nominal"
+Luke,7,28,13,"modifier of nominal, PP"
 Luke,7,30,14,negation of verb
 Luke,7,32,4,determiner
 Luke,7,33,6,negation of verb
@@ -1082,6 +1086,7 @@ Luke,9,38,10,"conjunct, main"
 Luke,9,39,1,"conjunct, subordinate"
 Luke,9,43,13,"modifier of nominal, nominal"
 Luke,9,43,14,"direct object, attraction"
+Luke,9,48,28,"modifier of nominal, PP"
 Luke,9,49,5,"interjection, vocative"
 Luke,9,49,14,"conjunct, main"
 Luke,9,49,19,"conjunct, subordinate"
@@ -1374,6 +1379,7 @@ Luke,21,23,17,"modifier of nominal, PP"
 Luke,21,23,21,gap
 Luke,21,25,4,"modifier of nominal, PP"
 Luke,21,25,14,gap
+Luke,22,26,8,"modifier of nominal, PP"
 Luke,21,29,8,direct object
 Luke,21,35,2,"conjunct, ὡς, clause"
 Luke,22,20,4,gap

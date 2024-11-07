@@ -141,7 +141,9 @@ VALUES
 (1, 'TenseMood', 'present-participle'),
 (1, 'TenseMood', 'future-participle'),
 (1, 'TenseMood', 'aorist-participle'),
-(1, 'NominalType', 'participle')
+(1, 'NominalType', 'participle'),
+(1, 'Degree', 'comparative'),
+(1, 'Degree', 'superlative')
 ;
 
 CREATE TABLE students_relations (
@@ -172,7 +174,7 @@ VALUES
 (1, 'genitive, specification'),
 (1, 'genitive, material'),
 (1, 'genitive, time'),
-(1, 'genitive, comparison'),
+(1, 'genitive, comparative'),
 (1, 'genitive, property'),
 (1, 'genitive, about'),
 (1, 'genitive, contents'),
@@ -252,5 +254,7 @@ VALUES
 (1, 'number'),
 (1, 'modifier of verb, participle'),
 (1, 'modifier of other, participle'),
-(1, 'subject of participle')
+(1, 'subject of participle'),
+(1, 'comparative'),
+(1, 'conjunct, ἤ')
 ;

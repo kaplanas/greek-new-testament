@@ -951,7 +951,7 @@ Matt,9,35,21,εὐαγγέλιον,βασιλείας,about
 Matt,24,14,7,εὐαγγέλιον,βασιλείας,about
 1Tim,1,11,5,εὐαγγέλιον,δόξης,property
 Mark,1,1,4,εὐαγγελίου,Ἰησοῦ,about
-Acts,17,11,6,εὐγενέστεροι,ἐν,comparison
+Acts,17,11,6,εὐγενέστεροι,ἐν,comparative
 Rom,10,1,7,εὐδοκία,καρδίας,subject
 2Thess,1,11,20,εὐδοκίαν,ἀγαθωσύνης,property
 Eph,1,9,11,εὐδοκίαν,αὐτοῦ,subject
@@ -1627,7 +1627,7 @@ Acts,27,2,19,Μακεδόνος,Θεσσαλονικέως,location
 1Pet,3,20,7,μακροθυμία,θεοῦ,subject
 2Pet,3,15,4,μακροθυμίαν,κυρίου,subject
 Luke,3,37,10,Μαλελεὴλ,Καϊνὰμ,relation
-1Cor,14,18,5,μᾶλλον,ὑμῶν,comparison
+1Cor,14,18,5,μᾶλλον,ὑμῶν,comparative
 2Tim,1,5,14,μάμμῃ,σου,relation
 Luke,16,9,12,μαμωνᾶ,ἀδικίας,property
 Matt,7,6,11,μαργαρίτας,ὑμῶν,possession
@@ -2068,7 +2068,7 @@ Matt,12,34,14,περισσεύματος,καρδίας,subject
 Matt,14,20,11,περισσεῦον,κλασμάτων,subject
 Matt,15,37,10,περισσεῦον,κλασμάτων,subject
 Rom,3,1,6,περισσὸν,Ἰουδαίου,possession
-Matt,5,37,13,περισσὸν,τούτων,comparison
+Matt,5,37,13,περισσὸν,τούτων,comparative
 Rom,2,25,15,περιτομή,σου,object
 Rom,2,29,9,περιτομὴ,καρδίας,object
 Mark,1,28,13,περίχωρον,Γαλιλαίας,location
@@ -2291,9 +2291,9 @@ Acts,25,2,10,πρῶτοι,Ἰουδαίων,part-whole
 Luke,19,47,23,πρῶτοι,λαοῦ,part-whole
 Mark,6,21,22,πρώτοις,Γαλιλαίας,relation
 1Tim,2,1,4,πρῶτον,πάντων,part-whole
-John,15,18,10,πρῶτον,ὑμῶν,comparison
-John,1,15,21,πρῶτός,μου,comparison
-John,1,30,17,πρῶτός,μου,comparison
+John,15,18,10,πρῶτον,ὑμῶν,comparative
+John,1,15,21,πρῶτός,μου,comparative
+John,1,30,17,πρῶτός,μου,comparative
 1Tim,1,15,17,πρῶτός,ὧν,part-whole
 Heb,12,16,15,πρωτοτόκια,ἑαυτοῦ,possession
 Col,1,15,10,πρωτότοκος,κτίσεως,part-whole
