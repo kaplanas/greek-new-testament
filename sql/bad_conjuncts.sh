@@ -9,7 +9,9 @@ echo "WITH mixed_types AS
                       ('Matt 7:29.1 - Matt 7:29.13',
                        '1Cor 13:2.1 - 1Cor 13:2.28',
                        '1Cor 13:3.1 - 1Cor 13:3.21',
+                       '2Cor 9:5.1 - 2Cor 9:5.26',
                        '2Cor 6:8.9 - 2Cor 6:10.16',
+                       'Phlm 1:15.1 - Phlm 1:16.20',
                        'Rev 14:2.1 - Rev 14:2.15')
             GROUP BY SentenceID, HeadPos
             HAVING COUNT(DISTINCT CASE WHEN Relation LIKE '%main'

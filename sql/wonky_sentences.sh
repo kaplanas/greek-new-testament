@@ -71,7 +71,8 @@ echo "WITH word_positions AS
                     AND wp.SentencePosition >= s.Start
                     AND wp.SentencePosition <= s.Stop
             WHERE wp.SentenceID NOT IN
-                  ('Mark 16:8.52 - Mark 16:8.52',
+                  ('Mark 2:7.5 - Mark 2:7.5',
+                   'Mark 16:8.52 - Mark 16:8.52',
                    'Luke 7:26.5 - Luke 7:26.5',
                    'Luke 10:3.1 - Luke 10:3.1',
                    'Acts 15:29.15 - Acts 15:29.15',
@@ -82,12 +83,13 @@ echo "WITH word_positions AS
             GROUP BY wp.SentenceID, wp.BookOrder, wp.Chapter, wp.Verse,
                      wp.VersePosition
             HAVING SUM(CASE WHEN s.SentenceID IS NOT NULL THEN 1 END) <= 1)
-      SELECT DISTINCT WonkyNote, BookOrder, Chapter, Verse, VersePosition
+      SELECT WonkyNote
       FROM (SELECT * FROM overlaps
             UNION ALL
             SELECT * FROM gaps) og
-      ORDER BY BookOrder, Chapter, Verse, VersePosition
-      LIMIT 10;" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null | while IFS=$'\t' read wonky_note book_order chapter verse verse_position
+      GROUP BY WonkyNote
+      ORDER BY MIN(BookOrder), MIN(Chapter), MIN(Verse), MIN(VersePosition)
+      LIMIT 10;" | mysql -u root -p$MYSQL_PASSWORD 2>/dev/null | while IFS=$'\t' read wonky_note
 do
   if [ "$wonky_note" != "WonkyNote" ]
   then

@@ -8,13 +8,12 @@ WITH nominal_types_dep AS
             OR Relation = 'predicate, nominal'
             OR Relation LIKE 'genitive%'
             OR Relation LIKE 'direct object%'
-            OR Relation LIKE 'argument of adjective%'
+            OR Relation = 'argument of adjective, nominal'
             OR Relation LIKE 'accusative%'
             OR Relation LIKE 'indirect object%'
             OR Relation LIKE 'dative%'
             OR Relation = 'interjection, vocative'
-            OR Relation = 'modifier of nominal, nominal'
-            OR Relation LIKE 'modifier of verb%nominal'
+            OR Relation LIKE 'modifier of %nominal'
             OR Relation = 'object of preposition'
             OR Relation LIKE 'subject of infinitive%'
             OR Relation = 'resumptive pronoun'),
@@ -23,7 +22,7 @@ WITH nominal_types_dep AS
              HeadPos AS SentencePosition, DependentPos AS OtherPosition,
              Relation, 1 AS CheckOrder
       FROM gnt.checked_relation_tokens
-      WHERE Relation LIKE 'argument of adjective%'
+      WHERE Relation = 'argument of adjective, nominal'
             OR Relation LIKE 'negation%nominal'
             OR Relation LIKE 'determiner%'
             OR Relation LIKE 'modifier of nominal%'),
@@ -69,14 +68,13 @@ WITH nominal_types_dep AS
             OR Relation = 'argument of adjective, nominal'
             OR Relation = 'object of preposition'
             OR Relation = 'resumptive pronoun'
-            OR Relation = 'modifier of verb, participle'),
+            OR Relation LIKE 'modifier of verb%, participle'),
      case_types_head AS
      (SELECT 'CaseType' AS TypeName, 'head' AS HeadOrDep, SentenceID,
              HeadPos AS SentencePosition, DependentPos AS OtherPosition,
              Relation, 3 AS CheckOrder
       FROM gnt.checked_relation_tokens
-      WHERE Relation LIKE 'negation%nominal'
-            OR Relation = 'infinitive argument of noun'),
+      WHERE Relation LIKE 'negation%nominal'),
      verb_class_types_dep AS
      (SELECT 'VerbClassType' AS TypeName, 'dep' AS HeadOrDep,
              checked_relation_tokens.SentenceID,

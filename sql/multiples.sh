@@ -28,7 +28,9 @@ echo "WITH multiple_subjects AS
                        'διδάσκω', 'δίδωμι', 'ἐκδύω', 'ἐνδιδύσκω', 'ἐνδύω',
                        'ἐνορκίζω', 'ἐπερωτάω', 'ἐρωτάω', 'εὐαγγελίζω',
                        'ὁρκίζω', 'περιβάλλω', 'ποτίζω', 'προσκαλέομαι',
-                       'φορτίζω', 'χρίω', 'ὠφελέω')
+                       'ὑπομιμνῄσκω', 'φορτίζω', 'χρίω', 'ὠφελέω')
+                  AND relations.SentenceID NOT IN
+                      ('2Cor 9:5.1 - 2Cor 9:5.26')
             GROUP BY relations.SentenceID, relations.HeadPos
             HAVING COUNT(*) > 1),
            multiple_indirect_objects AS
