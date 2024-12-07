@@ -7,11 +7,16 @@ echo "WITH mixed_types AS
                    'conjunct, ὡς, non-clause', 'conjunct, ὡς, other')
                   AND SentenceID NOT IN
                       ('Matt 7:29.1 - Matt 7:29.13',
+                       'Luke 6:22.1 - Luke 6:22.25',
+                       'John 6:26.1 - John 6:26.24',
+                       'John 12:6.1 - John 12:6.21',
                        '1Cor 13:2.1 - 1Cor 13:2.28',
                        '1Cor 13:3.1 - 1Cor 13:3.21',
                        '2Cor 9:5.1 - 2Cor 9:5.26',
                        '2Cor 6:8.9 - 2Cor 6:10.16',
+                       'Phil 4:8.1 - Phil 4:8.25',
                        'Phlm 1:15.1 - Phlm 1:16.20',
+                       '1Pet 4:15.1 - 1Pet 4:15.14',
                        'Rev 14:2.1 - Rev 14:2.15')
             GROUP BY SentenceID, HeadPos
             HAVING COUNT(DISTINCT CASE WHEN Relation LIKE '%main'

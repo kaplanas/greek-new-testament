@@ -380,7 +380,7 @@ class UncutSentence:
 
         # Propagate nodes' roles to their head children.  Make some edits along the way.
         #   - If we find a phrase whose role is "predicate", send that role all the way down to the lowest head.
-        #   - Overwrite verbs' roles, except for participles.
+        #   - Overwrite verbs' roles, except for some participles.
         path_to_node = []
         node_stack = [(k, n) for k, n in self.nodes.items() if 'parent_n' not in n]
         while len(node_stack) > 0:
@@ -395,7 +395,8 @@ class UncutSentence:
                     if 'head_child_n' in node[1] and node[1]['head_child_n'] == child[0] and \
                             'role' in node[1] and ('role' not in child[1] or node[1]['role'] in ['p', 'adv'] or
                                                    (child[1]['role'] == 'v' and
-                                                    not ('mood' in child[1] and child[1]['mood'] == 'participle')) or
+                                                    not ('mood' in child[1] and child[1]['mood'] == 'participle' and
+                                                         node[1]['role'] != 's')) or
                                                    child[1]['class'] == 'cl'):
                         child[1]['role'] = node[1]['role']
                     node_stack += [child]
@@ -1064,6 +1065,8 @@ class Sentence:
                     word['relation'] = 'subject'
                 elif word_head_features['degree'] == 'comparative':
                     word['relation'] = 'comparative'
+                elif word_features['mood'] == 'participle' and head['lemma'] == 'εἰμί':
+                    word['relation'] = 'predicate, nominal'
 
             # Guess at the nominal type of the word.
             if relative:
@@ -1376,6 +1379,18 @@ class Sentence:
                                   self.words[w['head']]['verse'], self.words[w['head']]['position'])
                                  for j, w in enumerate(self.words)
                                  if w['head'] is not None])
+                sql = """UPDATE checked_types
+                                JOIN words
+                                ON checked_types.SentenceID = words.SentenceID
+                                   AND checked_types.SentencePosition = words.SentencePosition
+                         SET checked_types.SentenceID = %s, checked_types.SentencePosition = %s
+                         WHERE words.Book = %s
+                               AND words.Chapter = %s
+                               AND words.Verse = %s
+                               AND words.VersePosition = %s"""
+                cur.executemany(sql,
+                                [(self.sentence_id, j, w['book'], w['chapter'], w['verse'], w['position'])
+                                 for j, w in enumerate(self.words)])
 
             # Delete and re-insert relations.
             sql = """DELETE FROM relations

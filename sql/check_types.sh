@@ -35,7 +35,7 @@ echo "WITH words_to_check AS
                    words_to_check.CheckOrder
             FROM words_to_check
                  JOIN gnt.words
-                 ON words_to_check.SentenceID = words.SentenceId
+                 ON words_to_check.SentenceID = words.SentenceID
                     AND words_to_check.SentencePosition = words.SentencePosition
                  LEFT JOIN gnt.checked_types
                  ON words_to_check.SentenceID = checked_types.SentenceID

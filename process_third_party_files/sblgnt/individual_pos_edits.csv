@@ -5,9 +5,11 @@ Matt,17,8,10,adj
 Matt,26,34,13,prep
 Matt,26,75,10,prep
 Matt,27,57,13,adj
+Mark,1,32,6,conj
 Mark,6,17,1,adj
 Mark,6,22,5,adj
 Mark,6,31,6,adj
+Mark,10,45,1,conj
 Mark,12,36,1,adj
 Mark,12,37,1,adj
 Mark,13,4,10,adv
@@ -41,9 +43,11 @@ John,4,44,1,adj
 John,5,36,20,adj
 John,6,15,18,adj
 John,14,11,19,adj
+John,14,19,16,conj
 John,14,29,5,prep
 John,16,27,1,adj
 John,21,25,16,adj
+John,25,3,5,conj
 Acts,10,26,10,adj
 Acts,16,18,26,adj
 Acts,20,30,4,adj
@@ -71,8 +75,10 @@ Rom,16,2,26,adj
 2Cor,10,1,1,adj
 2Cor,11,14,4,adj
 2Cor,12,13,13,adj
+Gal,1,17,2,conj
 Eph,2,20,11,adj
 Phil,3,4,1,adv
+Col,3,7,7,conj
 1Thess,3,11,1,adj
 1Thess,4,9,10,adj
 1Thess,4,16,2,adj

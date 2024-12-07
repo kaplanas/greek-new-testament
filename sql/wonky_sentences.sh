@@ -72,14 +72,25 @@ echo "WITH word_positions AS
                     AND wp.SentencePosition <= s.Stop
             WHERE wp.SentenceID NOT IN
                   ('Mark 2:7.5 - Mark 2:7.5',
+                   'Mark 14:41.13 - Mark 14:41.13',
+                   'Mark 16:6.13 - Mark 16:6.13',
                    'Mark 16:8.52 - Mark 16:8.52',
                    'Luke 7:26.5 - Luke 7:26.5',
                    'Luke 10:3.1 - Luke 10:3.1',
                    'Acts 15:29.15 - Acts 15:29.15',
+                   'Rom 3:9.3 - Rom 3:9.3',
+                   'Rom 3:27.5 - Rom 3:27.5',
+                   'Rom 11:20.1 - Rom 11:20.1',
                    '1Cor 7:36.22 - 1Cor 7:36.22',
+                   '1Cor 16:13.1 - 1Cor 16:13.1',
+                   '1Cor 16:13.6 - 1Cor 16:13.6',
+                   '1Cor 16:13.7 - 1Cor 16:13.7',
                    '2Cor 11:22.3 - 2Cor 11:22.3',
                    '2Cor 11:22.6 - 2Cor 11:22.6',
-                   '2Cor 11:22.10 - 2Cor 11:22.10')
+                   '2Cor 11:22.10 - 2Cor 11:22.10',
+                   '2Tim 4:5.6 - 2Tim 4:5.6',
+                   'Jas 5:13.5 - Jas 5:13.5',
+                   'Jas 5:13.8 - Jas 5:13.8')
             GROUP BY wp.SentenceID, wp.BookOrder, wp.Chapter, wp.Verse,
                      wp.VersePosition
             HAVING SUM(CASE WHEN s.SentenceID IS NOT NULL THEN 1 END) <= 1)
