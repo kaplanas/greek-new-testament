@@ -16,7 +16,9 @@ WITH nominal_types_dep AS
             OR Relation LIKE 'modifier of %nominal'
             OR Relation = 'object of preposition'
             OR Relation LIKE 'subject of infinitive%'
-            OR Relation = 'resumptive pronoun'),
+            OR Relation = 'resumptive pronoun'
+            OR Relation = 'topic'
+            OR Relation = 'appositive'),
      nominal_types_head AS
      (SELECT 'NominalType' AS TypeName, 'head' AS HeadOrDep, SentenceID,
              HeadPos AS SentencePosition, DependentPos AS OtherPosition,
@@ -25,7 +27,8 @@ WITH nominal_types_dep AS
       WHERE Relation = 'argument of adjective, nominal'
             OR Relation LIKE 'negation%nominal'
             OR Relation LIKE 'determiner%'
-            OR Relation LIKE 'modifier of nominal%'),
+            OR Relation LIKE 'modifier of nominal%'
+            OR Relation = 'appositive'),
      noun_class_types_dep AS
      (SELECT 'NounClassType' AS TypeName, 'dep' AS HeadOrDep,
              checked_relation_tokens.SentenceID,
