@@ -1,3 +1,41 @@
+CREATE TABLE books (
+  Book varchar(10) NOT NULL,
+  BookName varchar(50) NOT NULL,
+  BookOrder integer NOT NULL,
+  PRIMARY KEY(Book)
+);
+
+INSERT INTO books
+  (Book, BookName, BookOrder)
+  VALUES
+  ('Matt', 'Matthew', 1),
+  ('Mark', 'Mark', 2),
+  ('Luke', 'Luke', 3),
+  ('John', 'John', 4),
+  ('Acts', 'Acts', 5),
+  ('Rom', 'Romans', 6),
+  ('1Cor', '1 Corinthians', 7),
+  ('2Cor', '2 Corinthians', 8),
+  ('Gal', 'Galatians', 9),
+  ('Eph', 'Ephesians', 10),
+  ('Phil', 'Philippians', 11),
+  ('Col', 'Colossians', 12),
+  ('1Thess', '1 Thessalonians', 13),
+  ('2Thess', '2 Thessalonians', 14),
+  ('1Tim', '1 Timothy', 15),
+  ('2Tim', '2 Timothy', 16),
+  ('Titus', 'Titus', 17),
+  ('Phlm', 'Philemon', 18),
+  ('Heb', 'Hebrews', 19),
+  ('Jas', 'James', 20),
+  ('1Pet', '1 Peter', 21),
+  ('2Pet', '2 Peter', 22),
+  ('1John', '1 John', 23),
+  ('2John', '2 John', 24),
+  ('3John', '3 John', 25),
+  ('Jude', 'Jude', 26),
+  ('Rev', 'Revelation', 27);
+
 CREATE TABLE words (
   Book varchar(10) NOT NULL,
   Chapter integer NOT NULL,
@@ -77,6 +115,45 @@ INSERT INTO students
   (StudentName, StudentUsername)
   VALUES
   ('test_student', 'Test Student');
+
+CREATE TABLE lessons (
+  LessonName varchar(100) NOT NULL,
+  DisplayOrder integer NOT NULL,
+  LessonGroup varchar(100) NOT NULL,
+  PRIMARY KEY(LessonName)
+);
+
+INSERT INTO lessons
+  (LessonName, DisplayOrder, LessonGroup)
+  VALUES
+  ('Εἰμί', 1, 'Verb class'),
+  ('Omega', 2, 'Verb class'),
+  ('Contract, έω', 3, 'Verb class'),
+  ('Contract, άω', 4, 'Verb class'),
+  ('Contract, όω', 5, 'Verb class'),
+  ('Present indicative', 1, 'Tense and mood'),
+  ('Future indicative', 2, 'Tense and mood'),
+  ('Imperfect indicative', 3, 'Tense and mood'),
+  ('Aorist indicative', 4, 'Tense and mood'),
+  ('Present infinitive', 5, 'Tense and mood'),
+  ('Future infinitive', 6, 'Tense and mood'),
+  ('Aorist infinitive', 7, 'Tense and mood'),
+  ('Active', 1, 'Voice'),
+  ('Middle', 2, 'Voice'),
+  ('Passive', 3, 'Voice'),
+  ('Personal pronouns', 1, 'Other parts of speech'),
+  ('Conjunctions', 2, 'Other parts of speech'),
+  ('Subjects', 1, 'Arguments of verbs'),
+  ('Subjects', 2, 'Direct objects'),
+  ('Subjects', 3, 'Indirect objects');
+
+CREATE TABLE students_lessons (
+  StudentID integer NOT NULL,
+  LessonName varchar(100) NOT NULL,
+  PRIMARY KEY(StudentID, LessonName),
+  FOREIGN KEY (StudentID) REFERENCES students(StudentID) ON DELETE RESTRICT,
+  FOREIGN KEY (LessonName) REFERENCES lessons(LessonName) ON DELETE RESTRICT
+);
 
 CREATE TABLE students_words (
   StudentID integer,
