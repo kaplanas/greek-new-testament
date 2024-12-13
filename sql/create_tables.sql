@@ -144,8 +144,12 @@ INSERT INTO lessons
   ('Personal pronouns', 1, 'Other parts of speech'),
   ('Conjunctions', 2, 'Other parts of speech'),
   ('Subjects', 1, 'Arguments of verbs'),
-  ('Subjects', 2, 'Direct objects'),
-  ('Subjects', 3, 'Indirect objects');
+  ('Direct objects', 2, 'Arguments of verbs'),
+  ('Indirect objects', 3, 'Arguments of verbs'),
+  ('Coordinating conjunctions', 1, 'Conjunction'),
+  ('Subordinating conjunctions', 2, 'Conjunction'),
+  ('Μὲν δέ', 3, 'Conjunction'),
+  ('Ὡς', 4, 'Conjunction');
 
 CREATE TABLE students_lessons (
   StudentID integer NOT NULL,
