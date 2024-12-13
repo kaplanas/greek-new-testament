@@ -369,11 +369,11 @@ server <- function(input, output, session) {
       strings.df() %>%
         arrange(BookOrder, Chapter, Verse) %>%
         dplyr::select(Citation, String) %>%
-        datatable(callback = JS("$('table.dataTable.no-footer').css('border-bottom', 'none');"),
-                  options = list(paging = F,
+        datatable(options = list(paging = F,
                                  searching = F,
                                  stripe = F,
                                  ordering = F,
+                                 info = F,
                                  headerCallback = JS(
                                    "function(thead, data, start, end, display){",
                                    "  $(thead).remove();",
