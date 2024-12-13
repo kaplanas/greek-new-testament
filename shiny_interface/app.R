@@ -56,6 +56,32 @@ other.pos.required = list(
   "personal pronoun with kai" = c("Personal pronouns with kai", "Conjunctions")
 )
 
+# Lessons required for relations
+relation.required = list(
+  "subject" = c("Subjects"),
+  "subject of implicit speech" = c("Subjects"),
+  "subject of infinitive" = c("Subjects"),
+  "subject of infinitive, attraction" = c("Subjects"),
+  "subject of participle" = c("Subjects", "Participles"),
+  "subject of small clause" = c("Subjects"),
+  "subject of verbless predicate" = c("Subjects"),
+  "subject, attraction" = c("Subjects", "Relative clauses"),
+  "subject, irregular agreement" = c("Subjects"),
+  "subject, neuter plural" = c("Subjects"),
+  "subject, neuter plural, regular agreement" = c("Subjects"),
+  "direct object" = c("Direct objects"),
+  "direct object, attraction" = c("Direct objects"),
+  "indirect object" = c("Indirect objects"),
+  "indirect object, attraction" = c("Indirect objects"),
+  "conjunct" = c("Coordinating conjunctions"),
+  "conjunct, main" = c("Subordinating conjunctions"),
+  "conjunct, subordinate" = c("Subordinating conjunctions"),
+  "conjunct, μέν δέ" = c("Μὲν δέ"),
+  "conjunct, ὡς, clause" = c("Ὡς"),
+  "conjunct, ὡς, non-clause" = c("Ὡς"),
+  "conjunct, ὡς, other" = c("Ὡς")
+)
+
 #### UI ####
 
 # Page title
@@ -90,7 +116,8 @@ knowledge.page = nav_panel("Current knowledge",
                            ),
                            layout_columns(
                              card(card_header(class = "bg-dark", "Relations"),
-                                  knowledge.groups[["Arguments of verbs"]])
+                                  knowledge.groups[["Arguments of verbs"]],
+                                  knowledge.groups[["Conjunction"]])
                            ))
 string.page = nav_panel("Excerpts",
                         DTOutput("show.strings"))
@@ -246,61 +273,87 @@ server <- function(input, output, session) {
         }
       }
       
+      # Get relations the student knows
+      allowed.relation = c()
+      for(rr in names(relation.required)) {
+        if(all(relation.required[[rr]] %in% knowledge.df()$LessonName)) {
+          allowed.relation = c(allowed.relation, rr)
+        }
+      }
+      
       # Query the database for strings the student can read
       get.strings.sql = "WITH allowed_words AS
-                            (SELECT SentenceID, SentencePosition
-                             FROM words
-                             WHERE POS IN ({allowed.other.pos*})
-                                   OR (POS = 'verb'
-                                       AND VerbClassType IN ({allowed.verb.class*})
-                                       AND CONCAT(Tense, '-', Mood) IN ({allowed.tense.mood*})
-                                       AND Voice IN ({allowed.voice*}))),
-                            forbidden_words AS
-                            (SELECT words.SentenceID, words.SentencePosition
-                             FROM words
-                                  LEFT JOIN allowed_words
-                                  ON words.SentenceID = allowed_words.SentenceID
-                                     AND words.SentencePosition = allowed_words.SentencePosition
-                             WHERE allowed_words.SentenceID IS NULL),
-                            filtered_strings AS
-                            (SELECT DISTINCT strings.Citation,
-                                    strings.SentenceID, strings.Start,
-                                    strings.Stop, strings.String
-                             FROM strings
-                                  LEFT JOIN forbidden_words
-                                  ON strings.SentenceID = forbidden_words.SentenceID
-                                     AND strings.Start <= forbidden_words.SentencePosition
-                                     AND strings.Stop >= forbidden_words.SentencePosition
-                             WHERE forbidden_words.SentenceID IS NULL
-                                   AND strings.Stop > strings.Start),
-                            longest_strings AS
-                            (SELECT filtered_strings.Citation,
-                                    filtered_strings.SentenceID,
-                                    filtered_strings.Start,
-                                    filtered_strings.Stop,
-                                    filtered_strings.String
-                             FROM filtered_strings
-                                  LEFT JOIN filtered_strings super_strings
-                                  ON filtered_strings.SentenceID = super_strings.SentenceID
-                                     AND filtered_strings.Start >= super_strings.Start
-                                     AND filtered_strings.Stop <= super_strings.Stop
-                                     AND NOT (filtered_strings.Start = super_strings.Start
-                                              AND filtered_strings.Stop = super_strings.Stop)
-                             WHERE super_strings.SentenceID IS NULL),
-                            book_chapter_verse AS
-                            (SELECT words.SentenceID,
-                                    MIN(books.BookOrder) AS BookOrder,
-                                    MIN(words.Chapter) AS Chapter,
-                                    MIN(words.Verse) AS Verse
-                             FROM words
-                                  JOIN books
-                                  ON words.Book = books.Book
-                             GROUP BY words.SentenceID)
-                       SELECT ls.Citation, bcv.BookOrder, bcv.Chapter,
-                              bcv.Verse, ls.String
-                       FROM longest_strings ls
-                            JOIN book_chapter_verse bcv
-                            ON ls.SentenceID = bcv.SentenceID"
+                              (SELECT SentenceID, SentencePosition
+                               FROM words
+                               WHERE POS IN ({allowed.other.pos*})
+                                     OR (POS = 'verb'
+                                         AND VerbClassType IN ({allowed.verb.class*})
+                                         AND CONCAT(Tense, '-', Mood) IN ({allowed.tense.mood*})
+                                         AND Voice IN ({allowed.voice*}))),
+                              forbidden_words AS
+                              (SELECT words.SentenceID, words.SentencePosition
+                               FROM words
+                                    LEFT JOIN allowed_words
+                                    ON words.SentenceID = allowed_words.SentenceID
+                                       AND words.SentencePosition = allowed_words.SentencePosition
+                               WHERE allowed_words.SentenceID IS NULL),
+                              forbidden_relations AS
+                              (SELECT SentenceID, FirstPos, LastPos
+                               FROM relations
+                               WHERE Relation NOT IN ({allowed.relation*})
+                                     AND Relation <> 'conjunct, chain'),
+                              singleton_sentences AS
+                              (SELECT SentenceID
+                               FROM words
+                               GROUP BY SentenceID
+                               HAVING COUNT(*) = 1),
+                              filtered_strings AS
+                              (SELECT DISTINCT strings.Citation,
+                                      strings.SentenceID, strings.Start,
+                                      strings.Stop, strings.String
+                               FROM strings
+                                    LEFT JOIN forbidden_words
+                                    ON strings.SentenceID = forbidden_words.SentenceID
+                                       AND strings.Start <= forbidden_words.SentencePosition
+                                       AND strings.Stop >= forbidden_words.SentencePosition
+                                    LEFT JOIN forbidden_relations
+                                    ON strings.SentenceID = forbidden_relations.SentenceID
+                                       AND strings.Start <= forbidden_relations.FirstPos
+                                       AND strings.Stop >= forbidden_relations.LastPos
+                                    LEFT JOIN singleton_sentences
+                                    ON strings.SentenceID = singleton_sentences.SentenceID
+                               WHERE forbidden_words.SentenceID IS NULL
+                                     AND forbidden_relations.SentenceID IS NULL
+                                     AND (strings.Stop > strings.Start
+                                          OR singleton_sentences.SentenceID IS NOT NULL)),
+                              longest_strings AS
+                              (SELECT filtered_strings.Citation,
+                                      filtered_strings.SentenceID,
+                                      filtered_strings.Start,
+                                      filtered_strings.Stop,
+                                      filtered_strings.String
+                               FROM filtered_strings
+                                    LEFT JOIN filtered_strings super_strings
+                                    ON filtered_strings.SentenceID = super_strings.SentenceID
+                                       AND filtered_strings.Start >= super_strings.Start
+                                       AND filtered_strings.Stop <= super_strings.Stop
+                                       AND NOT (filtered_strings.Start = super_strings.Start
+                                                AND filtered_strings.Stop = super_strings.Stop)
+                               WHERE super_strings.SentenceID IS NULL),
+                              book_chapter_verse AS
+                              (SELECT words.SentenceID,
+                                      MIN(books.BookOrder) AS BookOrder,
+                                      MIN(words.Chapter) AS Chapter,
+                                      MIN(words.Verse) AS Verse
+                               FROM words
+                                    JOIN books
+                                    ON words.Book = books.Book
+                               GROUP BY words.SentenceID)
+                         SELECT ls.Citation, bcv.BookOrder, bcv.Chapter,
+                                bcv.Verse, ls.String
+                         FROM longest_strings ls
+                              JOIN book_chapter_verse bcv
+                              ON ls.SentenceID = bcv.SentenceID"
       get.strings.sql = glue_sql(get.strings.sql, .con = gnt.con)
       strings.df(dbGetQuery(gnt.con, get.strings.sql))
       
