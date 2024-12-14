@@ -22,13 +22,30 @@ lessons.df = dbGetQuery(gnt.con,
                          FROM lessons
                          ORDER BY DisplayOrder")
 
+# Lessons required for noun classes
+noun.class.required = list(
+  "second declension" = c("Second declension"),
+  "first declension" = c("First declension"),
+  "first declension with hs" = c("Second declension", "First declension"),
+  "first/second declension" = c("Second declension", "First declension"),
+  "third declension, consonant stem" = c("Third declension"),
+  "third declension, vowel stem" = c("Third declension"),
+  "first/second declension; third declension, consonant stem" = c("Second declension", "First declension", "Third declension"),
+  "Ihsous" = c("Ἰησοῦς"),
+  "irregular" = c("Irregular"),
+  "undeclined" = c("Undeclined")
+)
+
 # Lessons required for verb classes
 verb.class.required = list(
   "eimi" = "Εἰμί",
   "omega" = "Omega",
   "contract, ew" = "Contract, έω",
   "contract, aw" = "Contract, άω",
-  "contract, ow" = "Contract, όω"
+  "contract, ow" = "Contract, όω",
+  "mi" = "Μί",
+  "oida" = "Οἴδα",
+  "other" = "Other"
 )
 
 # Lessons required for tense and mood
@@ -52,8 +69,14 @@ voice.required = list(
 # Lessons required for various parts of speech
 other.pos.required = list(
   "personal pronoun" = c("Personal pronouns"),
-  "conj" = c("Conjunctions"),
-  "personal pronoun with kai" = c("Personal pronouns with kai", "Conjunctions")
+  "personal pronoun with kai" = c("Personal pronouns", "Conjunctions"),
+  "reflexive pronoun" = c("Reflexive pronouns"),
+  "demonstrative pronoun" = c("Demonstrative pronouns"),
+  "demonstrative pronoun with kai" = c("Demonstrative pronouns", "Conjunctions"),
+  "interrogative pronoun" = c("Interrogative pronouns"),
+  "indefinite pronoun" = c("Indefinite pronouns"),
+  "relative pronoun" = c("Relative pronouns"),
+  "conj" = c("Conjunctions")
 )
 
 # Lessons required for relations
@@ -107,6 +130,8 @@ knowledge.groups = map(
 knowledge.page = nav_panel("Current knowledge",
                            actionButton("update.knowledge", "Save changes"),
                            layout_columns(
+                             card(card_header(class = "bg-dark", "Nouns and adjectives"),
+                                  knowledge.groups[["Noun class"]]),
                              card(card_header(class = "bg-dark", "Verbs"),
                                   knowledge.groups[["Verb class"]],
                                   knowledge.groups[["Tense and mood"]],
@@ -241,8 +266,16 @@ server <- function(input, output, session) {
     
     if(!is.null(knowledge.df())) {
       
+      # Get noun classes the student knows
+      allowed.noun.class = c("X")
+      for(ncr in names(noun.class.required)) {
+        if(all(noun.class.required[[ncr]] %in% knowledge.df()$LessonName)) {
+          allowed.noun.class = c(allowed.noun.class, ncr)
+        }
+      }
+      
       # Get verb classes the student knows
-      allowed.verb.class = c()
+      allowed.verb.class = c("X")
       for(vcr in names(verb.class.required)) {
         if(verb.class.required[[vcr]] %in% knowledge.df()$LessonName) {
           allowed.verb.class = c(allowed.verb.class, vcr)
@@ -250,7 +283,7 @@ server <- function(input, output, session) {
       }
       
       # Get tense-mood combinations the student knows
-      allowed.tense.mood = c()
+      allowed.tense.mood = c("X")
       for(tmr in names(tense.mood.required)) {
         if(tense.mood.required[[tmr]] %in% knowledge.df()$LessonName) {
           allowed.tense.mood = c(allowed.tense.mood, tmr)
@@ -258,7 +291,7 @@ server <- function(input, output, session) {
       }
       
       # Get voices the student knows
-      allowed.voice = c()
+      allowed.voice = c("X")
       for(vr in names(voice.required)) {
         if(voice.required[[vr]] %in% knowledge.df()$LessonName) {
           allowed.voice = c(allowed.voice, vr)
@@ -266,7 +299,7 @@ server <- function(input, output, session) {
       }
       
       # Get other parts of speech the student knows
-      allowed.other.pos = c()
+      allowed.other.pos = c("X")
       for(opr in names(other.pos.required)) {
         if(all(other.pos.required[[opr]] %in% knowledge.df()$LessonName)) {
           allowed.other.pos = c(allowed.other.pos, opr)
@@ -274,7 +307,7 @@ server <- function(input, output, session) {
       }
       
       # Get relations the student knows
-      allowed.relation = c()
+      allowed.relation = c("conjunct, chain", "appositive")
       for(rr in names(relation.required)) {
         if(all(relation.required[[rr]] %in% knowledge.df()$LessonName)) {
           allowed.relation = c(allowed.relation, rr)
@@ -289,7 +322,17 @@ server <- function(input, output, session) {
                                      OR (POS = 'verb'
                                          AND VerbClassType IN ({allowed.verb.class*})
                                          AND CONCAT(Tense, '-', Mood) IN ({allowed.tense.mood*})
-                                         AND Voice IN ({allowed.voice*}))),
+                                         AND Voice IN ({allowed.voice*}))
+                                     OR (POS IN ('noun', 'adj',
+                                                 'reflexive pronoun',
+                                                 'demonstrative pronoun',
+                                                 'demonstrative pronoun with kai',
+                                                 'interrogative pronoun',
+                                                 'indefinite pronoun',
+                                                 'relative pronoun')
+                                         AND NounClassType IN ({allowed.noun.class*})
+                                         AND (POS IN ('noun', 'adj')
+                                              OR POS IN ({allowed.other.pos*})))),
                               forbidden_words AS
                               (SELECT words.SentenceID, words.SentencePosition
                                FROM words
@@ -300,8 +343,7 @@ server <- function(input, output, session) {
                               forbidden_relations AS
                               (SELECT SentenceID, FirstPos, LastPos
                                FROM relations
-                               WHERE Relation NOT IN ({allowed.relation*})
-                                     AND Relation <> 'conjunct, chain'),
+                               WHERE Relation NOT IN ({allowed.relation*})),
                               singleton_sentences AS
                               (SELECT SentenceID
                                FROM words
