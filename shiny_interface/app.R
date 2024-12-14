@@ -35,6 +35,10 @@ noun.class.required = list(
   "irregular" = c("Irregular"),
   "undeclined" = c("Undeclined")
 )
+adjective.degree.required = list(
+  "comparative" = "Comparatives",
+  "superlative" = "Superlatives"
+)
 
 # Lessons required for verb classes
 verb.class.required = list(
@@ -69,14 +73,12 @@ voice.required = list(
 # Lessons required for various parts of speech
 other.pos.required = list(
   "personal pronoun" = c("Personal pronouns"),
-  "personal pronoun with kai" = c("Personal pronouns", "Conjunctions"),
+  "personal pronoun with kai" = c("Personal pronouns", "Coordinating conjunctions"),
   "reflexive pronoun" = c("Reflexive pronouns"),
   "demonstrative pronoun" = c("Demonstrative pronouns"),
-  "demonstrative pronoun with kai" = c("Demonstrative pronouns", "Conjunctions"),
+  "demonstrative pronoun with kai" = c("Demonstrative pronouns", "Coordinating conjunctions"),
   "interrogative pronoun" = c("Interrogative pronouns"),
-  "indefinite pronoun" = c("Indefinite pronouns"),
-  "relative pronoun" = c("Relative pronouns"),
-  "conj" = c("Conjunctions")
+  "indefinite pronoun" = c("Indefinite pronouns")
 )
 
 # Lessons required for relations
@@ -96,13 +98,52 @@ relation.required = list(
   "direct object, attraction" = c("Direct objects"),
   "indirect object" = c("Indirect objects"),
   "indirect object, attraction" = c("Indirect objects"),
+  "predicate, nominal" = c("Predicates"),
+  "predicate, non-nominal" = c("Predicates"),
+  "genitive, relation" = c("Genitive"),
+  "genitive, other" = c("Genitive"),
+  "genitive, body part" = c("Genitive"),
+  "genitive, subject" = c("Genitive"),
+  "genitive, possession" = c("Genitive"),
+  "genitive, object" = c("Genitive"),
+  "genitive, part-whole" = c("Genitive"),
+  "genitive, source" = c("Genitive"),
+  "genitive, characterized by" = c("Genitive"),
+  "genitive, location" = c("Genitive"),
+  "genitive, specification" = c("Genitive"),
+  "genitive, material" = c("Genitive"),
+  "genitive, time" = c("Genitive"),
+  "genitive, comparative" = c("Genitive", "Comparatives"),
+  "genitive, property" = c("Genitive"),
+  "genitive, about" = c("Genitive"),
+  "genitive, contents" = c("Genitive"),
+  "genitive, son of" = c("Genitive"),
+  "genitive, amount" = c("Genitive"),
+  "dative, other" = c("Dative"),
+  "dative, instrument" = c("Dative"),
+  "dative, benefit" = c("Dative"),
+  "dative, time" = c("Dative"),
+  "dative, manner" = c("Dative"),
+  "dative, possession" = c("Dative"),
+  "dative, agent" = c("Dative"),
+  "dative, cognate of verb" = c("Dative"),
+  "dative, Hebrew infinitive construct" = c("Dative"),
+  "accusative, other" = c("Accusative"),
+  "accusative, time" = c("Accusative"),
+  "accusative, amount" = c("Accusative"),
+  "accusative, manner" = c("Accusative"),
+  "accusative, cognate of verb" = c("Accusative"),
+  "interjection, vocative" = c("Vocative"),
   "conjunct" = c("Coordinating conjunctions"),
   "conjunct, main" = c("Subordinating conjunctions"),
   "conjunct, subordinate" = c("Subordinating conjunctions"),
   "conjunct, μέν δέ" = c("Μὲν δέ"),
   "conjunct, ὡς, clause" = c("Ὡς"),
   "conjunct, ὡς, non-clause" = c("Ὡς"),
-  "conjunct, ὡς, other" = c("Ὡς")
+  "conjunct, ὡς, other" = c("Ὡς"),
+  "conjunct, ἤ" = c("Comparatives"),
+  "comparative" = c("Comparatives"),
+  "second-position clitic" = c("Second-position clitics")
 )
 
 #### UI ####
@@ -131,7 +172,8 @@ knowledge.page = nav_panel("Current knowledge",
                            actionButton("update.knowledge", "Save changes"),
                            layout_columns(
                              card(card_header(class = "bg-dark", "Nouns and adjectives"),
-                                  knowledge.groups[["Noun class"]]),
+                                  knowledge.groups[["Noun class"]],
+                                  knowledge.groups[["Adjective forms"]]),
                              card(card_header(class = "bg-dark", "Verbs"),
                                   knowledge.groups[["Verb class"]],
                                   knowledge.groups[["Tense and mood"]],
@@ -142,6 +184,7 @@ knowledge.page = nav_panel("Current knowledge",
                            layout_columns(
                              card(card_header(class = "bg-dark", "Relations"),
                                   knowledge.groups[["Arguments of verbs"]],
+                                  knowledge.groups[["Uses of cases"]],
                                   knowledge.groups[["Conjunction"]])
                            ))
 string.page = nav_panel("Excerpts",
@@ -274,6 +317,14 @@ server <- function(input, output, session) {
         }
       }
       
+      # Get adjective degrees the student knows
+      allowed.adjective.degree = c("X")
+      for(adr in names(adjective.degree.required)) {
+        if(adjective.degree.required[[adr]] %in% knowledge.df()$LessonName) {
+          allowed.adjective.degree = c(allowed.adjective.degree, adr)
+        }
+      }
+      
       # Get verb classes the student knows
       allowed.verb.class = c("X")
       for(vcr in names(verb.class.required)) {
@@ -299,15 +350,16 @@ server <- function(input, output, session) {
       }
       
       # Get other parts of speech the student knows
-      allowed.other.pos = c("X")
+      allowed.other.pos = c("conj")
       for(opr in names(other.pos.required)) {
         if(all(other.pos.required[[opr]] %in% knowledge.df()$LessonName)) {
           allowed.other.pos = c(allowed.other.pos, opr)
         }
       }
+      print(allowed.other.pos)
       
       # Get relations the student knows
-      allowed.relation = c("conjunct, chain", "appositive")
+      allowed.relation = c("conjunct, chain", "name", "title", "entitled")
       for(rr in names(relation.required)) {
         if(all(relation.required[[rr]] %in% knowledge.df()$LessonName)) {
           allowed.relation = c(allowed.relation, rr)
@@ -331,6 +383,8 @@ server <- function(input, output, session) {
                                                  'indefinite pronoun',
                                                  'relative pronoun')
                                          AND NounClassType IN ({allowed.noun.class*})
+                                         AND (Degree IS NULL
+                                              OR Degree IN ({allowed.adjective.degree*}))
                                          AND (POS IN ('noun', 'adj')
                                               OR POS IN ({allowed.other.pos*})))),
                               forbidden_words AS
