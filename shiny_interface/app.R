@@ -18,7 +18,7 @@ dbGetQuery(gnt.con, "SET NAMES utf8")
 
 # List of lessons
 lessons.df = dbGetQuery(gnt.con,
-                        "SELECT LessonName, LessonGroup
+                        "SELECT LessonID, LessonName, LessonGroup
                          FROM lessons
                          ORDER BY DisplayOrder")
 
@@ -27,10 +27,8 @@ noun.class.required = list(
   "second declension" = c("Second declension"),
   "first declension" = c("First declension"),
   "first declension with hs" = c("Second declension", "First declension"),
-  "first/second declension" = c("Second declension", "First declension"),
   "third declension, consonant stem" = c("Third declension"),
   "third declension, vowel stem" = c("Third declension"),
-  "first/second declension; third declension, consonant stem" = c("Second declension", "First declension", "Third declension"),
   "Ihsous" = c("Ἰησοῦς"),
   "irregular" = c("Irregular"),
   "undeclined" = c("Undeclined")
@@ -38,6 +36,16 @@ noun.class.required = list(
 adjective.degree.required = list(
   "comparative" = "Comparatives",
   "superlative" = "Superlatives"
+)
+
+# Lessons required for adjective classes
+adjective.class.required = list(
+  "first/second declension" = c("First and second declension"),
+  "third declension, consonant stem" = c("Third declension"),
+  "third declension, vowel stem" = c("Third declension"),
+  "first/second declension; third declension, consonant stem" = c("First and second declension", "Third declension"),
+  "irregular" = c("Irregular"),
+  "undeclined" = c("Undeclined")
 )
 
 # Lessons required for verb classes
@@ -171,17 +179,19 @@ knowledge.groups = map(
 knowledge.page = nav_panel("Current knowledge",
                            actionButton("update.knowledge", "Save changes"),
                            layout_columns(
-                             card(card_header(class = "bg-dark", "Nouns and adjectives"),
-                                  knowledge.groups[["Noun class"]],
-                                  knowledge.groups[["Adjective forms"]]),
-                             card(card_header(class = "bg-dark", "Verbs"),
-                                  knowledge.groups[["Verb class"]],
-                                  knowledge.groups[["Tense and mood"]],
-                                  knowledge.groups[["Voice"]]),
-                             card(card_header(class = "bg-dark", "Other"),
-                                  knowledge.groups[["Other parts of speech"]])
-                           ),
-                           layout_columns(
+                             fluidRow(
+                               card(card_header(class = "bg-dark", "Nouns and adjectives"),
+                                    knowledge.groups[["Noun class"]],
+                                    knowledge.groups[["Adjective class"]],
+                                    knowledge.groups[["Adjective forms"]]),
+                               card(card_header(class = "bg-dark", "Verbs"),
+                                    knowledge.groups[["Verb class"]],
+                                    knowledge.groups[["Tense and mood"]],
+                                    knowledge.groups[["Voice"]]),
+                               card(card_header(class = "bg-dark", "Other"),
+                                    knowledge.groups[["Pronouns"]],
+                                    knowledge.groups[["Other parts of speech"]])
+                             ),
                              card(card_header(class = "bg-dark", "Relations"),
                                   knowledge.groups[["Arguments of verbs"]],
                                   knowledge.groups[["Uses of cases"]],
@@ -248,7 +258,7 @@ server <- function(input, output, session) {
       student.id(dbGetQuery(gnt.con, student.id.sql)$StudentID)
 
       # Get the student's current knowledge
-      knowledge.sql = glue_sql("SELECT LessonName
+      knowledge.sql = glue_sql("SELECT LessonID
                                 FROM students_lessons
                                 WHERE StudentID = {student.id()}",
                                .con = gnt.con)
@@ -259,7 +269,7 @@ server <- function(input, output, session) {
         updateCheckboxGroupInput(session, inputId = gsub(" ", ".", cgi),
                                  selected = lessons.df %>%
                                    filter(LessonGroup == cgi) %>%
-                                   inner_join(knowledge.df(), by = "LessonName") %>%
+                                   inner_join(knowledge.df(), by = "LessonID") %>%
                                    pull(LessonName))
       }
       
@@ -272,31 +282,34 @@ server <- function(input, output, session) {
   observeEvent(input$update.knowledge, {
     
     # Update the student's new knowledge
-    for(cgi in names(knowledge.groups)) {
+    for(kg in names(knowledge.groups)) {
       delete.sql = "DELETE FROM students_lessons
                     WHERE StudentID = {student.id()}
-                          AND LessonName IN (SELECT LessonName
+                          AND LessonID IN (SELECT LessonID
                                              FROM lessons
-                                             WHERE LessonGroup = {cgi})"
-      new.vals = input[[gsub(" ", ".", cgi)]]
-      if(length(new.vals) > 0) {
-        delete.sql = paste(delete.sql, "AND LessonName NOT IN ({new.vals*})")
+                                             WHERE LessonGroup = {kg})"
+      new.ids = lessons.df %>%
+        filter(LessonGroup == kg,
+               LessonName %in% input[[gsub(" ", ".", kg)]]) %>%
+        pull(LessonID)
+      if(length(new.ids) > 0) {
+        delete.sql = paste(delete.sql, "AND LessonID NOT IN ({new.ids*})")
       }
       delete.sql = glue_sql(delete.sql, .con = gnt.con)
       dbGetQuery(gnt.con, delete.sql)
       insert.sql = "INSERT INTO students_lessons
-                    (StudentID, LessonName)
+                    (StudentID, LessonID)
                     VALUES
-                    ({student.id()}, {new.val})"
-      for(new.val in new.vals) {
-        if(!(new.val %in% knowledge.df()$LessonName)) {
+                    ({student.id()}, {new.id})"
+      for(new.id in new.ids) {
+        if(!(new.id %in% knowledge.df()$LessonID)) {
           dbGetQuery(gnt.con, glue_sql(insert.sql, .con = gnt.con))
         }
       }
     }
     
     # Get the student's current knowledge
-    knowledge.sql = glue_sql("SELECT LessonName
+    knowledge.sql = glue_sql("SELECT LessonID
                                 FROM students_lessons
                                 WHERE StudentID = {student.id()}",
                              .con = gnt.con)
@@ -309,18 +322,30 @@ server <- function(input, output, session) {
     
     if(!is.null(knowledge.df())) {
       
+      # Join lesson IDs to lesson names and groups
+      known.lessons.df = knowledge.df() %>%
+        inner_join(lessons.df, by = "LessonID")
+      
       # Get noun classes the student knows
       allowed.noun.class = c("X")
       for(ncr in names(noun.class.required)) {
-        if(all(noun.class.required[[ncr]] %in% knowledge.df()$LessonName)) {
+        if(all(noun.class.required[[ncr]] %in% known.lessons.df$LessonName[known.lessons.df$LessonGroup == "Noun class"])) {
           allowed.noun.class = c(allowed.noun.class, ncr)
+        }
+      }
+      
+      # Get adjective classes the student knows
+      allowed.adjective.class = c("X")
+      for(acr in names(adjective.class.required)) {
+        if(all(adjective.class.required[[acr]] %in% known.lessons.df$LessonName[known.lessons.df$LessonGroup == "Adjective class"])) {
+          allowed.adjective.class = c(allowed.adjective.class, acr)
         }
       }
       
       # Get adjective degrees the student knows
       allowed.adjective.degree = c("X")
       for(adr in names(adjective.degree.required)) {
-        if(adjective.degree.required[[adr]] %in% knowledge.df()$LessonName) {
+        if(adjective.degree.required[[adr]] %in% known.lessons.df$LessonName) {
           allowed.adjective.degree = c(allowed.adjective.degree, adr)
         }
       }
@@ -328,7 +353,7 @@ server <- function(input, output, session) {
       # Get verb classes the student knows
       allowed.verb.class = c("X")
       for(vcr in names(verb.class.required)) {
-        if(verb.class.required[[vcr]] %in% knowledge.df()$LessonName) {
+        if(verb.class.required[[vcr]] %in% known.lessons.df$LessonName) {
           allowed.verb.class = c(allowed.verb.class, vcr)
         }
       }
@@ -336,7 +361,7 @@ server <- function(input, output, session) {
       # Get tense-mood combinations the student knows
       allowed.tense.mood = c("X")
       for(tmr in names(tense.mood.required)) {
-        if(tense.mood.required[[tmr]] %in% knowledge.df()$LessonName) {
+        if(tense.mood.required[[tmr]] %in% known.lessons.df$LessonName) {
           allowed.tense.mood = c(allowed.tense.mood, tmr)
         }
       }
@@ -344,7 +369,7 @@ server <- function(input, output, session) {
       # Get voices the student knows
       allowed.voice = c("X")
       for(vr in names(voice.required)) {
-        if(voice.required[[vr]] %in% knowledge.df()$LessonName) {
+        if(voice.required[[vr]] %in% known.lessons.df$LessonName) {
           allowed.voice = c(allowed.voice, vr)
         }
       }
@@ -352,16 +377,19 @@ server <- function(input, output, session) {
       # Get other parts of speech the student knows
       allowed.other.pos = c("conj")
       for(opr in names(other.pos.required)) {
-        if(all(other.pos.required[[opr]] %in% knowledge.df()$LessonName)) {
+        if(all(other.pos.required[[opr]] %in% known.lessons.df$LessonName)) {
           allowed.other.pos = c(allowed.other.pos, opr)
         }
       }
-      print(allowed.other.pos)
       
       # Get relations the student knows
-      allowed.relation = c("conjunct, chain", "name", "title", "entitled")
+      allowed.relation = c("conjunct, chain", "name", "title", "entitled",
+                           "argument of adjective",
+                           "argument of adjective, infinitive",
+                           "argument of adjective, nominal",
+                           "modifier of nominal, nominal")
       for(rr in names(relation.required)) {
-        if(all(relation.required[[rr]] %in% knowledge.df()$LessonName)) {
+        if(all(relation.required[[rr]] %in% known.lessons.df$LessonName)) {
           allowed.relation = c(allowed.relation, rr)
         }
       }
@@ -375,18 +403,19 @@ server <- function(input, output, session) {
                                          AND VerbClassType IN ({allowed.verb.class*})
                                          AND CONCAT(Tense, '-', Mood) IN ({allowed.tense.mood*})
                                          AND Voice IN ({allowed.voice*}))
-                                     OR (POS IN ('noun', 'adj',
-                                                 'reflexive pronoun',
+                                     OR (POS IN ('noun', 'reflexive pronoun',
                                                  'demonstrative pronoun',
                                                  'demonstrative pronoun with kai',
                                                  'interrogative pronoun',
                                                  'indefinite pronoun',
                                                  'relative pronoun')
                                          AND NounClassType IN ({allowed.noun.class*})
+                                         AND (POS = 'noun'
+                                              OR POS IN ({allowed.other.pos*})))
+                                     OR (POS = 'adj'
+                                         AND NounClassType IN ({allowed.adjective.class*})
                                          AND (Degree IS NULL
-                                              OR Degree IN ({allowed.adjective.degree*}))
-                                         AND (POS IN ('noun', 'adj')
-                                              OR POS IN ({allowed.other.pos*})))),
+                                              OR Degree IN ({allowed.adjective.degree*})))),
                               forbidden_words AS
                               (SELECT words.SentenceID, words.SentencePosition
                                FROM words

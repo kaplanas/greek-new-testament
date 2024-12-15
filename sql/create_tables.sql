@@ -117,10 +117,11 @@ INSERT INTO students
   ('test_student', 'Test Student');
 
 CREATE TABLE lessons (
+  LessonID integer NOT NULL AUTO_INCREMENT,
   LessonName varchar(100) NOT NULL,
   DisplayOrder integer NOT NULL,
   LessonGroup varchar(100) NOT NULL,
-  PRIMARY KEY(LessonName)
+  PRIMARY KEY(LessonID)
 );
 
 INSERT INTO lessons
@@ -132,6 +133,11 @@ INSERT INTO lessons
   ('Ἰησοῦς', 4, 'Noun class'),
   ('Irregular', 5, 'Noun class'),
   ('Undeclined', 6, 'Noun class'),
+  ('First and second declension', 1, 'Adjective class'),
+  ('Second declension', 2, 'Adjective class'),
+  ('Third declension', 3, 'Adjective class'),
+  ('Irregular', 3, 'Adjective class'),
+  ('Undeclined', 4, 'Adjective class'),
   ('Comparatives', 1, 'Adjective forms'),
   ('Superlatives', 2, 'Adjective forms'),
   ('Εἰμί', 1, 'Verb class'),
@@ -152,13 +158,12 @@ INSERT INTO lessons
   ('Active', 1, 'Voice'),
   ('Middle', 2, 'Voice'),
   ('Passive', 3, 'Voice'),
+  ('Personal pronouns', 1, 'Pronouns'),
+  ('Reflexive pronouns', 2, 'Pronouns'),
+  ('Demonstrative pronouns', 3, 'Pronouns'),
+  ('Interrogative pronouns', 4, 'Pronouns'),
+  ('Indefinite pronouns', 5, 'Pronouns'),
   ('Second-position clitics', 1, 'Other parts of speech'),
-  ('Personal pronouns', 2, 'Other parts of speech'),
-  ('Reflexive pronouns', 3, 'Other parts of speech'),
-  ('Demonstrative pronouns', 4, 'Other parts of speech'),
-  ('Interrogative pronouns', 5, 'Other parts of speech'),
-  ('Indefinite pronouns', 6, 'Other parts of speech'),
-  ('Relative pronouns', 7, 'Other parts of speech'),
   ('Subjects', 1, 'Arguments of verbs'),
   ('Direct objects', 2, 'Arguments of verbs'),
   ('Indirect objects', 3, 'Arguments of verbs'),
@@ -175,10 +180,10 @@ INSERT INTO lessons
 
 CREATE TABLE students_lessons (
   StudentID integer NOT NULL,
-  LessonName varchar(100) NOT NULL,
-  PRIMARY KEY(StudentID, LessonName),
+  LessonID integer NOT NULL,
+  PRIMARY KEY(StudentID, LessonID),
   FOREIGN KEY (StudentID) REFERENCES students(StudentID) ON DELETE RESTRICT,
-  FOREIGN KEY (LessonName) REFERENCES lessons(LessonName) ON DELETE RESTRICT
+  FOREIGN KEY (LessonID) REFERENCES lessons(LessonID) ON DELETE RESTRICT
 );
 
 CREATE TABLE students_words (
