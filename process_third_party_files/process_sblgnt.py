@@ -1412,7 +1412,7 @@ class Sentence:
                              for i, word in enumerate(self.words)
                              if word['head'] is not None])
 
-            # Delete and re-insert licit sub-strings.
+            # Delete and re-insert licit strings.
             sql = """WITH word_to_delete AS
                           (SELECT words.SentenceID, words.SentencePosition
                            FROM words
