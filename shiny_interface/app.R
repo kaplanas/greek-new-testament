@@ -22,6 +22,15 @@ lessons.df = dbGetQuery(gnt.con,
                          FROM lessons
                          ORDER BY DisplayOrder")
 
+# Lessons required for cases
+case.required = list(
+  "nominative" = "Nominative",
+  "genitive" = "Genitive",
+  "dative" = "Dative",
+  "accusative" = "Accusative",
+  "vocative" = "Vocative"
+)
+
 # Lessons required for noun classes
 noun.class.required = list(
   "second declension" = c("Second declension"),
@@ -66,9 +75,24 @@ tense.mood.required = list(
   "future-indicative" = "Future indicative",
   "imperfect-indicative" = "Imperfect indicative",
   "aorist-indicative" = "Aorist indicative",
+  "perfect-indicative" = "Perfect indicative",
+  "pluperfect-indicative" = "Pluperfect indicative",
   "present-infinitive" = "Present infinitive",
   "future-infinitive" = "Future infinitive",
-  "aorist-infinitive" = "Aorist infinitive"
+  "aorist-infinitive" = "Aorist infinitive",
+  "perfect-infinitive" = "Perfect infinitive",
+  "present-participle" = "Present participle",
+  "future-participle" = "Future participle",
+  "aorist-participle" = "Aorist participle",
+  "perfect-participle" = "Perfect participle",
+  "present-imperative" = "Present imperative",
+  "aorist-imperative" = "Aorist imperative",
+  "perfect-imperative" = "Perfect imperative",
+  "present-subjunctive" = "Present subjunctive",
+  "aorist-subjunctive" = "Aorist subjunctive",
+  "perfect-subjunctive" = "Perfect subjunctive",
+  "present-optative" = "Present optative",
+  "aorist-optative" = "Aorist optative"
 )
 
 # Lessons required for voice
@@ -86,72 +110,40 @@ other.pos.required = list(
   "demonstrative pronoun" = c("Demonstrative pronouns"),
   "demonstrative pronoun with kai" = c("Demonstrative pronouns", "Coordinating conjunctions"),
   "interrogative pronoun" = c("Interrogative pronouns"),
-  "indefinite pronoun" = c("Indefinite pronouns")
+  "indefinite pronoun" = c("Indefinite pronouns"),
+  "relative pronoun" = c("Relative pronouns"),
+  "det" = c("Definite article"),
+  "prep" = c("Prepositions"),
+  "negation" = c("Negation"),
+  "adv" = c("Adverbs"),
+  "adverb with kai" = c("Adverbs", "Coordinating conjunctions"),
+  "indefinite adverb" = c("Adverbs", "Indefinite pronouns"),
+  "interrogative adverb" = c("Adverbs", "Interrogative pronouns"),
+  "reflexive adverb" = c("Adverbs", "Reflexive pronouns"),
+  "num" = c("Numbers"),
+  "ptcl" = c("Particles"),
+  "intj" = c("Particles")
 )
 
-# Lessons required for relations
+# Lessons required for various relations
 relation.required = list(
-  "subject" = c("Subjects"),
-  "subject of implicit speech" = c("Subjects"),
-  "subject of infinitive" = c("Subjects"),
-  "subject of infinitive, attraction" = c("Subjects"),
-  "subject of participle" = c("Subjects", "Participles"),
-  "subject of small clause" = c("Subjects"),
-  "subject of verbless predicate" = c("Subjects"),
-  "subject, attraction" = c("Subjects", "Relative clauses"),
-  "subject, irregular agreement" = c("Subjects"),
-  "subject, neuter plural" = c("Subjects"),
-  "subject, neuter plural, regular agreement" = c("Subjects"),
-  "direct object" = c("Direct objects"),
-  "direct object, attraction" = c("Direct objects"),
-  "indirect object" = c("Indirect objects"),
-  "indirect object, attraction" = c("Indirect objects"),
-  "predicate, nominal" = c("Predicates"),
-  "predicate, non-nominal" = c("Predicates"),
-  "genitive, relation" = c("Genitive"),
-  "genitive, other" = c("Genitive"),
-  "genitive, body part" = c("Genitive"),
-  "genitive, subject" = c("Genitive"),
-  "genitive, possession" = c("Genitive"),
-  "genitive, object" = c("Genitive"),
-  "genitive, part-whole" = c("Genitive"),
-  "genitive, source" = c("Genitive"),
-  "genitive, characterized by" = c("Genitive"),
-  "genitive, location" = c("Genitive"),
-  "genitive, specification" = c("Genitive"),
-  "genitive, material" = c("Genitive"),
-  "genitive, time" = c("Genitive"),
-  "genitive, comparative" = c("Genitive", "Comparatives"),
-  "genitive, property" = c("Genitive"),
-  "genitive, about" = c("Genitive"),
-  "genitive, contents" = c("Genitive"),
-  "genitive, son of" = c("Genitive"),
-  "genitive, amount" = c("Genitive"),
-  "dative, other" = c("Dative"),
-  "dative, instrument" = c("Dative"),
-  "dative, benefit" = c("Dative"),
-  "dative, time" = c("Dative"),
-  "dative, manner" = c("Dative"),
-  "dative, possession" = c("Dative"),
-  "dative, agent" = c("Dative"),
-  "dative, cognate of verb" = c("Dative"),
-  "dative, Hebrew infinitive construct" = c("Dative"),
-  "accusative, other" = c("Accusative"),
-  "accusative, time" = c("Accusative"),
-  "accusative, amount" = c("Accusative"),
-  "accusative, manner" = c("Accusative"),
-  "accusative, cognate of verb" = c("Accusative"),
-  "interjection, vocative" = c("Vocative"),
+  "sentential complement" = c("Sentential complements"),
+  "conjunct, ὅτι" = c("Sentential complements"),
+  "clause argument of verb" = c("Sentential complements"),
+  "second-position clitic" = c("Second-position clitics"),
   "conjunct" = c("Coordinating conjunctions"),
   "conjunct, main" = c("Subordinating conjunctions"),
   "conjunct, subordinate" = c("Subordinating conjunctions"),
-  "conjunct, μέν δέ" = c("Μὲν δέ"),
-  "conjunct, ὡς, clause" = c("Ὡς"),
-  "conjunct, ὡς, non-clause" = c("Ὡς"),
-  "conjunct, ὡς, other" = c("Ὡς"),
-  "conjunct, ἤ" = c("Comparatives"),
-  "comparative" = c("Comparatives"),
-  "second-position clitic" = c("Second-position clitics")
+  "conjunct, ὡς, clause" = c("Subordinating conjunctions"),
+  "conjunct, ὡς, non-clause" = c("Subordinating conjunctions"),
+  "conjunct, ὡς, other" = c("Subordinating conjunctions"),
+  "topic" = c("Topics"),
+  "subject, attraction" = c("Relative pronouns"),
+  "direct object, attraction" = c("Relative pronouns"),
+  "indirect object, attraction" = c("Relative pronouns"),
+  "other, attraction" = c("Relative pronouns"),
+  "resumptive pronoun" = c("Relative pronouns"),
+  "number" = c("Numbers")
 )
 
 #### UI ####
@@ -179,23 +171,19 @@ knowledge.groups = map(
 knowledge.page = nav_panel("Current knowledge",
                            actionButton("update.knowledge", "Save changes"),
                            layout_columns(
-                             fluidRow(
-                               card(card_header(class = "bg-dark", "Nouns and adjectives"),
-                                    knowledge.groups[["Noun class"]],
-                                    knowledge.groups[["Adjective class"]],
-                                    knowledge.groups[["Adjective forms"]]),
-                               card(card_header(class = "bg-dark", "Verbs"),
-                                    knowledge.groups[["Verb class"]],
-                                    knowledge.groups[["Tense and mood"]],
-                                    knowledge.groups[["Voice"]]),
-                               card(card_header(class = "bg-dark", "Other"),
-                                    knowledge.groups[["Pronouns"]],
-                                    knowledge.groups[["Other parts of speech"]])
-                             ),
-                             card(card_header(class = "bg-dark", "Relations"),
-                                  knowledge.groups[["Arguments of verbs"]],
-                                  knowledge.groups[["Uses of cases"]],
-                                  knowledge.groups[["Conjunction"]])
+                             card(card_header(class = "bg-dark", "Nouns and adjectives"),
+                                  knowledge.groups[["Case"]],
+                                  knowledge.groups[["Noun class"]],
+                                  knowledge.groups[["Adjective class"]],
+                                  knowledge.groups[["Adjective forms"]]),
+                             card(card_header(class = "bg-dark", "Verbs"),
+                                  knowledge.groups[["Verb class"]],
+                                  knowledge.groups[["Tense and mood"]],
+                                  knowledge.groups[["Voice"]]),
+                             card(card_header(class = "bg-dark", "Other"),
+                                  knowledge.groups[["Pronouns"]],
+                                  knowledge.groups[["Other parts of speech"]],
+                                  knowledge.groups[["Relations"]])
                            ))
 string.page = nav_panel("Excerpts",
                         DTOutput("show.strings"))
@@ -326,6 +314,14 @@ server <- function(input, output, session) {
       known.lessons.df = knowledge.df() %>%
         inner_join(lessons.df, by = "LessonID")
       
+      # Get cases the student knows
+      allowed.case = c("X")
+      for(cr in names(case.required)) {
+        if(case.required[[cr]] %in% known.lessons.df$LessonName) {
+          allowed.case = c(allowed.case, cr)
+        }
+      }
+      
       # Get noun classes the student knows
       allowed.noun.class = c("X")
       for(ncr in names(noun.class.required)) {
@@ -382,15 +378,11 @@ server <- function(input, output, session) {
         }
       }
       
-      # Get relations the student knows
-      allowed.relation = c("conjunct, chain", "name", "title", "entitled",
-                           "argument of adjective",
-                           "argument of adjective, infinitive",
-                           "argument of adjective, nominal",
-                           "modifier of nominal, nominal")
+      # Get relations the student DOESN'T know
+      forbidden.relation = c("X")
       for(rr in names(relation.required)) {
-        if(all(relation.required[[rr]] %in% known.lessons.df$LessonName)) {
-          allowed.relation = c(allowed.relation, rr)
+        if(!all(relation.required[[rr]] %in% known.lessons.df$LessonName)) {
+          forbidden.relation = c(forbidden.relation, rr)
         }
       }
       
@@ -398,24 +390,25 @@ server <- function(input, output, session) {
       get.strings.sql = "WITH allowed_words AS
                               (SELECT SentenceID, SentencePosition
                                FROM words
-                               WHERE POS IN ({allowed.other.pos*})
-                                     OR (POS = 'verb'
-                                         AND VerbClassType IN ({allowed.verb.class*})
-                                         AND CONCAT(Tense, '-', Mood) IN ({allowed.tense.mood*})
-                                         AND Voice IN ({allowed.voice*}))
-                                     OR (POS IN ('noun', 'reflexive pronoun',
-                                                 'demonstrative pronoun',
-                                                 'demonstrative pronoun with kai',
-                                                 'interrogative pronoun',
-                                                 'indefinite pronoun',
-                                                 'relative pronoun')
-                                         AND NounClassType IN ({allowed.noun.class*})
-                                         AND (POS = 'noun'
-                                              OR POS IN ({allowed.other.pos*})))
-                                     OR (POS = 'adj'
-                                         AND NounClassType IN ({allowed.adjective.class*})
-                                         AND (Degree IS NULL
-                                              OR Degree IN ({allowed.adjective.degree*})))),
+                               WHERE (POS IN ({allowed.other.pos*})
+                                      OR (POS = 'verb'
+                                          AND VerbClassType IN ({allowed.verb.class*})
+                                          AND CONCAT(Tense, '-', Mood) IN ({allowed.tense.mood*})
+                                          AND Voice IN ({allowed.voice*}))
+                                      OR (POS IN ('noun', 'reflexive pronoun',
+                                                  'demonstrative pronoun',
+                                                  'demonstrative pronoun with kai',
+                                                  'interrogative pronoun',
+                                                  'indefinite pronoun',
+                                                  'relative pronoun')
+                                          AND NounClassType IN ({allowed.noun.class*})
+                                          AND (POS = 'noun'
+                                               OR POS IN ({allowed.other.pos*})))
+                                      OR (POS IN ('adj', 'pron')
+                                          AND NounClassType IN ({allowed.adjective.class*})
+                                          AND (Degree IS NULL
+                                               OR Degree IN ({allowed.adjective.degree*}))))
+                                     AND (COALESCE(NCase, 'X') IN ({allowed.case*}))),
                               forbidden_words AS
                               (SELECT words.SentenceID, words.SentencePosition
                                FROM words
@@ -426,7 +419,7 @@ server <- function(input, output, session) {
                               forbidden_relations AS
                               (SELECT SentenceID, FirstPos, LastPos
                                FROM relations
-                               WHERE Relation NOT IN ({allowed.relation*})),
+                               WHERE Relation IN ({forbidden.relation*})),
                               singleton_sentences AS
                               (SELECT SentenceID
                                FROM words

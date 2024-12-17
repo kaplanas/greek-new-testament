@@ -62,15 +62,6 @@ CREATE TABLE words (
   INDEX words_sentence_id_position (SentenceID, SentencePosition)
 );
 
-CREATE TABLE strings (
-  SentenceID varchar(50) NOT NULL,
-  Citation varchar(50) NOT NULL,
-  Start integer NOT NULL,
-  Stop integer NOT NULL,
-  String varchar(1000) NOT NULL,
-  PRIMARY KEY(SentenceID, Start, Stop)
-);
-
 CREATE TABLE relations (
   SentenceID varchar(50) NOT NULL,
   HeadPos integer NOT NULL,
@@ -104,6 +95,15 @@ CREATE TABLE checked_types (
   VerbClassType varchar(100)
 );
 
+CREATE TABLE strings (
+  SentenceID varchar(50) NOT NULL,
+  Citation varchar(50) NOT NULL,
+  Start integer NOT NULL,
+  Stop integer NOT NULL,
+  String varchar(1000) NOT NULL,
+  PRIMARY KEY(SentenceID, Start, Stop)
+);
+
 CREATE TABLE students (
   StudentID integer NOT NULL AUTO_INCREMENT,
   StudentUsername varchar(100) NOT NULL,
@@ -127,6 +127,11 @@ CREATE TABLE lessons (
 INSERT INTO lessons
   (LessonName, DisplayOrder, LessonGroup)
   VALUES
+  ('Nominative', 1, 'Case'),
+  ('Genitive', 2, 'Case'),
+  ('Dative', 3, 'Case'),
+  ('Accusative', 4, 'Case'),
+  ('Vocative', 5, 'Case'),
   ('Second declension', 1, 'Noun class'),
   ('First declension', 2, 'Noun class'),
   ('Third declension', 3, 'Noun class'),
@@ -136,8 +141,8 @@ INSERT INTO lessons
   ('First and second declension', 1, 'Adjective class'),
   ('Second declension', 2, 'Adjective class'),
   ('Third declension', 3, 'Adjective class'),
-  ('Irregular', 3, 'Adjective class'),
-  ('Undeclined', 4, 'Adjective class'),
+  ('Irregular', 4, 'Adjective class'),
+  ('Undeclined', 5, 'Adjective class'),
   ('Comparatives', 1, 'Adjective forms'),
   ('Superlatives', 2, 'Adjective forms'),
   ('Εἰμί', 1, 'Verb class'),
@@ -152,9 +157,24 @@ INSERT INTO lessons
   ('Future indicative', 2, 'Tense and mood'),
   ('Imperfect indicative', 3, 'Tense and mood'),
   ('Aorist indicative', 4, 'Tense and mood'),
-  ('Present infinitive', 5, 'Tense and mood'),
-  ('Future infinitive', 6, 'Tense and mood'),
-  ('Aorist infinitive', 7, 'Tense and mood'),
+  ('Perfect indicative', 5, 'Tense and mood'),
+  ('Pluperfect indicative', 6, 'Tense and mood'),
+  ('Present infinitive', 7, 'Tense and mood'),
+  ('Future infinitive', 8, 'Tense and mood'),
+  ('Aorist infinitive', 9, 'Tense and mood'),
+  ('Perfect infinitive', 10, 'Tense and mood'),
+  ('Present participle', 11, 'Tense and mood'),
+  ('Future participle', 12, 'Tense and mood'),
+  ('Aorist participle', 13, 'Tense and mood'),
+  ('Perfect participle', 14, 'Tense and mood'),
+  ('Present imperative', 15, 'Tense and mood'),
+  ('Aorist imperative', 16, 'Tense and mood'),
+  ('Perfect imperative', 17, 'Tense and mood'),
+  ('Present subjunctive', 18, 'Tense and mood'),
+  ('Aorist subjunctive', 19, 'Tense and mood'),
+  ('Perfect subjunctive', 20, 'Tense and mood'),
+  ('Present optative', 21, 'Tense and mood'),
+  ('Aorist optative', 22, 'Tense and moood'),
   ('Active', 1, 'Voice'),
   ('Middle', 2, 'Voice'),
   ('Passive', 3, 'Voice'),
@@ -163,20 +183,17 @@ INSERT INTO lessons
   ('Demonstrative pronouns', 3, 'Pronouns'),
   ('Interrogative pronouns', 4, 'Pronouns'),
   ('Indefinite pronouns', 5, 'Pronouns'),
-  ('Second-position clitics', 1, 'Other parts of speech'),
-  ('Subjects', 1, 'Arguments of verbs'),
-  ('Direct objects', 2, 'Arguments of verbs'),
-  ('Indirect objects', 3, 'Arguments of verbs'),
-  ('Predicates', 4, 'Arguments of verbs'),
-  ('Nominative', 1, 'Uses of cases'),
-  ('Genitive', 2, 'Uses of cases'),
-  ('Dative', 3, 'Uses of cases'),
-  ('Accusative', 4, 'Uses of cases'),
-  ('Vocative', 5, 'Uses of cases'),
-  ('Coordinating conjunctions', 1, 'Conjunction'),
-  ('Subordinating conjunctions', 2, 'Conjunction'),
-  ('Μὲν δέ', 3, 'Conjunction'),
-  ('Ὡς', 4, 'Conjunction');
+  ('Relative pronouns', 6, 'Pronouns'),
+  ('Definite article', 1, 'Other parts of speech'),
+  ('Second-position clitics', 2, 'Other parts of speech'),
+  ('Prepositions', 3, 'Other parts of speech'),
+  ('Conjunctions', 4, 'Other parts of speech'),
+  ('Negation', 5, 'Other parts of speech'),
+  ('Adverbs', 6, 'Other parts of speech'),
+  ('Numbers', 7, 'Other parts of speech'),
+  ('Particles', 8, 'Other parts of speech'),
+  ('Sentential complements', 1, 'Relations'),
+  ('Topics', 2, 'Relations');
 
 CREATE TABLE students_lessons (
   StudentID integer NOT NULL,
