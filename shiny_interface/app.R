@@ -42,6 +42,8 @@ noun.class.required = list(
   "irregular" = c("Irregular"),
   "undeclined" = c("Undeclined")
 )
+
+# Lessons required for comparative and superlative adjectives
 adjective.degree.required = list(
   "comparative" = "Comparatives",
   "superlative" = "Superlatives"
@@ -144,6 +146,45 @@ relation.required = list(
   "other, attraction" = c("Relative pronouns"),
   "resumptive pronoun" = c("Relative pronouns"),
   "number" = c("Numbers")
+)
+
+# Pretty names for word properties
+word.property.names.df = bind_rows(
+  data.frame(property = "NounClassType",
+             pretty.property = "Noun class",
+             value = c("second declension", "first declension",
+                       "first declension with hs",
+                       "third declension, consonant stem",
+                       "third declension, vowel stem", "Ihsous", "irregular",
+                       "undeclined")) %>%
+    mutate(pretty.value = case_when(value == "first declension with hs" ~ "First declension with ης",
+                                    grepl("^third declension", value) ~ "Third declension",
+                                    value == "Ihsous" ~ "Ἰησοῦς",
+                                    T ~ str_to_sentence(value))),
+  data.frame(property = "VerbClassType",
+             pretty.property = "Verb class",
+             value = c("eimi", "omega", "contract, ew", "contract, aw",
+                       "contract, ow", "mi", "oida", "other"),
+             pretty.value = c("Εἰμί", "Omega", "Contract, έω", "Contract, άω",
+                              "Contract, όω", "Μί", "Οἴδα", "Other")),
+  data.frame(property = "TenseMood",
+             pretty.property = "Tense and mood",
+             value = c("present-indicative", "future-indicative",
+                       "imperfect-indicative", "aorist-indicative",
+                       "perfect-indicative", "pluperfect-indicative",
+                       "present-infinitive", "future-infinitive",
+                       "aorist-infinitive", "perfect-infinitive",
+                       "present-participle", "future-participle",
+                       "aorist-participle", "perfect-participle",
+                       "present-imperative", "aorist-imperative",
+                       "perfect-imperative", "present-subjunctive",
+                       "aorist-subjunctive", "perfect-subjunctive",
+                       "present-optative", "aorist-optative")) %>%
+    mutate(pretty.value = str_to_sentence(gsub("-", " ", value))),
+  data.frame(property = "Voice",
+             pretty.property = "Voice",
+             value = c("active", "middle", "passive")) %>%
+    mutate(pretty.value = str_to_sentence(value))
 )
 
 # Pretty names for relations
@@ -283,6 +324,7 @@ server <- function(input, output, session) {
   student.id = reactiveVal(NULL)
   knowledge.df = reactiveVal(NULL)
   all.strings.df = reactiveVal(NULL)
+  all.word.properties.df = reactiveVal(NULL)
   all.relations.df = reactiveVal(NULL)
   sample.strings.df = reactiveVal(NULL)
   
@@ -548,10 +590,17 @@ server <- function(input, output, session) {
                                GROUP BY words.SentenceID)
                          SELECT ls.Citation, bcv.BookOrder, bcv.Chapter,
                                 bcv.Verse, ls.SentenceID, ls.Start, ls.Stop,
-                                ls.String, r.Relation
+                                ls.String,
+                                CONCAT(w.Tense, '-', w.Mood) AS TenseMood,
+                                w.Voice, w.NounClassType, w.VerbClassType,
+                                r.Relation
                          FROM longest_strings ls
                               JOIN book_chapter_verse bcv
                               ON ls.SentenceID = bcv.SentenceID
+                              JOIN words w
+                              ON ls.SentenceID = w.SentenceID
+                                 AND ls.Start <= w.SentencePosition
+                                 AND ls.Stop >= w.SentencePosition
                               LEFT JOIN (SELECT DISTINCT longest_strings.SentenceID,
                                                 longest_strings.Start,
                                                 longest_strings.Stop,
@@ -574,8 +623,7 @@ server <- function(input, output, session) {
                               ON ls.SentenceID = r.SentenceID
                                  AND ls.Start = r.Start
                                  AND ls.Stop = r.Stop
-                                 AND ls.Start <= r.DependentPos
-                                 AND ls.Stop >= r.DependentPos"
+                                 AND w.SentencePosition = r.DependentPos"
       get.strings.sql = glue_sql(get.strings.sql, .con = gnt.con)
       everything.df = dbGetQuery(gnt.con, get.strings.sql)
       everything.df %>%
@@ -583,6 +631,14 @@ server <- function(input, output, session) {
                       Stop, String) %>%
         distinct() %>%
         all.strings.df()
+      everything.df %>%
+        dplyr::select(SentenceID, Start, Stop, TenseMood, Voice, NounClassType,
+                      VerbClassType) %>%
+        pivot_longer(cols = -c("SentenceID", "Start", "Stop"),
+                     names_to = "property") %>%
+        distinct() %>%
+        inner_join(word.property.names.df, by = c("property", "value")) %>%
+        all.word.properties.df()
       everything.df %>%
         filter(!is.na(Relation)) %>%
         dplyr::select(SentenceID, Start, Stop, Relation) %>%
@@ -595,9 +651,10 @@ server <- function(input, output, session) {
   })
   
   # Refresh possible excerpt filters
-  observeEvent(all.relations.df(), {
+  observeEvent(all.word.properties.df(), {
     example.choices = c("[everything]",
-                        sort(all.relations.df()$pretty.relation))
+                        split(all.word.properties.df()$pretty.value, all.word.properties.df()$pretty.property),
+                        list(`Syntactic structure` = sort(all.relations.df()$pretty.relation)))
     updateSelectInput(session = session, inputId = "string.examples",
                       choices = example.choices)
   })
@@ -611,12 +668,21 @@ server <- function(input, output, session) {
     {
       temp.df = all.strings.df()
       if(input$string.examples != "[everything]") {
-        temp.df = temp.df %>%
-          inner_join(all.relations.df() %>%
-                       filter(pretty.relation == input$string.examples) %>%
-                       dplyr::select(SentenceID, Start, Stop) %>%
-                       distinct(),
-                     by = c("SentenceID", "Start", "Stop"))
+        if(input$string.examples %in% all.relations.df()$pretty.relation) {
+          temp.df = temp.df %>%
+            inner_join(all.relations.df() %>%
+                         filter(pretty.relation == input$string.examples) %>%
+                         dplyr::select(SentenceID, Start, Stop) %>%
+                         distinct(),
+                       by = c("SentenceID", "Start", "Stop"))
+        } else if(input$string.examples %in% all.word.properties.df()$pretty.value) {
+          temp.df = temp.df %>%
+            inner_join(all.word.properties.df() %>%
+                         filter(pretty.value == input$string.examples) %>%
+                         dplyr::select(SentenceID, Start, Stop) %>%
+                         distinct(),
+                       by = c("SentenceID", "Start", "Stop"))
+        }
       }
       temp.df %>%
         slice_sample(n = input$string.count) %>%
