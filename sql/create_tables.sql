@@ -187,11 +187,12 @@ INSERT INTO lessons
   ('Definite article', 1, 'Other parts of speech'),
   ('Second-position clitics', 2, 'Other parts of speech'),
   ('Prepositions', 3, 'Other parts of speech'),
-  ('Conjunctions', 4, 'Other parts of speech'),
-  ('Negation', 5, 'Other parts of speech'),
-  ('Adverbs', 6, 'Other parts of speech'),
-  ('Numbers', 7, 'Other parts of speech'),
-  ('Particles', 8, 'Other parts of speech'),
+  ('Coordinating conjunctions', 4, 'Other parts of speech'),
+  ('Subordinating conjunctions', 5, 'Other parts of speech'),
+  ('Negation', 6, 'Other parts of speech'),
+  ('Adverbs', 7, 'Other parts of speech'),
+  ('Numbers', 8, 'Other parts of speech'),
+  ('Particles', 9, 'Other parts of speech'),
   ('Sentential complements', 1, 'Relations'),
   ('Topics', 2, 'Relations');
 

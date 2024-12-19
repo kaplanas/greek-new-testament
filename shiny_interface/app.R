@@ -69,6 +69,13 @@ verb.class.required = list(
   "other" = "Other"
 )
 
+# Lessons required for voice
+voice.required = list(
+  "active" = "Active",
+  "middle" = "Middle",
+  "passive" = "Passive"
+)
+
 # Lessons required for tense and mood
 tense.mood.required = list(
   "present-indicative" = "Present indicative",
@@ -93,13 +100,6 @@ tense.mood.required = list(
   "perfect-subjunctive" = "Perfect subjunctive",
   "present-optative" = "Present optative",
   "aorist-optative" = "Aorist optative"
-)
-
-# Lessons required for voice
-voice.required = list(
-  "active" = "Active",
-  "middle" = "Middle",
-  "passive" = "Passive"
 )
 
 # Lessons required for various parts of speech
@@ -146,13 +146,80 @@ relation.required = list(
   "number" = c("Numbers")
 )
 
+# Pretty names for relations
+relation.names.df = data.frame(
+  relation = c("accusative, amount", "accusative, cognate of verb",
+               "accusative, manner", "accusative, other", "accusative, time",
+               "argument of adjective", "argument of adjective, infinitive",
+               "argument of adjective, nominal", "clause argument of verb",
+               "comparative", "conjunct", "conjunct, main",
+               "conjunct, subordinate", "conjunct, ἤ", "conjunct, μέν δέ",
+               "conjunct, ὅτι", "conjunct, ὡς, clause",
+               "conjunct, ὡς, non-clause", "conjunct, ὡς, other",
+               "dative, agent", "dative, benefit", "dative, cognate of verb",
+               "dative, Hebrew infinitive construct", "dative, instrument",
+               "dative, manner", "dative, other", "dative, possession",
+               "dative, time", "determiner, things of", "direct object",
+               "direct object, attraction", "genitive, about",
+               "genitive, amount", "genitive, body part",
+               "genitive, characterized by", "genitive, comparative",
+               "genitive, contents", "genitive, location", "genitive, material",
+               "genitive, object", "genitive, other", "genitive, part-whole",
+               "genitive, possession", "genitive, property",
+               "genitive, relation", "genitive, son of", "genitive, source",
+               "genitive, specification", "genitive, subject", "genitive, time",
+               "indirect object", "indirect object, attraction",
+               "infinitive argument of noun", "infinitive argument of verb",
+               "infinitive, purpose", "infinitive, something",
+               "modifier of adjective, adverb", "modifier of adjective, PP",
+               "modifier of nominal, adverb", "modifier of nominal, infinitive",
+               "modifier of nominal, nominal", "modifier of nominal, PP",
+               "modifier of non-nominal, adjective",
+               "modifier of other, adverb", "modifier of other, nominal",
+               "modifier of other, participle", "modifier of other, PP",
+               "modifier of verb, adverb", "modifier of verb, infinitive",
+               "modifier of verb, nominal", "modifier of verb, participle",
+               "modifier of verb, PP", "modifier of verbless predicate, adverb",
+               "modifier of verbless predicate, nominal",
+               "modifier of verbless predicate, participle",
+               "modifier of verbless predicate, PP", "negation of nominal",
+               "negation of verb", "negation of verb, semantically embedded",
+               "negation, other", "negation, εἰ μὴ", "negation, εἰ μὴ, nominal",
+               "number", "object of preposition", "other, attraction",
+               "predicate, nominal", "predicate, non-nominal",
+               "resumptive pronoun", "sentential complement", "subject",
+               "subject of implicit speech", "subject of infinitive",
+               "subject of infinitive, attraction", "subject of participle",
+               "subject of verbless predicate", "subject, attraction",
+               "subject, irregular agreement", "topic")
+) %>%
+  mutate(pretty.relation = case_when(grepl("^argument of adjective", relation) ~ "Argument of adjective",
+                                     relation %in% c("comparative",
+                                                     "conjunct, ἤ") ~ "Comparison",
+                                     relation == "conjunct" ~ "Conjunction, coordinating",
+                                     relation %in% c("conjunct, main",
+                                                     "conjunct, subordinate") ~ "Conjunction, subordinating",
+                                     relation == "conjunct, μέν δέ" ~ "Μὲν...δέ...",
+                                     relation %in% c("conjunct, ὅτι",
+                                                     "sentential complement") ~ "Indirect discourse",
+                                     relation %in% c("conjunct, ὡς, clause",
+                                                     "conjunct, ὡς, non-clause",
+                                                     "conjunct, ὡς, other") ~ "Ὡς",
+                                     relation == "determiner, things of" ~ "\"Things of\"",
+                                     relation == "negation of verb, semantically embedded" ~ "Negation of verb",
+                                     relation %in% c("negation, εἰ μὴ",
+                                                     "negation, εἰ μὴ, nominal") ~ "Εἰ μὴ",
+                                     relation %in% c("subject, neuter plural",
+                                                     "subject, neuter plural, regular agreement") ~ "Subject, neuter plural",
+                                     T ~ str_to_sentence(relation)))
+
 #### UI ####
 
 # Page title
 page.title = "New Testament Greek"
 
 # Login page
-login.page = nav_panel("Log in",
+login.page = nav_panel(title = "Log in",
                        textInput("gnt.username", "Username"),
                        passwordInput("gnt.password", "Password"),
                        actionButton("user.log.in", label = "Log in"))
@@ -168,33 +235,43 @@ knowledge.groups = map(
                          pull(LessonName))
   }
 )
-knowledge.page = nav_panel("Current knowledge",
+knowledge.page = nav_panel(title = "Current knowledge",
                            actionButton("update.knowledge", "Save changes"),
                            layout_columns(
-                             card(card_header(class = "bg-dark", "Nouns and adjectives"),
+                             card(card_header(class = "bg-dark",
+                                              "Nouns and adjectives"),
                                   knowledge.groups[["Case"]],
                                   knowledge.groups[["Noun class"]],
                                   knowledge.groups[["Adjective class"]],
                                   knowledge.groups[["Adjective forms"]]),
                              card(card_header(class = "bg-dark", "Verbs"),
                                   knowledge.groups[["Verb class"]],
-                                  knowledge.groups[["Tense and mood"]],
-                                  knowledge.groups[["Voice"]]),
+                                  knowledge.groups[["Voice"]],
+                                  knowledge.groups[["Tense and mood"]]),
                              card(card_header(class = "bg-dark", "Other"),
                                   knowledge.groups[["Pronouns"]],
                                   knowledge.groups[["Other parts of speech"]],
-                                  knowledge.groups[["Relations"]])
+                                  knowledge.groups[["Syntactic structures"]])
                            ))
-string.page = nav_panel("Excerpts",
+string.page = nav_panel(title = "Excerpts",
+                        layout_columns(
+                          numericInput("string.count",
+                                       "Number of excerpts to show:",
+                                       value = 10),
+                          selectInput("string.examples", "Include examples of:",
+                                      choices = c("[everything]")),
+                          fill = F
+                        ),
+                        actionButton("refresh.strings", "Refresh"),
                         DTOutput("show.strings"))
 
 # Define UI
 ui <- page_navbar(
-  useBusyIndicators(),
   title = page.title,
   login.page,
   knowledge.page,
-  string.page
+  string.page,
+  useBusyIndicators()
 )
 
 #### Server ####
@@ -205,7 +282,9 @@ server <- function(input, output, session) {
   # Student data
   student.id = reactiveVal(NULL)
   knowledge.df = reactiveVal(NULL)
-  strings.df = reactiveVal(NULL)
+  all.strings.df = reactiveVal(NULL)
+  all.relations.df = reactiveVal(NULL)
+  sample.strings.df = reactiveVal(NULL)
   
   # When the user attempts to log in, attempt to create a connection and
   # get the user's data
@@ -468,23 +547,89 @@ server <- function(input, output, session) {
                                     ON words.Book = books.Book
                                GROUP BY words.SentenceID)
                          SELECT ls.Citation, bcv.BookOrder, bcv.Chapter,
-                                bcv.Verse, ls.String
+                                bcv.Verse, ls.SentenceID, ls.Start, ls.Stop,
+                                ls.String, r.Relation
                          FROM longest_strings ls
                               JOIN book_chapter_verse bcv
-                              ON ls.SentenceID = bcv.SentenceID"
+                              ON ls.SentenceID = bcv.SentenceID
+                              LEFT JOIN (SELECT DISTINCT longest_strings.SentenceID,
+                                                longest_strings.Start,
+                                                longest_strings.Stop,
+                                                relations.DependentPos,
+                                                relations.Relation
+                                         FROM relations
+                                              JOIN longest_strings
+                                              ON relations.SentenceID = longest_strings.SentenceID
+                                                 AND relations.HeadPos >= longest_strings.Start
+                                                 AND relations.HeadPos <= longest_strings.Stop
+                                         WHERE relations.Relation NOT IN
+                                               ('appositive', 'conjunct, chain',
+                                               'determiner', 'entitled', 'gap',
+                                               'interjection, vocative', 'name',
+                                               'negation, double',
+                                               'parenthetical', 'particle',
+                                               'second-position clitic',
+                                               'subject of small clause',
+                                               'title')) r
+                              ON ls.SentenceID = r.SentenceID
+                                 AND ls.Start = r.Start
+                                 AND ls.Stop = r.Stop
+                                 AND ls.Start <= r.DependentPos
+                                 AND ls.Stop >= r.DependentPos"
       get.strings.sql = glue_sql(get.strings.sql, .con = gnt.con)
-      strings.df(dbGetQuery(gnt.con, get.strings.sql))
+      everything.df = dbGetQuery(gnt.con, get.strings.sql)
+      everything.df %>%
+        dplyr::select(Citation, BookOrder, Chapter, Verse, SentenceID, Start,
+                      Stop, String) %>%
+        distinct() %>%
+        all.strings.df()
+      everything.df %>%
+        filter(!is.na(Relation)) %>%
+        dplyr::select(SentenceID, Start, Stop, Relation) %>%
+        distinct() %>%
+        inner_join(relation.names.df, by = c("Relation" = "relation")) %>%
+        all.relations.df()
       
     }
     
   })
   
+  # Refresh possible excerpt filters
+  observeEvent(all.relations.df(), {
+    example.choices = c("[everything]",
+                        sort(all.relations.df()$pretty.relation))
+    updateSelectInput(session = session, inputId = "string.examples",
+                      choices = example.choices)
+  })
+  
+  # Refresh sample of strings
+  observeEvent(
+    {
+      input$refresh.strings
+      all.strings.df()
+    },
+    {
+      temp.df = all.strings.df()
+      if(input$string.examples != "[everything]") {
+        temp.df = temp.df %>%
+          inner_join(all.relations.df() %>%
+                       filter(pretty.relation == input$string.examples) %>%
+                       dplyr::select(SentenceID, Start, Stop) %>%
+                       distinct(),
+                     by = c("SentenceID", "Start", "Stop"))
+      }
+      temp.df %>%
+        slice_sample(n = input$string.count) %>%
+        sample.strings.df()
+    }
+  )
+  
   # Render strings
   output$show.strings = renderDT({
-    if(is.null(strings.df())) {
-      strings.df()
+    if(is.null(sample.strings.df())) {
+      sample.strings.df()
     } else {
-      strings.df() %>%
+      sample.strings.df() %>%
         arrange(BookOrder, Chapter, Verse) %>%
         dplyr::select(Citation, String) %>%
         datatable(options = list(paging = F,
