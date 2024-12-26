@@ -39,6 +39,9 @@ noun.class.required = list(
   "first/second declension" = c("Second declension", "First declension"),
   "third declension, consonant stem" = c("Third declension"),
   "third declension, vowel stem" = c("Third declension"),
+  "first/second declension; third declension, consonant stem" = c("Second declension",
+                                                                  "First declension",
+                                                                  "Third declension"),
   "Ihsous" = c("Ἰησοῦς"),
   "irregular" = c("Irregular"),
   "undeclined" = c("Undeclined")
@@ -53,6 +56,7 @@ adjective.degree.required = list(
 # Lessons required for adjective classes
 adjective.class.required = list(
   "first/second declension" = c("First and second declension"),
+  "second declension" = c("First and second declension"),
   "third declension, consonant stem" = c("Third declension"),
   "third declension, vowel stem" = c("Third declension"),
   "first/second declension; third declension, consonant stem" = c("First and second declension", "Third declension"),
@@ -107,6 +111,7 @@ tense.mood.required = list(
 
 # Lessons required for various parts of speech
 other.pos.required = list(
+  "pron" = c("Personal pronouns"),
   "personal pronoun" = c("Personal pronouns"),
   "personal pronoun with kai" = c("Personal pronouns", "Coordinating conjunctions"),
   "reflexive pronoun" = c("Reflexive pronouns"),
@@ -115,6 +120,7 @@ other.pos.required = list(
   "interrogative pronoun" = c("Interrogative pronouns"),
   "indefinite pronoun" = c("Indefinite pronouns"),
   "relative pronoun" = c("Relative pronouns"),
+  "relative adverb" = c("Relative pronouns"),
   "det" = c("Definite article"),
   "prep" = c("Prepositions"),
   "negation" = c("Negation"),
@@ -144,6 +150,7 @@ relation.required = list(
   "conjunct, ἤ" = c("Comparison"),
   "topic" = c("Topics"),
   "subject, attraction" = c("Relative pronouns"),
+  "subject of infinitive, attraction" = c("Relative pronouns"),
   "direct object, attraction" = c("Relative pronouns"),
   "indirect object, attraction" = c("Relative pronouns"),
   "other, attraction" = c("Relative pronouns"),
@@ -263,7 +270,6 @@ filter.property.names.df = bind_rows(
                        "subject, neuter plural, irregular agreement",
                        "subject of verbless predicate",
                        "subject of implicit speech", "subject of infinitive",
-                       "subject of infinitive, attraction",
                        "subject of participle")) %>%
     mutate(pretty.value = case_when(value %in% c("subject, neuter plural",
                                                  "subject, neuter plural, regular agreement") ~ "Subject, neuter plural",
@@ -319,7 +325,7 @@ filter.property.names.df = bind_rows(
                        "predicate, nominal", "predicate, non-nominal",
                        "resumptive pronoun", "second-position clitic",
                        "sentential complement", "subject, attraction",
-                       "topic")) %>%
+                       "subject of infinitive, attraction", "topic")) %>%
     mutate(pretty.value = case_when(grepl("attraction", value) ~ "Attraction",
                                     grepl("^argument of adjective", value) ~ "Argument of adjective",
                                     value %in% c("comparative",

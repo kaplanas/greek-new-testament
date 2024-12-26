@@ -29,8 +29,9 @@ GENDER_EDITS = pd.read_csv(SBL_DIR + '/gender_edits.csv',
                                              {'chapter': np.float64, 'verse': np.float64, 'position': np.float64}))
 POS_EDITS = pd.read_csv(SBL_DIR + '/pos_edits.csv', dtype=str)
 LEMMA_EDITS = pd.read_csv(SBL_DIR + '/lemma_edits.csv', dtype=str)
-AUTOS_FORMS = ['αὐτά', 'αὐταῖς', 'αὐτάς', 'αὐτὰς', 'αὐτῇ', 'αὐτήν', 'αὐτὴν', 'αὐτῆς', 'αὐτὸ', 'αὐτοὶ', 'αὐτοῖς',
-               'αὐτόν', 'αὐτὸν', 'αὐτὸς', 'αὐτοῦ', 'αὐτούς', 'αὐτοὺς', 'αὐτῷ', 'αὐτῶν']
+AUTOS_FORMS = ['αὐτά', 'αὐτὰ', 'αὐταῖς', 'αὐτάς', 'αὐτὰς', 'αὐτὴ', 'αὐτῇ', 'αὐτήν', 'αὐτὴν', 'αὐτῆς', 'αὐτό', 'αὐτὸ',
+               'Αὐτοὶ', 'αὐτοὶ', 'αὐτοί', 'αὐτοῖς', 'αὐτόν', 'αὐτὸν', 'αὐτός', 'αὐτὸς', 'Αὐτὸς', 'αὐτοῦ', 'αὐτούς',
+               'αὐτοὺς', 'αὐτῷ', 'Αὐτῶν', 'αὐτῶν']
 INDIVIDUAL_POS_EDITS = pd.read_csv(SBL_DIR + '/individual_pos_edits.csv',
                                    dtype=defaultdict(lambda: str,
                                                      {'chapter': np.float64, 'verse': np.float64,
@@ -123,9 +124,9 @@ INFINITIVE_ARGUMENT_HEADS = ['ἀγωνίζομαι', 'αἰτέω', 'ἀναγ�
                              'φιλέω', 'φιλοτιμέομαι', 'φοβέομαι', 'χαρίζομαι', 'χρηματίζω', 'χρονίζω']
 FIRST_DECLENSION = ['Γολγοθᾶ', 'Κεγχρεαί', 'Κολοσσαί', 'μνᾶ', 'Συράκουσαι']
 FIRST_SECOND_DECLENSION = ['Ἀθῆναι', 'ἀλλήλων', 'ἀμφότεροι', 'διακόσιοι', 'δισχίλιοι', 'ἑαυτοῦ', 'ἐμαυτοῦ',
-                           'ἑπτακισχίλιοι', 'Ἡρῳδιανοί', 'μύριοι', 'πεντακισχίλιοι', 'πεντακόσιοι', 'πορφυροῦς',
-                           'σεαυτοῦ', 'σιδηροῦς', 'τετρακισχίλιοι', 'τετρακόσιοι', 'τετραπλοῦς', 'τριακόσιοι',
-                           'τρισχίλιοι', 'χαλκοῦς', 'χίλιοι', 'χρυσοῦς']
+                           'ἑπτακισχίλιοι', 'Ἡρῳδιανοί', 'μύριοι', 'ὅδε', 'πεντακισχίλιοι', 'πεντακόσιοι', 'πορφυροῦς',
+                           'σεαυτοῦ', 'σιδηροῦς', 'τετρακισχίλιοι', 'τετρακόσιοι', 'τετραπλοῦς', 'τοιόσδε',
+                           'τριακόσιοι', 'τρισχίλιοι', 'χαλκοῦς', 'χίλιοι', 'χρυσοῦς']
 SECOND_DECLENSION = ['ἀγενεαλόγητος', 'ἄγναφος', 'ἄγνωστος', 'ἀγοραῖος', 'ἀγράμματος', 'ἀδάπανος', 'ἄδηλος',
                      'ἀδιάκριτος', 'ἀδιάλειπτος', 'ἄδικος', 'ἀδόκιμος', 'ἄδολος', 'ἀδύνατος', 'ἄζυμος', 'ἀθέμιτος',
                      'ἄθεος', 'ἄθεσμος', 'ἀθῷος', 'ἀΐδιος', 'αἰφνίδιος', 'αἰώνιος', 'ἀκάθαρτος', 'ἄκακος', 'ἄκαρπος',
@@ -857,7 +858,7 @@ class Sentence:
                         else:
                             word['relation'] = 'negation, other'
                 elif word['relation'] == 'p':
-                    if word_features['pos'] in ['noun', 'adj', 'num', 'pron', 'personal pronoun', 'indefinite pronoun',
+                    if word_features['pos'] in ['noun', 'adj', 'num', 'personal pronoun', 'indefinite pronoun',
                                                 'interrogative pronoun', 'demonstrative pronoun',
                                                 'relative pronoun'] or \
                             (word_features['pos'] == 'verb' and word_features['mood'] == 'participle'):
@@ -876,8 +877,8 @@ class Sentence:
                     else:
                         word['relation'] = 'object of preposition'
                 elif word_features['pos'] == 'prep':
-                    if word_head_features['pos'] in ['noun', 'pron', 'interrogative pronoun', 'num',
-                                                     'personal pronoun', 'indefinite pronoun']:
+                    if word_head_features['pos'] in ['noun', 'interrogative pronoun', 'num', 'personal pronoun',
+                                                     'indefinite pronoun']:
                         word['relation'] = 'modifier of nominal, PP'
                     elif word_head_features['degree'] == 'comparative':
                         word['relation'] = 'comparative'
@@ -899,7 +900,7 @@ class Sentence:
                         and (word_features['number'] == word_head_features['number']
                              or word_features['number'] is None or word_head_features['number'] is None) \
                         and (word_features['pos'] in ['adj', 'demonstrative pronoun', 'interrogative pronoun',
-                                                      'indefinite pronoun', 'pron', 'verb', 'num']
+                                                      'indefinite pronoun', 'verb', 'num']
                              or (head['lemma'] in TITLES and bool(re.match(GREEK_CAPITALS, word['lemma'])))
                              or (word['lemma'] in TITLES and bool(re.match(GREEK_CAPITALS, head['lemma'])))) and \
                         word_head_features['mood'] not in ['indicative', 'imperative', 'subjunctive', 'optative',
@@ -1038,8 +1039,8 @@ class Sentence:
                         word['relation'] = 'modifier of verb, adverb'
                     elif word_head_features['pos'] == 'adj':
                         word['relation'] = 'modifier of adjective, adverb'
-                    elif word_head_features['pos'] in ['noun', 'pron', 'personal pronoun', 'demonstrative pronoun',
-                                                       'num', 'reflexive pronoun', 'interrogative pronoun',
+                    elif word_head_features['pos'] in ['noun', 'personal pronoun', 'demonstrative pronoun', 'num',
+                                                       'reflexive pronoun', 'interrogative pronoun',
                                                        'indefinite pronoun']:
                         word['relation'] = 'modifier of nominal, adverb'
                     else:
@@ -1047,7 +1048,7 @@ class Sentence:
                 elif relative:
                     if word_head_features['degree'] == 'comparative' and word_features['case'] == 'genitive':
                         word['relation'] = 'genitive, comparative'
-                    elif word_head_features['pos'] in ['noun', 'adj', 'pron', 'personal pronoun', 'indefinite pronoun',
+                    elif word_head_features['pos'] in ['noun', 'adj', 'personal pronoun', 'indefinite pronoun',
                                                        'demonstrative pronoun', 'interrogative pronoun']:
                         word['relation'] = 'modifier of nominal, nominal'
                     elif word_head_features['pos'] == 'verb':
@@ -1074,8 +1075,7 @@ class Sentence:
                 word['nominal_type'] = 'relative clause'
             elif word_features['pos'] == 'noun':
                 word['nominal_type'] = 'noun'
-            elif word_features['pos'] == 'pron' or \
-                    (word_features['pos'] is not None and 'pronoun' in word_features['pos']):
+            elif word_features['pos'] is not None and 'pronoun' in word_features['pos']:
                 word['nominal_type'] = 'pronoun'
             elif word_features['pos'] in ['adj', 'num']:
                 word['nominal_type'] = 'adjective'
