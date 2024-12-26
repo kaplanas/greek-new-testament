@@ -36,6 +36,7 @@ noun.class.required = list(
   "second declension" = c("Second declension"),
   "first declension" = c("First declension"),
   "first declension with hs" = c("Second declension", "First declension"),
+  "first/second declension" = c("Second declension", "First declension"),
   "third declension, consonant stem" = c("Third declension"),
   "third declension, vowel stem" = c("Third declension"),
   "Ihsous" = c("Ἰησοῦς"),
@@ -67,7 +68,7 @@ verb.class.required = list(
   "contract, aw" = "Contract, άω",
   "contract, ow" = "Contract, όω",
   "mi" = "Μί",
-  "oida" = "Οἴδα",
+  "oida" = "Οἶδα",
   "other" = "Other"
 )
 
@@ -129,9 +130,10 @@ other.pos.required = list(
 
 # Lessons required for various relations
 relation.required = list(
-  "sentential complement" = c("Sentential complements"),
-  "conjunct, ὅτι" = c("Sentential complements"),
-  "clause argument of verb" = c("Sentential complements"),
+  "sentential complement" = c("Indirect discourse"),
+  "conjunct, ὅτι" = c("Indirect discourse"),
+  "clause argument of verb" = c("Indirect discourse"),
+  "subject of implicit speech" = c("Indirect discourse"),
   "second-position clitic" = c("Second-position clitics"),
   "conjunct" = c("Coordinating conjunctions"),
   "conjunct, main" = c("Subordinating conjunctions"),
@@ -139,6 +141,7 @@ relation.required = list(
   "conjunct, ὡς, clause" = c("Subordinating conjunctions"),
   "conjunct, ὡς, non-clause" = c("Subordinating conjunctions"),
   "conjunct, ὡς, other" = c("Subordinating conjunctions"),
+  "conjunct, ἤ" = c("Comparison"),
   "topic" = c("Topics"),
   "subject, attraction" = c("Relative pronouns"),
   "direct object, attraction" = c("Relative pronouns"),
@@ -148,8 +151,8 @@ relation.required = list(
   "number" = c("Numbers")
 )
 
-# Pretty names for word properties
-word.property.names.df = bind_rows(
+# Pretty names for properties we want to filter on
+filter.property.names.df = bind_rows(
   data.frame(property = "NounClassType",
              pretty.property = "Noun class",
              value = c("second declension", "first declension",
@@ -160,7 +163,58 @@ word.property.names.df = bind_rows(
     mutate(pretty.value = case_when(value == "first declension with hs" ~ "First declension with ης",
                                     grepl("^third declension", value) ~ "Third declension",
                                     value == "Ihsous" ~ "Ἰησοῦς",
-                                    T ~ str_to_sentence(value))),
+                                    T ~ str_to_sentence(value)),
+           value = paste("noun class", value, sep = " - ")),
+  data.frame(property = "NominalHead",
+             pretty.property = "Non-noun as nominal head",
+             value = c("adjective", "determiner", "infinitive", "participle",
+                       "relative clause", "headless")) %>%
+    mutate(pretty.value = case_when(value == "headless" ~ "Other",
+                                    T ~ str_to_sentence(value)),
+           value = paste("nominalhead", value, sep = "-")),
+  data.frame(property = "AdjectiveClassType",
+             pretty.property = "Adjective class",
+             value = c("first/second declension", "second declension",
+                       "third declension, consonant stem",
+                       "third declension, vowel stem", "irregular",
+                       "undeclined")) %>%
+    mutate(pretty.value = case_when(grepl("^third declension", value) ~ "Third declension",
+                                    T ~ str_to_sentence(value)),
+           value = paste("adjective class", value, sep = " - ")),
+  data.frame(property = "Degree",
+             pretty.property = "Adjective degree",
+             value = c("comparative", "superlative")) %>%
+    mutate(pretty.value = str_to_sentence(value),
+           value = paste("degree", value, sep = "-")),
+  data.frame(property = "GenitiveCase",
+             pretty.property = "Genitive case",
+             value = c("genitive, about", "genitive, amount",
+                       "genitive, body part", "genitive, characterized by",
+                       "genitive, comparative", "genitive, contents",
+                       "genitive, location", "genitive, material",
+                       "genitive, object", "genitive, other",
+                       "genitive, part-whole", "genitive, possession",
+                       "genitive, property", "genitive, relation",
+                       "genitive, son of", "genitive, source",
+                       "genitive, specification", "genitive, subject",
+                       "genitive, time", "direct object, genitive")) %>%
+    mutate(pretty.value = str_to_sentence(value)),
+  data.frame(property = "DativeCase",
+             pretty.property = "Dative case",
+             value = c("dative, agent", "dative, benefit", 
+                       "dative, cognate of verb",
+                       "dative, Hebrew infinitive construct",
+                       "dative, instrument", "dative, manner",
+                       "dative, other", "dative, possession", "dative, time",
+                       "direct object, dative", "indirect object")) %>%
+    mutate(pretty.value = str_to_sentence(gsub("-", " ", value)),
+           pretty.value = gsub("hebrew", "Hebrew", pretty.value)),
+  data.frame(property = "AccusativeCase",
+             pretty.property = "Accusative case",
+             value = c("accusative, amount", "accusative, cognate of verb",
+                       "accusative, manner", "accusative, other",
+                       "accusative, time", "direct object, accusative")) %>%
+    mutate(pretty.value = str_to_sentence(gsub("-", " ", value))),
   data.frame(property = "VerbClassType",
              pretty.property = "Verb class",
              value = c("eimi", "omega", "contract, ew", "contract, aw",
@@ -184,75 +238,101 @@ word.property.names.df = bind_rows(
   data.frame(property = "Voice",
              pretty.property = "Voice",
              value = c("active", "middle", "passive")) %>%
-    mutate(pretty.value = str_to_sentence(value))
-)
-
-# Pretty names for relations
-relation.names.df = data.frame(
-  relation = c("accusative, amount", "accusative, cognate of verb",
-               "accusative, manner", "accusative, other", "accusative, time",
-               "argument of adjective", "argument of adjective, infinitive",
-               "argument of adjective, nominal", "clause argument of verb",
-               "comparative", "conjunct", "conjunct, main",
-               "conjunct, subordinate", "conjunct, ἤ", "conjunct, μέν δέ",
-               "conjunct, ὅτι", "conjunct, ὡς, clause",
-               "conjunct, ὡς, non-clause", "conjunct, ὡς, other",
-               "dative, agent", "dative, benefit", "dative, cognate of verb",
-               "dative, Hebrew infinitive construct", "dative, instrument",
-               "dative, manner", "dative, other", "dative, possession",
-               "dative, time", "determiner, things of", "direct object",
-               "direct object, attraction", "genitive, about",
-               "genitive, amount", "genitive, body part",
-               "genitive, characterized by", "genitive, comparative",
-               "genitive, contents", "genitive, location", "genitive, material",
-               "genitive, object", "genitive, other", "genitive, part-whole",
-               "genitive, possession", "genitive, property",
-               "genitive, relation", "genitive, son of", "genitive, source",
-               "genitive, specification", "genitive, subject", "genitive, time",
-               "indirect object", "indirect object, attraction",
-               "infinitive argument of noun", "infinitive argument of verb",
-               "infinitive, purpose", "infinitive, something",
-               "modifier of adjective, adverb", "modifier of adjective, PP",
-               "modifier of nominal, adverb", "modifier of nominal, infinitive",
-               "modifier of nominal, nominal", "modifier of nominal, PP",
-               "modifier of non-nominal, adjective",
-               "modifier of other, adverb", "modifier of other, nominal",
-               "modifier of other, participle", "modifier of other, PP",
-               "modifier of verb, adverb", "modifier of verb, infinitive",
-               "modifier of verb, nominal", "modifier of verb, participle",
-               "modifier of verb, PP", "modifier of verbless predicate, adverb",
-               "modifier of verbless predicate, nominal",
-               "modifier of verbless predicate, participle",
-               "modifier of verbless predicate, PP", "negation of nominal",
-               "negation of verb", "negation of verb, semantically embedded",
-               "negation, other", "negation, εἰ μὴ", "negation, εἰ μὴ, nominal",
-               "number", "object of preposition", "other, attraction",
-               "predicate, nominal", "predicate, non-nominal",
-               "resumptive pronoun", "sentential complement", "subject",
-               "subject of implicit speech", "subject of infinitive",
-               "subject of infinitive, attraction", "subject of participle",
-               "subject of verbless predicate", "subject, attraction",
-               "subject, irregular agreement", "topic")
+    mutate(pretty.value = str_to_sentence(value)),
+  data.frame(property = "VerbModifier",
+             pretty.property = "Modifier of verb or verbless predicate",
+             value = c("PP", "participle", "adverb", "infinitive",
+                       "nominal")) %>%
+    mutate(pretty.value = gsub("PP", "prepositional phrase", value),
+           pretty.value = str_to_sentence(pretty.value),
+           value = paste("verbmodifier", value, sep = "-")),
+  data.frame(property = "POS",
+             pretty.property = "Other part of speech",
+             value = c("reflexive pronoun", "demonstrative pronoun",
+                       "demonstrative pronoun with kai",
+                       "interrogative pronoun", "indefinite pronoun",
+                       "num", "ptcl")) %>%
+    mutate(pretty.value = case_when(value == "num" ~ "Number",
+                                    value == "ptcl" ~ "Particle",
+                                    T ~ str_to_sentence(value)),
+           pretty.value = gsub(" with kai$", "", pretty.value)),
+  data.frame(property = "Subject",
+             pretty.property = "Subject",
+             value = c("subject", "subject, irregular agreement",
+                       "subject, neuter plural",
+                       "subject, neuter plural, irregular agreement",
+                       "subject of verbless predicate",
+                       "subject of implicit speech", "subject of infinitive",
+                       "subject of infinitive, attraction",
+                       "subject of participle")) %>%
+    mutate(pretty.value = case_when(value %in% c("subject, neuter plural",
+                                                 "subject, neuter plural, regular agreement") ~ "Subject, neuter plural",
+                                    T ~ str_to_sentence(value))),
+  data.frame(property = "Negation",
+             pretty.property = "Negation",
+             value = c("negation of nominal",
+                       "negation of verb",
+                       "negation of verb, semantically embedded",
+                       "negation, other", "negation, εἰ μὴ",
+                       "negation, εἰ μὴ, nominal")) %>%
+    mutate(pretty.value = case_when(value == "negation of verb, semantically embedded" ~ "Negation of verb",
+                                    value %in% c("negation, εἰ μὴ",
+                                                 "negation, εἰ μὴ, nominal") ~ "Εἰ μὴ",
+                                    T ~ str_to_sentence(value))),
+  data.frame(property = "NominalModifier",
+             pretty.property = "Modifier of nominal",
+             value = c("adjective", "pronoun", "participle", 
+                       "prepositional phrase", "infinitive", "adverb",
+                       "relative clause", "headless")) %>%
+    mutate(pretty.value = case_when(value == "headless" ~ "Other",
+                                    T ~ str_to_sentence(value)),
+           value = paste("nominalmodifier", value, sep = "-")),
+  data.frame(property = "Conjunction",
+             pretty.property = "Conjunction",
+             value = c("conjunct", "conjunct, main", "conjunct, subordinate",
+                       "conjunct, μέν δέ", "conjunct, ὡς, clause",
+                       "conjunct, ὡς, non-clause", "conjunct, ὡς, other")) %>%
+    mutate(pretty.value = case_when(value == "conjunct" ~ "Conjunction, coordinating",
+                                    value %in% c("conjunct, main",
+                                                 "conjunct, subordinate") ~ "Conjunction, subordinating",
+                                    value == "conjunct, μέν δέ" ~ "Μὲν...δέ...",
+                                    value %in% c("conjunct, ὡς, clause",
+                                                 "conjunct, ὡς, non-clause",
+                                                 "conjunct, ὡς, other") ~ "Ὡς",
+                                    T ~ str_to_sentence(value))),
+  data.frame(property = "Relation",
+             pretty.property = "Other",
+             value = c("argument of adjective",
+                       "argument of adjective, infinitive",
+                       "argument of adjective, nominal", "comparative",
+                       "determiner, things of", "direct object, attraction",
+                       "indirect object, attraction",
+                       "infinitive argument of verb", "infinitive, purpose",
+                       "infinitive, something", "interjection, vocative",
+                       "modifier of adjective, adverb",
+                       "modifier of adjective, PP",
+                       "modifier of non-nominal, adjective",
+                       "modifier of other, adverb",
+                       "modifier of other, nominal",
+                       "modifier of other, participle",
+                       "modifier of other, PP", "number", "other, attraction",
+                       "predicate, nominal", "predicate, non-nominal",
+                       "resumptive pronoun", "second-position clitic",
+                       "sentential complement", "subject, attraction",
+                       "topic")) %>%
+    mutate(pretty.value = case_when(grepl("attraction", value) ~ "Attraction",
+                                    grepl("^argument of adjective", value) ~ "Argument of adjective",
+                                    value %in% c("comparative",
+                                                 "conjunct, ἤ") ~ "Comparison",
+                                    value %in% c("conjunct, ὅτι",
+                                                 "sentential complement") ~ "Indirect discourse",
+                                    value == "determiner, things of" ~ "\"Things of\"",
+                                    grepl("^modifier", value) ~ "Other modifier",
+                                    T ~ str_to_sentence(value))) %>%
+    arrange(pretty.value)
 ) %>%
-  mutate(pretty.relation = case_when(grepl("^argument of adjective", relation) ~ "Argument of adjective",
-                                     relation %in% c("comparative",
-                                                     "conjunct, ἤ") ~ "Comparison",
-                                     relation == "conjunct" ~ "Conjunction, coordinating",
-                                     relation %in% c("conjunct, main",
-                                                     "conjunct, subordinate") ~ "Conjunction, subordinating",
-                                     relation == "conjunct, μέν δέ" ~ "Μὲν...δέ...",
-                                     relation %in% c("conjunct, ὅτι",
-                                                     "sentential complement") ~ "Indirect discourse",
-                                     relation %in% c("conjunct, ὡς, clause",
-                                                     "conjunct, ὡς, non-clause",
-                                                     "conjunct, ὡς, other") ~ "Ὡς",
-                                     relation == "determiner, things of" ~ "\"Things of\"",
-                                     relation == "negation of verb, semantically embedded" ~ "Negation of verb",
-                                     relation %in% c("negation, εἰ μὴ",
-                                                     "negation, εἰ μὴ, nominal") ~ "Εἰ μὴ",
-                                     relation %in% c("subject, neuter plural",
-                                                     "subject, neuter plural, regular agreement") ~ "Subject, neuter plural",
-                                     T ~ str_to_sentence(relation)))
+  mutate(pretty.value = fct_inorder(pretty.value),
+         pretty.property = fct_inorder(pretty.property))
 
 #### UI ####
 
@@ -277,7 +357,8 @@ knowledge.groups = map(
   }
 )
 knowledge.page = nav_panel(title = "Current knowledge",
-                           actionButton("update.knowledge", "Save changes"),
+                           actionButton("update.knowledge",
+                                        "Save changes (takes a minute to process)"),
                            layout_columns(
                              card(card_header(class = "bg-dark",
                                               "Nouns and adjectives"),
@@ -296,15 +377,21 @@ knowledge.page = nav_panel(title = "Current knowledge",
                            ))
 string.page = nav_panel(title = "Excerpts",
                         layout_columns(
-                          numericInput("string.count",
-                                       "Number of excerpts to show:",
-                                       value = 10),
-                          selectInput("string.examples", "Include examples of:",
-                                      choices = c("[everything]")),
-                          fill = F
-                        ),
-                        actionButton("refresh.strings", "Refresh"),
-                        DTOutput("show.strings"))
+                          layout_columns(
+                            actionButton("refresh.strings", "Refresh"),
+                            numericInput("string.count",
+                                         "Number of excerpts to show:",
+                                         value = 10),
+                            selectizeInput("string.examples",
+                                           "Include examples of:",
+                                           choices = list(`Everything` = list("[everything]" = "[everything]"))),
+                            tags$head(tags$style(HTML(".selectize-dropdown-content{max-height: 100% !important; height: 100% !important;}}"))),
+                            col_widths = c(11, -1),
+                            fill = F
+                          ),
+                          DTOutput("show.strings"),
+                          col_widths = c(3, 9)
+                        ))
 
 # Define UI
 ui <- page_navbar(
@@ -324,8 +411,7 @@ server <- function(input, output, session) {
   student.id = reactiveVal(NULL)
   knowledge.df = reactiveVal(NULL)
   all.strings.df = reactiveVal(NULL)
-  all.word.properties.df = reactiveVal(NULL)
-  all.relations.df = reactiveVal(NULL)
+  all.filter.properties.df = reactiveVal(NULL)
   sample.strings.df = reactiveVal(NULL)
   
   # When the user attempts to log in, attempt to create a connection and
@@ -511,7 +597,13 @@ server <- function(input, output, session) {
       get.strings.sql = "WITH allowed_words AS
                               (SELECT SentenceID, SentencePosition
                                FROM words
-                               WHERE (POS IN ({allowed.other.pos*})
+                               WHERE ((POS IN ({allowed.other.pos*})
+                                       AND POS NOT IN ('reflexive pronoun',
+                                                       'demonstrative pronoun',
+                                                       'demonstrative pronoun with kai',
+                                                       'interrogative pronoun',
+                                                       'indefinite pronoun',
+                                                       'relative pronoun'))
                                       OR (POS = 'verb'
                                           AND VerbClassType IN ({allowed.verb.class*})
                                           AND CONCAT(Tense, '-', Mood) IN ({allowed.tense.mood*})
@@ -591,8 +683,75 @@ server <- function(input, output, session) {
                          SELECT ls.Citation, bcv.BookOrder, bcv.Chapter,
                                 bcv.Verse, ls.SentenceID, ls.Start, ls.Stop,
                                 ls.String,
+                                CASE WHEN w.POS = 'noun'
+                                          THEN CONCAT('noun class - ',
+                                                      w.NounClassType)
+                                END AS NounClassType,
+                                CASE WHEN POS = 'adj'
+                                          THEN CONCAT('adjective class - ',
+                                                      w.NounClassType)
+                                END AS AdjectiveClassType,
+                                CONCAT('degree-', w.Degree) AS Degree,
+                                CASE WHEN r.Relation LIKE '%genitive%'
+                                          THEN r.Relation
+                                     WHEN r.Relation = 'direct object'
+                                          AND w.CaseType = 'genitive'
+                                          THEN 'direct object, genitive'
+                                END AS GenitiveCase,
+                                CASE WHEN r.Relation LIKE '%dative%'
+                                          OR r.Relation = 'indirect object'
+                                          THEN r.Relation
+                                     WHEN r.Relation = 'direct object'
+                                          AND w.CaseType = 'dative'
+                                          THEN 'direct object, dative'
+                                END AS DativeCase,
+                                CASE WHEN r.Relation LIKE '%accusative%'
+                                          THEN r.Relation
+                                     WHEN r.Relation = 'direct object'
+                                          AND w.CaseType = 'accusative'
+                                          THEN 'direct object, accusative'
+                                END AS AccusativeCase,
+                                CASE WHEN (r2.SentenceID IS NOT NULL
+                                           OR r3.SentenceID IS NOT NULL)
+                                          AND r4.SentenceID IS NULL
+                                          AND (w.NominalType LIKE '%adjective%'
+                                               OR r.SentenceID IS NOT NULL
+                                               OR r5.SentenceID IS NOT NULL)
+                                          AND r6.SentenceID IS NULL
+                                          THEN CONCAT('nominalhead-',
+                                                      w.NominalType)
+                                END AS NominalHead,
+                                w.VerbClassType,
                                 CONCAT(w.Tense, '-', w.Mood) AS TenseMood,
-                                w.Voice, w.NounClassType, w.VerbClassType,
+                                w.Voice,
+                                CASE WHEN r.Relation LIKE 'modifier of verb%'
+                                          THEN REGEXP_REPLACE(r.Relation,
+                                                              'modifier of verb(less predicate)?, ',
+                                                              'verbmodifier-')
+                                END AS VerbModifier,
+                                w.POS,
+                                CASE WHEN r.Relation LIKE 'subject%'
+                                          THEN r.Relation
+                                END AS Subject,
+                                CASE WHEN r.Relation LIKE 'negation%'
+                                          THEN r.Relation
+                                END AS Negation,
+                                CASE WHEN r.Relation = 'modifier of nominal, nominal'
+                                          AND r4.SentenceID IS NULL
+                                          THEN CONCAT('nominalmodifier-',
+                                                      w.NominalType)
+                                     WHEN r.Relation = 'modifier of nominal, adverb'
+                                          THEN 'nominalmodifier-adverb'
+                                     WHEN r.Relation = 'modifier of nominal, infinitive'
+                                          THEN 'nominalmodifier-infinitive'
+                                     WHEN r.Relation = 'modifier of nominal, PP'
+                                          THEN 'nominalmodifier-prepositional phrase'
+                                     WHEN r.Relation = 'infinitive argument of noun'
+                                          THEN 'nominalmodifier-infinitive'
+                                END AS NominalModifier,
+                                CASE WHEN r.Relation LIKE 'conjunct%'
+                                          THEN r.Relation
+                                END AS Conjunction,
                                 r.Relation
                          FROM longest_strings ls
                               JOIN book_chapter_verse bcv
@@ -601,29 +760,54 @@ server <- function(input, output, session) {
                               ON ls.SentenceID = w.SentenceID
                                  AND ls.Start <= w.SentencePosition
                                  AND ls.Stop >= w.SentencePosition
-                              LEFT JOIN (SELECT DISTINCT longest_strings.SentenceID,
-                                                longest_strings.Start,
-                                                longest_strings.Stop,
-                                                relations.DependentPos,
-                                                relations.Relation
-                                         FROM relations
-                                              JOIN longest_strings
-                                              ON relations.SentenceID = longest_strings.SentenceID
-                                                 AND relations.HeadPos >= longest_strings.Start
-                                                 AND relations.HeadPos <= longest_strings.Stop
-                                         WHERE relations.Relation NOT IN
-                                               ('appositive', 'conjunct, chain',
-                                               'determiner', 'entitled', 'gap',
-                                               'interjection, vocative', 'name',
-                                               'negation, double',
-                                               'parenthetical', 'particle',
-                                               'second-position clitic',
-                                               'subject of small clause',
-                                               'title')) r
+                              LEFT JOIN relations r
                               ON ls.SentenceID = r.SentenceID
-                                 AND ls.Start = r.Start
-                                 AND ls.Stop = r.Stop
-                                 AND w.SentencePosition = r.DependentPos"
+                                 AND ls.Start <= r.FirstPos
+                                 AND ls.Stop >= r.LastPos
+                                 AND w.SentencePosition = r.DependentPos
+                                 AND r.Relation NOT IN
+                                     ('appositive', 'conjunct, chain',
+                                      'determiner', 'entitled', 'gap',
+                                      'name', 'negation, double',
+                                      'parenthetical', 'particle',
+                                      'subject of small clause', 'title')
+                              LEFT JOIN relations r2
+                              ON ls.SentenceID = r2.SentenceID
+                                 AND w.SentencePosition = r2.HeadPos
+                                 AND (r2.Relation LIKE 'negation%nominal'
+                                      OR r2.Relation LIKE 'modifier of nominal%'
+                                      OR r2.Relation = 'appositive')
+                              LEFT JOIN relations r3
+                              ON ls.SentenceID = r3.SentenceID
+                                 AND w.SentencePosition = r3.DependentPos
+                                 AND (r3.Relation LIKE 'subject%'
+                                      OR r3.Relation LIKE 'genitive%'
+                                      OR r3.Relation LIKE 'direct object%'
+                                      OR r3.Relation = 'argument of adjective, nominal'
+                                      OR r3.Relation LIKE 'accusative%'
+                                      OR r3.Relation LIKE 'indirect object%'
+                                      OR r3.Relation LIKE 'dative%'
+                                      OR r3.Relation = 'interjection, vocative'
+                                      OR r3.Relation = 'object of preposition'
+                                      OR r3.Relation = 'resumptive pronoun'
+                                      OR r3.Relation = 'topic'
+                                      OR r3.Relation = 'appositive')
+                              LEFT JOIN relations r4
+                              ON ls.SentenceID = r4.SentenceID
+                                 AND w.SentencePosition = r4.HeadPos
+                                 AND (ls.Start > r4.FirstPos
+                                      OR ls.Stop < r4.LastPos)
+                                 AND r4.Relation = 'conjunct, main'
+                              LEFT JOIN relations r5
+                              ON ls.SentenceID = r5.SentenceID
+                                 AND w.SentencePosition = r5.DependentPos
+                                 AND ls.Start <= r5.FirstPos
+                                 AND ls.Stop >= r5.LastPos
+                                 AND r5.Relation = 'determiner'
+                              LEFT JOIN relations r6
+                              ON ls.SentenceID = r6.SentenceID
+                                 AND w.SentencePosition = r6.HeadPos
+                                 AND r6.Relation = 'subject of small clause'"
       get.strings.sql = glue_sql(get.strings.sql, .con = gnt.con)
       everything.df = dbGetQuery(gnt.con, get.strings.sql)
       everything.df %>%
@@ -632,31 +816,40 @@ server <- function(input, output, session) {
         distinct() %>%
         all.strings.df()
       everything.df %>%
-        dplyr::select(SentenceID, Start, Stop, TenseMood, Voice, NounClassType,
-                      VerbClassType) %>%
+        dplyr::select(SentenceID, Start, Stop, NounClassType, NominalHead,
+                      AdjectiveClassType, Degree, GenitiveCase, DativeCase,
+                      AccusativeCase, VerbClassType, TenseMood, Voice,
+                      VerbModifier, POS, Subject, Negation, NominalModifier,
+                      Conjunction, Relation) %>%
         pivot_longer(cols = -c("SentenceID", "Start", "Stop"),
                      names_to = "property") %>%
         distinct() %>%
-        inner_join(word.property.names.df, by = c("property", "value")) %>%
-        all.word.properties.df()
-      everything.df %>%
-        filter(!is.na(Relation)) %>%
-        dplyr::select(SentenceID, Start, Stop, Relation) %>%
-        distinct() %>%
-        inner_join(relation.names.df, by = c("Relation" = "relation")) %>%
-        all.relations.df()
+        inner_join(filter.property.names.df, by = c("property", "value")) %>%
+        all.filter.properties.df()
       
     }
     
   })
   
   # Refresh possible excerpt filters
-  observeEvent(all.word.properties.df(), {
-    example.choices = c("[everything]",
-                        split(all.word.properties.df()$pretty.value, all.word.properties.df()$pretty.property),
-                        list(`Syntactic structure` = sort(all.relations.df()$pretty.relation)))
-    updateSelectInput(session = session, inputId = "string.examples",
-                      choices = example.choices)
+  observeEvent(all.filter.properties.df(), {
+    temp.filter.properties.df = all.filter.properties.df() %>%
+      dplyr::select(value, pretty.value, pretty.property) %>%
+      distinct() %>%
+      arrange(pretty.property, pretty.value)
+    example.choices = c(list(`Everything` = list("[everything]" = "[everything]")),
+                        map(set_names(unique(temp.filter.properties.df$pretty.property)),
+                            function(pp) {
+                              pretty.values.df = temp.filter.properties.df %>%
+                                filter(pretty.property == pp) %>%
+                                dplyr::select(value, pretty.value)
+                              map(set_names(pretty.values.df$pretty.value),
+                                  function(pv) {
+                                    pretty.values.df$value[pretty.values.df$pretty.value == pv]
+                                  })
+                            }))
+    updateSelectizeInput(session = session, inputId = "string.examples",
+                         choices = example.choices)
   })
   
   # Refresh sample of strings
@@ -668,17 +861,14 @@ server <- function(input, output, session) {
     {
       temp.df = all.strings.df()
       if(input$string.examples != "[everything]") {
-        if(input$string.examples %in% all.relations.df()$pretty.relation) {
+        example.filter = input$string.examples
+        if(grepl("^c[(]", example.filter)) {
+          example.filter = eval(parse(text = input$string.examples))
+        }
+        if(any(example.filter %in% all.filter.properties.df()$value)) {
           temp.df = temp.df %>%
-            inner_join(all.relations.df() %>%
-                         filter(pretty.relation == input$string.examples) %>%
-                         dplyr::select(SentenceID, Start, Stop) %>%
-                         distinct(),
-                       by = c("SentenceID", "Start", "Stop"))
-        } else if(input$string.examples %in% all.word.properties.df()$pretty.value) {
-          temp.df = temp.df %>%
-            inner_join(all.word.properties.df() %>%
-                         filter(pretty.value == input$string.examples) %>%
+            inner_join(all.filter.properties.df() %>%
+                         filter(value %in% example.filter) %>%
                          dplyr::select(SentenceID, Start, Stop) %>%
                          distinct(),
                        by = c("SentenceID", "Start", "Stop"))

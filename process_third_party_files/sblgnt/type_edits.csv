@@ -160,7 +160,6 @@ Mark,5,38,11,"noun, participle",
 Mark,5,40,13,"noun, headless",
 Mark,5,43,13,,accusative
 Mark,6,11,8,relative clause,
-Mark,6,21,11,relative clause,
 Mark,6,22,14,"noun, participle",
 Mark,6,22,25,,accusative
 Mark,6,23,6,,accusative
@@ -217,7 +216,6 @@ Mark,13,37,4,,accusative
 Mark,14,1,23,,accusative
 Mark,14,8,2,,accusative
 Mark,14,11,15,,accusative
-Mark,14,12,10,relative clause,
 Mark,14,13,3,,accusative
 Mark,14,21,12,noun,
 Mark,14,25,20,relative clause,
@@ -251,12 +249,10 @@ Luke,2,48,21,"noun, pronoun",
 Luke,2,49,15,,dative
 Luke,3,17,4,relative clause,
 Luke,3,19,20,,genitive
-Luke,3,21,9,,genitive
 Luke,3,22,1,infinitive,
 Luke,4,6,22,,dative
 Luke,4,18,3,clause,
 Luke,4,23,15,,accusative
-Luke,4,25,26,relative clause,
 Luke,5,9,5,"pronoun, headless",
 Luke,5,19,5,,accusative
 Luke,5,25,9,,accusative
@@ -322,7 +318,6 @@ Luke,13,14,6,,nominative
 Luke,13,14,28,"pronoun, noun",
 Luke,13,21,14,,genitive
 Luke,13,28,21,,accusative
-Luke,13,35,17,relative clause,
 Luke,14,3,9,"adjective, noun",
 Luke,14,7,11,,accusative
 Luke,14,12,17,"adjective, noun",
@@ -339,7 +334,6 @@ Luke,16,23,16,"noun, headless",
 Luke,17,1,15,noun,
 Luke,17,8,7,,accusative
 Luke,17,10,16,,accusative
-Luke,17,22,18,relative clause,
 Luke,17,37,11,relative clause,
 Luke,18,1,11,,accusative
 Luke,18,11,23,"adjective, noun",nominative
@@ -399,10 +393,8 @@ John,2,12,7,"pronoun, noun",
 John,2,14,13,"participle, noun",
 John,3,11,7,,accusative
 John,3,11,11,,accusative
-John,4,21,20,relative clause,
 John,4,22,5,,accusative
 John,4,22,9,,accusative
-John,4,23,11,relative clause,
 John,4,29,9,,accusative
 John,4,38,8,,accusative
 John,4,39,23,,accusative
@@ -411,7 +403,6 @@ John,4,53,22,"pronoun, noun",
 John,5,17,9,,genitive
 John,5,20,13,,accusative
 John,5,21,15,,accusative
-John,5,25,21,relative clause,
 John,5,26,15,,accusative
 John,6,29,17,,accusative
 John,6,39,12,,accusative
@@ -423,7 +414,6 @@ John,8,38,3,,accusative
 John,8,38,12,,accusative
 John,9,2,12,"pronoun, noun",
 John,9,3,3,"pronoun, noun",
-John,9,4,16,relative clause,
 John,9,8,4,"noun, participle",
 John,9,19,1,,genitive
 John,10,12,3,"noun, participle",
@@ -461,7 +451,6 @@ John,16,3,9,"noun, pronoun",
 John,16,13,22,,accusative
 John,16,23,16,,accusative
 John,16,24,2,,genitive
-John,16,25,14,relative clause,
 John,17,2,10,,accusative
 John,17,3,14,"pronoun, noun",
 John,17,9,13,,genitive
@@ -632,7 +621,6 @@ Rom,1,23,13,"noun, adjective",
 Rom,2,1,12,,dative
 Rom,2,8,5,participle,
 Rom,2,14,11,headless,accusative
-Rom,2,16,4,relative clause,
 Rom,2,29,7,"adjective, noun",
 Rom,2,29,20,relative clause,
 Rom,3,9,10,"adjective, noun",
@@ -855,7 +843,6 @@ Phil,3,19,4,relative clause,
 Phil,4,3,18,"noun, adjective",
 Phil,4,3,26,relative clause,
 Phil,4,9,2,relative clause,
-Phil,4,15,12,relative clause,
 Col,1,7,1,relative clause,
 Col,1,9,16,participle,nominative
 Col,1,10,2,adjective,
@@ -1057,7 +1044,6 @@ Rev,9,12,10,noun,
 Rev,10,4,18,,accusative
 Rev,10,6,18,noun,accusative
 Rev,11,1,15,"noun, participle",
-Rev,11,6,35,relative clause,
 Rev,11,14,2,noun,
 Rev,11,14,8,noun,
 Rev,11,17,11,"participle, clause",

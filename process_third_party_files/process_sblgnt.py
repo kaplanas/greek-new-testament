@@ -80,10 +80,10 @@ KEEP_DETERMINER_LEMMAS = ['Ἀθηναῖος', 'Ἀδραμυττηνός', 'Α
                           'Σαδδουκαῖος', 'Σαμαρίτης', 'Σαμαρῖτις', 'Σεβαστός', 'Σιδώνιος', 'Σύρος', 'Συροφοινίκισσα',
                           'Τύριος', 'Φαρισαῖος', 'Φιλιππήσιος', 'Χαλδαῖος', 'Χαναναῖος', 'Χριστιανός', 'Χριστός', 'Ὦ']
 NEGATION = ['μή', 'μήτι', 'οὐ', 'οὐκοῦν', 'οὐχί']
-EXTENDED_NEGATION = ['μηδέ', 'μηδείς', 'οὐδαμῶς', 'οὐδέ', 'οὐδείς', 'οὐκέτι']
+EXTENDED_NEGATION = ['μηδέ', 'μηδείς', 'οὐδαμῶς', 'οὐδέ', 'οὐδείς', 'οὐκέτι', 'οὔπω']
 COPULA = ['εἰμί']
-GENERAL_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤπερ', 'ἤτοι', 'καί', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε', 'πλήν',
-                        'ὡς', 'ὡσεί']
+GENERAL_CONJUNCTIONS = ['ἀλλά', 'εἴτε', 'ἤ', 'ἤπερ', 'ἤτοι', 'καί', 'καίπερ', 'μηδέ', 'μήτε', 'οὐδέ', 'οὔπω', 'οὔτε',
+                        'πλήν', 'ὡς', 'ὡσεί']
 SENTENTIAL_CONJUNCTIONS = ['ἄρα', 'ἄχρι', 'διό', 'διότι', 'ἐάν', 'ἐάνπερ', 'εἰ', 'εἴπερ', 'ἐπάν', 'ἐπεί', 'ἐπειδή',
                            'ἕως', 'ἡνίκα', 'ἵνα', 'καθάπερ', 'καθό', 'καθότι', 'καθώς', 'κἄν', 'μέχρι(ς)', 'μήποτε',
                            'νή', 'ὁπότε', 'ὅπως', 'ὁσάκις', 'ὅταν', 'ὅτε', 'ὅτι', 'πρίν', 'ὥσπερ', 'ὥστε']
@@ -128,7 +128,7 @@ FIRST_SECOND_DECLENSION = ['Ἀθῆναι', 'ἀλλήλων', 'ἀμφότερ
                            'τρισχίλιοι', 'χαλκοῦς', 'χίλιοι', 'χρυσοῦς']
 SECOND_DECLENSION = ['ἀγενεαλόγητος', 'ἄγναφος', 'ἄγνωστος', 'ἀγοραῖος', 'ἀγράμματος', 'ἀδάπανος', 'ἄδηλος',
                      'ἀδιάκριτος', 'ἀδιάλειπτος', 'ἄδικος', 'ἀδόκιμος', 'ἄδολος', 'ἀδύνατος', 'ἄζυμος', 'ἀθέμιτος',
-                     'ἄθεος', 'ἄθεσμος', 'ἀθῷος', 'ἀΐδιος', 'αἰφνίδιος', 'ἀκάθαρτος', 'ἄκακος', 'ἄκαρπος',
+                     'ἄθεος', 'ἄθεσμος', 'ἀθῷος', 'ἀΐδιος', 'αἰφνίδιος', 'αἰώνιος', 'ἀκάθαρτος', 'ἄκακος', 'ἄκαρπος',
                      'ἀκατάγνωστος', 'ἀκατακάλυπτος', 'ἀκατάκριτος', 'ἀκατάλυτος', 'ἀκατάπαυστος', 'ἀκατάστατος',
                      'ἀκέραιος', 'ἄκρατος', 'ἀκρογωνιαῖος', 'ἀλάλητος', 'ἄλαλος', 'ἀλλόφυλος', 'ἄλογος', 'ἀλυπότερος',
                      'ἀμάραντος', 'ἀμάρτυρος', 'ἁμαρτωλός', 'ἄμαχος', 'ἄμεμπτος', 'ἀμέριμνος', 'ἀμετάθετος',
@@ -199,9 +199,10 @@ UNDECLINED_NOUNS = ['Ἀαρών', 'Ἀβαδδών', 'αββα', 'Ἀβιά', '
 IRREGULAR_NOUNS = ['ἄκων', 'ἀνήρ', 'Ἀντιπᾶς', 'ἅπας', 'Ἀπολλῶς', 'Ἁρέτας', 'ἀρήν', 'Ἀρτεμᾶς', 'ἀρχιποίμην', 'αὐτόχειρ',
                    'Βαριησοῦς', 'Βαρναβᾶς', 'βορρᾶς', 'γαστήρ', 'γόνυ', 'γυνή', 'Δημᾶς', 'δύο', 'εἷς', 'ἑκών', 'Ἐλύμας',
                    'Ἐπαφρᾶς', 'Ἑρμᾶς', 'Ζεύς', 'Ζηνᾶς', 'Θευδᾶς', 'θυγάτηρ', 'Ἱεροσόλυμα', 'Ἰωνᾶς', 'Καϊάφας', 'Κλωπᾶς',
-                   'Κώς', 'Λευί', 'Λουκᾶς', 'Μανασσῆς', 'μέγας', 'μέλας', 'μηδείς', 'μήτηρ', 'Μωϋσῆς', 'Νύμφας',
-                   'Ὀλυμπᾶς', 'ὄναρ', 'οὐδείς', 'Παρμενᾶς', 'πᾶς', 'πατήρ', 'ποδήρης', 'πολύς', 'πούς', 'σάββατον',
-                   'Σίλας', 'Σιλᾶς', 'Σκευᾶς', 'Στεφανᾶς', 'Σωσθένης', 'τετράπους', 'Τρεῖς', 'τρεῖς', 'χείρ', 'Χουζᾶς']
+                   'Κώς', 'Λευί', 'Λουκᾶς', 'μαμωνᾶς', 'Μανασσῆς', 'μέγας', 'μέλας', 'μηδείς', 'μήτηρ', 'Μωϋσῆς',
+                   'Νύμφας', 'Ὀλυμπᾶς', 'ὄναρ', 'οὐδείς', 'Παρμενᾶς', 'πᾶς', 'πατήρ', 'ποδήρης', 'πολύς', 'πούς',
+                   'σάββατον', 'Σατανᾶς', 'Σίλας', 'Σιλᾶς', 'Σκευᾶς', 'Στεφανᾶς', 'Σωσθένης', 'τετράπους', 'Τρεῖς',
+                   'τρεῖς', 'χείρ', 'Χουζᾶς']
 NUMBERS = ['εἷς', 'τρεῖς', 'τέσσαρες', 'διακόσιοι', 'τριακόσιοι', 'τετρακόσιοι', 'πεντακόσιοι', 'ἑξακόσιοι', 'χίλιοι',
            'χιλιάς', 'δισχίλιοι', 'τρισχίλιοι', 'τετρακισχίλιοι', 'πεντακισχίλιοι']
 TITLES = ['ἀνθύπατος', 'βασιλεύς', 'δυνάστης', 'ἡγεμών', 'Καῖσαρ', 'κύριος', 'πατριάρχης', 'προφήτης', 'Χριστός']
@@ -1136,7 +1137,7 @@ class Sentence:
                         (word['lemma'].endswith('ης') or word['lemma'].endswith('ής') or
                          word['lemma'].endswith('ίας')) or word['lemma'].endswith('ας') or \
                         word['lemma'].endswith('ῆς') or word['lemma'].endswith('ᾶς'):
-                    word['noun_class_type'] = 'second declension with hs'
+                    word['noun_class_type'] = 'first declension with hs'
                 elif word['lemma'].endswith('ος') or word['lemma'].endswith('εύς') or \
                         word['lemma'].endswith('υς') or word['lemma'].endswith('ύς') or \
                         word['lemma'].endswith('ις'):
@@ -1257,13 +1258,17 @@ class Sentence:
                                     if self.words[dep]['relation'].startswith('conjunct')]
 
             # If the μὴ is part of εἰ μὴ, include the εἰ.
-            if word['relation'] == 'negation, εἰ μὴ':
+            if word['relation'].startswith('negation, εἰ μὴ'):
                 mandatory_pairs += [(i, self.words[word['head']]['head'])]
 
             # If the word is the subject of a small clause or an infinitive, include the head of its head.
             if (word['relation'] == 'subject of small clause' or
                     word['relation'].startswith('subject of infinitive')) and \
                     self.words[word['head']]['head'] is not None:
+                mandatory_pairs += [(i, self.words[word['head']]['head'])]
+
+            # If the word is part of a gapping construction, include the head of its head.
+            if word['relation'] == 'gap' and self.words[word['head']]['head'] is not None:
                 mandatory_pairs += [(i, self.words[word['head']]['head'])]
 
             # If the word is sentential ὅτι, its head must be present.
@@ -1285,6 +1290,22 @@ class Sentence:
                               not (word['lemma'] in GENERAL_CONJUNCTIONS + SENTENTIAL_CONJUNCTIONS and
                                    dep_word['head'] == i)):
                         dep_stack = dep_stack + dep_word['deps']
+
+            # If a second-position clitic is attached to the word, it must be present.
+            mandatory_pairs += [(i, dep)
+                                for dep in word['deps']
+                                if self.words[dep]['relation'] == 'second-position clitic']
+
+            # If the word is a semantically embedded sentential negation, include the verb.
+            if word['relation'] == 'negation of verb, semantically embedded':
+                current_word = word
+                while 'head' in current_word and current_word['head'] is not None:
+                    current_index = current_word['head']
+                    current_word = self.words[current_index]
+                    if current_word['pos'] == 'verb':
+                        mandatory_pairs += [(i, current_index)]
+                        break
+
 
         # Initialize the licit strings with all the individual words.
         licit_strings = [(i, i) for i in range(len(self.words))]

@@ -1,18 +1,23 @@
 book,chapter,verse,position,new_pos
 Matt,1,18,16,prep
 Matt,3,4,1,adj
+Matt,5,15,1,negation
 Matt,17,8,10,adj
+Matt,23,10,1,negation
 Matt,26,34,13,prep
 Matt,26,75,10,prep
 Matt,27,57,13,adj
-Mark,1,32,6,conj
+Mark,1,32,4,conj
 Mark,6,17,1,adj
+Mark,6,21,5,relative adverb
 Mark,6,22,5,adj
 Mark,6,31,6,adj
+Mark,9,30,1,adv
 Mark,10,45,1,conj
 Mark,12,36,1,adj
 Mark,12,37,1,adj
 Mark,13,4,10,adv
+Mark,14,12,7,relative adverb
 Mark,14,72,19,prep
 Mark,15,43,10,adj
 Mark,16,8,9,adj
@@ -21,12 +26,16 @@ Mark,16,14,4,adj
 Luke,2,35,4,adj
 Luke,2,38,2,adj
 Luke,3,23,2,adj
+Luke,4,25,16,relative adverb
 Luke,5,35,4,conj
 Luke,10,7,2,adj
 Luke,10,21,2,adj
+Luke,11,53,1,adv
 Luke,12,12,8,adj
 Luke,13,1,5,adj
 Luke,13,31,2,adj
+Luke,13,35,16,relative adverb
+Luke,17,22,8,relative adverb
 Luke,20,19,14,adj
 Luke,20,42,1,adj
 Luke,21,7,14,relative adverb
@@ -39,33 +48,53 @@ John,1,19,8,relative adverb
 John,2,24,1,adj
 John,3,28,1,adj
 John,4,2,3,adj
+John,4,11,6,adv
+John,4,21,11,relative adverb
+John,4,23,7,relative adverb
 John,4,44,1,adj
+John,5,25,11,relative adverb
 John,5,36,20,adj
 John,6,15,18,adj
+John,9,4,14,relative adverb
 John,14,11,19,adj
 John,14,19,16,conj
 John,14,29,5,prep
+John,16,25,8,relative adverb
 John,16,27,1,adj
 John,21,25,16,adj
 John,25,3,5,conj
+Acts,7,4,9,adv
 Acts,10,26,10,adj
+Acts,13,21,1,adv
+Acts,14,26,1,adv
+Acts,16,12,1,adv
 Acts,16,18,26,adj
+Acts,20,15,1,adv
 Acts,20,30,4,adj
+Acts,21,1,20,adv
 Acts,22,13,12,adj
 Acts,24,15,8,adj
 Acts,24,20,2,adj
 Acts,25,25,9,adj
 Acts,26,23,1,conj
 Acts,26,23,5,conj
+Acts,27,4,1,adv
+Acts,28,15,1,adv
+Acts,28,28,15,adv
+Rom,2,16,3,relative adverb
 Rom,7,25,12,adj
 Rom,8,16,1,adj
 Rom,8,21,3,adj
 Rom,8,23,14,adj
 Rom,8,26,19,adj
 Rom,9,3,5,adj
+Rom,10,15,9,adv
+Rom,11,25,15,conj
 Rom,11,27,8,relative adverb
+Rom,13,11,20,relative adverb
 Rom,15,14,6,adj
 Rom,16,2,26,adj
+1Cor,5,11,25,adv
 1Cor,5,13,12,adj
 1Cor,7,35,6,adj
 1Cor,11,13,3,adj
@@ -75,24 +104,38 @@ Rom,16,2,26,adj
 2Cor,10,1,1,adj
 2Cor,11,14,4,adj
 2Cor,12,13,13,adj
-Gal,1,17,2,conj
+Gal,1,17,1,conj
 Eph,2,20,11,adj
 Phil,3,4,1,adv
+Phil,4,12,2,adv
+Phil,4,12,5,adv
+Phil,4,15,11,relative adverb
 Col,3,7,7,conj
+1Thess,2,14,22,adv
 1Thess,3,11,1,adj
+1Thess,4,6,19,adv
 1Thess,4,9,10,adj
 1Thess,4,16,2,adj
 1Thess,5,23,1,adj
 2Thess,2,16,1,adj
 2Thess,3,16,1,adj
+2Tim,4,3,4,adv
 Heb,5,8,1,adv
 Heb,7,5,24,adv
+Heb,9,12,1,adv
 Heb,9,19,25,adj
 Heb,9,23,12,adj
 Heb,9,24,13,adj
+Heb,9,25,1,adv
 Heb,10,1,10,adj
 Heb,11,11,3,adj
 1Pet,2,19,4,conj
 1Pet,2,24,5,adj
+1Pet,5,3,1,adv
+2Pet,2,19,14,adv
+2Pet,3,18,17,adv
 3John,1,12,7,adj
+Rev,11,6,34,relative adverb
+Rev,12,8,4,adv
+Rev,13,15,11,adv
 Rev,21,3,27,adj
