@@ -388,6 +388,11 @@ string.page = nav_panel(title = "Excerpts",
                             numericInput("string.count",
                                          "Number of excerpts to show:",
                                          value = 10),
+                            radioButtons("sample.by",
+                                         "Sample:",
+                                         choices = list("Randomly" = "random",
+                                                        "Longest first" = "longest",
+                                                        "Shortest first" = "shortest")),
                             selectizeInput("string.examples",
                                            "Include examples of:",
                                            choices = list(`Everything` = list("[everything]" = "[everything]"))),
@@ -820,6 +825,7 @@ server <- function(input, output, session) {
         dplyr::select(Citation, BookOrder, Chapter, Verse, SentenceID, Start,
                       Stop, String) %>%
         distinct() %>%
+        mutate(n.words = str_count(String, " ")) %>%
         all.strings.df()
       everything.df %>%
         dplyr::select(SentenceID, Start, Stop, NounClassType, NominalHead,
@@ -880,9 +886,28 @@ server <- function(input, output, session) {
                        by = c("SentenceID", "Start", "Stop"))
         }
       }
-      temp.df %>%
-        slice_sample(n = input$string.count) %>%
-        sample.strings.df()
+      if(input$sample.by == "random") {
+        temp.df %>%
+          slice_sample(n = input$string.count) %>%
+          arrange(BookOrder, Chapter, Verse) %>%
+          sample.strings.df()
+      }
+      else if(input$sample.by == "longest") {
+        temp.df %>%
+          mutate(random.order = runif(n())) %>%
+          arrange(desc(n.words), random.order) %>%
+          slice_head(n = input$string.count) %>%
+          arrange(desc(n.words), BookOrder, Chapter, Verse) %>%
+          sample.strings.df()
+      }
+      else if(input$sample.by == "shortest") {
+        temp.df %>%
+          mutate(random.order = runif(n())) %>%
+          arrange(n.words, random.order) %>%
+          slice_head(n = input$string.count) %>%
+          arrange(n.words, BookOrder, Chapter, Verse) %>%
+          sample.strings.df()
+      }
     }
   )
   
@@ -892,7 +917,6 @@ server <- function(input, output, session) {
       sample.strings.df()
     } else {
       sample.strings.df() %>%
-        arrange(BookOrder, Chapter, Verse) %>%
         dplyr::select(Citation, String) %>%
         datatable(options = list(paging = F,
                                  searching = F,
