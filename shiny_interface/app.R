@@ -381,6 +381,8 @@ knowledge.page = nav_panel(title = "Current knowledge",
                                   knowledge.groups[["Other parts of speech"]],
                                   knowledge.groups[["Syntactic structures"]])
                            ))
+
+# Page with excerpts.
 string.page = nav_panel(title = "Excerpts",
                         layout_columns(
                           layout_columns(
@@ -410,6 +412,7 @@ ui <- page_navbar(
   login.page,
   knowledge.page,
   string.page,
+  nav_panel(title = "Lexicon for excerpts", DTOutput("lexicon")),
   useBusyIndicators()
 )
 
@@ -423,7 +426,9 @@ server <- function(input, output, session) {
   knowledge.df = reactiveVal(NULL)
   all.strings.df = reactiveVal(NULL)
   all.filter.properties.df = reactiveVal(NULL)
+  lexicon.df = reactiveVal(NULL)
   sample.strings.df = reactiveVal(NULL)
+  sample.lexicon.df = reactiveVal(NULL)
   
   # When the user attempts to log in, attempt to create a connection and
   # get the user's data
@@ -478,6 +483,10 @@ server <- function(input, output, session) {
                                    inner_join(knowledge.df(), by = "LessonID") %>%
                                    pull(LessonName))
       }
+      
+      # Get the lexicon.
+      lexicon.sql = "SELECT Lemma, ShortDefinition FROM lemmas"
+      lexicon.df(dbGetQuery(gnt.con, lexicon.sql))
       
     }
     
@@ -693,7 +702,7 @@ server <- function(input, output, session) {
                                GROUP BY words.SentenceID)
                          SELECT ls.Citation, bcv.BookOrder, bcv.Chapter,
                                 bcv.Verse, ls.SentenceID, ls.Start, ls.Stop,
-                                ls.String,
+                                ls.String, w.Lemma,
                                 CASE WHEN w.POS = 'noun'
                                           THEN CONCAT('noun class - ',
                                                       w.NounClassType)
@@ -828,12 +837,12 @@ server <- function(input, output, session) {
         mutate(n.words = str_count(String, " ")) %>%
         all.strings.df()
       everything.df %>%
-        dplyr::select(SentenceID, Start, Stop, NounClassType, NominalHead,
-                      AdjectiveClassType, Degree, GenitiveCase, DativeCase,
-                      AccusativeCase, VerbClassType, TenseMood, Voice,
-                      VerbModifier, POS, Subject, Negation, NominalModifier,
-                      Conjunction, Relation) %>%
-        pivot_longer(cols = -c("SentenceID", "Start", "Stop"),
+        dplyr::select(SentenceID, Start, Stop, Lemma, NounClassType,
+                      NominalHead, AdjectiveClassType, Degree, GenitiveCase,
+                      DativeCase, AccusativeCase, VerbClassType, TenseMood,
+                      Voice, VerbModifier, POS, Subject, Negation,
+                      NominalModifier, Conjunction, Relation) %>%
+        pivot_longer(cols = -c("SentenceID", "Start", "Stop", "Lemma"),
                      names_to = "property") %>%
         distinct() %>%
         inner_join(filter.property.names.df, by = c("property", "value")) %>%
@@ -887,27 +896,32 @@ server <- function(input, output, session) {
         }
       }
       if(input$sample.by == "random") {
-        temp.df %>%
+        temp.df = temp.df %>%
           slice_sample(n = input$string.count) %>%
-          arrange(BookOrder, Chapter, Verse) %>%
-          sample.strings.df()
+          arrange(BookOrder, Chapter, Verse)
       }
       else if(input$sample.by == "longest") {
-        temp.df %>%
+        temp.df = temp.df %>%
           mutate(random.order = runif(n())) %>%
           arrange(desc(n.words), random.order) %>%
           slice_head(n = input$string.count) %>%
-          arrange(desc(n.words), BookOrder, Chapter, Verse) %>%
-          sample.strings.df()
+          arrange(desc(n.words), BookOrder, Chapter, Verse)
       }
       else if(input$sample.by == "shortest") {
-        temp.df %>%
+        temp.df = temp.df %>%
           mutate(random.order = runif(n())) %>%
           arrange(n.words, random.order) %>%
           slice_head(n = input$string.count) %>%
-          arrange(n.words, BookOrder, Chapter, Verse) %>%
-          sample.strings.df()
+          arrange(n.words, BookOrder, Chapter, Verse)
       }
+      sample.strings.df(temp.df)
+      temp.df %>%
+        inner_join(all.filter.properties.df(),
+                   by = c("SentenceID", "Start", "Stop")) %>%
+        inner_join(lexicon.df(), by = "Lemma") %>%
+        dplyr::select(Lemma, ShortDefinition) %>%
+        distinct() %>%
+        sample.lexicon.df()
     }
   )
   
@@ -929,6 +943,27 @@ server <- function(input, output, session) {
                                    "}")),
                   rownames = F) %>%
         formatStyle(columns = c("Citation"), fontWeight = "bold", width = "25%")
+    }
+  })
+  
+  # Render lexicon
+  output$lexicon = renderDT({
+    if(is.null(sample.lexicon.df())) {
+      NULL
+    } else {
+      sample.lexicon.df() %>%
+        arrange(Lemma) %>%
+        datatable(options = list(paging = F,
+                                 searching = F,
+                                 stripe = F,
+                                 ordering = F,
+                                 info = F,
+                                 headerCallback = JS(
+                                   "function(thead, data, start, end, display){",
+                                   "  $(thead).remove();",
+                                   "}")),
+                  rownames = F) %>%
+        formatStyle(columns = c("Lemma"), fontWeight = "bold", width = "20%")
     }
   })
   
