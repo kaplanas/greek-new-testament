@@ -1,3 +1,5 @@
+import os
+import pymysql
 import re
 import pandas as pd
 from ast import literal_eval
@@ -163,6 +165,9 @@ def process_lemmas():
     lemmas_df.drop(['bare_headword', 'lemma_sequence_number',
                     'lemma_lang_id'], axis=1, inplace=True)
 
+    # Remove lemmas without definitions.
+    lemmas_df = lemmas_df[~lemmas_df.lemma_short_def.isnull()]
+
     # All done; return the dataframe.
     return lemmas_df
 
@@ -217,6 +222,34 @@ def process_parses():
 
 
 if __name__ == '__main__':
+
+    # Get lemmas and parses.
     pd.set_option('display.max_columns', None)
     lemmas_df = process_lemmas()
-    parses_df = process_parses()
+    # parses_df = process_parses()
+
+    # Connect to the database.
+    connection = pymysql.connect(host='localhost', user='root', password=os.environ['MYSQL_PASSWORD'], database='gnt')
+
+    # Get lemmas that are present in the NT.
+    sql = "SELECT DISTINCT Lemma FROM words"
+    nt_lemmas_df = pd.read_sql(sql, connection)
+    lemmas_df = lemmas_df.merge(nt_lemmas_df, left_on=['lemma_text'], right_on=['Lemma'])
+
+    # Get one definition for each lemma.
+    lemmas_df = lemmas_df[['lemma_text', 'lemma_short_def']]
+    lemmas_df = lemmas_df.groupby('lemma_text').agg('; '.join)
+    lemmas_list = list(lemmas_df.to_records())
+    lemmas_list = [tuple(ll) for ll in lemmas_list]
+
+    # Write lemmas to the database.
+    with connection.cursor() as cur:
+        sql = """INSERT INTO lemmas
+                 (Lemma, ShortDefinition)
+                 VALUES
+                 (%s, %s)"""
+        cur.executemany(sql, lemmas_list)
+    connection.commit()
+
+    # Close the database connection.
+    connection.close()

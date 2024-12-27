@@ -72,6 +72,12 @@ CREATE TABLE relations (
   PRIMARY KEY(SentenceID, HeadPos, DependentPos)
 );
 
+CREATE TABLE lemmas (
+  Lemma varchar(50) NOT NULL,
+  ShortDefinition varchar(1000),
+  PRIMARY KEY(Lemma)
+);
+
 CREATE TABLE checked_relation_types (
   CheckOrder integer NOT NULL AUTO_INCREMENT,
   Relation varchar(100) NOT NULL,
