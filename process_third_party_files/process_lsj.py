@@ -29,7 +29,7 @@ ASCII_UNICODE_MAPPING = [('\\*\\(/a\\|', 'ᾍ'),
                          ('\\*\\)h', 'Ἠ'), ('\\*\\(h', 'Ἡ'), ('h\\)/', 'ἤ'), ('h\\)=', 'ἦ'), ('h\\)\\|', 'ᾐ'),
                          ('h\\(/', 'ἥ'), ('h\\(=', 'ἧ'), ('h=\\(', 'ἧ'), ('h\\(\\|', 'ᾑ'), ('h/\\|', 'ῄ'),
                          ('h\\|/', 'ῄ'), ('h=\\|', 'ῇ'),
-                         ('h\\)', 'ἠ'), ('h\\(', 'ἡ'), ('h/', 'ή'), ('h\\\\', 'ὴ'), ('h=', 'ῆ'), ('h\\|', 'ῃ'),
+                         ('h\\)', 'ἠ'), ('h\\(', 'ἡ'), ('h/', 'ή'), ('h\\\\', 'ὴ'), ('h=', 'ῆ'), ('h\\|', 'ῃ'),
                          ('h', 'η'),
                          ('\\*q', 'Θ'), ('q', 'θ'),
                          ('\\*\\)/i', 'Ἴ'), ('\\*\\)=i', 'Ἶ'), ('i\\)/=', 'ἴ῀'), ('i\\)/\\+', 'ΐ᾿'),
@@ -109,22 +109,22 @@ if __name__ == '__main__':
     # Get lemmas that are present in the NT.
     sql = "SELECT DISTINCT Lemma FROM words"
     nt_lemmas_df = pd.read_sql(sql, connection)
-    entries_df = entries_df.merge(nt_lemmas_df, left_on=['lemma'], right_on=['Lemma'])
+    # entries_df = entries_df.merge(nt_lemmas_df, left_on=['lemma'], right_on=['Lemma'])
 
-    # Get one definition for each lemma.
-    entries_df = entries_df[['lemma', 'lemma_sort', 'definition']]
-    entries_df = entries_df.groupby(['lemma', 'lemma_sort']).agg('; '.join)
-    entries_list = list(entries_df.to_records())
-    entries_list = [tuple(el) for el in entries_list]
-
-    # Write lemmas to the database.
-    with connection.cursor() as cur:
-        sql = """INSERT INTO lemmas
-                 (Lemma, LemmaSort, ShortDefinition)
-                 VALUES
-                 (%s, %s, %s)"""
-        cur.executemany(sql, entries_list)
-    connection.commit()
+    # # Get one definition for each lemma.
+    # entries_df = entries_df[['lemma', 'lemma_sort', 'definition']]
+    # entries_df = entries_df.groupby(['lemma', 'lemma_sort']).agg('; '.join)
+    # entries_list = list(entries_df.to_records())
+    # entries_list = [tuple(el) for el in entries_list]
+    #
+    # # Write lemmas to the database.
+    # with connection.cursor() as cur:
+    #     sql = """INSERT INTO lemmas
+    #              (Lemma, LemmaSort, ShortDefinition)
+    #              VALUES
+    #              (%s, %s, %s)"""
+    #     cur.executemany(sql, entries_list)
+    # connection.commit()
 
     # Close the database connection.
     connection.close()
