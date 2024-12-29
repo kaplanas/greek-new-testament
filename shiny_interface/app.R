@@ -485,7 +485,7 @@ server <- function(input, output, session) {
       }
       
       # Get the lexicon.
-      lexicon.sql = "SELECT Lemma, ShortDefinition FROM lemmas"
+      lexicon.sql = "SELECT Lemma, LemmaSort, ShortDefinition FROM lemmas"
       lexicon.df(dbGetQuery(gnt.con, lexicon.sql))
       
     }
@@ -919,7 +919,7 @@ server <- function(input, output, session) {
         inner_join(all.filter.properties.df(),
                    by = c("SentenceID", "Start", "Stop")) %>%
         inner_join(lexicon.df(), by = "Lemma") %>%
-        dplyr::select(Lemma, ShortDefinition) %>%
+        dplyr::select(Lemma, LemmaSort, ShortDefinition) %>%
         distinct() %>%
         sample.lexicon.df()
     }
@@ -952,7 +952,8 @@ server <- function(input, output, session) {
       NULL
     } else {
       sample.lexicon.df() %>%
-        arrange(Lemma) %>%
+        arrange(LemmaSort) %>%
+        dplyr::select(Lemma, ShortDefinition) %>%
         datatable(options = list(paging = F,
                                  searching = F,
                                  stripe = F,

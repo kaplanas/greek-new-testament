@@ -74,7 +74,8 @@ CREATE TABLE relations (
 
 CREATE TABLE lemmas (
   Lemma varchar(50) NOT NULL,
-  ShortDefinition varchar(1000),
+  LemmaSort varchar(50) NOT NULL,
+  ShortDefinition varchar(4000),
   PRIMARY KEY(Lemma)
 );
 
