@@ -4,7 +4,7 @@ import re
 import pandas as pd
 from bs4 import BeautifulSoup
 
-RAW_DATA_DIR = 'perseus/'
+RAW_DATA_DIR = 'perseus/lsj/'
 ASCII_UNICODE_MAPPING = [('\\*\\(/a\\|', 'ᾍ'),
                          ('\\*\\)/a', 'Ἄ'), ('\\*\\)=a', 'Ἆ'), ('\\*\\(/a', 'Ἅ'), ('a\\)/=', 'ἄ῀'), ('a\\)=\\|', 'ᾆ'),
                          ('a\\(/=', 'ἅ῀'), ('a\\(/\\|', 'ᾅ'), ('a\\(=\\|', 'ᾇ'), ('a\\)/\\|', 'ᾄ'),
@@ -70,6 +70,7 @@ ASCII_UNICODE_MAPPING = [('\\*\\(/a\\|', 'ᾍ'),
 ASCII_UNICODE_ALPHABETIZATION_MAPPING = {'a': 'α', 'b': 'β', 'g': 'γ', 'd': 'δ', 'e': 'ε', 'z': 'ζ', 'h': 'η', 'q': 'θ',
                                          'i': 'ι', 'k': 'κ', 'l': 'λ', 'm': 'μ', 'n': 'ν', 'c': 'ξ', 'o': 'ο', 'p': 'π',
                                          'r': 'ρ', 's': 'σ', 't': 'τ', 'u': 'υ', 'f': 'φ', 'x': 'χ', 'y': 'ψ', 'w': 'ω'}
+LEMMA_EDITS = {'a)gaqopoii/a': 'a)gaqopoii/+a', '*(/aidhs': '(/aidhs', 'a(droth/s': 'a(dro/ths'}
 
 
 def ascii_to_unicode(ascii_string):
@@ -83,18 +84,23 @@ def ascii_to_unicode(ascii_string):
 
 def process_entries():
     """Load the xml of the LSJ entries."""
-    with open(RAW_DATA_DIR + 'lsj_perseus.xml') as lsj:
-        soup = BeautifulSoup(lsj, features='lxml')
-        e_df = pd.DataFrame([(e['key'],
-                              e.form.orth.text,
-                              '; '.join([s.text for s in e.find_all('trans')]))
-                             for e in soup.find_all('entry')],
-                            columns=['lemma_key', 'lemma_ascii', 'definition'])
-        e_df['lemma'] = e_df['lemma_ascii'].apply(ascii_to_unicode)
-        e_df['lemma_sort'] = e_df['lemma_ascii']
-        e_df.lemma_sort = e_df.lemma_sort.replace({'[^abgdezhqiklmncoprstufxyw]': ''}, regex = True)
-        e_df.lemma_sort = e_df.lemma_sort.replace(ASCII_UNICODE_ALPHABETIZATION_MAPPING,  regex = True)
-        return e_df
+    dfs = list()
+    for file in os.listdir(RAW_DATA_DIR):
+        if file.startswith('grc'):
+            with open(RAW_DATA_DIR + '/' + file) as lsj:
+                soup = BeautifulSoup(lsj, features='xml')
+                df = pd.DataFrame([(e['key'], e.orth.text, '; '.join([s.text for s in e.find_all('tr')]))
+                                   for e in soup.find_all('entryFree')],
+                                  columns=['lemma_key', 'lemma_ascii', 'definition'])
+                dfs.append(df)
+    e_df = pd.concat(dfs)
+    e_df['lemma_ascii'] = e_df.lemma_ascii.replace('[-^_]', '', regex = True)
+    e_df['lemma_ascii'] = e_df.lemma_ascii.replace(LEMMA_EDITS)
+    e_df['lemma'] = e_df['lemma_ascii'].apply(ascii_to_unicode)
+    e_df['lemma_sort'] = e_df['lemma_ascii']
+    e_df.lemma_sort = e_df.lemma_sort.replace({'[^abgdezhqiklmncoprstufxyw]': ''}, regex = True)
+    e_df.lemma_sort = e_df.lemma_sort.replace(ASCII_UNICODE_ALPHABETIZATION_MAPPING,  regex = True)
+    return e_df
 
 
 if __name__ == '__main__':
@@ -110,7 +116,7 @@ if __name__ == '__main__':
     sql = "SELECT DISTINCT Lemma FROM words"
     nt_lemmas_df = pd.read_sql(sql, connection)
     # entries_df = entries_df.merge(nt_lemmas_df, left_on=['lemma'], right_on=['Lemma'])
-
+    #
     # # Get one definition for each lemma.
     # entries_df = entries_df[['lemma', 'lemma_sort', 'definition']]
     # entries_df = entries_df.groupby(['lemma', 'lemma_sort']).agg('; '.join)
