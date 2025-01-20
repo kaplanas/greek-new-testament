@@ -75,8 +75,10 @@ CREATE TABLE relations (
 CREATE TABLE lemmas (
   Lemma varchar(50) NOT NULL,
   LemmaSort varchar(50) NOT NULL,
+  POS varchar(50) NOT NULL,
+  PrincipalParts varchar(1000),
   ShortDefinition varchar(4000),
-  PRIMARY KEY(Lemma)
+  PRIMARY KEY(Lemma, POS)
 );
 
 CREATE TABLE checked_relation_types (

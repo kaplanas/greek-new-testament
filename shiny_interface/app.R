@@ -485,7 +485,7 @@ server <- function(input, output, session) {
       }
       
       # Get the lexicon.
-      lexicon.sql = "SELECT Lemma, LemmaSort, ShortDefinition FROM lemmas"
+      lexicon.sql = "SELECT Lemma, LemmaSort, POS, PrincipalParts, ShortDefinition FROM lemmas"
       lexicon.df(dbGetQuery(gnt.con, lexicon.sql))
       
     }
@@ -837,14 +837,17 @@ server <- function(input, output, session) {
         mutate(n.words = str_count(String, " ")) %>%
         all.strings.df()
       everything.df %>%
-        dplyr::select(SentenceID, Start, Stop, Lemma, NounClassType,
+        dplyr::select(SentenceID, Start, Stop, Lemma, POS, NounClassType,
                       NominalHead, AdjectiveClassType, Degree, GenitiveCase,
                       DativeCase, AccusativeCase, VerbClassType, TenseMood,
                       Voice, VerbModifier, POS, Subject, Negation,
                       NominalModifier, Conjunction, Relation) %>%
-        pivot_longer(cols = -c("SentenceID", "Start", "Stop", "Lemma"),
+        pivot_longer(cols = -c("SentenceID", "Start", "Stop", "Lemma", "POS"),
                      names_to = "property") %>%
         distinct() %>%
+        bind_rows(everything.df %>%
+                    dplyr::select(SentenceID, Start, Stop, Lemma, POS,
+                                  property = "POS", value = POS)) %>%
         inner_join(filter.property.names.df, by = c("property", "value")) %>%
         all.filter.properties.df()
       
@@ -918,8 +921,9 @@ server <- function(input, output, session) {
       temp.df %>%
         inner_join(all.filter.properties.df(),
                    by = c("SentenceID", "Start", "Stop")) %>%
-        inner_join(lexicon.df(), by = "Lemma") %>%
-        dplyr::select(Lemma, LemmaSort, ShortDefinition) %>%
+        inner_join(lexicon.df(), by = c("Lemma", "POS")) %>%
+        dplyr::select(Lemma, LemmaSort, POS, PrincipalParts,
+                      ShortDefinition) %>%
         distinct() %>%
         sample.lexicon.df()
     }
@@ -953,7 +957,7 @@ server <- function(input, output, session) {
     } else {
       sample.lexicon.df() %>%
         arrange(LemmaSort) %>%
-        dplyr::select(Lemma, ShortDefinition) %>%
+        dplyr::select(Lemma, PrincipalParts, ShortDefinition) %>%
         datatable(options = list(paging = F,
                                  searching = F,
                                  stripe = F,
@@ -964,7 +968,7 @@ server <- function(input, output, session) {
                                    "  $(thead).remove();",
                                    "}")),
                   rownames = F) %>%
-        formatStyle(columns = c("Lemma"), fontWeight = "bold", width = "20%")
+        formatStyle(columns = c("Lemma"), fontWeight = "bold", width = "15%")
     }
   })
   

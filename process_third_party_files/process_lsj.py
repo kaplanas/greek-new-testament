@@ -1,12 +1,17 @@
 import os
 import pymysql
 import re
+import unicodedata
 import pandas as pd
+import numpy as np
 from bs4 import BeautifulSoup
 
 RAW_DATA_DIR = 'perseus/'
 DEFINITION_EDITS = pd.read_csv(RAW_DATA_DIR + 'definition_edits.csv', dtype=str)
 SYNONYMS = pd.read_csv(RAW_DATA_DIR + 'synonyms.csv', dtype=str)
+NOUN_FORM_EDITS = pd.read_csv(RAW_DATA_DIR + 'noun_forms.csv', dtype=str)
+ADJECTIVE_FORM_EDITS = pd.read_csv(RAW_DATA_DIR + 'adjective_forms.csv', dtype=str)
+VERB_FORM_EDITS = pd.read_csv(RAW_DATA_DIR + 'verb_forms.csv', dtype=str)
 ASCII_UNICODE_MAPPING = [('\\*\\(/a\\|', 'ᾍ'),
                          ('\\*\\)/a', 'Ἄ'), ('\\*\\)=a', 'Ἆ'), ('\\*\\(/a', 'Ἅ'), ('a\\)/=', 'ἄ῀'), ('a\\)=\\|', 'ᾆ'),
                          ('a\\(/=', 'ἅ῀'), ('a\\(/\\|', 'ᾅ'), ('a\\(=\\|', 'ᾇ'), ('a\\)/\\|', 'ᾄ'),
@@ -73,6 +78,13 @@ ASCII_UNICODE_MAPPING = [('\\*\\(/a\\|', 'ᾍ'),
 ASCII_UNICODE_ALPHABETIZATION_MAPPING = {'a': 'α', 'b': 'β', 'g': 'γ', 'd': 'δ', 'e': 'ε', 'z': 'ζ', 'h': 'η', 'q': 'θ',
                                          'i': 'ι', 'k': 'κ', 'l': 'λ', 'm': 'μ', 'n': 'ν', 'c': 'ξ', 'o': 'ο', 'p': 'π',
                                          'r': 'ρ', 's': 'σ', 't': 'τ', 'u': 'υ', 'f': 'φ', 'x': 'χ', 'y': 'ψ', 'w': 'ω'}
+UNICODE_ACCENT_SWITCH_MAPPING = {'ὰ': 'ά', 'ᾲ': 'ᾴ', 'ἂ': 'ἄ', 'ἃ': 'ἅ', 'ᾂ': 'ᾄ', 'ᾃ': 'ᾅ', 'ὲ': 'έ', 'ἒ': 'ἔ',
+                                 'ἓ': 'ἕ', 'ὴ': 'ή', 'ῂ': 'ῄ', 'ἢ': 'ἤ', 'ἣ': 'ἥ', 'ᾒ': 'ᾔ', 'ᾓ': 'ᾕ', 'ὶ': 'ί',
+                                 'ῒ': 'ΐ', 'ἲ': 'ἴ', 'ἳ': 'ἵ', 'ὸ': 'ό', 'ὂ': 'ὄ', 'ὃ': 'ὅ', 'ὺ': 'ύ', 'ῢ': 'ΰ',
+                                 'ὒ': 'ὔ', 'ὓ': 'ὕ', 'ὼ': 'ώ', 'ῲ': 'ῴ', 'ὢ': 'ὤ', 'ὣ': 'ὥ', 'ᾢ': 'ᾤ', 'ᾣ': 'ᾥ'}
+GREEK_CAPITALS = '^[' + ''.join(set(chr(cp)
+                                    for cp in range(0x0370, 0x1FFF)
+                                    if "GREEK CAPITAL" in unicodedata.name(chr(cp), ""))) + ']'
 LEMMA_EDITS = {'a)gaqopoii/a': 'a)gaqopoii/+a', 'a(gi/zw': 'a(gia/zw', 'a)griela/inos': 'a)grie/laios',
                'a(droth/s': 'a(dro/ths', 'a)ei/dw': 'a)/|dw', 'a)ei/rw': 'ai)/rw', 'a)qe/mistos': 'a)qe/mitos',
                'a)qe/smios': 'a)/qesmos', '*(/aidhs': 'a(/|dhs', '*ai)nei/as': '*ai)ne/as', 'ai)ti/ama': 'ai)ti/wma',
@@ -149,6 +161,10 @@ LEMMA_EDITS = {'a)gaqopoii/a': 'a)gaqopoii/+a', 'a(gi/zw': 'a(gia/zw', 'a)griela
                'xei/maros': 'xei/marros', 'xeiro/grafos': 'xeiro/grafon', 'xh/ra': 'xh/ros',
                'xrewfeile/ths': 'xreofeile/ths', '<*> xrh=sis,': 'xrh=sis', 'yeudo/logos': 'yeudolo/gos',
                'yeudoma/rtus': 'yeudo/martus', 'ywmo/s': 'ywmi/on', 'w)di/s': 'w)di/n'}
+NOUN_FORM_LEMMAS = ['ἐγώ', 'ἐμαυτοῦ', 'σεαυτοῦ', 'σύ', 'τις']
+ADJECTIVE_FORM_LEMMAS = ['ἀλλήλων', 'αὐτός', 'ἑαυτοῦ', 'ἐκεῖνος', 'ἡλίκος', 'ὅδε', 'οἷος', 'ὁποῖος', 'ὅς', 'ὅσος',
+                         'ὅστις', 'οὗτος', 'πηλίκος', 'ποῖος', 'πόσος', 'ποταπός', 'τηλικοῦτος', 'τοιόσδε', 'τοιοῦτος',
+                         'τοσοῦτος']
 
 
 def ascii_to_unicode(ascii_string):
@@ -212,6 +228,262 @@ def process_entries():
     return e_df
 
 
+def get_noun_forms(lemmas_df, db_con, lxx_df):
+    """Get the genitive singular of nouns."""
+
+    # Initialize the value we'll return.
+    nouns_df = lemmas_df[['Lemma', 'POS']].copy()
+
+    # Get noun wordforms from the NT and LXX.
+    sql = """SELECT DISTINCT Lemma, POS, Number, NCase, NounClassType, Wordform
+             FROM words
+             WHERE POS = 'noun'
+                   OR POS IN """
+    sql = sql + '(' + ', '.join(["'" + n + "'" for n in NOUN_FORM_LEMMAS]) + ')'
+    nt_nouns_df = pd.read_sql(sql, db_con)
+    lxx_nouns_df = lxx_df[(lxx_df.pos == 'noun') | (lxx_df.lemma.isin(NOUN_FORM_LEMMAS))]
+    lxx_nouns_df = lxx_nouns_df[['lemma', 'pos', 'number', 'case', 'wordform']]
+    lxx_nouns_df.rename(columns={'lemma': 'Lemma', 'pos': 'POS', 'number': 'Number', 'case': 'NCase',
+                                 'wordform': 'Wordform'},
+                        inplace=True)
+    lxx_nouns_df['NounClassType'] = 'unknown'
+    forms_df = pd.concat([nt_nouns_df, lxx_nouns_df]).copy()
+    forms_df.drop_duplicates(inplace=True)
+    forms_df.Wordform = forms_df.Wordform.replace(UNICODE_ACCENT_SWITCH_MAPPING, regex=True)
+    forms_df.Wordform = np.where(forms_df.Lemma.str.istitle(), forms_df.Wordform, forms_df.Wordform.str.lower())
+
+    # Get lemmas that don't need a genitive singular.
+    no_gs_df = nt_nouns_df.groupby(['Lemma', 'POS'])\
+                          .filter(lambda x: x.Number.str.contains('singular').all() and
+                                            x.NCase.str.contains('nominative').all())\
+                          [['Lemma', 'POS']]
+    no_gs_df.drop_duplicates(inplace=True)
+    no_gs_df['genitive_singular'] = '―'
+
+    # Get genitive singular forms.
+    gs_df = forms_df[(~forms_df.Lemma.isin(no_gs_df.Lemma)) &
+                     (((forms_df.Number == 'singular') & (forms_df.NCase == 'genitive')) |
+                      (forms_df.NounClassType == 'undeclined'))].groupby(['Lemma', 'POS']).first()
+    gs_df.reset_index(inplace=True)
+    gs_df.rename(columns={'Wordform': 'genitive_singular'}, inplace=True)
+
+    # Combine noun forms.
+    gs_df = pd.concat([no_gs_df, gs_df, NOUN_FORM_EDITS])
+    nouns_df = nouns_df.merge(gs_df, on=['Lemma', 'POS'], how='left')
+    nouns_df['noun_forms'] = nouns_df['genitive_singular']
+
+    # Return the forms.
+    return nouns_df[['Lemma', 'POS', 'noun_forms']]
+
+
+def get_adjective_forms(lemmas_df, db_con, lxx_df):
+    """Get the feminine and neuter nominative singular of adjectives."""
+
+    # Initialize the value we'll return.
+    adjectives_df = lemmas_df[['Lemma', 'POS']].copy()
+
+    # Get adjective wordforms from the NT and LXX.
+    sql = """SELECT DISTINCT Lemma, POS, Gender, Number, NCase, NounClassType, Wordform
+             FROM words
+             WHERE POS = 'adj'
+                   OR Lemma IN """
+    sql = sql + '(' + ', '.join(["'" + a + "'" for a in ADJECTIVE_FORM_LEMMAS]) + ')'
+    nt_adjectives_df = pd.read_sql(sql, connection)
+    lxx_adjectives_df = lxx_df[(lxx_df.pos == 'adjective') | (lxx_df.lemma.isin(ADJECTIVE_FORM_LEMMAS))]
+    lxx_adjectives_df = lxx_adjectives_df[['lemma', 'pos', 'gender', 'number', 'case', 'wordform']]
+    lxx_adjectives_df.rename(columns={'lemma': 'Lemma', 'pos': 'POS', 'gender': 'Gender', 'number': 'Number',
+                                      'case': 'NCase', 'wordform': 'Wordform'},
+                             inplace=True)
+    lxx_adjectives_df['NounClassType'] = 'unknown'
+    forms_df = pd.concat([nt_adjectives_df, lxx_adjectives_df])
+    forms_df.drop_duplicates(inplace=True)
+    forms_df.Wordform = forms_df.Wordform.replace(UNICODE_ACCENT_SWITCH_MAPPING, regex=True)
+    forms_df.Wordform = np.where(forms_df.Lemma[0] in GREEK_CAPITALS, forms_df.Wordform, forms_df.Wordform.str.lower())
+
+    # Get lemmas that don't need a feminine.
+    no_f_df = nt_adjectives_df.groupby(['Lemma', 'POS'])\
+                              .filter(lambda x: ~x.Gender.str.contains('feminine').any())\
+                              [['Lemma', 'POS']]
+    no_f_df.drop_duplicates(inplace=True)
+    no_f_df['feminine'] = '―'
+
+    # Get feminine forms.
+    f_df = forms_df[(~forms_df.Lemma.isin(no_f_df.Lemma)) & (forms_df.NCase == 'nominative') &
+                    (forms_df.Number == 'singular') & (forms_df.Gender == 'feminine')]\
+                   .groupby(['Lemma', 'POS']).first().copy()
+    f_df.reset_index(inplace=True)
+    f_df.rename(columns={'Wordform': 'feminine'}, inplace=True)
+    m_df = forms_df[(forms_df.NounClassType.isin(['second declension', 'third declension, vowel stem',
+                                                  'third declension, consonant stem'])) &
+                    (~forms_df.Lemma.isin(no_f_df.Lemma)) & (~forms_df.Lemma.isin(f_df.Lemma))].copy()
+    m_df = m_df[['Lemma', 'POS']]
+    m_df.drop_duplicates(inplace=True)
+    m_df['feminine'] = m_df.Lemma
+    f_edits = ADJECTIVE_FORM_EDITS[['Lemma', 'POS', 'feminine']]
+    f_edits = f_edits[~f_edits.feminine.isna()]
+
+    # Get lemmas that don't need a neuter.
+    no_n_df = nt_adjectives_df.groupby(['Lemma', 'POS'])\
+                              .filter(lambda x: ~x.Gender.str.contains('neuter').any())\
+                              [['Lemma', 'POS']]
+    no_n_df.drop_duplicates(inplace=True)
+    no_n_df['neuter'] = '―'
+
+    # Get neuter forms.
+    n_df = forms_df[(~forms_df.Lemma.isin(no_n_df.Lemma)) & (forms_df.NCase.isin(['nominative', 'accusative'])) &
+                    (forms_df.Number == 'singular') & (forms_df.Gender == 'neuter')]\
+                   .groupby(['Lemma', 'POS']).first().copy()
+    n_df.reset_index(inplace=True)
+    n_df.rename(columns={'Wordform': 'neuter'}, inplace=True)
+    n_edits = ADJECTIVE_FORM_EDITS[['Lemma', 'POS', 'neuter']]
+    n_edits = n_edits[~n_edits.neuter.isna()]
+
+    # Combine adjective forms.
+    f_df = pd.concat([no_f_df, f_df, m_df, f_edits])
+    n_df = pd.concat([no_n_df, n_df, n_edits])
+    adjectives_df = adjectives_df.merge(f_df, on=['Lemma', 'POS'], how='left')
+    adjectives_df = adjectives_df.merge(n_df, on=['Lemma', 'POS'], how='left')
+    adjectives_df['adjective_forms'] = adjectives_df['feminine'] + ', ' + adjectives_df['neuter']
+
+    # Return the forms.
+    return adjectives_df[['Lemma', 'POS', 'adjective_forms']]
+
+
+def get_verb_forms(lemmas_df, db_con, lxx_df):
+    """Get principal parts of verbs."""
+
+    # Initialize the value we'll return.
+    verbs_df = lemmas_df[['Lemma', 'POS']].copy()
+
+    # Get verb wordforms from the NT and LXX.
+    sql = "SELECT DISTINCT Lemma, POS, Gender, Number, NCase, Person, Tense, Mood, Voice, Wordform FROM words WHERE POS = 'verb'"
+    nt_verbs_df = pd.read_sql(sql, connection)
+    lxx_verbs_df = lxx_df[lxx_df.pos == 'verb']
+    lxx_verbs_df = lxx_verbs_df[['lemma', 'pos', 'gender', 'number', 'case', 'person', 'tense', 'mood', 'voice',
+                                 'wordform']]
+    lxx_verbs_df.rename(columns={'lemma': 'Lemma', 'pos': 'POS', 'gender': 'Gender', 'number': 'Number',
+                                 'case': 'NCase', 'person': 'Person', 'tense': 'Tense', 'mood': 'Mood',
+                                 'voice': 'Voice', 'wordform': 'Wordform'},
+                        inplace=True)
+    forms_df = pd.concat([nt_verbs_df, lxx_verbs_df])
+    forms_df.drop_duplicates(inplace=True)
+    forms_df.Wordform = forms_df.Wordform.replace(UNICODE_ACCENT_SWITCH_MAPPING, regex=True)
+    forms_df.Wordform = forms_df.Wordform.str.lower()
+
+    # Get lemmas that don't need a future active.
+    no_fa_df = nt_verbs_df.groupby(['Lemma', 'POS'])\
+                          .filter(lambda x: ~(x.Tense.str.contains('future') &
+                                              x.Voice.isin(['active', 'middle'])).any())\
+                          [['Lemma', 'POS']]
+    no_fa_df.drop_duplicates(inplace=True)
+    no_fa_df['future_active'] = '―'
+
+    # Get future active forms.
+    fa_df = forms_df[(~forms_df.Lemma.isin(no_fa_df.Lemma)) & (forms_df.Person == 'first') &
+                     (forms_df.Number == 'singular') & (forms_df.Mood == 'indicative') & (forms_df.Voice == 'active') &
+                     (forms_df.Tense == 'future')]\
+                    .groupby(['Lemma', 'POS']).first().copy()
+    fa_df.reset_index(inplace=True)
+    fa_df = fa_df[['Lemma', 'POS', 'Wordform']]
+    fa_df.rename(columns={'Wordform': 'future_active'}, inplace=True)
+    fa_edits = VERB_FORM_EDITS[['Lemma', 'POS', 'future_active']]
+    fa_edits = fa_edits[~fa_edits.future_active.isna()]
+
+    # Get lemmas that don't need an aorist active.
+    no_aa_df = nt_verbs_df.groupby(['Lemma', 'POS'])\
+                          .filter(lambda x: ~(x.Tense.str.contains('aorist') &
+                                              x.Voice.isin(['active', 'middle'])).any())\
+                          [['Lemma', 'POS']]
+    no_aa_df.drop_duplicates(inplace=True)
+    no_aa_df['aorist_active'] = '―'
+
+    # Get aorist active forms.
+    aa_df = forms_df[(~forms_df.Lemma.isin(no_aa_df.Lemma)) & (forms_df.Person == 'first') &
+                     (forms_df.Number == 'singular') & (forms_df.Mood == 'indicative') & (forms_df.Voice == 'active') &
+                     (forms_df.Tense == 'aorist') & (forms_df.Lemma != 'ἀνθίστημι')]\
+                    .groupby(['Lemma', 'POS']).first().copy()
+    aa_df.reset_index(inplace=True)
+    aa_df = aa_df[['Lemma', 'POS', 'Wordform']]
+    aa_df.rename(columns={'Wordform': 'aorist_active'}, inplace=True)
+    aa_edits = VERB_FORM_EDITS[['Lemma', 'POS', 'aorist_active']]
+    aa_edits = aa_edits[~aa_edits.aorist_active.isna()]
+
+    # Get lemmas that don't need a perfect active.
+    no_pa_df = nt_verbs_df.groupby(['Lemma', 'POS'])\
+                          .filter(lambda x: ~(x.Tense.isin(['perfect', 'pluperfect']) &
+                                              x.Voice.str.contains('active')).any())\
+                          [['Lemma', 'POS']]
+    no_pa_df.drop_duplicates(inplace=True)
+    no_pa_df['perfect_active'] = '―'
+
+    # Get perfect active forms.
+    pa_df = forms_df[(~forms_df.Lemma.isin(no_pa_df.Lemma)) & (forms_df.Person == 'first') &
+                     (forms_df.Number == 'singular') & (forms_df.Mood == 'indicative') & (forms_df.Voice == 'active') &
+                     (forms_df.Tense == 'perfect')]\
+                    .groupby(['Lemma', 'POS']).first().copy()
+    pa_df.reset_index(inplace=True)
+    pa_df = pa_df[['Lemma', 'POS', 'Wordform']]
+    pa_df.rename(columns={'Wordform': 'perfect_active'}, inplace=True)
+    pa_edits = VERB_FORM_EDITS[['Lemma', 'POS', 'perfect_active']]
+    pa_edits = pa_edits[~pa_edits.perfect_active.isna()]
+
+    # Get lemmas that don't need a perfect middle.
+    no_pm_df = nt_verbs_df.groupby(['Lemma', 'POS'])\
+                          .filter(lambda x: ~(x.Tense.isin(['perfect', 'pluperfect']) &
+                                              x.Voice.isin(['middle', 'passive'])).any())\
+                          [['Lemma', 'POS']]
+    no_pm_df.drop_duplicates(inplace=True)
+    no_pm_df['perfect_middle'] = '―'
+
+    # Get perfect middle forms.
+    pm_df = forms_df[(~forms_df.Lemma.isin(no_pm_df.Lemma)) & (forms_df.Person == 'first') &
+                     (forms_df.Number == 'singular') & (forms_df.Mood == 'indicative') & (forms_df.Voice == 'middle') &
+                     (forms_df.Tense == 'perfect')]\
+                    .groupby(['Lemma', 'POS']).first().copy()
+    pm_df.reset_index(inplace=True)
+    pm_df = pm_df[['Lemma', 'POS', 'Wordform']]
+    pm_df.rename(columns={'Wordform': 'perfect_middle'}, inplace=True)
+    pm_edits = VERB_FORM_EDITS[['Lemma', 'POS', 'perfect_middle']]
+    pm_edits = pm_edits[~pm_edits.perfect_middle.isna()]
+
+    # Get lemmas that don't need a future passive.
+    no_fp_df = nt_verbs_df.groupby(['Lemma', 'POS'])\
+                          .filter(lambda x: ~(x.Tense.isin(['future', 'aorist']) &
+                                              x.Voice.str.contains('passive')).any())\
+                          [['Lemma', 'POS']]
+    no_fp_df.drop_duplicates(inplace=True)
+    no_fp_df['future_passive'] = '―'
+
+    # Get future passive forms.
+    fp_df = forms_df[(~forms_df.Lemma.isin(no_fp_df.Lemma)) & (forms_df.Person == 'first') &
+                     (forms_df.Number == 'singular') & (forms_df.Mood == 'indicative') & (forms_df.Voice == 'passive') &
+                     (forms_df.Tense == 'future')]\
+                    .groupby(['Lemma', 'POS']).first().copy()
+    fp_df.reset_index(inplace=True)
+    fp_df = fp_df[['Lemma', 'POS', 'Wordform']]
+    fp_df.rename(columns={'Wordform': 'future_passive'}, inplace=True)
+    fp_edits = VERB_FORM_EDITS[['Lemma', 'POS', 'future_passive']]
+    fp_edits = fp_edits[~fp_edits.future_passive.isna()]
+
+    # Combine verb forms.
+    fa_df = pd.concat([no_fa_df, fa_df, fa_edits])
+    aa_df = pd.concat([no_aa_df, aa_df, aa_edits])
+    pa_df = pd.concat([no_pa_df, pa_df, pa_edits])
+    pm_df = pd.concat([no_pm_df, pm_df, pm_edits])
+    fp_df = pd.concat([no_fp_df, fp_df, fp_edits])
+    verbs_df = verbs_df.merge(fa_df, on=['Lemma', 'POS'], how='left')
+    verbs_df = verbs_df.merge(aa_df, on=['Lemma', 'POS'], how='left')
+    verbs_df = verbs_df.merge(pa_df, on=['Lemma', 'POS'], how='left')
+    verbs_df = verbs_df.merge(pm_df, on=['Lemma', 'POS'], how='left')
+    verbs_df = verbs_df.merge(fp_df, on=['Lemma', 'POS'], how='left')
+    verbs_df['verb_forms'] = verbs_df['future_active'] + ', ' + verbs_df['future_passive'] + ', ' + \
+                             verbs_df['perfect_active'] + ', ' + verbs_df['perfect_middle'] + ', ' + \
+                             verbs_df['future_passive']
+
+    # Return the forms.
+    return verbs_df[['Lemma', 'POS', 'verb_forms']]
+
+
 if __name__ == '__main__':
 
     # Get lexicon entries.
@@ -222,18 +494,34 @@ if __name__ == '__main__':
     connection = pymysql.connect(host='localhost', user='root', password=os.environ['MYSQL_PASSWORD'], database='gnt')
 
     # Get lemmas that are present in the NT.
-    sql = "SELECT DISTINCT Lemma FROM words"
+    sql = "SELECT DISTINCT Lemma, POS FROM words"
     nt_lemmas_df = pd.read_sql(sql, connection)
     entries_df = entries_df.merge(nt_lemmas_df, left_on=['lemma'], right_on=['Lemma'])
 
+    # Get wordforms from the LXX.
+    lxx_wordforms_df = pd.read_csv('../text_data/lxx_text.csv')
+    lxx_wordforms_df.lemma = lxx_wordforms_df.lemma.replace({'·': ''}, regex=True)
+
+    # Get principal parts.
+    entries_df = entries_df[['Lemma', 'lemma_sort', 'POS', 'definition']]
+    entries_df = entries_df.merge(get_noun_forms(entries_df, connection, lxx_wordforms_df),
+                                  on=['Lemma', 'POS'], how='left')
+    entries_df = entries_df.merge(get_adjective_forms(entries_df, connection, lxx_wordforms_df),
+                                  on=['Lemma', 'POS'], how='left')
+    entries_df = entries_df.merge(get_verb_forms(entries_df, connection, lxx_wordforms_df),
+                                  on=['Lemma', 'POS'], how='left')
+    entries_df['principal_parts'] = entries_df.noun_forms.combine_first(entries_df.adjective_forms)\
+                                                         .combine_first(entries_df.verb_forms)
+    entries_df.replace(np.nan, None, inplace=True)
+
     # Write lemmas to the database.
-    entries_list = list(entries_df[['lemma', 'lemma_sort', 'definition']].to_records(index=False))
+    entries_list = list(entries_df[['Lemma', 'lemma_sort', 'POS', 'principal_parts', 'definition']].to_records(index=False))
     entries_list = [tuple(el) for el in entries_list]
     with connection.cursor() as cur:
         sql = """INSERT INTO lemmas
-                 (Lemma, LemmaSort, ShortDefinition)
+                 (Lemma, LemmaSort, POS, PrincipalParts, ShortDefinition)
                  VALUES
-                 (%s, %s, %s)"""
+                 (%s, %s, %s, %s, %s)"""
         cur.executemany(sql, entries_list)
     connection.commit()
 
