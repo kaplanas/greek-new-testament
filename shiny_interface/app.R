@@ -1,344 +1,27 @@
 library(shiny)
-library(RMySQL)
 library(tidyverse)
-library(glue)
 library(bslib)
 library(DT)
-
-source("database_connection_local.R", local = T)
+library(paws)
+library(htmltools)
 
 #### Get starting data ####
 
-# Database connection
-gnt.con = dbConnect(MySQL(), user = db.user, password = db.password,
-                    dbname = "gnt", host = db.host, port = 3306)
-
-# Set character encoding
-dbGetQuery(gnt.con, "SET NAMES utf8")
-
 # List of lessons
-lessons.df = dbGetQuery(gnt.con,
-                        "SELECT LessonID, LessonName, LessonGroup
-                         FROM lessons
-                         ORDER BY DisplayOrder")
+lessons.df = read.csv("lessons.csv") %>%
+  mutate(AttributeName = paste("L", ColumnName, sep = "_"))
 
-# Lessons required for cases
-case.required = list(
-  "nominative" = "Nominative",
-  "genitive" = "Genitive",
-  "dative" = "Dative",
-  "accusative" = "Accusative",
-  "vocative" = "Vocative"
-)
+# Pretty names for properties to filter on
+filter.property.names.df = read.csv("filter_property_names.csv")
 
-# Lessons required for noun classes
-noun.class.required = list(
-  "second declension" = c("Second declension"),
-  "first declension" = c("First declension"),
-  "first declension with hs" = c("Second declension", "First declension"),
-  "first/second declension" = c("Second declension", "First declension"),
-  "third declension, consonant stem" = c("Third declension"),
-  "third declension, vowel stem" = c("Third declension"),
-  "first/second declension; third declension, consonant stem" = c("Second declension",
-                                                                  "First declension",
-                                                                  "Third declension"),
-  "Ihsous" = c("Ἰησοῦς"),
-  "irregular" = c("Irregular"),
-  "undeclined" = c("Undeclined")
-)
+# Words and lemmas
+lemmas.df = read.csv("lemmas.csv")
+words.df = read.csv("words.csv")
 
-# Lessons required for comparative and superlative adjectives
-adjective.degree.required = list(
-  "comparative" = "Comparatives",
-  "superlative" = "Superlatives"
-)
-
-# Lessons required for adjective classes
-adjective.class.required = list(
-  "first/second declension" = c("First and second declension"),
-  "second declension" = c("First and second declension"),
-  "third declension, consonant stem" = c("Third declension"),
-  "third declension, vowel stem" = c("Third declension"),
-  "first/second declension; third declension, consonant stem" = c("First and second declension", "Third declension"),
-  "irregular" = c("Irregular"),
-  "undeclined" = c("Undeclined")
-)
-
-# Lessons required for verb classes
-verb.class.required = list(
-  "eimi" = "Εἰμί",
-  "omega" = "Omega",
-  "contract, ew" = "Contract, έω",
-  "contract, aw" = "Contract, άω",
-  "contract, ow" = "Contract, όω",
-  "mi" = "Μί",
-  "oida" = "Οἶδα",
-  "other" = "Other"
-)
-
-# Lessons required for voice
-voice.required = list(
-  "active" = "Active",
-  "middle" = "Middle",
-  "passive" = "Passive"
-)
-
-# Lessons required for tense and mood
-tense.mood.required = list(
-  "present-indicative" = "Present indicative",
-  "future-indicative" = "Future indicative",
-  "imperfect-indicative" = "Imperfect indicative",
-  "aorist-indicative" = "Aorist indicative",
-  "perfect-indicative" = "Perfect indicative",
-  "pluperfect-indicative" = "Pluperfect indicative",
-  "present-infinitive" = "Present infinitive",
-  "future-infinitive" = "Future infinitive",
-  "aorist-infinitive" = "Aorist infinitive",
-  "perfect-infinitive" = "Perfect infinitive",
-  "present-participle" = "Present participle",
-  "future-participle" = "Future participle",
-  "aorist-participle" = "Aorist participle",
-  "perfect-participle" = "Perfect participle",
-  "present-imperative" = "Present imperative",
-  "aorist-imperative" = "Aorist imperative",
-  "perfect-imperative" = "Perfect imperative",
-  "present-subjunctive" = "Present subjunctive",
-  "aorist-subjunctive" = "Aorist subjunctive",
-  "perfect-subjunctive" = "Perfect subjunctive",
-  "present-optative" = "Present optative",
-  "aorist-optative" = "Aorist optative"
-)
-
-# Lessons required for various parts of speech
-other.pos.required = list(
-  "pron" = c("Personal pronouns"),
-  "personal pronoun" = c("Personal pronouns"),
-  "personal pronoun with kai" = c("Personal pronouns", "Coordinating conjunctions"),
-  "reflexive pronoun" = c("Reflexive pronouns"),
-  "demonstrative pronoun" = c("Demonstrative pronouns"),
-  "demonstrative pronoun with kai" = c("Demonstrative pronouns", "Coordinating conjunctions"),
-  "interrogative pronoun" = c("Interrogative pronouns"),
-  "indefinite pronoun" = c("Indefinite pronouns"),
-  "relative pronoun" = c("Relative pronouns"),
-  "relative adverb" = c("Relative pronouns"),
-  "det" = c("Definite article"),
-  "prep" = c("Prepositions"),
-  "negation" = c("Negation"),
-  "adv" = c("Adverbs"),
-  "adverb with kai" = c("Adverbs", "Coordinating conjunctions"),
-  "indefinite adverb" = c("Adverbs", "Indefinite pronouns"),
-  "interrogative adverb" = c("Adverbs", "Interrogative pronouns"),
-  "reflexive adverb" = c("Adverbs", "Reflexive pronouns"),
-  "num" = c("Numbers"),
-  "ptcl" = c("Particles"),
-  "intj" = c("Particles")
-)
-
-# Lessons required for various relations
-relation.required = list(
-  "sentential complement" = c("Indirect discourse"),
-  "conjunct, ὅτι" = c("Indirect discourse"),
-  "clause argument of verb" = c("Indirect discourse"),
-  "subject of implicit speech" = c("Indirect discourse"),
-  "second-position clitic" = c("Second-position clitics"),
-  "conjunct" = c("Coordinating conjunctions"),
-  "conjunct, main" = c("Subordinating conjunctions"),
-  "conjunct, subordinate" = c("Subordinating conjunctions"),
-  "conjunct, ὡς, clause" = c("Subordinating conjunctions"),
-  "conjunct, ὡς, non-clause" = c("Subordinating conjunctions"),
-  "conjunct, ὡς, other" = c("Subordinating conjunctions"),
-  "conjunct, ἤ" = c("Comparison"),
-  "topic" = c("Topics"),
-  "subject, attraction" = c("Relative pronouns"),
-  "subject of infinitive, attraction" = c("Relative pronouns"),
-  "direct object, attraction" = c("Relative pronouns"),
-  "indirect object, attraction" = c("Relative pronouns"),
-  "other, attraction" = c("Relative pronouns"),
-  "resumptive pronoun" = c("Relative pronouns"),
-  "number" = c("Numbers")
-)
-
-# Pretty names for properties we want to filter on
-filter.property.names.df = bind_rows(
-  data.frame(property = "NounClassType",
-             pretty.property = "Noun class",
-             value = c("second declension", "first declension",
-                       "first declension with hs",
-                       "third declension, consonant stem",
-                       "third declension, vowel stem", "Ihsous", "irregular",
-                       "undeclined")) %>%
-    mutate(pretty.value = case_when(value == "first declension with hs" ~ "First declension with ης",
-                                    grepl("^third declension", value) ~ "Third declension",
-                                    value == "Ihsous" ~ "Ἰησοῦς",
-                                    T ~ str_to_sentence(value)),
-           value = paste("noun class", value, sep = " - ")),
-  data.frame(property = "NominalHead",
-             pretty.property = "Non-noun as nominal head",
-             value = c("adjective", "determiner", "infinitive", "participle",
-                       "relative clause", "headless")) %>%
-    mutate(pretty.value = case_when(value == "headless" ~ "Other",
-                                    T ~ str_to_sentence(value)),
-           value = paste("nominalhead", value, sep = "-")),
-  data.frame(property = "AdjectiveClassType",
-             pretty.property = "Adjective class",
-             value = c("first/second declension", "second declension",
-                       "third declension, consonant stem",
-                       "third declension, vowel stem", "irregular",
-                       "undeclined")) %>%
-    mutate(pretty.value = case_when(grepl("^third declension", value) ~ "Third declension",
-                                    T ~ str_to_sentence(value)),
-           value = paste("adjective class", value, sep = " - ")),
-  data.frame(property = "Degree",
-             pretty.property = "Adjective degree",
-             value = c("comparative", "superlative")) %>%
-    mutate(pretty.value = str_to_sentence(value),
-           value = paste("degree", value, sep = "-")),
-  data.frame(property = "GenitiveCase",
-             pretty.property = "Genitive case",
-             value = c("genitive, about", "genitive, amount",
-                       "genitive, body part", "genitive, characterized by",
-                       "genitive, comparative", "genitive, contents",
-                       "genitive, location", "genitive, material",
-                       "genitive, object", "genitive, other",
-                       "genitive, part-whole", "genitive, possession",
-                       "genitive, property", "genitive, relation",
-                       "genitive, son of", "genitive, source",
-                       "genitive, specification", "genitive, subject",
-                       "genitive, time", "direct object, genitive")) %>%
-    mutate(pretty.value = str_to_sentence(value)),
-  data.frame(property = "DativeCase",
-             pretty.property = "Dative case",
-             value = c("dative, agent", "dative, benefit", 
-                       "dative, cognate of verb",
-                       "dative, Hebrew infinitive construct",
-                       "dative, instrument", "dative, manner",
-                       "dative, other", "dative, possession", "dative, time",
-                       "direct object, dative", "indirect object")) %>%
-    mutate(pretty.value = str_to_sentence(gsub("-", " ", value)),
-           pretty.value = gsub("hebrew", "Hebrew", pretty.value)),
-  data.frame(property = "AccusativeCase",
-             pretty.property = "Accusative case",
-             value = c("accusative, amount", "accusative, cognate of verb",
-                       "accusative, manner", "accusative, other",
-                       "accusative, time", "direct object, accusative")) %>%
-    mutate(pretty.value = str_to_sentence(gsub("-", " ", value))),
-  data.frame(property = "VerbClassType",
-             pretty.property = "Verb class",
-             value = c("eimi", "omega", "contract, ew", "contract, aw",
-                       "contract, ow", "mi", "oida", "other"),
-             pretty.value = c("Εἰμί", "Omega", "Contract, έω", "Contract, άω",
-                              "Contract, όω", "Μί", "Οἴδα", "Other")),
-  data.frame(property = "TenseMood",
-             pretty.property = "Tense and mood",
-             value = c("present-indicative", "future-indicative",
-                       "imperfect-indicative", "aorist-indicative",
-                       "perfect-indicative", "pluperfect-indicative",
-                       "present-infinitive", "future-infinitive",
-                       "aorist-infinitive", "perfect-infinitive",
-                       "present-participle", "future-participle",
-                       "aorist-participle", "perfect-participle",
-                       "present-imperative", "aorist-imperative",
-                       "perfect-imperative", "present-subjunctive",
-                       "aorist-subjunctive", "perfect-subjunctive",
-                       "present-optative", "aorist-optative")) %>%
-    mutate(pretty.value = str_to_sentence(gsub("-", " ", value))),
-  data.frame(property = "Voice",
-             pretty.property = "Voice",
-             value = c("active", "middle", "passive")) %>%
-    mutate(pretty.value = str_to_sentence(value)),
-  data.frame(property = "VerbModifier",
-             pretty.property = "Modifier of verb or verbless predicate",
-             value = c("PP", "participle", "adverb", "infinitive",
-                       "nominal")) %>%
-    mutate(pretty.value = gsub("PP", "prepositional phrase", value),
-           pretty.value = str_to_sentence(pretty.value),
-           value = paste("verbmodifier", value, sep = "-")),
-  data.frame(property = "POS",
-             pretty.property = "Other part of speech",
-             value = c("reflexive pronoun", "demonstrative pronoun",
-                       "demonstrative pronoun with kai",
-                       "interrogative pronoun", "indefinite pronoun",
-                       "num", "ptcl")) %>%
-    mutate(pretty.value = case_when(value == "num" ~ "Number",
-                                    value == "ptcl" ~ "Particle",
-                                    T ~ str_to_sentence(value)),
-           pretty.value = gsub(" with kai$", "", pretty.value)),
-  data.frame(property = "Subject",
-             pretty.property = "Subject",
-             value = c("subject", "subject, irregular agreement",
-                       "subject, neuter plural",
-                       "subject, neuter plural, irregular agreement",
-                       "subject of verbless predicate",
-                       "subject of implicit speech", "subject of infinitive",
-                       "subject of participle")) %>%
-    mutate(pretty.value = case_when(value %in% c("subject, neuter plural",
-                                                 "subject, neuter plural, regular agreement") ~ "Subject, neuter plural",
-                                    T ~ str_to_sentence(value))),
-  data.frame(property = "Negation",
-             pretty.property = "Negation",
-             value = c("negation of nominal",
-                       "negation of verb",
-                       "negation of verb, semantically embedded",
-                       "negation, other", "negation, εἰ μὴ",
-                       "negation, εἰ μὴ, nominal")) %>%
-    mutate(pretty.value = case_when(value == "negation of verb, semantically embedded" ~ "Negation of verb",
-                                    value %in% c("negation, εἰ μὴ",
-                                                 "negation, εἰ μὴ, nominal") ~ "Εἰ μὴ",
-                                    T ~ str_to_sentence(value))),
-  data.frame(property = "NominalModifier",
-             pretty.property = "Modifier of nominal",
-             value = c("adjective", "pronoun", "participle", 
-                       "prepositional phrase", "infinitive", "adverb",
-                       "relative clause", "headless")) %>%
-    mutate(pretty.value = case_when(value == "headless" ~ "Other",
-                                    T ~ str_to_sentence(value)),
-           value = paste("nominalmodifier", value, sep = "-")),
-  data.frame(property = "Conjunction",
-             pretty.property = "Conjunction",
-             value = c("conjunct", "conjunct, main", "conjunct, subordinate",
-                       "conjunct, μέν δέ", "conjunct, ὡς, clause",
-                       "conjunct, ὡς, non-clause", "conjunct, ὡς, other")) %>%
-    mutate(pretty.value = case_when(value == "conjunct" ~ "Conjunction, coordinating",
-                                    value %in% c("conjunct, main",
-                                                 "conjunct, subordinate") ~ "Conjunction, subordinating",
-                                    value == "conjunct, μέν δέ" ~ "Μὲν...δέ...",
-                                    value %in% c("conjunct, ὡς, clause",
-                                                 "conjunct, ὡς, non-clause",
-                                                 "conjunct, ὡς, other") ~ "Ὡς",
-                                    T ~ str_to_sentence(value))),
-  data.frame(property = "Relation",
-             pretty.property = "Other",
-             value = c("argument of adjective",
-                       "argument of adjective, infinitive",
-                       "argument of adjective, nominal", "comparative",
-                       "determiner, things of", "direct object, attraction",
-                       "indirect object, attraction",
-                       "infinitive argument of verb", "infinitive, purpose",
-                       "infinitive, something", "interjection, vocative",
-                       "modifier of adjective, adverb",
-                       "modifier of adjective, PP",
-                       "modifier of non-nominal, adjective",
-                       "modifier of other, adverb",
-                       "modifier of other, nominal",
-                       "modifier of other, participle",
-                       "modifier of other, PP", "number", "other, attraction",
-                       "predicate, nominal", "predicate, non-nominal",
-                       "resumptive pronoun", "second-position clitic",
-                       "sentential complement", "subject, attraction",
-                       "subject of infinitive, attraction", "topic")) %>%
-    mutate(pretty.value = case_when(grepl("attraction", value) ~ "Attraction",
-                                    grepl("^argument of adjective", value) ~ "Argument of adjective",
-                                    value %in% c("comparative",
-                                                 "conjunct, ἤ") ~ "Comparison",
-                                    value %in% c("conjunct, ὅτι",
-                                                 "sentential complement") ~ "Indirect discourse",
-                                    value == "determiner, things of" ~ "\"Things of\"",
-                                    grepl("^modifier", value) ~ "Other modifier",
-                                    T ~ str_to_sentence(value))) %>%
-    arrange(pretty.value)
-) %>%
-  mutate(pretty.value = fct_inorder(pretty.value),
-         pretty.property = fct_inorder(pretty.property))
+# Strings
+strings.df = read.csv("strings.csv")
+strings.lessons.df = read.csv("strings_lessons.csv")
+strings.properties.df = read.csv("strings_properties.csv")
 
 #### UI ####
 
@@ -346,25 +29,46 @@ filter.property.names.df = bind_rows(
 page.title = "New Testament Greek"
 
 # Login page
-login.page = nav_panel(title = "Log in",
-                       textInput("gnt.username", "Username"),
-                       passwordInput("gnt.password", "Password"),
-                       actionButton("user.log.in", label = "Log in"))
+login.page = nav_panel(
+  title = "Log in",
+  tabsetPanel(
+    tabPanel("Log in",
+             tagQuery(textInput("existing.email", "Email"))$find("input")$addAttrs("autocomplete" = "off")$allTags(),
+             passwordInput("existing.password", "Password (min 8 characters)"),
+             actionButton("log.in", label = "Log in")),
+    tabPanel("Register",
+             textInput("new.email", "Email"),
+             actionButton("register", label = "Register")),
+    tabPanel("Forgot password",
+             textInput("forgotten.email", "Email"),
+             actionButton("forgot.password", label = "Get verification code")),
+    tabPanel("Reset password",
+             textInput("reset.email", "Email"),
+             passwordInput("reset.code", "Verification code"),
+             passwordInput("reset.new.password", "New password (min 8 characters)"),
+             actionButton("reset.password", label = "Reset password")),
+    tabPanel("Change password",
+             textInput("change.email", "Email"),
+             passwordInput("change.old.password", "Old password"),
+             passwordInput("change.new.password", "New password (min 8 characters)"),
+             actionButton("change.password", label = "Change password"))
+  )
+)
 
 # Page of user's knowledge
 knowledge.groups = map(
   set_names(unique(lessons.df$LessonGroup)),
   function(lg) {
-    checkboxGroupInput(gsub(" ", ".", lg),
-                       lg,
-                       lessons.df %>%
-                         filter(LessonGroup == lg) %>%
-                         pull(LessonName))
+    tagQuery(checkboxGroupInput(gsub(" ", ".", lg),
+                                lg,
+                                lessons.df %>%
+                                  filter(LessonGroup == lg) %>%
+                                  pull(LessonName)))$find("input")$addAttrs("autocomplete" = "off")$allTags()
   }
 )
 knowledge.page = nav_panel(title = "Current knowledge",
                            actionButton("update.knowledge",
-                                        "Save changes (takes a minute to process)"),
+                                        "Save changes"),
                            layout_columns(
                              card(card_header(class = "bg-dark",
                                               "Nouns and adjectives"),
@@ -421,517 +125,355 @@ ui <- page_navbar(
 # Define server logic
 server <- function(input, output, session) {
   
+  # Get ready to authenticate with Cognito
+  Sys.setenv(AWS_PROFILE = "greek_shiny_server_test")
+  svc = cognitoidentityprovider()
+  user.pool.id = "us-west-2_zgB6VtmdZ"
+  user.pool.client.id = "3dtao8kuc335orn7fimfvk8qlb"
+  
+  # Database connection
+  db = dynamodb()
+  
   # Student data
-  student.id = reactiveVal(NULL)
   knowledge.df = reactiveVal(NULL)
-  all.strings.df = reactiveVal(NULL)
-  all.filter.properties.df = reactiveVal(NULL)
-  lexicon.df = reactiveVal(NULL)
+  known.strings.df = reactiveVal(NULL)
+  known.filter.properties.df = reactiveVal(NULL)
   sample.strings.df = reactiveVal(NULL)
   sample.lexicon.df = reactiveVal(NULL)
   
+  # If the user forgot his or her password, start the reset process
+  observeEvent(input$forgot.password, {
+    tryCatch(
+      {
+        admin.reset.result = svc$admin_reset_user_password(UserPoolId = user.pool.id,
+                                                           Username = input$forgotten.email)
+        showNotification("Check your email for a verification code",
+                         type = "warning")
+      },
+      error = function(err) {
+        cat(file = stderr(), err$message)
+        showNotification("Sending verification code failed", type = "error")
+      }
+    )
+  })
+  
+  # When the user attempts to complete the password reset process, do that
+  observeEvent(input$reset.password, {
+    tryCatch(
+      {
+        reset.result = svc$confirm_forgot_password(ClientId = user.pool.client.id,
+                                                   Username = input$reset.email,
+                                                   ConfirmationCode = input$reset.code,
+                                                   Password = input$reset.new.password)
+        showNotification("Password reset", type = "message")
+      },
+      error = function(err) {
+        cat(file = stderr(), err$message)
+        showNotification("Password reset failed", type = "error")
+      }
+    )
+  })
+  
+  # When the user registers, create a new user
+  observeEvent(input$register, {
+    tryCatch(
+      {
+        tryCatch(
+          {
+            create.result = svc$admin_create_user(UserPoolId = user.pool.id,
+                                                  Username = input$new.email)
+            showNotification("Check your email for your temporary password",
+                             type = "message")
+          },
+          error = function(err) {
+            cat(file = stderr(), err$message)
+            if(grepl("already exists", err$message)) {
+              showNotifiation("Account already exists", type = "error")
+            } else {
+              showNotification("Registration failed", type = "error")
+            }
+          }
+        )
+        db$put_item(TableName = "nt_users",
+                    Item = list(username = list(S = input$new.email)))
+      },
+      error = function(err) {
+        cat(file = stderr(), err$message)
+      }
+    )
+  })
+  
+  # When the user changes a password, do that
+  observeEvent(input$change.password, {
+    tryCatch(
+      {
+        auth.result = svc$initiate_auth(AuthFlow = "USER_PASSWORD_AUTH",
+                                        AuthParameters = list(USERNAME = input$change.email,
+                                                              PASSWORD = input$change.old.password),
+                                        ClientId = user.pool.client.id)
+        if(length(auth.result$AuthenticationResult$AccessToken) > 0) {
+          change.result = svc$change_password(PreviousPassword = input$change.old.password,
+                                              ProposedPassword = input$change.new.password,
+                                              AccessToken = auth.result$AuthenticationResult$AccessToken)
+          showNotification("Password changed", type = "message")
+        }
+        else if(auth.result$ChallengeName == "NEW_PASSWORD_REQUIRED") {
+          change.result = svc$admin_set_user_password(UserPoolId = user.pool.id,
+                                                      Username = input$change.email,
+                                                      Password = input$change.new.password,
+                                                      Permanent = T)
+          showNotification("Password changed", type = "message")
+        }
+      },
+      error = function(err) {
+        cat(file = stderr(), err)
+        showNotification("Password change failed", type = "error")
+      }
+    )
+  })
+
   # When the user attempts to log in, attempt to create a connection and
   # get the user's data
-  observeEvent(input$user.log.in, {
-    
+  observeEvent(input$log.in, {
+
     # Is the user authorized?
     authorized.user = F
-    
+
     # Create a connection to make sure this is an authorized user; we won't use
     # this connection for anything else
     tryCatch(
       {
-        user.con = dbConnect(MySQL(), user = input$gnt.username,
-                             password = input$gnt.password, host = "localhost",
-                             port = 3306)
-        authorized.user = T
-        showNotification("Login successful", type = "message")
+        auth.result = svc$initiate_auth(AuthFlow = "USER_PASSWORD_AUTH",
+                                        AuthParameters = list(USERNAME = input$existing.email,
+                                                              PASSWORD = input$existing.password),
+                                        ClientId = user.pool.client.id)
+        if(length(auth.result$AuthenticationResult$AccessToken) > 0) {
+          authorized.user = T
+          showNotification("Login successful", type = "message")
+        } else {
+	  cat(file = stderr(), "login failed for some reason")
+          cat(file = stderr(), paste(auth.result, collapse = "\n"))
+          showNotification("Login failed", type = "error")
+        }
       },
       error = function(err) {
-        print(err)
-        showNotification("Login failed", type = "error")
-      },
-      finally = {
-        if(exists("user.con")) {
-          dbDisconnect(user.con)
-        }
+        cat(file = stderr(), err$message)
+        showNotification(err$message, type = "error")
       }
     )
-    
+
     # If we connected successfully, get some data
     if(authorized.user) {
       
-      # Get the user's student ID
-      student.id.sql = glue_sql("SELECT StudentID
-                                 FROM students
-                                 WHERE StudentUsername = {input$gnt.username}",
-                                .con = gnt.con)
-      student.id(dbGetQuery(gnt.con, student.id.sql)$StudentID)
+      # Get the student's current knowledge.
+      knowledge.df = db$get_item(TableName = "nt_users",
+                                 Key = list(username = list(S = input$existing.email)),
+                                 ProjectionExpression = paste(lessons.df$AttributeName,
+                                                              collapse = ","))$Item %>%
+        map_dfr(function(col) { data.frame(known = col$BOOL) },
+                .id = "AttributeName") %>%
+        knowledge.df()
 
-      # Get the student's current knowledge
-      knowledge.sql = glue_sql("SELECT LessonID
-                                FROM students_lessons
-                                WHERE StudentID = {student.id()}",
-                               .con = gnt.con)
-      knowledge.df(dbGetQuery(gnt.con, knowledge.sql))
-      
       # Update knowledge panel with student's current knowledge
-      for(cgi in names(knowledge.groups)) {
-        updateCheckboxGroupInput(session, inputId = gsub(" ", ".", cgi),
-                                 selected = lessons.df %>%
-                                   filter(LessonGroup == cgi) %>%
-                                   inner_join(knowledge.df(), by = "LessonID") %>%
-                                   pull(LessonName))
+      if(nrow(knowledge.df()) > 0) {
+        for(cgi in names(knowledge.groups)) {
+          updateCheckboxGroupInput(session, inputId = gsub(" ", ".", cgi),
+                                   selected = lessons.df %>%
+                                     filter(LessonGroup == cgi) %>%
+                                     inner_join(knowledge.df(),
+                                                by = "AttributeName") %>%
+                                     pull(LessonName))
+        }
       }
-      
-      # Get the lexicon.
-      lexicon.sql = "SELECT Lemma, LemmaSort, POS, PrincipalParts, ShortDefinition FROM lemmas"
-      lexicon.df(dbGetQuery(gnt.con, lexicon.sql))
-      
+      else {
+        for(cgi in names(knowledge.groups)) {
+          updateCheckboxGroupInput(session, inputId = gsub(" ", ".", cgi),
+                                   selected = c())
+        }
+      }
+
     }
-    
+
   })
-  
+
   # Update the student's knowledge in the database when the user clicks the
   # "save" button
   observeEvent(input$update.knowledge, {
-    
+
     # Update the student's new knowledge
-    for(kg in names(knowledge.groups)) {
-      delete.sql = "DELETE FROM students_lessons
-                    WHERE StudentID = {student.id()}
-                          AND LessonID IN (SELECT LessonID
-                                             FROM lessons
-                                             WHERE LessonGroup = {kg})"
-      new.ids = lessons.df %>%
-        filter(LessonGroup == kg,
-               LessonName %in% input[[gsub(" ", ".", kg)]]) %>%
-        pull(LessonID)
-      if(length(new.ids) > 0) {
-        delete.sql = paste(delete.sql, "AND LessonID NOT IN ({new.ids*})")
-      }
-      delete.sql = glue_sql(delete.sql, .con = gnt.con)
-      dbGetQuery(gnt.con, delete.sql)
-      insert.sql = "INSERT INTO students_lessons
-                    (StudentID, LessonID)
-                    VALUES
-                    ({student.id()}, {new.id})"
-      for(new.id in new.ids) {
-        if(!(new.id %in% knowledge.df()$LessonID)) {
-          dbGetQuery(gnt.con, glue_sql(insert.sql, .con = gnt.con))
-        }
-      }
+    known.cols = do.call(
+      "c",
+      lapply(names(knowledge.groups),
+             function(kg) {
+               lessons.df %>%
+                 filter(LessonGroup == kg,
+                        LessonName %in% input[[gsub(" ", ".", kg)]]) %>%
+                 pull(AttributeName)
+             })
+    )
+    add.cols = setdiff(known.cols, knowledge.df()$AttributeName)
+    remove.cols = setdiff(knowledge.df()$AttributeName, known.cols)
+    update.exp = ""
+    expr.attr.vals = list()
+    if(length(add.cols) > 0) {
+      update.exp = paste("SET", paste(paste(add.cols, "= :true"),
+                                      collapse = ", "))
+      expr.attr.vals = list(`:true` = list(BOOL = T))
     }
+    if(length(add.cols) > 0 & length(remove.cols) > 0) {
+      update.exp = paste(update.exp, " ", sep = "")
+    }
+    if(length(remove.cols) > 0) {
+      update.exp = paste(update.exp,
+                         paste("REMOVE", paste(remove.cols, collapse = ", ")),
+                         sep = "")
+    }
+    db$update_item(TableName = "nt_users",
+                   Key = list(username = list(S = input$existing.email)),
+                   UpdateExpression = update.exp,
+                   ExpressionAttributeValues = expr.attr.vals)
     
-    # Get the student's current knowledge
-    knowledge.sql = glue_sql("SELECT LessonID
-                                FROM students_lessons
-                                WHERE StudentID = {student.id()}",
-                             .con = gnt.con)
-    knowledge.df(dbGetQuery(gnt.con, knowledge.sql))
-    
+    # Get the student's current knowledge.
+    knowledge.df = db$get_item(TableName = "nt_users",
+                               Key = list(username = list(S = input$existing.email)),
+                               ProjectionExpression = paste(lessons.df$AttributeName,
+                                                            collapse = ","))$Item %>%
+      map_dfr(function(col) { data.frame(known = col$BOOL) },
+              .id = "AttributeName") %>%
+      knowledge.df()
+
   })
-  
+
   # Get strings based on the student's knowledge
   observeEvent(knowledge.df(), {
-    
-    if(!is.null(knowledge.df())) {
+
+    if(!is.null(knowledge.df()) & nrow(knowledge.df()) > 0) {
       
-      # Join lesson IDs to lesson names and groups
-      known.lessons.df = knowledge.df() %>%
-        inner_join(lessons.df, by = "LessonID")
+      # Get known strings
+      strings.df %>%
+        anti_join(lessons.df %>%
+                    filter(!(AttributeName %in% knowledge.df()$AttributeName)) %>%
+                    inner_join(strings.lessons.df, by = "LessonID"),
+                  by = c("SentenceID", "Start", "Stop")) %>%
+        group_by(SentenceID, Start) %>%
+        filter(Stop == max(Stop)) %>%
+        ungroup() %>%
+        group_by(SentenceID, Stop) %>%
+        filter(Start == min(Start)) %>%
+        ungroup() %>%
+        mutate(n.words = str_count(String, " ") + 1) %>%
+        known.strings.df()
       
-      # Get cases the student knows
-      allowed.case = c("X")
-      for(cr in names(case.required)) {
-        if(case.required[[cr]] %in% known.lessons.df$LessonName) {
-          allowed.case = c(allowed.case, cr)
-        }
-      }
-      
-      # Get noun classes the student knows
-      allowed.noun.class = c("X")
-      for(ncr in names(noun.class.required)) {
-        if(all(noun.class.required[[ncr]] %in% known.lessons.df$LessonName[known.lessons.df$LessonGroup == "Noun class"])) {
-          allowed.noun.class = c(allowed.noun.class, ncr)
-        }
-      }
-      
-      # Get adjective classes the student knows
-      allowed.adjective.class = c("X")
-      for(acr in names(adjective.class.required)) {
-        if(all(adjective.class.required[[acr]] %in% known.lessons.df$LessonName[known.lessons.df$LessonGroup == "Adjective class"])) {
-          allowed.adjective.class = c(allowed.adjective.class, acr)
-        }
-      }
-      
-      # Get adjective degrees the student knows
-      allowed.adjective.degree = c("X")
-      for(adr in names(adjective.degree.required)) {
-        if(adjective.degree.required[[adr]] %in% known.lessons.df$LessonName) {
-          allowed.adjective.degree = c(allowed.adjective.degree, adr)
-        }
-      }
-      
-      # Get verb classes the student knows
-      allowed.verb.class = c("X")
-      for(vcr in names(verb.class.required)) {
-        if(verb.class.required[[vcr]] %in% known.lessons.df$LessonName) {
-          allowed.verb.class = c(allowed.verb.class, vcr)
-        }
-      }
-      
-      # Get tense-mood combinations the student knows
-      allowed.tense.mood = c("X")
-      for(tmr in names(tense.mood.required)) {
-        if(tense.mood.required[[tmr]] %in% known.lessons.df$LessonName) {
-          allowed.tense.mood = c(allowed.tense.mood, tmr)
-        }
-      }
-      
-      # Get voices the student knows
-      allowed.voice = c("X")
-      for(vr in names(voice.required)) {
-        if(voice.required[[vr]] %in% known.lessons.df$LessonName) {
-          allowed.voice = c(allowed.voice, vr)
-        }
-      }
-      
-      # Get other parts of speech the student knows
-      allowed.other.pos = c("conj")
-      for(opr in names(other.pos.required)) {
-        if(all(other.pos.required[[opr]] %in% known.lessons.df$LessonName)) {
-          allowed.other.pos = c(allowed.other.pos, opr)
-        }
-      }
-      
-      # Get relations the student DOESN'T know
-      forbidden.relation = c("X")
-      for(rr in names(relation.required)) {
-        if(!all(relation.required[[rr]] %in% known.lessons.df$LessonName)) {
-          forbidden.relation = c(forbidden.relation, rr)
-        }
-      }
-      
-      # Query the database for strings the student can read
-      get.strings.sql = "WITH allowed_words AS
-                              (SELECT SentenceID, SentencePosition
-                               FROM words
-                               WHERE ((POS IN ({allowed.other.pos*})
-                                       AND POS NOT IN ('reflexive pronoun',
-                                                       'demonstrative pronoun',
-                                                       'demonstrative pronoun with kai',
-                                                       'interrogative pronoun',
-                                                       'indefinite pronoun',
-                                                       'relative pronoun'))
-                                      OR (POS = 'verb'
-                                          AND VerbClassType IN ({allowed.verb.class*})
-                                          AND CONCAT(Tense, '-', Mood) IN ({allowed.tense.mood*})
-                                          AND Voice IN ({allowed.voice*}))
-                                      OR (POS IN ('noun', 'reflexive pronoun',
-                                                  'demonstrative pronoun',
-                                                  'demonstrative pronoun with kai',
-                                                  'interrogative pronoun',
-                                                  'indefinite pronoun',
-                                                  'relative pronoun')
-                                          AND NounClassType IN ({allowed.noun.class*})
-                                          AND (POS = 'noun'
-                                               OR POS IN ({allowed.other.pos*})))
-                                      OR (POS IN ('adj', 'pron')
-                                          AND NounClassType IN ({allowed.adjective.class*})
-                                          AND (Degree IS NULL
-                                               OR Degree IN ({allowed.adjective.degree*}))))
-                                     AND (COALESCE(NCase, 'X') IN ({allowed.case*}))),
-                              forbidden_words AS
-                              (SELECT words.SentenceID, words.SentencePosition
-                               FROM words
-                                    LEFT JOIN allowed_words
-                                    ON words.SentenceID = allowed_words.SentenceID
-                                       AND words.SentencePosition = allowed_words.SentencePosition
-                               WHERE allowed_words.SentenceID IS NULL),
-                              forbidden_relations AS
-                              (SELECT SentenceID, FirstPos, LastPos
-                               FROM relations
-                               WHERE Relation IN ({forbidden.relation*})),
-                              singleton_sentences AS
-                              (SELECT SentenceID
-                               FROM words
-                               GROUP BY SentenceID
-                               HAVING COUNT(*) = 1),
-                              filtered_strings AS
-                              (SELECT DISTINCT strings.Citation,
-                                      strings.SentenceID, strings.Start,
-                                      strings.Stop, strings.String
-                               FROM strings
-                                    LEFT JOIN forbidden_words
-                                    ON strings.SentenceID = forbidden_words.SentenceID
-                                       AND strings.Start <= forbidden_words.SentencePosition
-                                       AND strings.Stop >= forbidden_words.SentencePosition
-                                    LEFT JOIN forbidden_relations
-                                    ON strings.SentenceID = forbidden_relations.SentenceID
-                                       AND strings.Start <= forbidden_relations.FirstPos
-                                       AND strings.Stop >= forbidden_relations.LastPos
-                                    LEFT JOIN singleton_sentences
-                                    ON strings.SentenceID = singleton_sentences.SentenceID
-                               WHERE forbidden_words.SentenceID IS NULL
-                                     AND forbidden_relations.SentenceID IS NULL
-                                     AND (strings.Stop > strings.Start
-                                          OR singleton_sentences.SentenceID IS NOT NULL)),
-                              longest_strings AS
-                              (SELECT filtered_strings.Citation,
-                                      filtered_strings.SentenceID,
-                                      filtered_strings.Start,
-                                      filtered_strings.Stop,
-                                      filtered_strings.String
-                               FROM filtered_strings
-                                    LEFT JOIN filtered_strings super_strings
-                                    ON filtered_strings.SentenceID = super_strings.SentenceID
-                                       AND filtered_strings.Start >= super_strings.Start
-                                       AND filtered_strings.Stop <= super_strings.Stop
-                                       AND NOT (filtered_strings.Start = super_strings.Start
-                                                AND filtered_strings.Stop = super_strings.Stop)
-                               WHERE super_strings.SentenceID IS NULL),
-                              book_chapter_verse AS
-                              (SELECT words.SentenceID,
-                                      MIN(books.BookOrder) AS BookOrder,
-                                      MIN(words.Chapter) AS Chapter,
-                                      MIN(words.Verse) AS Verse
-                               FROM words
-                                    JOIN books
-                                    ON words.Book = books.Book
-                               GROUP BY words.SentenceID)
-                         SELECT ls.Citation, bcv.BookOrder, bcv.Chapter,
-                                bcv.Verse, ls.SentenceID, ls.Start, ls.Stop,
-                                ls.String, w.Lemma,
-                                CASE WHEN w.POS = 'noun'
-                                          THEN CONCAT('noun class - ',
-                                                      w.NounClassType)
-                                END AS NounClassType,
-                                CASE WHEN POS = 'adj'
-                                          THEN CONCAT('adjective class - ',
-                                                      w.NounClassType)
-                                END AS AdjectiveClassType,
-                                CONCAT('degree-', w.Degree) AS Degree,
-                                CASE WHEN r.Relation LIKE '%genitive%'
-                                          THEN r.Relation
-                                     WHEN r.Relation = 'direct object'
-                                          AND w.CaseType = 'genitive'
-                                          THEN 'direct object, genitive'
-                                END AS GenitiveCase,
-                                CASE WHEN r.Relation LIKE '%dative%'
-                                          OR r.Relation = 'indirect object'
-                                          THEN r.Relation
-                                     WHEN r.Relation = 'direct object'
-                                          AND w.CaseType = 'dative'
-                                          THEN 'direct object, dative'
-                                END AS DativeCase,
-                                CASE WHEN r.Relation LIKE '%accusative%'
-                                          THEN r.Relation
-                                     WHEN r.Relation = 'direct object'
-                                          AND w.CaseType = 'accusative'
-                                          THEN 'direct object, accusative'
-                                END AS AccusativeCase,
-                                CASE WHEN (r2.SentenceID IS NOT NULL
-                                           OR r3.SentenceID IS NOT NULL)
-                                          AND r4.SentenceID IS NULL
-                                          AND (w.NominalType LIKE '%adjective%'
-                                               OR r.SentenceID IS NOT NULL
-                                               OR r5.SentenceID IS NOT NULL)
-                                          AND r6.SentenceID IS NULL
-                                          THEN CONCAT('nominalhead-',
-                                                      w.NominalType)
-                                END AS NominalHead,
-                                w.VerbClassType,
-                                CONCAT(w.Tense, '-', w.Mood) AS TenseMood,
-                                w.Voice,
-                                CASE WHEN r.Relation LIKE 'modifier of verb%'
-                                          THEN REGEXP_REPLACE(r.Relation,
-                                                              'modifier of verb(less predicate)?, ',
-                                                              'verbmodifier-')
-                                END AS VerbModifier,
-                                w.POS,
-                                CASE WHEN r.Relation LIKE 'subject%'
-                                          THEN r.Relation
-                                END AS Subject,
-                                CASE WHEN r.Relation LIKE 'negation%'
-                                          THEN r.Relation
-                                END AS Negation,
-                                CASE WHEN r.Relation = 'modifier of nominal, nominal'
-                                          AND r4.SentenceID IS NULL
-                                          THEN CONCAT('nominalmodifier-',
-                                                      w.NominalType)
-                                     WHEN r.Relation = 'modifier of nominal, adverb'
-                                          THEN 'nominalmodifier-adverb'
-                                     WHEN r.Relation = 'modifier of nominal, infinitive'
-                                          THEN 'nominalmodifier-infinitive'
-                                     WHEN r.Relation = 'modifier of nominal, PP'
-                                          THEN 'nominalmodifier-prepositional phrase'
-                                     WHEN r.Relation = 'infinitive argument of noun'
-                                          THEN 'nominalmodifier-infinitive'
-                                END AS NominalModifier,
-                                CASE WHEN r.Relation LIKE 'conjunct%'
-                                          THEN r.Relation
-                                END AS Conjunction,
-                                r.Relation
-                         FROM longest_strings ls
-                              JOIN book_chapter_verse bcv
-                              ON ls.SentenceID = bcv.SentenceID
-                              JOIN words w
-                              ON ls.SentenceID = w.SentenceID
-                                 AND ls.Start <= w.SentencePosition
-                                 AND ls.Stop >= w.SentencePosition
-                              LEFT JOIN relations r
-                              ON ls.SentenceID = r.SentenceID
-                                 AND ls.Start <= r.FirstPos
-                                 AND ls.Stop >= r.LastPos
-                                 AND w.SentencePosition = r.DependentPos
-                                 AND r.Relation NOT IN
-                                     ('appositive', 'conjunct, chain',
-                                      'determiner', 'entitled', 'gap',
-                                      'name', 'negation, double',
-                                      'parenthetical', 'particle',
-                                      'subject of small clause', 'title')
-                              LEFT JOIN relations r2
-                              ON ls.SentenceID = r2.SentenceID
-                                 AND w.SentencePosition = r2.HeadPos
-                                 AND (r2.Relation LIKE 'negation%nominal'
-                                      OR r2.Relation LIKE 'modifier of nominal%'
-                                      OR r2.Relation = 'appositive')
-                              LEFT JOIN relations r3
-                              ON ls.SentenceID = r3.SentenceID
-                                 AND w.SentencePosition = r3.DependentPos
-                                 AND (r3.Relation LIKE 'subject%'
-                                      OR r3.Relation LIKE 'genitive%'
-                                      OR r3.Relation LIKE 'direct object%'
-                                      OR r3.Relation = 'argument of adjective, nominal'
-                                      OR r3.Relation LIKE 'accusative%'
-                                      OR r3.Relation LIKE 'indirect object%'
-                                      OR r3.Relation LIKE 'dative%'
-                                      OR r3.Relation = 'interjection, vocative'
-                                      OR r3.Relation = 'object of preposition'
-                                      OR r3.Relation = 'resumptive pronoun'
-                                      OR r3.Relation = 'topic'
-                                      OR r3.Relation = 'appositive')
-                              LEFT JOIN relations r4
-                              ON ls.SentenceID = r4.SentenceID
-                                 AND w.SentencePosition = r4.HeadPos
-                                 AND (ls.Start > r4.FirstPos
-                                      OR ls.Stop < r4.LastPos)
-                                 AND r4.Relation = 'conjunct, main'
-                              LEFT JOIN relations r5
-                              ON ls.SentenceID = r5.SentenceID
-                                 AND w.SentencePosition = r5.DependentPos
-                                 AND ls.Start <= r5.FirstPos
-                                 AND ls.Stop >= r5.LastPos
-                                 AND r5.Relation = 'determiner'
-                              LEFT JOIN relations r6
-                              ON ls.SentenceID = r6.SentenceID
-                                 AND w.SentencePosition = r6.HeadPos
-                                 AND r6.Relation = 'subject of small clause'"
-      get.strings.sql = glue_sql(get.strings.sql, .con = gnt.con)
-      everything.df = dbGetQuery(gnt.con, get.strings.sql)
-      everything.df %>%
-        dplyr::select(Citation, BookOrder, Chapter, Verse, SentenceID, Start,
-                      Stop, String) %>%
+      # Get properties of strings the student might want to filter on
+      strings.properties.df %>%
+        semi_join(known.strings.df(), by = c("SentenceID", "Start", "Stop")) %>%
+        dplyr::select(SentenceID, Start, Stop, AttributeName) %>%
         distinct() %>%
-        mutate(n.words = str_count(String, " ")) %>%
-        all.strings.df()
-      everything.df %>%
-        dplyr::select(SentenceID, Start, Stop, Lemma, POS, NounClassType,
-                      NominalHead, AdjectiveClassType, Degree, GenitiveCase,
-                      DativeCase, AccusativeCase, VerbClassType, TenseMood,
-                      Voice, VerbModifier, POS, Subject, Negation,
-                      NominalModifier, Conjunction, Relation) %>%
-        pivot_longer(cols = -c("SentenceID", "Start", "Stop", "Lemma", "POS"),
-                     names_to = "property") %>%
-        distinct() %>%
-        bind_rows(everything.df %>%
-                    dplyr::select(SentenceID, Start, Stop, Lemma, POS,
-                                  property = "POS", value = POS)) %>%
-        inner_join(filter.property.names.df, by = c("property", "value")) %>%
-        all.filter.properties.df()
-      
+        known.filter.properties.df()
+
+    } else if(!is.null(knowledge.df())) {
+      known.strings.df(data.frame(SentenceID = c(), Start = c(), Stop = c(),
+                                  BookOrder = c(), Chapter = c(), Verse = c(),
+                                  Citation = c(), String = c(), n.words = c()))
+      known.filter.properties.df(data.frame(SentenceID = c(), Start = c(),
+                                            Stop = c(), AttributeName = c()))
     }
-    
+
   })
-  
+
   # Refresh possible excerpt filters
-  observeEvent(all.filter.properties.df(), {
-    temp.filter.properties.df = all.filter.properties.df() %>%
-      dplyr::select(value, pretty.value, pretty.property) %>%
-      distinct() %>%
-      arrange(pretty.property, pretty.value)
-    example.choices = c(list(`Everything` = list("[everything]" = "[everything]")),
-                        map(set_names(unique(temp.filter.properties.df$pretty.property)),
-                            function(pp) {
-                              pretty.values.df = temp.filter.properties.df %>%
-                                filter(pretty.property == pp) %>%
-                                dplyr::select(value, pretty.value)
-                              map(set_names(pretty.values.df$pretty.value),
-                                  function(pv) {
-                                    pretty.values.df$value[pretty.values.df$pretty.value == pv]
-                                  })
-                            }))
+  observeEvent(known.filter.properties.df(), {
+    if(nrow(known.filter.properties.df()) > 0) {
+      temp.df = known.filter.properties.df() %>%
+        inner_join(filter.property.names.df, by = "AttributeName") %>%
+        dplyr::select(AttributeName, pretty.value, pretty.property) %>%
+        distinct() %>%
+        arrange(pretty.property, pretty.value)
+      example.choices = c(list(`Everything` = list("[everything]" = "[everything]")),
+                          map(set_names(unique(temp.df$pretty.property)),
+                              function(pp) {
+                                pretty.values.df = temp.df %>%
+                                  filter(pretty.property == pp) %>%
+                                  dplyr::select(AttributeName, pretty.value)
+                                map(set_names(pretty.values.df$pretty.value),
+                                    function(pv) {
+                                      pretty.values.df$AttributeName[pretty.values.df$pretty.value == pv]
+                                    })
+                              }))
+    } else {
+      example.choices = c(list(`Everything` = list("[everything]" = "[everything]")))
+    }
     updateSelectizeInput(session = session, inputId = "string.examples",
                          choices = example.choices)
   })
-  
+
   # Refresh sample of strings
   observeEvent(
     {
       input$refresh.strings
-      all.strings.df()
+      known.strings.df()
     },
     {
-      temp.df = all.strings.df()
-      if(input$string.examples != "[everything]") {
-        example.filter = input$string.examples
-        if(grepl("^c[(]", example.filter)) {
-          example.filter = eval(parse(text = input$string.examples))
+      temp.df = known.strings.df()
+      if(nrow(temp.df) > 0) {
+        if(input$string.examples != "[everything]") {
+          example.filter = input$string.examples
+          if(grepl("^c[(]", example.filter)) {
+            example.filter = eval(parse(text = input$string.examples))
+          }
+          known.attributes = c()
+          if(nrow(known.filter.properties.df()) > 0) {
+            known.attributes = known.filter.properties.df()$AttributeName
+          }
+          if(any(example.filter %in% known.attributes)) {
+            temp.df = temp.df %>%
+              inner_join(known.filter.properties.df() %>%
+                           filter(AttributeName %in% example.filter) %>%
+                           dplyr::select(SentenceID, Start, Stop) %>%
+                           distinct(),
+                         by = c("SentenceID", "Start", "Stop"))
+          }
         }
-        if(any(example.filter %in% all.filter.properties.df()$value)) {
+        if(input$sample.by == "random") {
           temp.df = temp.df %>%
-            inner_join(all.filter.properties.df() %>%
-                         filter(value %in% example.filter) %>%
-                         dplyr::select(SentenceID, Start, Stop) %>%
-                         distinct(),
-                       by = c("SentenceID", "Start", "Stop"))
+            slice_sample(n = input$string.count) %>%
+            arrange(BookOrder, Chapter, Verse)
         }
-      }
-      if(input$sample.by == "random") {
-        temp.df = temp.df %>%
-          slice_sample(n = input$string.count) %>%
-          arrange(BookOrder, Chapter, Verse)
-      }
-      else if(input$sample.by == "longest") {
-        temp.df = temp.df %>%
-          mutate(random.order = runif(n())) %>%
-          arrange(desc(n.words), random.order) %>%
-          slice_head(n = input$string.count) %>%
-          arrange(desc(n.words), BookOrder, Chapter, Verse)
-      }
-      else if(input$sample.by == "shortest") {
-        temp.df = temp.df %>%
-          mutate(random.order = runif(n())) %>%
-          arrange(n.words, random.order) %>%
-          slice_head(n = input$string.count) %>%
-          arrange(n.words, BookOrder, Chapter, Verse)
+        else if(input$sample.by == "longest") {
+          temp.df = temp.df %>%
+            mutate(random.order = runif(n())) %>%
+            arrange(desc(n.words), random.order) %>%
+            slice_head(n = input$string.count) %>%
+            arrange(desc(n.words), BookOrder, Chapter, Verse)
+        }
+        else if(input$sample.by == "shortest") {
+          temp.df = temp.df %>%
+            mutate(random.order = runif(n())) %>%
+            arrange(n.words, random.order) %>%
+            slice_head(n = input$string.count) %>%
+            arrange(n.words, BookOrder, Chapter, Verse)
+        }
       }
       sample.strings.df(temp.df)
-      temp.df %>%
-        inner_join(all.filter.properties.df(),
-                   by = c("SentenceID", "Start", "Stop")) %>%
-        inner_join(lexicon.df(), by = c("Lemma", "POS")) %>%
-        dplyr::select(Lemma, LemmaSort, POS, PrincipalParts,
-                      ShortDefinition) %>%
-        distinct() %>%
-        sample.lexicon.df()
+      if(nrow(temp.df) > 0) {
+        temp.df %>%
+          inner_join(words.df,
+                     by = join_by(SentenceID, Start <= SentencePosition,
+                                  Stop >= SentencePosition)) %>%
+          inner_join(lemmas.df, by = c("Lemma", "POS")) %>%
+          dplyr::select(Lemma, LemmaSort, POS, PrincipalParts,
+                        ShortDefinition) %>%
+          distinct() %>%
+          sample.lexicon.df()
+      } else {
+        sample.lexicon.df(NULL)
+      }
     }
   )
-  
+
   # Render strings
   output$show.strings = renderDT({
-    if(is.null(sample.strings.df())) {
+    if(is.null(sample.strings.df()) | nrow(sample.strings.df()) == 0) {
       sample.strings.df()
     } else {
       sample.strings.df() %>%
@@ -949,7 +491,7 @@ server <- function(input, output, session) {
         formatStyle(columns = c("Citation"), fontWeight = "bold", width = "25%")
     }
   })
-  
+
   # Render lexicon
   output$lexicon = renderDT({
     if(is.null(sample.lexicon.df())) {
@@ -970,11 +512,6 @@ server <- function(input, output, session) {
                   rownames = F) %>%
         formatStyle(columns = c("Lemma"), fontWeight = "bold", width = "15%")
     }
-  })
-  
-  # Disconnect from the database when we're done
-  session$onSessionEnded(function(){
-    dbDisconnect(gnt.con)
   })
   
 }

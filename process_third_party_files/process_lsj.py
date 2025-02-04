@@ -216,6 +216,10 @@ def process_entries():
                       SYNONYMS.merge(xml_df.rename({'lemma_ascii': 'synonym'}, axis=1)[['synonym', 'definition']],
                                      on=['synonym'])[['lemma_ascii', 'definition']]])
 
+    # Correct lemma ASCII errors.
+    e_df.loc[e_df.lemma_ascii == 'ἀνεξεραύνητος','lemma_ascii'] = 'a)necerau/nhtos'
+    e_df.loc[e_df.lemma_ascii == 'ἀνεπίλημπτος','lemma_ascii'] = 'a)nepi/lhmptos'
+
     # Covert ASCII to unicode.
     e_df['lemma'] = e_df['lemma_ascii'].apply(ascii_to_unicode)
 
