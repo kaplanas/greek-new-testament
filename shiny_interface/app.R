@@ -199,7 +199,12 @@ server <- function(input, output, session) {
                                          UserAttributes = list(list(Name = "email_verified",
                                                                     Value = "true")))
         db$put_item(TableName = "nt_users",
-                    Item = list(username = list(S = input$new.email)))
+                    Item = list(username = list(S = input$new.email),
+                                L_nom = list(BOOL = TRUE),
+                                L_eimi = list(BOOL = TRUE),
+                                L_pres_ind = list(BOOL = TRUE),
+                                L_act = list(BOOL = TRUE),
+                                L_p_pers = list(BOOL = TRUE)))
       },
       error = function(err) {
         cat(file = stderr(), err$message)
