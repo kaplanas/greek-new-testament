@@ -194,6 +194,10 @@ server <- function(input, output, session) {
             }
           }
         )
+        svc$admin_update_user_attributes(UserPoolId = user.pool.id,
+                                         Username = input$new.email,
+                                         UserAttributes = list(list(Name = "email_verified",
+                                                                    Value = "true")))
         db$put_item(TableName = "nt_users",
                     Item = list(username = list(S = input$new.email)))
       },
@@ -226,7 +230,7 @@ server <- function(input, output, session) {
         }
       },
       error = function(err) {
-        cat(file = stderr(), err)
+        cat(file = stderr(), err$message)
         showNotification("Password change failed", type = "error")
       }
     )
@@ -239,8 +243,7 @@ server <- function(input, output, session) {
     # Is the user authorized?
     authorized.user = F
 
-    # Create a connection to make sure this is an authorized user; we won't use
-    # this connection for anything else
+    # Authenticate as this user
     tryCatch(
       {
         auth.result = svc$initiate_auth(AuthFlow = "USER_PASSWORD_AUTH",
@@ -251,7 +254,7 @@ server <- function(input, output, session) {
           authorized.user = T
           showNotification("Login successful", type = "message")
         } else {
-	  cat(file = stderr(), "login failed for some reason")
+          cat(file = stderr(), "login failed for some reason")
           cat(file = stderr(), paste(auth.result, collapse = "\n"))
           showNotification("Login failed", type = "error")
         }
