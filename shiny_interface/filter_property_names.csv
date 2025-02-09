@@ -1,159 +1,160 @@
-"AttributeName","pretty.property","pretty.value"
-"NCT:second declension","Noun class","Second declension"
-"NCT:first declension","Noun class","First declension"
-"NCT:first declension with hs","Noun class","First declension with ης"
-"NCT:third declension, consonant stem","Noun class","Third declension"
-"NCT:third declension, vowel stem","Noun class","Third declension"
-"NCT:Ihsous","Noun class","Ἰησοῦς"
-"NCT:irregular","Noun class","Irregular"
-"NCT:undeclined","Noun class","Undeclined"
-"NH:adjective","Non-noun as nominal head","Adjective"
-"NH:determiner","Non-noun as nominal head","Determiner"
-"NH:infinitive","Non-noun as nominal head","Infinitive"
-"NH:participle","Non-noun as nominal head","Participle"
-"NH:relative clause","Non-noun as nominal head","Relative clause"
-"NH:headless","Non-noun as nominal head","Other"
-"ACT:first/second declension","Adjective class","First/second declension"
-"ACT:second declension","Adjective class","Second declension"
-"ACT:third declension, consonant stem","Adjective class","Third declension"
-"ACT:third declension, vowel stem","Adjective class","Third declension"
-"ACT:irregular","Adjective class","Irregular"
-"D:comparative","Adjective degree","Comparative"
-"D:superlative","Adjective degree","Superlative"
-"GC:genitive, about","Genitive case","Genitive, about"
-"GC:genitive, amount","Genitive case","Genitive, amount"
-"GC:genitive, body part","Genitive case","Genitive, body part"
-"GC:genitive, characterized by","Genitive case","Genitive, characterized by"
-"GC:genitive, comparative","Genitive case","Genitive, comparative"
-"GC:genitive, contents","Genitive case","Genitive, contents"
-"GC:genitive, location","Genitive case","Genitive, location"
-"GC:genitive, material","Genitive case","Genitive, material"
-"GC:genitive, object","Genitive case","Genitive, object"
-"GC:genitive, other","Genitive case","Genitive, other"
-"GC:genitive, part-whole","Genitive case","Genitive, part-whole"
-"GC:genitive, possession","Genitive case","Genitive, possession"
-"GC:genitive, property","Genitive case","Genitive, property"
-"GC:genitive, relation","Genitive case","Genitive, relation"
-"GC:genitive, son of","Genitive case","Genitive, son of"
-"GC:genitive, source","Genitive case","Genitive, source"
-"GC:genitive, specification","Genitive case","Genitive, specification"
-"GC:genitive, subject","Genitive case","Genitive, subject"
-"GC:genitive, time","Genitive case","Genitive, time"
-"GC:direct object, genitive","Genitive case","Direct object, genitive"
-"DC:dative, agent","Dative case","Dative, agent"
-"DC:dative, benefit","Dative case","Dative, benefit"
-"DC:dative, cognate of verb","Dative case","Dative, cognate of verb"
-"DC:dative, Hebrew infinitive construct","Dative case","Dative, Hebrew infinitive construct"
-"DC:dative, instrument","Dative case","Dative, instrument"
-"DC:dative, manner","Dative case","Dative, manner"
-"DC:dative, other","Dative case","Dative, other"
-"DC:dative, possession","Dative case","Dative, possession"
-"DC:dative, time","Dative case","Dative, time"
-"DC:direct object, dative","Dative case","Direct object, dative"
-"DC:indirect object","Dative case","Indirect object"
-"AC:accusative, amount","Accusative case","Accusative, amount"
-"AC:accusative, cognate of verb","Accusative case","Accusative, cognate of verb"
-"AC:accusative, manner","Accusative case","Accusative, manner"
-"AC:accusative, other","Accusative case","Accusative, other"
-"AC:accusative, time","Accusative case","Accusative, time"
-"AC:direct object, accusative","Accusative case","Direct object, accusative"
-"VCT:eimi","Verb class","Εἰμί"
-"VCT:omega","Verb class","Omega"
-"VCT:contract, ew","Verb class","Contract, έω"
-"VCT:contract, aw","Verb class","Contract, άω"
-"VCT:contract, ow","Verb class","Contract, όω"
-"VCT:mi","Verb class","Μί"
-"VCT:oida","Verb class","Οἴδα"
-"VCT:other","Verb class","Other"
-"TM:present-indicative","Tense and mood","Present indicative"
-"TM:future-indicative","Tense and mood","Future indicative"
-"TM:imperfect-indicative","Tense and mood","Imperfect indicative"
-"TM:aorist-indicative","Tense and mood","Aorist indicative"
-"TM:perfect-indicative","Tense and mood","Perfect indicative"
-"TM:pluperfect-indicative","Tense and mood","Pluperfect indicative"
-"TM:present-infinitive","Tense and mood","Present infinitive"
-"TM:future-infinitive","Tense and mood","Future infinitive"
-"TM:aorist-infinitive","Tense and mood","Aorist infinitive"
-"TM:perfect-infinitive","Tense and mood","Perfect infinitive"
-"TM:present-participle","Tense and mood","Present participle"
-"TM:future-participle","Tense and mood","Future participle"
-"TM:aorist-participle","Tense and mood","Aorist participle"
-"TM:perfect-participle","Tense and mood","Perfect participle"
-"TM:present-imperative","Tense and mood","Present imperative"
-"TM:aorist-imperative","Tense and mood","Aorist imperative"
-"TM:perfect-imperative","Tense and mood","Perfect imperative"
-"TM:present-subjunctive","Tense and mood","Present subjunctive"
-"TM:aorist-subjunctive","Tense and mood","Aorist subjunctive"
-"TM:perfect-subjunctive","Tense and mood","Perfect subjunctive"
-"TM:present-optative","Tense and mood","Present optative"
-"TM:aorist-optative","Tense and mood","Aorist optative"
-"V:active","Voice","Active"
-"V:middle","Voice","Middle"
-"V:passive","Voice","Passive"
-"VM:PP","Modifier of verb or verbless predicate","Prepositional phrase"
-"VM:participle","Modifier of verb or verbless predicate","Participle"
-"VM:adverb","Modifier of verb or verbless predicate","Adverb"
-"VM:infinitive","Modifier of verb or verbless predicate","Infinitive"
-"VM:nominal","Modifier of verb or verbless predicate","Nominal"
-"POS:reflexive pronoun","Other part of speech","Reflexive pronoun"
-"POS:demonstrative pronoun","Other part of speech","Demonstrative pronoun"
-"POS:demonstrative pronoun with kai","Other part of speech","Demonstrative pronoun"
-"POS:interrogative pronoun","Other part of speech","Interrogative pronoun"
-"POS:indefinite pronoun","Other part of speech","Indefinite pronoun"
-"POS:num","Other part of speech","Number"
-"POS:ptcl","Other part of speech","Particle"
-"S:subject","Subject","Subject"
-"S:subject, irregular agreement","Subject","Subject, irregular agreement"
-"S:subject, neuter plural","Subject","Subject, neuter plural"
-"S:subject of verbless predicate","Subject","Subject of verbless predicate"
-"S:subject of implicit speech","Subject","Subject of implicit speech"
-"S:subject of infinitive","Subject","Subject of infinitive"
-"S:subject of participle","Subject","Subject of participle"
-"N:negation of nominal","Negation","Negation of nominal"
-"N:negation of verb","Negation","Negation of verb"
-"N:negation of verb, semantically embedded","Negation","Negation of verb"
-"N:negation, other","Negation","Negation, other"
-"N:negation, εἰ μὴ","Negation","Εἰ μὴ"
-"N:negation, εἰ μὴ, nominal","Negation","Εἰ μὴ"
-"NM:adjective","Modifier of nominal","Adjective"
-"NM:pronoun","Modifier of nominal","Pronoun"
-"NM:participle","Modifier of nominal","Participle"
-"NM:prepositional phrase","Modifier of nominal","Prepositional phrase"
-"NM:infinitive","Modifier of nominal","Infinitive"
-"NM:adverb","Modifier of nominal","Adverb"
-"NM:relative clause","Modifier of nominal","Relative clause"
-"C:conjunct","Conjunction","Conjunction, coordinating"
-"C:conjunct, main","Conjunction","Conjunction, subordinating"
-"C:conjunct, subordinate","Conjunction","Conjunction, subordinating"
-"C:conjunct, μέν δέ","Conjunction","Μὲν...δέ..."
-"C:conjunct, ὡς, clause","Conjunction","Ὡς"
-"C:conjunct, ὡς, non-clause","Conjunction","Ὡς"
-"C:conjunct, ὡς, other","Conjunction","Ὡς"
-"R:determiner, things of","Other","""Things of"""
-"R:argument of adjective","Other","Argument of adjective"
-"R:argument of adjective, infinitive","Other","Argument of adjective"
-"R:argument of adjective, nominal","Other","Argument of adjective"
-"R:direct object, attraction","Other","Attraction"
-"R:indirect object, attraction","Other","Attraction"
-"R:other, attraction","Other","Attraction"
-"R:subject, attraction","Other","Attraction"
-"R:subject of infinitive, attraction","Other","Attraction"
-"R:comparative","Other","Comparison"
-"R:sentential complement","Other","Indirect discourse"
-"R:infinitive argument of verb","Other","Infinitive argument of verb"
-"R:infinitive, purpose","Other","Infinitive, purpose"
-"R:infinitive, something","Other","Infinitive, something"
-"R:interjection, vocative","Other","Interjection, vocative"
-"R:number","Other","Number"
-"R:modifier of adjective, adverb","Other","Other modifier"
-"R:modifier of adjective, PP","Other","Other modifier"
-"R:modifier of non-nominal, adjective","Other","Other modifier"
-"R:modifier of other, adverb","Other","Other modifier"
-"R:modifier of other, nominal","Other","Other modifier"
-"R:modifier of other, participle","Other","Other modifier"
-"R:modifier of other, PP","Other","Other modifier"
-"R:predicate, nominal","Other","Predicate, nominal"
-"R:predicate, non-nominal","Other","Predicate, non-nominal"
-"R:resumptive pronoun","Other","Resumptive pronoun"
-"R:second-position clitic","Other","Second-position clitic"
-"R:topic","Other","Topic"
+AttributeName,pretty.property,pretty.value
+NCT:second declension,Noun class,Second declension
+NCT:first declension,Noun class,First declension
+NCT:first declension with hs,Noun class,First declension with ης
+"NCT:third declension, consonant stem",Noun class,Third declension
+"NCT:third declension, vowel stem",Noun class,Third declension
+NCT:Ihsous,Noun class,Ἰησοῦς
+NCT:irregular,Noun class,Irregular
+NCT:undeclined,Noun class,Undeclined
+NH:adjective,Non-noun as nominal head,Adjective
+NH:determiner,Non-noun as nominal head,Determiner
+NH:infinitive,Non-noun as nominal head,Infinitive
+NH:participle,Non-noun as nominal head,Participle
+NH:relative clause,Non-noun as nominal head,Relative clause
+NH:headless,Non-noun as nominal head,Other
+ACT:first/second declension,Adjective class,First/second declension
+ACT:second declension,Adjective class,Second declension
+"ACT:third declension, consonant stem",Adjective class,Third declension
+"ACT:third declension, vowel stem",Adjective class,Third declension
+ACT:irregular,Adjective class,Irregular
+ACT:undeclined,Adjective ,Undeclined
+D:comparative,Adjective degree,Comparative
+D:superlative,Adjective degree,Superlative
+"GC:genitive, about",Genitive case,"Genitive, about"
+"GC:genitive, amount",Genitive case,"Genitive, amount"
+"GC:genitive, body part",Genitive case,"Genitive, body part"
+"GC:genitive, characterized by",Genitive case,"Genitive, characterized by"
+"GC:genitive, comparative",Genitive case,"Genitive, comparative"
+"GC:genitive, contents",Genitive case,"Genitive, contents"
+"GC:genitive, location",Genitive case,"Genitive, location"
+"GC:genitive, material",Genitive case,"Genitive, material"
+"GC:genitive, object",Genitive case,"Genitive, object"
+"GC:genitive, other",Genitive case,"Genitive, other"
+"GC:genitive, part-whole",Genitive case,"Genitive, part-whole"
+"GC:genitive, possession",Genitive case,"Genitive, possession"
+"GC:genitive, property",Genitive case,"Genitive, property"
+"GC:genitive, relation",Genitive case,"Genitive, relation"
+"GC:genitive, son of",Genitive case,"Genitive, son of"
+"GC:genitive, source",Genitive case,"Genitive, source"
+"GC:genitive, specification",Genitive case,"Genitive, specification"
+"GC:genitive, subject",Genitive case,"Genitive, subject"
+"GC:genitive, time",Genitive case,"Genitive, time"
+"GC:direct object, genitive",Genitive case,"Direct object, genitive"
+"DC:dative, agent",Dative case,"Dative, agent"
+"DC:dative, benefit",Dative case,"Dative, benefit"
+"DC:dative, cognate of verb",Dative case,"Dative, cognate of verb"
+"DC:dative, Hebrew infinitive construct",Dative case,"Dative, Hebrew infinitive construct"
+"DC:dative, instrument",Dative case,"Dative, instrument"
+"DC:dative, manner",Dative case,"Dative, manner"
+"DC:dative, other",Dative case,"Dative, other"
+"DC:dative, possession",Dative case,"Dative, possession"
+"DC:dative, time",Dative case,"Dative, time"
+"DC:direct object, dative",Dative case,"Direct object, dative"
+DC:indirect object,Dative case,Indirect object
+"AC:accusative, amount",Accusative case,"Accusative, amount"
+"AC:accusative, cognate of verb",Accusative case,"Accusative, cognate of verb"
+"AC:accusative, manner",Accusative case,"Accusative, manner"
+"AC:accusative, other",Accusative case,"Accusative, other"
+"AC:accusative, time",Accusative case,"Accusative, time"
+"AC:direct object, accusative",Accusative case,"Direct object, accusative"
+VCT:eimi,Verb class,Εἰμί
+VCT:omega,Verb class,Omega
+"VCT:contract, ew",Verb class,"Contract, έω"
+"VCT:contract, aw",Verb class,"Contract, άω"
+"VCT:contract, ow",Verb class,"Contract, όω"
+VCT:mi,Verb class,Μί
+VCT:oida,Verb class,Οἴδα
+VCT:other,Verb class,Other
+TM:present-indicative,Tense and mood,Present indicative
+TM:future-indicative,Tense and mood,Future indicative
+TM:imperfect-indicative,Tense and mood,Imperfect indicative
+TM:aorist-indicative,Tense and mood,Aorist indicative
+TM:perfect-indicative,Tense and mood,Perfect indicative
+TM:pluperfect-indicative,Tense and mood,Pluperfect indicative
+TM:present-infinitive,Tense and mood,Present infinitive
+TM:future-infinitive,Tense and mood,Future infinitive
+TM:aorist-infinitive,Tense and mood,Aorist infinitive
+TM:perfect-infinitive,Tense and mood,Perfect infinitive
+TM:present-participle,Tense and mood,Present participle
+TM:future-participle,Tense and mood,Future participle
+TM:aorist-participle,Tense and mood,Aorist participle
+TM:perfect-participle,Tense and mood,Perfect participle
+TM:present-imperative,Tense and mood,Present imperative
+TM:aorist-imperative,Tense and mood,Aorist imperative
+TM:perfect-imperative,Tense and mood,Perfect imperative
+TM:present-subjunctive,Tense and mood,Present subjunctive
+TM:aorist-subjunctive,Tense and mood,Aorist subjunctive
+TM:perfect-subjunctive,Tense and mood,Perfect subjunctive
+TM:present-optative,Tense and mood,Present optative
+TM:aorist-optative,Tense and mood,Aorist optative
+V:active,Voice,Active
+V:middle,Voice,Middle
+V:passive,Voice,Passive
+VM:PP,Modifier of verb or verbless predicate,Prepositional phrase
+VM:participle,Modifier of verb or verbless predicate,Participle
+VM:adverb,Modifier of verb or verbless predicate,Adverb
+VM:infinitive,Modifier of verb or verbless predicate,Infinitive
+VM:nominal,Modifier of verb or verbless predicate,Nominal
+POS:reflexive pronoun,Other part of speech,Reflexive pronoun
+POS:demonstrative pronoun,Other part of speech,Demonstrative pronoun
+POS:demonstrative pronoun with kai,Other part of speech,Demonstrative pronoun
+POS:interrogative pronoun,Other part of speech,Interrogative pronoun
+POS:indefinite pronoun,Other part of speech,Indefinite pronoun
+POS:num,Other part of speech,Number
+POS:ptcl,Other part of speech,Particle
+S:subject,Subject,Subject
+"S:subject, irregular agreement",Subject,"Subject, irregular agreement"
+"S:subject, neuter plural",Subject,"Subject, neuter plural"
+S:subject of verbless predicate,Subject,Subject of verbless predicate
+S:subject of implicit speech,Subject,Subject of implicit speech
+S:subject of infinitive,Subject,Subject of infinitive
+S:subject of participle,Subject,Subject of participle
+N:negation of nominal,Negation,Negation of nominal
+N:negation of verb,Negation,Negation of verb
+"N:negation of verb, semantically embedded",Negation,Negation of verb
+"N:negation, other",Negation,"Negation, other"
+"N:negation, εἰ μὴ",Negation,Εἰ μὴ
+"N:negation, εἰ μὴ, nominal",Negation,Εἰ μὴ
+NM:adjective,Modifier of nominal,Adjective
+NM:pronoun,Modifier of nominal,Pronoun
+NM:participle,Modifier of nominal,Participle
+NM:prepositional phrase,Modifier of nominal,Prepositional phrase
+NM:infinitive,Modifier of nominal,Infinitive
+NM:adverb,Modifier of nominal,Adverb
+NM:relative clause,Modifier of nominal,Relative clause
+C:conjunct,Conjunction,"Conjunction, coordinating"
+"C:conjunct, main",Conjunction,"Conjunction, subordinating"
+"C:conjunct, subordinate",Conjunction,"Conjunction, subordinating"
+"C:conjunct, μέν δέ",Conjunction,Μὲν...δέ...
+"C:conjunct, ὡς, clause",Conjunction,Ὡς
+"C:conjunct, ὡς, non-clause",Conjunction,Ὡς
+"C:conjunct, ὡς, other",Conjunction,Ὡς
+"R:determiner, things of",Other,"""Things of"""
+R:argument of adjective,Other,Argument of adjective
+"R:argument of adjective, infinitive",Other,Argument of adjective
+"R:argument of adjective, nominal",Other,Argument of adjective
+"R:direct object, attraction",Other,Attraction
+"R:indirect object, attraction",Other,Attraction
+"R:other, attraction",Other,Attraction
+"R:subject, attraction",Other,Attraction
+"R:subject of infinitive, attraction",Other,Attraction
+R:comparative,Other,Comparison
+R:sentential complement,Other,Indirect discourse
+R:infinitive argument of verb,Other,Infinitive argument of verb
+"R:infinitive, purpose",Other,"Infinitive, purpose"
+"R:infinitive, something",Other,"Infinitive, something"
+"R:interjection, vocative",Other,"Interjection, vocative"
+R:number,Other,Number
+"R:modifier of adjective, adverb",Other,Other modifier
+"R:modifier of adjective, PP",Other,Other modifier
+"R:modifier of non-nominal, adjective",Other,Other modifier
+"R:modifier of other, adverb",Other,Other modifier
+"R:modifier of other, nominal",Other,Other modifier
+"R:modifier of other, participle",Other,Other modifier
+"R:modifier of other, PP",Other,Other modifier
+"R:predicate, nominal",Other,"Predicate, nominal"
+"R:predicate, non-nominal",Other,"Predicate, non-nominal"
+R:resumptive pronoun,Other,Resumptive pronoun
+R:second-position clitic,Other,Second-position clitic
+R:topic,Other,Topic

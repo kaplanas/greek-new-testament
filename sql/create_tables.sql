@@ -152,6 +152,7 @@ INSERT INTO lessons
   ('Second declension', 2, 'Adjective class', 'a_2'),
   ('Third declension', 3, 'Adjective class', 'a_3'),
   ('Irregular', 4, 'Adjective class', 'a_irr'),
+  ('Undeclined', 5, 'Adjective class', 'a_undec'),
   ('Comparatives', 1, 'Adjective forms', 'comp'),
   ('Superlatives', 2, 'Adjective forms', 'super'),
   ('Εἰμί', 1, 'Verb class', 'eimi'),
