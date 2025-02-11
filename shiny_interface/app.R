@@ -136,6 +136,7 @@ ui <- page_navbar(
   knowledge.page,
   string.page,
   nav_panel(title = "Lexicon for excerpts", DTOutput("lexicon")),
+  nav_panel(title = "About", includeHTML("about.html")),
   useBusyIndicators()
 )
 
