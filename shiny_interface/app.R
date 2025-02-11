@@ -4,6 +4,7 @@ library(bslib)
 library(DT)
 library(paws)
 library(htmltools)
+library(shinyBS)
 
 #### Get starting data ####
 
@@ -22,6 +23,20 @@ words.df = read.csv("words.csv")
 strings.df = read.csv("strings.csv")
 strings.lessons.df = read.csv("strings_lessons.csv")
 strings.properties.df = read.csv("strings_properties.csv")
+
+#### Code for tooltips ####
+makeCheckboxTooltip <- function(checkboxValue, tooltip){
+  tags$script(HTML(paste0("$(document).ready(function() {
+                             var inputElements = document.getElementsByTagName('input');
+                             for(var i = 0; i < inputElements.length; i++) {
+                               var input = inputElements[i];
+                               if(input.getAttribute('value') == '", checkboxValue, "' && input.getAttribute('value') != 'null') {
+                                 input.parentElement.setAttribute('data-toggle', 'tooltip');
+                                 input.parentElement.setAttribute('title', '", tooltip, "');
+                               };
+                             }
+                           });")))
+}
 
 #### UI ####
 
@@ -59,11 +74,12 @@ login.page = nav_panel(
 knowledge.groups = map(
   set_names(unique(lessons.df$LessonGroup)),
   function(lg) {
+    sub.lessons.df = lessons.df %>%
+      filter(LessonGroup == lg)
     tagQuery(checkboxGroupInput(gsub(" ", ".", lg),
                                 lg,
-                                lessons.df %>%
-                                  filter(LessonGroup == lg) %>%
-                                  pull(LessonName)))$find("input")$addAttrs("autocomplete" = "off")$allTags()
+                                set_names(sub.lessons.df$AttributeName,
+                                          sub.lessons.df$LessonName)))$find("input")$addAttrs("autocomplete" = "off")$allTags()
   }
 )
 knowledge.page = nav_panel(title = "Current knowledge",
@@ -84,7 +100,8 @@ knowledge.page = nav_panel(title = "Current knowledge",
                                   knowledge.groups[["Pronouns"]],
                                   knowledge.groups[["Other parts of speech"]],
                                   knowledge.groups[["Syntactic structures"]])
-                           ))
+                           ),
+                           uiOutput("tooltips"))
 
 # Page with excerpts.
 string.page = nav_panel(title = "Excerpts",
@@ -113,6 +130,8 @@ string.page = nav_panel(title = "Excerpts",
 # Define UI
 ui <- page_navbar(
   title = page.title,
+  shinyjs::useShinyjs(),
+  tags$head(HTML("<script type='text/javascript' src='sbs/shinyBS.js'></script>")),
   login.page,
   knowledge.page,
   string.page,
@@ -140,6 +159,16 @@ server <- function(input, output, session) {
   known.filter.properties.df = reactiveVal(NULL)
   sample.strings.df = reactiveVal(NULL)
   sample.lexicon.df = reactiveVal(NULL)
+  
+  # Tooltips
+  output$tooltips <-   renderUI({
+    pmap(
+      lessons.df %>% dplyr::select(AttributeName, Tooltip),
+      function(AttributeName, Tooltip) {
+        makeCheckboxTooltip(checkboxValue = AttributeName, tooltip = Tooltip)
+      }
+    )
+  })
   
   # If the user forgot his or her password, start the reset process
   observeEvent(input$forgot.password, {
@@ -286,11 +315,7 @@ server <- function(input, output, session) {
       if(nrow(knowledge.df()) > 0) {
         for(cgi in names(knowledge.groups)) {
           updateCheckboxGroupInput(session, inputId = gsub(" ", ".", cgi),
-                                   selected = lessons.df %>%
-                                     filter(LessonGroup == cgi) %>%
-                                     inner_join(knowledge.df(),
-                                                by = "AttributeName") %>%
-                                     pull(LessonName))
+                                   selected = knowledge.df()$AttributeName)
         }
       }
       else {
@@ -312,12 +337,7 @@ server <- function(input, output, session) {
     known.cols = do.call(
       "c",
       lapply(names(knowledge.groups),
-             function(kg) {
-               lessons.df %>%
-                 filter(LessonGroup == kg,
-                        LessonName %in% input[[gsub(" ", ".", kg)]]) %>%
-                 pull(AttributeName)
-             })
+             function(kg) { input[[gsub(" ", ".", kg)]] })
     )
     add.cols = setdiff(known.cols, knowledge.df()$AttributeName)
     remove.cols = setdiff(knowledge.df()$AttributeName, known.cols)
@@ -469,6 +489,14 @@ server <- function(input, output, session) {
                      by = join_by(SentenceID, Start <= SentencePosition,
                                   Stop >= SentencePosition)) %>%
           inner_join(lemmas.df, by = c("Lemma", "POS")) %>%
+          mutate(PrincipalParts = if_else(POS == "noun",
+                                          paste(PrincipalParts, " <i>(",
+                                                case_match(Gender,
+                                                           "masculine" ~ "masc.",
+                                                           "feminine" ~ "fem.",
+                                                           "neuter" ~ "neut."),
+                                                ")</i>", sep = ""),
+                                          PrincipalParts)) %>%
           dplyr::select(Lemma, LemmaSort, POS, PrincipalParts,
                         ShortDefinition) %>%
           distinct() %>%
@@ -517,7 +545,7 @@ server <- function(input, output, session) {
                                    "function(thead, data, start, end, display){",
                                    "  $(thead).remove();",
                                    "}")),
-                  rownames = F) %>%
+                  rownames = F, escape = F) %>%
         formatStyle(columns = c("Lemma"), fontWeight = "bold", width = "15%")
     }
   })

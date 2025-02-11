@@ -1,70 +1,70 @@
-LessonID,LessonName,LessonGroup,ColumnName
-26,Present indicative,Tense and mood,pres_ind
-1,Nominative,Case,nom
-66,Comparison,Syntactic structures,comps
-6,Second declension,Noun class,n_2
-48,Active,Voice,act
-57,Definite article,Other parts of speech,def
-18,Εἰμί,Verb class,eimi
-12,First and second declension,Adjective class,a_12
-16,Comparatives,Adjective forms,comp
-51,Personal pronouns,Pronouns,p_pers
-13,Second declension,Adjective class,a_2
-27,Future indicative,Tense and mood,fut_ind
-49,Middle,Voice,mid
-19,Omega,Verb class,omega
-17,Superlatives,Adjective forms,super
-52,Reflexive pronouns,Pronouns,p_refl
-58,Second-position clitics,Other parts of speech,clitic
-7,First declension,Noun class,n_1
-67,Indirect discourse,Syntactic structures,disc
-2,Genitive,Case,gen
-68,Topics,Syntactic structures,top
-53,Demonstrative pronouns,Pronouns,p_demo
-50,Passive,Voice,pas
-59,Prepositions,Other parts of speech,prep
-28,Imperfect indicative,Tense and mood,imp_ind
-3,Dative,Case,dat
-20,"Contract, έω",Verb class,c_ew
-14,Third declension,Adjective class,a_3
-8,Third declension,Noun class,n_3
-21,"Contract, άω",Verb class,c_aw
-4,Accusative,Case,acc
-15,Irregular,Adjective class,a_irr
-54,Interrogative pronouns,Pronouns,p_inter
-60,Coordinating conjunctions,Other parts of speech,coord
-29,Aorist indicative,Tense and mood,aor_ind
-9,Ἰησοῦς,Noun class,n_Ihsous
-10,Irregular,Noun class,n_irr
-22,"Contract, όω",Verb class,c_ow
-55,Indefinite pronouns,Pronouns,p_indef
-30,Perfect indicative,Tense and mood,per_ind
-61,Subordinating conjunctions,Other parts of speech,subord
-5,Vocative,Case,voc
-56,Relative pronouns,Pronouns,p_rel
-62,Negation,Other parts of speech,neg
-11,Undeclined,Noun class,n_undec
-23,Μί,Verb class,mi
-31,Pluperfect indicative,Tense and mood,plu_ind
-63,Adverbs,Other parts of speech,adv
-24,Οἶδα,Verb class,oida
-32,Present infinitive,Tense and mood,pres_inf
-25,Other,Verb class,v_other
-33,Future infinitive,Tense and mood,fut_inf
-64,Numbers,Other parts of speech,num
-65,Particles,Other parts of speech,part
-34,Aorist infinitive,Tense and mood,aor_inf
-35,Perfect infinitive,Tense and mood,per_inf
-36,Present participle,Tense and mood,pres_part
-37,Future participle,Tense and mood,fut_part
-38,Aorist participle,Tense and mood,aor_part
-39,Perfect participle,Tense and mood,per_part
-40,Present imperative,Tense and mood,pres_imp
-41,Aorist imperative,Tense and mood,aor_imp
-42,Perfect imperative,Tense and mood,per_imp
-43,Present subjunctive,Tense and mood,pres_sub
-44,Aorist subjunctive,Tense and mood,aor_sub
-45,Perfect subjunctive,Tense and mood,per_sub
-46,Present optative,Tense and mood,pres_opt
-47,Aorist optative,Tense and mood,aor_opt
-69,Undeclined,Adjective class,a_undec
+LessonID,LessonName,LessonGroup,ColumnName,Tooltip
+12,First and second declension,Adjective class,a_12,"Adjectives with distinct masculine and feminine forms (e.g., ἅγιος)"
+13,Second declension,Adjective class,a_2,"Adjectives with no distinct feminine forms (e.g., ἀκάθαρτος)"
+14,Third declension,Adjective class,a_3,"Adjectives that decline like third-declension nouns (e.g., ἀσθενής)"
+15,Irregular,Adjective class,a_irr,"Irregular adjectives (e.g., πᾶς)"
+69,Undeclined,Adjective class,a_undec,Adjectives that don’t decline
+16,Comparatives,Adjective forms,comp,Comparative forms of adjectives (‘-er’)
+17,Superlatives,Adjective forms,super,Superlative forms of adjectives (‘-est’)
+1,Nominative,Case,nom,"Nouns, adjectives, and participles in nominative case (dictionary citation form)"
+2,Genitive,Case,gen,"Nouns, adjectives, and participles in genitive case"
+3,Dative,Case,dat,"Nouns, adjectives, and participles in dative case"
+4,Accusative,Case,acc,"Nouns, adjectives, and participles in accusative case"
+5,Vocative,Case,voc,"Nouns, adjectives, and participles in vocative case"
+6,Second declension,Noun class,n_2,Nouns ending in -ος or -ον
+7,First declension,Noun class,n_1,Nouns ending in -η or -α
+8,Third declension,Noun class,n_3,"Third-declension nouns (e.g., πνεῦμα, χάρις)"
+9,Ἰησοῦς,Noun class,n_Ihsous,‘Jesus’ (irregular and very frequent)
+10,Irregular,Noun class,n_irr,"Other irregular nouns (e.g., πατήρ)"
+11,Undeclined,Noun class,n_undec,"Nouns that don’t decline (e.g., Ἰερουσαλήμ)"
+57,Definite article,Other parts of speech,def,"The definite article (ὁ, ἡ, τό)"
+58,Second-position clitics,Other parts of speech,clitic,"Particles that appear in second position (e.g., δέ)"
+59,Prepositions,Other parts of speech,prep,"Prepositions (e.g., ἐν ‘in’, πρός ‘to’)"
+60,Coordinating conjunctions,Other parts of speech,coord,"Coordinating conjunctions (e.g., καί ‘and’, ἤ ‘or’)"
+61,Subordinating conjunctions,Other parts of speech,subord,"Subordinating conjunctions (e.g., εἰ ‘if’, ἵνα ‘in order that’)"
+62,Negation,Other parts of speech,neg,"Negating particles (e.g., οὐ, μή)"
+63,Adverbs,Other parts of speech,adv,"Adverbs (e.g., τότε ‘then’, πάλιν ‘again’)"
+64,Numbers,Other parts of speech,num,"Numbers (e.g., δύο, πέντε)"
+65,Particles,Other parts of speech,part,"Other words (e.g., ἰδού ‘behold’, ἀμήν ‘amen’)"
+51,Personal pronouns,Pronouns,p_pers,"Personal pronouns (e.g., ἐγώ ‘I’, σύ ‘you’)"
+52,Reflexive pronouns,Pronouns,p_refl,"Reflexive pronouns (e.g., ἐμαυτόν ‘myself’)"
+53,Demonstrative pronouns,Pronouns,p_demo,"Demonstrative pronouns (e.g., ἐκεῖνος ‘that’)"
+54,Interrogative pronouns,Pronouns,p_inter,"Interrogative pronouns (e.g., τίς ‘who/what?’)"
+55,Indefinite pronouns,Pronouns,p_indef,"Indefinite pronouns (e.g., τις ‘whoever’)"
+56,Relative pronouns,Pronouns,p_rel,Relative pronouns and relative clauses
+66,Comparison,Syntactic structures,comps,Comparison with ἤ ‘than’
+67,Indirect discourse,Syntactic structures,disc,Reported speech with ὅτι ‘that’ or direct quotation
+68,Topics,Syntactic structures,top,Initial phrases not syntactically integrated with the rest of the sentence
+26,Present indicative,Tense and mood,pres_ind,"Present indicative verbs (e.g., λέγω ‘I say’)"
+27,Future indicative,Tense and mood,fut_ind,"Future indicate verb forms (e.g., σώσει ‘he will save’)"
+28,Imperfect indicative,Tense and mood,imp_ind,"Imperfect indicative verb forms (e.g., ἔλεγον ‘they said’)"
+29,Aorist indicative,Tense and mood,aor_ind,"Aorist indicative verb forms (e.g., ἐπίστευσαν ‘they believed’)"
+30,Perfect indicative,Tense and mood,per_ind,"Perfect indicative verb forms (e.g., σέσωκέν ‘he has saved’)"
+31,Pluperfect indicative,Tense and mood,plu_ind,"Pluperfect indicative verb forms (e.g., πεπιστεύκεισαν ‘they had believed’)"
+32,Present infinitive,Tense and mood,pres_inf,"Present infinitive verb forms (e.g., ἔχειν ‘to have’)"
+33,Future infinitive,Tense and mood,fut_inf,"Future infinitive verb forms (e.g., ἀκούσειν ‘to hear’)"
+34,Aorist infinitive,Tense and mood,aor_inf,"Aorist infinitive verb forms (e.g., σῶσαι ‘to hear’)"
+35,Perfect infinitive,Tense and mood,per_inf,"Perfect infinitive verb forms (e.g., ἠλπικέναι ‘to have hoped’)"
+36,Present participle,Tense and mood,pres_part,"Present participle verb forms (e.g., λέγων ‘saying’)"
+37,Future participle,Tense and mood,fut_part,"Future participle verb forms (e.g., σώσων ‘being about to save’)"
+38,Aorist participle,Tense and mood,aor_part,"Aorist participle verb forms (e.g., ἀκούσας ‘having heard’)"
+39,Perfect participle,Tense and mood,per_part,"Perfect participle verb forms (e.g., πεπιστευκότες ‘having believed’)"
+40,Present imperative,Tense and mood,pres_imp,"Present imperative verb forms (e.g., βλέπετε ‘look!’)"
+41,Aorist imperative,Tense and mood,aor_imp,"Aorist imperative verb forms (e.g., γράψον ‘write!’)"
+42,Perfect imperative,Tense and mood,per_imp,"Perfect imperative verb forms (e.g., πεφίμωσο ‘be quiet!’)"
+43,Present subjunctive,Tense and mood,pres_sub,"Present subjunctive verb forms (e.g., θέλῃ ‘he might want’)"
+44,Aorist subjunctive,Tense and mood,aor_sub,"Aorist subjunctive verb forms (e.g., πιστεύσητε ‘that y’all might believe’)"
+45,Perfect subjunctive,Tense and mood,per_sub,"Perfect subjunctive verb forms (e.g., εἰδῶμεν ‘that we might know’)"
+46,Present optative,Tense and mood,pres_opt,"Present optative verb forms (e.g., ἔχοι ‘he might have’)"
+47,Aorist optative,Tense and mood,aor_opt,"Aorist optative verb forms (e.g., ἁγιάσαι ‘he might make holy’)"
+18,Εἰμί,Verb class,eimi,Εἰμί ‘to be’ and its prefixed forms
+19,Omega,Verb class,omega,Verbs ending in -ω
+20,"Contract, έω",Verb class,c_ew,Verbs ending in -έω
+21,"Contract, άω",Verb class,c_aw,Verbs ending in -άω
+22,"Contract, όω",Verb class,c_ow,Verbs ending in -όω
+23,Μί,Verb class,mi,Verbs ending in -μί
+24,Οἶδα,Verb class,oida,Οἶδα (a special verb)
+25,Other,Verb class,v_other,All other verbs
+48,Active,Voice,act,"Verbs in the active voice (e.g., βαπτίζω ‘I baptize’)"
+49,Middle,Voice,mid,"Verbs in the middle voice (e.g., ἀπεκρίνατο ‘he answered’)"
+50,Passive,Voice,pas,"Verbs in the passive voice (e.g., ἐβαπτίσθη ‘he was baptized’)"

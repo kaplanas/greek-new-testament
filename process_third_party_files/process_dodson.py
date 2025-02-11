@@ -224,6 +224,7 @@ def get_adjective_forms(lemmas_df, db_con, lxx_df):
     sql = """SELECT DISTINCT Lemma, POS, Gender, Number, NCase, NounClassType, Wordform
              FROM words
              WHERE POS = 'adj'
+                   OR POS = 'det'
                    OR Lemma IN """
     sql = sql + '(' + ', '.join(["'" + a + "'" for a in ADJECTIVE_FORM_LEMMAS]) + ')'
     nt_adjectives_df = pd.read_sql(sql, connection)
@@ -430,7 +431,7 @@ if __name__ == '__main__':
                              names=['strongs', 'gk', 'greek_word', 'definition', 'long_definition'])
     entries_df['lemma_ascii'] = entries_df.greek_word.replace(', .*$', '', regex=True)
     entries_df['lemma_ascii'] = entries_df.lemma_ascii.replace(LEMMA_EDITS)
-    entries_df['definition'] = entries_df.definition.str.replace(r'^I ', '', regex=True)
+    entries_df['definition'] = entries_df.definition.str.replace(r'^(I|the|a|an) ', '', regex=True)
     entries_df['definition'] = entries_df.definition.str.replace(r'^am( |,)', 'be\\1', regex=True)
     entries_df = entries_df[['lemma_ascii', 'definition']]
     entries_df = entries_df.groupby(['lemma_ascii']).agg('; '.join)
