@@ -24,6 +24,10 @@ strings.df = read.csv("strings.csv")
 strings.lessons.df = read.csv("strings_lessons.csv")
 strings.properties.df = read.csv("strings_properties.csv")
 
+# Capital letters
+capital.letters = c("Α", "Β", "Γ", "Δ", "Ε", "Ζ", "Η", "Θ", "Ι", "Κ", "Λ", "Μ",
+                    "Ν", "Ξ", "Ο", "Π", "Ρ", "Σ", "Τ", "Υ", "Φ", "Χ", "Ψ", "Ω")
+
 #### Code for tooltips ####
 makeCheckboxTooltip <- function(checkboxValue, tooltip){
   tags$script(HTML(paste0("$(document).ready(function() {
@@ -82,60 +86,82 @@ knowledge.groups = map(
                                           sub.lessons.df$LessonName)))$find("input")$addAttrs("autocomplete" = "off")$allTags()
   }
 )
-knowledge.page = nav_panel(title = "Current knowledge",
-                           actionButton("update.knowledge",
-                                        "Save changes"),
-                           layout_columns(
-                             card(card_header(class = "bg-dark",
-                                              "Nouns and adjectives"),
-                                  knowledge.groups[["Case"]],
-                                  knowledge.groups[["Noun class"]],
-                                  knowledge.groups[["Adjective class"]],
-                                  knowledge.groups[["Adjective forms"]]),
-                             card(card_header(class = "bg-dark", "Verbs"),
-                                  knowledge.groups[["Verb class"]],
-                                  knowledge.groups[["Voice"]],
-                                  knowledge.groups[["Tense and mood"]]),
-                             card(card_header(class = "bg-dark", "Other"),
-                                  knowledge.groups[["Pronouns"]],
-                                  knowledge.groups[["Other parts of speech"]],
-                                  knowledge.groups[["Syntactic structures"]])
-                           ),
-                           uiOutput("tooltips"))
+knowledge.page = nav_panel(
+  title = "Current knowledge",
+  actionButton("update.knowledge", "Save changes"),
+  layout_columns(
+    card(card_header(class = "bg-dark",
+                     "Nouns and adjectives"),
+         knowledge.groups[["Case"]],
+         knowledge.groups[["Noun class"]],
+         knowledge.groups[["Adjective class"]],
+         knowledge.groups[["Adjective forms"]]),
+    card(card_header(class = "bg-dark", "Verbs"),
+         knowledge.groups[["Verb class"]],
+         knowledge.groups[["Voice"]],
+         knowledge.groups[["Tense and mood"]]),
+    card(card_header(class = "bg-dark", "Other"),
+         knowledge.groups[["Pronouns"]],
+         knowledge.groups[["Other parts of speech"]],
+         knowledge.groups[["Syntactic structures"]])
+  ),
+  uiOutput("tooltips"))
 
 # Page with excerpts.
-string.page = nav_panel(title = "Excerpts",
-                        layout_columns(
-                          layout_columns(
-                            actionButton("refresh.strings", "Refresh"),
-                            numericInput("string.count",
-                                         "Number of excerpts to show:",
-                                         value = 10),
-                            radioButtons("sample.by",
-                                         "Sample:",
-                                         choices = list("Randomly" = "random",
-                                                        "Longest first" = "longest",
-                                                        "Shortest first" = "shortest")),
-                            selectizeInput("string.examples",
-                                           "Include examples of:",
-                                           choices = list(`Everything` = list("[everything]" = "[everything]"))),
-                            tags$head(tags$style(HTML(".selectize-dropdown-content{max-height: 100% !important; height: 100% !important;}}"))),
-                            col_widths = c(11, -1),
-                            fill = F
-                          ),
-                          DTOutput("show.strings"),
-                          col_widths = c(3, 9)
-                        ))
+string.page = nav_panel(
+  title = "Excerpts",
+  layout_columns(
+    layout_columns(
+      actionButton("refresh.strings", "Refresh"),
+      numericInput("string.count",
+                   "Number of excerpts to show:",
+                   value = 10),
+      radioButtons("sample.by",
+                   "Sample:",
+                   choices = list("Randomly" = "random",
+                                  "Longest first" = "longest",
+                                  "Shortest first" = "shortest")),
+      selectizeInput("string.examples",
+                     "Include examples of:",
+                     choices = list(`Everything` = list("[everything]" = "[everything]"))),
+      tags$head(tags$style(HTML(".selectize-dropdown-content{max-height: 100% !important; height: 100% !important;}}"))),
+      col_widths = c(11, -1),
+      fill = F
+    ),
+    DTOutput("show.strings"),
+    col_widths = c(3, 9)
+  )
+)
+
+# Page with lexicon
+lexicon.page = nav_panel(
+  title = "Lexicon for excerpts",
+  layout_columns(
+    verticalLayout(
+      lapply(
+        capital.letters,
+        function(letter) {
+          actionLink(paste("lexicon", letter, sep = "."), letter)
+        }
+      )
+    ),
+    DTOutput("lexicon"),
+    col_widths = c(1, 11)
+  )
+)
 
 # Define UI
 ui <- page_navbar(
   title = page.title,
   shinyjs::useShinyjs(),
   tags$head(HTML("<script type='text/javascript' src='sbs/shinyBS.js'></script>")),
+  tags$script(HTML("Shiny.addCustomMessageHandler('scrollTo', function(id) {
+                     $('body').trigger('myCustomEvent', id);
+                   });")),
   login.page,
   knowledge.page,
   string.page,
-  nav_panel(title = "Lexicon for excerpts", DTOutput("lexicon")),
+  lexicon.page,
   nav_panel(title = "About", includeHTML("about.html")),
   useBusyIndicators()
 )
@@ -501,6 +527,8 @@ server <- function(input, output, session) {
           dplyr::select(Lemma, LemmaSort, POS, PrincipalParts,
                         ShortDefinition) %>%
           distinct() %>%
+          arrange(LemmaSort) %>%
+          mutate(row.id = row_number() - 1) %>%
           sample.lexicon.df()
       } else {
         sample.lexicon.df(NULL)
@@ -520,6 +548,7 @@ server <- function(input, output, session) {
                                  stripe = F,
                                  ordering = F,
                                  info = F,
+                                 scrollY = "85vh",
                                  headerCallback = JS(
                                    "function(thead, data, start, end, display){",
                                    "  $(thead).remove();",
@@ -528,6 +557,25 @@ server <- function(input, output, session) {
         formatStyle(columns = c("Citation"), fontWeight = "bold", width = "25%")
     }
   })
+  
+  # Scroll to letter in lexicon
+  lapply(
+    capital.letters,
+    function(letter) {
+      observeEvent(input[[paste("lexicon", letter, sep = ".")]], {
+        matching.and.later.df = sample.lexicon.df() %>%
+          filter(substr(LemmaSort, 1, 1) >= str_to_lower(letter))
+        if(nrow(matching.and.later.df) == 0) {
+          first.row = max(sample.lexicon.df()$row.id)
+        } else if(substr(matching.and.later.df$LemmaSort[1], 1, 1) != str_to_lower(letter)) {
+          first.row = min(matching.and.later.df$row.id) - 1
+        } else {
+          first.row = min(matching.and.later.df$row.id)
+        }
+        session$sendCustomMessage("scrollTo", first.row)
+      })
+    }
+  )
 
   # Render lexicon
   output$lexicon = renderDT({
@@ -535,17 +583,21 @@ server <- function(input, output, session) {
       NULL
     } else {
       sample.lexicon.df() %>%
-        arrange(LemmaSort) %>%
         dplyr::select(Lemma, PrincipalParts, ShortDefinition) %>%
         datatable(options = list(paging = F,
                                  searching = F,
                                  stripe = F,
                                  ordering = F,
                                  info = F,
+                                 scrollY = "85vh",
                                  headerCallback = JS(
                                    "function(thead, data, start, end, display){",
                                    "  $(thead).remove();",
                                    "}")),
+                  callback = JS(
+                    "$('body').on('myCustomEvent', function(e, id) {",
+                    "  table.row(id).node().scrollIntoView();",
+                    "})"),
                   rownames = F, escape = F) %>%
         formatStyle(columns = c("Lemma"), fontWeight = "bold", width = "15%")
     }
