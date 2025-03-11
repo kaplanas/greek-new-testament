@@ -141,7 +141,8 @@ lexicon.page = nav_panel(
       lapply(
         capital.letters,
         function(letter) {
-          actionLink(paste("lexicon", letter, sep = "."), letter)
+          actionLink(paste("lexicon", letter, sep = "."), letter,
+                     style="display: inline-block; margin: 0.3em; font-size: 150%")
         }
       )
     ),
@@ -596,7 +597,12 @@ server <- function(input, output, session) {
                                    "}")),
                   callback = JS(
                     "$('body').on('myCustomEvent', function(e, id) {",
-                    "  table.row(id).node().scrollIntoView();",
+                    "  setTimeout(function () {",
+                    "    table.row(id).node().scrollIntoView({",
+                    "      behavior: \"smooth\",",
+                    "      block: \"start\",",
+                    "    });",
+                    "  }, 100);",
                     "})"),
                   rownames = F, escape = F) %>%
         formatStyle(columns = c("Lemma"), fontWeight = "bold", width = "15%")
