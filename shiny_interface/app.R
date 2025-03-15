@@ -15,15 +15,6 @@ lessons.df = read.csv("lessons.csv") %>%
 # Pretty names for properties to filter on
 filter.property.names.df = read.csv("filter_property_names.csv")
 
-# Words and lemmas
-lemmas.df = read.csv("lemmas.csv")
-words.df = read.csv("words.csv")
-
-# Strings
-strings.df = read.csv("strings.csv")
-strings.lessons.df = read.csv("strings_lessons.csv")
-strings.properties.df = read.csv("strings_properties.csv")
-
 # Capital letters
 capital.letters = c("Α", "Β", "Γ", "Δ", "Ε", "Ζ", "Η", "Θ", "Ι", "Κ", "Λ", "Μ",
                     "Ν", "Ξ", "Ο", "Π", "Ρ", "Σ", "Τ", "Υ", "Φ", "Χ", "Ψ", "Ω")
@@ -154,8 +145,30 @@ lexicon.page = nav_panel(
 # Define UI
 ui <- page_navbar(
   title = page.title,
+  header = tags$head(
+    tags$link(rel = "shortcut icon", href = "favicon.ico"),
+    tags$meta(property = "og:type", content = "website"),
+    tags$meta(property = "og:url",
+              content = "https://greek.scriptureexcerpts.com/"),
+    tags$meta(property = "og:title",
+              content = "Greek New Testament Excerpts"),
+    tags$meta(property = "og:image",
+              content = "https://greek.scriptureexcerpts.com/gnt_screenshot.png"),
+    tags$meta(property = "og:image:secure",
+              content = "https://greek.scriptureexcerpts.com/gnt_screenshot.png"),
+    tags$meta(property = "og:description",
+              content = "Tool for finding excerpts from the Greek New Testament compatible with a student's current knowledge"),
+    tags$style(HTML(".btn { color: #000000; border-color: #000000 }")),
+    tags$style(HTML(".btn:hover { color: #FFFFFF; background-color: #8844BB }")),
+    tags$style(HTML(".nav-link { color: #8844BB }")),
+    tags$style(HTML(".nav-link.active { color: #000000 }")),
+    HTML("<script type='text/javascript' src='sbs/shinyBS.js'></script>")
+  ),
+  theme = bs_theme(
+    primary = "#8844BB",
+    secondary = "#8844BB"
+  ),
   shinyjs::useShinyjs(),
-  tags$head(HTML("<script type='text/javascript' src='sbs/shinyBS.js'></script>")),
   tags$script(HTML("Shiny.addCustomMessageHandler('scrollTo', function(id) {
                      $('body').trigger('myCustomEvent', id);
                    });")),
@@ -182,6 +195,11 @@ server <- function(input, output, session) {
   db = dynamodb()
   
   # Student data
+  strings.df = reactiveVal(NULL)
+  strings.lessons.df = reactiveVal(NULL)
+  strings.properties.df = reactiveVal(NULL)
+  words.df = reactiveVal(NULL)
+  lemmas.df = reactiveVal(NULL)
   knowledge.df = reactiveVal(NULL)
   known.strings.df = reactiveVal(NULL)
   known.filter.properties.df = reactiveVal(NULL)
@@ -330,11 +348,20 @@ server <- function(input, output, session) {
     # If we connected successfully, get some data
     if(authorized.user) {
       
+      # Words and lemmas
+      lemmas.df(read.csv("lemmas.csv"))
+      words.df(read.csv("words.csv"))
+      
+      # Strings
+      strings.df(read.csv("strings.csv"))
+      strings.lessons.df(read.csv("strings_lessons.csv"))
+      strings.properties.df(read.csv("strings_properties.csv"))
+      
       # Get the student's current knowledge.
-      knowledge.df = db$get_item(TableName = "nt_users",
-                                 Key = list(username = list(S = input$existing.email)),
-                                 ProjectionExpression = paste(lessons.df$AttributeName,
-                                                              collapse = ","))$Item %>%
+      db$get_item(TableName = "nt_users",
+                  Key = list(username = list(S = input$existing.email)),
+                  ProjectionExpression = paste(lessons.df$AttributeName,
+                                               collapse = ","))$Item %>%
         map_dfr(function(col) { data.frame(known = col$BOOL) },
                 .id = "AttributeName") %>%
         knowledge.df()
@@ -390,10 +417,10 @@ server <- function(input, output, session) {
                    ExpressionAttributeValues = expr.attr.vals)
     
     # Get the student's current knowledge.
-    knowledge.df = db$get_item(TableName = "nt_users",
-                               Key = list(username = list(S = input$existing.email)),
-                               ProjectionExpression = paste(lessons.df$AttributeName,
-                                                            collapse = ","))$Item %>%
+    db$get_item(TableName = "nt_users",
+                Key = list(username = list(S = input$existing.email)),
+                ProjectionExpression = paste(lessons.df$AttributeName,
+                                             collapse = ","))$Item %>%
       map_dfr(function(col) { data.frame(known = col$BOOL) },
               .id = "AttributeName") %>%
       knowledge.df()
@@ -406,10 +433,10 @@ server <- function(input, output, session) {
     if(!is.null(knowledge.df()) & nrow(knowledge.df()) > 0) {
       
       # Get known strings
-      strings.df %>%
+      strings.df() %>%
         anti_join(lessons.df %>%
                     filter(!(AttributeName %in% knowledge.df()$AttributeName)) %>%
-                    inner_join(strings.lessons.df, by = "LessonID"),
+                    inner_join(strings.lessons.df(), by = "LessonID"),
                   by = c("SentenceID", "Start", "Stop")) %>%
         group_by(SentenceID, Start) %>%
         filter(Stop == max(Stop)) %>%
@@ -421,7 +448,7 @@ server <- function(input, output, session) {
         known.strings.df()
       
       # Get properties of strings the student might want to filter on
-      strings.properties.df %>%
+      strings.properties.df() %>%
         semi_join(known.strings.df(), by = c("SentenceID", "Start", "Stop")) %>%
         dplyr::select(SentenceID, Start, Stop, AttributeName) %>%
         distinct() %>%
@@ -513,10 +540,10 @@ server <- function(input, output, session) {
       sample.strings.df(temp.df)
       if(nrow(temp.df) > 0) {
         temp.df %>%
-          inner_join(words.df,
+          inner_join(words.df(),
                      by = join_by(SentenceID, Start <= SentencePosition,
                                   Stop >= SentencePosition)) %>%
-          inner_join(lemmas.df, by = c("Lemma", "POS")) %>%
+          inner_join(lemmas.df(), by = c("Lemma", "POS")) %>%
           mutate(PrincipalParts = if_else(POS == "noun",
                                           paste(PrincipalParts, " <i>(",
                                                 case_match(Gender,
