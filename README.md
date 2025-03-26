@@ -1,4 +1,4 @@
-# Greek New Testament: Syntactic Parses for Learners
+# Greek New Testament: Excerpts for Learners
 
 These scripts extract contiguous strings from the Greek New Testament and writes them to a database.  The goal is to make it possible to query intact segments that are accessible to early learners, using only the constructions they've been exposed to so far.
 
